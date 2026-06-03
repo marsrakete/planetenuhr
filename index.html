@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Current Time</title>
+  <style>
+    :root {
+      --bg:#f0f0f0; --fg:#333; --muted:#666; --card:#fff;
+      --accent:#007bff; --accent-hover:#0056b3;
+      --border:#ccc; --shadow:0 4px 8px rgba(0,0,0,.1);
+    }
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      background:var(--bg);
+      color:var(--fg);
+      transition: background-color .5s, color .5s;
+      padding:24px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+      gap:20px;
+      align-items:stretch;
+    }
+    .display-container{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      border:2px solid var(--border);
+      border-radius:10px;
+      padding:20px;
+      background:var(--card);
+      box-shadow:var(--shadow);
+      min-height:180px;
+    }
+    .group-title{
+      font-size:1.2rem;
+      margin-bottom:6px;
+      color:var(--fg);
+      font-weight:600;
+      text-align:center;
+    }
