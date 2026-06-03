@@ -962,13 +962,12 @@ function computeMoon(date){
       document.getElementById('stopwatch').textContent='00:00:00';
     }
 
-    let countdownInterval;
-
 function startCountdown() {
   const input = document.getElementById("countdownMinutes");
   const minutes = parseInt(input.value, 10);
+
   if (isNaN(minutes) || minutes <= 0) {
-    alert("Please enter a valid number of minutes.");
+    alert(t?.placeholder_minutes ? "Bitte gültige Minuten eingeben." : "Please enter a valid number of minutes.");
     return;
   }
 
@@ -976,14 +975,19 @@ function startCountdown() {
   let totalTimeInSeconds = minutes * 60;
 
   clearInterval(countdownInterval);
+
   countdownInterval = setInterval(() => {
     const minutesRemaining = Math.floor(totalTimeInSeconds / 60);
     const secondsRemaining = totalTimeInSeconds % 60;
-    countdownElement.textContent = `${minutesRemaining}:${secondsRemaining.toString().padStart(2, "0")}`;
 
-    if (totalTimeInSeconds === 0) {
+    countdownElement.textContent =
+      `${minutesRemaining}:${String(secondsRemaining).padStart(2, "0")}`;
+
+    if (totalTimeInSeconds <= 0) {
       clearInterval(countdownInterval);
-      alert("Countdown complete!");
+      countdownInterval = null;
+      alert(t.countdown_done || "Countdown complete!");
+      return;
     }
 
     totalTimeInSeconds -= 1;
@@ -992,31 +996,8 @@ function startCountdown() {
 
 function stopCountdown() {
   clearInterval(countdownInterval);
+  countdownInterval = null;
 }
-      
-      // Fehlerklasse entfernen, wenn gültige Eingabe
-      cdMinutesInput.classList.remove('error');
-      
-      if(countdownInterval) return;
-      
-      countdownTime = minutes*60;
-      document.getElementById('countdown').textContent =
-        `${String(minutes).padStart(2,'0')}:00`;
-        
-      countdownInterval = setInterval(()=>{
-        if(countdownTime>0){
-          countdownTime--;
-          const mm = String(Math.floor(countdownTime/60)).padStart(2,'0');
-          const ss = String(countdownTime%60).padStart(2,'0');
-          document.getElementById('countdown').textContent = `${mm}:${ss}`;
-        } else {
-          clearInterval(countdownInterval);
-          countdownInterval=null;
-          alert(t.countdown_done);
-        }
-      },1000);
-    }
-
     // Font & fancy display
     function changeFont(){
       const selectedFont = document.getElementById('fontSelector').value;
