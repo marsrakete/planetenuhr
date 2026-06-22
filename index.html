@@ -22,7 +22,7 @@
       display:grid;
       grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
       gap:20px;
-      align-items:stretch;
+      align-items:start;
     }
     .display-container{
       display:flex;
@@ -34,6 +34,64 @@
       background:var(--card);
       box-shadow:var(--shadow);
       min-height:180px;
+    }
+    .wide-card{
+      grid-column:span 2;
+    }
+    .time-card{
+      gap:12px;
+    }
+    .time-tools{
+      width:100%;
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(200px,1fr));
+      gap:14px;
+      margin-top:8px;
+    }
+    .time-tool{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      padding:12px;
+      border:1px solid var(--border);
+      border-radius:8px;
+      background:rgba(255,255,255,.35);
+    }
+    .time-tool-title{
+      font-size:1rem;
+      font-weight:600;
+      color:var(--fg);
+      margin-bottom:4px;
+    }
+    .time-tool #stopwatch,
+    .time-tool #countdown{
+      font-size:2rem;
+    }
+    .time-tool-actions{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      align-items:center;
+    }
+    .time-tool input{
+      width:8rem;
+    }
+    .settings-controls{
+      width:100%;
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(130px,1fr));
+      gap:10px;
+    }
+    .setting-field{
+      display:flex;
+      flex-direction:column;
+      align-items:stretch;
+      text-align:center;
+    }
+    .setting-field select{
+      width:100%;
+      margin:5px 0 0;
+      min-width:0;
     }
     .group-title{
       font-size:1.2rem;
@@ -123,8 +181,8 @@
     }
     .jupiter-system{
       position:relative;
-      width:340px;
-      height:340px;
+      width:min(100%, 400px);
+      aspect-ratio:1;
     }
     .jupiter{
       position:absolute;
@@ -182,6 +240,117 @@
       to{ transform: translate(-50%,-50%) rotate(360deg); }
     }
 
+    /* Solar system */
+    .solar-card{
+      min-height:0;
+    }
+    .solar-system{
+      position:relative;
+      width:min(100%, 560px);
+      aspect-ratio:1;
+      margin-top:10px;
+      border-radius:50%;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(255,210,105,.24), transparent 8%),
+        radial-gradient(circle at 50% 50%, rgba(255,255,255,.08), transparent 34%),
+        #10151f;
+      overflow:hidden;
+      box-shadow:inset 0 0 28px rgba(255,255,255,.08), 0 8px 24px rgba(0,0,0,.18);
+    }
+    .solar-controls{
+      width:min(100%, 560px);
+      margin-top:12px;
+    }
+    .solar-slider-row{
+      display:grid;
+      grid-template-columns:auto minmax(120px,1fr) auto;
+      gap:10px;
+      align-items:center;
+      color:var(--muted);
+      font-size:.8rem;
+    }
+    #solarDateSlider{
+      width:100%;
+      margin:0;
+      padding:0;
+    }
+    .solar-control-actions{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      min-height:44px;
+    }
+    .solar-step-button{
+      width:44px;
+      height:44px;
+      padding:0;
+      font-size:1.5rem;
+      line-height:1;
+      user-select:none;
+      touch-action:manipulation;
+    }
+    .sun{
+      position:absolute;
+      left:50%;
+      top:50%;
+      width:34px;
+      height:34px;
+      margin:-17px 0 0 -17px;
+      border-radius:50%;
+      background:radial-gradient(circle at 35% 35%, #fff7b0, #f8b43c 55%, #b45309);
+      box-shadow:0 0 24px rgba(248,180,60,.9);
+      z-index:3;
+    }
+    .solar-orbit{
+      position:absolute;
+      left:50%;
+      top:50%;
+      border:1px solid rgba(255,255,255,.17);
+      border-radius:50%;
+      transform:translate(-50%,-50%);
+    }
+    .solar-planet{
+      position:absolute;
+      left:50%;
+      top:50%;
+      width:12px;
+      height:12px;
+      margin:-6px 0 0 -6px;
+      border-radius:50%;
+      box-shadow:0 0 8px rgba(255,255,255,.5);
+      z-index:4;
+    }
+    .solar-label{
+      position:absolute;
+      left:50%;
+      top:50%;
+      transform:translate(8px, -18px);
+      color:#f8fafc;
+      font-size:.78rem;
+      white-space:nowrap;
+      text-shadow:0 1px 3px rgba(0,0,0,.85);
+      z-index:5;
+    }
+    .solar-planet.mercury{ width:7px; height:7px; margin:-3.5px 0 0 -3.5px; background:#b8b1a3; }
+    .solar-planet.venus{ width:11px; height:11px; margin:-5.5px 0 0 -5.5px; background:#e8c07d; }
+    .solar-planet.earth{ width:12px; height:12px; margin:-6px 0 0 -6px; background:#3b82f6; }
+    .solar-planet.mars{ width:10px; height:10px; margin:-5px 0 0 -5px; background:#c65f35; }
+    .solar-planet.jupiter{ width:20px; height:20px; margin:-10px 0 0 -10px; background:#d6a25f; }
+    .solar-planet.saturn{ width:18px; height:18px; margin:-9px 0 0 -9px; background:#d6c08a; }
+    .solar-planet.uranus{ width:15px; height:15px; margin:-7.5px 0 0 -7.5px; background:#7dd3fc; }
+    .solar-planet.neptune{ width:15px; height:15px; margin:-7.5px 0 0 -7.5px; background:#4169e1; }
+    @media (max-width:720px){
+      .wide-card{
+        grid-column:span 1;
+      }
+      .jupiter-system{
+        width:min(100%, 360px);
+      }
+      .solar-card{
+        min-height:0;
+      }
+    }
+
     /* Earth–Moon system */
     .earthmoon-wrap{
       width:100%;
@@ -233,6 +402,15 @@
       text-align:center;
       color:var(--fg);
     }
+    .moon-details{
+      width:min(100%, 360px);
+      margin-top:18px;
+      padding-top:16px;
+      border-top:1px solid var(--border);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
 
     /* Other planet systems */
     .planet-systems-wrap{
@@ -243,13 +421,13 @@
     .planet-systems{
       display:flex;
       flex-wrap:wrap;
-      gap:16px;
+      gap:22px;
       justify-content:center;
     }
     .planet-system{
       position:relative;
-      width:150px;
-      height:150px;
+      width:220px;
+      height:240px;
     }
     .planet{
       position:absolute;
@@ -295,7 +473,7 @@
     }
     .planet-name{
       position:absolute;
-      bottom:-18px;
+      bottom:0;
       width:100%;
       text-align:center;
       font-size:.8rem;
@@ -306,7 +484,7 @@
       left:50%;
       top:0;
       transform: translate(-50%,-160%);
-      font-size:.7rem;
+      font-size:.65rem;
       color:var(--fg);
       white-space:nowrap;
     }
@@ -352,47 +530,95 @@
 </head>
 <body>
   <div class="grid">
-    <div class="display-container time-card">
+    <div class="display-container time-card wide-card">
       <div class="group-title" id="titleTime">Current Time</div>
       <div id="time" class="time-plain" aria-live="polite">00:00:00</div>
       <div id="date">January 1, 1970</div>
       <button id="announceBtn" style="margin-top:14px" onclick="announceTime()">Announce Time</button>
+      <div class="time-tools">
+        <div class="time-tool">
+          <div class="time-tool-title" id="titleStopwatch">Stopwatch</div>
+          <div id="stopwatch" aria-live="polite">00:00:00</div>
+          <div class="time-tool-actions">
+            <button id="btnStartSW" onclick="startStopwatch()">Start</button>
+            <button id="btnStopSW" onclick="stopStopwatch()">Stop</button>
+            <button id="btnResetSW" onclick="resetStopwatch()">Reset</button>
+          </div>
+        </div>
+        <div class="time-tool">
+          <div class="time-tool-title" id="titleCountdown">Countdown</div>
+          <div id="countdown" aria-live="polite">00:00</div>
+          <div class="time-tool-actions">
+            <input type="number" id="countdownMinutes" placeholder="Minutes" min="0" />
+            <button id="btnStartCD" onclick="startCountdown()">Start Countdown</button>
+            <button id="btnStopCD" onclick="stopCountdown()">Stop Countdown</button>
+          </div>
+        </div>
+        <div class="time-tool">
+          <div class="time-tool-title" id="titleSettings">Settings</div>
+          <div class="settings-controls">
+            <label class="setting-field" for="timezone">
+              <span id="labelTimezone">Time zone</span>
+              <select id="timezone">
+                <option value="local">Local Time</option>
+                <option value="UTC">UTC</option>
+                <option value="Europe/Berlin">Berlin</option>
+                <option value="America/New_York">New York</option>
+                <option value="Europe/London">London</option>
+                <option value="Asia/Tokyo">Tokyo</option>
+              </select>
+            </label>
+            <label class="setting-field" for="fontSelector">
+              <span id="labelFont">Font</span>
+              <select id="fontSelector">
+                <option value="Arial">Arial</option>
+                <option value="Courier New">Courier New</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Verdana">Verdana</option>
+              </select>
+            </label>
+            <label class="setting-field" for="displayMode">
+              <span id="labelDisplay">Display</span>
+              <select id="displayMode">
+                <option value="plain">Plain</option>
+                <option value="wobble">Wobble</option>
+                <option value="pulse">Pulse</option>
+                <option value="spin">Spin</option>
+                <option value="matrix">Matrix</option>
+                <option value="neon">Neon</option>
+                <option value="segment">Segment</option>
+              </select>
+            </label>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="display-container">
-      <div class="group-title" id="titleSettings">Settings</div>
-      <label for="timezone" id="labelTimezone">Time zone</label>
-      <select id="timezone">
-        <option value="local">Local Time</option>
-        <option value="UTC">UTC</option>
-        <option value="Europe/Berlin">Berlin</option>
-        <option value="America/New_York">New York</option>
-        <option value="Europe/London">London</option>
-        <option value="Asia/Tokyo">Tokyo</option>
-      </select>
-
-      <label for="fontSelector" id="labelFont">Font</label>
-      <select id="fontSelector">
-        <option value="Arial">Arial</option>
-        <option value="Courier New">Courier New</option>
-        <option value="Georgia">Georgia</option>
-        <option value="Times New Roman">Times New Roman</option>
-        <option value="Verdana">Verdana</option>
-      </select>
-
-      <label for="displayMode" id="labelDisplay">Display</label>
-      <select id="displayMode">
-        <option value="plain">Plain</option>
-        <option value="wobble">Wobble</option>
-        <option value="pulse">Pulse</option>
-        <option value="spin">Spin</option>
-        <option value="matrix">Matrix</option>
-        <option value="neon">Neon</option>
-        <option value="segment">Segment</option>
-      </select>
+    <div class="display-container solar-card wide-card">
+      <div class="group-title" id="titleSolarSystem">Solar System</div>
+      <div id="solarDate" class="legend-small">Position for current date</div>
+      <div id="solarSystem" class="solar-system" aria-label="Current solar system planet positions">
+        <div class="sun" aria-label="Sun"></div>
+      </div>
+      <div class="solar-controls">
+        <div class="solar-slider-row">
+          <span id="solarPastLabel">-100 years</span>
+          <input type="range" id="solarDateSlider" min="-36525" max="36525" step="1" value="0" />
+          <span id="solarFutureLabel">+100 years</span>
+        </div>
+        <div class="solar-control-actions">
+          <button id="btnSolarPrev" class="solar-step-button" type="button" aria-label="Previous day">&lt;</button>
+          <button id="btnSolarToday" type="button">Today</button>
+          <button id="btnSolarNext" class="solar-step-button" type="button" aria-label="Next day">&gt;</button>
+        </div>
+      </div>
+      <div class="legend-small" id="solarLegend">
+        Heliocentric ecliptic view; distances compressed
+      </div>
     </div>
 
-    <div class="display-container">
+    <div class="display-container wide-card">
       <div class="group-title" id="titleJupiter">Jupiter System</div>
       <div class="jupiter-wrap">
         <div class="jupiter-system">
@@ -434,7 +660,7 @@
       </div>
     </div>
 
-    <div class="display-container">
+    <div class="display-container wide-card">
       <div class="group-title" id="titleOtherPlanets">Planet systems</div>
       <div class="planet-systems-wrap">
         <div class="planet-systems">
@@ -452,27 +678,63 @@
           </div>
           <div class="planet-system">
             <div class="planet saturn"></div>
-            <div class="planet-orbit" style="width:70px; height:70px; animation-duration: 4s;">
+            <div class="planet-orbit" style="width:60px; height:60px; animation-duration: 3s;">
               <div class="planet-moon"></div>
-              <div class="planet-moon-label" data-moon="titan">Titan</div>
+              <div class="planet-moon-label" data-moon="mimas">Mimas</div>
             </div>
-            <div class="planet-orbit" style="width:90px; height:90px; animation-duration: 8s;">
+            <div class="planet-orbit" style="width:76px; height:76px; animation-duration: 4s;">
+              <div class="planet-moon"></div>
+              <div class="planet-moon-label" data-moon="enceladus">Enceladus</div>
+            </div>
+            <div class="planet-orbit" style="width:92px; height:92px; animation-duration: 5s;">
+              <div class="planet-moon"></div>
+              <div class="planet-moon-label" data-moon="tethys">Tethys</div>
+            </div>
+            <div class="planet-orbit" style="width:108px; height:108px; animation-duration: 6s;">
+              <div class="planet-moon"></div>
+              <div class="planet-moon-label" data-moon="dione">Dione</div>
+            </div>
+            <div class="planet-orbit" style="width:124px; height:124px; animation-duration: 8s;">
               <div class="planet-moon"></div>
               <div class="planet-moon-label" data-moon="rhea">Rhea</div>
             </div>
-            <div class="planet-orbit" style="width:110px; height:110px; animation-duration: 12s;">
+            <div class="planet-orbit" style="width:140px; height:140px; animation-duration: 10s;">
+              <div class="planet-moon"></div>
+              <div class="planet-moon-label" data-moon="titan">Titan</div>
+            </div>
+            <div class="planet-orbit" style="width:156px; height:156px; animation-duration: 12s;">
+              <div class="planet-moon"></div>
+              <div class="planet-moon-label" data-moon="hyperion">Hyperion</div>
+            </div>
+            <div class="planet-orbit" style="width:172px; height:172px; animation-duration: 15s;">
               <div class="planet-moon"></div>
               <div class="planet-moon-label" data-moon="iapetus">Iapetus</div>
+            </div>
+            <div class="planet-orbit" style="width:188px; height:188px; animation-duration: 20s;">
+              <div class="planet-moon"></div>
+              <div class="planet-moon-label" data-moon="phoebe">Phoebe</div>
             </div>
             <div class="planet-name" data-planet="saturn">Saturn</div>
           </div>
           <div class="planet-system">
             <div class="planet uranus"></div>
-            <div class="planet-orbit" style="width:70px; height:70px; animation-duration: 6s;">
+            <div class="planet-orbit" style="width:76px; height:76px; animation-duration: 5s;">
+              <div class="planet-moon"></div>
+              <div class="planet-moon-label" data-moon="miranda">Miranda</div>
+            </div>
+            <div class="planet-orbit" style="width:104px; height:104px; animation-duration: 7s;">
+              <div class="planet-moon"></div>
+              <div class="planet-moon-label" data-moon="ariel">Ariel</div>
+            </div>
+            <div class="planet-orbit" style="width:132px; height:132px; animation-duration: 9s;">
+              <div class="planet-moon"></div>
+              <div class="planet-moon-label" data-moon="umbriel">Umbriel</div>
+            </div>
+            <div class="planet-orbit" style="width:160px; height:160px; animation-duration: 12s;">
               <div class="planet-moon"></div>
               <div class="planet-moon-label" data-moon="titania">Titania</div>
             </div>
-            <div class="planet-orbit" style="width:90px; height:90px; animation-duration: 11s;">
+            <div class="planet-orbit" style="width:188px; height:188px; animation-duration: 16s;">
               <div class="planet-moon"></div>
               <div class="planet-moon-label" data-moon="oberon">Oberon</div>
             </div>
@@ -480,11 +742,35 @@
           </div>
           <div class="planet-system">
             <div class="planet neptune"></div>
-            <div class="planet-orbit" style="width:70px; height:70px; animation-duration: 7s;">
+            <div class="planet-orbit" style="width:54px; height:54px; animation-duration: 3s;">
+              <div class="planet-moon"></div>
+              <div class="planet-moon-label" data-moon="naiad">Naiad</div>
+            </div>
+            <div class="planet-orbit" style="width:72px; height:72px; animation-duration: 4s;">
+              <div class="planet-moon"></div>
+              <div class="planet-moon-label" data-moon="thalassa">Thalassa</div>
+            </div>
+            <div class="planet-orbit" style="width:90px; height:90px; animation-duration: 5s;">
+              <div class="planet-moon"></div>
+              <div class="planet-moon-label" data-moon="despina">Despina</div>
+            </div>
+            <div class="planet-orbit" style="width:108px; height:108px; animation-duration: 6s;">
+              <div class="planet-moon"></div>
+              <div class="planet-moon-label" data-moon="galatea">Galatea</div>
+            </div>
+            <div class="planet-orbit" style="width:126px; height:126px; animation-duration: 8s;">
+              <div class="planet-moon"></div>
+              <div class="planet-moon-label" data-moon="larissa">Larissa</div>
+            </div>
+            <div class="planet-orbit" style="width:144px; height:144px; animation-duration: 10s;">
+              <div class="planet-moon"></div>
+              <div class="planet-moon-label" data-moon="proteus">Proteus</div>
+            </div>
+            <div class="planet-orbit" style="width:166px; height:166px; animation-duration: 13s;">
               <div class="planet-moon"></div>
               <div class="planet-moon-label" data-moon="triton">Triton</div>
             </div>
-            <div class="planet-orbit" style="width:95px; height:95px; animation-duration: 13s;">
+            <div class="planet-orbit" style="width:188px; height:188px; animation-duration: 18s;">
               <div class="planet-moon"></div>
               <div class="planet-moon-label" data-moon="nereid">Nereid</div>
             </div>
@@ -493,7 +779,7 @@
         </div>
       </div>
       <div class="legend-small" id="otherPlanetsLegend">
-        Mars and outer planets with stylised moons
+        Selected major moons; total confirmed counts shown in the legend
       </div>
     </div>
 
@@ -512,54 +798,33 @@
       <div class="em-info">
         <div id="emPhaseText">Phase: New Moon (0%)</div>
       </div>
-    </div>
+      <div class="moon-details">
+        <div class="time-tool-title" id="titleMoon">Moon</div>
+        <div id="moonIcon" class="moon-graphic" aria-label="Moon phase graphic">🌑</div>
+        <div id="moonText" style="margin-top:6px">New Moon · 0%</div>
 
-    <div class="display-container">
-      <div class="group-title" id="titleMoon">Moon</div>
-      <div id="moonIcon" class="moon-graphic" aria-label="Moon phase graphic">🌑</div>
-      <div id="moonText" style="margin-top:6px">New Moon · 0%</div>
+        <div id="labelIllum" class="moon-label-line">Illumination</div>
+        <div class="moonbar"
+             aria-label="Moon illumination"
+             role="progressbar"
+             aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <div id="moonBarFill" class="moonbar-fill" style="width:0%"></div>
+        </div>
 
-      <div id="labelIllum" class="moon-label-line">Illumination</div>
-      <div class="moonbar"
-           aria-label="Moon illumination"
-           role="progressbar"
-           aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-        <div id="moonBarFill" class="moonbar-fill" style="width:0%"></div>
-      </div>
+        <div id="labelCycle" class="moon-label-line" style="margin-top:8px;">Cycle</div>
+        <div class="moonbar"
+             aria-label="Moon cycle progress"
+             role="progressbar"
+             aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <div id="moonCycleBarFill" class="moonbar-fill" style="width:0%"></div>
+        </div>
 
-      <div id="labelCycle" class="moon-label-line" style="margin-top:8px;">Cycle</div>
-      <div class="moonbar"
-           aria-label="Moon cycle progress"
-           role="progressbar"
-           aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-        <div id="moonCycleBarFill" class="moonbar-fill" style="width:0%"></div>
-      </div>
-
-      <div id="moonNextFull" style="margin-top:10px; font-size:.95rem;">
-        Next full moon: –
-      </div>
-    </div>
-
-
-    <div class="display-container">
-      <div class="group-title" id="titleStopwatch">Stopwatch</div>
-      <div id="stopwatch" aria-live="polite">00:00:00</div>
-      <div>
-        <button id="btnStartSW" onclick="startStopwatch()">Start</button>
-        <button id="btnStopSW" onclick="stopStopwatch()">Stop</button>
-        <button id="btnResetSW" onclick="resetStopwatch()">Reset</button>
+        <div id="moonNextFull" style="margin-top:10px; font-size:.95rem;">
+          Next full moon: –
+        </div>
       </div>
     </div>
 
-    <div class="display-container">
-      <div class="group-title" id="titleCountdown">Countdown</div>
-      <div id="countdown" aria-live="polite">00:00</div>
-      <div>
-        <input type="number" id="countdownMinutes" placeholder="Minutes" min="0" />
-        <button id="btnStartCD" onclick="startCountdown()">Start Countdown</button>
-	    <button id="btnStopCD" onclick="stopCountdown()">Stop Countdown</button>
-      </div>
-    </div>
   </div>
 
   <script>
@@ -582,11 +847,17 @@
         label_display:'Display',
         tz_local:'Local Time', tz_utc:'UTC', tz_berlin:'Berlin',
         tz_ny:'New York', tz_london:'London', tz_tokyo:'Tokyo',
+        title_solar_system:'Solar System',
+        solar_date:'Position for',
+        legend_solar:'Heliocentric ecliptic view; distances compressed',
+        solar_past:'-100 years', solar_future:'+100 years',
+        solar_slider:'Move solar-system date', solar_today:'Today',
+        solar_prev_day:'Previous day', solar_next_day:'Next day',
         title_jupiter:'Jupiter System',
-        legend_jupiter:'Top 10 moons (illustrative; sped up)',
+        legend_jupiter:'10 selected moons; 101 confirmed in total (illustrative; sped up)',
         title_earthmoon:'Earth & Moon',
         title_other_planets:'Planet systems',
-        legend_other_planets:'Mars and outer planets with stylised moons',
+        legend_other_planets:'Selected moons · totals: Mars 2, Saturn 274, Uranus 28, Neptune 16',
         phase_label:'Phase',
         next_full:'Next full moon',
         title_moon:'Moon',
@@ -611,14 +882,17 @@
         phase_wan_gibb:'Waning Gibbous',
         phase_last_q:'Last Quarter',
         phase_wan_cres:'Waning Crescent',
-        planet_mars:'Mars', planet_saturn:'Saturn', planet_uranus:'Uranus', planet_neptune:'Neptune',
+        planet_mercury:'Mercury', planet_venus:'Venus', planet_earth:'Earth', planet_mars:'Mars',
+        planet_jupiter:'Jupiter', planet_saturn:'Saturn', planet_uranus:'Uranus', planet_neptune:'Neptune',
         moon_io:'Io', moon_europa:'Europa', moon_ganymede:'Ganymede', moon_callisto:'Callisto',
         moon_amalthea:'Amalthea', moon_himalia:'Himalia', moon_elara:'Elara',
         moon_pasiphae:'Pasiphae', moon_sinope:'Sinope', moon_lysithea:'Lysithea',
         moon_phobos:'Phobos', moon_deimos:'Deimos',
-        moon_titan:'Titan', moon_rhea:'Rhea', moon_iapetus:'Iapetus',
-        moon_titania:'Titania', moon_oberon:'Oberon',
-        moon_triton:'Triton', moon_nereid:'Nereid',
+        moon_mimas:'Mimas', moon_enceladus:'Enceladus', moon_tethys:'Tethys', moon_dione:'Dione',
+        moon_titan:'Titan', moon_rhea:'Rhea', moon_hyperion:'Hyperion', moon_iapetus:'Iapetus', moon_phoebe:'Phoebe',
+        moon_miranda:'Miranda', moon_ariel:'Ariel', moon_umbriel:'Umbriel', moon_titania:'Titania', moon_oberon:'Oberon',
+        moon_naiad:'Naiad', moon_thalassa:'Thalassa', moon_despina:'Despina', moon_galatea:'Galatea',
+        moon_larissa:'Larissa', moon_proteus:'Proteus', moon_triton:'Triton', moon_nereid:'Nereid',
 		label_illum:'Illumination',
         label_cycle:'Cycle progress'
 
@@ -631,11 +905,17 @@
         label_display:'Darstellung',
         tz_local:'Ortszeit', tz_utc:'UTC', tz_berlin:'Berlin',
         tz_ny:'New York', tz_london:'London', tz_tokyo:'Tokio',
+        title_solar_system:'Sonnensystem',
+        solar_date:'Position für',
+        legend_solar:'Heliozentrische Ekliptik-Ansicht; Abstände komprimiert',
+        solar_past:'-100 Jahre', solar_future:'+100 Jahre',
+        solar_slider:'Datum des Sonnensystems verschieben', solar_today:'Heute',
+        solar_prev_day:'Vorheriger Tag', solar_next_day:'Nächster Tag',
         title_jupiter:'Jupiters Monde',
-        legend_jupiter:'Top 10 Monde (schematisch; beschleunigt)',
+        legend_jupiter:'10 ausgewählte Monde; insgesamt 101 bestätigt (schematisch; beschleunigt)',
         title_earthmoon:'Erde & Mond',
         title_other_planets:'Planetensysteme',
-        legend_other_planets:'Mars und äußere Planeten mit stilisierten Monden',
+        legend_other_planets:'Ausgewählte Monde · gesamt: Mars 2, Saturn 274, Uranus 28, Neptun 16',
         phase_label:'Phase',
         next_full:'Nächster Vollmond',
         title_moon:'Mond',
@@ -660,14 +940,17 @@
         phase_wan_gibb:'Abnehmender Mond',
         phase_last_q:'Letztes Viertel',
         phase_wan_cres:'Abnehmende Sichel',
-        planet_mars:'Mars', planet_saturn:'Saturn', planet_uranus:'Uranus', planet_neptune:'Neptun',
+        planet_mercury:'Merkur', planet_venus:'Venus', planet_earth:'Erde', planet_mars:'Mars',
+        planet_jupiter:'Jupiter', planet_saturn:'Saturn', planet_uranus:'Uranus', planet_neptune:'Neptun',
         moon_io:'Io', moon_europa:'Europa', moon_ganymede:'Ganymed', moon_callisto:'Kallisto',
         moon_amalthea:'Amalthea', moon_himalia:'Himalia', moon_elara:'Elara',
         moon_pasiphae:'Pasiphae', moon_sinope:'Sinope', moon_lysithea:'Lysithea',
         moon_phobos:'Phobos', moon_deimos:'Deimos',
-        moon_titan:'Titan', moon_rhea:'Rhea', moon_iapetus:'Japetus',
-        moon_titania:'Titania', moon_oberon:'Oberon',
-        moon_triton:'Triton', moon_nereid:'Nereid',
+        moon_mimas:'Mimas', moon_enceladus:'Enceladus', moon_tethys:'Tethys', moon_dione:'Dione',
+        moon_titan:'Titan', moon_rhea:'Rhea', moon_hyperion:'Hyperion', moon_iapetus:'Japetus', moon_phoebe:'Phoebe',
+        moon_miranda:'Miranda', moon_ariel:'Ariel', moon_umbriel:'Umbriel', moon_titania:'Titania', moon_oberon:'Oberon',
+        moon_naiad:'Naiad', moon_thalassa:'Thalassa', moon_despina:'Despina', moon_galatea:'Galatea',
+        moon_larissa:'Larissa', moon_proteus:'Proteus', moon_triton:'Triton', moon_nereid:'Nereid',
 		label_illum:'Beleuchtung',
         label_cycle:'Zyklusfortschritt'
       },
@@ -679,11 +962,17 @@
         label_display:'Affichage',
         tz_local:'Heure locale', tz_utc:'UTC', tz_berlin:'Berlin',
         tz_ny:'New York', tz_london:'Londres', tz_tokyo:'Tokyo',
+        title_solar_system:'Système solaire',
+        solar_date:'Position pour',
+        legend_solar:'Vue écliptique héliocentrique; distances compressées',
+        solar_past:'-100 ans', solar_future:'+100 ans',
+        solar_slider:'Déplacer la date du système solaire', solar_today:"Aujourd'hui",
+        solar_prev_day:'Jour précédent', solar_next_day:'Jour suivant',
         title_jupiter:'Système de Jupiter',
-        legend_jupiter:'10 lunes principales (schématique; accéléré)',
+        legend_jupiter:'10 lunes sélectionnées; 101 confirmées au total (schématique; accéléré)',
         title_earthmoon:'Terre & Lune',
         title_other_planets:'Systèmes planétaires',
-        legend_other_planets:'Mars et planètes externes avec lunes stylisées',
+        legend_other_planets:'Lunes sélectionnées · totaux : Mars 2, Saturne 274, Uranus 28, Neptune 16',
         phase_label:'Phase',
         next_full:'Prochaine pleine lune',
         title_moon:'Lune',
@@ -708,14 +997,17 @@
         phase_wan_gibb:'Gibbeuse décroissante',
         phase_last_q:'Dernier quartier',
         phase_wan_cres:'Dernier croissant',
-        planet_mars:'Mars', planet_saturn:'Saturne', planet_uranus:'Uranus', planet_neptune:'Neptune',
+        planet_mercury:'Mercure', planet_venus:'Venus', planet_earth:'Terre', planet_mars:'Mars',
+        planet_jupiter:'Jupiter', planet_saturn:'Saturne', planet_uranus:'Uranus', planet_neptune:'Neptune',
         moon_io:'Io', moon_europa:'Europe', moon_ganymede:'Ganymède', moon_callisto:'Callisto',
         moon_amalthea:'Amalthée', moon_himalia:'Himalia', moon_elara:'Élara',
         moon_pasiphae:'Pasiphaé', moon_sinope:'Sinopé', moon_lysithea:'Lysithéa',
         moon_phobos:'Phobos', moon_deimos:'Déimos',
-        moon_titan:'Titan', moon_rhea:'Rhéa', moon_iapetus:'Japet',
-        moon_titania:'Titania', moon_oberon:'Obéron',
-        moon_triton:'Triton', moon_nereid:'Néréide',
+        moon_mimas:'Mimas', moon_enceladus:'Encelade', moon_tethys:'Téthys', moon_dione:'Dioné',
+        moon_titan:'Titan', moon_rhea:'Rhéa', moon_hyperion:'Hypérion', moon_iapetus:'Japet', moon_phoebe:'Phœbé',
+        moon_miranda:'Miranda', moon_ariel:'Ariel', moon_umbriel:'Umbriel', moon_titania:'Titania', moon_oberon:'Obéron',
+        moon_naiad:'Naïade', moon_thalassa:'Thalassa', moon_despina:'Despina', moon_galatea:'Galatée',
+        moon_larissa:'Larissa', moon_proteus:'Protée', moon_triton:'Triton', moon_nereid:'Néréide',
 		label_illum:'Illumination',
         label_cycle:'Progression du cycle'
       }
@@ -729,6 +1021,14 @@
       document.getElementById('labelFont').textContent       = t.label_font;
       document.getElementById('labelDisplay').textContent    = t.label_display;
 
+      document.getElementById('titleSolarSystem').textContent = t.title_solar_system;
+      document.getElementById('solarLegend').textContent      = t.legend_solar;
+      document.getElementById('solarPastLabel').textContent   = t.solar_past;
+      document.getElementById('solarFutureLabel').textContent = t.solar_future;
+      document.getElementById('solarDateSlider').setAttribute('aria-label', t.solar_slider);
+      document.getElementById('btnSolarToday').textContent    = t.solar_today;
+      document.getElementById('btnSolarPrev').setAttribute('aria-label', t.solar_prev_day);
+      document.getElementById('btnSolarNext').setAttribute('aria-label', t.solar_next_day);
       document.getElementById('titleJupiter').textContent    = t.title_jupiter;
       document.getElementById('jupiterLegend').textContent   = t.legend_jupiter;
       document.getElementById('titleEarthMoon').textContent  = t.title_earthmoon;
@@ -750,6 +1050,7 @@
       const b2 = document.getElementById('btnStopSW');   if (b2) b2.textContent = t.btn_stop;
       const b3 = document.getElementById('btnResetSW');  if (b3) b3.textContent = t.btn_reset;
       const b4 = document.getElementById('btnStartCD');  if (b4) b4.textContent = t.btn_start_countdown;
+      const b5 = document.getElementById('btnStopCD');   if (b5) b5.textContent = t.btn_stop;
 
       const tzSel = document.getElementById('timezone');
       const m = new Map([
@@ -821,10 +1122,180 @@
         now.toLocaleDateString(lang, dOpt);
     }
     
+    let solarDayOffset = 0;
+
+    function selectedSolarDate(){
+      return new Date(Date.now() + solarDayOffset * 86400000);
+    }
+
     // Infrequent update (for moon phases, runs less often)
     function updateInfrequent() {
       renderMoon();
       renderEarthMoon();
+      renderSolarSystem();
+    }
+
+    // Solar-system model: approximate heliocentric J2000 orbital elements.
+    const solarPlanets = [
+      { key:'mercury', a:[0.38709927,0.00000037], e:[0.20563593,0.00001906], i:[7.00497902,-0.00594749], L:[252.25032350,149472.67411175], p:[77.45779628,0.16047689], n:[48.33076593,-0.12534081] },
+      { key:'venus',   a:[0.72333566,0.00000390], e:[0.00677672,-0.00004107], i:[3.39467605,-0.00078890], L:[181.97909950,58517.81538729], p:[131.60246718,0.00268329], n:[76.67984255,-0.27769418] },
+      { key:'earth',   a:[1.00000261,0.00000562], e:[0.01671123,-0.00004392], i:[-0.00001531,-0.01294668], L:[100.46457166,35999.37244981], p:[102.93768193,0.32327364], n:[0,0] },
+      { key:'mars',    a:[1.52371034,0.00001847], e:[0.09339410,0.00007882], i:[1.84969142,-0.00813131], L:[-4.55343205,19140.30268499], p:[-23.94362959,0.44441088], n:[49.55953891,-0.29257343] },
+      { key:'jupiter', a:[5.20288700,-0.00011607], e:[0.04838624,-0.00013253], i:[1.30439695,-0.00183714], L:[34.39644051,3034.74612775], p:[14.72847983,0.21252668], n:[100.47390909,0.20469106] },
+      { key:'saturn',  a:[9.53667594,-0.00125060], e:[0.05386179,-0.00050991], i:[2.48599187,0.00193609], L:[49.95424423,1222.49362201], p:[92.59887831,-0.41897216], n:[113.66242448,-0.28867794] },
+      { key:'uranus',  a:[19.18916464,-0.00196176], e:[0.04725744,-0.00004397], i:[0.77263783,-0.00242939], L:[313.23810451,428.48202785], p:[170.95427630,0.40805281], n:[74.01692503,0.04240589] },
+      { key:'neptune', a:[30.06992276,0.00026291], e:[0.00859048,0.00005105], i:[1.77004347,0.00035372], L:[-55.12002969,218.45945325], p:[44.96476227,-0.32241464], n:[131.78422574,-0.00508664] }
+    ];
+
+    function normalizeDeg(deg){
+      return ((deg % 360) + 360) % 360;
+    }
+
+    function julianDate(date){
+      return date.getTime() / 86400000 + 2440587.5;
+    }
+
+    function solveKepler(meanAnomaly, eccentricity){
+      let eccentricAnomaly = meanAnomaly;
+      for(let step=0; step<8; step++){
+        eccentricAnomaly -= (eccentricAnomaly - eccentricity*Math.sin(eccentricAnomaly) - meanAnomaly) /
+          (1 - eccentricity*Math.cos(eccentricAnomaly));
+      }
+      return eccentricAnomaly;
+    }
+
+    function planetPosition(planet, date){
+      const T = (julianDate(date) - 2451545.0) / 36525;
+      const a = planet.a[0] + planet.a[1] * T;
+      const e = planet.e[0] + planet.e[1] * T;
+      const i = (planet.i[0] + planet.i[1] * T) * Math.PI / 180;
+      const L = normalizeDeg(planet.L[0] + planet.L[1] * T);
+      const p = normalizeDeg(planet.p[0] + planet.p[1] * T);
+      const n = normalizeDeg(planet.n[0] + planet.n[1] * T);
+      const M = normalizeDeg(L - p) * Math.PI / 180;
+      const E = solveKepler(M, e);
+      const xp = a * (Math.cos(E) - e);
+      const yp = a * Math.sqrt(1 - e*e) * Math.sin(E);
+      const w = (p - n) * Math.PI / 180;
+      const node = n * Math.PI / 180;
+
+      const cosW = Math.cos(w), sinW = Math.sin(w);
+      const cosN = Math.cos(node), sinN = Math.sin(node);
+      const cosI = Math.cos(i);
+      const x = (cosW*cosN - sinW*sinN*cosI) * xp + (-sinW*cosN - cosW*sinN*cosI) * yp;
+      const y = (cosW*sinN + sinW*cosN*cosI) * xp + (-sinW*sinN + cosW*cosN*cosI) * yp;
+      return { x, y, a };
+    }
+
+    function renderSolarSystem(date = selectedSolarDate()){
+      const system = document.getElementById('solarSystem');
+      if(!system) return;
+
+      system.querySelectorAll('.solar-orbit,.solar-planet,.solar-label').forEach(el => el.remove());
+
+      const size = system.clientWidth || 760;
+      const center = size / 2;
+      const maxRadius = size * 0.45;
+      const neptuneA = 30.06992276;
+
+      solarPlanets.forEach(planet => {
+        const orbitRadius = Math.sqrt(planet.a[0] / neptuneA) * maxRadius;
+        const orbit = document.createElement('div');
+        orbit.className = 'solar-orbit';
+        orbit.style.width = (orbitRadius * 2) + 'px';
+        orbit.style.height = (orbitRadius * 2) + 'px';
+        system.appendChild(orbit);
+      });
+
+      solarPlanets.forEach(planet => {
+        const pos = planetPosition(planet, date);
+        const theta = Math.atan2(pos.y, pos.x);
+        const distance = Math.sqrt(pos.x*pos.x + pos.y*pos.y);
+        const screenRadius = Math.sqrt(distance / neptuneA) * maxRadius;
+        const x = center + screenRadius * Math.cos(theta);
+        const y = center + screenRadius * Math.sin(theta);
+
+        const marker = document.createElement('div');
+        marker.className = 'solar-planet ' + planet.key;
+        marker.style.left = x + 'px';
+        marker.style.top = y + 'px';
+        marker.title = t['planet_' + planet.key] || planet.key;
+        system.appendChild(marker);
+
+        const label = document.createElement('div');
+        label.className = 'solar-label';
+        label.dataset.solarPlanet = planet.key;
+        label.textContent = t['planet_' + planet.key] || planet.key;
+        label.style.left = x + 'px';
+        label.style.top = y + 'px';
+        system.appendChild(label);
+      });
+
+      const tz = document.getElementById('timezone').value;
+      const solarDate = document.getElementById('solarDate');
+      if(solarDate) solarDate.textContent = t.solar_date + ': ' + fmtTZ(date, tz);
+    }
+
+    function updateSolarDateFromSlider(){
+      const slider = document.getElementById('solarDateSlider');
+      solarDayOffset = Number(slider.value) || 0;
+      slider.setAttribute('aria-valuenow', String(solarDayOffset));
+      renderSolarSystem(selectedSolarDate());
+    }
+
+    function resetSolarDate(){
+      const slider = document.getElementById('solarDateSlider');
+      slider.value = '0';
+      solarDayOffset = 0;
+      renderSolarSystem(selectedSolarDate());
+    }
+
+    function stepSolarDate(days){
+      const slider = document.getElementById('solarDateSlider');
+      const minimum = Number(slider.min);
+      const maximum = Number(slider.max);
+      solarDayOffset = Math.max(minimum, Math.min(maximum, solarDayOffset + days));
+      slider.value = String(solarDayOffset);
+      slider.setAttribute('aria-valuenow', String(solarDayOffset));
+      renderSolarSystem(selectedSolarDate());
+    }
+
+    let solarHoldDelay=null, solarHoldInterval=null, solarHoldTriggered=false;
+
+    function startSolarDateHold(days){
+      stopSolarDateHold();
+      solarHoldTriggered=false;
+      solarHoldDelay=setTimeout(()=>{
+        solarHoldTriggered=true;
+        stepSolarDate(days);
+        solarHoldInterval=setInterval(() => stepSolarDate(days), 300);
+      },500);
+    }
+
+    function stopSolarDateHold(){
+      clearTimeout(solarHoldDelay);
+      clearInterval(solarHoldInterval);
+      solarHoldDelay=null;
+      solarHoldInterval=null;
+    }
+
+    function handleSolarStepClick(days){
+      if(solarHoldTriggered){
+        solarHoldTriggered=false;
+        return;
+      }
+      stepSolarDate(days);
+    }
+
+    function wireSolarStepButton(button, days){
+      button.addEventListener('pointerdown', event => {
+        if(event.button !== 0) return;
+        startSolarDateHold(days);
+      });
+      button.addEventListener('pointerup', stopSolarDateHold);
+      button.addEventListener('pointercancel', stopSolarDateHold);
+      button.addEventListener('pointerleave', stopSolarDateHold);
+      button.addEventListener('click', () => handleSolarStepClick(days));
     }
 
 
@@ -962,42 +1433,42 @@ function computeMoon(date){
       document.getElementById('stopwatch').textContent='00:00:00';
     }
 
-function startCountdown() {
-  const input = document.getElementById("countdownMinutes");
-  const minutes = parseInt(input.value, 10);
+    function startCountdown(){
+      const minutes = parseInt(cdMinutesInput.value,10);
 
-  if (isNaN(minutes) || minutes <= 0) {
-    alert(t?.placeholder_minutes ? "Bitte gültige Minuten eingeben." : "Please enter a valid number of minutes.");
-    return;
-  }
+      if(isNaN(minutes) || minutes<=0){
+        cdMinutesInput.classList.add('error');
+        setTimeout(() => cdMinutesInput.classList.remove('error'), 1000);
+        return;
+      }
 
-  const countdownElement = document.getElementById("countdown");
-  let totalTimeInSeconds = minutes * 60;
+      cdMinutesInput.classList.remove('error');
 
-  clearInterval(countdownInterval);
+      if(countdownInterval) return;
 
-  countdownInterval = setInterval(() => {
-    const minutesRemaining = Math.floor(totalTimeInSeconds / 60);
-    const secondsRemaining = totalTimeInSeconds % 60;
+      countdownTime = minutes*60;
+      document.getElementById('countdown').textContent =
+        `${String(minutes).padStart(2,'0')}:00`;
 
-    countdownElement.textContent =
-      `${minutesRemaining}:${String(secondsRemaining).padStart(2, "0")}`;
-
-    if (totalTimeInSeconds <= 0) {
-      clearInterval(countdownInterval);
-      countdownInterval = null;
-      alert(t.countdown_done || "Countdown complete!");
-      return;
+      countdownInterval = setInterval(()=>{
+        if(countdownTime>0){
+          countdownTime--;
+          const mm = String(Math.floor(countdownTime/60)).padStart(2,'0');
+          const ss = String(countdownTime%60).padStart(2,'0');
+          document.getElementById('countdown').textContent = `${mm}:${ss}`;
+        } else {
+          clearInterval(countdownInterval);
+          countdownInterval=null;
+          alert(t.countdown_done);
+        }
+      },1000);
     }
 
-    totalTimeInSeconds -= 1;
-  }, 1000);
-}
-
-function stopCountdown() {
-  clearInterval(countdownInterval);
-  countdownInterval = null;
-}
+    function stopCountdown(){
+      if(!countdownInterval) return;
+      clearInterval(countdownInterval);
+      countdownInterval=null;
+    }
     // Font & fancy display
     function changeFont(){
       const selectedFont = document.getElementById('fontSelector').value;
@@ -1012,9 +1483,17 @@ function stopCountdown() {
     }
 
     // Wire up
-    document.getElementById('timezone').addEventListener('change', updateTime);
+    document.getElementById('timezone').addEventListener('change', () => {
+      updateTime();
+      updateInfrequent();
+    });
     document.getElementById('fontSelector').addEventListener('change', changeFont);
     document.getElementById('displayMode').addEventListener('change', changeDisplayMode);
+    document.getElementById('solarDateSlider').addEventListener('input', updateSolarDateFromSlider);
+    document.getElementById('btnSolarToday').addEventListener('click', resetSolarDate);
+    wireSolarStepButton(document.getElementById('btnSolarPrev'), -1);
+    wireSolarStepButton(document.getElementById('btnSolarNext'), 1);
+    window.addEventListener('pointerup', stopSolarDateHold);
 
     applyI18n();
     updateTime();
@@ -1067,7 +1546,10 @@ function stopCountdown() {
     // Initial render. pageshow hilft iOS, wenn eine Seite aus dem Back/Forward-Cache kommt.
     startEarthMoonAnimation();
     window.addEventListener('pageshow', startEarthMoonAnimation);
-    window.addEventListener('resize', () => requestAnimationFrame(animateEarthMoon));
+    window.addEventListener('resize', () => {
+      requestAnimationFrame(animateEarthMoon);
+      requestAnimationFrame(() => renderSolarSystem());
+    });
 
 	
   </script>
