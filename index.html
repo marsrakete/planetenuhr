@@ -20,9 +20,15 @@
     }
     .grid{
       display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+      grid-template-columns:repeat(4, minmax(0,1fr));
       gap:20px;
       align-items:start;
+    }
+    .dashboard-stack{
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+      min-width:0;
     }
     .display-container{
       display:flex;
@@ -36,7 +42,7 @@
       min-height:180px;
     }
     .wide-card{
-      grid-column:span 2;
+      grid-column:auto;
     }
     .time-card{
       gap:12px;
@@ -339,18 +345,6 @@
     .solar-planet.saturn{ width:18px; height:18px; margin:-9px 0 0 -9px; background:#d6c08a; }
     .solar-planet.uranus{ width:15px; height:15px; margin:-7.5px 0 0 -7.5px; background:#7dd3fc; }
     .solar-planet.neptune{ width:15px; height:15px; margin:-7.5px 0 0 -7.5px; background:#4169e1; }
-    @media (max-width:720px){
-      .wide-card{
-        grid-column:span 1;
-      }
-      .jupiter-system{
-        width:min(100%, 360px);
-      }
-      .solar-card{
-        min-height:0;
-      }
-    }
-
     /* Earth–Moon system */
     .earthmoon-wrap{
       width:100%;
@@ -360,8 +354,8 @@
     }
     .earthmoon{
       position:relative;
-      width:280px;
-      height:280px;
+      width:210px;
+      height:210px;
     }
     .earth{
       position:absolute;
@@ -378,8 +372,8 @@
       position:absolute;
       left:50%;
       top:50%;
-      width:240px;          /* breite Ellipse */
-      height:160px;         /* flacher als breit */
+      width:180px;
+      height:120px;
       transform: translate(-50%,-50%);
       border:1px dashed var(--border);
       border-radius:50%;    /* aus Kreis wird bei ungleicher width/height eine Ellipse */
@@ -403,13 +397,30 @@
       color:var(--fg);
     }
     .moon-details{
-      width:min(100%, 360px);
-      margin-top:18px;
-      padding-top:16px;
-      border-top:1px solid var(--border);
+      width:100%;
+      margin-top:0;
+      padding-left:16px;
+      border-left:1px solid var(--border);
       display:flex;
       flex-direction:column;
       align-items:center;
+    }
+    .earthmoon-layout{
+      width:100%;
+      display:grid;
+      grid-template-columns:minmax(190px,1fr) minmax(160px,.9fr);
+      gap:12px;
+      align-items:center;
+    }
+    .earthmoon-primary{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+    .earth-card .moon-graphic{
+      width:56px;
+      height:56px;
+      font-size:2.4rem;
     }
 
     /* Other planet systems */
@@ -421,12 +432,12 @@
     .planet-systems{
       display:flex;
       flex-wrap:wrap;
-      gap:22px;
+      gap:12px;
       justify-content:center;
     }
     .planet-system{
       position:relative;
-      width:220px;
+      width:210px;
       height:240px;
     }
     .planet{
@@ -487,6 +498,32 @@
       font-size:.65rem;
       color:var(--fg);
       white-space:nowrap;
+    }
+
+    @media (max-width:1500px){
+      .grid{
+        grid-template-columns:repeat(2, minmax(0,1fr));
+      }
+    }
+    @media (max-width:760px){
+      body{
+        padding:12px;
+      }
+      .grid{
+        grid-template-columns:minmax(0,1fr);
+      }
+      .jupiter-system{
+        width:min(100%, 360px);
+      }
+      .earthmoon-layout{
+        grid-template-columns:1fr;
+      }
+      .moon-details{
+        margin-top:12px;
+        padding:14px 0 0;
+        border-left:0;
+        border-top:1px solid var(--border);
+      }
     }
     
     /* Input error state for countdown */
@@ -618,7 +655,8 @@
       </div>
     </div>
 
-    <div class="display-container wide-card">
+    <div class="dashboard-stack">
+    <div class="display-container">
       <div class="group-title" id="titleJupiter">Jupiter System</div>
       <div class="jupiter-wrap">
         <div class="jupiter-system">
@@ -658,6 +696,53 @@
       <div class="legend-small" id="jupiterLegend">
         Top 10 moons (illustrative; sped up)
       </div>
+    </div>
+
+    <div class="display-container earth-card">
+      <div class="group-title" id="titleEarthMoon">Earth & Moon</div>
+      <div class="earthmoon-layout">
+        <div class="earthmoon-primary">
+          <div class="earthmoon-wrap">
+            <div class="earthmoon">
+              <div class="earth"></div>
+              <div id="emOrbit" class="em-orbit">
+                <div id="emMoon" class="em-moon">
+                  <span id="emIcon">🌑</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="em-info">
+            <div id="emPhaseText">Phase: New Moon (0%)</div>
+          </div>
+        </div>
+        <div class="moon-details">
+          <div class="time-tool-title" id="titleMoon">Moon</div>
+          <div id="moonIcon" class="moon-graphic" aria-label="Moon phase graphic">🌑</div>
+          <div id="moonText" style="margin-top:6px">New Moon · 0%</div>
+
+          <div id="labelIllum" class="moon-label-line">Illumination</div>
+          <div class="moonbar"
+               aria-label="Moon illumination"
+               role="progressbar"
+               aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div id="moonBarFill" class="moonbar-fill" style="width:0%"></div>
+          </div>
+
+          <div id="labelCycle" class="moon-label-line" style="margin-top:8px;">Cycle</div>
+          <div class="moonbar"
+               aria-label="Moon cycle progress"
+               role="progressbar"
+               aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div id="moonCycleBarFill" class="moonbar-fill" style="width:0%"></div>
+          </div>
+
+          <div id="moonNextFull" style="margin-top:10px; font-size:.95rem;">
+            Next full moon: –
+          </div>
+        </div>
+      </div>
+    </div>
     </div>
 
     <div class="display-container wide-card">
@@ -780,48 +865,6 @@
       </div>
       <div class="legend-small" id="otherPlanetsLegend">
         Selected major moons; total confirmed counts shown in the legend
-      </div>
-    </div>
-
-    <div class="display-container">
-      <div class="group-title" id="titleEarthMoon">Earth & Moon</div>
-      <div class="earthmoon-wrap">
-        <div class="earthmoon">
-          <div class="earth"></div>
-          <div id="emOrbit" class="em-orbit">
-            <div id="emMoon" class="em-moon">
-              <span id="emIcon">🌑</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="em-info">
-        <div id="emPhaseText">Phase: New Moon (0%)</div>
-      </div>
-      <div class="moon-details">
-        <div class="time-tool-title" id="titleMoon">Moon</div>
-        <div id="moonIcon" class="moon-graphic" aria-label="Moon phase graphic">🌑</div>
-        <div id="moonText" style="margin-top:6px">New Moon · 0%</div>
-
-        <div id="labelIllum" class="moon-label-line">Illumination</div>
-        <div class="moonbar"
-             aria-label="Moon illumination"
-             role="progressbar"
-             aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-          <div id="moonBarFill" class="moonbar-fill" style="width:0%"></div>
-        </div>
-
-        <div id="labelCycle" class="moon-label-line" style="margin-top:8px;">Cycle</div>
-        <div class="moonbar"
-             aria-label="Moon cycle progress"
-             role="progressbar"
-             aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-          <div id="moonCycleBarFill" class="moonbar-fill" style="width:0%"></div>
-        </div>
-
-        <div id="moonNextFull" style="margin-top:10px; font-size:.95rem;">
-          Next full moon: –
-        </div>
       </div>
     </div>
 
@@ -1517,8 +1560,8 @@ function computeMoon(date){
       if (!orbit || !moon) return;
 
       const rect = orbit.getBoundingClientRect();
-      const width  = rect.width  || orbit.offsetWidth  || 240;
-      const height = rect.height || orbit.offsetHeight || 160;
+      const width  = rect.width  || orbit.offsetWidth  || 180;
+      const height = rect.height || orbit.offsetHeight || 120;
 
       const a = Math.max(20, width  / 2 - 10);
       const b = Math.max(20, height / 2 - 10);
