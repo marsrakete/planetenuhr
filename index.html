@@ -43,7 +43,6 @@
       grid-template-columns:repeat(auto-fit, minmax(min(100%, 360px), 1fr));
       gap:20px;
       align-items:start;
-      grid-auto-flow:dense;
     }
     .dashboard-stack{
       display:flex;
@@ -69,9 +68,6 @@
       grid-column:span 1;
     }
     .solar-stack{
-      grid-column:span 2;
-    }
-    .system-stack{
       grid-column:span 2;
     }
     .time-card{
@@ -440,7 +436,7 @@
       display:grid;
       grid-template-columns:minmax(190px,1fr) minmax(160px,.9fr);
       gap:12px;
-      align-items:center;
+      align-items:start;
     }
     .earthmoon-primary{
       display:flex;
@@ -717,6 +713,111 @@
     .sky-events-panel{
       margin-top:12px;
     }
+    .calendar-toolbar{
+      width:100%;
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:8px;
+      margin:6px 0 12px;
+    }
+    .calendar-filter{
+      margin:0;
+      padding:7px 10px;
+      font-size:.82rem;
+      background:var(--bg);
+      color:var(--fg);
+      border:1px solid var(--border);
+    }
+    .calendar-filter.active{
+      background:var(--accent);
+      color:#fff;
+      border-color:var(--accent);
+    }
+    .calendar-options{
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      margin-bottom:10px;
+      color:var(--muted);
+      font-size:.82rem;
+    }
+    .calendar-options label{
+      display:flex;
+      align-items:center;
+      gap:6px;
+      cursor:pointer;
+    }
+    .calendar-options input{
+      margin:0;
+    }
+    .calendar-next{
+      width:100%;
+      color:var(--muted);
+      font-size:.86rem;
+      text-align:left;
+      margin-bottom:10px;
+    }
+    .calendar-timeline{
+      width:100%;
+      display:grid;
+      gap:10px;
+    }
+    .calendar-item{
+      position:relative;
+      display:grid;
+      grid-template-columns:auto 1fr;
+      gap:10px;
+      padding:10px 0 10px 2px;
+      border-top:1px solid var(--border);
+      text-align:left;
+      min-width:0;
+    }
+    .calendar-dot{
+      width:12px;
+      height:12px;
+      margin-top:4px;
+      border-radius:50%;
+      background:var(--accent);
+      box-shadow:0 0 0 3px rgba(0,123,255,.12);
+    }
+    .calendar-item.category-eclipse .calendar-dot{ background:#1d4ed8; }
+    .calendar-item.category-meteor .calendar-dot{ background:#7c3aed; }
+    .calendar-item.category-planet .calendar-dot{ background:#f59e0b; }
+    .calendar-item.category-moon .calendar-dot{ background:#64748b; }
+    .calendar-item.category-season .calendar-dot{ background:#16a34a; }
+    .calendar-date{
+      color:var(--muted);
+      font-size:.78rem;
+      margin-bottom:2px;
+    }
+    .calendar-title{
+      font-weight:700;
+      color:var(--fg);
+      margin-bottom:3px;
+    }
+    .calendar-meta{
+      display:inline-block;
+      margin-bottom:4px;
+      padding:2px 7px;
+      border-radius:999px;
+      background:rgba(0,0,0,.06);
+      color:var(--muted);
+      font-size:.72rem;
+      max-width:100%;
+      overflow-wrap:anywhere;
+    }
+    .calendar-note{
+      color:var(--muted);
+      font-size:.82rem;
+      line-height:1.35;
+      overflow-wrap:anywhere;
+    }
+    .calendar-show-more{
+      margin-top:12px;
+    }
 
     /* Other planet systems */
     .planet-systems-wrap{
@@ -801,8 +902,7 @@
       }
     }
     @media (max-width:1180px){
-      .solar-stack,
-      .system-stack{
+      .solar-stack{
         grid-column:span 1;
       }
     }
@@ -1043,43 +1143,6 @@
           <div class="em-info">
             <div id="emPhaseText">Phase: New Moon (0%)</div>
           </div>
-        </div>
-        <div class="moon-details">
-          <div class="time-tool-title" id="titleMoon">Moon</div>
-          <div id="moonIcon" class="moon-graphic" aria-label="Moon phase graphic">🌑</div>
-          <div id="moonText" style="margin-top:6px">New Moon · 0%</div>
-
-          <div id="labelIllum" class="moon-label-line">Illumination</div>
-          <div class="moonbar"
-               aria-label="Moon illumination"
-               role="progressbar"
-               aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-            <div id="moonBarFill" class="moonbar-fill" style="width:0%"></div>
-          </div>
-
-          <div id="labelCycle" class="moon-label-line" style="margin-top:8px;">Cycle</div>
-          <div class="moonbar"
-               aria-label="Moon cycle progress"
-               role="progressbar"
-               aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-            <div id="moonCycleBarFill" class="moonbar-fill" style="width:0%"></div>
-          </div>
-          <div class="moon-timeline" aria-label="Moon cycle timeline">
-            <div class="moon-timeline-track"></div>
-            <div class="moon-timeline-marker" style="left:0%" title="New Moon"></div>
-            <div class="moon-timeline-label" id="moonTimelineNew" style="left:0%">New</div>
-            <div class="moon-timeline-marker" style="left:25%" title="First Quarter"></div>
-            <div class="moon-timeline-label" id="moonTimelineFirst" style="left:25%">First</div>
-            <div class="moon-timeline-marker" style="left:50%" title="Full Moon"></div>
-            <div class="moon-timeline-label" id="moonTimelineFull" style="left:50%">Full</div>
-            <div class="moon-timeline-marker" style="left:75%" title="Last Quarter"></div>
-            <div class="moon-timeline-label" id="moonTimelineLast" style="left:75%">Last</div>
-            <div id="moonTimelineToday" class="moon-timeline-today" style="left:0%"></div>
-          </div>
-
-          <div id="moonNextFull" style="margin-top:10px; font-size:.95rem;">
-            Next full moon: –
-          </div>
           <div class="sunlight-panel">
             <div class="sunlight-title" id="titleSunlight">Daylight Berlin</div>
             <div class="sunlight-grid">
@@ -1131,6 +1194,44 @@
               </div>
             </div>
           </div>
+        </div>
+        <div class="moon-details">
+          <div class="time-tool-title" id="titleMoon">Moon</div>
+          <div id="moonIcon" class="moon-graphic" aria-label="Moon phase graphic">🌑</div>
+          <div id="moonText" style="margin-top:6px">New Moon · 0%</div>
+
+          <div id="labelIllum" class="moon-label-line">Illumination</div>
+          <div class="moonbar"
+               aria-label="Moon illumination"
+               role="progressbar"
+               aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div id="moonBarFill" class="moonbar-fill" style="width:0%"></div>
+          </div>
+
+          <div id="labelCycle" class="moon-label-line" style="margin-top:8px;">Cycle</div>
+          <div class="moonbar"
+               aria-label="Moon cycle progress"
+               role="progressbar"
+               aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div id="moonCycleBarFill" class="moonbar-fill" style="width:0%"></div>
+          </div>
+          <div class="moon-timeline" aria-label="Moon cycle timeline">
+            <div class="moon-timeline-track"></div>
+            <div class="moon-timeline-marker" style="left:0%" title="New Moon"></div>
+            <div class="moon-timeline-label" id="moonTimelineNew" style="left:0%">New</div>
+            <div class="moon-timeline-marker" style="left:25%" title="First Quarter"></div>
+            <div class="moon-timeline-label" id="moonTimelineFirst" style="left:25%">First</div>
+            <div class="moon-timeline-marker" style="left:50%" title="Full Moon"></div>
+            <div class="moon-timeline-label" id="moonTimelineFull" style="left:50%">Full</div>
+            <div class="moon-timeline-marker" style="left:75%" title="Last Quarter"></div>
+            <div class="moon-timeline-label" id="moonTimelineLast" style="left:75%">Last</div>
+            <div id="moonTimelineToday" class="moon-timeline-today" style="left:0%"></div>
+          </div>
+
+          <div id="moonNextFull" style="margin-top:10px; font-size:.95rem;">
+            Next full moon: –
+          </div>
+
         </div>
       </div>
     </div>
@@ -1262,76 +1363,31 @@
 
     <div class="display-container sky-calendar-card wide-card">
       <div class="group-title" id="titleSkyCalendar">Sky calendar</div>
-      <div class="eclipse-panel">
-        <div class="eclipse-summary">
-          <div id="nextSolarEclipse">Next solar eclipse in Europe: –</div>
-          <div id="nextLunarEclipse">Next lunar eclipse in Europe: –</div>
-        </div>
-        <button id="btnToggleEclipses" class="eclipse-toggle" type="button" aria-expanded="false" aria-controls="eclipseDetails">
-          Show eclipse table
-        </button>
-        <div id="eclipseDetails" class="eclipse-details" hidden>
-          <table class="eclipse-table">
-            <thead>
-              <tr>
-                <th id="eclipseHeadDate">Date</th>
-                <th id="eclipseHeadType">Type</th>
-                <th id="eclipseHeadVisibility">Europe</th>
-                <th id="eclipseHeadNote">Note</th>
-              </tr>
-            </thead>
-            <tbody id="eclipseTableBody"></tbody>
-          </table>
-        </div>
+      <div class="calendar-toolbar" id="calendarFilters" aria-label="Calendar filters">
+        <button class="calendar-filter active" type="button" data-calendar-filter="all">All</button>
+        <button class="calendar-filter" type="button" data-calendar-filter="eclipse">Eclipses</button>
+        <button class="calendar-filter" type="button" data-calendar-filter="meteor">Meteor showers</button>
+        <button class="calendar-filter" type="button" data-calendar-filter="planet">Planets</button>
+        <button class="calendar-filter" type="button" data-calendar-filter="moon">Moon</button>
+        <button class="calendar-filter" type="button" data-calendar-filter="season">Seasons</button>
       </div>
-      <div class="eclipse-panel sky-events-panel">
-        <div class="eclipse-summary">
-          <div id="nextSkyEvent">Next sky event: -</div>
-        </div>
-        <button id="btnToggleSkyEvents" class="eclipse-toggle" type="button" aria-expanded="false" aria-controls="skyEventDetails">
-          Show sky events
-        </button>
-        <div id="skyEventDetails" class="eclipse-details" hidden>
-          <table class="eclipse-table">
-            <thead>
-              <tr>
-                <th id="skyEventHeadDate">Date</th>
-                <th id="skyEventHeadEvent">Event</th>
-                <th id="skyEventHeadVisibility">Europe</th>
-                <th id="skyEventHeadNote">Note</th>
-              </tr>
-            </thead>
-            <tbody id="skyEventTableBody"></tbody>
-          </table>
-        </div>
+      <div class="calendar-options">
+        <label>
+          <input id="calendarShowPast" type="checkbox" />
+          <span id="calendarShowPastLabel">Show past</span>
+        </label>
+        <span id="calendarDataUntil">Calendar data maintained through January 2028</span>
       </div>
-      <div class="eclipse-panel sky-events-panel">
-        <div class="eclipse-summary">
-          <div id="nextPlanetMoonEvent">Next planet/moon event: -</div>
-        </div>
-        <button id="btnTogglePlanetMoonEvents" class="eclipse-toggle" type="button" aria-expanded="false" aria-controls="planetMoonEventDetails">
-          Show planet and moon events
-        </button>
-        <div id="planetMoonEventDetails" class="eclipse-details" hidden>
-          <table class="eclipse-table">
-            <thead>
-              <tr>
-                <th id="planetMoonEventHeadDate">Date</th>
-                <th id="planetMoonEventHeadEvent">Event</th>
-                <th id="planetMoonEventHeadVisibility">Europe</th>
-                <th id="planetMoonEventHeadNote">Note</th>
-              </tr>
-            </thead>
-            <tbody id="planetMoonEventTableBody"></tbody>
-          </table>
-        </div>
-      </div>
+      <div id="calendarNext" class="calendar-next">Next event: -</div>
+      <div id="calendarTimeline" class="calendar-timeline"></div>
+      <button id="btnCalendarShowAll" class="calendar-show-more" type="button">Show all events</button>
     </div>
     </div>
 
   </div>
 
   <script src="translations.js"></script>
+  <script src="calendar-events.js"></script>
   <script>
   
   window.onerror = function(msg, url, line, col, error) {
@@ -1345,6 +1401,9 @@
 
     const translations = window.PLANETENUHR_TRANSLATIONS || {};
     const t = translations[lang] || translations.en || {};
+    const calendarEventsByLang = window.PLANETENUHR_EVENTS || {};
+    let activeCalendarFilter = 'all';
+    let showAllCalendarEvents = false;
 
     function applyI18n(){
       document.documentElement.lang = lang;
@@ -1410,45 +1469,16 @@
       if (labelLightDay) labelLightDay.textContent = t.light_day;
       const labelLightNight = document.getElementById('labelLightNight');
       if (labelLightNight) labelLightNight.textContent = t.light_night;
-      const toggleEclipses = document.getElementById('btnToggleEclipses');
-      if (toggleEclipses) {
-        const expanded = toggleEclipses.getAttribute('aria-expanded') === 'true';
-        toggleEclipses.textContent = expanded ? t.eclipse_hide_table : t.eclipse_show_table;
-      }
-      const eclipseHeadDate = document.getElementById('eclipseHeadDate');
-      if (eclipseHeadDate) eclipseHeadDate.textContent = t.eclipse_head_date;
-      const eclipseHeadType = document.getElementById('eclipseHeadType');
-      if (eclipseHeadType) eclipseHeadType.textContent = t.eclipse_head_type;
-      const eclipseHeadVisibility = document.getElementById('eclipseHeadVisibility');
-      if (eclipseHeadVisibility) eclipseHeadVisibility.textContent = t.eclipse_head_visibility;
-      const eclipseHeadNote = document.getElementById('eclipseHeadNote');
-      if (eclipseHeadNote) eclipseHeadNote.textContent = t.eclipse_head_note;
-      const toggleSkyEvents = document.getElementById('btnToggleSkyEvents');
-      if (toggleSkyEvents) {
-        const expanded = toggleSkyEvents.getAttribute('aria-expanded') === 'true';
-        toggleSkyEvents.textContent = expanded ? t.sky_events_hide_table : t.sky_events_show_table;
-      }
-      const skyEventHeadDate = document.getElementById('skyEventHeadDate');
-      if (skyEventHeadDate) skyEventHeadDate.textContent = t.sky_event_head_date;
-      const skyEventHeadEvent = document.getElementById('skyEventHeadEvent');
-      if (skyEventHeadEvent) skyEventHeadEvent.textContent = t.sky_event_head_event;
-      const skyEventHeadVisibility = document.getElementById('skyEventHeadVisibility');
-      if (skyEventHeadVisibility) skyEventHeadVisibility.textContent = t.sky_event_head_visibility;
-      const skyEventHeadNote = document.getElementById('skyEventHeadNote');
-      if (skyEventHeadNote) skyEventHeadNote.textContent = t.sky_event_head_note;
-      const togglePlanetMoonEvents = document.getElementById('btnTogglePlanetMoonEvents');
-      if (togglePlanetMoonEvents) {
-        const expanded = togglePlanetMoonEvents.getAttribute('aria-expanded') === 'true';
-        togglePlanetMoonEvents.textContent = expanded ? t.planet_moon_events_hide_table : t.planet_moon_events_show_table;
-      }
-      const planetMoonEventHeadDate = document.getElementById('planetMoonEventHeadDate');
-      if (planetMoonEventHeadDate) planetMoonEventHeadDate.textContent = t.planet_moon_event_head_date;
-      const planetMoonEventHeadEvent = document.getElementById('planetMoonEventHeadEvent');
-      if (planetMoonEventHeadEvent) planetMoonEventHeadEvent.textContent = t.planet_moon_event_head_event;
-      const planetMoonEventHeadVisibility = document.getElementById('planetMoonEventHeadVisibility');
-      if (planetMoonEventHeadVisibility) planetMoonEventHeadVisibility.textContent = t.planet_moon_event_head_visibility;
-      const planetMoonEventHeadNote = document.getElementById('planetMoonEventHeadNote');
-      if (planetMoonEventHeadNote) planetMoonEventHeadNote.textContent = t.planet_moon_event_head_note;
+      document.querySelectorAll('[data-calendar-filter]').forEach(button => {
+        const key = button.dataset.calendarFilter;
+        button.textContent = t['calendar_filter_' + key] || key;
+      });
+      const showPastLabel = document.getElementById('calendarShowPastLabel');
+      if (showPastLabel) showPastLabel.textContent = t.calendar_show_past;
+      const calendarDataUntil = document.getElementById('calendarDataUntil');
+      if (calendarDataUntil) calendarDataUntil.textContent = t.calendar_data_until;
+      const calendarShowAll = document.getElementById('btnCalendarShowAll');
+      if (calendarShowAll) calendarShowAll.textContent = showAllCalendarEvents ? t.calendar_show_less : t.calendar_show_all;
 
       const tsw = document.getElementById('titleStopwatch');
       if (tsw) tsw.textContent = t.title_stopwatch;
@@ -1503,9 +1533,7 @@
         const key = el.dataset.moon;
         if (key && t['moon_' + key]) el.textContent = t['moon_' + key];
       });
-      renderEclipses();
-      renderSkyEvents();
-      renderPlanetMoonEvents();
+      renderCalendar();
     }
 
     function fmtTZ(d, tz){
@@ -1640,147 +1668,97 @@
       setLeft('lightHourNowMarker', positionOfDay(today));
     }
 
-    function nextEclipseByKind(kind){
+    function calendarEvents(){
+      return (calendarEventsByLang[lang] || calendarEventsByLang.en || [])
+        .map(event => ({ ...event, dateObj:new Date(event.date + 'T00:00:00') }))
+        .sort((a,b) => a.dateObj - b.dateObj);
+    }
+
+    function calendarCategoryLabel(category){
+      return t['calendar_filter_' + category] || category;
+    }
+
+    function filteredCalendarEvents(){
       const today = new Date();
       today.setHours(0,0,0,0);
-      return (t.eclipse_events || [])
-        .map(event => ({ ...event, dateObj:new Date(event.date + 'T00:00:00') }))
-        .filter(event => event.kind === kind && event.dateObj >= today)
-        .sort((a,b) => a.dateObj - b.dateObj)[0];
-    }
-
-    function renderEclipseSummary(id, label, event){
-      const el = document.getElementById(id);
-      if (!el) return;
-      if (!event) {
-        el.textContent = label + ': -';
-        return;
-      }
-      el.textContent = label + ': ' + fmtDateOnly(event.dateObj) + ' - ' + event.type;
-    }
-
-    function renderEclipses(){
-      const events = t.eclipse_events || [];
-      const body = document.getElementById('eclipseTableBody');
-      renderEclipseSummary('nextSolarEclipse', t.next_solar_eclipse_europe, nextEclipseByKind('solar'));
-      renderEclipseSummary('nextLunarEclipse', t.next_lunar_eclipse_europe, nextEclipseByKind('lunar'));
-      if (!body) return;
-      body.innerHTML = '';
-      events.forEach(event => {
-        const row = document.createElement('tr');
-        const dateCell = document.createElement('td');
-        dateCell.textContent = fmtDateOnly(new Date(event.date + 'T00:00:00'));
-        const typeCell = document.createElement('td');
-        typeCell.textContent = event.type;
-        const visibilityCell = document.createElement('td');
-        visibilityCell.textContent = event.visibility;
-        const noteCell = document.createElement('td');
-        noteCell.textContent = event.note;
-        row.append(dateCell, typeCell, visibilityCell, noteCell);
-        body.appendChild(row);
+      return calendarEvents().filter(event => {
+        const matchesFilter = activeCalendarFilter === 'all' || event.category === activeCalendarFilter;
+        const matchesDate = document.getElementById('calendarShowPast')?.checked || event.dateObj >= today;
+        return matchesFilter && matchesDate;
       });
     }
 
-    function toggleEclipseTable(){
-      const button = document.getElementById('btnToggleEclipses');
-      const details = document.getElementById('eclipseDetails');
-      if (!button || !details) return;
-      const expanded = button.getAttribute('aria-expanded') === 'true';
-      button.setAttribute('aria-expanded', String(!expanded));
-      details.hidden = expanded;
-      button.textContent = expanded ? t.eclipse_show_table : t.eclipse_hide_table;
-    }
+    function renderCalendar(){
+      const timeline = document.getElementById('calendarTimeline');
+      const nextEl = document.getElementById('calendarNext');
+      const showAllButton = document.getElementById('btnCalendarShowAll');
+      if (!timeline) return;
 
-    function nextSkyEvent(){
-      const today = new Date();
-      today.setHours(0,0,0,0);
-      return (t.sky_events || [])
-        .map(event => ({ ...event, dateObj:new Date(event.date + 'T00:00:00') }))
-        .filter(event => event.dateObj >= today)
-        .sort((a,b) => a.dateObj - b.dateObj)[0];
-    }
+      const allFiltered = filteredCalendarEvents();
+      const visible = showAllCalendarEvents ? allFiltered : allFiltered.slice(0, 6);
+      timeline.innerHTML = '';
 
-    function renderSkyEvents(){
-      const events = t.sky_events || [];
-      const next = nextSkyEvent();
-      const nextEl = document.getElementById('nextSkyEvent');
-      const body = document.getElementById('skyEventTableBody');
+      const next = calendarEvents().find(event => {
+        const today = new Date();
+        today.setHours(0,0,0,0);
+        return (activeCalendarFilter === 'all' || event.category === activeCalendarFilter) && event.dateObj >= today;
+      });
       if (nextEl) {
         nextEl.textContent = next
-          ? t.next_sky_event + ': ' + fmtDateOnly(next.dateObj) + ' - ' + next.event
-          : t.next_sky_event + ': -';
+          ? t.calendar_next_event + ': ' + fmtDateOnly(next.dateObj) + ' - ' + next.title
+          : t.calendar_next_event + ': -';
       }
-      if (!body) return;
-      body.innerHTML = '';
-      events.forEach(event => {
-        const row = document.createElement('tr');
-        const dateCell = document.createElement('td');
-        dateCell.textContent = fmtDateOnly(new Date(event.date + 'T00:00:00'));
-        const eventCell = document.createElement('td');
-        eventCell.textContent = event.event;
-        const visibilityCell = document.createElement('td');
-        visibilityCell.textContent = event.visibility;
-        const noteCell = document.createElement('td');
-        noteCell.textContent = event.note;
-        row.append(dateCell, eventCell, visibilityCell, noteCell);
-        body.appendChild(row);
+
+      if (!visible.length) {
+        const empty = document.createElement('div');
+        empty.className = 'calendar-note';
+        empty.textContent = t.calendar_empty;
+        timeline.appendChild(empty);
+      }
+
+      visible.forEach(event => {
+        const item = document.createElement('article');
+        item.className = 'calendar-item category-' + event.category;
+        const dot = document.createElement('span');
+        dot.className = 'calendar-dot';
+        const content = document.createElement('div');
+
+        const date = document.createElement('div');
+        date.className = 'calendar-date';
+        date.textContent = fmtDateOnly(event.dateObj);
+        const title = document.createElement('div');
+        title.className = 'calendar-title';
+        title.textContent = event.title;
+        const meta = document.createElement('div');
+        meta.className = 'calendar-meta';
+        meta.textContent = calendarCategoryLabel(event.category) + ' · ' + t.calendar_visibility_label + ': ' + event.visibility;
+        const note = document.createElement('div');
+        note.className = 'calendar-note';
+        note.textContent = event.note;
+
+        content.append(date, title, meta, note);
+        item.append(dot, content);
+        timeline.appendChild(item);
+      });
+
+      if (showAllButton) {
+        showAllButton.hidden = allFiltered.length <= 6;
+        showAllButton.textContent = showAllCalendarEvents ? t.calendar_show_less : t.calendar_show_all;
+      }
+      document.querySelectorAll('[data-calendar-filter]').forEach(button => {
+        button.classList.toggle('active', button.dataset.calendarFilter === activeCalendarFilter);
       });
     }
 
-    function toggleSkyEventTable(){
-      const button = document.getElementById('btnToggleSkyEvents');
-      const details = document.getElementById('skyEventDetails');
-      if (!button || !details) return;
-      const expanded = button.getAttribute('aria-expanded') === 'true';
-      button.setAttribute('aria-expanded', String(!expanded));
-      details.hidden = expanded;
-      button.textContent = expanded ? t.sky_events_show_table : t.sky_events_hide_table;
+    function setCalendarFilter(filter){
+      activeCalendarFilter = filter;
+      showAllCalendarEvents = false;
+      renderCalendar();
     }
 
-    function nextPlanetMoonEvent(){
-      const today = new Date();
-      today.setHours(0,0,0,0);
-      return (t.planet_moon_events || [])
-        .map(event => ({ ...event, dateObj:new Date(event.date + 'T00:00:00') }))
-        .filter(event => event.dateObj >= today)
-        .sort((a,b) => a.dateObj - b.dateObj)[0];
-    }
-
-    function renderPlanetMoonEvents(){
-      const events = t.planet_moon_events || [];
-      const next = nextPlanetMoonEvent();
-      const nextEl = document.getElementById('nextPlanetMoonEvent');
-      const body = document.getElementById('planetMoonEventTableBody');
-      if (nextEl) {
-        nextEl.textContent = next
-          ? t.next_planet_moon_event + ': ' + fmtDateOnly(next.dateObj) + ' - ' + next.event
-          : t.next_planet_moon_event + ': -';
-      }
-      if (!body) return;
-      body.innerHTML = '';
-      events.forEach(event => {
-        const row = document.createElement('tr');
-        const dateCell = document.createElement('td');
-        dateCell.textContent = fmtDateOnly(new Date(event.date + 'T00:00:00'));
-        const eventCell = document.createElement('td');
-        eventCell.textContent = event.event;
-        const visibilityCell = document.createElement('td');
-        visibilityCell.textContent = event.visibility;
-        const noteCell = document.createElement('td');
-        noteCell.textContent = event.note;
-        row.append(dateCell, eventCell, visibilityCell, noteCell);
-        body.appendChild(row);
-      });
-    }
-
-    function togglePlanetMoonEventTable(){
-      const button = document.getElementById('btnTogglePlanetMoonEvents');
-      const details = document.getElementById('planetMoonEventDetails');
-      if (!button || !details) return;
-      const expanded = button.getAttribute('aria-expanded') === 'true';
-      button.setAttribute('aria-expanded', String(!expanded));
-      details.hidden = expanded;
-      button.textContent = expanded ? t.planet_moon_events_show_table : t.planet_moon_events_hide_table;
+    function toggleCalendarShowAll(){
+      showAllCalendarEvents = !showAllCalendarEvents;
+      renderCalendar();
     }
 
     // Time update (runs every second)
@@ -2240,9 +2218,14 @@ function computeMoon(date){
     document.getElementById('btnSolarToday').addEventListener('click', resetSolarDate);
     wireSolarStepButton(document.getElementById('btnSolarPrev'), -1);
     wireSolarStepButton(document.getElementById('btnSolarNext'), 1);
-    document.getElementById('btnToggleEclipses').addEventListener('click', toggleEclipseTable);
-    document.getElementById('btnToggleSkyEvents').addEventListener('click', toggleSkyEventTable);
-    document.getElementById('btnTogglePlanetMoonEvents').addEventListener('click', togglePlanetMoonEventTable);
+    document.querySelectorAll('[data-calendar-filter]').forEach(button => {
+      button.addEventListener('click', () => setCalendarFilter(button.dataset.calendarFilter));
+    });
+    document.getElementById('calendarShowPast').addEventListener('change', () => {
+      showAllCalendarEvents = false;
+      renderCalendar();
+    });
+    document.getElementById('btnCalendarShowAll').addEventListener('click', toggleCalendarShowAll);
     window.addEventListener('pointerup', stopSolarDateHold);
 
     applyI18n();

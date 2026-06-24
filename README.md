@@ -5,7 +5,8 @@ Eine statische HTML-App mit Uhrzeit, Mondphase, Sonnen- und Planetendarstellunge
 ## Dateien
 
 - `index.html` enthaelt Layout, CSS und die astronomische Logik.
-- `translations.js` enthaelt alle Texte, Uebersetzungen und festen Kalenderdaten.
+- `translations.js` enthaelt alle UI-Texte und Uebersetzungen.
+- `calendar-events.js` enthaelt die konfigurierten Himmelskalender-Ereignisse.
 - `image_og.jpg` ist das Open-Graph-Vorschaubild.
 
 ## Funktionen
@@ -18,7 +19,7 @@ Eine statische HTML-App mit Uhrzeit, Mondphase, Sonnen- und Planetendarstellunge
 - Tag-/Nachtlaenge fuer Berlin mit Sonnenaufgang, Sonnenuntergang und buergerlicher Daemmerung
 - Blaue und Goldene Stunde fuer Berlin als Tageslicht-Leiste
 - Sichtbarkeit heute fuer ausgewaehlte Planeten, grob fuer Berlin
-- Himmelskalender mit Finsternissen, Meteorstroemen, Jahreszeitenpunkten sowie Planeten-/Mondereignissen
+- Himmelskalender als filterbare Timeline mit Finsternissen, Meteorstroemen, Jahreszeitenpunkten sowie Planeten-/Mondereignissen
 
 ## Bedienung
 
@@ -105,18 +106,72 @@ Aus Vorzeichen und Betrag wird eine einfache Beobachtungskategorie abgeleitet:
 
 Die farbige Leiste zeigt nicht die echte Horizonthoehe, sondern ein vereinfachtes Zeitfenster. Sie ist als schnelle Orientierung gedacht, nicht als Beobachtungsplanung.
 
-### Finsternisse und Himmelskalender
+### Himmelskalender
 
-Finsternisse, Meteorstroeme, Jahreszeitenpunkte und Planeten-/Mondereignisse sind feste Tabellen in `translations.js`. Die App sucht daraus jeweils das naechste zukuenftige Ereignis und baut die aufklappbaren Tabellen.
+Finsternisse, Meteorstroeme, Jahreszeitenpunkte und Planeten-/Mondereignisse sind feste Tabellen in `calendar-events.js`. Die App fuehrt sie zu einer chronologischen Timeline zusammen.
 
-Der Vorteil dieser Loesung: Die Daten sind einfach pflegbar und funktionieren offline. Der Nachteil: Neue Jahre muessen manuell ergaenzt werden.
+Die Ereignisse haben diese Struktur:
+
+```js
+{
+  date: '2026-08-12',
+  category: 'eclipse',
+  title: 'Totale Sonnenfinsternis',
+  visibility: 'Total in Island und Nordspanien; partiell in Europa',
+  note: 'Beste europaeische Totalitaetszone: Island und Nordspanien/Balearen-Region.'
+}
+```
+
+Unterstuetzte Kategorien:
+
+- `eclipse`
+- `meteor`
+- `planet`
+- `moon`
+- `season`
+
+Die Karte zeigt standardmaessig die naechsten sechs zukuenftigen Ereignisse. Filter und die Option `Vergangene anzeigen` steuern, welche Ereignisse sichtbar sind. Der Vorteil dieser Loesung: Die Daten sind einfach pflegbar und funktionieren offline. Der Nachteil: Neue Jahre muessen manuell ergaenzt werden.
+
+#### Quellen fuer Kalender-Eintraege
+
+Die aktuellen Eintraege in `calendar-events.js` wurden aus mehreren oeffentlichen Astronomie-Kalendern und Referenzen kuratiert. Sie sind nicht automatisch synchronisiert; bei Erweiterungen sollten die Daten erneut gegen diese Quellen geprueft werden.
+
+- Finsternisse:
+  - NASA Eclipse Web Site: https://eclipse.gsfc.nasa.gov/eclipse.html
+  - NASA/GSFC Eclipse-Plots, verlinkt aus den jeweiligen Eclipse-Seiten
+  - Uebersichtslisten zu Sonnen- und Mondfinsternissen fuer 2026/2027
+
+- Meteorstroeme:
+  - International Meteor Organization, Meteor Shower Calendar: https://www.imo.net/resources/calendar/
+  - IMO-Kalender-PDFs fuer die jeweiligen Jahre
+  - IAU Meteor Data Center als Hintergrundreferenz fuer Meteorstrom-Namen und etablierte Streams
+
+- Jahreszeitenpunkte:
+  - timeanddate.com, Seasons: https://www.timeanddate.com/calendar/seasons.html
+  - UTC-Zeitpunkte fuer Aequinoktien und Solstitien, fuer die App auf Datumsereignisse reduziert
+
+- Planetenereignisse, Konjunktionen, Oppositionen, Elongationen:
+  - In-The-Sky.org, Calendar of Astronomical Events: https://in-the-sky.org/newscal.php
+  - Weitere Jahresuebersichten fuer Planeten-Sichtbarkeit und Konjunktionen
+
+- Mondnaehe/Mondferne und Supermond-Hinweise:
+  - timeanddate.com Mondentfernungen und Mondphasen
+  - In-The-Sky.org Monats-/Jahreskalender
+
+Die Texte in der App sind bewusst beobachtungsorientiert formuliert. Sie fassen die Quellen zusammen und bewerten grob die Sichtbarkeit fuer Europa/Berlin, ersetzen aber keine detaillierte lokale Beobachtungsplanung.
 
 ### Uebersetzungen
 
-Alle sichtbaren Texte liegen in:
+Alle sichtbaren UI-Texte liegen in:
 
 ```text
 translations.js
+```
+
+Die Ereignis-Inhalte liegen getrennt davon in:
+
+```text
+calendar-events.js
 ```
 
 Unterstuetzt werden aktuell:
