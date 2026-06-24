@@ -40,9 +40,10 @@
     }
     .grid{
       display:grid;
-      grid-template-columns:repeat(4, minmax(0,1fr));
+      grid-template-columns:repeat(auto-fit, minmax(min(100%, 360px), 1fr));
       gap:20px;
       align-items:start;
+      grid-auto-flow:dense;
     }
     .dashboard-stack{
       display:flex;
@@ -63,6 +64,15 @@
     }
     .wide-card{
       grid-column:auto;
+    }
+    .dashboard-stack{
+      grid-column:span 1;
+    }
+    .solar-stack{
+      grid-column:span 2;
+    }
+    .system-stack{
+      grid-column:span 2;
     }
     .time-card{
       gap:12px;
@@ -277,11 +287,11 @@
       margin-top:10px;
       border-radius:50%;
       background:
-        radial-gradient(circle at 50% 50%, rgba(255,210,105,.24), transparent 8%),
-        radial-gradient(circle at 50% 50%, rgba(255,255,255,.08), transparent 34%),
-        #10151f;
+        radial-gradient(circle at 50% 50%, rgba(255,210,105,.22), transparent 8%),
+        radial-gradient(circle at 50% 50%, rgba(148,163,184,.13), transparent 35%),
+        #ffffff;
       overflow:hidden;
-      box-shadow:inset 0 0 28px rgba(255,255,255,.08), 0 8px 24px rgba(0,0,0,.18);
+      box-shadow:inset 0 0 28px rgba(148,163,184,.16), 0 8px 24px rgba(0,0,0,.12);
     }
     .solar-controls{
       width:min(100%, 560px);
@@ -331,7 +341,7 @@
       position:absolute;
       left:50%;
       top:50%;
-      border:1px solid rgba(255,255,255,.17);
+      border:1px solid rgba(107,114,128,.24);
       border-radius:50%;
       transform:translate(-50%,-50%);
     }
@@ -351,10 +361,10 @@
       left:50%;
       top:50%;
       transform:translate(8px, -18px);
-      color:#f8fafc;
+      color:#1f2937;
       font-size:.78rem;
       white-space:nowrap;
-      text-shadow:0 1px 3px rgba(0,0,0,.85);
+      text-shadow:0 1px 2px rgba(255,255,255,.9);
       z-index:5;
     }
     .solar-planet.mercury{ width:7px; height:7px; margin:-3.5px 0 0 -3.5px; background:#b8b1a3; }
@@ -442,6 +452,271 @@
       height:56px;
       font-size:2.4rem;
     }
+    .sunlight-panel{
+      width:100%;
+      margin-top:12px;
+      padding-top:10px;
+      border-top:1px solid var(--border);
+      text-align:left;
+      font-size:.84rem;
+    }
+    .sunlight-title{
+      margin-bottom:6px;
+      font-weight:bold;
+      text-align:center;
+      color:var(--fg);
+    }
+    .sunlight-grid{
+      display:grid;
+      grid-template-columns:auto 1fr;
+      gap:4px 10px;
+      align-items:baseline;
+    }
+    .sunlight-label{
+      color:var(--muted);
+      white-space:nowrap;
+    }
+    .sunlight-value{
+      color:var(--fg);
+      text-align:right;
+    }
+    .day-night-arc{
+      position:relative;
+      width:100%;
+      height:24px;
+      margin-top:10px;
+      overflow:hidden;
+      border:1px solid var(--border);
+      border-radius:999px;
+      background:linear-gradient(90deg, #172554 0%, #475569 18%, #facc15 26%, #fde68a 74%, #475569 82%, #172554 100%);
+    }
+    .day-night-marker{
+      position:absolute;
+      top:50%;
+      width:2px;
+      height:18px;
+      background:#111827;
+      transform:translate(-50%, -50%);
+      box-shadow:0 0 0 1px rgba(255,255,255,.75);
+    }
+    .day-night-now{
+      position:absolute;
+      top:50%;
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:#ef4444;
+      transform:translate(-50%, -50%);
+      box-shadow:0 0 0 2px rgba(255,255,255,.9);
+    }
+    .light-hours{
+      width:100%;
+      margin-top:10px;
+    }
+    .light-hours-title{
+      margin-bottom:5px;
+      color:var(--muted);
+      font-size:.78rem;
+      text-align:left;
+    }
+    .light-hour-arc{
+      position:relative;
+      width:100%;
+      height:18px;
+      overflow:hidden;
+      border:1px solid var(--border);
+      border-radius:999px;
+      background:#172554;
+    }
+    .light-hour-segment{
+      position:absolute;
+      top:0;
+      height:100%;
+    }
+    .light-hour-segment.day{ background:#fde68a; }
+    .light-hour-segment.blue{ background:#3b82f6; }
+    .light-hour-segment.golden{ background:#f59e0b; }
+    .light-hour-now{
+      position:absolute;
+      top:50%;
+      width:3px;
+      height:16px;
+      border-radius:999px;
+      background:#ef4444;
+      transform:translate(-50%, -50%);
+      box-shadow:0 0 0 1px rgba(255,255,255,.9);
+    }
+    .light-hour-legend{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:4px 8px;
+      margin-top:6px;
+      font-size:.72rem;
+      color:var(--muted);
+    }
+    .light-hour-legend-item{
+      display:flex;
+      align-items:center;
+      gap:5px;
+      min-width:0;
+    }
+    .light-hour-swatch{
+      width:18px;
+      height:9px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      flex:0 0 auto;
+    }
+    .light-hour-swatch.blue{ background:#3b82f6; }
+    .light-hour-swatch.golden{ background:#f59e0b; }
+    .light-hour-swatch.day{ background:#fde68a; }
+    .light-hour-swatch.night{ background:#172554; }
+    .moon-timeline{
+      position:relative;
+      width:100%;
+      height:46px;
+      margin-top:10px;
+      border-top:1px solid var(--border);
+    }
+    .moon-timeline-track{
+      position:absolute;
+      left:6px;
+      right:6px;
+      top:22px;
+      height:4px;
+      border-radius:999px;
+      background:linear-gradient(90deg,#111827,#d1d5db,#f8fafc,#d1d5db,#111827);
+    }
+    .moon-timeline-marker{
+      position:absolute;
+      top:13px;
+      width:12px;
+      height:12px;
+      border-radius:50%;
+      background:var(--card);
+      border:2px solid var(--fg);
+      transform:translateX(-50%);
+    }
+    .moon-timeline-label{
+      position:absolute;
+      top:30px;
+      transform:translateX(-50%);
+      font-size:.64rem;
+      color:var(--muted);
+      white-space:nowrap;
+    }
+    .moon-timeline-today{
+      position:absolute;
+      top:8px;
+      width:3px;
+      height:22px;
+      background:var(--accent);
+      border-radius:999px;
+      transform:translateX(-50%);
+    }
+    .visibility-card{
+      gap:10px;
+    }
+    .visibility-list{
+      width:100%;
+      display:grid;
+      gap:8px;
+    }
+    .visibility-color-legend{
+      width:100%;
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:6px 10px;
+      font-size:.75rem;
+      color:var(--muted);
+    }
+    .visibility-legend-item{
+      display:flex;
+      align-items:center;
+      gap:6px;
+      min-width:0;
+    }
+    .visibility-swatch{
+      width:20px;
+      height:10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      flex:0 0 auto;
+    }
+    .visibility-swatch.night{ background:#172554; }
+    .visibility-swatch.twilight{ background:#475569; }
+    .visibility-swatch.day{ background:#facc15; }
+    .visibility-swatch.window{ background:rgba(0,123,255,.78); }
+    .visibility-row{
+      display:grid;
+      grid-template-columns:72px 1fr 86px;
+      gap:10px;
+      align-items:center;
+      font-size:.84rem;
+    }
+    .visibility-track{
+      position:relative;
+      height:12px;
+      border-radius:999px;
+      overflow:hidden;
+      background:linear-gradient(90deg,#172554 0%,#475569 25%,#facc15 50%,#475569 75%,#172554 100%);
+    }
+    .visibility-fill{
+      position:absolute;
+      top:0;
+      height:100%;
+      border-radius:999px;
+      background:rgba(0,123,255,.78);
+    }
+    .visibility-note{
+      color:var(--muted);
+      text-align:right;
+    }
+    .eclipse-panel{
+      width:100%;
+      margin-top:4px;
+      padding-top:12px;
+      border-top:1px solid var(--border);
+    }
+    .eclipse-summary{
+      display:grid;
+      gap:4px;
+      margin-bottom:10px;
+      color:var(--muted);
+      font-size:.85rem;
+      text-align:left;
+    }
+    .eclipse-toggle{
+      margin:0 auto;
+      display:block;
+    }
+    .eclipse-details{
+      margin-top:10px;
+      overflow-x:auto;
+    }
+    .eclipse-details[hidden]{
+      display:none;
+    }
+    .eclipse-table{
+      width:100%;
+      min-width:520px;
+      border-collapse:collapse;
+      font-size:.8rem;
+      text-align:left;
+    }
+    .eclipse-table th,
+    .eclipse-table td{
+      padding:6px 8px;
+      border-bottom:1px solid var(--border);
+      vertical-align:top;
+    }
+    .eclipse-table th{
+      color:var(--muted);
+      font-weight:bold;
+    }
+    .sky-events-panel{
+      margin-top:12px;
+    }
 
     /* Other planet systems */
     .planet-systems-wrap{
@@ -520,9 +795,15 @@
       white-space:nowrap;
     }
 
-    @media (max-width:1500px){
-      .grid{
-        grid-template-columns:repeat(2, minmax(0,1fr));
+    @media (min-width:1180px){
+      .earth-card{
+        min-height:0;
+      }
+    }
+    @media (max-width:1180px){
+      .solar-stack,
+      .system-stack{
+        grid-column:span 1;
       }
     }
     @media (max-width:760px){
@@ -531,6 +812,7 @@
       }
       .grid{
         grid-template-columns:minmax(0,1fr);
+        gap:14px;
       }
       .jupiter-system{
         width:min(100%, 360px);
@@ -587,7 +869,7 @@
 </head>
 <body>
   <div class="grid">
-    <div class="display-container time-card wide-card">
+    <div class="display-container time-card wide-card" style="display: none;">
       <div class="group-title" id="titleTime">Current Time</div>
       <div id="time" class="time-plain" aria-live="polite">00:00:00</div>
       <div id="date">January 1, 1970</div>
@@ -652,6 +934,7 @@
       </div>
     </div>
 
+    <div class="dashboard-stack solar-stack">
     <div class="display-container solar-card wide-card">
       <div class="group-title" id="titleSolarSystem">Solar System</div>
       <div id="solarDate" class="legend-small">Position for current date</div>
@@ -673,6 +956,31 @@
       <div class="legend-small" id="solarLegend">
         Heliocentric ecliptic view; distances compressed
       </div>
+    </div>
+
+    <div class="display-container visibility-card wide-card">
+      <div class="group-title" id="titleVisibility">Visibility today</div>
+      <div id="visibilityList" class="visibility-list"></div>
+      <div class="visibility-color-legend" aria-label="Visibility color legend">
+        <div class="visibility-legend-item">
+          <span class="visibility-swatch night"></span>
+          <span id="visibilityLegendNight">Night</span>
+        </div>
+        <div class="visibility-legend-item">
+          <span class="visibility-swatch twilight"></span>
+          <span id="visibilityLegendTwilight">Twilight</span>
+        </div>
+        <div class="visibility-legend-item">
+          <span class="visibility-swatch day"></span>
+          <span id="visibilityLegendDay">Day</span>
+        </div>
+        <div class="visibility-legend-item">
+          <span class="visibility-swatch window"></span>
+          <span id="visibilityLegendWindow">Visibility window</span>
+        </div>
+      </div>
+      <div class="legend-small" id="visibilityLegend">Approximate for Berlin; based on solar elongation</div>
+    </div>
     </div>
 
     <div class="dashboard-stack">
@@ -756,15 +1064,79 @@
                aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
             <div id="moonCycleBarFill" class="moonbar-fill" style="width:0%"></div>
           </div>
+          <div class="moon-timeline" aria-label="Moon cycle timeline">
+            <div class="moon-timeline-track"></div>
+            <div class="moon-timeline-marker" style="left:0%" title="New Moon"></div>
+            <div class="moon-timeline-label" id="moonTimelineNew" style="left:0%">New</div>
+            <div class="moon-timeline-marker" style="left:25%" title="First Quarter"></div>
+            <div class="moon-timeline-label" id="moonTimelineFirst" style="left:25%">First</div>
+            <div class="moon-timeline-marker" style="left:50%" title="Full Moon"></div>
+            <div class="moon-timeline-label" id="moonTimelineFull" style="left:50%">Full</div>
+            <div class="moon-timeline-marker" style="left:75%" title="Last Quarter"></div>
+            <div class="moon-timeline-label" id="moonTimelineLast" style="left:75%">Last</div>
+            <div id="moonTimelineToday" class="moon-timeline-today" style="left:0%"></div>
+          </div>
 
           <div id="moonNextFull" style="margin-top:10px; font-size:.95rem;">
             Next full moon: –
+          </div>
+          <div class="sunlight-panel">
+            <div class="sunlight-title" id="titleSunlight">Daylight Berlin</div>
+            <div class="sunlight-grid">
+              <span class="sunlight-label" id="labelSunrise">Sunrise</span>
+              <span class="sunlight-value" id="sunriseTime">–</span>
+              <span class="sunlight-label" id="labelSunset">Sunset</span>
+              <span class="sunlight-value" id="sunsetTime">–</span>
+              <span class="sunlight-label" id="labelDayLength">Day length</span>
+              <span class="sunlight-value" id="dayLength">–</span>
+              <span class="sunlight-label" id="labelDawn">Dawn</span>
+              <span class="sunlight-value" id="dawnTime">–</span>
+              <span class="sunlight-label" id="labelDusk">Dusk</span>
+              <span class="sunlight-value" id="duskTime">–</span>
+            </div>
+            <div class="day-night-arc" aria-label="Day and night arc for Berlin">
+              <span id="dayNightDawnMarker" class="day-night-marker" style="left:0%"></span>
+              <span id="dayNightSunriseMarker" class="day-night-marker" style="left:0%"></span>
+              <span id="dayNightSunsetMarker" class="day-night-marker" style="left:100%"></span>
+              <span id="dayNightDuskMarker" class="day-night-marker" style="left:100%"></span>
+              <span id="dayNightNowMarker" class="day-night-now" style="left:50%"></span>
+            </div>
+            <div class="light-hours">
+              <div id="titleLightHours" class="light-hours-title">Blue & golden hour</div>
+              <div class="light-hour-arc" aria-label="Blue and golden hour timeline for Berlin">
+                <span id="lightDaySegment" class="light-hour-segment day"></span>
+                <span id="blueMorningSegment" class="light-hour-segment blue"></span>
+                <span id="goldenMorningSegment" class="light-hour-segment golden"></span>
+                <span id="goldenEveningSegment" class="light-hour-segment golden"></span>
+                <span id="blueEveningSegment" class="light-hour-segment blue"></span>
+                <span id="lightHourNowMarker" class="light-hour-now" style="left:50%"></span>
+              </div>
+              <div class="light-hour-legend">
+                <span class="light-hour-legend-item">
+                  <span class="light-hour-swatch blue"></span>
+                  <span id="labelBlueHour">Blue hour</span>
+                </span>
+                <span class="light-hour-legend-item">
+                  <span class="light-hour-swatch golden"></span>
+                  <span id="labelGoldenHour">Golden hour</span>
+                </span>
+                <span class="light-hour-legend-item">
+                  <span class="light-hour-swatch day"></span>
+                  <span id="labelLightDay">Day</span>
+                </span>
+                <span class="light-hour-legend-item">
+                  <span class="light-hour-swatch night"></span>
+                  <span id="labelLightNight">Night</span>
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
     </div>
 
+    <div class="dashboard-stack system-stack">
     <div class="display-container wide-card">
       <div class="group-title" id="titleOtherPlanets">Planet systems</div>
       <div class="planet-systems-wrap">
@@ -888,8 +1260,78 @@
       </div>
     </div>
 
+    <div class="display-container sky-calendar-card wide-card">
+      <div class="group-title" id="titleSkyCalendar">Sky calendar</div>
+      <div class="eclipse-panel">
+        <div class="eclipse-summary">
+          <div id="nextSolarEclipse">Next solar eclipse in Europe: –</div>
+          <div id="nextLunarEclipse">Next lunar eclipse in Europe: –</div>
+        </div>
+        <button id="btnToggleEclipses" class="eclipse-toggle" type="button" aria-expanded="false" aria-controls="eclipseDetails">
+          Show eclipse table
+        </button>
+        <div id="eclipseDetails" class="eclipse-details" hidden>
+          <table class="eclipse-table">
+            <thead>
+              <tr>
+                <th id="eclipseHeadDate">Date</th>
+                <th id="eclipseHeadType">Type</th>
+                <th id="eclipseHeadVisibility">Europe</th>
+                <th id="eclipseHeadNote">Note</th>
+              </tr>
+            </thead>
+            <tbody id="eclipseTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="eclipse-panel sky-events-panel">
+        <div class="eclipse-summary">
+          <div id="nextSkyEvent">Next sky event: -</div>
+        </div>
+        <button id="btnToggleSkyEvents" class="eclipse-toggle" type="button" aria-expanded="false" aria-controls="skyEventDetails">
+          Show sky events
+        </button>
+        <div id="skyEventDetails" class="eclipse-details" hidden>
+          <table class="eclipse-table">
+            <thead>
+              <tr>
+                <th id="skyEventHeadDate">Date</th>
+                <th id="skyEventHeadEvent">Event</th>
+                <th id="skyEventHeadVisibility">Europe</th>
+                <th id="skyEventHeadNote">Note</th>
+              </tr>
+            </thead>
+            <tbody id="skyEventTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="eclipse-panel sky-events-panel">
+        <div class="eclipse-summary">
+          <div id="nextPlanetMoonEvent">Next planet/moon event: -</div>
+        </div>
+        <button id="btnTogglePlanetMoonEvents" class="eclipse-toggle" type="button" aria-expanded="false" aria-controls="planetMoonEventDetails">
+          Show planet and moon events
+        </button>
+        <div id="planetMoonEventDetails" class="eclipse-details" hidden>
+          <table class="eclipse-table">
+            <thead>
+              <tr>
+                <th id="planetMoonEventHeadDate">Date</th>
+                <th id="planetMoonEventHeadEvent">Event</th>
+                <th id="planetMoonEventHeadVisibility">Europe</th>
+                <th id="planetMoonEventHeadNote">Note</th>
+              </tr>
+            </thead>
+            <tbody id="planetMoonEventTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    </div>
+
   </div>
 
+  <script src="translations.js"></script>
   <script>
   
   window.onerror = function(msg, url, line, col, error) {
@@ -901,180 +1343,8 @@
       ? 'de'
       : (((navigator.language || 'en').toLowerCase().startsWith('fr')) ? 'fr' : 'en');
 
-    const t = {
-      en:{
-        title_time:'Current Time',
-        title_settings:'Settings',
-        label_timezone:'Time zone',
-        label_font:'Font',
-        label_display:'Display',
-        tz_local:'Local Time', tz_utc:'UTC', tz_berlin:'Berlin',
-        tz_ny:'New York', tz_london:'London', tz_tokyo:'Tokyo',
-        title_solar_system:'Solar System',
-        solar_date:'Position for',
-        legend_solar:'Heliocentric ecliptic view; distances compressed',
-        solar_past:'-100 years', solar_future:'+100 years',
-        solar_slider:'Move solar-system date', solar_today:'Today',
-        solar_prev_day:'Previous day', solar_next_day:'Next day',
-        title_jupiter:'Jupiter System',
-        legend_jupiter:'10 selected moons; 101 confirmed in total (illustrative; sped up)',
-        title_earthmoon:'Earth & Moon',
-        title_other_planets:'Planet systems',
-        legend_other_planets:'Selected moons · totals: Mars 2, Saturn 274, Uranus 28, Neptune 16',
-        phase_label:'Phase',
-        next_full:'Next full moon',
-        title_moon:'Moon',
-        title_stopwatch:'Stopwatch',
-        title_countdown:'Countdown',
-        btn_start:'Start', btn_stop:'Stop', btn_reset:'Reset',
-        btn_start_countdown:'Start Countdown',
-        countdown_done:'Countdown finished!',
-        placeholder_minutes:'Minutes',
-        mode_plain:'Plain',
-        mode_wobble:'Wobble',
-        mode_pulse:'Pulse',
-        mode_spin:'Spin',
-        mode_matrix:'Matrix',
-        mode_neon:'Neon',
-        mode_segment:'Segment',
-        phase_new:'New Moon',
-        phase_wax_cres:'Waxing Crescent',
-        phase_first_q:'First Quarter',
-        phase_wax_gibb:'Waxing Gibbous',
-        phase_full:'Full Moon',
-        phase_wan_gibb:'Waning Gibbous',
-        phase_last_q:'Last Quarter',
-        phase_wan_cres:'Waning Crescent',
-        planet_mercury:'Mercury', planet_venus:'Venus', planet_earth:'Earth', planet_mars:'Mars',
-        planet_jupiter:'Jupiter', planet_saturn:'Saturn', planet_uranus:'Uranus', planet_neptune:'Neptune',
-        moon_io:'Io', moon_europa:'Europa', moon_ganymede:'Ganymede', moon_callisto:'Callisto',
-        moon_amalthea:'Amalthea', moon_himalia:'Himalia', moon_elara:'Elara',
-        moon_pasiphae:'Pasiphae', moon_sinope:'Sinope', moon_lysithea:'Lysithea',
-        moon_phobos:'Phobos', moon_deimos:'Deimos',
-        moon_mimas:'Mimas', moon_enceladus:'Enceladus', moon_tethys:'Tethys', moon_dione:'Dione',
-        moon_titan:'Titan', moon_rhea:'Rhea', moon_hyperion:'Hyperion', moon_iapetus:'Iapetus', moon_phoebe:'Phoebe',
-        moon_miranda:'Miranda', moon_ariel:'Ariel', moon_umbriel:'Umbriel', moon_titania:'Titania', moon_oberon:'Oberon',
-        moon_naiad:'Naiad', moon_thalassa:'Thalassa', moon_despina:'Despina', moon_galatea:'Galatea',
-        moon_larissa:'Larissa', moon_proteus:'Proteus', moon_triton:'Triton', moon_nereid:'Nereid',
-		label_illum:'Illumination',
-        label_cycle:'Cycle progress'
-
-      },
-      de:{
-        title_time:'Aktuelle Zeit',
-        title_settings:'Einstellungen',
-        label_timezone:'Zeitzone',
-        label_font:'Schriftart',
-        label_display:'Darstellung',
-        tz_local:'Ortszeit', tz_utc:'UTC', tz_berlin:'Berlin',
-        tz_ny:'New York', tz_london:'London', tz_tokyo:'Tokio',
-        title_solar_system:'Sonnensystem',
-        solar_date:'Position für',
-        legend_solar:'Heliozentrische Ekliptik-Ansicht; Abstände komprimiert',
-        solar_past:'-100 Jahre', solar_future:'+100 Jahre',
-        solar_slider:'Datum des Sonnensystems verschieben', solar_today:'Heute',
-        solar_prev_day:'Vorheriger Tag', solar_next_day:'Nächster Tag',
-        title_jupiter:'Jupiters Monde',
-        legend_jupiter:'10 ausgewählte Monde; insgesamt 101 bestätigt (schematisch; beschleunigt)',
-        title_earthmoon:'Erde & Mond',
-        title_other_planets:'Planetensysteme',
-        legend_other_planets:'Ausgewählte Monde · gesamt: Mars 2, Saturn 274, Uranus 28, Neptun 16',
-        phase_label:'Phase',
-        next_full:'Nächster Vollmond',
-        title_moon:'Mond',
-        title_stopwatch:'Stoppuhr',
-        title_countdown:'Countdown',
-        btn_start:'Start', btn_stop:'Stopp', btn_reset:'Zurücksetzen',
-        btn_start_countdown:'Countdown starten',
-        countdown_done:'Countdown fertig!',
-        placeholder_minutes:'Minuten',
-        mode_plain:'Ohne Effekt',
-        mode_wobble:'Wobble',
-        mode_pulse:'Pulse',
-        mode_spin:'Spin',
-        mode_matrix:'Matrix',
-        mode_neon:'Neon',
-        mode_segment:'Segment',
-        phase_new:'Neumond',
-        phase_wax_cres:'Zunehmende Sichel',
-        phase_first_q:'Erstes Viertel',
-        phase_wax_gibb:'Zunehmender Mond',
-        phase_full:'Vollmond',
-        phase_wan_gibb:'Abnehmender Mond',
-        phase_last_q:'Letztes Viertel',
-        phase_wan_cres:'Abnehmende Sichel',
-        planet_mercury:'Merkur', planet_venus:'Venus', planet_earth:'Erde', planet_mars:'Mars',
-        planet_jupiter:'Jupiter', planet_saturn:'Saturn', planet_uranus:'Uranus', planet_neptune:'Neptun',
-        moon_io:'Io', moon_europa:'Europa', moon_ganymede:'Ganymed', moon_callisto:'Kallisto',
-        moon_amalthea:'Amalthea', moon_himalia:'Himalia', moon_elara:'Elara',
-        moon_pasiphae:'Pasiphae', moon_sinope:'Sinope', moon_lysithea:'Lysithea',
-        moon_phobos:'Phobos', moon_deimos:'Deimos',
-        moon_mimas:'Mimas', moon_enceladus:'Enceladus', moon_tethys:'Tethys', moon_dione:'Dione',
-        moon_titan:'Titan', moon_rhea:'Rhea', moon_hyperion:'Hyperion', moon_iapetus:'Japetus', moon_phoebe:'Phoebe',
-        moon_miranda:'Miranda', moon_ariel:'Ariel', moon_umbriel:'Umbriel', moon_titania:'Titania', moon_oberon:'Oberon',
-        moon_naiad:'Naiad', moon_thalassa:'Thalassa', moon_despina:'Despina', moon_galatea:'Galatea',
-        moon_larissa:'Larissa', moon_proteus:'Proteus', moon_triton:'Triton', moon_nereid:'Nereid',
-		label_illum:'Beleuchtung',
-        label_cycle:'Zyklusfortschritt'
-      },
-      fr:{
-        title_time:'Heure actuelle',
-        title_settings:'Paramètres',
-        label_timezone:'Fuseau horaire',
-        label_font:'Police',
-        label_display:'Affichage',
-        tz_local:'Heure locale', tz_utc:'UTC', tz_berlin:'Berlin',
-        tz_ny:'New York', tz_london:'Londres', tz_tokyo:'Tokyo',
-        title_solar_system:'Système solaire',
-        solar_date:'Position pour',
-        legend_solar:'Vue écliptique héliocentrique; distances compressées',
-        solar_past:'-100 ans', solar_future:'+100 ans',
-        solar_slider:'Déplacer la date du système solaire', solar_today:"Aujourd'hui",
-        solar_prev_day:'Jour précédent', solar_next_day:'Jour suivant',
-        title_jupiter:'Système de Jupiter',
-        legend_jupiter:'10 lunes sélectionnées; 101 confirmées au total (schématique; accéléré)',
-        title_earthmoon:'Terre & Lune',
-        title_other_planets:'Systèmes planétaires',
-        legend_other_planets:'Lunes sélectionnées · totaux : Mars 2, Saturne 274, Uranus 28, Neptune 16',
-        phase_label:'Phase',
-        next_full:'Prochaine pleine lune',
-        title_moon:'Lune',
-        title_stopwatch:'Chronomètre',
-        title_countdown:'Compte à rebours',
-        btn_start:'Démarrer', btn_stop:'Arrêter', btn_reset:'Réinitialiser',
-        btn_start_countdown:'Démarrer le compte à rebours',
-        countdown_done:'Compte à rebours terminé !',
-        placeholder_minutes:'Minutes',
-        mode_plain:'Simple',
-        mode_wobble:'Wobble',
-        mode_pulse:'Pulse',
-        mode_spin:'Spin',
-        mode_matrix:'Matrix',
-        mode_neon:'Néon',
-        mode_segment:'Segment',
-        phase_new:'Nouvelle lune',
-        phase_wax_cres:'Premier croissant',
-        phase_first_q:'Premier quartier',
-        phase_wax_gibb:'Gibbeuse croissante',
-        phase_full:'Pleine lune',
-        phase_wan_gibb:'Gibbeuse décroissante',
-        phase_last_q:'Dernier quartier',
-        phase_wan_cres:'Dernier croissant',
-        planet_mercury:'Mercure', planet_venus:'Venus', planet_earth:'Terre', planet_mars:'Mars',
-        planet_jupiter:'Jupiter', planet_saturn:'Saturne', planet_uranus:'Uranus', planet_neptune:'Neptune',
-        moon_io:'Io', moon_europa:'Europe', moon_ganymede:'Ganymède', moon_callisto:'Callisto',
-        moon_amalthea:'Amalthée', moon_himalia:'Himalia', moon_elara:'Élara',
-        moon_pasiphae:'Pasiphaé', moon_sinope:'Sinopé', moon_lysithea:'Lysithéa',
-        moon_phobos:'Phobos', moon_deimos:'Déimos',
-        moon_mimas:'Mimas', moon_enceladus:'Encelade', moon_tethys:'Téthys', moon_dione:'Dioné',
-        moon_titan:'Titan', moon_rhea:'Rhéa', moon_hyperion:'Hypérion', moon_iapetus:'Japet', moon_phoebe:'Phœbé',
-        moon_miranda:'Miranda', moon_ariel:'Ariel', moon_umbriel:'Umbriel', moon_titania:'Titania', moon_oberon:'Obéron',
-        moon_naiad:'Naïade', moon_thalassa:'Thalassa', moon_despina:'Despina', moon_galatea:'Galatée',
-        moon_larissa:'Larissa', moon_proteus:'Protée', moon_triton:'Triton', moon_nereid:'Néréide',
-		label_illum:'Illumination',
-        label_cycle:'Progression du cycle'
-      }
-    }[lang];
+    const translations = window.PLANETENUHR_TRANSLATIONS || {};
+    const t = translations[lang] || translations.en || {};
 
     function applyI18n(){
       document.documentElement.lang = lang;
@@ -1086,6 +1356,12 @@
 
       document.getElementById('titleSolarSystem').textContent = t.title_solar_system;
       document.getElementById('solarLegend').textContent      = t.legend_solar;
+      document.getElementById('titleVisibility').textContent  = t.title_visibility;
+      document.getElementById('visibilityLegend').textContent = t.visibility_legend;
+      document.getElementById('visibilityLegendNight').textContent = t.visibility_legend_night;
+      document.getElementById('visibilityLegendTwilight').textContent = t.visibility_legend_twilight;
+      document.getElementById('visibilityLegendDay').textContent = t.visibility_legend_day;
+      document.getElementById('visibilityLegendWindow').textContent = t.visibility_legend_window;
       document.getElementById('solarPastLabel').textContent   = t.solar_past;
       document.getElementById('solarFutureLabel').textContent = t.solar_future;
       document.getElementById('solarDateSlider').setAttribute('aria-label', t.solar_slider);
@@ -1098,11 +1374,81 @@
       document.getElementById('titleMoon').textContent       = t.title_moon;
       document.getElementById('titleOtherPlanets').textContent = t.title_other_planets;
       document.getElementById('otherPlanetsLegend').textContent = t.legend_other_planets;
+      document.getElementById('titleSkyCalendar').textContent = t.title_sky_calendar;
 
       const lblIll = document.getElementById('labelIllum');
       if (lblIll) lblIll.textContent = t.label_illum;
       const lblCyc = document.getElementById('labelCycle');
       if (lblCyc) lblCyc.textContent = t.label_cycle;
+      const moonTimelineNew = document.getElementById('moonTimelineNew');
+      if (moonTimelineNew) moonTimelineNew.textContent = t.moon_timeline_new;
+      const moonTimelineFirst = document.getElementById('moonTimelineFirst');
+      if (moonTimelineFirst) moonTimelineFirst.textContent = t.moon_timeline_first;
+      const moonTimelineFull = document.getElementById('moonTimelineFull');
+      if (moonTimelineFull) moonTimelineFull.textContent = t.moon_timeline_full;
+      const moonTimelineLast = document.getElementById('moonTimelineLast');
+      if (moonTimelineLast) moonTimelineLast.textContent = t.moon_timeline_last;
+      const titleSunlight = document.getElementById('titleSunlight');
+      if (titleSunlight) titleSunlight.textContent = t.title_sunlight;
+      const labelSunrise = document.getElementById('labelSunrise');
+      if (labelSunrise) labelSunrise.textContent = t.sunrise;
+      const labelSunset = document.getElementById('labelSunset');
+      if (labelSunset) labelSunset.textContent = t.sunset;
+      const labelDayLength = document.getElementById('labelDayLength');
+      if (labelDayLength) labelDayLength.textContent = t.day_length;
+      const labelDawn = document.getElementById('labelDawn');
+      if (labelDawn) labelDawn.textContent = t.dawn;
+      const labelDusk = document.getElementById('labelDusk');
+      if (labelDusk) labelDusk.textContent = t.dusk;
+      const titleLightHours = document.getElementById('titleLightHours');
+      if (titleLightHours) titleLightHours.textContent = t.title_light_hours;
+      const labelBlueHour = document.getElementById('labelBlueHour');
+      if (labelBlueHour) labelBlueHour.textContent = t.blue_hour;
+      const labelGoldenHour = document.getElementById('labelGoldenHour');
+      if (labelGoldenHour) labelGoldenHour.textContent = t.golden_hour;
+      const labelLightDay = document.getElementById('labelLightDay');
+      if (labelLightDay) labelLightDay.textContent = t.light_day;
+      const labelLightNight = document.getElementById('labelLightNight');
+      if (labelLightNight) labelLightNight.textContent = t.light_night;
+      const toggleEclipses = document.getElementById('btnToggleEclipses');
+      if (toggleEclipses) {
+        const expanded = toggleEclipses.getAttribute('aria-expanded') === 'true';
+        toggleEclipses.textContent = expanded ? t.eclipse_hide_table : t.eclipse_show_table;
+      }
+      const eclipseHeadDate = document.getElementById('eclipseHeadDate');
+      if (eclipseHeadDate) eclipseHeadDate.textContent = t.eclipse_head_date;
+      const eclipseHeadType = document.getElementById('eclipseHeadType');
+      if (eclipseHeadType) eclipseHeadType.textContent = t.eclipse_head_type;
+      const eclipseHeadVisibility = document.getElementById('eclipseHeadVisibility');
+      if (eclipseHeadVisibility) eclipseHeadVisibility.textContent = t.eclipse_head_visibility;
+      const eclipseHeadNote = document.getElementById('eclipseHeadNote');
+      if (eclipseHeadNote) eclipseHeadNote.textContent = t.eclipse_head_note;
+      const toggleSkyEvents = document.getElementById('btnToggleSkyEvents');
+      if (toggleSkyEvents) {
+        const expanded = toggleSkyEvents.getAttribute('aria-expanded') === 'true';
+        toggleSkyEvents.textContent = expanded ? t.sky_events_hide_table : t.sky_events_show_table;
+      }
+      const skyEventHeadDate = document.getElementById('skyEventHeadDate');
+      if (skyEventHeadDate) skyEventHeadDate.textContent = t.sky_event_head_date;
+      const skyEventHeadEvent = document.getElementById('skyEventHeadEvent');
+      if (skyEventHeadEvent) skyEventHeadEvent.textContent = t.sky_event_head_event;
+      const skyEventHeadVisibility = document.getElementById('skyEventHeadVisibility');
+      if (skyEventHeadVisibility) skyEventHeadVisibility.textContent = t.sky_event_head_visibility;
+      const skyEventHeadNote = document.getElementById('skyEventHeadNote');
+      if (skyEventHeadNote) skyEventHeadNote.textContent = t.sky_event_head_note;
+      const togglePlanetMoonEvents = document.getElementById('btnTogglePlanetMoonEvents');
+      if (togglePlanetMoonEvents) {
+        const expanded = togglePlanetMoonEvents.getAttribute('aria-expanded') === 'true';
+        togglePlanetMoonEvents.textContent = expanded ? t.planet_moon_events_hide_table : t.planet_moon_events_show_table;
+      }
+      const planetMoonEventHeadDate = document.getElementById('planetMoonEventHeadDate');
+      if (planetMoonEventHeadDate) planetMoonEventHeadDate.textContent = t.planet_moon_event_head_date;
+      const planetMoonEventHeadEvent = document.getElementById('planetMoonEventHeadEvent');
+      if (planetMoonEventHeadEvent) planetMoonEventHeadEvent.textContent = t.planet_moon_event_head_event;
+      const planetMoonEventHeadVisibility = document.getElementById('planetMoonEventHeadVisibility');
+      if (planetMoonEventHeadVisibility) planetMoonEventHeadVisibility.textContent = t.planet_moon_event_head_visibility;
+      const planetMoonEventHeadNote = document.getElementById('planetMoonEventHeadNote');
+      if (planetMoonEventHeadNote) planetMoonEventHeadNote.textContent = t.planet_moon_event_head_note;
 
       const tsw = document.getElementById('titleStopwatch');
       if (tsw) tsw.textContent = t.title_stopwatch;
@@ -1157,6 +1503,9 @@
         const key = el.dataset.moon;
         if (key && t['moon_' + key]) el.textContent = t['moon_' + key];
       });
+      renderEclipses();
+      renderSkyEvents();
+      renderPlanetMoonEvents();
     }
 
     function fmtTZ(d, tz){
@@ -1167,6 +1516,271 @@
         timeZone: tz !== 'local' ? tz : undefined
       };
       return d.toLocaleString(lang, opts);
+    }
+
+    function fmtDateOnly(d){
+      return d.toLocaleDateString(lang, {
+        year:'numeric',
+        month:'long',
+        day:'numeric'
+      });
+    }
+
+    function fmtTimeOnly(d){
+      if (!d) return '-';
+      return d.toLocaleTimeString(lang, {
+        hour:'2-digit',
+        minute:'2-digit',
+        hour12:false,
+        timeZone:'Europe/Berlin'
+      });
+    }
+
+    function dayOfYear(date){
+      const start = Date.UTC(date.getFullYear(), 0, 0);
+      const current = Date.UTC(date.getFullYear(), date.getMonth(), date.getDate());
+      return Math.floor((current - start) / 86400000);
+    }
+
+    function solarEventUtc(date, latitude, longitude, zenithDeg, isRise){
+      const n = dayOfYear(date);
+      const lngHour = longitude / 15;
+      const tDay = n + (((isRise ? 6 : 18) - lngHour) / 24);
+      const meanAnomaly = (0.9856 * tDay) - 3.289;
+      let trueLongitude = meanAnomaly
+        + (1.916 * Math.sin(meanAnomaly * Math.PI / 180))
+        + (0.020 * Math.sin(2 * meanAnomaly * Math.PI / 180))
+        + 282.634;
+      trueLongitude = ((trueLongitude % 360) + 360) % 360;
+
+      let rightAscension = Math.atan(0.91764 * Math.tan(trueLongitude * Math.PI / 180)) * 180 / Math.PI;
+      rightAscension = ((rightAscension % 360) + 360) % 360;
+      rightAscension += Math.floor(trueLongitude / 90) * 90 - Math.floor(rightAscension / 90) * 90;
+      rightAscension /= 15;
+
+      const sinDec = 0.39782 * Math.sin(trueLongitude * Math.PI / 180);
+      const cosDec = Math.cos(Math.asin(sinDec));
+      const latRad = latitude * Math.PI / 180;
+      const cosHour = (Math.cos(zenithDeg * Math.PI / 180) - (sinDec * Math.sin(latRad))) / (cosDec * Math.cos(latRad));
+      if (cosHour > 1 || cosHour < -1) return null;
+
+      let hourAngle = Math.acos(cosHour) * 180 / Math.PI;
+      if (isRise) hourAngle = 360 - hourAngle;
+      hourAngle /= 15;
+
+      const localMeanTime = hourAngle + rightAscension - (0.06571 * tDay) - 6.622;
+      const utcHour = ((localMeanTime - lngHour) % 24 + 24) % 24;
+      return new Date(Date.UTC(
+        date.getFullYear(),
+        date.getMonth(),
+        date.getDate(),
+        Math.floor(utcHour),
+        Math.floor((utcHour % 1) * 60),
+        Math.round((((utcHour % 1) * 60) % 1) * 60)
+      ));
+    }
+
+    function formatDuration(ms){
+      const totalMinutes = Math.max(0, Math.round(ms / 60000));
+      const hours = Math.floor(totalMinutes / 60);
+      const minutes = totalMinutes % 60;
+      return hours + ' ' + t.hours_short + ' ' + String(minutes).padStart(2, '0') + ' ' + t.minutes_short;
+    }
+
+    function renderSunlight(){
+      const berlin = { latitude:52.52, longitude:13.405 };
+      const today = new Date();
+      const sunrise = solarEventUtc(today, berlin.latitude, berlin.longitude, 90.833, true);
+      const sunset = solarEventUtc(today, berlin.latitude, berlin.longitude, 90.833, false);
+      const dawn = solarEventUtc(today, berlin.latitude, berlin.longitude, 96, true);
+      const dusk = solarEventUtc(today, berlin.latitude, berlin.longitude, 96, false);
+      const goldenMorningEnd = solarEventUtc(today, berlin.latitude, berlin.longitude, 84, true);
+      const goldenEveningStart = solarEventUtc(today, berlin.latitude, berlin.longitude, 84, false);
+      const startOfDay = new Date(today);
+      startOfDay.setHours(0,0,0,0);
+      const positionOfDay = value => value ? ((value - startOfDay) / 86400000) * 100 : 0;
+      const setText = (id, value) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = value;
+      };
+      const setLeft = (id, value) => {
+        const el = document.getElementById(id);
+        if (el) el.style.left = Math.max(0, Math.min(100, value)) + '%';
+      };
+      const lightRangeLabel = (label, start, end) => {
+        if (!start || !end) return label + ': -';
+        return label + ': ' + fmtTimeOnly(start) + '-' + fmtTimeOnly(end);
+      };
+      const setSegment = (id, start, end, label) => {
+        const el = document.getElementById(id);
+        if (!el || !start || !end) return;
+        const left = Math.max(0, Math.min(100, positionOfDay(start)));
+        const right = Math.max(0, Math.min(100, positionOfDay(end)));
+        el.style.left = left + '%';
+        el.style.width = Math.max(0, right - left) + '%';
+        const tooltip = lightRangeLabel(label, start, end);
+        el.title = tooltip;
+        el.setAttribute('aria-label', tooltip);
+      };
+      setText('sunriseTime', fmtTimeOnly(sunrise));
+      setText('sunsetTime', fmtTimeOnly(sunset));
+      setText('dayLength', sunrise && sunset ? formatDuration(sunset - sunrise) : '-');
+      setText('dawnTime', fmtTimeOnly(dawn));
+      setText('duskTime', fmtTimeOnly(dusk));
+      setLeft('dayNightDawnMarker', positionOfDay(dawn));
+      setLeft('dayNightSunriseMarker', positionOfDay(sunrise));
+      setLeft('dayNightSunsetMarker', positionOfDay(sunset));
+      setLeft('dayNightDuskMarker', positionOfDay(dusk));
+      setLeft('dayNightNowMarker', positionOfDay(today));
+      setSegment('lightDaySegment', sunrise, sunset, t.light_day);
+      setSegment('blueMorningSegment', dawn, sunrise, t.blue_hour + ' ' + t.light_morning);
+      setSegment('goldenMorningSegment', sunrise, goldenMorningEnd, t.golden_hour + ' ' + t.light_morning);
+      setSegment('goldenEveningSegment', goldenEveningStart, sunset, t.golden_hour + ' ' + t.light_evening);
+      setSegment('blueEveningSegment', sunset, dusk, t.blue_hour + ' ' + t.light_evening);
+      setLeft('lightHourNowMarker', positionOfDay(today));
+    }
+
+    function nextEclipseByKind(kind){
+      const today = new Date();
+      today.setHours(0,0,0,0);
+      return (t.eclipse_events || [])
+        .map(event => ({ ...event, dateObj:new Date(event.date + 'T00:00:00') }))
+        .filter(event => event.kind === kind && event.dateObj >= today)
+        .sort((a,b) => a.dateObj - b.dateObj)[0];
+    }
+
+    function renderEclipseSummary(id, label, event){
+      const el = document.getElementById(id);
+      if (!el) return;
+      if (!event) {
+        el.textContent = label + ': -';
+        return;
+      }
+      el.textContent = label + ': ' + fmtDateOnly(event.dateObj) + ' - ' + event.type;
+    }
+
+    function renderEclipses(){
+      const events = t.eclipse_events || [];
+      const body = document.getElementById('eclipseTableBody');
+      renderEclipseSummary('nextSolarEclipse', t.next_solar_eclipse_europe, nextEclipseByKind('solar'));
+      renderEclipseSummary('nextLunarEclipse', t.next_lunar_eclipse_europe, nextEclipseByKind('lunar'));
+      if (!body) return;
+      body.innerHTML = '';
+      events.forEach(event => {
+        const row = document.createElement('tr');
+        const dateCell = document.createElement('td');
+        dateCell.textContent = fmtDateOnly(new Date(event.date + 'T00:00:00'));
+        const typeCell = document.createElement('td');
+        typeCell.textContent = event.type;
+        const visibilityCell = document.createElement('td');
+        visibilityCell.textContent = event.visibility;
+        const noteCell = document.createElement('td');
+        noteCell.textContent = event.note;
+        row.append(dateCell, typeCell, visibilityCell, noteCell);
+        body.appendChild(row);
+      });
+    }
+
+    function toggleEclipseTable(){
+      const button = document.getElementById('btnToggleEclipses');
+      const details = document.getElementById('eclipseDetails');
+      if (!button || !details) return;
+      const expanded = button.getAttribute('aria-expanded') === 'true';
+      button.setAttribute('aria-expanded', String(!expanded));
+      details.hidden = expanded;
+      button.textContent = expanded ? t.eclipse_show_table : t.eclipse_hide_table;
+    }
+
+    function nextSkyEvent(){
+      const today = new Date();
+      today.setHours(0,0,0,0);
+      return (t.sky_events || [])
+        .map(event => ({ ...event, dateObj:new Date(event.date + 'T00:00:00') }))
+        .filter(event => event.dateObj >= today)
+        .sort((a,b) => a.dateObj - b.dateObj)[0];
+    }
+
+    function renderSkyEvents(){
+      const events = t.sky_events || [];
+      const next = nextSkyEvent();
+      const nextEl = document.getElementById('nextSkyEvent');
+      const body = document.getElementById('skyEventTableBody');
+      if (nextEl) {
+        nextEl.textContent = next
+          ? t.next_sky_event + ': ' + fmtDateOnly(next.dateObj) + ' - ' + next.event
+          : t.next_sky_event + ': -';
+      }
+      if (!body) return;
+      body.innerHTML = '';
+      events.forEach(event => {
+        const row = document.createElement('tr');
+        const dateCell = document.createElement('td');
+        dateCell.textContent = fmtDateOnly(new Date(event.date + 'T00:00:00'));
+        const eventCell = document.createElement('td');
+        eventCell.textContent = event.event;
+        const visibilityCell = document.createElement('td');
+        visibilityCell.textContent = event.visibility;
+        const noteCell = document.createElement('td');
+        noteCell.textContent = event.note;
+        row.append(dateCell, eventCell, visibilityCell, noteCell);
+        body.appendChild(row);
+      });
+    }
+
+    function toggleSkyEventTable(){
+      const button = document.getElementById('btnToggleSkyEvents');
+      const details = document.getElementById('skyEventDetails');
+      if (!button || !details) return;
+      const expanded = button.getAttribute('aria-expanded') === 'true';
+      button.setAttribute('aria-expanded', String(!expanded));
+      details.hidden = expanded;
+      button.textContent = expanded ? t.sky_events_show_table : t.sky_events_hide_table;
+    }
+
+    function nextPlanetMoonEvent(){
+      const today = new Date();
+      today.setHours(0,0,0,0);
+      return (t.planet_moon_events || [])
+        .map(event => ({ ...event, dateObj:new Date(event.date + 'T00:00:00') }))
+        .filter(event => event.dateObj >= today)
+        .sort((a,b) => a.dateObj - b.dateObj)[0];
+    }
+
+    function renderPlanetMoonEvents(){
+      const events = t.planet_moon_events || [];
+      const next = nextPlanetMoonEvent();
+      const nextEl = document.getElementById('nextPlanetMoonEvent');
+      const body = document.getElementById('planetMoonEventTableBody');
+      if (nextEl) {
+        nextEl.textContent = next
+          ? t.next_planet_moon_event + ': ' + fmtDateOnly(next.dateObj) + ' - ' + next.event
+          : t.next_planet_moon_event + ': -';
+      }
+      if (!body) return;
+      body.innerHTML = '';
+      events.forEach(event => {
+        const row = document.createElement('tr');
+        const dateCell = document.createElement('td');
+        dateCell.textContent = fmtDateOnly(new Date(event.date + 'T00:00:00'));
+        const eventCell = document.createElement('td');
+        eventCell.textContent = event.event;
+        const visibilityCell = document.createElement('td');
+        visibilityCell.textContent = event.visibility;
+        const noteCell = document.createElement('td');
+        noteCell.textContent = event.note;
+        row.append(dateCell, eventCell, visibilityCell, noteCell);
+        body.appendChild(row);
+      });
+    }
+
+    function togglePlanetMoonEventTable(){
+      const button = document.getElementById('btnTogglePlanetMoonEvents');
+      const details = document.getElementById('planetMoonEventDetails');
+      if (!button || !details) return;
+      const expanded = button.getAttribute('aria-expanded') === 'true';
+      button.setAttribute('aria-expanded', String(!expanded));
+      details.hidden = expanded;
+      button.textContent = expanded ? t.planet_moon_events_show_table : t.planet_moon_events_hide_table;
     }
 
     // Time update (runs every second)
@@ -1196,6 +1810,8 @@
       renderMoon();
       renderEarthMoon();
       renderSolarSystem();
+      renderSunlight();
+      renderVisibility();
     }
 
     // Solar-system model: approximate heliocentric J2000 orbital elements.
@@ -1212,6 +1828,72 @@
 
     function normalizeDeg(deg){
       return ((deg % 360) + 360) % 360;
+    }
+
+    function signedDeg(deg){
+      return ((deg + 540) % 360) - 180;
+    }
+
+    function sunLongitude(date = selectedSolarDate()){
+      const earth = solarPlanets.find(planet => planet.key === 'earth');
+      const pos = planetPosition(earth, date);
+      return normalizeDeg(Math.atan2(pos.y, pos.x) * 180 / Math.PI + 180);
+    }
+
+    function bodyEclipticLongitude(key, date = selectedSolarDate()){
+      if (key === 'sun') return sunLongitude(date);
+      if (key === 'moon') {
+        const moon = computeMoon(date);
+        return normalizeDeg(sunLongitude(date) + moon.phase * 360);
+      }
+      const planet = solarPlanets.find(item => item.key === key);
+      if (!planet) return 0;
+      const pos = planetPosition(planet, date);
+      return normalizeDeg(Math.atan2(pos.y, pos.x) * 180 / Math.PI);
+    }
+
+    function renderVisibility(date = new Date()){
+      const list = document.getElementById('visibilityList');
+      if (!list) return;
+      list.innerHTML = '';
+      const sunLong = sunLongitude(date);
+      ['mercury','venus','mars','jupiter','saturn'].forEach(key => {
+        const longitude = bodyEclipticLongitude(key, date);
+        const elongation = signedDeg(longitude - sunLong);
+        const absElongation = Math.abs(elongation);
+        let start = 42, width = 16, label = t.visibility_difficult;
+        if (absElongation >= 12) {
+          width = Math.min(44, Math.max(12, absElongation / 2.2));
+          if (elongation > 0) {
+            start = 62;
+            label = t.visibility_evening;
+          } else {
+            start = 18;
+            label = t.visibility_morning;
+          }
+        }
+        if (absElongation >= 120 && key !== 'mercury' && key !== 'venus') {
+          start = 18;
+          width = 64;
+          label = t.visibility_night;
+        }
+        const row = document.createElement('div');
+        row.className = 'visibility-row';
+        const name = document.createElement('div');
+        name.textContent = t['planet_' + key] || key;
+        const track = document.createElement('div');
+        track.className = 'visibility-track';
+        const fill = document.createElement('div');
+        fill.className = 'visibility-fill';
+        fill.style.left = Math.max(0, Math.min(100, start)) + '%';
+        fill.style.width = Math.max(4, Math.min(100 - start, width)) + '%';
+        track.appendChild(fill);
+        const note = document.createElement('div');
+        note.className = 'visibility-note';
+        note.textContent = label;
+        row.append(name, track, note);
+        list.appendChild(row);
+      });
     }
 
     function julianDate(date){
@@ -1258,7 +1940,7 @@
 
       const size = system.clientWidth || 760;
       const center = size / 2;
-      const maxRadius = size * 0.45;
+      const maxRadius = size * 0.39;
       const neptuneA = 30.06992276;
 
       solarPlanets.forEach(planet => {
@@ -1446,6 +2128,8 @@ function computeMoon(date){
         const cycleWrapper = cycleBar.parentElement;
         if (cycleWrapper) cycleWrapper.setAttribute('aria-valuenow', cyclePct);
       }
+      const moonTimelineToday = document.getElementById('moonTimelineToday');
+      if (moonTimelineToday) moonTimelineToday.style.left = cyclePct + '%';
 
       // Nächster Vollmond
       const nextFull = document.getElementById('moonNextFull');
@@ -1556,6 +2240,9 @@ function computeMoon(date){
     document.getElementById('btnSolarToday').addEventListener('click', resetSolarDate);
     wireSolarStepButton(document.getElementById('btnSolarPrev'), -1);
     wireSolarStepButton(document.getElementById('btnSolarNext'), 1);
+    document.getElementById('btnToggleEclipses').addEventListener('click', toggleEclipseTable);
+    document.getElementById('btnToggleSkyEvents').addEventListener('click', toggleSkyEventTable);
+    document.getElementById('btnTogglePlanetMoonEvents').addEventListener('click', togglePlanetMoonEventTable);
     window.addEventListener('pointerup', stopSolarDateHold);
 
     applyI18n();
@@ -1613,8 +2300,6 @@ function computeMoon(date){
       requestAnimationFrame(animateEarthMoon);
       requestAnimationFrame(() => renderSolarSystem());
     });
-
-	
   </script>
 </body>
 </html>
