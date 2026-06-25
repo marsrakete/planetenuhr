@@ -137,7 +137,13 @@ window.PLANETENUHR_TRANSLATIONS = {
     calendar_next_event: "Next event",
     calendar_empty: "No events for this filter.",
     calendar_data_until: "Calendar data maintained through January 2028",
-    calendar_visibility_label: "Visibility"
+    calendar_visibility_label: "Visibility",
+    bsky_title: "Bluesky",
+    bsky_loading: "Loading Bluesky post...",
+    bsky_no_today: "No image post today; showing the latest image post.",
+    bsky_empty: "No Bluesky image post found.",
+    bsky_error: "Could not load Bluesky post.",
+    bsky_open: "Open on Bluesky"
   },
   de: {
     title_time: "Aktuelle Zeit",
@@ -277,7 +283,13 @@ window.PLANETENUHR_TRANSLATIONS = {
     calendar_next_event: "Nächstes Ereignis",
     calendar_empty: "Keine Ereignisse für diesen Filter.",
     calendar_data_until: "Kalenderdaten gepflegt bis Januar 2028",
-    calendar_visibility_label: "Sichtbarkeit"
+    calendar_visibility_label: "Sichtbarkeit",
+    bsky_title: "Bluesky",
+    bsky_loading: "Bluesky-Beitrag wird geladen...",
+    bsky_no_today: "Noch kein Bildbeitrag heute; angezeigt wird der letzte Bildbeitrag.",
+    bsky_empty: "Kein Bluesky-Bildbeitrag gefunden.",
+    bsky_error: "Bluesky-Beitrag konnte nicht geladen werden.",
+    bsky_open: "Auf Bluesky öffnen"
   },
   fr: {
     title_time: "Heure actuelle",
@@ -417,6 +429,12 @@ window.PLANETENUHR_TRANSLATIONS = {
     calendar_next_event: "Prochain ?v?nement",
     calendar_empty: "Aucun ?v?nement pour ce filtre.",
     calendar_data_until: "Donn?es du calendrier maintenues jusqu?en janvier 2028",
-    calendar_visibility_label: "Visibilit?"
+    calendar_visibility_label: "Visibilit?",
+    bsky_title: "Bluesky",
+    bsky_loading: "Chargement du post Bluesky...",
+    bsky_no_today: "Aucun post image DLR-next aujourd'hui; le dernier post image est affich?.",
+    bsky_empty: "Aucun post image Bluesky trouv?.",
+    bsky_error: "Impossible de charger le post Bluesky.",
+    bsky_open: "Ouvrir sur Bluesky"
   }
 };

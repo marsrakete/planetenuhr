@@ -75,6 +75,7 @@
     .earth-card{ order:40; }
     .system-card{ order:50; }
     .sky-calendar-card{ order:60; }
+    .bsky-card{ order:70; }
     @media (min-width:1180px){
       .solar-card,
       .jupiter-card,
@@ -833,6 +834,117 @@
       margin-top:12px;
     }
 
+    .bsky-card{
+      gap:10px;
+    }
+    .bsky-card[hidden]{
+      display:none;
+    }
+    .bsky-status{
+      width:100%;
+      color:var(--muted);
+      font-size:.86rem;
+      text-align:center;
+    }
+    .bsky-account-note{
+      color:var(--muted);
+      font-size:.82rem;
+      text-align:left;
+      line-height:1.3;
+    }
+    .bsky-post{
+      width:100%;
+      display:grid;
+      gap:10px;
+    }
+    .bsky-list{
+      width:100%;
+      display:grid;
+      gap:14px;
+      max-height:720px;
+      overflow-y:auto;
+      padding-right:4px;
+    }
+    .bsky-feed-item{
+      display:grid;
+      gap:10px;
+      padding-top:12px;
+      border-top:1px solid var(--border);
+    }
+    .bsky-feed-item:first-child{
+      padding-top:0;
+      border-top:0;
+    }
+    .bsky-author{
+      display:grid;
+      grid-template-columns:auto 1fr;
+      gap:10px;
+      align-items:center;
+      text-align:left;
+    }
+    .bsky-avatar{
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      object-fit:cover;
+      background:var(--bg);
+      border:1px solid var(--border);
+    }
+    .bsky-avatar-placeholder{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--muted);
+      font-weight:700;
+    }
+    .bsky-author-name{
+      font-weight:700;
+      color:var(--fg);
+    }
+    .bsky-date{
+      color:var(--muted);
+      font-size:.78rem;
+    }
+    .bsky-text{
+      margin:0;
+      color:var(--fg);
+      font-size:.9rem;
+      line-height:1.35;
+      text-align:left;
+      overflow-wrap:anywhere;
+      white-space:pre-line;
+    }
+    .bsky-images{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:8px;
+      width:100%;
+    }
+    .bsky-images.single{
+      grid-template-columns:1fr;
+    }
+    .bsky-image{
+      width:100%;
+      aspect-ratio:1;
+      object-fit:cover;
+      border-radius:8px;
+      border:1px solid var(--border);
+      background:var(--bg);
+    }
+    .bsky-images.single .bsky-image{
+      aspect-ratio:16 / 10;
+    }
+    .bsky-link{
+      align-self:center;
+      margin-top:2px;
+      color:var(--accent);
+      font-size:.88rem;
+      text-decoration:none;
+    }
+    .bsky-link:hover{
+      text-decoration:underline;
+    }
+
     /* Other planet systems */
     .planet-systems-wrap{
       width:100%;
@@ -1407,12 +1519,19 @@
       <div id="calendarTimeline" class="calendar-timeline"></div>
       <button id="btnCalendarShowAll" class="calendar-show-more" type="button">Show all events</button>
     </div>
+
+    <div id="bskyCard" class="display-container bsky-card" hidden>
+      <div class="group-title" id="titleBskyFeed">DLR-next today</div>
+      <div id="bskyStatus" class="bsky-status">Loading Bluesky post...</div>
+      <div id="bskyPost" class="bsky-list" hidden></div>
+    </div>
     </div>
 
   </div>
 
   <script src="translations.js"></script>
   <script src="calendar-events.js"></script>
+  <script src="bsky-feed-config.js"></script>
   <script>
 
   window.onerror = function(msg, url, line, col, error) {
@@ -1427,6 +1546,7 @@
     const translations = window.PLANETENUHR_TRANSLATIONS || {};
     const t = translations[lang] || translations.en || {};
     const calendarEventsByLang = window.PLANETENUHR_EVENTS || {};
+    const bskyFeeds = window.PLANETENUHR_BSKY_FEEDS || [];
     let activeCalendarFilter = 'all';
     let showAllCalendarEvents = false;
 
@@ -1504,6 +1624,10 @@
       if (calendarDataUntil) calendarDataUntil.textContent = t.calendar_data_until;
       const calendarShowAll = document.getElementById('btnCalendarShowAll');
       if (calendarShowAll) calendarShowAll.textContent = showAllCalendarEvents ? t.calendar_show_less : t.calendar_show_all;
+      const titleBskyFeed = document.getElementById('titleBskyFeed');
+      if (titleBskyFeed) titleBskyFeed.textContent = t.bsky_title;
+      const bskyStatus = document.getElementById('bskyStatus');
+      if (bskyStatus) bskyStatus.textContent = t.bsky_loading;
 
       const tsw = document.getElementById('titleStopwatch');
       if (tsw) tsw.textContent = t.title_stopwatch;
@@ -1842,6 +1966,181 @@
     function toggleCalendarShowAll(){
       showAllCalendarEvents = !showAllCalendarEvents;
       renderCalendar();
+    }
+
+    function localDateKey(date){
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, '0');
+      const day = String(date.getDate()).padStart(2, '0');
+      return year + '-' + month + '-' + day;
+    }
+
+    function blueskyPostUrl(post, fallbackProfileUrl){
+      const handle = post.author?.handle || fallbackProfileUrl?.split('/').pop() || '';
+      const rkey = post.uri?.split('/').pop();
+      if (!handle || !rkey) return fallbackProfileUrl || '#';
+      return 'https://bsky.app/profile/' + encodeURIComponent(handle) + '/post/' + encodeURIComponent(rkey);
+    }
+
+    function postImages(post){
+      const images = post.embed?.images || [];
+      return images
+        .map(image => ({
+          src: image.fullsize || image.thumb,
+          alt: image.alt || ''
+        }))
+        .filter(image => image.src);
+    }
+
+    function isTodayPost(post){
+      const createdAt = new Date(post.record?.createdAt || post.indexedAt || 0);
+      return localDateKey(createdAt) === localDateKey(new Date());
+    }
+
+    async function fetchBlueskyImagePosts(feed){
+      const url = 'https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor='
+        + encodeURIComponent(feed.handle) + '&limit=20&filter=posts_no_replies';
+      const response = await fetch(url, { headers:{ accept:'application/json' } });
+      if (!response.ok) throw new Error('Bluesky HTTP ' + response.status);
+      const data = await response.json();
+      return (data.feed || [])
+        .map(item => item.post)
+        .filter(Boolean)
+        .map(post => ({
+          feed,
+          post,
+          images:postImages(post),
+          createdAt:new Date(post.record?.createdAt || post.indexedAt || 0)
+        }))
+        .filter(item => item.images.length)
+        .sort((a,b) => b.createdAt - a.createdAt);
+    }
+
+    function createBlueskyFeedMessage(feed, message){
+      const item = document.createElement('article');
+      item.className = 'bsky-feed-item';
+      const title = document.createElement('div');
+      title.className = 'bsky-author-name';
+      title.textContent = feed.label || feed.handle;
+      const note = document.createElement('div');
+      note.className = 'bsky-status';
+      note.textContent = message;
+      item.append(title, note);
+      return item;
+    }
+
+    function createBlueskyPostElement(item, isFallback){
+      const post = item.post;
+      const author = post.author || {};
+      const date = item.createdAt;
+      const feedItem = document.createElement('article');
+      feedItem.className = 'bsky-feed-item';
+
+      const authorRow = document.createElement('div');
+      authorRow.className = 'bsky-author';
+
+      const avatar = author.avatar
+        ? document.createElement('img')
+        : document.createElement('div');
+      avatar.className = 'bsky-avatar' + (author.avatar ? '' : ' bsky-avatar-placeholder');
+      if (author.avatar) {
+        avatar.alt = author.displayName || author.handle || item.feed.label || '';
+        avatar.loading = 'lazy';
+        avatar.src = author.avatar;
+      } else {
+        avatar.textContent = (author.displayName || item.feed.label || author.handle || '?').trim().charAt(0);
+      }
+
+      const authorText = document.createElement('div');
+      const authorName = document.createElement('div');
+      authorName.className = 'bsky-author-name';
+      authorName.textContent = author.displayName || item.feed.label || author.handle || item.feed.handle;
+      const postDate = document.createElement('div');
+      postDate.className = 'bsky-date';
+      postDate.textContent = date.toLocaleString(lang, { dateStyle:'medium', timeStyle:'short' });
+      authorText.append(authorName, postDate);
+      authorRow.append(avatar, authorText);
+
+      if (isFallback) {
+        const fallback = document.createElement('div');
+        fallback.className = 'bsky-account-note';
+        fallback.textContent = t.bsky_no_today || 'No image post today; showing the latest image post.';
+        feedItem.appendChild(authorRow);
+        feedItem.appendChild(fallback);
+      } else {
+        feedItem.appendChild(authorRow);
+      }
+
+      const text = document.createElement('p');
+      text.className = 'bsky-text';
+      text.textContent = post.record?.text || '';
+
+      const imageGrid = document.createElement('div');
+      imageGrid.className = 'bsky-images' + (item.images.length === 1 ? ' single' : '');
+      item.images.slice(0, 4).forEach(image => {
+        const img = document.createElement('img');
+        img.className = 'bsky-image';
+        img.loading = 'lazy';
+        img.src = image.src;
+        img.alt = image.alt || text.textContent || authorName.textContent;
+        imageGrid.appendChild(img);
+      });
+
+      const link = document.createElement('a');
+      link.className = 'bsky-link';
+      link.href = blueskyPostUrl(post, item.feed.profileUrl);
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.textContent = t.bsky_open || 'Open on Bluesky';
+
+      feedItem.append(text, imageGrid, link);
+      return feedItem;
+    }
+
+    function chooseBlueskyFeedItem(items){
+      const todayItem = items.find(item => isTodayPost(item.post));
+      return {
+        item: todayItem || items[0],
+        isFallback: !todayItem
+      };
+    }
+
+    async function loadBlueskyFeed(){
+      const card = document.getElementById('bskyCard');
+      const status = document.getElementById('bskyStatus');
+      if (!card || !status) return;
+      if (location.protocol === 'file:' || !bskyFeeds.length) {
+        card.hidden = true;
+        return;
+      }
+
+      card.hidden = false;
+      status.hidden = false;
+      status.textContent = t.bsky_loading || 'Loading Bluesky post...';
+
+      const target = document.getElementById('bskyPost');
+      if (!target) return;
+      target.innerHTML = '';
+      target.hidden = true;
+
+      const results = await Promise.allSettled(bskyFeeds.map(fetchBlueskyImagePosts));
+      results.forEach((result, index) => {
+        const feed = bskyFeeds[index];
+        if (result.status !== 'fulfilled') {
+          target.appendChild(createBlueskyFeedMessage(feed, t.bsky_error || 'Could not load Bluesky post.'));
+          return;
+        }
+        if (!result.value.length) {
+          target.appendChild(createBlueskyFeedMessage(feed, t.bsky_empty || 'No image post found.'));
+          return;
+        }
+        const choice = chooseBlueskyFeedItem(result.value);
+        target.appendChild(createBlueskyPostElement(choice.item, choice.isFallback));
+      });
+
+      status.hidden = true;
+      target.hidden = false;
+      scheduleMasonryLayout();
     }
 
     // Time update (runs every second)
@@ -2322,6 +2621,7 @@ function computeMoon(date){
     // Seltenere Aktualisierung für Mondphasen und andere statischere Daten (alle 10 Minuten)
     updateInfrequent();
     initMasonryLayout();
+    loadBlueskyFeed();
     setInterval(updateInfrequent, 600000); // 600,000 ms = 10 Minuten
 
 	    // --- Erde–Mond elliptische Bahn ---
