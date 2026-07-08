@@ -69,21 +69,24 @@
     .wide-card{
       grid-column:auto;
     }
-    .solar-card{ order:10; }
-    .small-bodies-card{ order:20; }
-    .meteor-card{ order:30; }
-    .season-card{ order:40; }
-    .spacecraft-card{ order:50; }
-    .jupiter-card{ order:60; }
-    .visibility-card{ order:70; }
-    .earth-card{ order:80; }
-    .system-card{ order:90; }
-    .sky-calendar-card{ order:100; }
-    .bsky-card{ order:110; }
+    .date-location-card{ order:10; }
+    .solar-card{ order:20; }
+    .small-bodies-card{ order:30; }
+    .meteor-card{ order:40; }
+    .constellation-card{ order:50; }
+    .season-card{ order:60; }
+    .spacecraft-card{ order:70; }
+    .jupiter-card{ order:70; }
+    .visibility-card{ order:80; }
+    .earth-card{ order:90; }
+    .system-card{ order:100; }
+    .sky-calendar-card{ order:110; }
+    .bsky-card{ order:120; }
     @media (min-width:1180px){
       .solar-card,
       .small-bodies-card,
       .meteor-card,
+      .constellation-card,
       .spacecraft-card,
       .jupiter-card,
       .system-card,
@@ -314,6 +317,168 @@
       width:min(100%, 560px);
       margin-top:12px;
     }
+    .date-location-card{
+      gap:18px;
+      align-items:stretch;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(59,130,246,.08), transparent 34%),
+        #fff;
+      border-radius:18px;
+      box-shadow:0 18px 42px rgba(15,23,42,.14);
+      padding:28px;
+    }
+    .date-location-card .solar-controls{
+      width:100%;
+      margin-top:0;
+      display:grid;
+      gap:18px;
+    }
+    .date-location-card .group-title{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+      font-size:1.85rem;
+      color:#0f172a;
+    }
+    .date-location-card .group-title::before{
+      content:"";
+      width:32px;
+      height:32px;
+      border:3px solid #2563eb;
+      border-radius:7px;
+      box-shadow:inset 0 8px 0 rgba(37,99,235,.08);
+      background:
+        linear-gradient(#2563eb,#2563eb) 8px -2px / 4px 10px no-repeat,
+        linear-gradient(#2563eb,#2563eb) 20px -2px / 4px 10px no-repeat;
+    }
+    .control-date-readout{
+      color:#2563eb;
+      font-size:2.15rem;
+      font-weight:800;
+      letter-spacing:0;
+      text-align:center;
+      padding:0;
+      border-bottom:0;
+      text-shadow:0 8px 18px rgba(37,99,235,.16);
+    }
+    .date-step-panel{
+      width:min(100%, 560px);
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:12px;
+      margin-inline:auto;
+    }
+    .date-step-row{
+      display:grid;
+      grid-template-columns:1fr;
+      grid-template-rows:auto auto auto;
+      gap:6px;
+      align-items:center;
+      min-width:0;
+    }
+    .date-step-row .step-label{
+      color:var(--muted);
+      font-size:.78rem;
+      font-weight:700;
+      text-align:center;
+      order:1;
+    }
+    .date-step-row button,
+    .date-today-button{
+      min-height:52px;
+      border-radius:8px;
+      padding:10px 12px;
+      font-weight:700;
+      line-height:1;
+      margin:0;
+    }
+    .date-step-row button{
+      background:#f8fbff;
+      color:#0f172a;
+      border:1px solid #bfdbfe;
+      box-shadow:0 8px 18px rgba(37,99,235,.08);
+      font-size:1rem;
+    }
+    .date-step-row button:hover{
+      background:#eff6ff;
+      border-color:#93c5fd;
+    }
+    .date-step-row button:first-child{
+      order:0;
+    }
+    .date-step-row button:last-child{
+      order:2;
+    }
+    .date-week-row{
+      width:min(100%, 360px);
+      margin-inline:auto;
+      display:grid;
+      grid-template-columns:1fr auto 1fr;
+      align-items:center;
+      gap:10px;
+    }
+    .date-week-row .step-label{
+      color:var(--muted);
+      font-size:.78rem;
+      font-weight:700;
+    }
+    .date-week-row button{
+      min-height:38px;
+      border-radius:999px;
+      margin:0;
+      padding:8px 14px;
+      background:#eff6ff;
+      color:#1d4ed8;
+      border:1px solid #bfdbfe;
+      font-weight:700;
+    }
+    .date-week-row button:hover{
+      background:#dbeafe;
+    }
+    .date-today-row{
+      display:flex;
+      justify-content:center;
+    }
+    .date-today-button{
+      min-width:min(100%, 180px);
+      background:linear-gradient(135deg, #1d4ed8, #3b82f6);
+      border:1px solid #2563eb;
+      box-shadow:0 14px 26px rgba(37,99,235,.24);
+    }
+    .date-today-button:hover{
+      background:linear-gradient(135deg, #1e40af, #2563eb);
+    }
+    .date-location-card .solar-slider-row{
+      width:min(100%, 560px);
+      margin-inline:auto;
+      padding:0;
+      border-radius:0;
+      background:transparent;
+      border:0;
+      font-size:1rem;
+    }
+    .location-control{
+      width:min(100%, 560px);
+      display:grid;
+      gap:8px;
+      margin-inline:auto;
+      text-align:left;
+      color:#0f172a;
+      font-weight:700;
+      font-size:1rem;
+    }
+    .location-control select{
+      width:100%;
+      padding:14px 16px;
+      border:1px solid #d8e2ef;
+      border-radius:8px;
+      background:#fff;
+      color:var(--fg);
+      font-size:1.05rem;
+      box-shadow:0 8px 18px rgba(15,23,42,.06);
+      margin:0;
+    }
     .solar-slider-row{
       display:grid;
       grid-template-columns:auto minmax(120px,1fr) auto;
@@ -326,18 +491,19 @@
       width:100%;
       margin:0;
       padding:0;
+      accent-color:#2563eb;
     }
     .solar-control-actions{
       display:flex;
       justify-content:center;
       align-items:center;
-      min-height:44px;
+      min-height:0;
     }
     .solar-step-button{
-      width:44px;
-      height:44px;
+      width:auto;
+      height:auto;
       padding:0;
-      font-size:1.5rem;
+      font-size:1rem;
       line-height:1;
       user-select:none;
       touch-action:manipulation;
@@ -417,6 +583,13 @@
       fill:none;
       stroke-width:1.2;
       stroke-opacity:.62;
+    }
+    .small-bodies-hitarea{
+      fill:none;
+      stroke:transparent;
+      stroke-width:16;
+      pointer-events:stroke;
+      cursor:help;
     }
     .small-bodies-label{
       fill:#1f2937;
@@ -521,6 +694,102 @@
       stroke:#fff;
       stroke-width:2;
     }
+    .meteor-radiants{
+      width:min(100%, 420px);
+      display:grid;
+      grid-template-columns:140px 1fr;
+      align-items:center;
+      gap:12px;
+      margin-top:4px;
+      font-size:.78rem;
+      color:var(--muted);
+      text-align:left;
+    }
+    .meteor-radiant-map{
+      width:140px;
+      aspect-ratio:1;
+      border-radius:50%;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(255,255,255,.78), transparent 50%),
+        #f8fafc;
+      box-shadow:inset 0 0 16px rgba(148,163,184,.24);
+    }
+    .meteor-radiant-map svg{
+      display:block;
+      width:100%;
+      height:100%;
+    }
+    .meteor-radiant-dot{
+      stroke:#fff;
+      stroke-width:2;
+    }
+    .meteor-radiant-dot.inactive{
+      opacity:.28;
+    }
+    .meteor-radiant-label{
+      fill:#1f2937;
+      font-size:8px;
+      paint-order:stroke;
+      stroke:#fff;
+      stroke-width:2px;
+      stroke-linejoin:round;
+    }
+    .meteor-radiant-copy{
+      display:grid;
+      gap:4px;
+    }
+    .constellation-card{
+      gap:10px;
+    }
+    .constellation-map{
+      width:min(100%, 420px);
+      aspect-ratio:1;
+      margin-top:4px;
+      border-radius:8px;
+      background:
+        radial-gradient(circle at 50% 30%, rgba(96,165,250,.14), transparent 48%),
+        linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+      box-shadow:inset 0 0 18px rgba(148,163,184,.18);
+    }
+    .constellation-map svg{
+      display:block;
+      width:100%;
+      height:100%;
+    }
+    .constellation-line{
+      stroke:#64748b;
+      stroke-width:1.4;
+      opacity:.72;
+    }
+    .constellation-star{
+      fill:#f59e0b;
+      stroke:#fff;
+      stroke-width:1.5;
+    }
+    .constellation-star.main{
+      fill:#2563eb;
+    }
+    .constellation-star-label{
+      fill:#1f2937;
+      font-size:10px;
+      paint-order:stroke;
+      stroke:#fff;
+      stroke-width:3px;
+      stroke-linejoin:round;
+    }
+    .constellation-name{
+      font-weight:700;
+      color:var(--fg);
+      font-size:1.02rem;
+    }
+    .constellation-summary{
+      width:min(100%, 420px);
+      color:var(--muted);
+      font-size:.82rem;
+      text-align:left;
+      display:grid;
+      gap:4px;
+    }
     .season-orbit{
       fill:none;
       stroke:#d1d5db;
@@ -531,9 +800,17 @@
       stroke-width:3;
       stroke-linecap:round;
     }
+    .season-axis-pole{
+      fill:#2563eb;
+      stroke:#fff;
+      stroke-width:1.5;
+    }
     .season-earth{
       fill:url(#seasonEarthGradient);
       filter:url(#seasonEarthShadow);
+    }
+    .season-night{
+      fill:rgba(15,23,42,.34);
     }
     .season-sunray{
       stroke:#f59e0b;
@@ -544,6 +821,30 @@
     .season-label{
       fill:#4b5563;
       font-size:10px;
+      text-anchor:middle;
+      paint-order:stroke;
+      stroke:#fff;
+      stroke-width:3px;
+      stroke-linejoin:round;
+    }
+    .season-month-tick{
+      stroke:#9ca3af;
+      stroke-width:1;
+      stroke-linecap:round;
+    }
+    .season-month-label{
+      fill:#4b5563;
+      font-size:9px;
+      text-anchor:middle;
+      dominant-baseline:middle;
+      paint-order:stroke;
+      stroke:#fff;
+      stroke-width:3px;
+      stroke-linejoin:round;
+    }
+    .season-declination-label{
+      fill:#1f2937;
+      font-size:9px;
       text-anchor:middle;
       paint-order:stroke;
       stroke:#fff;
@@ -665,6 +966,37 @@
       border-top:1px solid var(--border);
       text-align:left;
       font-size:.84rem;
+    }
+    .eclipse-geometry{
+      border-top:1px solid var(--border);
+      margin-top:10px;
+      padding-top:10px;
+      font-size:.8rem;
+      color:var(--muted);
+      display:grid;
+      gap:6px;
+    }
+    .eclipse-title{
+      color:var(--fg);
+      font-weight:700;
+      text-align:center;
+    }
+    .eclipse-map{
+      width:100%;
+      aspect-ratio:2.6;
+      min-height:82px;
+      border-radius:8px;
+      background:#f8fafc;
+      box-shadow:inset 0 0 12px rgba(148,163,184,.18);
+    }
+    .eclipse-map svg{
+      display:block;
+      width:100%;
+      height:100%;
+    }
+    .eclipse-status{
+      line-height:1.25;
+      text-align:left;
     }
     .sunlight-title{
       margin-bottom:6px;
@@ -1260,6 +1592,16 @@
       .jupiter-system{
         width:min(100%, 360px);
       }
+      .date-step-panel{
+        grid-template-columns:1fr;
+      }
+      .date-step-row{
+        grid-template-columns:76px minmax(0,1fr) 76px;
+        grid-template-rows:auto;
+      }
+      .date-step-row .step-label{ order:1; }
+      .date-step-row button:first-child{ order:0; }
+      .date-step-row button:last-child{ order:2; }
     }
 
     /* Input error state for countdown */
@@ -1369,23 +1711,52 @@
     </div>
 
     <div class="dashboard-stack solar-stack">
+    <div class="display-container date-location-card wide-card">
+      <div class="group-title" id="titleDateLocation">Datum & Ort</div>
+      <div id="controlDateReadout" class="control-date-readout">1970.01.01</div>
+      <div class="solar-controls">
+        <div class="solar-slider-row">
+          <span id="solarPastLabel">-10 years</span>
+          <input type="range" id="solarDateSlider" min="-36525" max="36525" step="7" value="0" />
+          <span id="solarFutureLabel">+10 years</span>
+        </div>
+        <div class="date-step-panel">
+          <div class="date-step-row">
+            <button id="btnSolarPrevYear" type="button" aria-label="Previous year">−1J</button>
+            <span class="step-label" id="labelStepYear">Jahr</span>
+            <button id="btnSolarNextYear" type="button" aria-label="Next year">+1J</button>
+          </div>
+          <div class="date-step-row">
+            <button id="btnSolarPrevMonth" type="button" aria-label="Previous month">−1M</button>
+            <span class="step-label" id="labelStepMonth">Monat</span>
+            <button id="btnSolarNextMonth" type="button" aria-label="Next month">+1M</button>
+          </div>
+          <div class="date-step-row">
+            <button id="btnSolarPrev" class="solar-step-button" type="button" aria-label="Previous day">−1T</button>
+            <span class="step-label" id="labelStepDay">Tag</span>
+            <button id="btnSolarNext" class="solar-step-button" type="button" aria-label="Next day">+1T</button>
+          </div>
+        </div>
+        <div class="date-week-row">
+          <button id="btnSolarPrevWeek" type="button" aria-label="Previous week">−7T</button>
+          <span class="step-label" id="labelStepWeek">Woche</span>
+          <button id="btnSolarNextWeek" type="button" aria-label="Next week">+7T</button>
+        </div>
+        <div class="date-today-row">
+          <button id="btnSolarToday" class="date-today-button" type="button">Today</button>
+        </div>
+      </div>
+      <label class="location-control" for="locationSelector">
+        <span id="labelLocation">Location</span>
+        <select id="locationSelector"></select>
+      </label>
+    </div>
+
     <div class="display-container solar-card wide-card">
       <div class="group-title" id="titleSolarSystem">Solar System</div>
       <div id="solarDate" class="legend-small">Position for current date</div>
       <div id="solarSystem" class="solar-system" aria-label="Current solar system planet positions">
         <div class="sun" aria-label="Sun"></div>
-      </div>
-      <div class="solar-controls">
-        <div class="solar-slider-row">
-          <span id="solarPastLabel">-100 years</span>
-          <input type="range" id="solarDateSlider" min="-36525" max="36525" step="1" value="0" />
-          <span id="solarFutureLabel">+100 years</span>
-        </div>
-        <div class="solar-control-actions">
-          <button id="btnSolarPrev" class="solar-step-button" type="button" aria-label="Previous day">&lt;</button>
-          <button id="btnSolarToday" type="button">Today</button>
-          <button id="btnSolarNext" class="solar-step-button" type="button" aria-label="Next day">&gt;</button>
-        </div>
       </div>
       <div class="legend-small" id="solarLegend">
         Heliocentric ecliptic view; distances compressed
@@ -1405,7 +1776,15 @@
       <div class="group-title" id="titleMeteorStreams">Meteor Streams</div>
       <div id="meteorMap" class="astro-disc" aria-label="Meteor shower activity through the year"></div>
       <div id="meteorSummary" class="astro-summary"></div>
+      <div id="meteorRadiants" class="meteor-radiants"></div>
       <div class="legend-small" id="meteorLegend">Activity windows and peak dates for major meteor showers</div>
+    </div>
+
+    <div class="display-container constellation-card astro-visual-card">
+      <div class="group-title" id="titleConstellationMonth">Constellation of the month</div>
+      <div id="constellationMap" class="constellation-map" aria-label="Constellation of the month"></div>
+      <div id="constellationSummary" class="constellation-summary"></div>
+      <div class="legend-small" id="constellationLegend">Seasonal highlight for Central Europe</div>
     </div>
 
     <div class="display-container season-card astro-visual-card">
@@ -1544,6 +1923,12 @@
 
           <div id="moonNextFull" style="margin-top:10px; font-size:.95rem;">
             Next full moon: -
+          </div>
+
+          <div class="eclipse-geometry">
+            <div class="eclipse-title" id="titleEclipseGeometry">Eclipse geometry</div>
+            <div id="eclipseGeometryMap" class="eclipse-map" aria-label="Eclipse geometry"></div>
+            <div id="eclipseGeometryStatus" class="eclipse-status">Eclipses need new/full moon near a node.</div>
           </div>
 
         </div>
@@ -1777,8 +2162,21 @@
     const t = translations[lang] || translations.en || {};
     const calendarEventsByLang = window.PLANETENUHR_EVENTS || {};
     const smallBodiesConfig = window.PLANETENUHR_SMALL_BODIES || { belts:[], comets:[] };
-    const phenomenaConfig = window.PLANETENUHR_PHENOMENA || { meteorStreams:[], spacecraft:[] };
+    const phenomenaConfig = window.PLANETENUHR_PHENOMENA || { meteorStreams:[], constellations:[], spacecraft:[] };
     const bskyFeeds = window.PLANETENUHR_BSKY_FEEDS || [];
+    const locations = [
+      { key:'berlin', name:'Berlin', latitude:52.52, longitude:13.405 },
+      { key:'hamburg', name:'Hamburg', latitude:53.5511, longitude:9.9937 },
+      { key:'munich', name:'München', latitude:48.1372, longitude:11.5755 },
+      { key:'cologne', name:'Köln', latitude:50.9375, longitude:6.9603 },
+      { key:'frankfurt', name:'Frankfurt am Main', latitude:50.1109, longitude:8.6821 },
+      { key:'stuttgart', name:'Stuttgart', latitude:48.7758, longitude:9.1829 },
+      { key:'dusseldorf', name:'Düsseldorf', latitude:51.2277, longitude:6.7735 },
+      { key:'dortmund', name:'Dortmund', latitude:51.5136, longitude:7.4653 },
+      { key:'essen', name:'Essen', latitude:51.4556, longitude:7.0116 },
+      { key:'leipzig', name:'Leipzig', latitude:51.3397, longitude:12.3731 }
+    ];
+    let selectedLocationKey = 'berlin';
     let activeCalendarFilter = 'all';
     let showAllCalendarEvents = false;
 
@@ -1792,6 +2190,10 @@
 
       document.getElementById('titleSolarSystem').textContent = t.title_solar_system;
       document.getElementById('solarLegend').textContent      = t.legend_solar;
+      const titleDateLocation = document.getElementById('titleDateLocation');
+      if (titleDateLocation) titleDateLocation.textContent = t.title_date_location;
+      const labelLocation = document.getElementById('labelLocation');
+      if (labelLocation) labelLocation.textContent = t.label_location;
       const titleSmallBodies = document.getElementById('titleSmallBodies');
       if (titleSmallBodies) titleSmallBodies.textContent = t.title_small_bodies;
       const smallBodiesLegend = document.getElementById('smallBodiesLegend');
@@ -1800,6 +2202,10 @@
       if (titleMeteorStreams) titleMeteorStreams.textContent = t.title_meteor_streams;
       const meteorLegend = document.getElementById('meteorLegend');
       if (meteorLegend) meteorLegend.textContent = t.legend_meteor_streams;
+      const titleConstellationMonth = document.getElementById('titleConstellationMonth');
+      if (titleConstellationMonth) titleConstellationMonth.textContent = t.title_constellation_month;
+      const constellationLegend = document.getElementById('constellationLegend');
+      if (constellationLegend) constellationLegend.textContent = t.legend_constellation_month;
       const titleSeasonAxis = document.getElementById('titleSeasonAxis');
       if (titleSeasonAxis) titleSeasonAxis.textContent = t.title_season_axis;
       const seasonLegend = document.getElementById('seasonLegend');
@@ -1814,16 +2220,32 @@
       document.getElementById('visibilityLegendTwilight').textContent = t.visibility_legend_twilight;
       document.getElementById('visibilityLegendDay').textContent = t.visibility_legend_day;
       document.getElementById('visibilityLegendWindow').textContent = t.visibility_legend_window;
-      document.getElementById('solarPastLabel').textContent   = t.solar_past;
-      document.getElementById('solarFutureLabel').textContent = t.solar_future;
+      document.getElementById('solarPastLabel').textContent   = t.solar_past_control;
+      document.getElementById('solarFutureLabel').textContent = t.solar_future_control;
       document.getElementById('solarDateSlider').setAttribute('aria-label', t.solar_slider);
       document.getElementById('btnSolarToday').textContent    = t.solar_today;
       document.getElementById('btnSolarPrev').setAttribute('aria-label', t.solar_prev_day);
       document.getElementById('btnSolarNext').setAttribute('aria-label', t.solar_next_day);
+      document.getElementById('btnSolarPrevWeek').setAttribute('aria-label', t.solar_prev_week);
+      document.getElementById('btnSolarNextWeek').setAttribute('aria-label', t.solar_next_week);
+      document.getElementById('btnSolarPrevMonth').setAttribute('aria-label', t.solar_prev_month);
+      document.getElementById('btnSolarNextMonth').setAttribute('aria-label', t.solar_next_month);
+      document.getElementById('btnSolarPrevYear').setAttribute('aria-label', t.solar_prev_year);
+      document.getElementById('btnSolarNextYear').setAttribute('aria-label', t.solar_next_year);
+      const labelStepYear = document.getElementById('labelStepYear');
+      if (labelStepYear) labelStepYear.textContent = t.date_step_year;
+      const labelStepMonth = document.getElementById('labelStepMonth');
+      if (labelStepMonth) labelStepMonth.textContent = t.date_step_month;
+      const labelStepWeek = document.getElementById('labelStepWeek');
+      if (labelStepWeek) labelStepWeek.textContent = t.date_step_week;
+      const labelStepDay = document.getElementById('labelStepDay');
+      if (labelStepDay) labelStepDay.textContent = t.date_step_day;
       document.getElementById('titleJupiter').textContent    = t.title_jupiter;
       document.getElementById('jupiterLegend').textContent   = t.legend_jupiter;
       document.getElementById('titleEarthMoon').textContent  = t.title_earthmoon;
       document.getElementById('titleMoon').textContent       = t.title_moon;
+      const titleEclipseGeometry = document.getElementById('titleEclipseGeometry');
+      if (titleEclipseGeometry) titleEclipseGeometry.textContent = t.title_eclipse_geometry;
       document.getElementById('titleOtherPlanets').textContent = t.title_other_planets;
       document.getElementById('otherPlanetsLegend').textContent = t.legend_other_planets;
       document.getElementById('titleSkyCalendar').textContent = t.title_sky_calendar;
@@ -2022,16 +2444,17 @@
       return hours + ' ' + t.hours_short + ' ' + String(minutes).padStart(2, '0') + ' ' + t.minutes_short;
     }
 
-    function renderSunlight(){
-      const berlin = { latitude:52.52, longitude:13.405 };
-      const today = new Date();
-      const sunrise = solarEventUtc(today, berlin.latitude, berlin.longitude, 90.833, true);
-      const sunset = solarEventUtc(today, berlin.latitude, berlin.longitude, 90.833, false);
-      const dawn = solarEventUtc(today, berlin.latitude, berlin.longitude, 96, true);
-      const dusk = solarEventUtc(today, berlin.latitude, berlin.longitude, 96, false);
-      const goldenMorningEnd = solarEventUtc(today, berlin.latitude, berlin.longitude, 84, true);
-      const goldenEveningStart = solarEventUtc(today, berlin.latitude, berlin.longitude, 84, false);
-      const startOfDay = new Date(today);
+    function renderSunlight(date = selectedSolarDate()){
+      const location = selectedLocation();
+      const sunrise = solarEventUtc(date, location.latitude, location.longitude, 90.833, true);
+      const sunset = solarEventUtc(date, location.latitude, location.longitude, 90.833, false);
+      const dawn = solarEventUtc(date, location.latitude, location.longitude, 96, true);
+      const dusk = solarEventUtc(date, location.latitude, location.longitude, 96, false);
+      const goldenMorningEnd = solarEventUtc(date, location.latitude, location.longitude, 84, true);
+      const goldenEveningStart = solarEventUtc(date, location.latitude, location.longitude, 84, false);
+      const titleSunlight = document.getElementById('titleSunlight');
+      if (titleSunlight) titleSunlight.textContent = (t.title_sunlight || 'Day & night') + ' ' + location.name;
+      const startOfDay = new Date(date);
       startOfDay.setHours(0,0,0,0);
       const positionOfDay = value => value ? ((value - startOfDay) / 86400000) * 100 : 0;
       const setText = (id, value) => {
@@ -2066,13 +2489,13 @@
       setLeft('dayNightSunriseMarker', positionOfDay(sunrise));
       setLeft('dayNightSunsetMarker', positionOfDay(sunset));
       setLeft('dayNightDuskMarker', positionOfDay(dusk));
-      setLeft('dayNightNowMarker', positionOfDay(today));
+      setLeft('dayNightNowMarker', positionOfDay(date));
       setSegment('lightDaySegment', sunrise, sunset, t.light_day);
       setSegment('blueMorningSegment', dawn, sunrise, t.blue_hour + ' ' + t.light_morning);
       setSegment('goldenMorningSegment', sunrise, goldenMorningEnd, t.golden_hour + ' ' + t.light_morning);
       setSegment('goldenEveningSegment', goldenEveningStart, sunset, t.golden_hour + ' ' + t.light_evening);
       setSegment('blueEveningSegment', sunset, dusk, t.blue_hour + ' ' + t.light_evening);
-      setLeft('lightHourNowMarker', positionOfDay(today));
+      setLeft('lightHourNowMarker', positionOfDay(date));
     }
 
     let masonryFrame = 0;
@@ -2426,17 +2849,47 @@
       return new Date(Date.now() + solarDayOffset * 86400000);
     }
 
+    function selectedLocation(){
+      return locations.find(location => location.key === selectedLocationKey) || locations[0];
+    }
+
+    function updateControlDateReadout(){
+      const readout = document.getElementById('controlDateReadout');
+      if (readout) readout.textContent = formatDateStamp(selectedSolarDate());
+    }
+
+    function populateLocationSelector(){
+      const selector = document.getElementById('locationSelector');
+      if (!selector) return;
+      selector.innerHTML = '';
+      locations.forEach(location => {
+        const option = document.createElement('option');
+        option.value = location.key;
+        option.textContent = location.name;
+        selector.appendChild(option);
+      });
+      selector.value = selectedLocationKey;
+    }
+
+    function refreshDateDrivenTiles(){
+      const date = selectedSolarDate();
+      updateControlDateReadout();
+      renderSolarSystem(date);
+      renderMeteorStreams(date);
+      renderConstellationOfMonth(date);
+      renderSeasonAxis(date);
+      renderSunlight(date);
+      renderVisibility(date);
+      scheduleMasonryLayout();
+    }
+
     // Rebuilds the time-sensitive astronomy panels.
     function updateInfrequent() {
       renderMoon();
       renderEarthMoon();
-      renderSolarSystem();
       renderSmallBodies();
-      renderMeteorStreams();
-      renderSeasonAxis();
       renderSpacecraft();
-      renderSunlight();
-      renderVisibility();
+      refreshDateDrivenTiles();
       scheduleMasonryLayout();
     }
 
@@ -2489,6 +2942,11 @@
     function renderVisibility(date = new Date()){
       const list = document.getElementById('visibilityList');
       if (!list) return;
+      const location = selectedLocation();
+      const legend = document.getElementById('visibilityLegend');
+      if (legend) {
+        legend.textContent = (t.visibility_legend_prefix || 'Approximate for') + ' ' + location.name + '; ' + (t.visibility_legend_suffix || 'based on solar elongation');
+      }
       list.innerHTML = '';
       const sunLong = sunLongitude(date);
       ['mercury','venus','mars','jupiter','saturn'].forEach(key => {
@@ -2676,6 +3134,17 @@
         title.textContent = belt.label;
         ring.appendChild(title);
         svg.appendChild(ring);
+
+        const ringHit = document.createElementNS(svgNS, 'circle');
+        ringHit.setAttribute('cx', center);
+        ringHit.setAttribute('cy', center);
+        ringHit.setAttribute('r', (inner + outer) / 2);
+        ringHit.setAttribute('class', 'small-bodies-hitarea');
+        ringHit.setAttribute('stroke-width', Math.max(24, outer - inner + 12));
+        const hitTitle = document.createElementNS(svgNS, 'title');
+        hitTitle.textContent = belt.label;
+        ringHit.appendChild(hitTitle);
+        svg.appendChild(ringHit);
       });
 
       (smallBodiesConfig.comets || []).forEach((comet, index) => {
@@ -2696,6 +3165,18 @@
         title.textContent = comet.name + ' · q ' + comet.q + ' AU · Q ' + comet.Q + ' AU · ' + comet.type;
         orbit.appendChild(title);
         svg.appendChild(orbit);
+
+        const orbitHit = document.createElementNS(svgNS, 'ellipse');
+        orbitHit.setAttribute('cx', cx);
+        orbitHit.setAttribute('cy', center);
+        orbitHit.setAttribute('rx', rx);
+        orbitHit.setAttribute('ry', ry);
+        orbitHit.setAttribute('class', 'small-bodies-hitarea');
+        orbitHit.setAttribute('transform', 'rotate(' + (comet.angle || 0) + ' ' + center + ' ' + center + ')');
+        const orbitHitTitle = document.createElementNS(svgNS, 'title');
+        orbitHitTitle.textContent = comet.name + ' · q ' + comet.q + ' AU · Q ' + comet.Q + ' AU · ' + comet.type;
+        orbitHit.appendChild(orbitHitTitle);
+        svg.appendChild(orbitHit);
 
         if (index < 10) {
           const angle = (comet.angle || 0) * Math.PI / 180;
@@ -2877,6 +3358,142 @@
           + `<div><strong>${t.meteor_active || 'Active now'}: </strong>${active.length ? active.map(item => item.name).join(', ') : (t.none || 'None')}</div>`
           + `<div><strong>${t.meteor_next_peak || 'Next peak'}: </strong>${next ? next.stream.name + ' · ' + monthDayLabel(next.stream.peak, next.year) : '-'}</div>`;
       }
+      renderMeteorRadiants(date, active);
+      scheduleMasonryLayout();
+    }
+
+    function renderMeteorRadiants(date, activeStreams){
+      const target = document.getElementById('meteorRadiants');
+      if (!target) return;
+      const streams = phenomenaConfig.meteorStreams || [];
+      const activeKeys = new Set((activeStreams || []).map(stream => stream.key));
+      const yearDays = daysInYear(date.getFullYear());
+      const today = dayOfYearLocal(date);
+      const next = streams
+        .map(stream => ({ stream, peakDay:monthDayToDayOfYear(stream.peak, date.getFullYear()) }))
+        .map(item => ({ ...item, delta:item.peakDay - today }))
+        .map(item => item.delta < 0 ? { ...item, delta:item.delta + yearDays } : item)
+        .sort((a,b) => a.delta - b.delta)[0]?.stream;
+      if (next) activeKeys.add(next.key);
+
+      const size = 140;
+      const center = size / 2;
+      const svgNS = 'http://www.w3.org/2000/svg';
+      const map = document.createElement('div');
+      map.className = 'meteor-radiant-map';
+      const svg = document.createElementNS(svgNS, 'svg');
+      svg.setAttribute('viewBox', '0 0 ' + size + ' ' + size);
+      svg.setAttribute('role', 'img');
+      svg.setAttribute('aria-label', t.meteor_radiants_aria || 'Meteor shower radiant directions');
+      const horizon = document.createElementNS(svgNS, 'circle');
+      horizon.setAttribute('cx', center);
+      horizon.setAttribute('cy', center);
+      horizon.setAttribute('r', 58);
+      horizon.setAttribute('fill', 'none');
+      horizon.setAttribute('stroke', '#cbd5e1');
+      horizon.setAttribute('stroke-width', '1');
+      svg.appendChild(horizon);
+      [
+        ['N', 0, 11], ['E', 128, 74], ['S', 70, 133], ['W', 12, 74]
+      ].forEach(([label, x, y]) => {
+        const el = document.createElementNS(svgNS, 'text');
+        el.setAttribute('x', x);
+        el.setAttribute('y', y);
+        el.setAttribute('class', 'meteor-radiant-label');
+        el.textContent = label;
+        svg.appendChild(el);
+      });
+
+      streams.forEach(stream => {
+        const angle = (stream.radiantAngle || 0) * Math.PI / 180 - Math.PI / 2;
+        const altitude = Math.max(10, Math.min(80, stream.radiantAltitude || 45));
+        const radius = 58 * (1 - altitude / 90);
+        const x = center + Math.cos(angle) * radius;
+        const y = center + Math.sin(angle) * radius;
+        const dot = document.createElementNS(svgNS, 'circle');
+        const isActive = activeKeys.has(stream.key);
+        dot.setAttribute('cx', x);
+        dot.setAttribute('cy', y);
+        dot.setAttribute('r', isActive ? 5 : 3.2);
+        dot.setAttribute('class', 'meteor-radiant-dot' + (isActive ? '' : ' inactive'));
+        dot.setAttribute('fill', stream.color || '#2563eb');
+        const title = document.createElementNS(svgNS, 'title');
+        title.textContent = stream.name + ' · ' + (stream.radiant || '') + ' · ' + (t.meteor_radiant_peak || 'Peak') + ' ' + monthDayLabel(stream.peak, date.getFullYear());
+        dot.appendChild(title);
+        svg.appendChild(dot);
+      });
+      map.appendChild(svg);
+
+      const copy = document.createElement('div');
+      copy.className = 'meteor-radiant-copy';
+      const headline = document.createElement('strong');
+      headline.textContent = t.meteor_radiants_title || 'Radiants';
+      const explanation = document.createElement('span');
+      explanation.textContent = t.meteor_radiants_explain || 'Dots show the apparent origin in the sky; active and next peak are highlighted.';
+      const nextLine = document.createElement('span');
+      nextLine.textContent = next ? (t.meteor_radiants_next || 'Next highlighted') + ': ' + next.name + ' (' + next.radiant + ')' : '';
+      copy.append(headline, explanation, nextLine);
+
+      target.innerHTML = '';
+      target.append(map, copy);
+    }
+
+    function renderConstellationOfMonth(date = new Date()){
+      const target = document.getElementById('constellationMap');
+      const summary = document.getElementById('constellationSummary');
+      if (!target) return;
+      const month = date.getMonth() + 1;
+      const item = (phenomenaConfig.constellations || []).find(entry => entry.month === month);
+      if (!item) return;
+      const size = 420;
+      const svgNS = 'http://www.w3.org/2000/svg';
+      target.innerHTML = '';
+      const svg = document.createElementNS(svgNS, 'svg');
+      svg.setAttribute('viewBox', '0 0 ' + size + ' ' + size);
+      svg.setAttribute('role', 'img');
+      svg.setAttribute('aria-label', (t.title_constellation_month || 'Constellation of the month') + ': ' + item.name);
+      (item.lines || []).forEach(([from, to]) => {
+        const a = item.stars[from];
+        const b = item.stars[to];
+        if (!a || !b) return;
+        const line = document.createElementNS(svgNS, 'line');
+        line.setAttribute('x1', a[0] / 100 * size);
+        line.setAttribute('y1', a[1] / 100 * size);
+        line.setAttribute('x2', b[0] / 100 * size);
+        line.setAttribute('y2', b[1] / 100 * size);
+        line.setAttribute('class', 'constellation-line');
+        svg.appendChild(line);
+      });
+      (item.stars || []).forEach((star, index) => {
+        const circle = document.createElementNS(svgNS, 'circle');
+        circle.setAttribute('cx', star[0] / 100 * size);
+        circle.setAttribute('cy', star[1] / 100 * size);
+        circle.setAttribute('r', index === 0 ? 5 : 3.6);
+        circle.setAttribute('class', 'constellation-star' + (index === 0 ? ' main' : ''));
+        svg.appendChild(circle);
+      });
+      (item.labels || []).forEach(label => {
+        const star = item.stars[label.star];
+        if (!star) return;
+        const text = document.createElementNS(svgNS, 'text');
+        const dx = label.dx ?? 8;
+        const dy = label.dy ?? -8;
+        text.setAttribute('x', star[0] / 100 * size + dx);
+        text.setAttribute('y', star[1] / 100 * size + dy);
+        text.setAttribute('class', 'constellation-star-label');
+        text.setAttribute('text-anchor', label.anchor || 'start');
+        text.textContent = label.name;
+        svg.appendChild(text);
+      });
+      target.appendChild(svg);
+      if (summary) {
+        const highlight = typeof item.highlight === 'object'
+          ? (item.highlight[lang] || item.highlight.en || '')
+          : (item.highlight || '');
+        summary.innerHTML = `<div class="constellation-name">${item.name}</div>`
+          + `<div>${highlight}</div>`
+          + `<div><strong>${t.constellation_month_label || 'Month'}: </strong>${new Intl.DateTimeFormat(lang, { month:'long' }).format(date)}</div>`;
+      }
       scheduleMasonryLayout();
     }
 
@@ -2896,6 +3513,7 @@
       const center = size / 2;
       const radius = 135;
       const fraction = (dayOfYearLocal(date) - 1) / daysInYear(date.getFullYear());
+      const declination = 23.44 * Math.sin(2 * Math.PI * (dayOfYearLocal(date) - 80) / daysInYear(date.getFullYear()));
       const earth = polarPoint(center, radius, fraction);
       const svgNS = 'http://www.w3.org/2000/svg';
       target.innerHTML = '';
@@ -2913,7 +3531,8 @@
         </radialGradient>
         <filter id="seasonEarthShadow" x="-40%" y="-40%" width="180%" height="180%">
           <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity=".25"></feDropShadow>
-        </filter>`;
+        </filter>
+        `;
       svg.appendChild(defs);
 
       const orbit = document.createElementNS(svgNS, 'circle');
@@ -2922,6 +3541,29 @@
       orbit.setAttribute('r', radius);
       orbit.setAttribute('class', 'season-orbit');
       svg.appendChild(orbit);
+
+      for (let month = 0; month < 12; month++) {
+        const monthStart = new Date(date.getFullYear(), month, 1);
+        const monthFraction = (dayOfYearLocal(monthStart) - 1) / daysInYear(date.getFullYear());
+        const tickStart = polarPoint(center, radius - 4, monthFraction);
+        const tickEnd = polarPoint(center, radius + 9, monthFraction);
+        const tick = document.createElementNS(svgNS, 'line');
+        tick.setAttribute('x1', tickStart.x);
+        tick.setAttribute('y1', tickStart.y);
+        tick.setAttribute('x2', tickEnd.x);
+        tick.setAttribute('y2', tickEnd.y);
+        tick.setAttribute('class', 'season-month-tick');
+        svg.appendChild(tick);
+
+        const labelPoint = polarPoint(center, radius + 23, monthFraction);
+        const monthLabel = document.createElementNS(svgNS, 'text');
+        monthLabel.setAttribute('x', labelPoint.x);
+        monthLabel.setAttribute('y', labelPoint.y);
+        monthLabel.setAttribute('class', 'season-month-label');
+        monthLabel.textContent = new Intl.DateTimeFormat(lang, { month:'short' }).format(monthStart).replace('.', '');
+        svg.appendChild(monthLabel);
+      }
+
       const sun = document.createElementNS(svgNS, 'circle');
       sun.setAttribute('cx', center);
       sun.setAttribute('cy', center);
@@ -2957,7 +3599,7 @@
         const ray = document.createElementNS(svgNS, 'line');
         ray.setAttribute('x1', -58);
         ray.setAttribute('y1', y);
-        ray.setAttribute('x2', -18);
+        ray.setAttribute('x2', -9);
         ray.setAttribute('y2', y);
         ray.setAttribute('class', 'season-sunray');
         sideGroup.appendChild(ray);
@@ -2971,29 +3613,54 @@
       sideEarth.setAttribute('class', 'season-earth');
       sideGroup.appendChild(sideEarth);
 
-      const axisAngle = -23.4 * Math.PI / 180;
+      const sideNight = document.createElementNS(svgNS, 'path');
+      sideNight.setAttribute('d', 'M 18 -24 A 20 24 0 0 1 18 24 Z');
+      sideNight.setAttribute('class', 'season-night');
+      sideGroup.appendChild(sideNight);
+
+      const axisAngle = -declination * Math.PI / 180;
       const axisLength = 62;
       const sideAxis = document.createElementNS(svgNS, 'line');
-      sideAxis.setAttribute('x1', 18 - Math.sin(axisAngle) * axisLength / 2);
-      sideAxis.setAttribute('y1', Math.cos(axisAngle) * axisLength / 2);
-      sideAxis.setAttribute('x2', 18 + Math.sin(axisAngle) * axisLength / 2);
-      sideAxis.setAttribute('y2', -Math.cos(axisAngle) * axisLength / 2);
+      const northX = 18 + Math.sin(axisAngle) * axisLength / 2;
+      const northY = -Math.cos(axisAngle) * axisLength / 2;
+      const southX = 18 - Math.sin(axisAngle) * axisLength / 2;
+      const southY = Math.cos(axisAngle) * axisLength / 2;
+      sideAxis.setAttribute('x1', southX);
+      sideAxis.setAttribute('y1', southY);
+      sideAxis.setAttribute('x2', northX);
+      sideAxis.setAttribute('y2', northY);
       sideAxis.setAttribute('class', 'season-axis');
       sideGroup.appendChild(sideAxis);
+
+      const northPole = document.createElementNS(svgNS, 'circle');
+      northPole.setAttribute('cx', northX);
+      northPole.setAttribute('cy', northY);
+      northPole.setAttribute('r', 3.5);
+      northPole.setAttribute('class', 'season-axis-pole');
+      sideGroup.appendChild(northPole);
+
+      const northLabel = document.createElementNS(svgNS, 'text');
+      northLabel.setAttribute('x', northX + (northX < 18 ? -9 : 9));
+      northLabel.setAttribute('y', northY - 4);
+      northLabel.setAttribute('class', 'season-declination-label');
+      northLabel.textContent = 'N';
+      sideGroup.appendChild(northLabel);
 
       const tiltText = document.createElementNS(svgNS, 'text');
       tiltText.setAttribute('x', 0);
       tiltText.setAttribute('y', 56);
       tiltText.setAttribute('class', 'season-label');
-      tiltText.textContent = t.season_tilt_view || '23.4 degree tilt';
+      tiltText.textContent = (t.season_tilt_view || 'Sun angle') + ': ' + Math.abs(declination).toFixed(1) + '° ' + (declination >= 0 ? (t.season_north || 'N') : (t.season_south || 'S'));
       sideGroup.appendChild(tiltText);
       svg.appendChild(sideGroup);
       target.appendChild(svg);
 
       if (summary) {
         summary.innerHTML = `<div>${t.season_explain || 'Top-down orbit plus oblique inset for axial tilt.'}</div>`
+          + `<div>${t.season_cause || 'Summer and winter happen because Earth’s tilted axis changes the Sun height and daylight length.'}</div>`
           + `<div><strong>${t.season_current || 'Current season'}: </strong>${seasonNameForFraction(fraction)}</div>`
-          + `<div><strong>${t.season_progress || 'Year progress since Jan 1'}: </strong>${Math.round(fraction * 100)}%</div>`;
+          + `<div><strong>${t.season_progress || 'Year progress since Jan 1'}: </strong>${Math.round(fraction * 100)}%</div>`
+          + `<div><strong>${t.season_solar_tilt || 'Solar tilt'}: </strong>${Math.abs(declination).toFixed(1)}° ${declination >= 0 ? (t.season_toward_north || 'toward northern hemisphere') : (t.season_toward_south || 'toward southern hemisphere')}</div>`;
       }
       scheduleMasonryLayout();
     }
@@ -3075,14 +3742,15 @@
       const slider = document.getElementById('solarDateSlider');
       solarDayOffset = Number(slider.value) || 0;
       slider.setAttribute('aria-valuenow', String(solarDayOffset));
-      renderSolarSystem(selectedSolarDate());
+      refreshDateDrivenTiles();
     }
 
     function resetSolarDate(){
       const slider = document.getElementById('solarDateSlider');
       slider.value = '0';
       solarDayOffset = 0;
-      renderSolarSystem(selectedSolarDate());
+      slider.setAttribute('aria-valuenow', '0');
+      refreshDateDrivenTiles();
     }
 
     function stepSolarDate(days){
@@ -3092,7 +3760,21 @@
       solarDayOffset = Math.max(minimum, Math.min(maximum, solarDayOffset + days));
       slider.value = String(solarDayOffset);
       slider.setAttribute('aria-valuenow', String(solarDayOffset));
-      renderSolarSystem(selectedSolarDate());
+      refreshDateDrivenTiles();
+    }
+
+    function stepSolarDateByMonths(months){
+      const current = selectedSolarDate();
+      const shifted = new Date(current);
+      shifted.setMonth(shifted.getMonth() + months);
+      const nextOffset = Math.round((shifted - new Date()) / 86400000);
+      const slider = document.getElementById('solarDateSlider');
+      const minimum = Number(slider.min);
+      const maximum = Number(slider.max);
+      solarDayOffset = Math.max(minimum, Math.min(maximum, nextOffset));
+      slider.value = String(solarDayOffset);
+      slider.setAttribute('aria-valuenow', String(solarDayOffset));
+      refreshDateDrivenTiles();
     }
 
     let solarHoldDelay=null, solarHoldInterval=null, solarHoldTriggered=false;
@@ -3188,6 +3870,110 @@ function computeMoon(date){
       return new Date(fromDate.getTime() + deltaDays*86400000);
     }
 
+    function moonNodeDistance(date){
+      const draconic = 27.212220817;
+      const knownNode = Date.UTC(2000,0,9,0,0,0);
+      const currentUTC = Date.UTC(
+        date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(),
+        date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds()
+      );
+      const days = (currentUTC - knownNode) / 86400000;
+      const phase = ((days % draconic) + draconic) % draconic / draconic;
+      const distance = Math.min(phase, 1 - phase);
+      return { phase, distanceDays:distance * draconic };
+    }
+
+    function renderEclipseGeometry(date = new Date()){
+      const target = document.getElementById('eclipseGeometryMap');
+      const status = document.getElementById('eclipseGeometryStatus');
+      if (!target) return;
+      const m = computeMoon(date);
+      const node = moonNodeDistance(date);
+      const nearNew = Math.min(m.frac, 1 - m.frac);
+      const nearFull = Math.abs(m.frac - 0.5);
+      const phaseNear = Math.min(nearNew, nearFull);
+      const isSolarSide = nearNew <= nearFull;
+      const nodePct = Math.min(1, node.distanceDays / 4.5);
+      const phasePct = Math.min(1, phaseNear / 0.08);
+      const chance = Math.max(0, Math.round((1 - Math.max(nodePct, phasePct)) * 100));
+      const sizeW = 320;
+      const sizeH = 120;
+      const svgNS = 'http://www.w3.org/2000/svg';
+      target.innerHTML = '';
+      const svg = document.createElementNS(svgNS, 'svg');
+      svg.setAttribute('viewBox', '0 0 ' + sizeW + ' ' + sizeH);
+      svg.setAttribute('role', 'img');
+      svg.setAttribute('aria-label', t.eclipse_geometry_aria || 'Eclipse geometry');
+
+      const line = document.createElementNS(svgNS, 'line');
+      line.setAttribute('x1', 34);
+      line.setAttribute('y1', 60);
+      line.setAttribute('x2', 286);
+      line.setAttribute('y2', 60);
+      line.setAttribute('stroke', '#cbd5e1');
+      line.setAttribute('stroke-width', '3');
+      svg.appendChild(line);
+
+      const nodeBand = document.createElementNS(svgNS, 'rect');
+      nodeBand.setAttribute('x', 132);
+      nodeBand.setAttribute('y', 35);
+      nodeBand.setAttribute('width', 56);
+      nodeBand.setAttribute('height', 50);
+      nodeBand.setAttribute('rx', 10);
+      nodeBand.setAttribute('fill', chance > 35 ? 'rgba(37,99,235,.12)' : 'rgba(148,163,184,.12)');
+      nodeBand.setAttribute('stroke', '#93c5fd');
+      nodeBand.setAttribute('stroke-dasharray', '4 4');
+      svg.appendChild(nodeBand);
+
+      const sun = document.createElementNS(svgNS, 'circle');
+      sun.setAttribute('cx', 50);
+      sun.setAttribute('cy', 60);
+      sun.setAttribute('r', 15);
+      sun.setAttribute('fill', '#f8b43c');
+      svg.appendChild(sun);
+
+      const earth = document.createElementNS(svgNS, 'circle');
+      earth.setAttribute('cx', 160);
+      earth.setAttribute('cy', 60);
+      earth.setAttribute('r', 13);
+      earth.setAttribute('fill', '#2586d7');
+      svg.appendChild(earth);
+
+      const moonX = isSolarSide ? 105 : 230;
+      const nodeOffset = Math.max(-24, Math.min(24, (node.phase < 0.5 ? -1 : 1) * node.distanceDays * 4));
+      const moon = document.createElementNS(svgNS, 'circle');
+      moon.setAttribute('cx', moonX);
+      moon.setAttribute('cy', 60 + nodeOffset);
+      moon.setAttribute('r', 7);
+      moon.setAttribute('fill', '#f7c84b');
+      moon.setAttribute('stroke', '#475569');
+      moon.setAttribute('stroke-width', '1');
+      svg.appendChild(moon);
+
+      [
+        [50, 92, t.eclipse_sun || 'Sun'],
+        [160, 92, t.eclipse_earth || 'Earth'],
+        [moonX, 28 + nodeOffset, t.eclipse_moon || 'Moon'],
+        [160, 31, t.eclipse_node_zone || 'Node zone']
+      ].forEach(([x, y, label]) => {
+        const text = document.createElementNS(svgNS, 'text');
+        text.setAttribute('x', x);
+        text.setAttribute('y', y);
+        text.setAttribute('text-anchor', 'middle');
+        text.setAttribute('class', 'season-declination-label');
+        text.textContent = label;
+        svg.appendChild(text);
+      });
+      target.appendChild(svg);
+
+      if (status) {
+        const type = isSolarSide ? (t.eclipse_solar_possible || 'solar eclipse geometry') : (t.eclipse_lunar_possible || 'lunar eclipse geometry');
+        status.textContent = (t.eclipse_geometry_hint || 'Eclipses need new/full moon near a lunar node.') + ' '
+          + type + ': ' + chance + '%. '
+          + (t.eclipse_node_distance || 'Node distance') + ': ' + node.distanceDays.toFixed(1) + ' d.';
+      }
+    }
+
     function renderMoon(){
       const now = new Date();
       const tz  = document.getElementById('timezone').value;
@@ -3224,6 +4010,7 @@ function computeMoon(date){
       // Nächster Vollmond
       const nextFull = document.getElementById('moonNextFull');
       if (nextFull) nextFull.textContent = t.next_full + ': ' + fmtTZ(nf, tz);
+      renderEclipseGeometry(now);
     }
 
     function renderEarthMoon(){
@@ -3330,6 +4117,16 @@ function computeMoon(date){
     document.getElementById('btnSolarToday').addEventListener('click', resetSolarDate);
     wireSolarStepButton(document.getElementById('btnSolarPrev'), -1);
     wireSolarStepButton(document.getElementById('btnSolarNext'), 1);
+    document.getElementById('btnSolarPrevWeek').addEventListener('click', () => stepSolarDate(-7));
+    document.getElementById('btnSolarNextWeek').addEventListener('click', () => stepSolarDate(7));
+    document.getElementById('btnSolarPrevMonth').addEventListener('click', () => stepSolarDateByMonths(-1));
+    document.getElementById('btnSolarNextMonth').addEventListener('click', () => stepSolarDateByMonths(1));
+    document.getElementById('btnSolarPrevYear').addEventListener('click', () => stepSolarDateByMonths(-12));
+    document.getElementById('btnSolarNextYear').addEventListener('click', () => stepSolarDateByMonths(12));
+    document.getElementById('locationSelector').addEventListener('change', event => {
+      selectedLocationKey = event.target.value;
+      refreshDateDrivenTiles();
+    });
     document.querySelectorAll('[data-calendar-filter]').forEach(button => {
       button.addEventListener('pointerdown', event => event.preventDefault());
       button.addEventListener('click', () => setCalendarFilter(button.dataset.calendarFilter, true));
@@ -3341,6 +4138,7 @@ function computeMoon(date){
     document.getElementById('btnCalendarShowAll').addEventListener('click', toggleCalendarShowAll);
     window.addEventListener('pointerup', stopSolarDateHold);
 
+    populateLocationSelector();
     applyI18n();
     updateTime();
 
