@@ -559,13 +559,14 @@
     .solar-planet.uranus{ width:15px; height:15px; margin:-7.5px 0 0 -7.5px; background:#7dd3fc; }
     .solar-planet.neptune{ width:15px; height:15px; margin:-7.5px 0 0 -7.5px; background:#4169e1; }
     .small-bodies-card{
-      gap:10px;
+      gap:12px;
     }
     .small-bodies-map{
-      width:min(100%, 560px);
+      width:min(100%, 680px);
       aspect-ratio:1;
       margin-top:6px;
       border-radius:50%;
+      overflow:visible;
       background:
         radial-gradient(circle at 50% 50%, rgba(255,210,105,.18), transparent 8%),
         radial-gradient(circle at 50% 50%, rgba(148,163,184,.14), transparent 50%),
@@ -576,28 +577,69 @@
       display:block;
       width:100%;
       height:100%;
-      overflow:hidden;
+      overflow:visible;
       border-radius:50%;
+      touch-action:auto;
+      cursor:default;
+      user-select:none;
+      -webkit-user-select:none;
+      -webkit-touch-callout:none;
+    }
+    .small-bodies-map svg.is-dragging{
+      cursor:default;
     }
     .small-bodies-orbit{
       fill:none;
-      stroke-width:1.2;
-      stroke-opacity:.62;
+      stroke-width:2.1;
+      stroke-opacity:.8;
     }
     .small-bodies-hitarea{
       fill:none;
       stroke:transparent;
-      stroke-width:16;
+      stroke-width:20;
       pointer-events:stroke;
       cursor:help;
     }
+    .small-bodies-tools{
+      width:min(100%, 680px);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:2px;
+    }
+    .small-bodies-tools button{
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:.82rem;
+    }
+    .small-bodies-hint{
+      color:var(--muted);
+      font-size:.78rem;
+      line-height:1.35;
+      text-align:right;
+      flex:1;
+      min-width:220px;
+    }
+    .small-bodies-label-chip{
+      cursor:pointer;
+    }
+    .small-bodies-label-guide{
+      stroke:rgba(71,85,105,.45);
+      stroke-width:1.2;
+      stroke-dasharray:2 3;
+      pointer-events:none;
+    }
     .small-bodies-label{
       fill:#1f2937;
-      font-size:10px;
+      font-size:11px;
+      font-weight:600;
       paint-order:stroke;
       stroke:#fff;
       stroke-width:3px;
       stroke-linejoin:round;
+      pointer-events:none;
     }
     .small-bodies-belt{
       fill:none;
@@ -618,7 +660,7 @@
       filter:url(#smallBodiesSunGlow);
     }
     .small-bodies-summary{
-      width:min(100%, 560px);
+      width:min(100%, 680px);
       display:grid;
       grid-template-columns:repeat(2, minmax(0,1fr));
       gap:8px;
@@ -630,6 +672,21 @@
       color:var(--fg);
       display:block;
       font-size:.82rem;
+    }
+    .small-bodies-detail{
+      width:min(100%, 680px);
+      min-height:52px;
+      padding:10px 12px;
+      border:1px solid var(--border);
+      border-radius:8px;
+      background:#f8fafc;
+      color:var(--muted);
+      font-size:.82rem;
+      line-height:1.35;
+      text-align:left;
+    }
+    .small-bodies-detail strong{
+      color:var(--fg);
     }
     .astro-visual-card{
       gap:10px;
@@ -1766,6 +1823,11 @@
     <div class="display-container small-bodies-card wide-card">
       <div class="group-title" id="titleSmallBodies">Small Bodies</div>
       <div id="smallBodiesMap" class="small-bodies-map" aria-label="Comets, asteroid belt and Kuiper belt"></div>
+      <div class="small-bodies-tools">
+        <button id="smallBodiesReset" type="button">Ansicht zurücksetzen</button>
+        <div id="smallBodiesHint" class="small-bodies-hint">Mausrad oder Pinch zum Zoomen, ziehen zum Verschieben, Doppeltipp für Reset.</div>
+      </div>
+      <div id="smallBodiesDetail" class="small-bodies-detail">Tap an orbit to inspect it.</div>
       <div id="smallBodiesSummary" class="small-bodies-summary"></div>
       <div class="legend-small" id="smallBodiesLegend">
         Schematic view; comet paths and belts are strongly compressed
@@ -3078,13 +3140,23 @@
       return Math.sqrt(capped / 60) * maxRadius;
     }
 
+    function smallBodyShortName(name){
+      if (name.includes('/')) return name.split('/').slice(1).join('/');
+      const parts = name.trim().split(/\s+/);
+      return parts.length > 2 ? parts.slice(2).join(' ') : name;
+    }
+
     function renderSmallBodies(){
       const target = document.getElementById('smallBodiesMap');
+      const detail = document.getElementById('smallBodiesDetail');
       const summary = document.getElementById('smallBodiesSummary');
+      const resetButton = document.getElementById('smallBodiesReset');
+      const hint = document.getElementById('smallBodiesHint');
       if (!target) return;
-      const size = 560;
+      const size = 640;
       const center = size / 2;
-      const maxRadius = size * 0.45;
+      const maxRadius = size * 0.378;
+      const zoomEnabled = false;
       const svgNS = 'http://www.w3.org/2000/svg';
       target.innerHTML = '';
 
@@ -3092,6 +3164,10 @@
       svg.setAttribute('viewBox', '0 0 ' + size + ' ' + size);
       svg.setAttribute('role', 'img');
       svg.setAttribute('aria-label', t.small_bodies_aria || 'Comets, asteroid belt and Kuiper belt');
+
+      const setSmallBodyDetail = html => {
+        if (detail) detail.innerHTML = html;
+      };
 
       const defs = document.createElementNS(svgNS, 'defs');
       defs.innerHTML = `
@@ -3107,8 +3183,15 @@
             <feMergeNode in="SourceGraphic"></feMergeNode>
           </feMerge>
         </filter>
+        <clipPath id="smallBodiesClip">
+          <circle cx="${center}" cy="${center}" r="${center - 8}"></circle>
+        </clipPath>
       `;
       svg.appendChild(defs);
+
+      const viewport = document.createElementNS(svgNS, 'g');
+      viewport.setAttribute('clip-path', 'url(#smallBodiesClip)');
+      svg.appendChild(viewport);
 
       [1, 1.52, 5.2, 30].forEach(au => {
         const orbit = document.createElementNS(svgNS, 'circle');
@@ -3118,7 +3201,7 @@
         orbit.setAttribute('fill', 'none');
         orbit.setAttribute('stroke', 'rgba(107,114,128,.22)');
         orbit.setAttribute('stroke-width', '1');
-        svg.appendChild(orbit);
+        viewport.appendChild(orbit);
       });
 
       (smallBodiesConfig.belts || []).forEach(belt => {
@@ -3133,7 +3216,7 @@
         const title = document.createElementNS(svgNS, 'title');
         title.textContent = belt.label;
         ring.appendChild(title);
-        svg.appendChild(ring);
+        viewport.appendChild(ring);
 
         const ringHit = document.createElementNS(svgNS, 'circle');
         ringHit.setAttribute('cx', center);
@@ -3144,7 +3227,10 @@
         const hitTitle = document.createElementNS(svgNS, 'title');
         hitTitle.textContent = belt.label;
         ringHit.appendChild(hitTitle);
-        svg.appendChild(ringHit);
+        ringHit.addEventListener('click', () => {
+          setSmallBodyDetail('<strong>' + belt.label + '</strong><br>' + (t.small_bodies_belt_explain || 'Broad ring of many small bodies.') + ' ' + belt.innerAu + '-' + belt.outerAu + ' AU');
+        });
+        viewport.appendChild(ringHit);
       });
 
       (smallBodiesConfig.comets || []).forEach((comet, index) => {
@@ -3153,6 +3239,10 @@
         const rx = Math.max(4, (q + Q) / 2);
         const ry = Math.max(3, rx * (0.28 + (index % 5) * 0.035));
         const cx = center + (q - Q) / 2;
+        const rotation = (comet.angle || 0) * Math.PI / 180;
+        const detailHtml = '<strong>' + smallBodyShortName(comet.name) + '</strong><br>'
+          + comet.name + ' · ' + comet.type + ' · ' + (t.small_bodies_perihel || 'Perihelion') + ' ' + comet.q + ' AU · ' + (t.small_bodies_aphel || 'Aphelion') + ' ' + comet.Q + ' AU';
+
         const orbit = document.createElementNS(svgNS, 'ellipse');
         orbit.setAttribute('cx', cx);
         orbit.setAttribute('cy', center);
@@ -3162,9 +3252,9 @@
         orbit.setAttribute('stroke', comet.color || '#2563eb');
         orbit.setAttribute('transform', 'rotate(' + (comet.angle || 0) + ' ' + center + ' ' + center + ')');
         const title = document.createElementNS(svgNS, 'title');
-        title.textContent = comet.name + ' · q ' + comet.q + ' AU · Q ' + comet.Q + ' AU · ' + comet.type;
+        title.textContent = comet.name + ' · ' + (t.small_bodies_perihel || 'Perihelion') + ' ' + comet.q + ' AU · ' + (t.small_bodies_aphel || 'Aphelion') + ' ' + comet.Q + ' AU · ' + comet.type;
         orbit.appendChild(title);
-        svg.appendChild(orbit);
+        viewport.appendChild(orbit);
 
         const orbitHit = document.createElementNS(svgNS, 'ellipse');
         orbitHit.setAttribute('cx', cx);
@@ -3174,19 +3264,53 @@
         orbitHit.setAttribute('class', 'small-bodies-hitarea');
         orbitHit.setAttribute('transform', 'rotate(' + (comet.angle || 0) + ' ' + center + ' ' + center + ')');
         const orbitHitTitle = document.createElementNS(svgNS, 'title');
-        orbitHitTitle.textContent = comet.name + ' · q ' + comet.q + ' AU · Q ' + comet.Q + ' AU · ' + comet.type;
+        orbitHitTitle.textContent = comet.name + ' · ' + (t.small_bodies_perihel || 'Perihelion') + ' ' + comet.q + ' AU · ' + (t.small_bodies_aphel || 'Aphelion') + ' ' + comet.Q + ' AU · ' + comet.type;
         orbitHit.appendChild(orbitHitTitle);
-        svg.appendChild(orbitHit);
+        orbitHit.addEventListener('click', () => setSmallBodyDetail(detailHtml));
+        viewport.appendChild(orbitHit);
 
-        if (index < 10) {
-          const angle = (comet.angle || 0) * Math.PI / 180;
-          const labelRadius = Math.min(maxRadius * .96, Math.max(q + 12, smallBodyRadius(Math.min(60, comet.q + 2), maxRadius)));
+        if (comet.showLabel) {
+          const localAnchor = { x: cx - rx, y: center };
+          const dx = localAnchor.x - center;
+          const dy = localAnchor.y - center;
+          const anchorX = center + dx * Math.cos(rotation) - dy * Math.sin(rotation);
+          const anchorY = center + dx * Math.sin(rotation) + dy * Math.cos(rotation);
+          const vx = anchorX - center;
+          const vy = anchorY - center;
+          const length = Math.max(1, Math.hypot(vx, vy));
+          const dirX = vx / length;
+          const dirY = vy / length;
+          const labelX = anchorX + dirX * 16;
+          const labelY = anchorY + dirY * 16 + (Math.abs(dirY) < 0.22 ? -8 : 0);
+
+          const group = document.createElementNS(svgNS, 'g');
+          group.setAttribute('class', 'small-bodies-label-chip');
+          group.addEventListener('click', () => setSmallBodyDetail(detailHtml));
+
+          const guide = document.createElementNS(svgNS, 'line');
+          guide.setAttribute('x1', anchorX);
+          guide.setAttribute('y1', anchorY);
+          guide.setAttribute('x2', labelX);
+          guide.setAttribute('y2', labelY - 4);
+          guide.setAttribute('class', 'small-bodies-label-guide');
+
+          const dot = document.createElementNS(svgNS, 'circle');
+          dot.setAttribute('cx', anchorX);
+          dot.setAttribute('cy', anchorY);
+          dot.setAttribute('r', 3.5);
+          dot.setAttribute('fill', comet.color || '#2563eb');
+
           const label = document.createElementNS(svgNS, 'text');
-          label.setAttribute('x', center + Math.cos(angle) * labelRadius);
-          label.setAttribute('y', center + Math.sin(angle) * labelRadius);
+          label.setAttribute('x', labelX);
+          label.setAttribute('y', labelY);
           label.setAttribute('class', 'small-bodies-label');
-          label.textContent = comet.name.replace(/\/.*/, '');
-          svg.appendChild(label);
+          label.setAttribute('text-anchor', dirX > 0.28 ? 'start' : (dirX < -0.28 ? 'end' : 'middle'));
+          label.textContent = smallBodyShortName(comet.name);
+
+          group.appendChild(guide);
+          group.appendChild(dot);
+          group.appendChild(label);
+          viewport.appendChild(group);
         }
       });
 
@@ -3195,8 +3319,168 @@
       sun.setAttribute('cy', center);
       sun.setAttribute('r', 15);
       sun.setAttribute('class', 'small-bodies-sun');
-      svg.appendChild(sun);
+      viewport.appendChild(sun);
+
+      const zoomState = {
+        scale: 1,
+        tx: 0,
+        ty: 0,
+        activePointers: new Map(),
+        panPointerId: null,
+        lastPoint: null,
+        pinchBase: null,
+        suppressClick: false
+      };
+
+      const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
+      const pointerToSvgPoint = (clientX, clientY) => {
+        const rect = svg.getBoundingClientRect();
+        return {
+          x: ((clientX - rect.left) / rect.width) * size,
+          y: ((clientY - rect.top) / rect.height) * size
+        };
+      };
+
+      const applyViewportTransform = () => {
+        const maxPan = (zoomState.scale - 1) * size * 0.38;
+        zoomState.tx = clamp(zoomState.tx, -maxPan, maxPan);
+        zoomState.ty = clamp(zoomState.ty, -maxPan, maxPan);
+        viewport.setAttribute('transform', 'translate(' + zoomState.tx.toFixed(2) + ' ' + zoomState.ty.toFixed(2) + ') scale(' + zoomState.scale.toFixed(3) + ')');
+        svg.classList.toggle('is-dragging', zoomState.panPointerId !== null || zoomState.activePointers.size > 1);
+      };
+
+      const zoomAtPoint = (targetScale, focusPoint) => {
+        const nextScale = clamp(targetScale, 1, 5);
+        const worldX = (focusPoint.x - zoomState.tx) / zoomState.scale;
+        const worldY = (focusPoint.y - zoomState.ty) / zoomState.scale;
+        zoomState.tx = focusPoint.x - nextScale * worldX;
+        zoomState.ty = focusPoint.y - nextScale * worldY;
+        zoomState.scale = nextScale;
+        applyViewportTransform();
+      };
+
+      const resetSmallBodiesView = () => {
+        zoomState.scale = 1;
+        zoomState.tx = 0;
+        zoomState.ty = 0;
+        zoomState.activePointers.clear();
+        zoomState.panPointerId = null;
+        zoomState.lastPoint = null;
+        zoomState.pinchBase = null;
+        zoomState.suppressClick = false;
+        applyViewportTransform();
+      };
+
+      const beginPinch = () => {
+        const points = Array.from(zoomState.activePointers.values());
+        if (points.length !== 2) return;
+        const centerPoint = pointerToSvgPoint((points[0].clientX + points[1].clientX) / 2, (points[0].clientY + points[1].clientY) / 2);
+        const distance = Math.hypot(points[1].clientX - points[0].clientX, points[1].clientY - points[0].clientY);
+        zoomState.pinchBase = {
+          scale: zoomState.scale,
+          focusWorldX: (centerPoint.x - zoomState.tx) / zoomState.scale,
+          focusWorldY: (centerPoint.y - zoomState.ty) / zoomState.scale,
+          distance
+        };
+      };
+
+      if (zoomEnabled) {
+        svg.addEventListener('wheel', event => {
+          event.preventDefault();
+          zoomAtPoint(zoomState.scale * Math.exp(-event.deltaY * 0.0015), pointerToSvgPoint(event.clientX, event.clientY));
+        }, { passive: false });
+
+        svg.addEventListener('dblclick', event => {
+          event.preventDefault();
+          resetSmallBodiesView();
+        });
+
+        svg.addEventListener('pointerdown', event => {
+          if (event.pointerType === 'mouse' && ![0, 1].includes(event.button)) return;
+          zoomState.activePointers.set(event.pointerId, { clientX: event.clientX, clientY: event.clientY });
+          if (zoomState.activePointers.size === 2) {
+            beginPinch();
+            zoomState.panPointerId = null;
+            zoomState.lastPoint = null;
+            event.preventDefault();
+            return;
+          }
+          const canPan = event.pointerType !== 'mouse' || event.button === 1 || zoomState.scale > 1.001;
+          if (canPan) {
+            zoomState.panPointerId = event.pointerId;
+            zoomState.lastPoint = pointerToSvgPoint(event.clientX, event.clientY);
+            try { svg.setPointerCapture(event.pointerId); } catch (error) {}
+            event.preventDefault();
+          }
+        });
+
+        svg.addEventListener('pointermove', event => {
+          if (!zoomState.activePointers.has(event.pointerId)) return;
+          zoomState.activePointers.set(event.pointerId, { clientX: event.clientX, clientY: event.clientY });
+          if (zoomState.activePointers.size === 2 && zoomState.pinchBase) {
+            const points = Array.from(zoomState.activePointers.values());
+            const centerPoint = pointerToSvgPoint((points[0].clientX + points[1].clientX) / 2, (points[0].clientY + points[1].clientY) / 2);
+            const distance = Math.max(24, Math.hypot(points[1].clientX - points[0].clientX, points[1].clientY - points[0].clientY));
+            const nextScale = clamp(zoomState.pinchBase.scale * (distance / zoomState.pinchBase.distance), 1, 5);
+            zoomState.scale = nextScale;
+            zoomState.tx = centerPoint.x - nextScale * zoomState.pinchBase.focusWorldX;
+            zoomState.ty = centerPoint.y - nextScale * zoomState.pinchBase.focusWorldY;
+            zoomState.suppressClick = true;
+            applyViewportTransform();
+            return;
+          }
+          if (zoomState.panPointerId === event.pointerId && zoomState.lastPoint) {
+            const point = pointerToSvgPoint(event.clientX, event.clientY);
+            const dx = point.x - zoomState.lastPoint.x;
+            const dy = point.y - zoomState.lastPoint.y;
+            if (Math.abs(dx) > 0.2 || Math.abs(dy) > 0.2) {
+              zoomState.tx += dx;
+              zoomState.ty += dy;
+              zoomState.lastPoint = point;
+              zoomState.suppressClick = true;
+              applyViewportTransform();
+            }
+          }
+        });
+
+        const endPointer = event => {
+          zoomState.activePointers.delete(event.pointerId);
+          if (zoomState.activePointers.size < 2) zoomState.pinchBase = null;
+          if (zoomState.panPointerId === event.pointerId) {
+            zoomState.panPointerId = null;
+            zoomState.lastPoint = null;
+            try { svg.releasePointerCapture(event.pointerId); } catch (error) {}
+          }
+          applyViewportTransform();
+        };
+
+        svg.addEventListener('pointerup', endPointer);
+        svg.addEventListener('pointercancel', endPointer);
+        svg.addEventListener('pointerleave', event => {
+          if (event.pointerType === 'mouse') endPointer(event);
+        });
+        svg.addEventListener('click', event => {
+          if (!zoomState.suppressClick) return;
+          zoomState.suppressClick = false;
+          event.preventDefault();
+          event.stopPropagation();
+        }, true);
+      }
+
+      if (resetButton) {
+        resetButton.textContent = t.small_bodies_reset || 'Reset view';
+        resetButton.onclick = resetSmallBodiesView;
+        resetButton.hidden = !zoomEnabled;
+      }
+      if (hint) {
+        hint.textContent = zoomEnabled
+          ? (t.small_bodies_gesture_hint || 'Use the mouse wheel or pinch to zoom, drag to pan, double-click to reset.')
+          : (t.small_bodies_tap_hint || 'Tap or click an orbit to see its name, type and orbit data.');
+      }
+
+      applyViewportTransform();
       target.appendChild(svg);
+      setSmallBodyDetail('<strong>' + (t.small_bodies_tap_title || 'Pick a body') + '</strong><br>' + (t.small_bodies_tap_hint || 'Tap or click an orbit to see its name, type and orbit data.'));
 
       if (summary) {
         summary.innerHTML = '';
@@ -3394,7 +3678,7 @@
       horizon.setAttribute('stroke-width', '1');
       svg.appendChild(horizon);
       [
-        ['N', 0, 11], ['E', 128, 74], ['S', 70, 133], ['W', 12, 74]
+        ['N', center, 11], ['E', size - 10, center + 4], ['S', center, size - 7], ['W', 10, center + 4]
       ].forEach(([label, x, y]) => {
         const el = document.createElementNS(svgNS, 'text');
         el.setAttribute('x', x);
@@ -3968,7 +4252,8 @@ function computeMoon(date){
 
       if (status) {
         const type = isSolarSide ? (t.eclipse_solar_possible || 'solar eclipse geometry') : (t.eclipse_lunar_possible || 'lunar eclipse geometry');
-        status.textContent = (t.eclipse_geometry_hint || 'Eclipses need new/full moon near a lunar node.') + ' '
+        status.textContent = (t.eclipse_geometry_explain || 'The sketch shows Sun, Earth and Moon along the eclipse line; the blue zone marks where the Moon should cross the node region.') + ' '
+          + (t.eclipse_geometry_hint || 'Eclipses need new/full moon near a lunar node.') + ' '
           + type + ': ' + chance + '%. '
           + (t.eclipse_node_distance || 'Node distance') + ': ' + node.distanceDays.toFixed(1) + ' d.';
       }

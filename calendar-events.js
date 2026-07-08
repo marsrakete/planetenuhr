@@ -1,5 +1,12 @@
-window.PLANETENUHR_EVENTS = {
+﻿window.PLANETENUHR_EVENTS = {
   en: [
+    {
+      date: "2026-01-03",
+      category: "planet",
+      title: "Earth at perihelion",
+      visibility: "No direct visual change; solar disk slightly larger",
+      note: "Earth is closest to the Sun on 2026-01-03 (about 17:16 UTC); seasons are still controlled mainly by axial tilt."
+    },
     {
       date: "2026-01-04",
       category: "meteor",
@@ -69,6 +76,27 @@ window.PLANETENUHR_EVENTS = {
       title: "June solstice",
       visibility: "Worldwide",
       note: "Longest day of the year in the northern hemisphere."
+    },
+    {
+      date: "2026-07-06",
+      category: "planet",
+      title: "Earth at aphelion",
+      visibility: "No direct visual change; solar disk slightly smaller",
+      note: "Earth reaches its farthest point from the Sun on 2026-07-06 (about 17:31 UTC); seasonal weather is still driven mainly by axial tilt."
+    },
+    {
+      date: "2026-07-30",
+      category: "meteor",
+      title: "Delta Aquariids meteor shower maximum",
+      visibility: "Low southern radiant; best from Europe after midnight",
+      note: "Peak of a shower active roughly from 2026-07-12 to 2026-08-23; darker skies away from city light help most."
+    },
+    {
+      date: "2026-07-31",
+      category: "meteor",
+      title: "Alpha Capricornids meteor shower maximum",
+      visibility: "Visible from Europe after midnight, low in the south",
+      note: "Peak of a shower active roughly from 2026-07-07 to 2026-08-15; slower meteors can produce bright fireballs."
     },
     {
       date: "2026-08-10",
@@ -170,6 +198,13 @@ window.PLANETENUHR_EVENTS = {
     },
     {
       date: "2027-01-03",
+      category: "planet",
+      title: "Earth at perihelion",
+      visibility: "No direct visual change; solar disk slightly larger",
+      note: "Earth is closest to the Sun on 2027-01-03 (about 02:33 UTC); seasons are still controlled mainly by axial tilt."
+    },
+    {
+      date: "2027-01-03",
       category: "meteor",
       title: "Quadrantids meteor shower maximum",
       visibility: "Good from Europe before dawn",
@@ -237,6 +272,27 @@ window.PLANETENUHR_EVENTS = {
       title: "June solstice",
       visibility: "Worldwide",
       note: "Longest day of the year in the northern hemisphere."
+    },
+    {
+      date: "2027-07-05",
+      category: "planet",
+      title: "Earth at aphelion",
+      visibility: "No direct visual change; solar disk slightly smaller",
+      note: "Earth reaches its farthest point from the Sun on 2027-07-05 (about 05:06 UTC); seasonal weather is still driven mainly by axial tilt."
+    },
+    {
+      date: "2027-07-30",
+      category: "meteor",
+      title: "Delta Aquariids meteor shower maximum",
+      visibility: "Low southern radiant; best from Europe after midnight",
+      note: "Peak of a shower active roughly from 2027-07-12 to 2027-08-23; darker skies away from city light help most."
+    },
+    {
+      date: "2027-07-31",
+      category: "meteor",
+      title: "Alpha Capricornids meteor shower maximum",
+      visibility: "Visible from Europe after midnight, low in the south",
+      note: "Peak of a shower active roughly from 2027-07-07 to 2027-08-15; slower meteors can produce bright fireballs."
     },
     {
       date: "2027-08-02",
@@ -318,6 +374,13 @@ window.PLANETENUHR_EVENTS = {
   ],
   de: [
     {
+      date: "2026-01-03",
+      category: "planet",
+      title: "Erde im Perihel",
+      visibility: "Keine direkte sichtbare Veränderung; Sonnenscheibe minimal größer",
+      note: "Die Erde ist am 2026-01-03 (ca. 17:16 UTC) der Sonne am nächsten; die Jahreszeiten werden trotzdem vor allem von der Achsneigung bestimmt."
+    },
+    {
       date: "2026-01-04",
       category: "meteor",
       title: "Maximum der Quadrantiden",
@@ -386,6 +449,27 @@ window.PLANETENUHR_EVENTS = {
       title: "Juni-Sonnenwende",
       visibility: "Weltweit",
       note: "Längster Tag des Jahres auf der Nordhalbkugel."
+    },
+    {
+      date: "2026-07-06",
+      category: "planet",
+      title: "Erde im Aphel",
+      visibility: "Keine direkte sichtbare Veränderung; Sonnenscheibe minimal kleiner",
+      note: "Die Erde erreicht am 2026-07-06 (ca. 17:31 UTC) ihren größten Sonnenabstand; das Wetter bleibt vor allem von der Achsneigung bestimmt."
+    },
+    {
+      date: "2026-07-30",
+      category: "meteor",
+      title: "Maximum der Delta-Aquariiden",
+      visibility: "Tiefer südlicher Radiant; in Europa am besten nach Mitternacht",
+      note: "Peak eines Stroms, der ungefähr von 2026-07-12 bis 2026-08-23 aktiv ist; dunkler Himmel fern von Stadtlicht hilft deutlich."
+    },
+    {
+      date: "2026-07-31",
+      category: "meteor",
+      title: "Maximum der Alpha-Capricorniden",
+      visibility: "In Europa nach Mitternacht sichtbar, tief im Süden",
+      note: "Peak eines Stroms, der ungefähr von 2026-07-07 bis 2026-08-15 aktiv ist; langsamere Meteore können helle Feuerkugeln liefern."
     },
     {
       date: "2026-08-10",
@@ -487,6 +571,13 @@ window.PLANETENUHR_EVENTS = {
     },
     {
       date: "2027-01-03",
+      category: "planet",
+      title: "Erde im Perihel",
+      visibility: "Keine direkte sichtbare Veränderung; Sonnenscheibe minimal größer",
+      note: "Die Erde ist am 2027-01-03 (ca. 02:33 UTC) der Sonne am nächsten; die Jahreszeiten werden trotzdem vor allem von der Achsneigung bestimmt."
+    },
+    {
+      date: "2027-01-03",
       category: "meteor",
       title: "Maximum der Quadrantiden",
       visibility: "Gut in Europa vor der Dämmerung",
@@ -554,6 +645,27 @@ window.PLANETENUHR_EVENTS = {
       title: "Juni-Sonnenwende",
       visibility: "Weltweit",
       note: "Längster Tag des Jahres auf der Nordhalbkugel."
+    },
+    {
+      date: "2027-07-05",
+      category: "planet",
+      title: "Erde im Aphel",
+      visibility: "Keine direkte sichtbare Veränderung; Sonnenscheibe minimal kleiner",
+      note: "Die Erde erreicht am 2027-07-05 (ca. 05:06 UTC) ihren größten Sonnenabstand; das Wetter bleibt vor allem von der Achsneigung bestimmt."
+    },
+    {
+      date: "2027-07-30",
+      category: "meteor",
+      title: "Maximum der Delta-Aquariiden",
+      visibility: "Tiefer südlicher Radiant; in Europa am besten nach Mitternacht",
+      note: "Peak eines Stroms, der ungefähr von 2027-07-12 bis 2027-08-23 aktiv ist; dunkler Himmel fern von Stadtlicht hilft deutlich."
+    },
+    {
+      date: "2027-07-31",
+      category: "meteor",
+      title: "Maximum der Alpha-Capricorniden",
+      visibility: "In Europa nach Mitternacht sichtbar, tief im Süden",
+      note: "Peak eines Stroms, der ungefähr von 2027-07-07 bis 2027-08-15 aktiv ist; langsamere Meteore können helle Feuerkugeln liefern."
     },
     {
       date: "2027-08-02",
@@ -635,6 +747,13 @@ window.PLANETENUHR_EVENTS = {
   ],
   fr: [
     {
+      date: "2026-01-03",
+      category: "planet",
+      title: "Terre au périhélie",
+      visibility: "Pas de changement visuel direct; disque solaire légèrement plus grand",
+      note: "La Terre est au plus près du Soleil le 2026-01-03 (vers 17:16 UTC); les saisons restent surtout dues à l'inclinaison de l'axe."
+    },
+    {
       date: "2026-01-04",
       category: "meteor",
       title: "Maximum des Quadrantides",
@@ -703,6 +822,27 @@ window.PLANETENUHR_EVENTS = {
       title: "Solstice de juin",
       visibility: "Monde entier",
       note: "Jour le plus long de l'année dans l'hémisphère nord."
+    },
+    {
+      date: "2026-07-06",
+      category: "planet",
+      title: "Terre à l'aphélie",
+      visibility: "Pas de changement visuel direct; disque solaire légèrement plus petit",
+      note: "La Terre atteint sa distance maximale au Soleil le 2026-07-06 (vers 17:31 UTC); les saisons restent surtout dues à l'inclinaison de l'axe."
+    },
+    {
+      date: "2026-07-30",
+      category: "meteor",
+      title: "Maximum des Delta-Aquarides",
+      visibility: "Radiant sud bas; depuis l'Europe, au mieux après minuit",
+      note: "Pic d'un essaim actif environ du 2026-07-12 au 2026-08-23; un ciel sombre loin des lumières urbaines aide nettement."
+    },
+    {
+      date: "2026-07-31",
+      category: "meteor",
+      title: "Maximum des Alpha-Capricornides",
+      visibility: "Visible depuis l'Europe après minuit, bas au sud",
+      note: "Pic d'un essaim actif environ du 2026-07-07 au 2026-08-15; des météores plus lents peuvent produire de belles boules de feu."
     },
     {
       date: "2026-08-10",
@@ -804,6 +944,13 @@ window.PLANETENUHR_EVENTS = {
     },
     {
       date: "2027-01-03",
+      category: "planet",
+      title: "Terre au périhélie",
+      visibility: "Pas de changement visuel direct; disque solaire légèrement plus grand",
+      note: "La Terre est au plus près du Soleil le 2027-01-03 (vers 02:33 UTC); les saisons restent surtout dues à l'inclinaison de l'axe."
+    },
+    {
+      date: "2027-01-03",
       category: "meteor",
       title: "Maximum des Quadrantides",
       visibility: "Bon depuis l'Europe avant l'aube",
@@ -871,6 +1018,27 @@ window.PLANETENUHR_EVENTS = {
       title: "Solstice de juin",
       visibility: "Monde entier",
       note: "Jour le plus long de l'année dans l'hémisphère nord."
+    },
+    {
+      date: "2027-07-05",
+      category: "planet",
+      title: "Terre à l'aphélie",
+      visibility: "Pas de changement visuel direct; disque solaire légèrement plus petit",
+      note: "La Terre atteint sa distance maximale au Soleil le 2027-07-05 (vers 05:06 UTC); les saisons restent surtout dues à l'inclinaison de l'axe."
+    },
+    {
+      date: "2027-07-30",
+      category: "meteor",
+      title: "Maximum des Delta-Aquarides",
+      visibility: "Radiant sud bas; depuis l'Europe, au mieux après minuit",
+      note: "Pic d'un essaim actif environ du 2027-07-12 au 2027-08-23; un ciel sombre loin des lumières urbaines aide nettement."
+    },
+    {
+      date: "2027-07-31",
+      category: "meteor",
+      title: "Maximum des Alpha-Capricornides",
+      visibility: "Visible depuis l'Europe après minuit, bas au sud",
+      note: "Pic d'un essaim actif environ du 2027-07-07 au 2027-08-15; des météores plus lents peuvent produire de belles boules de feu."
     },
     {
       date: "2027-08-02",
