@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -70,14 +70,21 @@
       grid-column:auto;
     }
     .solar-card{ order:10; }
-    .jupiter-card{ order:20; }
-    .visibility-card{ order:30; }
-    .earth-card{ order:40; }
-    .system-card{ order:50; }
-    .sky-calendar-card{ order:60; }
-    .bsky-card{ order:70; }
+    .small-bodies-card{ order:20; }
+    .meteor-card{ order:30; }
+    .season-card{ order:40; }
+    .spacecraft-card{ order:50; }
+    .jupiter-card{ order:60; }
+    .visibility-card{ order:70; }
+    .earth-card{ order:80; }
+    .system-card{ order:90; }
+    .sky-calendar-card{ order:100; }
+    .bsky-card{ order:110; }
     @media (min-width:1180px){
       .solar-card,
+      .small-bodies-card,
+      .meteor-card,
+      .spacecraft-card,
       .jupiter-card,
       .system-card,
       .sky-calendar-card{
@@ -385,7 +392,198 @@
     .solar-planet.saturn{ width:18px; height:18px; margin:-9px 0 0 -9px; background:#d6c08a; }
     .solar-planet.uranus{ width:15px; height:15px; margin:-7.5px 0 0 -7.5px; background:#7dd3fc; }
     .solar-planet.neptune{ width:15px; height:15px; margin:-7.5px 0 0 -7.5px; background:#4169e1; }
-    /* Earth–Moon system */
+    .small-bodies-card{
+      gap:10px;
+    }
+    .small-bodies-map{
+      width:min(100%, 560px);
+      aspect-ratio:1;
+      margin-top:6px;
+      border-radius:50%;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(255,210,105,.18), transparent 8%),
+        radial-gradient(circle at 50% 50%, rgba(148,163,184,.14), transparent 50%),
+        #ffffff;
+      box-shadow:inset 0 0 30px rgba(148,163,184,.18), 0 8px 24px rgba(0,0,0,.12);
+    }
+    .small-bodies-map svg{
+      display:block;
+      width:100%;
+      height:100%;
+      overflow:hidden;
+      border-radius:50%;
+    }
+    .small-bodies-orbit{
+      fill:none;
+      stroke-width:1.2;
+      stroke-opacity:.62;
+    }
+    .small-bodies-label{
+      fill:#1f2937;
+      font-size:10px;
+      paint-order:stroke;
+      stroke:#fff;
+      stroke-width:3px;
+      stroke-linejoin:round;
+    }
+    .small-bodies-belt{
+      fill:none;
+      stroke:#94a3b8;
+      stroke-width:16;
+      stroke-dasharray:1 6;
+      stroke-linecap:round;
+      opacity:.32;
+    }
+    .small-bodies-belt.kuiper{
+      stroke:#60a5fa;
+      stroke-width:24;
+      stroke-dasharray:1 8;
+      opacity:.22;
+    }
+    .small-bodies-sun{
+      fill:url(#smallBodiesSunGradient);
+      filter:url(#smallBodiesSunGlow);
+    }
+    .small-bodies-summary{
+      width:min(100%, 560px);
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:8px;
+      font-size:.78rem;
+      color:var(--muted);
+      text-align:left;
+    }
+    .small-bodies-summary strong{
+      color:var(--fg);
+      display:block;
+      font-size:.82rem;
+    }
+    .astro-visual-card{
+      gap:10px;
+    }
+    .astro-disc{
+      width:min(100%, 420px);
+      aspect-ratio:1;
+      margin-top:6px;
+      border-radius:50%;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(255,255,255,.85), transparent 32%),
+        radial-gradient(circle at 50% 50%, rgba(148,163,184,.16), transparent 62%),
+        #ffffff;
+      box-shadow:inset 0 0 26px rgba(148,163,184,.16), 0 8px 22px rgba(0,0,0,.1);
+    }
+    .astro-disc svg{
+      display:block;
+      width:100%;
+      height:100%;
+      overflow:hidden;
+      border-radius:50%;
+    }
+    .astro-summary{
+      width:min(100%, 420px);
+      display:grid;
+      gap:6px;
+      color:var(--muted);
+      font-size:.82rem;
+      text-align:left;
+    }
+    .astro-summary strong{
+      color:var(--fg);
+    }
+    .meteor-arc{
+      fill:none;
+      stroke-width:10;
+      stroke-linecap:round;
+      opacity:.72;
+    }
+    .meteor-peak{
+      stroke:#111827;
+      stroke-width:2;
+      fill:#fff;
+    }
+    .meteor-month-tick{
+      stroke:#9ca3af;
+      stroke-width:1;
+      stroke-linecap:round;
+    }
+    .meteor-month-label{
+      fill:#4b5563;
+      font-size:10px;
+      text-anchor:middle;
+      dominant-baseline:middle;
+      paint-order:stroke;
+      stroke:#fff;
+      stroke-width:3px;
+      stroke-linejoin:round;
+    }
+    .meteor-today{
+      fill:#ef4444;
+      stroke:#fff;
+      stroke-width:2;
+    }
+    .season-orbit{
+      fill:none;
+      stroke:#d1d5db;
+      stroke-width:2;
+    }
+    .season-axis{
+      stroke:#2563eb;
+      stroke-width:3;
+      stroke-linecap:round;
+    }
+    .season-earth{
+      fill:url(#seasonEarthGradient);
+      filter:url(#seasonEarthShadow);
+    }
+    .season-sunray{
+      stroke:#f59e0b;
+      stroke-width:2;
+      stroke-linecap:round;
+      opacity:.55;
+    }
+    .season-label{
+      fill:#4b5563;
+      font-size:10px;
+      text-anchor:middle;
+      paint-order:stroke;
+      stroke:#fff;
+      stroke-width:3px;
+      stroke-linejoin:round;
+    }
+    .spacecraft-track{
+      fill:none;
+      stroke:#cbd5e1;
+      stroke-width:1.2;
+      stroke-linecap:round;
+      stroke-dasharray:4 4;
+    }
+    .spacecraft-marker{
+      stroke:#fff;
+      stroke-width:2;
+    }
+    .spacecraft-label{
+      fill:#1f2937;
+      font-size:10px;
+      paint-order:stroke;
+      stroke:#fff;
+      stroke-width:3px;
+      stroke-linejoin:round;
+    }
+    .spacecraft-card .astro-disc{
+      width:min(100%, 460px);
+      overflow:visible;
+    }
+    .spacecraft-card .astro-disc svg{
+      overflow:visible;
+      border-radius:0;
+    }
+    .spacecraft-orbit{
+      fill:none;
+      stroke:#cbd5e1;
+      stroke-width:1;
+      opacity:.24;
+    }
+    /* Earth-Moon system */
     .earthmoon-wrap{
       width:100%;
       display:flex;
@@ -1194,6 +1392,36 @@
       </div>
     </div>
 
+    <div class="display-container small-bodies-card wide-card">
+      <div class="group-title" id="titleSmallBodies">Small Bodies</div>
+      <div id="smallBodiesMap" class="small-bodies-map" aria-label="Comets, asteroid belt and Kuiper belt"></div>
+      <div id="smallBodiesSummary" class="small-bodies-summary"></div>
+      <div class="legend-small" id="smallBodiesLegend">
+        Schematic view; comet paths and belts are strongly compressed
+      </div>
+    </div>
+
+    <div class="display-container meteor-card astro-visual-card wide-card">
+      <div class="group-title" id="titleMeteorStreams">Meteor Streams</div>
+      <div id="meteorMap" class="astro-disc" aria-label="Meteor shower activity through the year"></div>
+      <div id="meteorSummary" class="astro-summary"></div>
+      <div class="legend-small" id="meteorLegend">Activity windows and peak dates for major meteor showers</div>
+    </div>
+
+    <div class="display-container season-card astro-visual-card">
+      <div class="group-title" id="titleSeasonAxis">Seasons</div>
+      <div id="seasonMap" class="astro-disc" aria-label="Earth orbit, axial tilt and current season"></div>
+      <div id="seasonSummary" class="astro-summary"></div>
+      <div class="legend-small" id="seasonLegend">Current position in the year; axial tilt shown schematically</div>
+    </div>
+
+    <div class="display-container spacecraft-card astro-visual-card wide-card">
+      <div class="group-title" id="titleSpacecraft">Spacecraft</div>
+      <div id="spacecraftMap" class="astro-disc" aria-label="Approximate spacecraft distances from the Sun"></div>
+      <div id="spacecraftSummary" class="astro-summary"></div>
+      <div class="legend-small" id="spacecraftLegend">Schematic top-down flight paths; logarithmic scale</div>
+    </div>
+
     <div class="display-container visibility-card wide-card">
       <div class="group-title" id="titleVisibility">Visibility today</div>
       <div id="visibilityList" class="visibility-list"></div>
@@ -1315,7 +1543,7 @@
           </div>
 
           <div id="moonNextFull" style="margin-top:10px; font-size:.95rem;">
-            Next full moon: –
+            Next full moon: -
           </div>
 
         </div>
@@ -1323,15 +1551,15 @@
             <div class="sunlight-title" id="titleSunlight">Daylight Berlin</div>
             <div class="sunlight-grid">
               <span class="sunlight-label" id="labelSunrise">Sunrise</span>
-              <span class="sunlight-value" id="sunriseTime">–</span>
+              <span class="sunlight-value" id="sunriseTime">-</span>
               <span class="sunlight-label" id="labelSunset">Sunset</span>
-              <span class="sunlight-value" id="sunsetTime">–</span>
+              <span class="sunlight-value" id="sunsetTime">-</span>
               <span class="sunlight-label" id="labelDayLength">Day length</span>
-              <span class="sunlight-value" id="dayLength">–</span>
+              <span class="sunlight-value" id="dayLength">-</span>
               <span class="sunlight-label" id="labelDawn">Dawn</span>
-              <span class="sunlight-value" id="dawnTime">–</span>
+              <span class="sunlight-value" id="dawnTime">-</span>
               <span class="sunlight-label" id="labelDusk">Dusk</span>
-              <span class="sunlight-value" id="duskTime">–</span>
+              <span class="sunlight-value" id="duskTime">-</span>
             </div>
             <div class="day-night-arc" aria-label="Day and night arc for Berlin">
               <span id="dayNightDawnMarker" class="day-night-marker" style="left:0%"></span>
@@ -1531,6 +1759,8 @@
 
   <script src="translations.js"></script>
   <script src="calendar-events.js"></script>
+  <script src="small-bodies-config.js"></script>
+  <script src="phenomena-config.js"></script>
   <script src="bsky-feed-config.js"></script>
   <script>
 
@@ -1546,6 +1776,8 @@
     const translations = window.PLANETENUHR_TRANSLATIONS || {};
     const t = translations[lang] || translations.en || {};
     const calendarEventsByLang = window.PLANETENUHR_EVENTS || {};
+    const smallBodiesConfig = window.PLANETENUHR_SMALL_BODIES || { belts:[], comets:[] };
+    const phenomenaConfig = window.PLANETENUHR_PHENOMENA || { meteorStreams:[], spacecraft:[] };
     const bskyFeeds = window.PLANETENUHR_BSKY_FEEDS || [];
     let activeCalendarFilter = 'all';
     let showAllCalendarEvents = false;
@@ -1560,6 +1792,22 @@
 
       document.getElementById('titleSolarSystem').textContent = t.title_solar_system;
       document.getElementById('solarLegend').textContent      = t.legend_solar;
+      const titleSmallBodies = document.getElementById('titleSmallBodies');
+      if (titleSmallBodies) titleSmallBodies.textContent = t.title_small_bodies;
+      const smallBodiesLegend = document.getElementById('smallBodiesLegend');
+      if (smallBodiesLegend) smallBodiesLegend.textContent = t.legend_small_bodies;
+      const titleMeteorStreams = document.getElementById('titleMeteorStreams');
+      if (titleMeteorStreams) titleMeteorStreams.textContent = t.title_meteor_streams;
+      const meteorLegend = document.getElementById('meteorLegend');
+      if (meteorLegend) meteorLegend.textContent = t.legend_meteor_streams;
+      const titleSeasonAxis = document.getElementById('titleSeasonAxis');
+      if (titleSeasonAxis) titleSeasonAxis.textContent = t.title_season_axis;
+      const seasonLegend = document.getElementById('seasonLegend');
+      if (seasonLegend) seasonLegend.textContent = t.legend_season_axis;
+      const titleSpacecraft = document.getElementById('titleSpacecraft');
+      if (titleSpacecraft) titleSpacecraft.textContent = t.title_spacecraft;
+      const spacecraftLegend = document.getElementById('spacecraftLegend');
+      if (spacecraftLegend) spacecraftLegend.textContent = t.legend_spacecraft;
       document.getElementById('titleVisibility').textContent  = t.title_visibility;
       document.getElementById('visibilityLegend').textContent = t.visibility_legend;
       document.getElementById('visibilityLegendNight').textContent = t.visibility_legend_night;
@@ -1686,21 +1934,31 @@
     }
 
     function fmtTZ(d, tz){
-      const opts = {
-        year:'numeric', month:'long', day:'numeric',
+      const timeZone = tz !== 'local' ? tz : undefined;
+      return formatDateStamp(d, timeZone) + ' ' + d.toLocaleTimeString(lang, {
         hour:'2-digit', minute:'2-digit', second:'2-digit',
         hour12:false,
-        timeZone: tz !== 'local' ? tz : undefined
-      };
-      return d.toLocaleString(lang, opts);
+        timeZone
+      });
+    }
+
+    function datePartsInZone(d, timeZone){
+      const parts = new Intl.DateTimeFormat('en-CA', {
+        year:'numeric',
+        month:'2-digit',
+        day:'2-digit',
+        timeZone
+      }).formatToParts(d);
+      return Object.fromEntries(parts.filter(part => part.type !== 'literal').map(part => [part.type, part.value]));
+    }
+
+    function formatDateStamp(d, timeZone){
+      const parts = datePartsInZone(d, timeZone);
+      return parts.year + '.' + parts.month + '.' + parts.day;
     }
 
     function fmtDateOnly(d){
-      return d.toLocaleDateString(lang, {
-        year:'numeric',
-        month:'long',
-        day:'numeric'
-      });
+      return formatDateStamp(d);
     }
 
     function fmtTimeOnly(d){
@@ -2057,7 +2315,11 @@
       authorName.textContent = author.displayName || item.feed.label || author.handle || item.feed.handle;
       const postDate = document.createElement('div');
       postDate.className = 'bsky-date';
-      postDate.textContent = date.toLocaleString(lang, { dateStyle:'medium', timeStyle:'short' });
+      postDate.textContent = formatDateStamp(date) + ' ' + date.toLocaleTimeString(lang, {
+        hour:'2-digit',
+        minute:'2-digit',
+        hour12:false
+      });
       authorText.append(authorName, postDate);
       authorRow.append(avatar, authorText);
 
@@ -2152,11 +2414,10 @@
       document.getElementById('time').textContent = now.toLocaleTimeString(lang, tOpt);
 
       const dOpt = {
-        year:'numeric', month:'long', day:'numeric',
         timeZone: tz !== 'local' ? tz : undefined
       };
       document.getElementById('date').textContent =
-        now.toLocaleDateString(lang, dOpt);
+        formatDateStamp(now, dOpt.timeZone);
     }
 
     let solarDayOffset = 0;
@@ -2165,13 +2426,25 @@
       return new Date(Date.now() + solarDayOffset * 86400000);
     }
 
-    // Infrequent update (for moon phases, runs less often)
+    // Rebuilds the time-sensitive astronomy panels.
     function updateInfrequent() {
       renderMoon();
       renderEarthMoon();
       renderSolarSystem();
+      renderSmallBodies();
+      renderMeteorStreams();
+      renderSeasonAxis();
+      renderSpacecraft();
       renderSunlight();
       renderVisibility();
+      scheduleMasonryLayout();
+    }
+
+    function refreshDynamicTiles(){
+      updateTime();
+      updateInfrequent();
+      renderCalendar();
+      loadBlueskyFeed();
       scheduleMasonryLayout();
     }
 
@@ -2342,6 +2615,462 @@
       if(solarDate) solarDate.textContent = t.solar_date + ': ' + fmtTZ(date, tz);
     }
 
+    function smallBodyRadius(au, maxRadius){
+      const capped = Math.max(0.02, Math.min(60, au));
+      return Math.sqrt(capped / 60) * maxRadius;
+    }
+
+    function renderSmallBodies(){
+      const target = document.getElementById('smallBodiesMap');
+      const summary = document.getElementById('smallBodiesSummary');
+      if (!target) return;
+      const size = 560;
+      const center = size / 2;
+      const maxRadius = size * 0.45;
+      const svgNS = 'http://www.w3.org/2000/svg';
+      target.innerHTML = '';
+
+      const svg = document.createElementNS(svgNS, 'svg');
+      svg.setAttribute('viewBox', '0 0 ' + size + ' ' + size);
+      svg.setAttribute('role', 'img');
+      svg.setAttribute('aria-label', t.small_bodies_aria || 'Comets, asteroid belt and Kuiper belt');
+
+      const defs = document.createElementNS(svgNS, 'defs');
+      defs.innerHTML = `
+        <radialGradient id="smallBodiesSunGradient" cx="35%" cy="35%" r="70%">
+          <stop offset="0" stop-color="#fff7b0"></stop>
+          <stop offset=".55" stop-color="#f8b43c"></stop>
+          <stop offset="1" stop-color="#b45309"></stop>
+        </radialGradient>
+        <filter id="smallBodiesSunGlow" x="-80%" y="-80%" width="260%" height="260%">
+          <feGaussianBlur stdDeviation="8" result="glow"></feGaussianBlur>
+          <feMerge>
+            <feMergeNode in="glow"></feMergeNode>
+            <feMergeNode in="SourceGraphic"></feMergeNode>
+          </feMerge>
+        </filter>
+      `;
+      svg.appendChild(defs);
+
+      [1, 1.52, 5.2, 30].forEach(au => {
+        const orbit = document.createElementNS(svgNS, 'circle');
+        orbit.setAttribute('cx', center);
+        orbit.setAttribute('cy', center);
+        orbit.setAttribute('r', smallBodyRadius(au, maxRadius));
+        orbit.setAttribute('fill', 'none');
+        orbit.setAttribute('stroke', 'rgba(107,114,128,.22)');
+        orbit.setAttribute('stroke-width', '1');
+        svg.appendChild(orbit);
+      });
+
+      (smallBodiesConfig.belts || []).forEach(belt => {
+        const inner = smallBodyRadius(belt.innerAu, maxRadius);
+        const outer = smallBodyRadius(belt.outerAu, maxRadius);
+        const ring = document.createElementNS(svgNS, 'circle');
+        ring.setAttribute('cx', center);
+        ring.setAttribute('cy', center);
+        ring.setAttribute('r', (inner + outer) / 2);
+        ring.setAttribute('class', 'small-bodies-belt ' + belt.key);
+        ring.setAttribute('stroke-width', Math.max(8, outer - inner));
+        const title = document.createElementNS(svgNS, 'title');
+        title.textContent = belt.label;
+        ring.appendChild(title);
+        svg.appendChild(ring);
+      });
+
+      (smallBodiesConfig.comets || []).forEach((comet, index) => {
+        const q = smallBodyRadius(comet.q, maxRadius);
+        const Q = smallBodyRadius(comet.Q, maxRadius);
+        const rx = Math.max(4, (q + Q) / 2);
+        const ry = Math.max(3, rx * (0.28 + (index % 5) * 0.035));
+        const cx = center + (q - Q) / 2;
+        const orbit = document.createElementNS(svgNS, 'ellipse');
+        orbit.setAttribute('cx', cx);
+        orbit.setAttribute('cy', center);
+        orbit.setAttribute('rx', rx);
+        orbit.setAttribute('ry', ry);
+        orbit.setAttribute('class', 'small-bodies-orbit');
+        orbit.setAttribute('stroke', comet.color || '#2563eb');
+        orbit.setAttribute('transform', 'rotate(' + (comet.angle || 0) + ' ' + center + ' ' + center + ')');
+        const title = document.createElementNS(svgNS, 'title');
+        title.textContent = comet.name + ' · q ' + comet.q + ' AU · Q ' + comet.Q + ' AU · ' + comet.type;
+        orbit.appendChild(title);
+        svg.appendChild(orbit);
+
+        if (index < 10) {
+          const angle = (comet.angle || 0) * Math.PI / 180;
+          const labelRadius = Math.min(maxRadius * .96, Math.max(q + 12, smallBodyRadius(Math.min(60, comet.q + 2), maxRadius)));
+          const label = document.createElementNS(svgNS, 'text');
+          label.setAttribute('x', center + Math.cos(angle) * labelRadius);
+          label.setAttribute('y', center + Math.sin(angle) * labelRadius);
+          label.setAttribute('class', 'small-bodies-label');
+          label.textContent = comet.name.replace(/\/.*/, '');
+          svg.appendChild(label);
+        }
+      });
+
+      const sun = document.createElementNS(svgNS, 'circle');
+      sun.setAttribute('cx', center);
+      sun.setAttribute('cy', center);
+      sun.setAttribute('r', 15);
+      sun.setAttribute('class', 'small-bodies-sun');
+      svg.appendChild(sun);
+      target.appendChild(svg);
+
+      if (summary) {
+        summary.innerHTML = '';
+        [
+          [t.small_bodies_comets || 'Comets', (smallBodiesConfig.comets || []).length],
+          [t.small_bodies_asteroid_belt || 'Asteroid belt', '2.1-3.3 AU'],
+          [t.small_bodies_kuiper_belt || 'Kuiper belt', '30-50 AU'],
+          [t.small_bodies_scale || 'Scale', t.small_bodies_scale_value || 'Compressed']
+        ].forEach(([label, value]) => {
+          const item = document.createElement('div');
+          item.innerHTML = '<strong>' + label + '</strong>' + value;
+          summary.appendChild(item);
+        });
+      }
+      scheduleMasonryLayout();
+    }
+
+    function dayOfYearLocal(date){
+      const start = new Date(date.getFullYear(), 0, 1);
+      return Math.floor((date - start) / 86400000) + 1;
+    }
+
+    function daysInYear(year){
+      return new Date(year, 1, 29).getMonth() === 1 ? 366 : 365;
+    }
+
+    function monthDayToDayOfYear(monthDay, year){
+      const [month, day] = monthDay.split('-').map(Number);
+      return dayOfYearLocal(new Date(year, month - 1, day));
+    }
+
+    function monthDayLabel(monthDay, year){
+      const [month, day] = monthDay.split('-').map(Number);
+      return formatDateStamp(new Date(year, month - 1, day));
+    }
+
+    function polarPoint(center, radius, fraction){
+      const angle = fraction * Math.PI * 2 - Math.PI / 2;
+      return {
+        x:center + Math.cos(angle) * radius,
+        y:center + Math.sin(angle) * radius
+      };
+    }
+
+    function svgArcPath(center, radius, startFraction, endFraction){
+      const start = polarPoint(center, radius, startFraction);
+      const end = polarPoint(center, radius, endFraction);
+      const sweep = endFraction >= startFraction ? endFraction - startFraction : endFraction + 1 - startFraction;
+      const largeArc = sweep > 0.5 ? 1 : 0;
+      return `M ${start.x.toFixed(2)} ${start.y.toFixed(2)} A ${radius} ${radius} 0 ${largeArc} 1 ${end.x.toFixed(2)} ${end.y.toFixed(2)}`;
+    }
+
+    function renderMeteorStreams(date = new Date()){
+      const target = document.getElementById('meteorMap');
+      const summary = document.getElementById('meteorSummary');
+      if (!target) return;
+      const size = 420;
+      const center = size / 2;
+      const radius = 150;
+      const yearDays = daysInYear(date.getFullYear());
+      const todayFraction = (dayOfYearLocal(date) - 1) / yearDays;
+      const svgNS = 'http://www.w3.org/2000/svg';
+      target.innerHTML = '';
+
+      const svg = document.createElementNS(svgNS, 'svg');
+      svg.setAttribute('viewBox', '0 0 ' + size + ' ' + size);
+      svg.setAttribute('role', 'img');
+      svg.setAttribute('aria-label', t.meteor_aria || 'Meteor shower activity through the year');
+
+      const base = document.createElementNS(svgNS, 'circle');
+      base.setAttribute('cx', center);
+      base.setAttribute('cy', center);
+      base.setAttribute('r', radius);
+      base.setAttribute('fill', 'none');
+      base.setAttribute('stroke', '#e5e7eb');
+      base.setAttribute('stroke-width', '14');
+      svg.appendChild(base);
+
+      for (let month = 0; month < 12; month++) {
+        const monthStart = new Date(date.getFullYear(), month, 1);
+        const fraction = (dayOfYearLocal(monthStart) - 1) / yearDays;
+        const tickStart = polarPoint(center, radius + 2, fraction);
+        const tickEnd = polarPoint(center, radius + 15, fraction);
+        const tick = document.createElementNS(svgNS, 'line');
+        tick.setAttribute('x1', tickStart.x);
+        tick.setAttribute('y1', tickStart.y);
+        tick.setAttribute('x2', tickEnd.x);
+        tick.setAttribute('y2', tickEnd.y);
+        tick.setAttribute('class', 'meteor-month-tick');
+        svg.appendChild(tick);
+
+        const labelPoint = polarPoint(center, radius + 32, fraction);
+        const monthLabel = document.createElementNS(svgNS, 'text');
+        monthLabel.setAttribute('x', labelPoint.x);
+        monthLabel.setAttribute('y', labelPoint.y);
+        monthLabel.setAttribute('class', 'meteor-month-label');
+        monthLabel.textContent = new Intl.DateTimeFormat(lang, { month:'short' }).format(monthStart).replace('.', '');
+        svg.appendChild(monthLabel);
+      }
+
+      const active = [];
+      (phenomenaConfig.meteorStreams || []).forEach((stream, index) => {
+        let start = (monthDayToDayOfYear(stream.start, date.getFullYear()) - 1) / yearDays;
+        let end = (monthDayToDayOfYear(stream.end, date.getFullYear()) - 1) / yearDays;
+        const peak = (monthDayToDayOfYear(stream.peak, date.getFullYear()) - 1) / yearDays;
+        const wraps = end < start;
+        const inWindow = wraps
+          ? todayFraction >= start || todayFraction <= end
+          : todayFraction >= start && todayFraction <= end;
+        if (inWindow) active.push(stream);
+
+        const arc = document.createElementNS(svgNS, 'path');
+        arc.setAttribute('d', svgArcPath(center, radius - (index % 3) * 16, start, end));
+        arc.setAttribute('class', 'meteor-arc');
+        arc.setAttribute('stroke', stream.color || '#2563eb');
+        const title = document.createElementNS(svgNS, 'title');
+        title.textContent = stream.name + ' · ' + monthDayLabel(stream.start, date.getFullYear()) + '-' + monthDayLabel(stream.end, date.getFullYear()) + ' · Peak ' + monthDayLabel(stream.peak, date.getFullYear());
+        arc.appendChild(title);
+        svg.appendChild(arc);
+
+        const peakPoint = polarPoint(center, radius - (index % 3) * 16, peak);
+        const peakMark = document.createElementNS(svgNS, 'circle');
+        peakMark.setAttribute('cx', peakPoint.x);
+        peakMark.setAttribute('cy', peakPoint.y);
+        peakMark.setAttribute('r', inWindow ? 5 : 3.5);
+        peakMark.setAttribute('class', 'meteor-peak');
+        peakMark.setAttribute('fill', stream.color || '#2563eb');
+        svg.appendChild(peakMark);
+      });
+
+      const today = polarPoint(center, radius + 18, todayFraction);
+      const now = document.createElementNS(svgNS, 'circle');
+      now.setAttribute('cx', today.x);
+      now.setAttribute('cy', today.y);
+      now.setAttribute('r', 6);
+      now.setAttribute('class', 'meteor-today');
+      const nowTitle = document.createElementNS(svgNS, 'title');
+      nowTitle.textContent = (t.today || 'Today') + ': ' + formatDateStamp(date);
+      now.appendChild(nowTitle);
+      svg.appendChild(now);
+
+      const label = document.createElementNS(svgNS, 'text');
+      label.setAttribute('x', center);
+      label.setAttribute('y', center);
+      label.setAttribute('text-anchor', 'middle');
+      label.setAttribute('class', 'small-bodies-label');
+      label.textContent = t.meteor_year_label || 'Year';
+      svg.appendChild(label);
+      target.appendChild(svg);
+
+      if (summary) {
+        const next = (phenomenaConfig.meteorStreams || [])
+          .map(stream => ({ stream, peakDay:monthDayToDayOfYear(stream.peak, date.getFullYear()) }))
+          .map(item => ({ ...item, delta:item.peakDay - dayOfYearLocal(date) }))
+          .map(item => item.delta < 0 ? { ...item, delta:item.delta + yearDays, year:date.getFullYear() + 1 } : { ...item, year:date.getFullYear() })
+          .sort((a,b) => a.delta - b.delta)[0];
+        summary.innerHTML = `<div>${t.meteor_explain || 'This is a calendar circle, not sky directions.'}</div>`
+          + `<div><strong>${t.today || 'Today'}: </strong>${formatDateStamp(date)}</div>`
+          + `<div><strong>${t.meteor_active || 'Active now'}: </strong>${active.length ? active.map(item => item.name).join(', ') : (t.none || 'None')}</div>`
+          + `<div><strong>${t.meteor_next_peak || 'Next peak'}: </strong>${next ? next.stream.name + ' · ' + monthDayLabel(next.stream.peak, next.year) : '-'}</div>`;
+      }
+      scheduleMasonryLayout();
+    }
+
+    function seasonNameForFraction(fraction){
+      if (fraction < 0.22) return t.season_winter || 'Winter';
+      if (fraction < 0.47) return t.season_spring || 'Spring';
+      if (fraction < 0.72) return t.season_summer || 'Summer';
+      if (fraction < 0.97) return t.season_autumn || 'Autumn';
+      return t.season_winter || 'Winter';
+    }
+
+    function renderSeasonAxis(date = new Date()){
+      const target = document.getElementById('seasonMap');
+      const summary = document.getElementById('seasonSummary');
+      if (!target) return;
+      const size = 420;
+      const center = size / 2;
+      const radius = 135;
+      const fraction = (dayOfYearLocal(date) - 1) / daysInYear(date.getFullYear());
+      const earth = polarPoint(center, radius, fraction);
+      const svgNS = 'http://www.w3.org/2000/svg';
+      target.innerHTML = '';
+
+      const svg = document.createElementNS(svgNS, 'svg');
+      svg.setAttribute('viewBox', '0 0 ' + size + ' ' + size);
+      svg.setAttribute('role', 'img');
+      svg.setAttribute('aria-label', t.season_aria || 'Earth orbit and axial tilt');
+      const defs = document.createElementNS(svgNS, 'defs');
+      defs.innerHTML = `
+        <radialGradient id="seasonEarthGradient" cx="35%" cy="35%" r="70%">
+          <stop offset="0" stop-color="#8bd3ff"></stop>
+          <stop offset=".65" stop-color="#2563eb"></stop>
+          <stop offset="1" stop-color="#0f172a"></stop>
+        </radialGradient>
+        <filter id="seasonEarthShadow" x="-40%" y="-40%" width="180%" height="180%">
+          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity=".25"></feDropShadow>
+        </filter>`;
+      svg.appendChild(defs);
+
+      const orbit = document.createElementNS(svgNS, 'circle');
+      orbit.setAttribute('cx', center);
+      orbit.setAttribute('cy', center);
+      orbit.setAttribute('r', radius);
+      orbit.setAttribute('class', 'season-orbit');
+      svg.appendChild(orbit);
+      const sun = document.createElementNS(svgNS, 'circle');
+      sun.setAttribute('cx', center);
+      sun.setAttribute('cy', center);
+      sun.setAttribute('r', 20);
+      sun.setAttribute('fill', '#f8b43c');
+      svg.appendChild(sun);
+      const marker = document.createElementNS(svgNS, 'circle');
+      marker.setAttribute('cx', earth.x);
+      marker.setAttribute('cy', earth.y);
+      marker.setAttribute('r', 17);
+      marker.setAttribute('class', 'season-earth');
+      svg.appendChild(marker);
+
+      const orbitLabel = document.createElementNS(svgNS, 'text');
+      orbitLabel.setAttribute('x', center);
+      orbitLabel.setAttribute('y', 64);
+      orbitLabel.setAttribute('class', 'season-label');
+      orbitLabel.textContent = t.season_orbit_view || 'Orbit view';
+      svg.appendChild(orbitLabel);
+
+      const sideGroup = document.createElementNS(svgNS, 'g');
+      sideGroup.setAttribute('transform', 'translate(290 282)');
+      const sidePanel = document.createElementNS(svgNS, 'circle');
+      sidePanel.setAttribute('cx', 0);
+      sidePanel.setAttribute('cy', 0);
+      sidePanel.setAttribute('r', 72);
+      sidePanel.setAttribute('fill', 'rgba(255,255,255,.72)');
+      sidePanel.setAttribute('stroke', '#e5e7eb');
+      sidePanel.setAttribute('stroke-width', '1');
+      sideGroup.appendChild(sidePanel);
+
+      [-22, 0, 22].forEach(y => {
+        const ray = document.createElementNS(svgNS, 'line');
+        ray.setAttribute('x1', -58);
+        ray.setAttribute('y1', y);
+        ray.setAttribute('x2', -18);
+        ray.setAttribute('y2', y);
+        ray.setAttribute('class', 'season-sunray');
+        sideGroup.appendChild(ray);
+      });
+
+      const sideEarth = document.createElementNS(svgNS, 'ellipse');
+      sideEarth.setAttribute('cx', 18);
+      sideEarth.setAttribute('cy', 0);
+      sideEarth.setAttribute('rx', 20);
+      sideEarth.setAttribute('ry', 24);
+      sideEarth.setAttribute('class', 'season-earth');
+      sideGroup.appendChild(sideEarth);
+
+      const axisAngle = -23.4 * Math.PI / 180;
+      const axisLength = 62;
+      const sideAxis = document.createElementNS(svgNS, 'line');
+      sideAxis.setAttribute('x1', 18 - Math.sin(axisAngle) * axisLength / 2);
+      sideAxis.setAttribute('y1', Math.cos(axisAngle) * axisLength / 2);
+      sideAxis.setAttribute('x2', 18 + Math.sin(axisAngle) * axisLength / 2);
+      sideAxis.setAttribute('y2', -Math.cos(axisAngle) * axisLength / 2);
+      sideAxis.setAttribute('class', 'season-axis');
+      sideGroup.appendChild(sideAxis);
+
+      const tiltText = document.createElementNS(svgNS, 'text');
+      tiltText.setAttribute('x', 0);
+      tiltText.setAttribute('y', 56);
+      tiltText.setAttribute('class', 'season-label');
+      tiltText.textContent = t.season_tilt_view || '23.4 degree tilt';
+      sideGroup.appendChild(tiltText);
+      svg.appendChild(sideGroup);
+      target.appendChild(svg);
+
+      if (summary) {
+        summary.innerHTML = `<div>${t.season_explain || 'Top-down orbit plus oblique inset for axial tilt.'}</div>`
+          + `<div><strong>${t.season_current || 'Current season'}: </strong>${seasonNameForFraction(fraction)}</div>`
+          + `<div><strong>${t.season_progress || 'Year progress since Jan 1'}: </strong>${Math.round(fraction * 100)}%</div>`;
+      }
+      scheduleMasonryLayout();
+    }
+
+    function renderSpacecraft(){
+      const target = document.getElementById('spacecraftMap');
+      const summary = document.getElementById('spacecraftSummary');
+      if (!target) return;
+      const size = 460;
+      const center = size / 2;
+      const maxRadius = size * 0.42;
+      const maxAu = 180;
+      const svgNS = 'http://www.w3.org/2000/svg';
+      target.innerHTML = '';
+      const svg = document.createElementNS(svgNS, 'svg');
+      svg.setAttribute('viewBox', '0 0 ' + size + ' ' + size);
+      svg.setAttribute('role', 'img');
+      svg.setAttribute('aria-label', t.spacecraft_aria || 'Approximate spacecraft distances from the Sun');
+      [1, 5.2, 30, 100].forEach(au => {
+        const orbit = document.createElementNS(svgNS, 'circle');
+        orbit.setAttribute('cx', center);
+        orbit.setAttribute('cy', center);
+        orbit.setAttribute('r', Math.log10(1 + au) / Math.log10(1 + maxAu) * maxRadius);
+        orbit.setAttribute('class', 'spacecraft-orbit');
+        svg.appendChild(orbit);
+      });
+      const sun = document.createElementNS(svgNS, 'circle');
+      sun.setAttribute('cx', center);
+      sun.setAttribute('cy', center);
+      sun.setAttribute('r', 15);
+      sun.setAttribute('fill', '#f8b43c');
+      svg.appendChild(sun);
+      (phenomenaConfig.spacecraft || []).forEach((craft, index) => {
+        const angle = (craft.angle ?? (index * 36)) * Math.PI / 180;
+        const radius = Math.log10(1 + craft.distanceAu) / Math.log10(1 + maxAu) * maxRadius;
+        const x = center + Math.cos(angle) * radius;
+        const y = center + Math.sin(angle) * radius;
+        const controlRadius = radius * .45;
+        const c1x = center + Math.cos(angle - .28) * controlRadius;
+        const c1y = center + Math.sin(angle - .28) * controlRadius;
+        const c2x = center + Math.cos(angle + .16) * radius * .82;
+        const c2y = center + Math.sin(angle + .16) * radius * .82;
+        const track = document.createElementNS(svgNS, 'path');
+        track.setAttribute('d', `M ${center} ${center} C ${c1x.toFixed(1)} ${c1y.toFixed(1)}, ${c2x.toFixed(1)} ${c2y.toFixed(1)}, ${x.toFixed(1)} ${y.toFixed(1)}`);
+        track.setAttribute('class', 'spacecraft-track');
+        track.setAttribute('stroke', craft.color || '#2563eb');
+        svg.appendChild(track);
+        const marker = document.createElementNS(svgNS, 'circle');
+        marker.setAttribute('cx', x);
+        marker.setAttribute('cy', y);
+        marker.setAttribute('r', 7);
+        marker.setAttribute('fill', craft.color || '#2563eb');
+        marker.setAttribute('class', 'spacecraft-marker');
+        svg.appendChild(marker);
+        const label = document.createElementNS(svgNS, 'text');
+        const labelOffset = radius < 56 ? 30 : 16;
+        const rawLabelX = x + Math.cos(angle) * labelOffset;
+        const rawLabelY = y + Math.sin(angle) * labelOffset;
+        const labelX = Math.max(34, Math.min(size - 34, rawLabelX));
+        const labelY = Math.max(22, Math.min(size - 22, rawLabelY));
+        label.setAttribute('class', 'spacecraft-label');
+        label.setAttribute('x', labelX);
+        label.setAttribute('y', labelY);
+        label.setAttribute('text-anchor', rawLabelX > size - 70 ? 'end' : (rawLabelX < 70 ? 'start' : 'middle'));
+        label.setAttribute('dominant-baseline', rawLabelY < 30 ? 'hanging' : (rawLabelY > size - 30 ? 'auto' : 'middle'));
+        label.textContent = craft.name + ' · ' + craft.distanceAu + ' AU';
+        svg.appendChild(label);
+      });
+      target.appendChild(svg);
+      if (summary) {
+        const farthest = (phenomenaConfig.spacecraft || []).slice().sort((a,b) => b.distanceAu - a.distanceAu)[0];
+        summary.innerHTML = `<div><strong>${t.spacecraft_farthest || 'Farthest'}: </strong>${farthest ? farthest.name + ' · ' + farthest.distanceAu + ' AU' : '-'}</div>`
+          + `<div><strong>${t.spacecraft_count || 'Shown'}: </strong>${(phenomenaConfig.spacecraft || []).length}</div>`;
+      }
+      scheduleMasonryLayout();
+    }
+
     function updateSolarDateFromSlider(){
       const slider = document.getElementById('solarDateSlider');
       solarDayOffset = Number(slider.value) || 0;
@@ -2428,7 +3157,7 @@ function computeMoon(date){
   // *** Korrekte Zuordnung ***
   if (illum <= 2) {                         // ~0 %
     key = 'phase_new';       icon = '🌑';
-  } else if (illum < 45 && frac < 0.5) {    // 2–45 %, zunehmend
+  } else if (illum < 45 && frac < 0.5) {    // 2-45 %, zunehmend
     key = 'phase_wax_cres';  icon = '🌒';
   } else if (illum >= 45 && illum <= 55 && frac < 0.5) { // ~50 %, zunehmend
     key = 'phase_first_q';   icon = '🌓';
@@ -2618,13 +3347,12 @@ function computeMoon(date){
     // Hauptuhr-Intervall (jede Sekunde)
     setInterval(updateTime,1000);
 
-    // Seltenere Aktualisierung für Mondphasen und andere statischere Daten (alle 10 Minuten)
-    updateInfrequent();
+    // Half-hourly refresh for time-dependent cards.
     initMasonryLayout();
-    loadBlueskyFeed();
-    setInterval(updateInfrequent, 600000); // 600,000 ms = 10 Minuten
+    refreshDynamicTiles();
+    setInterval(refreshDynamicTiles, 1800000);
 
-	    // --- Erde–Mond elliptische Bahn ---
+	    // --- Erde-Mond elliptische Bahn ---
     // iOS/Safari kann bei Layout-Start kurz 0px als Elementgröße liefern.
     // Deshalb: Animation erst nach Layout berechnen, mit getBoundingClientRect-Fallback
     // und zeitbasiert statt framebasiert laufen lassen.
