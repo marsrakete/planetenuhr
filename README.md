@@ -1,128 +1,127 @@
 # Planetenuhr
 
-Eine statische HTML-App mit Uhrzeit, Mondphase, Sonnen- und Planetendarstellungen sowie einem Himmelskalender. Die App laeuft ohne Build-Schritt direkt im Browser.
+Planetenuhr ist ein statisches Astronomie-Dashboard als reine HTML-App. Die Anwendung läuft ohne Build-Schritt direkt im Browser und kombiniert Zeit, Sonnensystem, Mond, Sichtbarkeit, Kalender und mehrere erklärende Himmelskarten auf einer Seite.
 
-## Dateien
+## Projektstruktur
 
-- `index.html` enthaelt Layout, CSS und die astronomische Logik.
-- `translations.js` enthaelt alle UI-Texte und Uebersetzungen.
-- `calendar-events.js` enthaelt die konfigurierten Himmelskalender-Ereignisse.
-- `image_og.jpg` ist das Open-Graph-Vorschaubild.
+- `index.html`  
+  Layout, CSS, Interaktion und astronomische Berechnungen
+- `translations.js`  
+  UI-Texte in Englisch, Deutsch und Französisch
+- `card-help-config.js`  
+  Inhalte für die `?`-Popups jeder Kachel
+- `calendar-events.js`  
+  kuratierte Himmelskalender-Ereignisse
+- `phenomena-config.js`  
+  Konfiguration für Meteorströme, Sternbilder, Raumsonden und weitere Phänomene
+- `small-bodies-config.js`  
+  Kleinkörper, Kometen und Gürtel für die entsprechende Kachel
+- `bsky-feed-config.js`  
+  konfigurierbare Bluesky-Accounts für die Bild-Feed-Kachel
+- `image_og.jpg`, `favicon.svg`  
+  Social Preview und Favicon
 
-## Funktionen
+## Start
 
-- Aktuelle Uhrzeit mit Zeitzonen-, Schrift- und Anzeigeoptionen
-- Stoppuhr und Countdown
-- Sonnensystem-Ansicht mit Tagesnavigation und Datums-Slider
-- Jupiters Monde sowie ausgewaehlte Mondsysteme von Mars, Saturn, Uranus und Neptun
-- Erde-und-Mond-Karte mit Mondphase, Beleuchtung, Zyklusfortschritt und naechstem Vollmond
-- Tag-/Nachtlaenge fuer Berlin mit Sonnenaufgang, Sonnenuntergang und buergerlicher Daemmerung
-- Blaue und Goldene Stunde fuer Berlin als Tageslicht-Leiste
-- Sichtbarkeit heute fuer ausgewaehlte Planeten, grob fuer Berlin
-- Himmelskalender als filterbare Timeline mit Finsternissen, Meteorstroemen, Jahreszeitenpunkten sowie Planeten-/Mondereignissen
-
-## Bedienung
-
-Die App kann direkt geoeffnet werden:
+Die App kann direkt geöffnet werden:
 
 ```text
 index.html
 ```
 
-Der Sonnensystem-Slider verschiebt das angezeigte Datum um bis zu 100 Jahre vor oder zurueck. Die Buttons `<` und `>` springen tageweise; beim Gedrueckthalten laufen sie langsam weiter. `Heute` setzt das Datum zurueck.
-
-## Technische Beschreibung
-
-### Mondphase
-
-Die Mondphase wird ueber die mittlere synodische Periode berechnet:
-
-- synodischer Monat: `29.530588861` Tage
-- Referenz-Neumond: `2000-01-06 18:14 UTC`
-
-Aus der Differenz zwischen aktuellem Datum und Referenz-Neumond wird der Zyklusfortschritt bestimmt. Daraus entstehen:
-
-- Phasenname
-- Beleuchtung in Prozent
-- Fortschrittsbalken
-- Mini-Leiste fuer Neumond, erstes Viertel, Vollmond und letztes Viertel
-- naechster Vollmond als Naeherung zum naechsten Zykluswert `0.5`
-
-Das ist eine gute visuelle Naeherung, aber keine hochpraezise Ephemeride.
-
-### Sonnensystem
-
-Die Planetenpositionen basieren auf vereinfachten heliozentrischen Bahnelementen nahe J2000:
-
-- grosse Halbachse `a`
-- Exzentrizitaet `e`
-- Inklination `i`
-- mittlere Laenge `L`
-- Perihel-Longitude `p`
-- aufsteigender Knoten `n`
-
-Fuer das gewaehlte Datum wird die Julianische Tageszahl berechnet. Daraus folgt `T`, die Zeit in Julianischen Jahrhunderten seit J2000. Die Bahnelemente werden linear fortgeschrieben. Die Kepler-Gleichung wird iterativ geloest, anschliessend wird die Position in die Ekliptikebene projiziert.
-
-Die Darstellung ist absichtlich komprimiert:
+Alternativ kann lokal ein einfacher Server genutzt werden:
 
 ```text
-Bildschirmradius = sqrt(Planetendistanz / Neptun-Distanz) * Maximalradius
+start-server.ps1
 ```
 
-Dadurch bleiben innere und aeussere Planeten gemeinsam sichtbar. Die Ansicht ist also nicht massstabsgetreu, sondern eine lesbare, heliozentrische Uebersicht.
+## Zentrale Bedienung
 
-### Sonnenaufgang, Sonnenuntergang und Daemmerung
+- Die Datums- und Ortssteuerung sitzt als Overlay oben auf der Seite.
+- Das gewählte Datum steuert mehrere Kacheln gleichzeitig, unter anderem:
+  - Sonnensystem
+  - Kleinkörper
+  - Mondknoten & Finsternis-Saison
+  - Planetenkonjunktionen
+  - Sternbild des Monats
+  - Jahresuhr der Sternbilder
+  - Jahreszeiten
+  - Retrograd-Phasen
+  - Merkur- und Venus-Phasen
+  - Satelliten
+  - Erde & Mond
+  - Himmelskalender
+- Die Ortsauswahl beeinflusst vor allem Licht-, Sichtbarkeits- und Nachtkarten.
+- Viele Kacheln besitzen ein `?`-Popup mit kurzer Erklärung, Formeln und Quellenlinks.
 
-Die Berlin-Lichtzeiten verwenden eine uebliche NOAA-nahe Naeherungsformel. Standort:
+## Kacheln im Überblick
 
-```text
-Berlin: 52.52 N, 13.405 E
-```
+### Zeit & Steuerung
 
-Berechnet werden:
+- `Datum & Ort`  
+  zentrale Datumsnavigation mit Slider, Sprungschritten und Stadtwahl
+- `Aktuelle Zeit`  
+  Uhrzeit, Datum, Stoppuhr, Countdown und Anzeigeeinstellungen
 
-- Sonnenaufgang/Sonnenuntergang bei Sonnenzenit `90.833°`
-- buergerliche Daemmerung bei Sonnenzenit `96°`
-- Goldene Stunde bei Sonnenhoehe `+6°`, also Sonnenzenit `84°`
+### Sonnensystem & Himmelsmechanik
 
-Die Blaue Stunde wird als Zeitraum zwischen buergerlicher Daemmerung und Sonnenaufgang bzw. zwischen Sonnenuntergang und buergerlicher Daemmerung dargestellt. Die Goldene Stunde wird von Sonnenaufgang bis Sonnenhoehe `+6°` und abends von Sonnenhoehe `+6°` bis Sonnenuntergang dargestellt.
+- `Sonnensystem`  
+  heliozentrische Übersicht der Planetenpositionen, radial komprimiert
+- `Kleinkörper`  
+  Kometenbahnen sowie schematischer Asteroiden- und Kuipergürtel
+- `Raumsonden`  
+  stilisierte heliozentrische Positionen wichtiger Missionen
+- `Planetenkonjunktionen`  
+  Zeitachse enger planetarer Begegnungen im Datumsfenster
+- `Retrograd-Phasen`  
+  scheinbare Bewegungsbahnen mit Schleife/S-Kurve, Stationen und Bewegungsrichtung
+- `Merkur- & Venus-Phasen`  
+  Beleuchtung, Elongation und Morgen-/Abenderscheinung
+- `ISS & helle Satelliten`  
+  schematische niedrige Erdorbits ausgewählter Raumfahrzeuge
+- `Polarlicht-Chance Deutschland`  
+  Live-Einschätzung für heute auf Basis externer Space-Weather-Daten
 
-Die Zeiten werden in der Zeitzone `Europe/Berlin` formatiert.
+### Meteorströme, Sternbilder, Jahreslauf
 
-### Sichtbarkeit heute
+- `Meteorströme`  
+  Jahresring für Aktivitätsfenster wichtiger Ströme
+- `Radianten`  
+  scheinbare Ursprungsrichtungen aktiver oder kommender Meteorströme
+- `Sternbild des Monats`  
+  saisonal passendes Sternbild mit Linienfigur und Sternnamen
+- `Jahresuhr der Sternbilder`  
+  Monatskreis mit Sternbild-Minis und Jahresmarker
+- `Jahreszeiten`  
+  Draufsicht auf die Erdbahn plus Seitenansicht für Achsneigung und Sonnenstand
 
-Die Karte `Sichtbarkeit heute` ist eine grobe Orientierung fuer Berlin. Sie berechnet fuer Merkur, Venus, Mars, Jupiter und Saturn den ekliptikalen Abstand zur Sonne:
+### Mond, Erde, Planetenmonde
 
-```text
-Elongation = Planet-Laenge - Sonnen-Laenge
-```
+- `Mondknoten & Finsternis-Saison`  
+  erklärt Knotenlage, Saisonfenster und aktuelle Finsternis-Geometrie
+- `Jupiters Monde`  
+  schematische Darstellung ausgewählter Jupitermonde
+- `Planetensysteme`  
+  ausgewählte Monde von Mars, Saturn, Uranus und Neptun
+- `Erde & Mond`  
+  Mondphase, nächster Vollmond, Finsternis-Geometrie sowie Tageslichtdaten für den gewählten Ort
 
-Aus Vorzeichen und Betrag wird eine einfache Beobachtungskategorie abgeleitet:
+### Sichtbarkeit & Kalender
 
-- westliche Elongation: eher Morgenhimmel
-- oestliche Elongation: eher Abendhimmel
-- grosse Elongation bei aeusseren Planeten: Nacht
-- geringe Elongation: schwierig
+- `Sichtbarkeit heute`  
+  grobe Planeten-Sichtbarkeit aus Elongation und Nachtfenster
+- `Himmelskalender`  
+  filterbare Ereignisliste für Finsternisse, Meteorströme, Mond-, Planeten- und Jahreszeiten-Ereignisse
+- `Bluesky-Feed`  
+  neuester Bildbeitrag konfigurierbarer Accounts; bei `file://` ausgeblendet
 
-Die farbige Leiste zeigt nicht die echte Horizonthoehe, sondern ein vereinfachtes Zeitfenster. Sie ist als schnelle Orientierung gedacht, nicht als Beobachtungsplanung.
+## Wichtige Konfigurationsdateien
 
-### Himmelskalender
+### `calendar-events.js`
 
-Finsternisse, Meteorstroeme, Jahreszeitenpunkte und Planeten-/Mondereignisse sind feste Tabellen in `calendar-events.js`. Die App fuehrt sie zu einer chronologischen Timeline zusammen.
+Enthält die kuratierte Ereignisliste für den Himmelskalender. Aktuell gepflegt für 2026 bis Januar 2028.
 
-Die Ereignisse haben diese Struktur:
-
-```js
-{
-  date: '2026-08-12',
-  category: 'eclipse',
-  title: 'Totale Sonnenfinsternis',
-  visibility: 'Total in Island und Nordspanien; partiell in Europa',
-  note: 'Beste europaeische Totalitaetszone: Island und Nordspanien/Balearen-Region.'
-}
-```
-
-Unterstuetzte Kategorien:
+Kategorien:
 
 - `eclipse`
 - `meteor`
@@ -130,66 +129,190 @@ Unterstuetzte Kategorien:
 - `moon`
 - `season`
 
-Die Karte zeigt standardmaessig die naechsten sechs zukuenftigen Ereignisse. Filter und die Option `Vergangene anzeigen` steuern, welche Ereignisse sichtbar sind. Der Vorteil dieser Loesung: Die Daten sind einfach pflegbar und funktionieren offline. Der Nachteil: Neue Jahre muessen manuell ergaenzt werden.
+### `phenomena-config.js`
 
-#### Quellen fuer Kalender-Eintraege
+Enthält strukturierte Daten für:
 
-Die aktuellen Eintraege in `calendar-events.js` wurden aus mehreren oeffentlichen Astronomie-Kalendern und Referenzen kuratiert. Sie sind nicht automatisch synchronisiert; bei Erweiterungen sollten die Daten erneut gegen diese Quellen geprueft werden.
+- Meteorströme
+- monatliche Sternbilder
+- Raumsonden
+- retrograd darzustellende Planeten
+- innere Planetenphasen
+- Satelliten
 
-- Finsternisse:
-  - NASA Eclipse Web Site: https://eclipse.gsfc.nasa.gov/eclipse.html
-  - NASA/GSFC Eclipse-Plots, verlinkt aus den jeweiligen Eclipse-Seiten
-  - Uebersichtslisten zu Sonnen- und Mondfinsternissen fuer 2026/2027
+### `small-bodies-config.js`
 
-- Meteorstroeme:
-  - International Meteor Organization, Meteor Shower Calendar: https://www.imo.net/resources/calendar/
-  - IMO-Kalender-PDFs fuer die jeweiligen Jahre
-  - IAU Meteor Data Center als Hintergrundreferenz fuer Meteorstrom-Namen und etablierte Streams
+Enthält Kometen und weitere Kleinkörper für die Bahn-Darstellung.
 
-- Jahreszeitenpunkte:
-  - timeanddate.com, Seasons: https://www.timeanddate.com/calendar/seasons.html
-  - UTC-Zeitpunkte fuer Aequinoktien und Solstitien, fuer die App auf Datumsereignisse reduziert
+### `bsky-feed-config.js`
 
-- Planetenereignisse, Konjunktionen, Oppositionen, Elongationen:
-  - In-The-Sky.org, Calendar of Astronomical Events: https://in-the-sky.org/newscal.php
-  - Weitere Jahresuebersichten fuer Planeten-Sichtbarkeit und Konjunktionen
+Enthält eine Liste von Bluesky-Accounts:
 
-- Mondnaehe/Mondferne und Supermond-Hinweise:
-  - timeanddate.com Mondentfernungen und Mondphasen
-  - In-The-Sky.org Monats-/Jahreskalender
-
-Die Texte in der App sind bewusst beobachtungsorientiert formuliert. Sie fassen die Quellen zusammen und bewerten grob die Sichtbarkeit fuer Europa/Berlin, ersetzen aber keine detaillierte lokale Beobachtungsplanung.
-
-### Uebersetzungen
-
-Alle sichtbaren UI-Texte liegen in:
-
-```text
-translations.js
+```js
+{
+  handle: "dlr-next.bsky.social",
+  profileUrl: "https://bsky.app/profile/dlr-next.bsky.social",
+  label: "DLR-next"
+}
 ```
 
-Die Ereignis-Inhalte liegen getrennt davon in:
+Für jeden Eintrag zeigt die App den neuesten Bildpost; wenn heute noch kein Bildpost existiert, wird optional der letzte Bildpost gezeigt.
+
+## Technische Beschreibung
+
+### Datumsgekoppelte Aktualisierung
+
+Die App hält ein zentrales Datum als Tagesoffset relativ zu `Date.now()`. Mehrere Kacheln lesen dieses Datum über dieselbe Funktion, damit die gesamte Darstellung konsistent springt.
+
+### Mondphase
+
+Die Mondphase basiert auf einer mittleren synodischen Periode:
+
+- synodischer Monat: `29.530588861` Tage
+- Referenz-Neumond: `2000-01-06 18:14 UTC`
+
+Daraus werden berechnet:
+
+- Phasenname
+- Beleuchtung
+- Zyklusfortschritt
+- nächster Vollmond als Näherung
+
+### Planetenpositionen
+
+Die Planetenpositionen basieren auf vereinfachten heliozentrischen Bahnelementen nahe J2000:
+
+- große Halbachse `a`
+- Exzentrizität `e`
+- Inklination `i`
+- mittlere Länge `L`
+- Perihel-Longitude `p`
+- aufsteigender Knoten `n`
+
+Für das gewählte Datum wird `T` als Anzahl julianischer Jahrhunderte seit J2000 berechnet. Die Elemente werden linear fortgeschrieben, die Kepler-Gleichung iterativ gelöst und daraus die Position in der Ekliptik bestimmt.
+
+### Sonnensystem-Darstellung
+
+Die Planetenabstände werden für die Anzeige komprimiert:
 
 ```text
-calendar-events.js
+Bildschirmradius = sqrt(Distanz / Neptun-Distanz) * Maximalradius
 ```
 
-Unterstuetzt werden aktuell:
+Das ist bewusst nicht maßstabsgetreu, sondern auf gemeinsame Sichtbarkeit aller Planeten optimiert.
+
+### Kleinkörper und Raumsonden
+
+Kleinkörper- und Raumsondenkarten sind schematische Übersichten. Die Bahnen werden bewusst stilisiert oder stark komprimiert, damit unterschiedliche Distanzskalen in einer einzigen Kachel lesbar bleiben.
+
+### Sichtbarkeit und Nachtfenster
+
+Die Sichtbarkeitskarten nutzen vereinfachte astronomische Größen:
+
+```text
+Elongation = λPlanet - λSonne
+```
+
+Für die Nachtkarte wird aus Elongation näherungsweise eine Transitzeit und daraus ein Sichtfenster zwischen Abend- und Morgendämmerung abgeleitet.
+
+### Sonnenaufgang, Sonnenuntergang, Dämmerung
+
+Die Lichtzeiten verwenden eine NOAA-nahe Näherung über den gewählten Ort:
+
+- Sonnenaufgang / Sonnenuntergang bei `90.833°`
+- bürgerliche Dämmerung bei `96°`
+- Goldene Stunde angenähert über Sonnenhöhe `+6°`
+
+Die Formatierung erfolgt in `Europe/Berlin`, die Ortswahl beeinflusst die astronomischen Zeiten, aber nicht die Zeitzone.
+
+### Mondknoten und Finsternis-Saison
+
+Die Kachel kombiniert zwei Näherungen:
+
+- drakonitischer Monat für Knotennähe
+- wiederkehrender Saisonzyklus von etwa `173.31` Tagen
+
+Wichtig: Diese Kachel ist didaktisch. Sie erklärt, warum Finsternisse saisonal gehäuft auftreten, ersetzt aber keine exakte Finsternis-Ephemeride.
+
+### Retrograd-Phasen
+
+Die Retrograd-Kachel benutzt eine geozentrische Bahn aus zwei Koordinaten:
+
+- geozentrische Länge
+- geozentrische Breite
+
+Damit entstehen sichtbare Schleifen oder S-Kurven statt einer bloßen Einachsen-Zeitlinie. Gelbe Punkte markieren die Stationen, der blaue Punkt die aktuelle Position im dargestellten Pfadfenster.
+
+### Satelliten und Polarlicht
+
+- Die Satellitenkarte ist schematisch und kein TLE-Live-Tracker.
+- Die Polarlicht-Kachel verwendet Live-Space-Weather-Daten für heute und ist bewusst nicht an das gewählte Datum gekoppelt.
+
+## Himmelskalender: Quellen
+
+Die Einträge in `calendar-events.js` sind manuell kuratiert und nicht automatisch synchronisiert.
+
+- Finsternisse  
+  NASA Eclipse Web Site  
+  https://eclipse.gsfc.nasa.gov/eclipse.html
+
+- Meteorströme  
+  International Meteor Organization  
+  https://www.imo.net/resources/calendar/
+
+- Jahreszeitenpunkte  
+  timeanddate.com  
+  https://www.timeanddate.com/calendar/seasons.html
+
+- Planetenereignisse, Konjunktionen, Oppositionen, Elongationen  
+  In-The-Sky.org  
+  https://in-the-sky.org/newscal.php
+
+- Mondnähe, Mondferne, Supermond-Hinweise  
+  timeanddate.com  
+  https://www.timeanddate.com/
+
+Die App-Texte fassen diese Quellen beobachtungsorientiert zusammen und bewerten grob für Europa beziehungsweise Deutschland.
+
+## Open Graph und Social Preview
+
+Die Seite besitzt Meta-Tags für:
+
+- `title`
+- `description`
+- `og:title`
+- `og:description`
+- `og:site_name`
+- `og:image`
+- `twitter:card`
+
+Das Vorschaubild liegt in:
+
+```text
+image_og.jpg
+```
+
+## Sprachen
+
+Unterstützt werden aktuell:
 
 - Englisch `en`
 - Deutsch `de`
-- Franzoesisch `fr`
+- Französisch `fr`
 
-Die Sprache wird ueber `navigator.language` erkannt. Nicht unterstuetzte Sprachen fallen auf Englisch zurueck.
+Die Sprache wird aus `navigator.language` abgeleitet. Nicht unterstützte Sprachen fallen auf Englisch zurück.
 
-## Genauigkeit und Grenzen
+## Grenzen und Genauigkeit
 
-Die App ist eine anschauliche Planetenuhr, keine professionelle Astronomie-Software. Insbesondere:
+Planetenuhr ist ein anschauliches Dashboard, keine präzise Astronomie- oder Planetariumssoftware.
 
-- Planetenpositionen sind angenaehert und fuer visuelle Darstellung komprimiert.
-- Mondphasen basieren auf einer mittleren synodischen Periode.
-- Sonnenzeiten sind fuer Berlin berechnet und naeherungsweise.
-- Sichtbarkeit heute beruecksichtigt keine Horizonthoehe, Bewoelkung, lokale Abschattung oder atmosphaerische Extinktion.
-- Kalenderereignisse muessen in `translations.js` gepflegt werden.
+Insbesondere:
 
-Fuer konkrete Beobachtungsplanung sollten zusaetzlich spezialisierte Ephemeriden oder Planetariumsprogramme verwendet werden.
+- Planetenpositionen sind vereinfacht
+- Mondphase und Finsternis-Saison arbeiten mit Näherungen
+- Sichtbarkeitskarten sind heuristisch
+- Kleinkörper- und Sondenbahnen sind stilisiert
+- Satellitenpositionen sind nicht live aus TLEs berechnet
+- Kalenderdaten müssen manuell gepflegt werden
+
+Für exakte Beobachtungsplanung sollten zusätzlich spezialisierte Ephemeriden, JPL Horizons oder Planetariumsprogramme genutzt werden.
