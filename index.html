@@ -3774,6 +3774,8 @@
       }
     }
 
+    // Sample apparent geocentric longitude/latitude around the selected date
+    // so the retrograde card can show a real loop or S-curve instead of a 1D line.
     function retrogradePathSvg(key, date = selectedSolarDate()){
       const width = 260;
       const height = 74;
@@ -3814,6 +3816,8 @@
       return { width, height, path, stationMarkers, currentPoint, arrowPoint };
     }
 
+    // Build the retrograde rows from apparent daily motion, nearest station,
+    // and the sampled geocentric path returned above.
     function renderRetrogradePhases(date = selectedSolarDate()){
       const panel = document.getElementById('retrogradePanel');
       if (!panel) return;
@@ -4674,6 +4678,8 @@
       return planet ? planetPosition(planet, date) : null;
     }
 
+    // Convert heliocentric positions into the observer's Earth-centered view:
+    // apparent retrograde motion is driven by this relative geometry.
     function geocentricVector(key, date = selectedSolarDate()){
       const earth = heliocentricPosition('earth', date);
       if (!earth) return null;
@@ -4683,6 +4689,7 @@
       return { x:body.x - earth.x, y:body.y - earth.y, z:(body.z || 0) - (earth.z || 0) };
     }
 
+    // Apparent ecliptic longitude as seen from Earth.
     function geocentricLongitude(key, date = selectedSolarDate()){
       if (key === 'sun') return sunLongitude(date);
       const vec = geocentricVector(key, date);
@@ -4690,6 +4697,7 @@
       return normalizeDeg(Math.atan2(vec.y, vec.x) * 180 / Math.PI);
     }
 
+    // Apparent ecliptic latitude completes the 2D path for the retrograde loop.
     function geocentricLatitude(key, date = selectedSolarDate()){
       const vec = geocentricVector(key, date);
       if (!vec) return 0;
@@ -4725,12 +4733,15 @@
       };
     }
 
+    // Approximate day-to-day sky motion from a centered finite difference:
+    // negative values indicate retrograde drift in ecliptic longitude.
     function apparentDailyMotion(key, date = selectedSolarDate()){
       const prev = geocentricLongitude(key, new Date(date.getTime() - 86400000));
       const next = geocentricLongitude(key, new Date(date.getTime() + 86400000));
       return signedDeg(next - prev) / 2;
     }
 
+    // A station is the sign flip between direct and retrograde apparent motion.
     function findNearestStationDate(key, date = selectedSolarDate(), maxDays = 220){
       let best = null;
       let previousMotion = apparentDailyMotion(key, new Date(date.getTime() - maxDays * 86400000));
@@ -4849,6 +4860,8 @@
       return eccentricAnomaly;
     }
 
+    // Basic heliocentric Kepler solution from orbital elements.
+    // Downstream cards derive geocentric effects such as retrograde motion from it.
     function planetPosition(planet, date){
       const T = (julianDate(date) - 2451545.0) / 36525;
       const a = planet.a[0] + planet.a[1] * T;

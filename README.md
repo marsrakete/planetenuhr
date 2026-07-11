@@ -243,6 +243,56 @@ Die Retrograd-Kachel benutzt eine geozentrische Bahn aus zwei Koordinaten:
 
 Damit entstehen sichtbare Schleifen oder S-Kurven statt einer bloßen Einachsen-Zeitlinie. Gelbe Punkte markieren die Stationen, der blaue Punkt die aktuelle Position im dargestellten Pfadfenster.
 
+#### Code-Stellen zur Retrograd-Berechnung
+
+- `index.html:3777`  
+  `retrogradePathSvg(key, date)` erzeugt die kleine Schleifen-/S-Kurven-Grafik aus geozentrischer Länge und Breite.
+- `index.html:3817`  
+  `renderRetrogradePhases(date)` rendert die Kachel mit Badge, Pfad, Stationspunkten und aktuellem Marker.
+- `index.html:4677`  
+  `geocentricVector(key, date)` berechnet den Vektor Planet minus Erde und damit die scheinbare Blickrichtung von der Erde aus.
+- `index.html:4686`  
+  `geocentricLongitude(key, date)` leitet daraus die scheinbare geozentrische Länge ab.
+- `index.html:4693`  
+  `geocentricLatitude(key, date)` ergänzt die geozentrische Breite für die sichtbare Schleife.
+- `index.html:4728`  
+  `apparentDailyMotion(key, date)` bestimmt die angenäherte tägliche scheinbare Bewegung.
+- `index.html:4734`  
+  `findNearestStationDate(key, date)` sucht den nächsten Vorzeichenwechsel der täglichen Bewegung, also eine Station.
+- `index.html:4852`  
+  `planetPosition(planet, date)` liefert die heliozentrische Grundposition aus den Bahnelementen.
+
+#### Wie die Formel hier funktioniert
+
+Die Kachel berechnet nicht direkt eine „Retrograd-Formel“ als Einzeiler, sondern in drei Schritten:
+
+1. Aus den Bahnelementen wird zunächst die heliozentrische Position des Planeten berechnet.  
+   Vereinfacht: Aus großer Halbachse `a`, Exzentrizität `e`, Inklination `i`, mittlerer Länge `L`, Perihellänge `p` und Knotenlänge `n` entsteht über Kepler-Gleichung und Koordinatentransformation die Position `(x, y, z)`.
+
+2. Danach wird auf die Sicht von der Erde umgerechnet.  
+   Dafür gilt:
+
+   `r_geo = r_planet - r_earth`
+
+   Also schlicht: geozentrischer Vektor = Planetenvektor minus Erdvektor.
+
+3. Aus diesem Vektor wird die scheinbare Richtung am Himmel abgeleitet.  
+   Die geozentrische Länge ist:
+
+   `lambda_geo = atan2(y_geo, x_geo)`
+
+   Die geozentrische Breite ist:
+
+   `beta_geo = atan2(z_geo, sqrt(x_geo^2 + y_geo^2))`
+
+Ob ein Planet gerade retrograd ist, wird dann über die tägliche Änderung der geozentrischen Länge angenähert:
+
+`motion(date) ≈ signed(lambda_geo(date + 1 d) - lambda_geo(date - 1 d)) / 2`
+
+Wenn diese scheinbare Tagesbewegung negativ wird, läuft der Planet in der Kachel als retrograd. Wenn das Vorzeichen von positiv nach negativ oder zurück wechselt, liegt eine Station vor.
+
+Die kleine Schleife in der Kachel entsteht, weil nicht nur die Länge `lambda_geo`, sondern auch die Breite `beta_geo` über ein Zeitfenster von etwa `±90` Tagen abgetastet und als 2D-Pfad gezeichnet wird. Dadurch sieht man die typische Schleife oder S-Kurve statt nur einer simplen Vor-/Rückwärts-Skala.
+
 ### Satelliten und Polarlicht
 
 - Die Satellitenkarte ist schematisch und kein TLE-Live-Tracker.
