@@ -110,6 +110,7 @@
     .system-card{ order:100; }
     .sky-calendar-card{ order:110; }
     .bsky-card{ order:120; }
+    .about-card{ order:130; }
     @media (min-width:1180px){
       .solar-card,
       .small-bodies-card,
@@ -129,6 +130,65 @@
     }
     .time-card{
       gap:12px;
+    }
+    .about-card{
+      align-items:flex-start;
+      gap:12px;
+      justify-content:flex-start;
+      min-height:auto;
+    }
+    .about-card .group-title{
+      width:100%;
+      text-align:left;
+      margin-bottom:0;
+    }
+    .about-copy{
+      display:grid;
+      gap:8px;
+      width:100%;
+      font-size:.98rem;
+      color:var(--fg);
+    }
+    .about-line{
+      line-height:1.45;
+      word-break:break-word;
+    }
+    .about-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+    .about-link {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px 14px;
+      border:1px solid rgba(37,99,235,.18);
+      border-radius:999px;
+      background:#f8fbff;
+      color:#1d4ed8;
+      text-decoration:none;
+      font-weight:600;
+      box-shadow:0 1px 2px rgba(15,23,42,.06);
+      transition:transform .18s ease, box-shadow .18s ease, background-color .18s ease;
+    }
+    .about-link:hover {
+      background:#eef5ff;
+      box-shadow:0 4px 12px rgba(37,99,235,.12);
+      transform:translateY(-1px);
+    }
+    .about-contact{
+      display:grid;
+      gap:4px;
+      width:100%;
+      color:var(--muted);
+    }
+    .about-contact a{
+      color:#1d4ed8;
+      text-decoration:none;
+    }
+    .about-contact a:hover{
+      text-decoration:underline;
     }
     .time-tools{
       width:100%;
@@ -2780,6 +2840,22 @@
       <div class="group-title" id="titleBskyFeed">DLR-next today</div>
       <div id="bskyStatus" class="bsky-status">Loading Bluesky post...</div>
       <div id="bskyPost" class="bsky-list" hidden></div>
+    </div>
+
+    <div class="display-container about-card">
+      <div class="group-title">About</div>
+      <div class="about-copy">
+        <div class="about-line">© Millux 2026</div>
+        <div class="about-links">
+          <a class="about-link" href="https://github.com/marsrakete/planetenuhr" target="_blank" rel="noopener noreferrer">Projektseite marsrakete/planetenuhr</a>
+          <a href='https://ko-fi.com/U7U01OC260' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi6.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>          
+        </div>
+        <div class="about-contact">
+          <div>Kontakt:</div>
+          <div>E-Mail: <a href="mailto:millux@marsrakete.de">millux@marsrakete.de</a></div>
+          <div>bsky: <a href="https://bsky.app/profile/marsrakete.de" target="_blank" rel="noopener noreferrer">bsky.app/profile/marsrakete.de</a></div>
+        </div>
+      </div>
     </div>
     </div>
 
