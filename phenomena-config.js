@@ -36,5 +36,14 @@ window.PLANETENUHR_PHENOMENA = {
     { key: "pioneer_11", name: "Pioneer 11", distanceAu: 113, angle: 304, region: "Outer heliosphere", color: "#94a3b8" },
     { key: "voyager_1", name: "Voyager 1", distanceAu: 165, angle: 18, region: "Interstellar space", color: "#ef4444" },
     { key: "voyager_2", name: "Voyager 2", distanceAu: 137, angle: 332, region: "Interstellar space", color: "#f43f5e" }
+  ],
+  retrogradeBodies: ["mercury", "venus", "mars", "jupiter", "saturn", "uranus", "neptune"],
+  planetPhaseBodies: ["mercury", "venus"],
+  satellites: [
+    { key: "iss", name: "ISS", altitudeKm: 408, periodMin: 92.68, inclinationDeg: 51.6, raanDeg: 18, epoch: "2026-01-01T00:00:00Z", phase0: 0.12, color: "#2563eb" },
+    { key: "tiangong", name: "Tiangong", altitudeKm: 390, periodMin: 91.8, inclinationDeg: 41.5, raanDeg: 110, epoch: "2026-01-01T00:00:00Z", phase0: 0.44, color: "#22c55e" },
+    { key: "hubble", name: "Hubble", altitudeKm: 535, periodMin: 95.42, inclinationDeg: 28.5, raanDeg: 214, epoch: "2026-01-01T00:00:00Z", phase0: 0.66, color: "#a855f7" },
+    { key: "envisat", name: "Envisat", altitudeKm: 767, periodMin: 100.2, inclinationDeg: 98.5, raanDeg: 302, epoch: "2026-01-01T00:00:00Z", phase0: 0.28, color: "#f97316" },
+    { key: "noaa20", name: "NOAA-20", altitudeKm: 824, periodMin: 101.4, inclinationDeg: 98.7, raanDeg: 56, epoch: "2026-01-01T00:00:00Z", phase0: 0.82, color: "#ef4444" }
   ]
 };
