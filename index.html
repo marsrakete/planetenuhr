@@ -4183,7 +4183,6 @@
     }
 
     function updateMasonryLayout(){
-      debugDateUi('masonry-start');
       masonryFrame = 0;
       const grid = document.querySelector('.grid');
       if (!grid) return;
@@ -4203,21 +4202,12 @@
         card.style.gridRowEnd = 'span ' + span;
       });
       if (persistentViewportAnchor?.anchor) {
-        debugDateUi('persistent-anchor-before', {
-          anchorId: persistentViewportAnchor.anchor?.element?.dataset?.helpKey || persistentViewportAnchor.anchor?.element?.id || 'none',
-          remaining: persistentViewportAnchor.remaining
-        });
         restoreViewportAnchor(persistentViewportAnchor.anchor);
         persistentViewportAnchor.remaining -= 1;
-        debugDateUi('persistent-anchor-after', {
-          anchorId: persistentViewportAnchor.anchor?.element?.dataset?.helpKey || persistentViewportAnchor.anchor?.element?.id || 'none',
-          remaining: persistentViewportAnchor.remaining
-        });
         if (persistentViewportAnchor.remaining <= 0) {
           persistentViewportAnchor = null;
         }
       }
-      debugDateUi('masonry-end', { cards: cards.length });
       const callbacks = masonryAfterLayoutCallbacks.splice(0, masonryAfterLayoutCallbacks.length);
       callbacks.forEach(callback => {
         try { callback(); } catch (error) {}
@@ -4229,7 +4219,6 @@
         masonryAfterLayoutCallbacks.push(afterLayout);
       }
       if (masonryFrame) return;
-      debugDateUi('schedule-masonry', { callbacks: masonryAfterLayoutCallbacks.length });
       masonryFrame = requestAnimationFrame(updateMasonryLayout);
     }
 
@@ -4252,40 +4241,14 @@
       }
     }
 
-    function debugDateUi(label, extra = {}){
-      const active = document.activeElement;
-      const activeId = active ? (active.id || active.tagName || 'unknown') : 'none';
-      console.log('[planetenuhr][date-ui]', label, {
-        scrollY: Math.round(window.scrollY),
-        activeElement: activeId,
-        solarDayOffset,
-        ...extra
-      });
-    }
-
     function refreshDateDrivenTilesWithAnchor(){
       const anchor = captureViewportAnchor();
-      debugDateUi('before-refresh', {
-        anchorId: anchor?.element?.dataset?.helpKey || anchor?.element?.id || 'none',
-        anchorTop: anchor ? Math.round(anchor.top) : null
-      });
       persistentViewportAnchor = anchor ? { anchor, remaining:3 } : null;
       refreshDateDrivenTiles();
       if (anchor) {
         scheduleMasonryLayout(() => {
-          debugDateUi('before-anchor-restore', {
-            anchorId: anchor?.element?.dataset?.helpKey || anchor?.element?.id || 'none',
-            currentAnchorTop: Math.round(anchor.element.getBoundingClientRect().top),
-            originalAnchorTop: Math.round(anchor.top)
-          });
           restoreViewportAnchor(anchor);
-          debugDateUi('after-anchor-restore', {
-            anchorId: anchor?.element?.dataset?.helpKey || anchor?.element?.id || 'none',
-            finalAnchorTop: Math.round(anchor.element.getBoundingClientRect().top)
-          });
         });
-      } else {
-        debugDateUi('after-refresh-no-anchor');
       }
     }
 
@@ -5893,7 +5856,6 @@
       const slider = document.getElementById('solarDateSlider');
       solarDayOffset = Number(slider.value) || 0;
       slider.setAttribute('aria-valuenow', String(solarDayOffset));
-      debugDateUi('slider-input', { value: solarDayOffset });
       refreshDateDrivenTilesWithAnchor();
     }
 
@@ -5902,7 +5864,6 @@
       slider.value = '0';
       solarDayOffset = 0;
       slider.setAttribute('aria-valuenow', '0');
-      debugDateUi('reset-today');
       refreshDateDrivenTilesWithAnchor();
     }
 
@@ -5913,7 +5874,6 @@
       solarDayOffset = Math.max(minimum, Math.min(maximum, solarDayOffset + days));
       slider.value = String(solarDayOffset);
       slider.setAttribute('aria-valuenow', String(solarDayOffset));
-      debugDateUi('step-days', { days });
       refreshDateDrivenTilesWithAnchor();
     }
 
@@ -5928,7 +5888,6 @@
       solarDayOffset = Math.max(minimum, Math.min(maximum, nextOffset));
       slider.value = String(solarDayOffset);
       slider.setAttribute('aria-valuenow', String(solarDayOffset));
-      debugDateUi('step-months', { months, nextOffset });
       refreshDateDrivenTilesWithAnchor();
     }
 
@@ -6351,12 +6310,8 @@ function computeMoon(date){
       ].forEach(id => {
         const button = document.getElementById(id);
         if (!button) return;
-        button.addEventListener('pointerdown', event => {
-          debugDateUi('button-pointerdown', { id });
-          event.preventDefault();
-        });
+        button.addEventListener('pointerdown', event => event.preventDefault());
         button.addEventListener('click', () => {
-          debugDateUi('button-click', { id });
           button.blur();
         });
       });
