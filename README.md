@@ -316,3 +316,8 @@ Insbesondere:
 - Kalenderdaten müssen manuell gepflegt werden
 
 Für exakte Beobachtungsplanung sollten zusätzlich spezialisierte Ephemeriden, JPL Horizons oder Planetariumsprogramme genutzt werden.
+
+## Kontakt
+
+E-Mail: millux@marsrakete.de
+bsky: https://bsky.app/profile/marsrakete.de
