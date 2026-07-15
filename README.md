@@ -21,6 +21,13 @@ Planetenuhr ist ein statisches Astronomie-Dashboard als reine HTML-App. Die Anwe
 - `image_og.jpg`, `favicon.svg`  
   Social Preview und Favicon
 
+## Code-Stil
+
+- Lesbarkeit geht vor Verdichtung.
+- Bei mehrstufiger UI- oder Geometrie-Logik werden klare `if / else if / else`-Blöcke bevorzugt.
+- Verschachtelte Ternaries sind nur für wirklich triviale Ein-Zeilen-Zuweisungen gedacht.
+- Kleine Konfigurations- oder Platzierungsregeln sollen so geschrieben sein, dass sie später ohne Rätselraten angepasst werden können.
+
 ## Start
 
 Die App kann direkt geöffnet werden:
