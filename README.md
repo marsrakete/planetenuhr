@@ -42,6 +42,28 @@ Alternativ kann lokal ein einfacher Server genutzt werden:
 start-server.ps1
 ```
 
+## Build und Encoding-Schutz
+
+Auch wenn die App statisch ist, gibt es jetzt einen regulären Build-Prüfschritt:
+
+```text
+npm run build
+```
+
+Vor jedem Build wird automatisch geprüft, ob verdächtige UTF-8- oder Mojibake-Artefakte im Repository enthalten sind.
+
+Zusätzlich stehen diese Kommandos bereit:
+
+```text
+npm run check:encoding
+npm run repair:encoding
+```
+
+- `check:encoding` bricht mit Fehler ab, wenn verdächtige Encoding-Artefakte gefunden werden.
+- `repair:encoding` führt die bekannte Mojibake-Reparatur auf Textdateien im Repository aus.
+
+Der gleiche Prüfschritt läuft außerdem automatisch in GitHub Actions bei Push und Pull Request, damit defekte Zeichen nicht unbemerkt online gehen.
+
 ## Zentrale Bedienung
 
 - Die Datums- und Ortssteuerung sitzt als Overlay oben auf der Seite.

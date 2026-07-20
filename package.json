@@ -1,0 +1,12 @@
+{
+  "name": "planetenuhr",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Static astronomy dashboard with build-time validation checks.",
+  "scripts": {
+    "check:encoding": "node scripts/check-encoding.js",
+    "repair:encoding": "node scripts/repair-mojibake.js",
+    "prebuild": "npm run check:encoding",
+    "build": "node scripts/build.js"
+  }
+}
