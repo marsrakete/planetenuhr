@@ -1106,6 +1106,118 @@
         .trim();
     }
 
+    /**
+     * Normalizes a location token for robust URL matching.
+     * The helper compares both human-readable names and internal keys while
+     * ignoring case, accents, spaces and punctuation.
+     * @param {string} value Raw location token from config or URL.
+     * @returns {string} Simplified comparison token.
+     */
+    function normalizeLocationToken(value){
+      if (!value) {
+        return '';
+      }
+      return String(value)
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '');
+    }
+
+    /**
+     * Parses a URL date parameter and converts it into a local Date.
+     * Supported formats are YYYYMMDD, YYYY-MM-DD and YYYY.MM.DD.
+     * @param {string} rawValue Raw query parameter value.
+     * @returns {Date|null} Parsed local date or null when invalid.
+     */
+    function parseDateParameter(rawValue){
+      if (!rawValue) {
+        return null;
+      }
+      const digits = String(rawValue).replace(/[^0-9]/g, '');
+      if (!/^\d{8}$/.test(digits)) {
+        return null;
+      }
+      const year = Number(digits.slice(0, 4));
+      const month = Number(digits.slice(4, 6));
+      const day = Number(digits.slice(6, 8));
+      const parsed = new Date(year, month - 1, day);
+      if (Number.isNaN(parsed.getTime())) {
+        return null;
+      }
+      if (parsed.getFullYear() !== year || parsed.getMonth() !== month - 1 || parsed.getDate() !== day) {
+        return null;
+      }
+      return parsed;
+    }
+
+    /**
+     * Resolves a location from a URL parameter.
+     * The URL may contain either an internal key like `berlin` or a readable
+     * label such as `Madrid` or `Frankfurt am Main`.
+     * @param {string} rawValue Raw place query parameter.
+     * @returns {object|null} Matching location object or null.
+     */
+    function locationFromParameter(rawValue){
+      const normalized = normalizeLocationToken(rawValue);
+      if (!normalized) {
+        return null;
+      }
+      let index = 0;
+      while (index < locations.length) {
+        const location = locations[index];
+        if (normalizeLocationToken(location.key) === normalized) {
+          return location;
+        }
+        if (normalizeLocationToken(location.name) === normalized) {
+          return location;
+        }
+        index += 1;
+      }
+      return null;
+    }
+
+    /**
+     * Applies the initial date and place parameters from the current URL.
+     * This runs once during startup before the first render so deep links can
+     * open directly on a specific day and city.
+     * @returns {void}
+     */
+    function applyInitialUrlState(){
+      const params = new URLSearchParams(window.location.search);
+      const requestedDate = parseDateParameter(params.get('date'));
+      if (requestedDate) {
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        const differenceMs = requestedDate.getTime() - today.getTime();
+        solarDayOffset = Math.round(differenceMs / 86400000);
+      }
+      const requestedLocation = locationFromParameter(params.get('place'));
+      if (requestedLocation) {
+        selectedLocationKey = requestedLocation.key;
+      }
+    }
+
+    /**
+     * Writes the current date and place into the browser URL without navigating.
+     * The query parameters use `date=YYYYMMDD` and `place=<City Name>`.
+     * @returns {void}
+     */
+    function syncUrlState(){
+      const url = new URL(window.location.href);
+      const selectedDate = selectedSolarDate();
+      const dateParameter = formatDateStamp(selectedDate).replace(/\./g, '');
+      url.searchParams.set('date', dateParameter);
+      const location = selectedLocation();
+      if (location && location.name) {
+        url.searchParams.set('place', location.name);
+      } else {
+        url.searchParams.delete('place');
+      }
+      const nextUrl = url.pathname + url.search + url.hash;
+      history.replaceState(null, '', nextUrl);
+    }
+
     function fmtDateOnly(d){
       return formatDateStamp(d);
     }
@@ -2844,6 +2956,23 @@
       }
     }
 
+    /**
+     * Re-renders a section while preserving the visible grid anchor.
+     * This is used for lightweight UI updates such as calendar filters so the
+     * page does not jump back to the top during the following masonry relayout.
+     * @param {Function} callback Render callback to execute.
+     * @returns {void}
+     */
+    function renderWithViewportAnchor(callback){
+      const anchor = captureViewportAnchor();
+      callback();
+      if (anchor) {
+        scheduleMasonryLayout(() => {
+          restoreViewportAnchor(anchor);
+        });
+      }
+    }
+
     function refreshDateDrivenTilesWithAnchor(){
       const anchor = captureViewportAnchor();
       if (anchor) {
@@ -2961,18 +3090,11 @@
       scheduleMasonryLayout();
     }
 
-    function keepScrollPosition(callback){
-      const scrollX = window.scrollX;
-      const scrollY = window.scrollY;
-      callback();
-      requestAnimationFrame(() => window.scrollTo(scrollX, scrollY));
-    }
-
     function setCalendarFilter(filter, preserveScroll = false){
       activeCalendarFilter = filter;
       showAllCalendarEvents = false;
       if (preserveScroll) {
-        keepScrollPosition(renderCalendar);
+        renderWithViewportAnchor(renderCalendar);
       } else {
         renderCalendar();
       }
@@ -3206,6 +3328,7 @@
     function updateControlDateReadout(){
       const readout = document.getElementById('controlDateReadout');
       if (readout) readout.textContent = formatDateStamp(selectedSolarDate());
+      syncUrlState();
     }
 
     /**
@@ -5227,11 +5350,14 @@ function computeMoon(date){
     });
     document.querySelectorAll('[data-calendar-filter]').forEach(button => {
       button.addEventListener('pointerdown', event => event.preventDefault());
-      button.addEventListener('click', () => setCalendarFilter(button.dataset.calendarFilter, true));
+      button.addEventListener('click', event => {
+        event.preventDefault();
+        setCalendarFilter(button.dataset.calendarFilter, true);
+      });
     });
     document.getElementById('calendarShowPast').addEventListener('change', () => {
       showAllCalendarEvents = false;
-      renderCalendar();
+      renderWithViewportAnchor(renderCalendar);
     });
     document.getElementById('btnCalendarShowAll').addEventListener('click', toggleCalendarShowAll);
     const eclipseInfo = document.getElementById('eclipseInfo');
@@ -5257,7 +5383,13 @@ function computeMoon(date){
     }
     window.addEventListener('pointerup', stopSolarDateHold);
 
+    applyInitialUrlState();
     populateLocationSelector();
+    const solarDateSlider = document.getElementById('solarDateSlider');
+    if (solarDateSlider) {
+      solarDateSlider.value = String(solarDayOffset);
+      solarDateSlider.setAttribute('aria-valuenow', String(solarDayOffset));
+    }
     applyI18n();
     initCardHelp();
     updateTime();
