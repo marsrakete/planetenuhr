@@ -787,6 +787,22 @@
       return html;
     }
 
+    /**
+     * Returns an extra localized explanation for the Moon-nodes popup.
+     * This text clarifies that the small blue markers represent orbital nodes
+     * rather than additional celestial bodies.
+     * @returns {string} Localized explanatory sentence.
+     */
+    function moonNodesMarkerHelpText(){
+      if (lang === 'de') {
+        return 'Die zwei kleinen blauen Marker sind die Mondknoten und keine zusätzlichen Himmelskörper: Sie markieren die Schnittpunkte der geneigten Mondbahn mit der Ekliptik.';
+      }
+      if (lang === 'fr') {
+        return 'Les deux petits marqueurs bleus sont les nœuds lunaires et non des corps supplémentaires : ils indiquent les points où l’orbite inclinée de la Lune coupe l’écliptique.';
+      }
+      return 'The two small blue markers are the lunar nodes, not extra bodies: they mark where the Moon\'s tilted orbit crosses the ecliptic plane.';
+    }
+
     function closeAllCardHelp(except){
       document.querySelectorAll('.card-help.open').forEach(node => {
         if (except && node === except) return;
@@ -817,6 +833,14 @@
         const popup = document.createElement('div');
         popup.className = 'card-help-popup';
         popup.innerHTML = renderCardHelpEntry(entry, sections);
+        if (key === 'moon_nodes') {
+          const noteSection = popup.querySelector('.card-help-section:last-of-type .card-help-list');
+          if (noteSection) {
+            const extraItem = document.createElement('li');
+            extraItem.textContent = moonNodesMarkerHelpText();
+            noteSection.appendChild(extraItem);
+          }
+        }
         wrap.appendChild(button);
         wrap.appendChild(popup);
         card.appendChild(wrap);

@@ -168,6 +168,7 @@ window.PLANETENUHR_CARD_HELP = {
         ],
         details: [
           "The inner orbit shows where the Moon sits relative to the node line on the selected date.",
+          "The two small blue markers are the lunar nodes, not extra bodies: they mark where the Moon's tilted orbit crosses the ecliptic plane.",
           "The outer season ring uses a repeating eclipse-season approximation; it is designed as an educational timing aid."
         ],
         links: [
