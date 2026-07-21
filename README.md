@@ -989,6 +989,116 @@ Insbesondere:
 
 Für exakte Beobachtungsplanung sollten zusätzlich spezialisierte Ephemeriden, JPL Horizons oder Planetariumsprogramme genutzt werden.
 
+## Quellen fuer Himmelskalender und Finsternis-Logik
+
+Dieser Abschnitt beschreibt den aktuellen Stand der Datenquellen fuer den Himmelskalender und fuer die Finsternis-Kacheln.
+
+### Dateien und Aufgaben
+
+- `calendar-events.js`  
+  handgepflegte Basis-Eintraege, vor allem fuer 2026 und 2027
+- `eclipse-calendar-config.js`  
+  gemeinsame Finsternis-Datenbasis und lokalisierte Kalender-Erweiterung bis Dezember 2040
+- `extended-calendar-config.js`  
+  wiederkehrende Kalender-Ereignisse bis Dezember 2040 fuer Meteorstroeme, Mond, Planeten und Jahreszeiten
+- `eclipse-visibility-config.js`  
+  kuratierte Stadt-Zuordnungen fuer wichtige Finsternisse
+- `locations-config.js`  
+  Ortsliste fuer die ortsabhaengige Stufe-1-Logik
+
+### Quellen fuer den Himmelskalender
+
+- Finsternisse allgemein  
+  NASA Eclipse Web Site  
+  https://eclipse.gsfc.nasa.gov/eclipse.html
+
+- Verwendete NASA-Tabellen fuer die Erweiterung bis 2040  
+  Solar Eclipses 2021-2030  
+  https://eclipse.gsfc.nasa.gov/SEdecade/SEdecade2021.html  
+  Solar Eclipses 2031-2040  
+  https://eclipse.gsfc.nasa.gov/SEdecade/SEdecade2031.html  
+  Lunar Eclipses 2021-2030  
+  https://eclipse.gsfc.nasa.gov/LEdecade/LEdecade2021.html  
+  Lunar Eclipses 2031-2040  
+  https://eclipse.gsfc.nasa.gov/LEdecade/LEdecade2031.html
+
+- Meteorstroeme  
+  International Meteor Organization  
+  https://www.imo.net/resources/calendar/
+
+- Jahreszeitenpunkte  
+  timeanddate.com  
+  https://www.timeanddate.com/calendar/seasons.html
+
+- Planetenereignisse, Konjunktionen, Oppositionen, Elongationen  
+  In-The-Sky.org  
+  https://in-the-sky.org/newscal.php
+
+### Wie der Himmelskalender daraus aufgebaut wird
+
+Der Himmelskalender besteht aus zwei Schichten:
+
+1. `calendar-events.js` mit kuratierten Einzelereignissen
+2. generatorbasierten Erweiterungen aus `eclipse-calendar-config.js` und `extended-calendar-config.js`
+
+Ab dem Zeitraum 2028 bis 2040 werden insbesondere diese wiederkehrenden Kategorien generatorbasiert gepflegt:
+
+- `eclipse`
+- `meteor`
+- `planet`
+- `moon`
+- `season`
+
+Dabei gilt:
+
+- Finsternisse werden aus den NASA-decade-tables uebernommen und lokalisiert.
+- Meteorstroeme werden aus `phenomena-config.js` pro Jahr zum Peak-Datum erzeugt.
+- Jahreszeiten werden als wiederkehrende Kalendertermine gepflegt.
+- Erde im `Perihel` und `Aphel` werden als wiederkehrende Planeten-Termine gepflegt.
+- Mondtermine fuer `Perigaeum` und `Apogaeum` werden als repraesentative Quartalstermine aus einem angenaeherten anomalistischen Zyklus erzeugt.
+
+### Quellen und Logik fuer die Finsternis-Kacheln
+
+Die App verwendet fuer Finsternisse zwei unterschiedliche Ebenen:
+
+- `didaktische Geometrie` in den Kacheln `Mondknoten & Finsternis-Saison` und `Finsternis-Geometrie`
+- `kalender- und ortsbezogene Ereignislogik` fuer Datum und Standort
+
+#### 1. Didaktische Finsternis-Geometrie
+
+Diese Kacheln nutzen keine vollstaendige NASA- oder JPL-Ephemeride, sondern erklaerende Naeherungen aus den internen Berechnungen in `index.html`:
+
+- synodischer Monat fuer die Mondphase
+- drakonitischer Monat fuer Knotennaehe
+- angenaeherter Finsternis-Saison-Zyklus von rund `173.31 d`
+
+Diese Logik erklaert:
+
+- warum Finsternisse nur nahe Mondknoten moeglich sind
+- warum sie saisonal gehaeuft auftreten
+- ob am gewaehlten Datum eher Sonnen- oder Mondfinsternis-Geometrie vorliegt
+
+#### 2. Ortsabhaengige Finsternis-Logik Stufe 1
+
+Die ortsabhaengige Logik ist bewusst einfach gehalten und noch keine exakte lokale Sichtbarkeitsrechnung.
+
+Quellenbasis:
+
+- kuratierte Stadt-Zuordnungen in `eclipse-visibility-config.js`
+- NASA-Sichtbarkeitsregionen aus den decade tables in `eclipse-calendar-config.js`
+
+Vorgehen:
+
+1. Wenn fuer ein Finsternisdatum eine Stadt direkt hinterlegt ist, nutzt die App diese kuratierte Aussage.
+2. Wenn keine Stadt direkt hinterlegt ist, prueft die App grobe Weltregionen wie `Europe`, `Asia`, `Africa`, `Americas`, `Australia`, `Pacific` oder `Mid East`.
+3. Daraus entsteht eine vereinfachte Aussage wie `total sichtbar`, `partiell sichtbar`, `nur Halbschatten` oder `nicht sichtbar`.
+
+Wichtig:
+
+- Diese Stufe 1 beruecksichtigt keine exakten lokalen Kontaktzeiten.
+- Sie berechnet keine Bedeckungsgrade, keine Mondhoehe und keine Zentralstreifen-Geometrie pro Ort.
+- Die Kachel bleibt deshalb als `globale Skizze plus grobe Ortsaussage` dokumentiert.
+
 ## Kontakt
 
 E-Mail: millux@marsrakete.de

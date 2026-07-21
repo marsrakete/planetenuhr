@@ -666,9 +666,13 @@
   <script src="translations.js"></script>
   <script src="card-help-config.js"></script>
   <script src="calendar-events.js"></script>
+  <script src="eclipse-calendar-config.js"></script>
   <script src="small-bodies-config.js"></script>
   <script src="phenomena-config.js"></script>
   <script src="bsky-feed-config.js"></script>
+  <script src="extended-calendar-config.js"></script>
+  <script src="locations-config.js"></script>
+  <script src="eclipse-visibility-config.js"></script>
   <script>
 
   window.onerror = function(msg, url, line, col, error) {
@@ -691,18 +695,18 @@
     const smallBodiesConfig = window.PLANETENUHR_SMALL_BODIES || { belts:[], comets:[] };
     const phenomenaConfig = window.PLANETENUHR_PHENOMENA || { meteorStreams:[], constellations:[], spacecraft:[], retrogradeBodies:[], planetPhaseBodies:[], satellites:[] };
     const bskyFeeds = window.PLANETENUHR_BSKY_FEEDS || [];
-    const locations = [
-      { key:'berlin', name:'Berlin', latitude:52.52, longitude:13.405 },
-      { key:'hamburg', name:'Hamburg', latitude:53.5511, longitude:9.9937 },
-      { key:'munich', name:'München', latitude:48.1372, longitude:11.5755 },
-      { key:'cologne', name:'Köln', latitude:50.9375, longitude:6.9603 },
-      { key:'frankfurt', name:'Frankfurt am Main', latitude:50.1109, longitude:8.6821 },
-      { key:'stuttgart', name:'Stuttgart', latitude:48.7758, longitude:9.1829 },
-      { key:'dusseldorf', name:'Düsseldorf', latitude:51.2277, longitude:6.7735 },
-      { key:'dortmund', name:'Dortmund', latitude:51.5136, longitude:7.4653 },
-      { key:'essen', name:'Essen', latitude:51.4556, longitude:7.0116 },
-      { key:'leipzig', name:'Leipzig', latitude:51.3397, longitude:12.3731 }
-    ];
+    let locations = [];
+    if (Array.isArray(window.PLANETENUHR_LOCATIONS) && window.PLANETENUHR_LOCATIONS.length) {
+      locations = window.PLANETENUHR_LOCATIONS;
+    }
+    let eclipseVisibilityConfig = [];
+    if (Array.isArray(window.PLANETENUHR_ECLIPSE_VISIBILITY) && window.PLANETENUHR_ECLIPSE_VISIBILITY.length) {
+      eclipseVisibilityConfig = window.PLANETENUHR_ECLIPSE_VISIBILITY;
+    }
+    let eclipseCalendarData = [];
+    if (Array.isArray(window.PLANETENUHR_ECLIPSE_CALENDAR_DATA) && window.PLANETENUHR_ECLIPSE_CALENDAR_DATA.length) {
+      eclipseCalendarData = window.PLANETENUHR_ECLIPSE_CALENDAR_DATA;
+    }
     let selectedLocationKey = 'berlin';
     let activeCalendarFilter = 'all';
     let showAllCalendarEvents = false;
@@ -1075,6 +1079,33 @@
       return parts.year + '.' + parts.month + '.' + parts.day;
     }
 
+    /**
+     * Converts a Date into the stable config key format YYYY-MM-DD.
+     * @param {Date} d Date to convert.
+     * @param {string} [timeZone] Optional IANA timezone for day extraction.
+     * @returns {string} Date key in YYYY-MM-DD format.
+     */
+    function formatDateKey(d, timeZone){
+      const parts = datePartsInZone(d, timeZone);
+      return parts.year + '-' + parts.month + '-' + parts.day;
+    }
+
+    /**
+     * Normalizes a region keyword for coarse visibility matching.
+     * @param {string} value Raw region text.
+     * @returns {string} Lowercase normalized token without punctuation.
+     */
+    function normalizeEclipseRegionToken(value){
+      if (!value) {
+        return '';
+      }
+      return String(value)
+        .toLowerCase()
+        .replace(/[.,]/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+    }
+
     function fmtDateOnly(d){
       return formatDateStamp(d);
     }
@@ -1217,18 +1248,299 @@
       setLeft('lightHourNowMarker', positionOfDay(date));
     }
 
-    // Explanatory eclipse-geometry card.
-    // This combines:
-    // - Moon-to-node distance from the draconic cycle
-    // - eclipse-season timing from the repeating season model
-    // - current phase from computeMoon(...)
-    //
-    // The output is intentionally educational rather than a precise
-    // ephemeris-grade eclipse prediction.
+    /**
+     * Finds the configured eclipse visibility record for the selected calendar day.
+     * The lookup is intentionally simple: it matches exact event dates from the
+     * curated config and does not try to predict eclipses from orbital mechanics.
+     * @param {Date} date Calendar date to inspect.
+     * @returns {object|null} Matching config entry or null when no curated entry exists.
+     */
+    function eclipseVisibilityEntryForDate(date){
+      const dateKey = formatDateKey(date);
+      let index = 0;
+      while (index < eclipseVisibilityConfig.length) {
+        const entry = eclipseVisibilityConfig[index];
+        if (entry && entry.date === dateKey) {
+          return entry;
+        }
+        index += 1;
+      }
+      return null;
+    }
+
+    /**
+     * Finds the shared NASA-based eclipse calendar record for one exact date.
+     * @param {Date} date Calendar date to inspect.
+     * @returns {object|null} Matching shared eclipse record or null.
+     */
+    function eclipseCalendarEntryForDate(date){
+      const dateKey = formatDateKey(date);
+      let index = 0;
+      while (index < eclipseCalendarData.length) {
+        const entry = eclipseCalendarData[index];
+        if (entry && entry.date === dateKey) {
+          return entry;
+        }
+        index += 1;
+      }
+      return null;
+    }
+
+    /**
+     * Returns coarse region tags for the selected city.
+     * These tags intentionally stay broad because stage 1 only distinguishes
+     * large visibility regions such as Europe, North America or Asia.
+     * @param {object} location Selected location object.
+     * @returns {Array<string>} Normalized region tags.
+     */
+    function locationEclipseRegionTags(location){
+      const tags = [];
+      if (!location || !location.key) {
+        return tags;
+      }
+
+      if ([
+        'berlin', 'hamburg', 'munich', 'cologne', 'frankfurt', 'stuttgart',
+        'dusseldorf', 'dortmund', 'essen', 'leipzig', 'reykjavik', 'dublin',
+        'london', 'amsterdam', 'brussels', 'paris', 'zurich', 'vienna',
+        'prague', 'warsaw', 'copenhagen', 'oslo', 'stockholm', 'helsinki',
+        'lisbon', 'madrid', 'barcelona', 'bilbao', 'cadiz', 'malaga',
+        'gibraltar', 'rome', 'athens'
+      ].includes(location.key)) {
+        tags.push('europe');
+      }
+
+      if (['reykjavik', 'oslo', 'stockholm', 'helsinki'].includes(location.key)) {
+        tags.push('arctic');
+      }
+
+      if (['istanbul', 'jerusalem', 'dubai', 'cairo'].includes(location.key)) {
+        tags.push('mid east');
+      }
+
+      if (['istanbul', 'jerusalem', 'dubai', 'delhi', 'bangkok', 'singapore', 'jakarta', 'hong_kong', 'shanghai', 'beijing', 'seoul', 'tokyo'].includes(location.key)) {
+        tags.push('asia');
+      }
+
+      if (['casablanca', 'cairo', 'nairobi', 'cape_town'].includes(location.key)) {
+        tags.push('africa');
+      }
+
+      if (['new_york', 'los_angeles', 'toronto', 'vancouver'].includes(location.key)) {
+        tags.push('americas');
+        tags.push('n america');
+      }
+
+      if (['mexico_city'].includes(location.key)) {
+        tags.push('americas');
+        tags.push('c america');
+      }
+
+      if (['rio', 'buenos_aires', 'santiago'].includes(location.key)) {
+        tags.push('americas');
+        tags.push('s america');
+      }
+
+      if (['sydney', 'melbourne'].includes(location.key)) {
+        tags.push('australia');
+      }
+
+      if (['auckland'].includes(location.key)) {
+        tags.push('pacific');
+        tags.push('n z');
+      }
+
+      if (['jakarta', 'singapore'].includes(location.key)) {
+        tags.push('e indies');
+      }
+
+      if (['tokyo', 'auckland', 'sydney', 'melbourne', 'honolulu'].includes(location.key)) {
+        tags.push('pacific');
+      }
+
+      return tags;
+    }
+
+    /**
+     * Checks whether the broad NASA visibility region includes the selected city.
+     * @param {object} entry Shared eclipse calendar entry with a regions field.
+     * @param {object} location Selected location object.
+     * @returns {boolean} True when the city's coarse region tags match the event text.
+     */
+    function eclipseCalendarRegionMatchesLocation(entry, location){
+      if (!entry || !entry.regions || !location) {
+        return false;
+      }
+      const regionText = normalizeEclipseRegionToken(entry.regions);
+      const tags = locationEclipseRegionTags(location);
+      let index = 0;
+      while (index < tags.length) {
+        if (regionText.includes(tags[index])) {
+          return true;
+        }
+        index += 1;
+      }
+      return false;
+    }
+
+    /**
+     * Converts a shared eclipse calendar entry into a coarse local visibility class.
+     * Solar eclipses default to "partial" when the selected city lies in the broad
+     * NASA visibility region but no city-specific central-path override exists.
+     * Lunar eclipses inherit their type directly from the event record.
+     * @param {object} entry Shared eclipse calendar entry.
+     * @param {object} location Selected location object.
+     * @returns {string} Simplified local visibility status key.
+     */
+    function eclipseFallbackStatusForLocation(entry, location){
+      if (!entry) {
+        return 'unknown';
+      }
+      const regionMatches = eclipseCalendarRegionMatchesLocation(entry, location);
+      if (!regionMatches) {
+        return 'not_visible';
+      }
+      if (entry.kind === 'solar') {
+        return 'partial';
+      }
+      if (entry.type === 'total') {
+        return 'total';
+      }
+      if (entry.type === 'partial') {
+        return 'partial';
+      }
+      return 'penumbral';
+    }
+
+    /**
+     * Resolves the simplified local eclipse visibility for one configured city.
+     * Stage 1 deliberately returns curated city classes such as "partial" or
+     * "not_visible" instead of computing local circumstances from ephemerides.
+     * @param {Date} date Calendar date to inspect.
+     * @param {object} location Selected location object with at least a key.
+     * @returns {object|null} Object with entry and status, or null when no event is configured.
+     */
+    function eclipseVisibilityForLocation(date, location){
+      const entry = eclipseVisibilityEntryForDate(date);
+      if (entry && location) {
+        let status = 'unknown';
+        if (entry.defaultVisibility) {
+          status = entry.defaultVisibility;
+        }
+        if (entry.cityVisibilityByKey && Object.prototype.hasOwnProperty.call(entry.cityVisibilityByKey, location.key)) {
+          status = entry.cityVisibilityByKey[location.key];
+        }
+        return {
+          entry,
+          status,
+          source: 'manual'
+        };
+      }
+
+      if (!location) {
+        return null;
+      }
+
+      const calendarEntry = eclipseCalendarEntryForDate(date);
+      if (!calendarEntry) {
+        return null;
+      }
+
+      const status = eclipseFallbackStatusForLocation(calendarEntry, location);
+      return {
+        entry: calendarEntry,
+        status,
+        source: 'fallback'
+      };
+    }
+
+    /**
+     * Translates one simplified eclipse visibility status into user-facing text.
+     * @param {string} statusKey Internal status key from the curated visibility config.
+     * @returns {string} Localized short label.
+     */
+    function eclipseVisibilityStatusLabel(statusKey){
+      if (statusKey === 'total') {
+        return t.eclipse_visibility_total || 'total visible';
+      }
+      if (statusKey === 'annular') {
+        return t.eclipse_visibility_annular || 'annular visible';
+      }
+      if (statusKey === 'hybrid') {
+        return t.eclipse_visibility_hybrid || 'hybrid central path';
+      }
+      if (statusKey === 'partial') {
+        return t.eclipse_visibility_partial || 'partly visible';
+      }
+      if (statusKey === 'partial_low') {
+        return t.eclipse_visibility_partial_low || 'only low above the horizon';
+      }
+      if (statusKey === 'penumbral') {
+        return t.eclipse_visibility_penumbral || 'penumbral only';
+      }
+      if (statusKey === 'not_visible') {
+        return t.eclipse_visibility_not_visible || 'not visible';
+      }
+      return t.eclipse_visibility_unknown || 'not yet configured for this city';
+    }
+
+    /**
+     * Builds a short localized line that explains the simplified local visibility
+     * for the selected city on an exact configured eclipse date.
+     * @param {Date} date Calendar date to inspect.
+     * @param {object} location Selected location object.
+     * @returns {string} Human-readable sentence, or an empty string when no event applies.
+     */
+    function eclipseVisibilityLocationText(date, location){
+      const visibility = eclipseVisibilityForLocation(date, location);
+      if (!visibility) {
+        return '';
+      }
+      const label = eclipseVisibilityStatusLabel(visibility.status);
+      return (t.eclipse_visibility_here || 'At the selected location')
+        + ' '
+        + location.name
+        + ': '
+        + label
+        + '.';
+    }
+
+    /**
+     * Returns the localized title for a configured eclipse event.
+     * @param {object} entry Config entry with optional translated title map.
+     * @returns {string} Localized event title or a generic fallback.
+     */
+    function eclipseVisibilityEventTitle(entry){
+      if (!entry) {
+        return t.calendar_filter_eclipse || 'Eclipses';
+      }
+      if (entry.kind && entry.type && typeof localizedEclipseCalendarTitle === 'function') {
+        return localizedEclipseCalendarTitle(entry.kind, entry.type, lang);
+      }
+      if (entry.title && entry.title[lang]) {
+        return entry.title[lang];
+      }
+      if (entry.title && entry.title.en) {
+        return entry.title.en;
+      }
+      return t.calendar_filter_eclipse || 'Eclipses';
+    }
+
+    /**
+     * Renders the Moon-node and eclipse-season explainer card.
+     * The drawing combines a repeating eclipse-season model, approximate lunar
+     * phase, and node distance. It is an educational sketch, not a local eclipse
+     * simulator. When a curated eclipse event exists for the exact date, the
+     * summary also includes a simplified city-based visibility statement.
+     * @param {Date} [date=selectedSolarDate()] Calendar date used for the sketch.
+     * @returns {void}
+     */
     function renderMoonNodes(date = selectedSolarDate()){
       const target = document.getElementById('moonNodesMap');
       const summary = document.getElementById('moonNodesSummary');
       if (!target) return;
+      const location = selectedLocation();
+      const localVisibility = eclipseVisibilityForLocation(date, location);
       const node = moonNodeDistance(date);
       const season = eclipseSeasonInfo(date);
       const moon = computeMoon(date);
@@ -1604,6 +1916,15 @@
         appendSummaryLine(summary, (t.moon_nodes_season_distance || 'Sun to season center') + ': ', season.distanceToCenter.toFixed(1) + ' d');
         appendSummaryLine(summary, (t.moon_nodes_next || 'Next season center') + ': ', fmtDateOnly(season.nextCenter));
         appendSummaryLine(summary, (t.moon_nodes_geometry_status || 'Geometry today') + ': ', geometryMessage);
+        if (localVisibility) {
+          appendSummaryLine(summary, (t.eclipse_visibility_event || 'Event') + ': ', eclipseVisibilityEventTitle(localVisibility.entry));
+          appendSummaryLine(summary, (t.eclipse_visibility_here || 'At the selected location') + ': ', location.name + ' - ' + eclipseVisibilityStatusLabel(localVisibility.status));
+          let approximationNote = t.eclipse_visibility_approx_note || 'The city visibility is a simplified event-based estimate; the sketch itself remains a global geometry view.';
+          if (localVisibility.source === 'fallback') {
+            approximationNote = t.eclipse_visibility_region_note || 'This visibility comes from a broad NASA region match for the selected city; the sketch itself remains a global geometry view.';
+          }
+          appendSummaryText(summary, approximationNote);
+        }
       }
     }
 
@@ -2870,8 +3191,16 @@
       return new Date(Date.now() + solarDayOffset * 86400000);
     }
 
+    /**
+     * Returns the active city from the configured location list.
+     * @returns {object} Selected location object. Falls back to the first configured city.
+     */
     function selectedLocation(){
-      return locations.find(location => location.key === selectedLocationKey) || locations[0];
+      const match = locations.find(location => location.key === selectedLocationKey);
+      if (match) {
+        return match;
+      }
+      return locations[0];
     }
 
     function updateControlDateReadout(){
@@ -2879,6 +3208,11 @@
       if (readout) readout.textContent = formatDateStamp(selectedSolarDate());
     }
 
+    /**
+     * Rebuilds the location selector from the external location config.
+     * The visible label includes the city and country so the worldwide list stays clear.
+     * @returns {void}
+     */
     function populateLocationSelector(){
       const selector = document.getElementById('locationSelector');
       if (!selector) return;
@@ -2886,7 +3220,11 @@
       locations.forEach(location => {
         const option = document.createElement('option');
         option.value = location.key;
-        option.textContent = location.name;
+        let label = location.name;
+        if (location.country) {
+          label += ', ' + location.country;
+        }
+        option.textContent = label;
         selector.appendChild(option);
       });
       selector.value = selectedLocationKey;
@@ -4495,15 +4833,21 @@ function computeMoon(date){
       return { phase, distanceDays:distance * draconic };
     }
 
-    // Compact eclipse-geometry sketch for the Earth & Moon card.
-    // It visualizes whether the selected date is close to the combination of:
-    // - suitable lunar phase (new or full moon)
-    // - small node distance
-    // - enough overlap to speak of eclipse-like geometry
+    /**
+     * Renders the compact eclipse-geometry sketch inside the Earth-and-Moon card.
+     * The diagram shows a global alignment sketch for Sun, Earth, Moon, node
+     * distance and lunar phase. It does not compute city-specific eclipse
+     * circumstances. When the exact day matches a curated eclipse event, the
+     * status line adds a simplified visibility note for the selected city.
+     * @param {Date} [date=new Date()] Date that drives the global geometry sketch.
+     * @returns {void}
+     */
     function renderEclipseGeometry(date = new Date()){
       const target = document.getElementById('eclipseGeometryMap');
       const status = document.getElementById('eclipseGeometryStatus');
       if (!target) return;
+      const location = selectedLocation();
+      const localVisibility = eclipseVisibilityForLocation(date, location);
       const m = computeMoon(date);
       const node = moonNodeDistance(date);
       const nearNew = Math.min(m.frac, 1 - m.frac);
@@ -4678,8 +5022,17 @@ function computeMoon(date){
             type = t.eclipse_lunar_possible || 'lunar eclipse geometry';
           }
         }
-        status.textContent = type + '. '
+        let statusText = type + '. '
           + (t.eclipse_node_distance || 'Node distance') + ': ' + node.distanceDays.toFixed(1) + ' d.';
+        const locationText = eclipseVisibilityLocationText(date, location);
+        if (locationText) {
+          let approximationNote = t.eclipse_visibility_approx_short || 'Global sketch, local visibility simplified.';
+          if (localVisibility && localVisibility.source === 'fallback') {
+            approximationNote = t.eclipse_visibility_region_short || 'Global sketch, local visibility from broad NASA region.';
+          }
+          statusText += ' ' + locationText + ' ' + approximationNote;
+        }
+        status.textContent = statusText;
       }
 
       const infoPopup = document.getElementById('eclipseInfoPopup');
@@ -4687,6 +5040,11 @@ function computeMoon(date){
         infoPopup.innerHTML = '';
         appendSummaryText(infoPopup, (t.eclipse_geometry_explain || 'The sketch shows Sun, Earth and Moon along the eclipse line; the blue zone marks where the Moon should cross the node region.')
           + ' ' + (t.eclipse_geometry_hint || 'Eclipses need new/full moon near a lunar node.'));
+        let approximationNote = t.eclipse_visibility_approx_note || 'The city visibility is a simplified event-based estimate; the sketch itself remains a global geometry view.';
+        if (localVisibility && localVisibility.source === 'fallback') {
+          approximationNote = t.eclipse_visibility_region_note || 'This visibility comes from a broad NASA region match for the selected city; the sketch itself remains a global geometry view.';
+        }
+        appendSummaryText(infoPopup, approximationNote);
         const legendRow = document.createElement('div');
         legendRow.style.marginTop = '8px';
         legendRow.textContent = t.eclipse_geometry_legend || 'Blue Moon = high eclipse proximity; pale Moon = low eclipse proximity.';
