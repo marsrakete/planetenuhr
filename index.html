@@ -751,7 +751,14 @@
       target.appendChild(fragment);
     }
 
-    function renderCardHelpEntry(entry, sections){
+    function renderCardHelpEntry(entry, sections, cardKey){
+      let detailItems = [];
+      if (entry.details && entry.details.length) {
+        detailItems = entry.details.slice();
+      }
+      if (cardKey === 'moon_nodes') {
+        detailItems.push(moonNodesMarkerHelpText());
+      }
       let html = '<div class="card-help-title">' + (sections.title || 'About this card') + '</div>';
       if (entry.intro && entry.intro.length) {
         html += '<section class="card-help-section"><h4>' + (sections.overview || 'Overview') + '</h4>'
@@ -772,9 +779,9 @@
           }).join('')
           + '</div></section>';
       }
-      if (entry.details && entry.details.length) {
+      if (detailItems.length) {
         html += '<section class="card-help-section"><h4>' + (sections.details || 'Data & notes') + '</h4><ul class="card-help-list">'
-          + entry.details.map(text => '<li>' + text + '</li>').join('')
+          + detailItems.map(text => '<li>' + text + '</li>').join('')
           + '</ul></section>';
       }
       if (entry.links && entry.links.length) {
@@ -832,15 +839,7 @@
         button.setAttribute('aria-label', sections.button || 'More info');
         const popup = document.createElement('div');
         popup.className = 'card-help-popup';
-        popup.innerHTML = renderCardHelpEntry(entry, sections);
-        if (key === 'moon_nodes') {
-          const noteSection = popup.querySelector('.card-help-section:last-of-type .card-help-list');
-          if (noteSection) {
-            const extraItem = document.createElement('li');
-            extraItem.textContent = moonNodesMarkerHelpText();
-            noteSection.appendChild(extraItem);
-          }
-        }
+        popup.innerHTML = renderCardHelpEntry(entry, sections, key);
         wrap.appendChild(button);
         wrap.appendChild(popup);
         card.appendChild(wrap);
