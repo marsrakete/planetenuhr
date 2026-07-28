@@ -390,6 +390,70 @@
       box-shadow:0 14px 34px rgba(15,23,42,.14);
       padding:12px 16px;
     }
+    .date-mobile-bar{
+      display:none;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      min-width:0;
+    }
+    .date-mobile-summary{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+      min-width:0;
+      flex:1 1 auto;
+    }
+    .mobile-readout{
+      font-size:1rem;
+      line-height:1.1;
+    }
+    .mobile-location-readout{
+      color:var(--muted);
+      font-size:.84rem;
+      font-weight:600;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .date-mobile-actions{
+      display:flex;
+      align-items:center;
+      gap:6px;
+      flex:0 0 auto;
+    }
+    .date-mobile-actions button{
+      margin:0;
+      min-height:34px;
+      padding:7px 10px;
+      border-radius:999px;
+      font-size:.9rem;
+      font-weight:700;
+      line-height:1;
+      white-space:nowrap;
+      background:#f8fbff;
+      color:#0f172a;
+      border:1px solid #bfdbfe;
+      box-shadow:none;
+    }
+    .date-mobile-step-button{
+      min-width:34px;
+      padding:7px 0;
+      font-size:1rem;
+    }
+    .date-mobile-today-button{
+      background:linear-gradient(135deg, #1d4ed8, #3b82f6) !important;
+      color:#fff !important;
+      border:1px solid #2563eb !important;
+    }
+    .date-mobile-toggle-button{
+      min-width:34px;
+      padding:7px 0;
+      color:#1d4ed8 !important;
+    }
+    .date-mobile-panel{
+      display:block;
+    }
     .date-toolbar{
       display:flex;
       align-items:center;
@@ -1179,7 +1243,7 @@
       gap:10px;
     }
     .constellation-map{
-      width:min(100%, 420px);
+      width:min(100%, 460px);
       aspect-ratio:1;
       margin-top:4px;
       border-radius:8px;
@@ -1208,10 +1272,11 @@
     }
     .constellation-star-label{
       fill:#1f2937;
-      font-size:10px;
+      font-size:12px;
+      font-weight:600;
       paint-order:stroke;
       stroke:#fff;
-      stroke-width:3px;
+      stroke-width:4px;
       stroke-linejoin:round;
     }
     .constellation-name{
@@ -1220,7 +1285,7 @@
       font-size:1.02rem;
     }
     .constellation-summary{
-      width:min(100%, 420px);
+      width:min(100%, 460px);
       color:var(--muted);
       font-size:.82rem;
       text-align:left;
@@ -2099,11 +2164,24 @@
       }
       .date-location-card{
         padding:10px 12px;
+        gap:8px;
       }
       .overlay-controls{
         top:8px;
         width:calc(100% - 8px);
         margin-bottom:14px;
+      }
+      .date-mobile-bar{
+        display:flex;
+      }
+      .date-location-card.mobile-collapsed{
+        padding:8px 10px;
+      }
+      .date-location-card.mobile-collapsed .date-mobile-panel{
+        display:none;
+      }
+      .date-location-card.mobile-collapsed .date-mobile-bar{
+        min-height:40px;
       }
       .date-toolbar{
         gap:10px;
@@ -2114,8 +2192,30 @@
         flex-basis:100%;
       }
       .date-toolbar-actions{
-        justify-content:flex-start;
-        flex-wrap:wrap;
+        display:grid;
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+        justify-content:stretch;
+        gap:8px;
+      }
+      .date-toolbar-actions button{
+        width:100%;
+      }
+      #btnSolarPrevYear{ order:1; }
+      #btnSolarNextYear{ order:2; }
+      #btnSolarPrevMonth{ order:3; }
+      #btnSolarNextMonth{ order:4; }
+      #btnSolarPrevWeek{ order:5; }
+      #btnSolarNextWeek{ order:6; }
+      #btnSolarPrev{ order:7; }
+      #btnSolarNext{ order:8; }
+      #btnSolarToday{
+        order:9;
+        grid-column:1 / -1;
+        margin-bottom:0;
+      }
+      #btnSolarAutoplay{
+        order:10;
+        grid-column:1 / -1;
       }
       .location-control{
         margin-right:0;
@@ -2395,6 +2495,16 @@ select {
     gap: 12px;
   }
 
+  .date-mobile-actions {
+    gap: 5px;
+  }
+
+  .date-mobile-actions button {
+    min-height: 32px;
+    padding: 6px 9px;
+    font-size: 0.84rem;
+  }
+
   .solar-slider-row {
     width: 100%;
     order: 3;
@@ -2406,8 +2516,6 @@ select {
   }
 
   .date-toolbar-actions {
-    flex-wrap: wrap;
-    justify-content: center;
     gap: 8px;
   }
 
@@ -2425,23 +2533,50 @@ select {
     font-size: 2rem;
   }
 
-  /* Today button more prominent */
-  #btnSolarToday {
-    flex: 1 0 100%;
-    order: -1;
-    margin-bottom: 8px;
-  }
 }
 
 /* --- Extra Small Devices (max-width: 400px) --- */
 @media (max-width: 400px) {
-  .date-toolbar-actions button {
-    flex: 1 0 45%;
+  .date-mobile-summary {
+    min-width: 0;
   }
 
-  #btnSolarToday {
-    flex: 1 0 100%;
-    order: -1;
-    margin-bottom: 8px;
+  .mobile-readout {
+    font-size: 0.95rem;
+  }
+
+  .mobile-location-readout {
+    font-size: 0.78rem;
+  }
+
+  .date-mobile-actions {
+    gap: 4px;
+  }
+
+  .date-mobile-actions button {
+    min-width: 30px;
+    min-height: 30px;
+    padding: 5px 8px;
+  }
+
+  .date-toolbar-actions {
+    grid-template-columns:1fr;
+  }
+
+  #btnSolarPrevYear{ order:1; }
+  #btnSolarNextYear{ order:2; }
+  #btnSolarPrevMonth{ order:3; }
+  #btnSolarNextMonth{ order:4; }
+  #btnSolarPrevWeek{ order:5; }
+  #btnSolarNextWeek{ order:6; }
+  #btnSolarPrev{ order:7; }
+  #btnSolarNext{ order:8; }
+  #btnSolarToday{
+    order:9;
+    grid-column:auto;
+  }
+  #btnSolarAutoplay{
+    order:10;
+    grid-column:auto;
   }
 }

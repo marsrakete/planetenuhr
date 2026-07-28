@@ -71,7 +71,7 @@ window.PLANETENUHR_CARD_HELP = {
         ],
         links: [
           { label: "JPL Small-Body Database", url: "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html" },
-          { label: "NASA: Asteroids, Comets & Meteors", url: "https://science.nasa.gov/solar-system/asteroids-comets-and-meteors/" }
+          { label: "NASA: Asteroids, Comets & Meteors", url: "https://science.nasa.gov/asteroids-comets-meteors/" }
         ]
       },
       meteor_streams: {
@@ -101,8 +101,9 @@ window.PLANETENUHR_CARD_HELP = {
           "Named stars are placed to stay legible on small screens."
         ],
         links: [
-          { label: "NASA Skywatching", url: "https://science.nasa.gov/solar-system/skywatching/" },
-          { label: "IAU Working Group on Star Names", url: "https://www.iau.org/science/scientific_bodies/working_groups/280/" }
+          { label: "NASA Skywatching", url: "https://science.nasa.gov/skywatching/" },
+          { label: "IAU constellation charts", url: "https://www.iau.org/Iau/Science/What-we-do/The-Constellations.aspx" },
+          { label: "CDS VizieR star catalog service", url: "https://vizier.cds.unistra.fr/viz-bin/VizieR-2" }
         ]
       },
       season_axis: {
@@ -154,7 +155,7 @@ window.PLANETENUHR_CARD_HELP = {
         ],
         links: [
           { label: "JPL approximate positions of the planets", url: "https://ssd.jpl.nasa.gov/planets/approx_pos.html" },
-          { label: "NASA Skywatching", url: "https://science.nasa.gov/solar-system/skywatching/" }
+          { label: "NASA Skywatching", url: "https://science.nasa.gov/skywatching/" }
         ]
       },
       moon_nodes: {
@@ -190,7 +191,7 @@ window.PLANETENUHR_CARD_HELP = {
         ],
         links: [
           { label: "JPL approximate positions of the planets", url: "https://ssd.jpl.nasa.gov/planets/approx_pos.html" },
-          { label: "NASA Skywatching", url: "https://science.nasa.gov/solar-system/skywatching/" }
+          { label: "NASA Skywatching", url: "https://science.nasa.gov/skywatching/" }
         ]
       },
       retrograde: {
@@ -209,7 +210,7 @@ window.PLANETENUHR_CARD_HELP = {
         ],
         links: [
           { label: "JPL approximate positions of the planets", url: "https://ssd.jpl.nasa.gov/planets/approx_pos.html" },
-          { label: "NASA Skywatching", url: "https://science.nasa.gov/solar-system/skywatching/" },
+          { label: "NASA Skywatching", url: "https://science.nasa.gov/skywatching/" },
           { label: "Star Walk: Retrograde motion demystified", url: "https://starwalk.space/de/infographics/retrograde-motion-demystified" }
         ]
       },
@@ -241,8 +242,9 @@ window.PLANETENUHR_CARD_HELP = {
           "The underlying monthly sequence comes from the same curated constellation list as the monthly card."
         ],
         links: [
-          { label: "NASA Skywatching", url: "https://science.nasa.gov/solar-system/skywatching/" },
-          { label: "IAU Working Group on Star Names", url: "https://www.iau.org/science/scientific_bodies/working_groups/280/" }
+          { label: "NASA Skywatching", url: "https://science.nasa.gov/skywatching/" },
+          { label: "IAU constellation charts", url: "https://www.iau.org/Iau/Science/What-we-do/The-Constellations.aspx" },
+          { label: "CDS VizieR star catalog service", url: "https://vizier.cds.unistra.fr/viz-bin/VizieR-2" }
         ]
       },
       night_visibility: {
@@ -291,7 +293,7 @@ window.PLANETENUHR_CARD_HELP = {
           "A strong Kp does not guarantee visibility; darkness, clear skies and geomagnetic timing still matter."
         ],
         links: [
-          { label: "NOAA SWPC", url: "https://www.swpc.noaa.gov/" },
+          { label: "NOAA SWPC", url: "https://www.spaceweather.gov/" },
           { label: "NOAA SWPC products", url: "https://services.swpc.noaa.gov/" }
         ]
       },
@@ -452,7 +454,7 @@ window.PLANETENUHR_CARD_HELP = {
         ],
         links: [
           { label: "JPL Small-Body Database", url: "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html" },
-          { label: "NASA: Asteroids, Comets & Meteors", url: "https://science.nasa.gov/solar-system/asteroids-comets-and-meteors/" }
+          { label: "NASA: Asteroids, Comets & Meteors", url: "https://science.nasa.gov/asteroids-comets-meteors/" }
         ]
       },
       meteor_streams: {
@@ -482,8 +484,9 @@ window.PLANETENUHR_CARD_HELP = {
           "Sternnamen werden so gesetzt, dass sie auch auf kleineren Displays möglichst lesbar bleiben."
         ],
         links: [
-          { label: "NASA Skywatching", url: "https://science.nasa.gov/solar-system/skywatching/" },
-          { label: "IAU Working Group on Star Names", url: "https://www.iau.org/science/scientific_bodies/working_groups/280/" }
+          { label: "NASA Skywatching", url: "https://science.nasa.gov/skywatching/" },
+          { label: "IAU constellation charts", url: "https://www.iau.org/Iau/Science/What-we-do/The-Constellations.aspx" },
+          { label: "CDS VizieR star catalog service", url: "https://vizier.cds.unistra.fr/viz-bin/VizieR-2" }
         ]
       },
       season_axis: {
@@ -535,7 +538,7 @@ window.PLANETENUHR_CARD_HELP = {
         ],
         links: [
           { label: "JPL: Approximate Positions of the Planets", url: "https://ssd.jpl.nasa.gov/planets/approx_pos.html" },
-          { label: "NASA Skywatching", url: "https://science.nasa.gov/solar-system/skywatching/" }
+          { label: "NASA Skywatching", url: "https://science.nasa.gov/skywatching/" }
         ]
       },
       moon_nodes: {
@@ -570,7 +573,7 @@ window.PLANETENUHR_CARD_HELP = {
         ],
         links: [
           { label: "JPL: Approximate Positions of the Planets", url: "https://ssd.jpl.nasa.gov/planets/approx_pos.html" },
-          { label: "NASA Skywatching", url: "https://science.nasa.gov/solar-system/skywatching/" }
+          { label: "NASA Skywatching", url: "https://science.nasa.gov/skywatching/" }
         ]
       },
       retrograde: {
@@ -589,7 +592,7 @@ window.PLANETENUHR_CARD_HELP = {
         ],
         links: [
           { label: "JPL: Approximate Positions of the Planets", url: "https://ssd.jpl.nasa.gov/planets/approx_pos.html" },
-          { label: "NASA Skywatching", url: "https://science.nasa.gov/solar-system/skywatching/" },
+          { label: "NASA Skywatching", url: "https://science.nasa.gov/skywatching/" },
           { label: "Star Walk: Retrograde Motion", url: "https://starwalk.space/de/infographics/retrograde-motion-demystified" }
         ]
       },
@@ -621,8 +624,9 @@ window.PLANETENUHR_CARD_HELP = {
           "Die Monatsfolge basiert auf derselben kuratierten Sternbildliste wie die Monats-Kachel."
         ],
         links: [
-          { label: "NASA Skywatching", url: "https://science.nasa.gov/solar-system/skywatching/" },
-          { label: "IAU Working Group on Star Names", url: "https://www.iau.org/science/scientific_bodies/working_groups/280/" }
+          { label: "NASA Skywatching", url: "https://science.nasa.gov/skywatching/" },
+          { label: "IAU constellation charts", url: "https://www.iau.org/Iau/Science/What-we-do/The-Constellations.aspx" },
+          { label: "CDS VizieR star catalog service", url: "https://vizier.cds.unistra.fr/viz-bin/VizieR-2" }
         ]
       },
       night_visibility: {
@@ -671,7 +675,7 @@ window.PLANETENUHR_CARD_HELP = {
           "Ein hoher Kp garantiert noch keine Sichtung; Dunkelheit, klares Wetter und das genaue Timing bleiben wichtig."
         ],
         links: [
-          { label: "NOAA SWPC", url: "https://www.swpc.noaa.gov/" },
+          { label: "NOAA SWPC", url: "https://www.spaceweather.gov/" },
           { label: "NOAA SWPC products", url: "https://services.swpc.noaa.gov/" }
         ]
       },
@@ -832,7 +836,7 @@ window.PLANETENUHR_CARD_HELP = {
         ],
         links: [
           { label: "JPL Small-Body Database", url: "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html" },
-          { label: "NASA: Asteroids, Comets & Meteors", url: "https://science.nasa.gov/solar-system/asteroids-comets-and-meteors/" }
+          { label: "NASA: Asteroids, Comets & Meteors", url: "https://science.nasa.gov/asteroids-comets-meteors/" }
         ]
       },
       meteor_streams: {
@@ -862,8 +866,9 @@ window.PLANETENUHR_CARD_HELP = {
           "Les noms d'etoiles sont places pour rester lisibles sur des ecrans compacts."
         ],
         links: [
-          { label: "NASA Skywatching", url: "https://science.nasa.gov/solar-system/skywatching/" },
-          { label: "IAU Working Group on Star Names", url: "https://www.iau.org/science/scientific_bodies/working_groups/280/" }
+          { label: "NASA Skywatching", url: "https://science.nasa.gov/skywatching/" },
+          { label: "IAU constellation charts", url: "https://www.iau.org/Iau/Science/What-we-do/The-Constellations.aspx" },
+          { label: "CDS VizieR star catalog service", url: "https://vizier.cds.unistra.fr/viz-bin/VizieR-2" }
         ]
       },
       season_axis: {
@@ -915,7 +920,7 @@ window.PLANETENUHR_CARD_HELP = {
         ],
         links: [
           { label: "JPL: Approximate Positions of the Planets", url: "https://ssd.jpl.nasa.gov/planets/approx_pos.html" },
-          { label: "NASA Skywatching", url: "https://science.nasa.gov/solar-system/skywatching/" }
+          { label: "NASA Skywatching", url: "https://science.nasa.gov/skywatching/" }
         ]
       },
       moon_nodes: {
@@ -950,7 +955,7 @@ window.PLANETENUHR_CARD_HELP = {
         ],
         links: [
           { label: "JPL: Approximate Positions of the Planets", url: "https://ssd.jpl.nasa.gov/planets/approx_pos.html" },
-          { label: "NASA Skywatching", url: "https://science.nasa.gov/solar-system/skywatching/" }
+          { label: "NASA Skywatching", url: "https://science.nasa.gov/skywatching/" }
         ]
       },
       retrograde: {
@@ -969,7 +974,7 @@ window.PLANETENUHR_CARD_HELP = {
         ],
         links: [
           { label: "JPL: Approximate Positions of the Planets", url: "https://ssd.jpl.nasa.gov/planets/approx_pos.html" },
-          { label: "NASA Skywatching", url: "https://science.nasa.gov/solar-system/skywatching/" },
+          { label: "NASA Skywatching", url: "https://science.nasa.gov/skywatching/" },
           { label: "Star Walk: Retrograde Motion", url: "https://starwalk.space/de/infographics/retrograde-motion-demystified" }
         ]
       },
@@ -1001,8 +1006,9 @@ window.PLANETENUHR_CARD_HELP = {
           "La sequence mensuelle repose sur la meme liste de constellations que la carte mensuelle."
         ],
         links: [
-          { label: "NASA Skywatching", url: "https://science.nasa.gov/solar-system/skywatching/" },
-          { label: "IAU Working Group on Star Names", url: "https://www.iau.org/science/scientific_bodies/working_groups/280/" }
+          { label: "NASA Skywatching", url: "https://science.nasa.gov/skywatching/" },
+          { label: "IAU constellation charts", url: "https://www.iau.org/Iau/Science/What-we-do/The-Constellations.aspx" },
+          { label: "CDS VizieR star catalog service", url: "https://vizier.cds.unistra.fr/viz-bin/VizieR-2" }
         ]
       },
       night_visibility: {
@@ -1051,7 +1057,7 @@ window.PLANETENUHR_CARD_HELP = {
           "Un Kp eleve ne garantit pas une observation; obscurite, ciel degage et bon timing restent essentiels."
         ],
         links: [
-          { label: "NOAA SWPC", url: "https://www.swpc.noaa.gov/" },
+          { label: "NOAA SWPC", url: "https://www.spaceweather.gov/" },
           { label: "NOAA SWPC products", url: "https://services.swpc.noaa.gov/" }
         ]
       },

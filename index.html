@@ -34,6 +34,19 @@
 <body>
   <div class="overlay-controls">
     <div class="display-container date-location-card wide-card" data-help-key="date_location">
+      <div class="date-mobile-bar">
+        <div class="date-mobile-summary">
+          <div id="controlDateReadoutMobile" class="control-date-readout mobile-readout">1970.01.01</div>
+          <div id="controlLocationReadoutMobile" class="mobile-location-readout">Berlin</div>
+        </div>
+        <div class="date-mobile-actions">
+          <button id="btnSolarPrevMobile" class="date-mobile-step-button" type="button" aria-label="Previous day">‹</button>
+          <button id="btnSolarTodayMobile" class="date-mobile-today-button" type="button">Today</button>
+          <button id="btnSolarNextMobile" class="date-mobile-step-button" type="button" aria-label="Next day">›</button>
+          <button id="btnDateMobileToggle" class="date-mobile-toggle-button" type="button" aria-expanded="false" aria-label="More controls">⋯</button>
+        </div>
+      </div>
+      <div id="dateMobilePanel" class="date-mobile-panel">
       <div class="date-toolbar">
         <div id="controlDateReadout" class="control-date-readout">1970.01.01</div>
         <div class="date-toolbar-slider">
@@ -59,6 +72,7 @@
           <span id="labelLocation">Location</span>
           <select id="locationSelector"></select>
         </label>
+      </div>
       </div>
     </div>
   </div>
@@ -879,6 +893,14 @@
       if (titleDateLocation) titleDateLocation.textContent = t.title_date_location;
       const labelLocation = document.getElementById('labelLocation');
       if (labelLocation) labelLocation.textContent = t.label_location;
+      const btnSolarTodayMobile = document.getElementById('btnSolarTodayMobile');
+      if (btnSolarTodayMobile) {
+        btnSolarTodayMobile.textContent = t.solar_today;
+      }
+      const btnDateMobileToggle = document.getElementById('btnDateMobileToggle');
+      if (btnDateMobileToggle) {
+        btnDateMobileToggle.setAttribute('aria-label', t.date_more_controls || 'More controls');
+      }
       const titleSmallBodies = document.getElementById('titleSmallBodies');
       if (titleSmallBodies) titleSmallBodies.textContent = t.title_small_bodies;
       const smallBodiesLegend = document.getElementById('smallBodiesLegend');
@@ -3017,7 +3039,10 @@
         masonryObserver = new ResizeObserver(scheduleMasonryLayout);
         cards.forEach(card => masonryObserver.observe(card));
       }
-      window.addEventListener('resize', scheduleMasonryLayout);
+      window.addEventListener('resize', () => {
+        syncDateMobilePanelForViewport();
+        scheduleMasonryLayout();
+      });
       scheduleMasonryLayout();
     }
 
@@ -3351,7 +3376,68 @@
     function updateControlDateReadout(){
       const readout = document.getElementById('controlDateReadout');
       if (readout) readout.textContent = formatDateStamp(selectedSolarDate());
+      const mobileReadout = document.getElementById('controlDateReadoutMobile');
+      if (mobileReadout) {
+        mobileReadout.textContent = formatDateStamp(selectedSolarDate());
+      }
+      const mobileLocationReadout = document.getElementById('controlLocationReadoutMobile');
+      if (mobileLocationReadout) {
+        const location = selectedLocation();
+        if (location && location.name) {
+          mobileLocationReadout.textContent = location.name;
+        }
+      }
       syncUrlState();
+    }
+
+    /**
+     * Opens or closes the compact mobile date panel.
+     * On larger screens the function keeps the full control card visible.
+     * @param {boolean} isOpen Desired mobile open state.
+     * @returns {void}
+     */
+    function setDateMobilePanelOpen(isOpen){
+      const card = document.querySelector('.date-location-card');
+      const button = document.getElementById('btnDateMobileToggle');
+      if (!card || !button) {
+        return;
+      }
+      if (window.innerWidth > 760) {
+        card.classList.remove('mobile-collapsed');
+        button.setAttribute('aria-expanded', 'false');
+        return;
+      }
+      if (isOpen) {
+        card.classList.remove('mobile-collapsed');
+        button.setAttribute('aria-expanded', 'true');
+      } else {
+        card.classList.add('mobile-collapsed');
+        button.setAttribute('aria-expanded', 'false');
+      }
+      scheduleMasonryLayout();
+    }
+
+    /**
+     * Synchronizes the date-control layout with the current viewport width.
+     * Small screens default to the compact collapsed bar, larger screens always
+     * show the full control panel.
+     * @returns {void}
+     */
+    function syncDateMobilePanelForViewport(){
+      const card = document.querySelector('.date-location-card');
+      const button = document.getElementById('btnDateMobileToggle');
+      if (!card || !button) {
+        return;
+      }
+      if (window.innerWidth <= 760) {
+        if (!card.classList.contains('mobile-collapsed')) {
+          card.classList.add('mobile-collapsed');
+        }
+        button.setAttribute('aria-expanded', 'false');
+        return;
+      }
+      card.classList.remove('mobile-collapsed');
+      button.setAttribute('aria-expanded', 'false');
     }
 
     /**
@@ -4418,6 +4504,93 @@
       target.append(map, copy);
     }
 
+    /**
+     * Berechnet den geometrischen Mittelpunkt eines Sternbilds in SVG-Koordinaten.
+     * @param {number[][]} stars Sternpositionen als Prozentwerte [x, y].
+     * @param {number} size SVG-Kantenlaenge in Pixeln.
+     * @returns {{x:number, y:number}} Mittelpunkt der Sternverteilung.
+     */
+    function calculateConstellationCenter(stars, size){
+      if (!Array.isArray(stars) || stars.length === 0) {
+        return { x: size / 2, y: size / 2 };
+      }
+
+      let sumX = 0;
+      let sumY = 0;
+
+      stars.forEach(star => {
+        sumX += star[0] / 100 * size;
+        sumY += star[1] / 100 * size;
+      });
+
+      return {
+        x: sumX / stars.length,
+        y: sumY / stars.length
+      };
+    }
+
+    /**
+     * Baut die Darstellungsdaten fuer ein Sternlabel auf.
+     * Nutzt bevorzugt explizite Konfigurationswerte und faellt sonst auf
+     * eine automatische Positionierung nach aussen weg vom Sternbildzentrum zurueck.
+     * @param {number[]} star Sternposition als Prozentwert [x, y].
+     * @param {number} size SVG-Kantenlaenge in Pixeln.
+     * @param {{x:number, y:number}} center Mittelpunkt des Sternbilds.
+     * @param {string} name Sichtbarer Sternname.
+     * @param {{dx?:number, dy?:number, anchor?:string}|undefined} override Optionale manuelle Ueberschreibung.
+     * @returns {{x:number, y:number, anchor:string, name:string}} Fertige Label-Position.
+     */
+    function buildConstellationLabelPlacement(star, size, center, name, override){
+      const starX = star[0] / 100 * size;
+      const starY = star[1] / 100 * size;
+
+      let dx = 0;
+      let dy = 0;
+      let anchor = 'middle';
+
+      if (starX < center.x - 18) {
+        dx = -12;
+        anchor = 'end';
+      } else if (starX > center.x + 18) {
+        dx = 12;
+        anchor = 'start';
+      }
+
+      if (starY < center.y - 18) {
+        dy = -12;
+      } else if (starY > center.y + 18) {
+        dy = 16;
+      } else if (anchor === 'middle') {
+        dy = -12;
+      } else {
+        dy = 4;
+      }
+
+      if (override) {
+        if (typeof override.dx === 'number') {
+          dx = override.dx;
+        }
+        if (typeof override.dy === 'number') {
+          dy = override.dy;
+        }
+        if (override.anchor) {
+          anchor = override.anchor;
+        }
+      }
+
+      return {
+        x: starX + dx,
+        y: starY + dy,
+        anchor,
+        name
+      };
+    }
+
+    /**
+     * Rendert das Sternbild des gewaehlten Monats als schematische Sternkarte.
+     * @param {Date} date Referenzdatum fuer die Monatsauswahl.
+     * @returns {void}
+     */
     function renderConstellationOfMonth(date = new Date()){
       const target = document.getElementById('constellationMap');
       const summary = document.getElementById('constellationSummary');
@@ -4425,7 +4598,7 @@
       const month = date.getMonth() + 1;
       const item = (phenomenaConfig.constellations || []).find(entry => entry.month === month);
       if (!item) return;
-      const size = 420;
+      const size = 460;
       const svgNS = 'http://www.w3.org/2000/svg';
       target.innerHTML = '';
       const svg = document.createElementNS(svgNS, 'svg');
@@ -4458,17 +4631,28 @@
         circle.setAttribute('class', circleClass);
         svg.appendChild(circle);
       });
+      const labelOverrides = new Map();
       (item.labels || []).forEach(label => {
-        const star = item.stars[label.star];
+        labelOverrides.set(label.star, label);
+      });
+      const constellationCenter = calculateConstellationCenter(item.stars || [], size);
+      (item.starNames || []).forEach((starName, starIndex) => {
+        if (!starName) return;
+        const star = item.stars[starIndex];
         if (!star) return;
+        const labelPlacement = buildConstellationLabelPlacement(
+          star,
+          size,
+          constellationCenter,
+          starName,
+          labelOverrides.get(starIndex)
+        );
         const text = document.createElementNS(svgNS, 'text');
-        const dx = label.dx ?? 8;
-        const dy = label.dy ?? -8;
-        text.setAttribute('x', star[0] / 100 * size + dx);
-        text.setAttribute('y', star[1] / 100 * size + dy);
+        text.setAttribute('x', labelPlacement.x);
+        text.setAttribute('y', labelPlacement.y);
         text.setAttribute('class', 'constellation-star-label');
-        text.setAttribute('text-anchor', label.anchor || 'start');
-        text.textContent = label.name;
+        text.setAttribute('text-anchor', labelPlacement.anchor);
+        text.textContent = labelPlacement.name;
         svg.appendChild(text);
       });
       target.appendChild(svg);
@@ -5339,8 +5523,11 @@ function computeMoon(date){
     document.getElementById('displayMode').addEventListener('change', changeDisplayMode);
     document.getElementById('solarDateSlider').addEventListener('input', updateSolarDateFromSlider);
     document.getElementById('btnSolarToday').addEventListener('click', resetSolarDate);
+    document.getElementById('btnSolarTodayMobile').addEventListener('click', resetSolarDate);
     wireSolarStepButton(document.getElementById('btnSolarPrev'), -1);
     wireSolarStepButton(document.getElementById('btnSolarNext'), 1);
+    wireSolarStepButton(document.getElementById('btnSolarPrevMobile'), -1);
+    wireSolarStepButton(document.getElementById('btnSolarNextMobile'), 1);
     document.getElementById('btnSolarPrevWeek').addEventListener('click', () => stepSolarDate(-7));
     document.getElementById('btnSolarNextWeek').addEventListener('click', () => stepSolarDate(7));
     document.getElementById('btnSolarPrevMonth').addEventListener('click', () => stepSolarDateByMonths(-1));
@@ -5348,6 +5535,17 @@ function computeMoon(date){
     document.getElementById('btnSolarPrevYear').addEventListener('click', () => stepSolarDateByMonths(-12));
     document.getElementById('btnSolarNextYear').addEventListener('click', () => stepSolarDateByMonths(12));
     document.getElementById('btnSolarAutoplay').addEventListener('click', toggleSolarAutoplay);
+    document.getElementById('btnDateMobileToggle').addEventListener('click', () => {
+      const card = document.querySelector('.date-location-card');
+      if (!card) {
+        return;
+      }
+      if (card.classList.contains('mobile-collapsed')) {
+        setDateMobilePanelOpen(true);
+      } else {
+        setDateMobilePanelOpen(false);
+      }
+    });
       [
         'btnSolarPrevYear',
         'btnSolarPrevMonth',
@@ -5358,7 +5556,11 @@ function computeMoon(date){
         'btnSolarNextWeek',
         'btnSolarNextMonth',
         'btnSolarNextYear',
-        'btnSolarAutoplay'
+        'btnSolarAutoplay',
+        'btnSolarPrevMobile',
+        'btnSolarTodayMobile',
+        'btnSolarNextMobile',
+        'btnDateMobileToggle'
       ].forEach(id => {
         const button = document.getElementById(id);
         if (!button) return;
@@ -5414,6 +5616,7 @@ function computeMoon(date){
       solarDateSlider.setAttribute('aria-valuenow', String(solarDayOffset));
     }
     applyI18n();
+    syncDateMobilePanelForViewport();
     initCardHelp();
     updateTime();
 
