@@ -549,7 +549,7 @@
       border-radius:999px;
       background:#fff;
       color:var(--fg);
-      font-size:.92rem;
+      font-size:.9rem;
       box-shadow:none;
       margin:0;
     }
@@ -2126,6 +2126,30 @@
       .earth-card{
         min-height:0;
       }
+      .overlay-controls{
+        width:min(100%, 1280px);
+      }
+      .date-toolbar{
+        flex-wrap:nowrap;
+        align-items:center;
+      }
+      .date-toolbar-slider{
+        flex:1 1 340px;
+        min-width:240px;
+      }
+      .date-toolbar-actions{
+        flex:0 0 auto;
+      }
+      .location-control{
+        flex:0 1 220px;
+        min-width:0;
+        max-width:220px;
+        margin-left:auto;
+        justify-content:flex-end;
+      }
+      .location-control select{
+        min-width:0;
+      }
     }
     @media (max-width:1180px){
       .solar-stack{
@@ -2163,16 +2187,17 @@
         width:min(100%, 360px);
       }
       .date-location-card{
-        padding:10px 12px;
-        gap:8px;
+        padding:8px 10px;
+        gap:6px;
       }
       .overlay-controls{
         top:8px;
         width:calc(100% - 8px);
-        margin-bottom:14px;
+        margin-bottom:10px;
       }
       .date-mobile-bar{
         display:flex;
+        cursor:pointer;
       }
       .date-location-card.mobile-collapsed{
         padding:8px 10px;
@@ -2184,7 +2209,10 @@
         min-height:40px;
       }
       .date-toolbar{
-        gap:10px;
+        gap:8px;
+      }
+      .date-toolbar > .control-date-readout{
+        display:none;
       }
       .date-toolbar-slider,
       .date-toolbar-actions,
@@ -2195,10 +2223,13 @@
         display:grid;
         grid-template-columns:repeat(2, minmax(0, 1fr));
         justify-content:stretch;
-        gap:8px;
+        gap:6px;
       }
       .date-toolbar-actions button{
         width:100%;
+        min-height:42px;
+        padding:8px 10px;
+        font-size:.95rem;
       }
       #btnSolarPrevYear{ order:1; }
       #btnSolarNextYear{ order:2; }
@@ -2219,6 +2250,32 @@
       }
       .location-control{
         margin-right:0;
+      }
+      .small-bodies-label{
+        font-size:13px;
+        stroke-width:4px;
+      }
+      .constellation-month-label{
+        font-size:11px;
+      }
+      .constellation-name-label{
+        font-size:14px;
+      }
+      .season-label{
+        font-size:12px;
+        stroke-width:4px;
+      }
+      .season-month-label{
+        font-size:10.5px;
+        stroke-width:4px;
+      }
+      .season-declination-label{
+        font-size:11px;
+        stroke-width:4px;
+      }
+      .spacecraft-label{
+        font-size:12px;
+        stroke-width:4px;
       }
     }
 
@@ -2263,7 +2320,10 @@
       position:absolute;
       top:14px;
       right:14px;
-      z-index:30;
+      z-index:8;
+    }
+    .card-help.open{
+      z-index:32;
     }
     .card-help-button{
       width:34px;
@@ -2466,6 +2526,7 @@ select {
 #locationSelector {
   min-width: 180px;
   width: 100%;
+  min-height: 0;
 }
 
 /* --- Mobile Layout (max-width: 768px) --- */
@@ -2485,14 +2546,19 @@ select {
     width: 100%;
   }
 
+  .display-container[data-help-key] {
+    padding-top: 18px;
+    padding-right: 46px;
+  }
+
   .overlay-controls {
     top: 8px;
-    padding: 0 12px;
+    padding: 0 8px;
   }
 
   .date-toolbar {
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 8px;
   }
 
   .date-mobile-actions {
@@ -2522,6 +2588,32 @@ select {
   .group-title {
     font-size: 1.1rem;
     margin-bottom: 12px;
+    padding-right: 0;
+  }
+
+  .display-container[data-help-key] .group-title {
+    width: calc(100% - 42px);
+    max-width: calc(100% - 42px);
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .card-help {
+    top: 10px;
+    right: 10px;
+  }
+
+  .card-help-button {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    min-height: 18px;
+    font-size: 0.68rem;
+    line-height: 1;
+    padding: 0;
   }
 
   .legend-small {
@@ -2559,8 +2651,32 @@ select {
     padding: 5px 8px;
   }
 
+  .display-container[data-help-key] {
+    padding-right: 42px;
+  }
+
+  .display-container[data-help-key] .group-title {
+    width: calc(100% - 38px);
+    max-width: calc(100% - 38px);
+    text-align: center;
+  }
+
+  .card-help {
+    top: 8px;
+    right: 8px;
+  }
+
+  .card-help-button {
+    width: 17px;
+    height: 17px;
+    min-width: 17px;
+    min-height: 17px;
+    font-size: 0.64rem;
+  }
+
   .date-toolbar-actions {
-    grid-template-columns:1fr;
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    gap:5px;
   }
 
   #btnSolarPrevYear{ order:1; }
@@ -2573,10 +2689,10 @@ select {
   #btnSolarNext{ order:8; }
   #btnSolarToday{
     order:9;
-    grid-column:auto;
+    grid-column:1 / -1;
   }
   #btnSolarAutoplay{
     order:10;
-    grid-column:auto;
+    grid-column:1 / -1;
   }
 }

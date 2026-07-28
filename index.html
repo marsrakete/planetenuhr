@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Planetenuhr – Astronomie-Dashboard für Sonne, Mond und Planeten</title>
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
   <meta name="theme-color" content="#121722" />
   <meta
     name="description"
@@ -38,7 +40,7 @@
 <body>
   <div class="overlay-controls">
     <div class="display-container date-location-card wide-card" data-help-key="date_location">
-      <div class="date-mobile-bar">
+      <div id="btnDateMobileBar" class="date-mobile-bar">
         <div class="date-mobile-summary">
           <div id="controlDateReadoutMobile" class="control-date-readout mobile-readout">1970.01.01</div>
           <div id="controlLocationReadoutMobile" class="mobile-location-readout">Berlin</div>
@@ -3422,6 +3424,24 @@
     }
 
     /**
+     * Toggles the compact mobile date panel between collapsed and expanded.
+     * On larger screens this keeps the desktop layout untouched.
+     * @returns {void}
+     */
+    function toggleDateMobilePanel(){
+      const card = document.querySelector('.date-location-card');
+      if (!card) {
+        return;
+      }
+
+      if (card.classList.contains('mobile-collapsed')) {
+        setDateMobilePanelOpen(true);
+      } else {
+        setDateMobilePanelOpen(false);
+      }
+    }
+
+    /**
      * Synchronizes the date-control layout with the current viewport width.
      * Small screens default to the compact collapsed bar, larger screens always
      * show the full control panel.
@@ -3773,6 +3793,13 @@
       return { x, y, z, a };
     }
 
+    /**
+     * Renders the schematic heliocentric solar-system card for the selected date.
+     * Planet markers use compressed orbital radii so the outer planets stay visible
+     * inside one disc, and labels are shifted inward near the card edges to avoid clipping.
+     * @param {Date} [date=selectedSolarDate()] Calendar date used for approximate planet positions.
+     * @returns {void}
+     */
     function renderSolarSystem(date = selectedSolarDate()){
       const system = document.getElementById('solarSystem');
       if(!system) return;
@@ -3814,6 +3841,25 @@
         label.textContent = t['planet_' + planet.key] || planet.key;
         label.style.left = x + 'px';
         label.style.top = y + 'px';
+        let labelTransform = 'translate(8px, -18px)';
+        let labelTextAlign = 'left';
+
+        if (x > center + maxRadius * 0.72) {
+          labelTransform = 'translate(calc(-100% - 8px), -18px)';
+          labelTextAlign = 'right';
+        } else if (x < center - maxRadius * 0.72) {
+          labelTransform = 'translate(8px, -18px)';
+          labelTextAlign = 'left';
+        } else if (y < center - maxRadius * 0.72) {
+          labelTransform = 'translate(-50%, 12px)';
+          labelTextAlign = 'center';
+        } else if (y > center + maxRadius * 0.72) {
+          labelTransform = 'translate(-50%, -24px)';
+          labelTextAlign = 'center';
+        }
+
+        label.style.transform = labelTransform;
+        label.style.textAlign = labelTextAlign;
         system.appendChild(label);
       });
 
@@ -5539,16 +5585,16 @@ function computeMoon(date){
     document.getElementById('btnSolarPrevYear').addEventListener('click', () => stepSolarDateByMonths(-12));
     document.getElementById('btnSolarNextYear').addEventListener('click', () => stepSolarDateByMonths(12));
     document.getElementById('btnSolarAutoplay').addEventListener('click', toggleSolarAutoplay);
-    document.getElementById('btnDateMobileToggle').addEventListener('click', () => {
-      const card = document.querySelector('.date-location-card');
-      if (!card) {
+    document.getElementById('btnDateMobileToggle').addEventListener('click', toggleDateMobilePanel);
+    document.getElementById('btnDateMobileToggle').addEventListener('pointerdown', event => event.stopPropagation());
+    document.getElementById('btnDateMobileBar').addEventListener('click', event => {
+      if (window.innerWidth > 760) {
         return;
       }
-      if (card.classList.contains('mobile-collapsed')) {
-        setDateMobilePanelOpen(true);
-      } else {
-        setDateMobilePanelOpen(false);
+      if (event.target.closest('button')) {
+        return;
       }
+      toggleDateMobilePanel();
     });
       [
         'btnSolarPrevYear',
