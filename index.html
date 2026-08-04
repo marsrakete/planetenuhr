@@ -321,6 +321,49 @@
       <div data-constellation-highlight></div>
       <div><strong data-constellation-month-label></strong> <span data-constellation-month-value></span></div>
     </template>
+    <template id="calendarTimelineItemTemplate">
+      <article class="calendar-item">
+        <span class="calendar-dot" data-calendar-dot></span>
+        <div class="calendar-item-content">
+          <div class="calendar-date" data-calendar-date></div>
+          <button class="calendar-event-trigger" type="button" data-calendar-open>
+            <span class="calendar-title" data-calendar-title></span>
+          </button>
+          <div class="calendar-meta" data-calendar-meta></div>
+          <div class="calendar-note" data-calendar-note></div>
+        </div>
+      </article>
+    </template>
+    <template id="calendarMonthCellTemplate">
+      <div class="calendar-month-cell">
+        <div class="calendar-month-day" data-calendar-day-number></div>
+        <div class="calendar-month-events" data-calendar-day-events></div>
+      </div>
+    </template>
+    <template id="calendarMonthEventTemplate">
+      <button class="calendar-month-event" type="button" data-calendar-month-event>
+        <span class="calendar-month-event-dot" data-calendar-month-dot></span>
+        <span class="calendar-month-event-label" data-calendar-month-label></span>
+      </button>
+    </template>
+    <template id="calendarDownloadButtonTemplate">
+      <a class="calendar-download-link" target="_blank" rel="noopener noreferrer" data-calendar-download></a>
+    </template>
+    <template id="calendarDetailTemplate">
+      <div class="calendar-detail-backdrop" data-calendar-detail-close></div>
+      <div class="calendar-detail-card" role="dialog" aria-modal="true" aria-labelledby="calendarDetailTitle">
+        <div class="calendar-detail-head">
+          <div class="calendar-detail-date" data-calendar-detail-date></div>
+          <div class="calendar-detail-actions">
+            <a class="calendar-detail-download" data-calendar-detail-download></a>
+            <button class="calendar-detail-close" type="button" data-calendar-detail-close-button aria-label="Close">×</button>
+          </div>
+        </div>
+        <div class="calendar-detail-title" id="calendarDetailTitle" data-calendar-detail-title></div>
+        <div class="calendar-meta" data-calendar-detail-meta></div>
+        <div class="calendar-note" data-calendar-detail-note></div>
+      </div>
+    </template>
 
     <div class="display-container inner-phases-card" data-help-key="inner_phases">
       <div class="group-title" id="titleInnerPhases">Mercury & Venus phases</div>
@@ -636,8 +679,12 @@
       </div>
     </div>
 
-    <div class="display-container sky-calendar-card wide-card" data-help-key="sky_calendar">
+    <div id="skyCalendarCard" class="display-container sky-calendar-card wide-card" data-help-key="sky_calendar">
       <div class="group-title" id="titleSkyCalendar">Sky calendar</div>
+      <div class="calendar-view-toggle" id="calendarViewToggle" aria-label="Calendar view mode">
+        <button class="calendar-view-button active" id="btnCalendarViewList" type="button" data-calendar-view="list">List</button>
+        <button class="calendar-view-button" id="btnCalendarViewMonth" type="button" data-calendar-view="month">Month</button>
+      </div>
       <div class="calendar-toolbar" id="calendarFilters" aria-label="Calendar filters">
         <button class="calendar-filter active" type="button" data-calendar-filter="all">All</button>
         <button class="calendar-filter" type="button" data-calendar-filter="eclipse">Eclipses</button>
@@ -654,7 +701,19 @@
         <span id="calendarDataUntil">Calendar data maintained through January 2028</span>
       </div>
       <div id="calendarNext" class="calendar-next">Next event: -</div>
-      <div id="calendarTimeline" class="calendar-timeline"></div>
+      <div id="calendarDownloads" class="calendar-downloads"></div>
+      <div id="calendarViewStack" class="calendar-view-stack">
+        <div id="calendarTimeline" class="calendar-timeline calendar-view-panel is-active"></div>
+        <div id="calendarMonthView" class="calendar-month-view calendar-view-panel" aria-hidden="true">
+          <div class="calendar-month-header">
+            <div class="calendar-month-title" id="calendarMonthTitle">August 2026</div>
+            <div class="calendar-month-subtitle" id="calendarMonthSubtitle">Monthly view</div>
+          </div>
+          <div class="calendar-month-weekdays" id="calendarMonthWeekdays" aria-hidden="true"></div>
+          <div class="calendar-month-grid" id="calendarMonthGrid"></div>
+        </div>
+      </div>
+      <div id="calendarDetail" class="calendar-detail" hidden></div>
       <button id="btnCalendarShowAll" class="calendar-show-more" type="button">Show all events</button>
     </div>
 
@@ -730,6 +789,8 @@
     let selectedLocationKey = 'berlin';
     let activeCalendarFilter = 'all';
     let showAllCalendarEvents = false;
+    let activeCalendarView = 'list';
+    let selectedCalendarEventKey = '';
 
     function currentCardHelpPack(){
       return cardHelp[lang] || cardHelp.en || { sections:{}, cards:{} };
@@ -1030,6 +1091,15 @@
         const key = button.dataset.calendarFilter;
         button.textContent = t['calendar_filter_' + key] || key;
       });
+      document.querySelectorAll('[data-calendar-view]').forEach(button => {
+        const view = button.dataset.calendarView;
+        if (view === 'list') {
+          button.textContent = t.calendar_view_list || 'List';
+        }
+        if (view === 'month') {
+          button.textContent = t.calendar_view_month || 'Month';
+        }
+      });
       const showPastLabel = document.getElementById('calendarShowPastLabel');
       if (showPastLabel) showPastLabel.textContent = t.calendar_show_past;
       const calendarDataUntil = document.getElementById('calendarDataUntil');
@@ -1041,6 +1111,10 @@
         } else {
           calendarShowAll.textContent = t.calendar_show_all;
         }
+      }
+      const calendarMonthSubtitle = document.getElementById('calendarMonthSubtitle');
+      if (calendarMonthSubtitle) {
+        calendarMonthSubtitle.textContent = t.calendar_month_subtitle || 'Monthly view with event list';
       }
       const titleBskyFeed = document.getElementById('titleBskyFeed');
       if (titleBskyFeed) titleBskyFeed.textContent = t.bsky_title;
@@ -2953,11 +3027,27 @@
       const grid = document.querySelector('.grid');
       if (!grid) return;
       const cards = visibleGridCards();
+      const finishMasonryLayout = () => {
+        if (persistentViewportAnchor && persistentViewportAnchor.anchor) {
+          restoreViewportAnchor(persistentViewportAnchor.anchor);
+          persistentViewportAnchor.remaining -= 1;
+          if (persistentViewportAnchor.remaining <= 0) {
+            persistentViewportAnchor = null;
+          }
+        }
+        const callbacks = masonryAfterLayoutCallbacks.splice(0, masonryAfterLayoutCallbacks.length);
+        callbacks.forEach(callback => {
+          try { callback(); } catch (error) {}
+        });
+      };
       cards.forEach(card => {
         card.style.gridRowEnd = '';
       });
 
-      if (window.innerWidth <= 760) return;
+      if (window.innerWidth <= 760) {
+        finishMasonryLayout();
+        return;
+      }
 
       const style = getComputedStyle(grid);
       const rowHeight = parseFloat(style.gridAutoRows) || 8;
@@ -2967,17 +3057,7 @@
         const span = Math.max(1, Math.ceil((height + rowGap) / (rowHeight + rowGap)));
         card.style.gridRowEnd = 'span ' + span;
       });
-      if (persistentViewportAnchor?.anchor) {
-        restoreViewportAnchor(persistentViewportAnchor.anchor);
-        persistentViewportAnchor.remaining -= 1;
-        if (persistentViewportAnchor.remaining <= 0) {
-          persistentViewportAnchor = null;
-        }
-      }
-      const callbacks = masonryAfterLayoutCallbacks.splice(0, masonryAfterLayoutCallbacks.length);
-      callbacks.forEach(callback => {
-        try { callback(); } catch (error) {}
-      });
+      finishMasonryLayout();
     }
 
     function scheduleMasonryLayout(afterLayout){
@@ -2986,6 +3066,33 @@
       }
       if (masonryFrame) return;
       masonryFrame = requestAnimationFrame(updateMasonryLayout);
+    }
+
+    /**
+     * Updates the masonry row span for one specific dashboard card only.
+     * This is used for local card interactions where a full-grid relayout would
+     * be excessive and can disturb the user's viewport position.
+     * @param {HTMLElement|null} card Card element whose span should be refreshed.
+     * @returns {void}
+     */
+    function updateSingleCardMasonryLayout(card){
+      if (!card) {
+        return;
+      }
+      card.style.gridRowEnd = '';
+      if (window.innerWidth <= 760) {
+        return;
+      }
+      const grid = document.querySelector('.grid');
+      if (!grid) {
+        return;
+      }
+      const style = getComputedStyle(grid);
+      const rowHeight = parseFloat(style.gridAutoRows) || 8;
+      const rowGap = parseFloat(style.rowGap) || 20;
+      const height = card.getBoundingClientRect().height;
+      const span = Math.max(1, Math.ceil((height + rowGap) / (rowHeight + rowGap)));
+      card.style.gridRowEnd = 'span ' + span;
     }
 
     function captureViewportAnchor(){
@@ -2999,10 +3106,55 @@
       return { element:anchor, top:anchor.getBoundingClientRect().top };
     }
 
+    /**
+     * Resolves the scroll container that currently carries page movement.
+     * Embedded browsers can report this more reliably on `document.scrollingElement`
+     * than through the `window` scroll properties alone.
+     * @returns {HTMLElement} Active page scroll container.
+     */
+    function pageScrollElement(){
+      if (document.scrollingElement instanceof HTMLElement) {
+        return document.scrollingElement;
+      }
+      if (document.documentElement instanceof HTMLElement) {
+        return document.documentElement;
+      }
+      return document.body;
+    }
+
+    /**
+     * Captures the current page scroll position from the active scroll container.
+     * @returns {{left:number, top:number}} Current page scroll coordinates.
+     */
+    function capturePageScrollPosition(){
+      const element = pageScrollElement();
+      return {
+        left: element.scrollLeft,
+        top: element.scrollTop
+      };
+    }
+
+    /**
+     * Restores a previously captured page scroll position.
+     * @param {{left:number, top:number}|null} position Scroll coordinates to restore.
+     * @returns {void}
+     */
+    function restorePageScrollPosition(position){
+      if (!position) {
+        return;
+      }
+      const element = pageScrollElement();
+      element.scrollLeft = position.left;
+      element.scrollTop = position.top;
+      window.scrollTo(position.left, position.top);
+    }
+
     function restoreViewportAnchor(anchor){
       if (!anchor || !anchor.element || !anchor.element.isConnected) return;
       const delta = anchor.element.getBoundingClientRect().top - anchor.top;
       if (Math.abs(delta) > 0.5) {
+        const element = pageScrollElement();
+        element.scrollTop += delta;
         window.scrollBy(0, delta);
       }
     }
@@ -3052,108 +3204,810 @@
       scheduleMasonryLayout();
     }
 
+    /**
+     * Loads the localized sky-calendar events and enriches them with Date objects
+     * plus stable internal keys for rendering, selection and downloads.
+     * @returns {Array<object>} Sorted localized calendar events.
+     */
     function calendarEvents(){
-      return (calendarEventsByLang[lang] || calendarEventsByLang.en || [])
-        .map(event => ({ ...event, dateObj:new Date(event.date + 'T00:00:00') }))
-        .sort((a,b) => a.dateObj - b.dateObj);
+      let sourceEvents = calendarEventsByLang.en || [];
+      if (calendarEventsByLang[lang]) {
+        sourceEvents = calendarEventsByLang[lang];
+      }
+
+      const enrichedEvents = [];
+      let index = 0;
+      while (index < sourceEvents.length) {
+        const event = sourceEvents[index];
+        const eventDate = new Date(event.date + 'T00:00:00');
+        enrichedEvents.push({
+          ...event,
+          dateObj: eventDate,
+          key: calendarEventKey(event)
+        });
+        index += 1;
+      }
+
+      enrichedEvents.sort((left, right) => left.dateObj - right.dateObj);
+      return enrichedEvents;
     }
 
+    /**
+     * Builds a stable per-event key from date, category and title.
+     * @param {object} event Calendar event from the config files.
+     * @returns {string} Stable key for selection and downloads.
+     */
+    function calendarEventKey(event){
+      if (!event) {
+        return '';
+      }
+      return [event.date || '', event.category || '', event.title || ''].join('|');
+    }
+
+    /**
+     * Resolves the localized category label for one calendar category key.
+     * @param {string} category Internal category key such as `eclipse`.
+     * @returns {string} Localized category label.
+     */
     function calendarCategoryLabel(category){
-      return t['calendar_filter_' + category] || category;
+      if (!category) {
+        return '';
+      }
+      const translationKey = 'calendar_filter_' + category;
+      if (t[translationKey]) {
+        return t[translationKey];
+      }
+      return category;
     }
 
-    function filteredCalendarEvents(){
+    /**
+     * Returns whether past events should stay visible in the current filter view.
+     * @returns {boolean} True when the "show past" checkbox is enabled.
+     */
+    function calendarShowPastEnabled(){
+      const checkbox = document.getElementById('calendarShowPast');
+      if (!checkbox) {
+        return false;
+      }
+      return checkbox.checked === true;
+    }
+
+    /**
+     * Resolves the reference day used by the calendar card.
+     * The shared date control drives the month view, while the filtering logic
+     * still compares against the real current day unless past events are enabled.
+     * @returns {Date} Local start-of-day reference.
+     */
+    function calendarReferenceDay(){
       const today = new Date();
-      today.setHours(0,0,0,0);
-      return calendarEvents().filter(event => {
-        const matchesFilter = activeCalendarFilter === 'all' || event.category === activeCalendarFilter;
-        const matchesDate = document.getElementById('calendarShowPast')?.checked || event.dateObj >= today;
-        return matchesFilter && matchesDate;
+      today.setHours(0, 0, 0, 0);
+      return today;
+    }
+
+    /**
+     * Checks whether one event matches the active category filter.
+     * @param {object} event Calendar event to test.
+     * @returns {boolean} True when the category should stay visible.
+     */
+    function calendarEventMatchesFilter(event){
+      if (!event) {
+        return false;
+      }
+      if (activeCalendarFilter === 'all') {
+        return true;
+      }
+      return event.category === activeCalendarFilter;
+    }
+
+    /**
+     * Filters calendar events by category and, if requested, by future-only mode.
+     * @returns {Array<object>} Events that remain visible in the active card state.
+     */
+    function filteredCalendarEvents(){
+      const referenceDay = calendarReferenceDay();
+      const keepPastEvents = calendarShowPastEnabled();
+      const sourceEvents = calendarEvents();
+      const visibleEvents = [];
+      let index = 0;
+
+      while (index < sourceEvents.length) {
+        const event = sourceEvents[index];
+        if (calendarEventMatchesFilter(event)) {
+          if (keepPastEvents || event.dateObj >= referenceDay) {
+            visibleEvents.push(event);
+          }
+        }
+        index += 1;
+      }
+
+      return visibleEvents;
+    }
+
+    /**
+     * Finds the next upcoming event for the currently active category filter.
+     * @returns {object|null} Next matching event or null when none remains.
+     */
+    function nextCalendarEvent(){
+      const referenceDay = calendarReferenceDay();
+      const sourceEvents = calendarEvents();
+      let index = 0;
+
+      while (index < sourceEvents.length) {
+        const event = sourceEvents[index];
+        if (calendarEventMatchesFilter(event) && event.dateObj >= referenceDay) {
+          return event;
+        }
+        index += 1;
+      }
+
+      return null;
+    }
+
+    /**
+     * Resolves the currently selected event for the detail panel.
+     * The detail view stays closed until the user explicitly opens an event.
+     * If a previously selected event is filtered out, the selection is cleared.
+     * @param {Array<object>} visibleEvents Events visible for the current filter.
+     * @returns {object|null} Selected visible event or null when none is active.
+     */
+    function selectedCalendarEvent(visibleEvents){
+      if (!Array.isArray(visibleEvents) || visibleEvents.length === 0) {
+        selectedCalendarEventKey = '';
+        return null;
+      }
+
+      let index = 0;
+      while (index < visibleEvents.length) {
+        if (visibleEvents[index].key === selectedCalendarEventKey) {
+          return visibleEvents[index];
+        }
+        index += 1;
+      }
+
+      selectedCalendarEventKey = '';
+      return null;
+    }
+
+    /**
+     * Resolves the month that the calendar grid should display.
+     * The month follows the shared date control so every tile stays coupled.
+     * @returns {Date} First day of the selected month.
+     */
+    function calendarCurrentMonthDate(){
+      let referenceDate = new Date();
+      if (typeof selectedSolarDate === 'function') {
+        referenceDate = selectedSolarDate();
+      }
+      return new Date(referenceDate.getFullYear(), referenceDate.getMonth(), 1);
+    }
+
+    /**
+     * Formats the month heading for the calendar grid.
+     * @param {Date} monthDate First day of the displayed month.
+     * @returns {string} Localized month and year label.
+     */
+    function calendarMonthHeading(monthDate){
+      return monthDate.toLocaleDateString(lang, {
+        month: 'long',
+        year: 'numeric'
       });
     }
 
-    function renderCalendar(){
-      const timeline = document.getElementById('calendarTimeline');
-      const nextEl = document.getElementById('calendarNext');
-      const showAllButton = document.getElementById('btnCalendarShowAll');
-      if (!timeline) return;
-
-      const allFiltered = filteredCalendarEvents();
-      let visible = allFiltered.slice(0, 6);
-      if (showAllCalendarEvents) {
-        visible = allFiltered;
+    /**
+     * Builds weekday labels for the monthly calendar header.
+     * The grid starts on Monday to match the rest of the dashboard.
+     * @returns {Array<string>} Localized weekday abbreviations.
+     */
+    function calendarWeekdayLabels(){
+      const labels = [];
+      const mondayReference = new Date(Date.UTC(2026, 0, 5));
+      let index = 0;
+      while (index < 7) {
+        const labelDate = new Date(mondayReference.getTime() + index * 86400000);
+        labels.push(labelDate.toLocaleDateString(lang, { weekday: 'short' }));
+        index += 1;
       }
-      timeline.innerHTML = '';
+      return labels;
+    }
 
-      const next = calendarEvents().find(event => {
-        const today = new Date();
-        today.setHours(0,0,0,0);
-        return (activeCalendarFilter === 'all' || event.category === activeCalendarFilter) && event.dateObj >= today;
-      });
-      if (nextEl) {
-        if (next) {
-          nextEl.textContent = t.calendar_next_event + ': ' + fmtDateOnly(next.dateObj) + ' - ' + next.title;
-        } else {
-          nextEl.textContent = t.calendar_next_event + ': -';
+    /**
+     * Resolves the ICS file path for one built category download.
+     * @param {string} category Category key or `all`.
+     * @returns {string} Relative ICS file path.
+     */
+    function calendarCategoryIcsPath(category){
+      let safeCategory = category;
+      if (!safeCategory) {
+        safeCategory = 'all';
+      }
+      return 'ics/planetenuhr-' + lang + '-' + safeCategory + '.ics';
+    }
+
+    /**
+     * Creates a small ICS payload for one single calendar event.
+     * @param {object} event Selected calendar event.
+     * @returns {string} RFC5545-style text for one all-day event.
+     */
+    function calendarEventIcsContent(event){
+      if (!event) {
+        return '';
+      }
+
+      const startDate = String(event.date || '').replace(/[^0-9]/g, '');
+      const endDate = new Date(event.dateObj.getTime() + 86400000);
+      const endDateKey = formatDateKey(endDate).replace(/[^0-9]/g, '');
+      const createdStamp = new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d{3}Z$/, 'Z');
+      const escapedTitle = String(event.title || '').replace(/\\/g, '\\\\').replace(/,/g, '\\,').replace(/;/g, '\\;');
+      const escapedDescription = String(event.note || '').replace(/\r?\n/g, '\\n').replace(/\\/g, '\\\\').replace(/,/g, '\\,').replace(/;/g, '\\;');
+      const escapedVisibility = String(event.visibility || '').replace(/\\/g, '\\\\').replace(/,/g, '\\,').replace(/;/g, '\\;');
+      const escapedCategory = String(calendarCategoryLabel(event.category) || '').replace(/\\/g, '\\\\').replace(/,/g, '\\,').replace(/;/g, '\\;');
+
+      return [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'PRODID:-//marsrakete//planetenuhr//DE',
+        'CALSCALE:GREGORIAN',
+        'BEGIN:VEVENT',
+        'UID:' + event.key + '@planetenuhr',
+        'DTSTAMP:' + createdStamp,
+        'DTSTART;VALUE=DATE:' + startDate,
+        'DTEND;VALUE=DATE:' + endDateKey,
+        'SUMMARY:' + escapedTitle,
+        'DESCRIPTION:' + escapedDescription + '\\n' + (t.calendar_visibility_label || 'Visibility') + ': ' + escapedVisibility,
+        'CATEGORIES:' + escapedCategory,
+        'END:VEVENT',
+        'END:VCALENDAR'
+      ].join('\r\n');
+    }
+
+    /**
+     * Triggers a download for one single calendar event as ICS.
+     * @param {object} event Selected calendar event.
+     * @returns {void}
+     */
+    function downloadCalendarEventIcs(event){
+      if (!event) {
+        return;
+      }
+
+      const icsContent = calendarEventIcsContent(event);
+      if (!icsContent) {
+        return;
+      }
+
+      const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      const fileTitle = (event.title || 'event').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+      let fileName = event.date + '-' + fileTitle + '.ics';
+      if (!fileTitle) {
+        fileName = event.date + '-event.ics';
+      }
+      link.href = url;
+      link.download = fileName;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }
+
+    /**
+     * Applies the category color class to one calendar element.
+     * @param {HTMLElement} element DOM node that should receive the category class.
+     * @param {string} category Event category.
+     * @returns {void}
+     */
+    function applyCalendarCategoryClass(element, category){
+      if (!element) {
+        return;
+      }
+      element.classList.add('category-' + category);
+    }
+
+    /**
+     * Opens one event in the shared detail overlay without rebuilding the whole card.
+     * @param {object} event Calendar event that should become active.
+     * @returns {void}
+     */
+    function openCalendarEvent(event){
+      if (!event) {
+        return;
+      }
+      selectedCalendarEventKey = event.key;
+      renderCalendarDetail(event);
+    }
+
+    /**
+     * Renders the static ICS download links for the full calendar categories.
+     * @returns {void}
+     */
+    function renderCalendarDownloads(){
+      const downloads = document.getElementById('calendarDownloads');
+      if (!downloads) {
+        return;
+      }
+
+      const fragments = [];
+      const categories = ['all', 'eclipse', 'meteor', 'planet', 'moon', 'season'];
+      let index = 0;
+      while (index < categories.length) {
+        const category = categories[index];
+        const fragment = cloneTemplate('calendarDownloadButtonTemplate');
+        if (fragment) {
+          const link = fragment.querySelector('[data-calendar-download]');
+          if (link) {
+            let linkLabel = calendarCategoryLabel(category);
+            if (category === 'all') {
+              linkLabel = t.calendar_filter_all || 'All';
+            }
+            link.href = calendarCategoryIcsPath(category);
+            link.textContent = (t.calendar_download_prefix || 'ICS') + ': ' + linkLabel;
+            fragments.push(fragment);
+          }
         }
+        index += 1;
+      }
+      downloads.replaceChildren(...fragments);
+    }
+
+    /**
+     * Renders the detail view for the currently selected calendar event.
+     * @param {object|null} event Selected event or null when nothing is visible.
+     * @returns {void}
+     */
+    function renderCalendarDetail(event){
+      const detail = document.getElementById('calendarDetail');
+      if (!detail) {
+        return;
       }
 
-      if (!visible.length) {
+      detail.hidden = true;
+      detail.replaceChildren();
+      if (!event) {
+        return;
+      }
+
+      const fragment = cloneTemplate('calendarDetailTemplate');
+      if (!fragment) {
+        return;
+      }
+
+      const dateLabel = fragment.querySelector('[data-calendar-detail-date]');
+      const titleLabel = fragment.querySelector('[data-calendar-detail-title]');
+      const metaLabel = fragment.querySelector('[data-calendar-detail-meta]');
+      const noteLabel = fragment.querySelector('[data-calendar-detail-note]');
+      const downloadLink = fragment.querySelector('[data-calendar-detail-download]');
+      const closeButton = fragment.querySelector('[data-calendar-detail-close-button]');
+      const backdrop = fragment.querySelector('[data-calendar-detail-close]');
+
+      if (dateLabel) {
+        dateLabel.textContent = fmtDateOnly(event.dateObj);
+      }
+      if (titleLabel) {
+        titleLabel.textContent = event.title;
+      }
+      if (metaLabel) {
+        metaLabel.textContent = calendarCategoryLabel(event.category) + ' · ' + (t.calendar_visibility_label || 'Visibility') + ': ' + event.visibility;
+      }
+      if (noteLabel) {
+        noteLabel.textContent = event.note;
+      }
+      if (downloadLink) {
+        downloadLink.href = '#';
+        downloadLink.textContent = t.calendar_detail_download || 'Download this event as ICS';
+        downloadLink.addEventListener('click', eventObject => {
+          eventObject.preventDefault();
+          downloadCalendarEventIcs(event);
+        });
+      }
+      if (closeButton) {
+        closeButton.addEventListener('click', clickEvent => {
+          clickEvent.preventDefault();
+          if (clickEvent.currentTarget instanceof HTMLElement) {
+            clickEvent.currentTarget.blur();
+          }
+          closeCalendarDetail();
+        });
+      }
+      if (backdrop) {
+        backdrop.addEventListener('click', clickEvent => {
+          clickEvent.preventDefault();
+          closeCalendarDetail();
+        });
+      }
+
+      const detailCard = fragment.querySelector('.calendar-detail-card');
+      applyCalendarCategoryClass(detailCard, event.category);
+      detail.appendChild(fragment);
+      detail.hidden = false;
+    }
+
+    /**
+     * Closes the currently open calendar detail overlay.
+     * @returns {void}
+     */
+    function closeCalendarDetail(){
+      selectedCalendarEventKey = '';
+      renderCalendarDetail(null);
+    }
+
+    /**
+     * Renders the compact list view of the sky calendar.
+     * @param {Array<object>} events Visible calendar events.
+     * @returns {void}
+     */
+    function renderCalendarTimeline(events){
+      const timeline = document.getElementById('calendarTimeline');
+      if (!timeline) {
+        return;
+      }
+
+      const nodes = [];
+      let visibleEvents = events;
+      if (!showAllCalendarEvents) {
+        visibleEvents = events.slice(0, 6);
+      }
+
+      if (visibleEvents.length === 0) {
         const empty = document.createElement('div');
         empty.className = 'calendar-note';
         empty.textContent = t.calendar_empty;
-        timeline.appendChild(empty);
+        nodes.push(empty);
+        timeline.replaceChildren(...nodes);
+        return;
       }
 
-      visible.forEach(event => {
-        const item = document.createElement('article');
-        item.className = 'calendar-item category-' + event.category;
-        const dot = document.createElement('span');
-        dot.className = 'calendar-dot';
-        const content = document.createElement('div');
+      let index = 0;
+      while (index < visibleEvents.length) {
+        const event = visibleEvents[index];
+        const fragment = cloneTemplate('calendarTimelineItemTemplate');
+        if (fragment) {
+          const item = fragment.querySelector('.calendar-item');
+          const dateLabel = fragment.querySelector('[data-calendar-date]');
+          const titleLabel = fragment.querySelector('[data-calendar-title]');
+          const metaLabel = fragment.querySelector('[data-calendar-meta]');
+          const noteLabel = fragment.querySelector('[data-calendar-note]');
+          const trigger = fragment.querySelector('[data-calendar-open]');
+          const dot = fragment.querySelector('[data-calendar-dot]');
 
-        const date = document.createElement('div');
-        date.className = 'calendar-date';
-        date.textContent = fmtDateOnly(event.dateObj);
-        const title = document.createElement('div');
-        title.className = 'calendar-title';
-        title.textContent = event.title;
-        const meta = document.createElement('div');
-        meta.className = 'calendar-meta';
-        meta.textContent = calendarCategoryLabel(event.category) + ' · ' + t.calendar_visibility_label + ': ' + event.visibility;
-        const note = document.createElement('div');
-        note.className = 'calendar-note';
-        note.textContent = event.note;
+          if (dateLabel) {
+            dateLabel.textContent = fmtDateOnly(event.dateObj);
+          }
+          if (titleLabel) {
+            titleLabel.textContent = event.title;
+          }
+          if (metaLabel) {
+            metaLabel.textContent = calendarCategoryLabel(event.category) + ' · ' + (t.calendar_visibility_label || 'Visibility') + ': ' + event.visibility;
+          }
+          if (noteLabel) {
+            noteLabel.textContent = event.note;
+          }
+          if (trigger) {
+            trigger.addEventListener('click', clickEvent => {
+              clickEvent.preventDefault();
+              if (clickEvent.currentTarget instanceof HTMLElement) {
+                clickEvent.currentTarget.blur();
+              }
+              openCalendarEvent(event);
+            });
+          }
+          applyCalendarCategoryClass(item, event.category);
+          applyCalendarCategoryClass(dot, event.category);
+          nodes.push(fragment);
+        }
+        index += 1;
+      }
+      timeline.replaceChildren(...nodes);
+    }
 
-        content.append(date, title, meta, note);
-        item.append(dot, content);
-        timeline.appendChild(item);
-      });
+    /**
+     * Builds all events that belong to one displayed month.
+     * @param {Date} monthDate First day of the displayed month.
+     * @param {Array<object>} events Visible events after filtering.
+     * @returns {Array<object>} Events that belong to the current month.
+     */
+    function calendarEventsForMonth(monthDate, events){
+      const monthEvents = [];
+      let index = 0;
+      while (index < events.length) {
+        const event = events[index];
+        if (event.dateObj.getFullYear() === monthDate.getFullYear() && event.dateObj.getMonth() === monthDate.getMonth()) {
+          monthEvents.push(event);
+        }
+        index += 1;
+      }
+      return monthEvents;
+    }
 
-      if (showAllButton) {
-        showAllButton.hidden = allFiltered.length <= 6;
+    /**
+     * Groups visible month events by local date key for the month grid.
+     * @param {Array<object>} monthEvents Events in the selected month.
+     * @returns {Map<string, Array<object>>} Events grouped by YYYY-MM-DD.
+     */
+    function calendarEventsByDay(monthEvents){
+      const grouped = new Map();
+      let index = 0;
+      while (index < monthEvents.length) {
+        const event = monthEvents[index];
+        const dayKey = formatDateKey(event.dateObj);
+        if (!grouped.has(dayKey)) {
+          grouped.set(dayKey, []);
+        }
+        grouped.get(dayKey).push(event);
+        index += 1;
+      }
+      return grouped;
+    }
+
+    /**
+     * Renders the monthly calendar grid.
+     * @param {Array<object>} events Visible calendar events.
+     * @returns {void}
+     */
+    function renderCalendarMonthView(events){
+      const monthView = document.getElementById('calendarMonthView');
+      const title = document.getElementById('calendarMonthTitle');
+      const subtitle = document.getElementById('calendarMonthSubtitle');
+      const weekdays = document.getElementById('calendarMonthWeekdays');
+      const grid = document.getElementById('calendarMonthGrid');
+      if (!monthView || !title || !subtitle || !weekdays || !grid) {
+        return;
+      }
+
+      const monthDate = calendarCurrentMonthDate();
+      const monthEvents = calendarEventsForMonth(monthDate, events);
+      const byDay = calendarEventsByDay(monthEvents);
+      title.textContent = calendarMonthHeading(monthDate);
+      subtitle.textContent = t.calendar_month_subtitle || 'Monthly view';
+      const weekdayNodes = [];
+      const gridNodes = [];
+
+      const weekdayLabels = calendarWeekdayLabels();
+      let weekdayIndex = 0;
+      while (weekdayIndex < weekdayLabels.length) {
+        const label = document.createElement('div');
+        label.className = 'calendar-month-weekday';
+        label.textContent = weekdayLabels[weekdayIndex];
+        weekdayNodes.push(label);
+        weekdayIndex += 1;
+      }
+      weekdays.replaceChildren(...weekdayNodes);
+
+      const firstDay = new Date(monthDate.getFullYear(), monthDate.getMonth(), 1);
+      const startOffset = (firstDay.getDay() + 6) % 7;
+      const daysInMonth = new Date(monthDate.getFullYear(), monthDate.getMonth() + 1, 0).getDate();
+      const totalCells = Math.ceil((startOffset + daysInMonth) / 7) * 7;
+      let cellIndex = 0;
+
+      while (cellIndex < totalCells) {
+        const dayNumber = cellIndex - startOffset + 1;
+        const fragment = cloneTemplate('calendarMonthCellTemplate');
+        if (fragment) {
+          const cell = fragment.querySelector('.calendar-month-cell');
+          const dayNumberLabel = fragment.querySelector('[data-calendar-day-number]');
+          const eventsContainer = fragment.querySelector('[data-calendar-day-events]');
+
+          if (dayNumber < 1 || dayNumber > daysInMonth) {
+            if (cell) {
+              cell.classList.add('is-outside');
+            }
+          } else {
+            const dayDate = new Date(monthDate.getFullYear(), monthDate.getMonth(), dayNumber);
+            const dayKey = formatDateKey(dayDate);
+            const dayEvents = byDay.get(dayKey) || [];
+
+            if (dayNumberLabel) {
+              dayNumberLabel.textContent = String(dayNumber);
+            }
+
+            const todayKey = formatDateKey(selectedSolarDate());
+            if (dayKey === todayKey && cell) {
+              cell.classList.add('is-selected-month-day');
+            }
+
+            let dayEventIndex = 0;
+            while (dayEventIndex < dayEvents.length) {
+              const monthEvent = dayEvents[dayEventIndex];
+              const eventFragment = cloneTemplate('calendarMonthEventTemplate');
+              if (eventFragment) {
+                const chip = eventFragment.querySelector('[data-calendar-month-event]');
+                const dot = eventFragment.querySelector('[data-calendar-month-dot]');
+                const label = eventFragment.querySelector('[data-calendar-month-label]');
+                if (label) {
+                  label.textContent = monthEvent.title;
+                  label.title = monthEvent.title;
+                }
+                if (chip) {
+                  chip.title = monthEvent.title;
+                  chip.setAttribute('aria-label', monthEvent.title);
+                  chip.addEventListener('click', clickEvent => {
+                    clickEvent.preventDefault();
+                    if (clickEvent.currentTarget instanceof HTMLElement) {
+                      clickEvent.currentTarget.blur();
+                    }
+                    openCalendarEvent(monthEvent);
+                  });
+                }
+                applyCalendarCategoryClass(chip, monthEvent.category);
+                applyCalendarCategoryClass(dot, monthEvent.category);
+                if (eventsContainer) {
+                  eventsContainer.appendChild(eventFragment);
+                }
+              }
+              dayEventIndex += 1;
+            }
+          }
+
+          gridNodes.push(fragment);
+        }
+        cellIndex += 1;
+      }
+
+      if (monthEvents.length === 0) {
+        const empty = document.createElement('div');
+        empty.className = 'calendar-note calendar-month-empty';
+        empty.textContent = t.calendar_month_empty || t.calendar_empty;
+        gridNodes.push(empty);
+      }
+      grid.replaceChildren(...gridNodes);
+    }
+
+    /**
+     * Keeps the shared calendar view stack at the height of the larger view.
+     * This prevents page reflow when switching between list and month mode.
+     * @returns {void}
+     */
+    function syncCalendarViewStackHeight(){
+      const stack = document.getElementById('calendarViewStack');
+      const timeline = document.getElementById('calendarTimeline');
+      const monthView = document.getElementById('calendarMonthView');
+      if (!stack || !timeline || !monthView) {
+        return;
+      }
+
+      const previousTimelineActive = timeline.classList.contains('is-active');
+      const previousMonthActive = monthView.classList.contains('is-active');
+
+      timeline.classList.add('is-active');
+      monthView.classList.add('is-active');
+
+      const timelineHeight = timeline.scrollHeight;
+      const monthHeight = monthView.scrollHeight;
+      const stackHeight = Math.max(timelineHeight, monthHeight, 100);
+      stack.style.height = stackHeight + 'px';
+
+      if (!previousTimelineActive) {
+        timeline.classList.remove('is-active');
+      }
+      if (!previousMonthActive) {
+        monthView.classList.remove('is-active');
+      }
+    }
+
+    /**
+     * Applies the current view mode without rebuilding the card.
+     * @param {Array<object>} visibleEvents Events visible for the active filter.
+     * @returns {void}
+     */
+    function updateCalendarViewVisibility(visibleEvents){
+      const timeline = document.getElementById('calendarTimeline');
+      const monthView = document.getElementById('calendarMonthView');
+      const showAllButton = document.getElementById('btnCalendarShowAll');
+      const calendarCard = document.getElementById('skyCalendarCard');
+      if (!timeline || !monthView || !showAllButton || !calendarCard) {
+        return;
+      }
+
+      if (activeCalendarView === 'month') {
+        timeline.classList.remove('is-active');
+        monthView.classList.add('is-active');
+        monthView.setAttribute('aria-hidden', 'false');
+        timeline.setAttribute('aria-hidden', 'true');
+        showAllButton.hidden = true;
+      } else {
+        timeline.classList.add('is-active');
+        monthView.classList.remove('is-active');
+        monthView.setAttribute('aria-hidden', 'true');
+        timeline.setAttribute('aria-hidden', 'false');
+        if (visibleEvents.length <= 6) {
+          showAllButton.hidden = true;
+        } else {
+          showAllButton.hidden = false;
+        }
         if (showAllCalendarEvents) {
           showAllButton.textContent = t.calendar_show_less;
         } else {
           showAllButton.textContent = t.calendar_show_all;
         }
       }
-      document.querySelectorAll('[data-calendar-filter]').forEach(button => {
-        button.classList.toggle('active', button.dataset.calendarFilter === activeCalendarFilter);
-      });
-      scheduleMasonryLayout();
+
+      syncCalendarViewStackHeight();
+      updateSingleCardMasonryLayout(calendarCard);
     }
 
-    function setCalendarFilter(filter, preserveScroll = false){
+    /**
+     * Updates the active state of filter and view buttons.
+     * @returns {void}
+     */
+    function updateCalendarButtonStates(){
+      document.querySelectorAll('[data-calendar-filter]').forEach(button => {
+        if (button.dataset.calendarFilter === activeCalendarFilter) {
+          button.classList.add('active');
+        } else {
+          button.classList.remove('active');
+        }
+      });
+
+      document.querySelectorAll('[data-calendar-view]').forEach(button => {
+        if (button.dataset.calendarView === activeCalendarView) {
+          button.classList.add('active');
+        } else {
+          button.classList.remove('active');
+        }
+      });
+    }
+
+    /**
+     * Renders the complete sky-calendar card for the current filter and view mode.
+     * @returns {void}
+     */
+    function renderCalendar(){
+      const timeline = document.getElementById('calendarTimeline');
+      const monthView = document.getElementById('calendarMonthView');
+      const nextLabel = document.getElementById('calendarNext');
+      if (!timeline || !monthView || !nextLabel) {
+        return;
+      }
+
+      const visibleEvents = filteredCalendarEvents();
+      const nextEvent = nextCalendarEvent();
+      const currentSelection = selectedCalendarEvent(visibleEvents);
+
+      if (nextEvent) {
+        nextLabel.textContent = (t.calendar_next_event || 'Next event') + ': ' + fmtDateOnly(nextEvent.dateObj) + ' - ' + nextEvent.title;
+      } else {
+        nextLabel.textContent = (t.calendar_next_event || 'Next event') + ': -';
+      }
+
+      renderCalendarDownloads();
+      updateCalendarButtonStates();
+      renderCalendarTimeline(visibleEvents);
+      renderCalendarMonthView(visibleEvents);
+      renderCalendarDetail(currentSelection);
+      updateCalendarViewVisibility(visibleEvents);
+    }
+
+    /**
+     * Applies a new calendar category filter and rerenders the card.
+     * @param {string} filter Category key to activate.
+     * @param {boolean} preserveScroll Whether the viewport anchor should be restored.
+     * @returns {void}
+     */
+    function setCalendarFilter(filter, preserveScroll){
       activeCalendarFilter = filter;
       showAllCalendarEvents = false;
-      if (preserveScroll) {
-        renderWithViewportAnchor(renderCalendar);
-      } else {
-        renderCalendar();
-      }
+      selectedCalendarEventKey = '';
+      renderCalendar();
     }
 
+    /**
+     * Switches the calendar card between list view and month view.
+     * @param {string} view View key, either `list` or `month`.
+     * @param {boolean} preserveScroll Whether the viewport anchor should be restored.
+     * @returns {void}
+     */
+    function setCalendarView(view, preserveScroll){
+      activeCalendarView = view;
+      selectedCalendarEventKey = '';
+      updateCalendarButtonStates();
+      renderCalendarDetail(null);
+      updateCalendarViewVisibility(filteredCalendarEvents());
+    }
+
+    /**
+     * Toggles the expanded list view inside the sky-calendar card.
+     * @returns {void}
+     */
     function toggleCalendarShowAll(){
       showAllCalendarEvents = !showAllCalendarEvents;
       renderCalendar();
@@ -3502,6 +4356,7 @@
       renderVisibility(date);
       renderSatellites(date);
       renderEclipseGeometry(date);
+      renderCalendar();
       scheduleMasonryLayout();
     }
 
@@ -3518,7 +4373,6 @@
     function refreshDynamicTiles(){
       updateTime();
       updateInfrequent();
-      renderCalendar();
       loadAuroraChance();
       loadBlueskyFeed();
       scheduleMasonryLayout();
@@ -5623,18 +6477,48 @@ function computeMoon(date){
       selectedLocationKey = event.target.value;
       refreshDateDrivenTilesWithAnchor();
     });
+    const skyCalendarCard = document.getElementById('skyCalendarCard');
+    if (skyCalendarCard) {
+      skyCalendarCard.addEventListener('pointerdown', event => {
+        const button = event.target.closest('button');
+        if (button) {
+          event.preventDefault();
+        }
+      });
+    }
     document.querySelectorAll('[data-calendar-filter]').forEach(button => {
-      button.addEventListener('pointerdown', event => event.preventDefault());
       button.addEventListener('click', event => {
         event.preventDefault();
+        button.blur();
         setCalendarFilter(button.dataset.calendarFilter, true);
+      });
+    });
+    document.querySelectorAll('[data-calendar-view]').forEach(button => {
+      button.addEventListener('click', event => {
+        event.preventDefault();
+        button.blur();
+        setCalendarView(button.dataset.calendarView, true);
       });
     });
     document.getElementById('calendarShowPast').addEventListener('change', () => {
       showAllCalendarEvents = false;
-      renderWithViewportAnchor(renderCalendar);
+      renderCalendar();
     });
-    document.getElementById('btnCalendarShowAll').addEventListener('click', toggleCalendarShowAll);
+    document.getElementById('btnCalendarShowAll').addEventListener('click', event => {
+      event.preventDefault();
+      if (event.currentTarget instanceof HTMLElement) {
+        event.currentTarget.blur();
+      }
+      toggleCalendarShowAll();
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') {
+        const detail = document.getElementById('calendarDetail');
+        if (detail && detail.hidden === false) {
+          closeCalendarDetail(true);
+        }
+      }
+    });
     const eclipseInfo = document.getElementById('eclipseInfo');
     const eclipseInfoButton = document.getElementById('eclipseInfoButton');
     if (eclipseInfo && eclipseInfoButton) {

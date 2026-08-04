@@ -1,0 +1,418 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//marsrakete//Planetenuhr//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Planetenuhr planet (de)
+X-WR-TIMEZONE:Europe/Berlin
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2026-01-03-erde-im-perihel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260103
+DTEND;VALUE=DATE:20260104
+SUMMARY:Erde im Perihel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte sichtbare Veränderung\; Sonnenscheibe minimal größer\n\nDie Erde ist am 2026-01-03 (ca. 17:16 UTC) der Sonne am nächsten\; die Jahreszeiten werden trotzdem vor allem von der Achsneigung bestimmt.
+X-PLANETENUHR-VISIBILITY:Keine direkte sichtbare Veränderung\; Sonnenscheibe minimal größer
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2026-01-10-jupiter-in-opposition@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260110
+DTEND;VALUE=DATE:20260111
+SUMMARY:Jupiter in Opposition
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Sehr gute Abend- und Nachtsichtbarkeit\n\nJupiter ist hell und steht hoch am Winterhimmel\; gutes Ziel fürs Teleskop.
+X-PLANETENUHR-VISIBILITY:Sehr gute Abend- und Nachtsichtbarkeit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2026-02-19-merkur-in-gr-ter-stlicher-elongation@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260219
+DTEND;VALUE=DATE:20260220
+SUMMARY:Merkur in größter östlicher Elongation
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Beste Merkur-Abendsichtbarkeit 2026 für Nordeuropa\n\nTief im Westen nach Sonnenuntergang suchen\; Sichelmond\, Merkur\, Venus und Saturn stehen um den 18.-20. Februar nahe beieinander.
+X-PLANETENUHR-VISIBILITY:Beste Merkur-Abendsichtbarkeit 2026 für Nordeuropa
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2026-06-09-konjunktion-venus-jupiter@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260609
+DTEND;VALUE=DATE:20260610
+SUMMARY:Konjunktion Venus-Jupiter
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Tief in der westlichen Abenddämmerung\n\nDie beiden hellsten Planeten stehen etwa 1\,6 Grad auseinander\; freie Westsicht nötig.
+X-PLANETENUHR-VISIBILITY:Tief in der westlichen Abenddämmerung
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2026-07-06-erde-im-aphel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260706
+DTEND;VALUE=DATE:20260707
+SUMMARY:Erde im Aphel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte sichtbare Veränderung\; Sonnenscheibe minimal kleiner\n\nDie Erde erreicht am 2026-07-06 (ca. 17:31 UTC) ihren größten Sonnenabstand\; das Wetter bleibt vor allem von der Achsneigung bestimmt.
+X-PLANETENUHR-VISIBILITY:Keine direkte sichtbare Veränderung\; Sonnenscheibe minimal kleiner
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2026-09-19-venus-mit-bester-abendsichtbarkeit@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260919
+DTEND;VALUE=DATE:20260920
+SUMMARY:Venus mit bester Abendsichtbarkeit
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Sehr heller Abendstern\n\nGute Abendsichtbarkeit um dieses Datum\; Venus ist nach Sonnenuntergang auffällig.
+X-PLANETENUHR-VISIBILITY:Sehr heller Abendstern
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2026-10-04-saturn-in-opposition@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20261004
+DTEND;VALUE=DATE:20261005
+SUMMARY:Saturn in Opposition
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Die ganze Nacht sichtbar\n\nSaturn ist am hellsten und günstig platziert\; die Ringe öffnen sich langsam wieder.
+X-PLANETENUHR-VISIBILITY:Die ganze Nacht sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2026-11-15-konjunktion-mars-jupiter@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20261115
+DTEND;VALUE=DATE:20261116
+SUMMARY:Konjunktion Mars-Jupiter
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Morgenhimmel\n\nMars und Jupiter erscheinen vor der Morgendämmerung nahe beieinander.
+X-PLANETENUHR-VISIBILITY:Morgenhimmel
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2026-11-29-venus-mit-bester-morgensichtbarkeit@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20261129
+DTEND;VALUE=DATE:20261130
+SUMMARY:Venus mit bester Morgensichtbarkeit
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Heller Morgenstern\n\nVenus wird zu einem auffälligen Objekt vor Sonnenaufgang.
+X-PLANETENUHR-VISIBILITY:Heller Morgenstern
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2027-01-03-erde-im-perihel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270103
+DTEND;VALUE=DATE:20270104
+SUMMARY:Erde im Perihel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte sichtbare Veränderung\; Sonnenscheibe minimal größer\n\nDie Erde ist am 2027-01-03 (ca. 02:33 UTC) der Sonne am nächsten\; die Jahreszeiten werden trotzdem vor allem von der Achsneigung bestimmt.
+X-PLANETENUHR-VISIBILITY:Keine direkte sichtbare Veränderung\; Sonnenscheibe minimal größer
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2027-01-03-venus-in-gr-ter-westlicher-elongation@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270103
+DTEND;VALUE=DATE:20270104
+SUMMARY:Venus in größter westlicher Elongation
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Sehr gute Morgensichtbarkeit\n\nVenus steht am Morgenhimmel weit von der Sonne entfernt.
+X-PLANETENUHR-VISIBILITY:Sehr gute Morgensichtbarkeit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2027-05-08-konjunktion-venus-saturn@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270508
+DTEND;VALUE=DATE:20270509
+SUMMARY:Konjunktion Venus-Saturn
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Morgen-/Ostdämmerung\, niedrig\n\nEnge Begegnung\, aber geringe Höhe und Dämmerung können die Beobachtung erschweren.
+X-PLANETENUHR-VISIBILITY:Morgen-/Ostdämmerung\, niedrig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2027-07-05-erde-im-aphel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270705
+DTEND;VALUE=DATE:20270706
+SUMMARY:Erde im Aphel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte sichtbare Veränderung\; Sonnenscheibe minimal kleiner\n\nDie Erde erreicht am 2027-07-05 (ca. 05:06 UTC) ihren größten Sonnenabstand\; das Wetter bleibt vor allem von der Achsneigung bestimmt.
+X-PLANETENUHR-VISIBILITY:Keine direkte sichtbare Veränderung\; Sonnenscheibe minimal kleiner
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2027-08-25-konjunktion-venus-jupiter@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270825
+DTEND;VALUE=DATE:20270826
+SUMMARY:Konjunktion Venus-Jupiter
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Sehr sonnennah\; schwierig oder unsicher zu beobachten\n\nGeometrisch eng\, aber nur etwa 4 Grad von der Sonne entfernt. Nicht mit Optik in Sonnennähe suchen.
+X-PLANETENUHR-VISIBILITY:Sehr sonnennah\; schwierig oder unsicher zu beobachten
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2027-11-25-konjunktion-venus-mars@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20271125
+DTEND;VALUE=DATE:20271126
+SUMMARY:Konjunktion Venus-Mars
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Morgenhimmel\n\nEnges Planetenpaar\; Venus ist deutlich heller als Mars.
+X-PLANETENUHR-VISIBILITY:Morgenhimmel
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2028-01-03-erde-im-perihel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280103
+DTEND;VALUE=DATE:20280104
+SUMMARY:Erde im Perihel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer\n\nDie Erde ist der Sonne am nächsten\; die Jahreszeiten werden trotzdem vor allem von der Achsneigung bestimmt.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2028-07-04-erde-im-aphel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280704
+DTEND;VALUE=DATE:20280705
+SUMMARY:Erde im Aphel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner\n\nDie Erde ist der Sonne am fernsten\; der Nordsommer entsteht trotzdem durch die Achsneigung und nicht durch die Entfernung.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2029-01-03-erde-im-perihel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290103
+DTEND;VALUE=DATE:20290104
+SUMMARY:Erde im Perihel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer\n\nDie Erde ist der Sonne am nächsten\; die Jahreszeiten werden trotzdem vor allem von der Achsneigung bestimmt.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2029-07-04-erde-im-aphel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290704
+DTEND;VALUE=DATE:20290705
+SUMMARY:Erde im Aphel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner\n\nDie Erde ist der Sonne am fernsten\; der Nordsommer entsteht trotzdem durch die Achsneigung und nicht durch die Entfernung.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2030-01-03-erde-im-perihel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300103
+DTEND;VALUE=DATE:20300104
+SUMMARY:Erde im Perihel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer\n\nDie Erde ist der Sonne am nächsten\; die Jahreszeiten werden trotzdem vor allem von der Achsneigung bestimmt.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2030-07-04-erde-im-aphel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300704
+DTEND;VALUE=DATE:20300705
+SUMMARY:Erde im Aphel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner\n\nDie Erde ist der Sonne am fernsten\; der Nordsommer entsteht trotzdem durch die Achsneigung und nicht durch die Entfernung.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2031-01-03-erde-im-perihel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310103
+DTEND;VALUE=DATE:20310104
+SUMMARY:Erde im Perihel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer\n\nDie Erde ist der Sonne am nächsten\; die Jahreszeiten werden trotzdem vor allem von der Achsneigung bestimmt.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2031-07-04-erde-im-aphel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310704
+DTEND;VALUE=DATE:20310705
+SUMMARY:Erde im Aphel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner\n\nDie Erde ist der Sonne am fernsten\; der Nordsommer entsteht trotzdem durch die Achsneigung und nicht durch die Entfernung.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2032-01-03-erde-im-perihel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320103
+DTEND;VALUE=DATE:20320104
+SUMMARY:Erde im Perihel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer\n\nDie Erde ist der Sonne am nächsten\; die Jahreszeiten werden trotzdem vor allem von der Achsneigung bestimmt.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2032-07-04-erde-im-aphel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320704
+DTEND;VALUE=DATE:20320705
+SUMMARY:Erde im Aphel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner\n\nDie Erde ist der Sonne am fernsten\; der Nordsommer entsteht trotzdem durch die Achsneigung und nicht durch die Entfernung.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2033-01-03-erde-im-perihel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330103
+DTEND;VALUE=DATE:20330104
+SUMMARY:Erde im Perihel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer\n\nDie Erde ist der Sonne am nächsten\; die Jahreszeiten werden trotzdem vor allem von der Achsneigung bestimmt.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2033-07-04-erde-im-aphel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330704
+DTEND;VALUE=DATE:20330705
+SUMMARY:Erde im Aphel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner\n\nDie Erde ist der Sonne am fernsten\; der Nordsommer entsteht trotzdem durch die Achsneigung und nicht durch die Entfernung.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2034-01-03-erde-im-perihel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340103
+DTEND;VALUE=DATE:20340104
+SUMMARY:Erde im Perihel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer\n\nDie Erde ist der Sonne am nächsten\; die Jahreszeiten werden trotzdem vor allem von der Achsneigung bestimmt.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2034-07-04-erde-im-aphel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340704
+DTEND;VALUE=DATE:20340705
+SUMMARY:Erde im Aphel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner\n\nDie Erde ist der Sonne am fernsten\; der Nordsommer entsteht trotzdem durch die Achsneigung und nicht durch die Entfernung.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2035-01-03-erde-im-perihel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350103
+DTEND;VALUE=DATE:20350104
+SUMMARY:Erde im Perihel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer\n\nDie Erde ist der Sonne am nächsten\; die Jahreszeiten werden trotzdem vor allem von der Achsneigung bestimmt.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2035-07-04-erde-im-aphel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350704
+DTEND;VALUE=DATE:20350705
+SUMMARY:Erde im Aphel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner\n\nDie Erde ist der Sonne am fernsten\; der Nordsommer entsteht trotzdem durch die Achsneigung und nicht durch die Entfernung.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2036-01-03-erde-im-perihel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360103
+DTEND;VALUE=DATE:20360104
+SUMMARY:Erde im Perihel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer\n\nDie Erde ist der Sonne am nächsten\; die Jahreszeiten werden trotzdem vor allem von der Achsneigung bestimmt.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2036-07-04-erde-im-aphel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360704
+DTEND;VALUE=DATE:20360705
+SUMMARY:Erde im Aphel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner\n\nDie Erde ist der Sonne am fernsten\; der Nordsommer entsteht trotzdem durch die Achsneigung und nicht durch die Entfernung.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2037-01-03-erde-im-perihel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370103
+DTEND;VALUE=DATE:20370104
+SUMMARY:Erde im Perihel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer\n\nDie Erde ist der Sonne am nächsten\; die Jahreszeiten werden trotzdem vor allem von der Achsneigung bestimmt.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2037-07-04-erde-im-aphel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370704
+DTEND;VALUE=DATE:20370705
+SUMMARY:Erde im Aphel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner\n\nDie Erde ist der Sonne am fernsten\; der Nordsommer entsteht trotzdem durch die Achsneigung und nicht durch die Entfernung.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2038-01-03-erde-im-perihel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380103
+DTEND;VALUE=DATE:20380104
+SUMMARY:Erde im Perihel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer\n\nDie Erde ist der Sonne am nächsten\; die Jahreszeiten werden trotzdem vor allem von der Achsneigung bestimmt.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2038-07-04-erde-im-aphel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380704
+DTEND;VALUE=DATE:20380705
+SUMMARY:Erde im Aphel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner\n\nDie Erde ist der Sonne am fernsten\; der Nordsommer entsteht trotzdem durch die Achsneigung und nicht durch die Entfernung.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2039-01-03-erde-im-perihel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390103
+DTEND;VALUE=DATE:20390104
+SUMMARY:Erde im Perihel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer\n\nDie Erde ist der Sonne am nächsten\; die Jahreszeiten werden trotzdem vor allem von der Achsneigung bestimmt.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2039-07-04-erde-im-aphel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390704
+DTEND;VALUE=DATE:20390705
+SUMMARY:Erde im Aphel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner\n\nDie Erde ist der Sonne am fernsten\; der Nordsommer entsteht trotzdem durch die Achsneigung und nicht durch die Entfernung.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2040-01-03-erde-im-perihel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400103
+DTEND;VALUE=DATE:20400104
+SUMMARY:Erde im Perihel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer\n\nDie Erde ist der Sonne am nächsten\; die Jahreszeiten werden trotzdem vor allem von der Achsneigung bestimmt.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2040-07-04-erde-im-aphel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400704
+DTEND;VALUE=DATE:20400705
+SUMMARY:Erde im Aphel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner\n\nDie Erde ist der Sonne am fernsten\; der Nordsommer entsteht trotzdem durch die Achsneigung und nicht durch die Entfernung.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner
+END:VEVENT
+END:VCALENDAR

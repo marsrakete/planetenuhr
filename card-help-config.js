@@ -354,16 +354,18 @@ window.PLANETENUHR_CARD_HELP = {
       },
       sky_calendar: {
         intro: [
-          "The sky calendar is a curated event list for eclipses, meteor peaks, lunar milestones, planetary highlights and seasonal markers.",
-          "Filters let you focus on one topic while the next-event line keeps the closest upcoming item in view."
+          "The sky calendar combines a filtered event list with a real month calendar for eclipses, meteor peaks, lunar milestones, planetary highlights and seasonal markers.",
+          "Use List for compact reading or Calendar for day-by-day browsing inside the selected month."
         ],
         details: [
-          "The calendar data is maintained in a dedicated config file and currently spans 2026 through January 2028.",
+          "The calendar data is maintained in dedicated config files and currently spans 2026 through December 2040.",
+          "The download buttons create ICS calendar files. ICS is a common exchange format that can be imported into Apple Calendar, Google Calendar, Outlook and many mobile calendar apps.",
           "This card is editorially curated, so it can mix computed timing with hand-written observing notes."
         ],
         links: [
           { label: "NASA: Eclipses", url: "https://science.nasa.gov/eclipses/" },
-          { label: "NASA: Meteors and Meteorites", url: "https://science.nasa.gov/solar-system/meteors-meteorites/" }
+          { label: "NASA: Meteors and Meteorites", url: "https://science.nasa.gov/solar-system/meteors-meteorites/" },
+          { label: "Wikipedia: iCalendar", url: "https://en.wikipedia.org/wiki/ICalendar" }
         ]
       },
       bsky_feed: {
@@ -385,8 +387,8 @@ window.PLANETENUHR_CARD_HELP = {
   de: {
     sections: {
       button: "Mehr Info",
-      title: "Diese Kachel erklärt",
-      overview: "Kurz erklärt",
+      title: "Diese Kachel erklÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤rt",
+      overview: "Kurz erklÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤rt",
       formulas: "Verwendete Formeln",
       details: "Daten & Hinweise",
       links: "Quellen & Vertiefung"
@@ -394,25 +396,25 @@ window.PLANETENUHR_CARD_HELP = {
     cards: {
       time: {
         intro: [
-          "Diese Kachel bündelt Live-Uhr, Stoppuhr, Countdown und Darstellungsoptionen an einer Stelle.",
+          "Diese Kachel bÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼ndelt Live-Uhr, Stoppuhr, Countdown und Darstellungsoptionen an einer Stelle.",
           "Sie arbeitet fast nur mit Browser-Logik und reagiert deshalb ohne externe Daten sofort."
         ],
         details: [
-          "Die Live-Zeit folgt der gewählten Zeitzone.",
+          "Die Live-Zeit folgt der gewÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤hlten Zeitzone.",
           "Stoppuhr und Countdown laufen lokal im Browser."
         ]
       },
       date_location: {
         intro: [
-          "Diese Kachel steuert das gemeinsame Datum für die Astronomie-Karten und den Beobachtungsort für ortsabhängige Ansichten.",
-          "Wenn hier das Datum geändert wird, aktualisieren sich Sonnensystem, Jahreszeiten, Mond, Sichtbarkeit und Tageslicht gemeinsam."
+          "Diese Kachel steuert das gemeinsame Datum fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r die Astronomie-Karten und den Beobachtungsort fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r ortsabhÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤ngige Ansichten.",
+          "Wenn hier das Datum geÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤ndert wird, aktualisieren sich Sonnensystem, Jahreszeiten, Mond, Sichtbarkeit und Tageslicht gemeinsam."
         ],
         formulas: [
           { expr: "t<sub>ausgewahlt</sub> = t<sub>jetzt</sub> + &Delta;d &middot; 86400 s", note: "Datumsverschiebung in ganzen Tagen." }
         ],
         details: [
-          "Der Slider behält bewusst die urspruengliche Spanne von -100 bis +100 Jahren.",
-          "Die Ortswahl bietet aktuell zehn grosse deutsche Städte; die Seiten-Zeitzone selbst bleibt dabei unverändert."
+          "Der Slider behÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤lt bewusst die urspruengliche Spanne von -100 bis +100 Jahren.",
+          "Die Ortswahl bietet aktuell zehn grosse deutsche StÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤dte; die Seiten-Zeitzone selbst bleibt dabei unverÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤ndert."
         ],
         links: [
           { label: "JPL: Approximate Positions of the Planets", url: "https://ssd.jpl.nasa.gov/planets/approx_pos.html" },
@@ -421,16 +423,16 @@ window.PLANETENUHR_CARD_HELP = {
       },
       solar_system: {
         intro: [
-          "Hier siehst du die acht Planeten heliozentrisch in einer Draufsicht auf die Ekliptik für das gewählte Datum.",
-          "Die Abstände sind optisch komprimiert, damit auch die äusseren Planeten noch in eine kompakte Kreisfläche passen."
+          "Hier siehst du die acht Planeten heliozentrisch in einer Draufsicht auf die Ekliptik fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r das gewÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤hlte Datum.",
+          "Die AbstÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤nde sind optisch komprimiert, damit auch die ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤usseren Planeten noch in eine kompakte KreisflÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤che passen."
         ],
         formulas: [
           { expr: "T = (JD - 2451545.0) / 36525", note: "Jahrhunderte seit J2000.0." },
-          { expr: "M = L - &varpi;", note: "Mittlere Anomalie aus mittlerer Länge und Perihellänge." },
-          { expr: "x' = a(cos E - e), &nbsp; y' = a&radic;(1-e<sup>2</sup>) sin E", note: "Koordinaten in der Bahnebene nach der Lösung der Kepler-Gleichung." }
+          { expr: "M = L - &varpi;", note: "Mittlere Anomalie aus mittlerer LÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤nge und PerihellÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤nge." },
+          { expr: "x' = a(cos E - e), &nbsp; y' = a&radic;(1-e<sup>2</sup>) sin E", note: "Koordinaten in der Bahnebene nach der LÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¶sung der Kepler-Gleichung." }
         ],
         details: [
-          "Die Bahnelemente folgen der JPL-Näherung mit keplerschen Elementen für Übersichtsdarstellungen.",
+          "Die Bahnelemente folgen der JPL-NÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤herung mit keplerschen Elementen fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r ÃƒÆ’Ã†â€™Ãƒâ€¦Ã¢â‚¬Å“bersichtsdarstellungen.",
           "Die Karte ist schematisch, bleibt aber datumsgekoppelt und innerhalb der App konsistent."
         ],
         links: [
@@ -440,17 +442,17 @@ window.PLANETENUHR_CARD_HELP = {
       },
       small_bodies: {
         intro: [
-          "Diese Kachel versammelt ausgewählte berühmte Kometenbahnen zusammen mit Asteroidengürtel und Kuipergürtel.",
-          "Die Darstellung ist stark komprimiert, damit langperiodische Kometen, Sungrazer und Gürtelregionen zugleich lesbar bleiben."
+          "Diese Kachel versammelt ausgewÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤hlte berÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼hmte Kometenbahnen zusammen mit AsteroidengÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼rtel und KuipergÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼rtel.",
+          "Die Darstellung ist stark komprimiert, damit langperiodische Kometen, Sungrazer und GÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼rtelregionen zugleich lesbar bleiben."
         ],
         formulas: [
           { expr: "a = (q + Q) / 2", note: "Grosse Halbachse aus Perihel q und Aphel Q." },
-          { expr: "e = (Q - q) / (Q + q)", note: "Exzentrizität aus q und Q." },
-          { expr: "r<sub>plot</sub> = R<sub>max</sub> &radic;( clamp(r, 0.02, 60) / 60 )", note: "Verwendete Kompression für die Kleinkörper-Karte." }
+          { expr: "e = (Q - q) / (Q + q)", note: "ExzentrizitÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤t aus q und Q." },
+          { expr: "r<sub>plot</sub> = R<sub>max</sub> &radic;( clamp(r, 0.02, 60) / 60 )", note: "Verwendete Kompression fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r die KleinkÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¶rper-Karte." }
         ],
         details: [
           "Aktuell sind 20 benannte Kometen enthalten, darunter Halley, Hale-Bopp, Hyakutake, NEOWISE und ISON.",
-          "Der Asteroidengürtel wird bei 2.1-3.3 AE gezeigt, der Kuipergürtel bei 30-50 AE."
+          "Der AsteroidengÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼rtel wird bei 2.1-3.3 AE gezeigt, der KuipergÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼rtel bei 30-50 AE."
         ],
         links: [
           { label: "JPL Small-Body Database", url: "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html" },
@@ -459,15 +461,15 @@ window.PLANETENUHR_CARD_HELP = {
       },
       meteor_streams: {
         intro: [
-          "Der grosse Ring zeigt, wann wichtige Meteorströme im Jahreslauf aktiv sind; das separate Radiantenfeld zeigt, aus welcher Himmelsrichtung sie scheinbar kommen.",
+          "Der grosse Ring zeigt, wann wichtige MeteorstrÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¶me im Jahreslauf aktiv sind; das separate Radiantenfeld zeigt, aus welcher Himmelsrichtung sie scheinbar kommen.",
           "Das ist ein Kalender- und Orientierungstool, keine fotografische Himmelskarte."
         ],
         formulas: [
           { expr: "f<sub>Jahr</sub> = (DOY - 1) / daysInYear", note: "Ordnet einen Kalendertag auf den Jahresring ab." }
         ],
         details: [
-          "Farbige Bögen markieren Aktivitätsfenster; die kleinen Punkte markieren die Peak-Daten.",
-          "Die Radianten sind schematisch über Azimut und Höhe für eine mitteleuropäische Lesart angeordnet."
+          "Farbige BÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¶gen markieren AktivitÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤tsfenster; die kleinen Punkte markieren die Peak-Daten.",
+          "Die Radianten sind schematisch ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼ber Azimut und HÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¶he fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r eine mitteleuropÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤ische Lesart angeordnet."
         ],
         links: [
           { label: "NASA: Meteors and Meteorites", url: "https://science.nasa.gov/solar-system/meteors-meteorites/" },
@@ -477,11 +479,11 @@ window.PLANETENUHR_CARD_HELP = {
       constellation_month: {
         intro: [
           "Diese Monats-Kachel hebt jeweils ein gut auffindbares saisonales Sternbild mit vereinfachter Linienfigur und Sternnamen hervor.",
-          "Sie ist als freundliche Orientierung gedacht und nicht als vollständiger Sternatlas."
+          "Sie ist als freundliche Orientierung gedacht und nicht als vollstÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤ndiger Sternatlas."
         ],
         details: [
-          "Die Auswahl richtet sich nach dem Monat und ist auf eine mitteleuropäische Saison-Lesart abgestimmt.",
-          "Sternnamen werden so gesetzt, dass sie auch auf kleineren Displays möglichst lesbar bleiben."
+          "Die Auswahl richtet sich nach dem Monat und ist auf eine mitteleuropÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤ische Saison-Lesart abgestimmt.",
+          "Sternnamen werden so gesetzt, dass sie auch auf kleineren Displays mÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¶glichst lesbar bleiben."
         ],
         links: [
           { label: "NASA Skywatching", url: "https://science.nasa.gov/skywatching/" },
@@ -491,16 +493,16 @@ window.PLANETENUHR_CARD_HELP = {
       },
       season_axis: {
         intro: [
-          "Diese Kachel verbindet eine Draufsicht auf die Erdbahn mit einer seitlichen Nebenansicht für den Sonnenstand relativ zur Erdachse.",
-          "Zusammen erklärt beides, warum dieselbe Erde im Jahreslauf mal lange helle und mal kurze tiefe Sonnentage hat."
+          "Diese Kachel verbindet eine Draufsicht auf die Erdbahn mit einer seitlichen Nebenansicht fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r den Sonnenstand relativ zur Erdachse.",
+          "Zusammen erklÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤rt beides, warum dieselbe Erde im Jahreslauf mal lange helle und mal kurze tiefe Sonnentage hat."
         ],
         formulas: [
           { expr: "f = (DOY - 1) / daysInYear", note: "Jahresfortschritt seit dem 1. Januar." },
-          { expr: "&delta; &asymp; 23.44&deg; &middot; sin( 2&pi;(DOY - 80) / daysInYear )", note: "Vereinfachte Solardeklination für die Nebenansicht." }
+          { expr: "&delta; &asymp; 23.44&deg; &middot; sin( 2&pi;(DOY - 80) / daysInYear )", note: "Vereinfachte Solardeklination fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r die Nebenansicht." }
         ],
         details: [
-          "Die Prozentangabe ist der Jahresfortschritt, kein Stärkewert.",
-          "Die seitliche Ansicht ändert sich mit dem gewählten Datum, der Sonnenwinkel läuft also wirklich durch den Jahreszyklus."
+          "Die Prozentangabe ist der Jahresfortschritt, kein StÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤rkewert.",
+          "Die seitliche Ansicht ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤ndert sich mit dem gewÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤hlten Datum, der Sonnenwinkel lÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤uft also wirklich durch den Jahreszyklus."
         ],
         links: [
           { label: "NOAA: Solar Calculation Details", url: "https://gml.noaa.gov/grad/solcalc/calcdetails.html" },
@@ -510,14 +512,14 @@ window.PLANETENUHR_CARD_HELP = {
       spacecraft: {
         intro: [
           "Diese Kachel setzt einige wichtige Raumsonden in einer schematischen Draufsicht um die Sonne.",
-          "Sie ist für Relationen und Missionskontext gebaut, nicht für exakte Navigation."
+          "Sie ist fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r Relationen und Missionskontext gebaut, nicht fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r exakte Navigation."
         ],
         formulas: [
-          { expr: "r<sub>plot</sub> = R<sub>max</sub> log(1 + r) / log(1 + r<sub>max</sub>)", note: "Logarithmische Kompression für die heliozentrische Distanz in AE." }
+          { expr: "r<sub>plot</sub> = R<sub>max</sub> log(1 + r) / log(1 + r<sub>max</sub>)", note: "Logarithmische Kompression fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r die heliozentrische Distanz in AE." }
         ],
         details: [
           "Enthalten sind aktuell Parker Solar Probe, BepiColombo, JUICE, Juno, Europa Clipper, New Horizons, Pioneer 10/11 und die Voyagers.",
-          "Die gekrümmten Linien sind stilisierte Flugbahnen, damit Marker und Labels lesbar bleiben."
+          "Die gekrÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼mmten Linien sind stilisierte Flugbahnen, damit Marker und Labels lesbar bleiben."
         ],
         links: [
           { label: "JPL Horizons", url: "https://ssd.jpl.nasa.gov/horizons/" },
@@ -526,11 +528,11 @@ window.PLANETENUHR_CARD_HELP = {
       },
       visibility: {
         intro: [
-          "Diese Kachel schätzt, ob ein Planet am gewählten Datum und Ort eher morgens oder eher abends gut steht.",
+          "Diese Kachel schÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤tzt, ob ein Planet am gewÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤hlten Datum und Ort eher morgens oder eher abends gut steht.",
           "Sie ist eine schnelle visuelle Orientierung und kein vollwertiger Beobachtungsplaner."
         ],
         formulas: [
-          { expr: "Elongation = &lambda;<sub>Planet</sub> - &lambda;<sub>Sonne</sub>", note: "Vorzeichenbehaftete solare Elongation in ekliptischer Länge." }
+          { expr: "Elongation = &lambda;<sub>Planet</sub> - &lambda;<sub>Sonne</sub>", note: "Vorzeichenbehaftete solare Elongation in ekliptischer LÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤nge." }
         ],
         details: [
           "Positive Elongation wird als Abendsichtbarkeit, negative als Morgensichtbarkeit gelesen.",
@@ -543,16 +545,16 @@ window.PLANETENUHR_CARD_HELP = {
       },
       moon_nodes: {
         intro: [
-          "Diese Kachel verbindet die Mondknoten-Geometrie mit einem angenäherten Finsternis-Saison-Zyklus für das gewählte Datum.",
+          "Diese Kachel verbindet die Mondknoten-Geometrie mit einem angenÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤herten Finsternis-Saison-Zyklus fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r das gewÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤hlte Datum.",
           "So wird sichtbar, warum Finsternisse in Saisonfenstern auftreten und nicht einfach jeden Monat."
         ],
         formulas: [
-          { expr: "d<sub>Knoten</sub> = min(f, 1-f) &middot; 27.2122 d", note: "Genäherte Distanz zum nächsten Mondknoten aus der drakonitischen Phase f." },
-          { expr: "d<sub>Saison</sub> = min(s, P-s), &nbsp; P &asymp; 173.31 d", note: "Genäherte Distanz zum nächsten Saisonzentrum." }
+          { expr: "d<sub>Knoten</sub> = min(f, 1-f) &middot; 27.2122 d", note: "GenÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤herte Distanz zum nÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤chsten Mondknoten aus der drakonitischen Phase f." },
+          { expr: "d<sub>Saison</sub> = min(s, P-s), &nbsp; P &asymp; 173.31 d", note: "GenÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤herte Distanz zum nÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤chsten Saisonzentrum." }
         ],
         details: [
-          "Die innere Bahn zeigt die Stellung des Mondes relativ zur Knotenlinie am gewählten Datum.",
-          "Der äußere Ring nutzt eine wiederholte Saison-Näherung und ist als didaktische Zeitansicht gedacht."
+          "Die innere Bahn zeigt die Stellung des Mondes relativ zur Knotenlinie am gewÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤hlten Datum.",
+          "Der ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤uÃƒÆ’Ã†â€™Ãƒâ€¦Ã‚Â¸ere Ring nutzt eine wiederholte Saison-NÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤herung und ist als didaktische Zeitansicht gedacht."
         ],
         links: [
           { label: "NASA: Eclipses", url: "https://science.nasa.gov/eclipses/" },
@@ -561,15 +563,15 @@ window.PLANETENUHR_CARD_HELP = {
       },
       conjunctions: {
         intro: [
-          "Diese Kachel durchsucht ein Zeitfenster rund um das gewählte Datum und markiert angenäherte Minima im Winkelabstand zwischen Planeten.",
-          "Sie ist als schnelle Ereignisansicht für enge Begegnungen gedacht, nicht als observatoriumsgenaue Ephemeride."
+          "Diese Kachel durchsucht ein Zeitfenster rund um das gewÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤hlte Datum und markiert angenÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤herte Minima im Winkelabstand zwischen Planeten.",
+          "Sie ist als schnelle Ereignisansicht fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r enge Begegnungen gedacht, nicht als observatoriumsgenaue Ephemeride."
         ],
         formulas: [
-          { expr: "&Delta; = | signed( &lambda;<sub>A</sub> - &lambda;<sub>B</sub> ) |", note: "Winkelabstand in ekliptischer Länge zwischen zwei Planeten." }
+          { expr: "&Delta; = | signed( &lambda;<sub>A</sub> - &lambda;<sub>B</sub> ) |", note: "Winkelabstand in ekliptischer LÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤nge zwischen zwei Planeten." }
         ],
         details: [
-          "Die Zeitachse sucht lokale Minima der Abstandskurve innerhalb des gewählten Fensters.",
-          "Die Werte sind angenähert und vor allem als Hinweis auf interessante Daten gedacht."
+          "Die Zeitachse sucht lokale Minima der Abstandskurve innerhalb des gewÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤hlten Fensters.",
+          "Die Werte sind angenÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤hert und vor allem als Hinweis auf interessante Daten gedacht."
         ],
         links: [
           { label: "JPL: Approximate Positions of the Planets", url: "https://ssd.jpl.nasa.gov/planets/approx_pos.html" },
@@ -579,16 +581,16 @@ window.PLANETENUHR_CARD_HELP = {
       retrograde: {
         intro: [
           "Diese Kachel verfolgt, ob ein Planet aus Sicht der Erde gerade direkte oder retrograde scheinbare Bewegung zeigt.",
-          "Retrograd bedeutet hier eine temporäre westwärtige Drift vor dem Sternhintergrund durch Veränderungen der Beobachtungsgeometrie."
+          "Retrograd bedeutet hier eine temporÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤re westwÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤rtige Drift vor dem Sternhintergrund durch VerÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤nderungen der Beobachtungsgeometrie."
         ],
         formulas: [
-          { expr: "&Delta;&lambda; / Tag = signed( &lambda;<sub>geo</sub>(t+1d) - &lambda;<sub>geo</sub>(t-1d) ) / 2", note: "Genäherte tägliche Scheinbewegung aus der geozentrischen Länge." }
+          { expr: "&Delta;&lambda; / Tag = signed( &lambda;<sub>geo</sub>(t+1d) - &lambda;<sub>geo</sub>(t-1d) ) / 2", note: "GenÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤herte tÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤gliche Scheinbewegung aus der geozentrischen LÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤nge." }
         ],
         details: [
-          "Nahe Stationen werden über Vorzeichenwechsel der Scheinbewegung gesucht.",
+          "Nahe Stationen werden ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼ber Vorzeichenwechsel der Scheinbewegung gesucht.",
           "Die gelben Punkte auf dem Pfad markieren die beiden Stationen, an denen die scheinbare Bewegung die Richtung wechselt.",
           "Der blaue Punkt markiert die aktuelle Position des Planeten innerhalb des angezeigten Pfadfensters.",
-          "Die Werte sind angenähert, aber datumsgekoppelt und für eine Dashboard-Lesart gut geeignet."
+          "Die Werte sind angenÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤hert, aber datumsgekoppelt und fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r eine Dashboard-Lesart gut geeignet."
         ],
         links: [
           { label: "JPL: Approximate Positions of the Planets", url: "https://ssd.jpl.nasa.gov/planets/approx_pos.html" },
@@ -605,8 +607,8 @@ window.PLANETENUHR_CARD_HELP = {
           { expr: "k = (1 + cos i) / 2", note: "Beleuchteter Anteil k aus dem Phasenwinkel i am Planeten." }
         ],
         details: [
-          "Eine schmale Sichel bedeutet meist Nähe zur unteren Konjunktion und teleskopisch einen größeren scheinbaren Durchmesser.",
-          "Grössere Elongation bedeutet oft bessere Sichtbarkeit am Morgen- oder Abendhimmel."
+          "Eine schmale Sichel bedeutet meist NÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤he zur unteren Konjunktion und teleskopisch einen grÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¶ÃƒÆ’Ã†â€™Ãƒâ€¦Ã‚Â¸eren scheinbaren Durchmesser.",
+          "GrÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¶ssere Elongation bedeutet oft bessere Sichtbarkeit am Morgen- oder Abendhimmel."
         ],
         links: [
           { label: "NASA: Mercury", url: "https://science.nasa.gov/mercury/" },
@@ -616,11 +618,11 @@ window.PLANETENUHR_CARD_HELP = {
       },
       constellation_year: {
         intro: [
-          "Diese Jahresuhr legt die monatlichen Sternbild-Schwerpunkte über den kompletten Jahreskreis.",
+          "Diese Jahresuhr legt die monatlichen Sternbild-Schwerpunkte ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼ber den kompletten Jahreskreis.",
           "So wird sichtbar, wie sich der Saisonhimmel durch den Kalender dreht, statt jeden Monat isoliert zu betrachten."
         ],
         details: [
-          "Der hervorgehobene Marker läuft mit dem gewählten Datum über den Jahresring.",
+          "Der hervorgehobene Marker lÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤uft mit dem gewÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤hlten Datum ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼ber den Jahresring.",
           "Die Monatsfolge basiert auf derselben kuratierten Sternbildliste wie die Monats-Kachel."
         ],
         links: [
@@ -631,16 +633,16 @@ window.PLANETENUHR_CARD_HELP = {
       },
       night_visibility: {
         intro: [
-          "Diese Kachel spannt die ausgewählte Nacht von der Abenddämmerung bis zur Morgendämmerung auf und schätzt, wann helle Planeten über dem Horizont stehen.",
-          "Sie bleibt bewusst angenähert, ist aber deutlich informativer als nur Morgen/Abend."
+          "Diese Kachel spannt die ausgewÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤hlte Nacht von der AbenddÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤mmerung bis zur MorgendÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤mmerung auf und schÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤tzt, wann helle Planeten ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼ber dem Horizont stehen.",
+          "Sie bleibt bewusst angenÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤hert, ist aber deutlich informativer als nur Morgen/Abend."
         ],
         formulas: [
-          { expr: "t<sub>Transit</sub> &asymp; 12h + Elongation / 15", note: "Genäherte Meridiandurchgangszeit aus der solaren Elongation." },
-          { expr: "t<sub>Auf,Unter</sub> &asymp; t<sub>Transit</sub> &plusmn; 6h", note: "Einfache Horizont-Näherung für die Nachtbalken." }
+          { expr: "t<sub>Transit</sub> &asymp; 12h + Elongation / 15", note: "GenÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤herte Meridiandurchgangszeit aus der solaren Elongation." },
+          { expr: "t<sub>Auf,Unter</sub> &asymp; t<sub>Transit</sub> &plusmn; 6h", note: "Einfache Horizont-NÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤herung fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r die Nachtbalken." }
         ],
         details: [
-          "Die Balken werden auf die dunkle Nachtspanne zwischen Abend- und Morgendämmerung beschnitten.",
-          "Das ist ein geometrischer Schnellblick und keine vollständige Höhen-/Azimut-Simulation."
+          "Die Balken werden auf die dunkle Nachtspanne zwischen Abend- und MorgendÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤mmerung beschnitten.",
+          "Das ist ein geometrischer Schnellblick und keine vollstÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤ndige HÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¶hen-/Azimut-Simulation."
         ],
         links: [
           { label: "NOAA: Solar Calculation Details", url: "https://gml.noaa.gov/grad/solcalc/calcdetails.html" },
@@ -650,13 +652,13 @@ window.PLANETENUHR_CARD_HELP = {
       satellites: {
         intro: [
           "Diese Kachel zeigt einige helle oder bekannte Erdorbiter in schematischen niedrigen Erdorbits.",
-          "Die Marker bewegen sich mit dem gewählten Datum, sind aber keine Live-Positionen aus frischen TLE-Daten."
+          "Die Marker bewegen sich mit dem gewÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤hlten Datum, sind aber keine Live-Positionen aus frischen TLE-Daten."
         ],
         formulas: [
           { expr: "Phase = frac( Phase<sub>0</sub> + (t - t<sub>0</sub>) / P )", note: "Mittlere Orbitphase aus Referenzzeitpunkt und Umlaufzeit P." }
         ],
         details: [
-          "Höhe, Umlaufzeit und Inklination werden zur Einordnung angezeigt.",
+          "HÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¶he, Umlaufzeit und Inklination werden zur Einordnung angezeigt.",
           "Die Bahnebenen sind absichtlich stilisiert, damit mehrere Satelliten in einer Kachel lesbar bleiben."
         ],
         links: [
@@ -667,11 +669,11 @@ window.PLANETENUHR_CARD_HELP = {
       },
       aurora: {
         intro: [
-          "Diese Kachel schätzt die heutige Polarlicht-Chance für Deutschland aus Live-Daten des Weltraumwetters.",
+          "Diese Kachel schÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤tzt die heutige Polarlicht-Chance fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r Deutschland aus Live-Daten des Weltraumwetters.",
           "Sie ist absichtlich nicht an den Datumsregler gekoppelt, weil der Input echtzeitnah und nicht historisch ist."
         ],
         details: [
-          "Aktuell wird der neueste planetare Kp-Wert der NOAA SWPC geholt und in eine Deutschland-Lesart übersetzt.",
+          "Aktuell wird der neueste planetare Kp-Wert der NOAA SWPC geholt und in eine Deutschland-Lesart ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼bersetzt.",
           "Ein hoher Kp garantiert noch keine Sichtung; Dunkelheit, klares Wetter und das genaue Timing bleiben wichtig."
         ],
         links: [
@@ -681,15 +683,15 @@ window.PLANETENUHR_CARD_HELP = {
       },
       jupiter: {
         intro: [
-          "Diese Kachel zeigt Jupiter mit zehn ausgewählten Monden in beschleunigter, bewusst illustrativer Bewegung.",
-          "Lesbarkeit steht hier absichtlich etwas über physikalischer Exaktheit."
+          "Diese Kachel zeigt Jupiter mit zehn ausgewÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤hlten Monden in beschleunigter, bewusst illustrativer Bewegung.",
+          "Lesbarkeit steht hier absichtlich etwas ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼ber physikalischer Exaktheit."
         ],
         formulas: [
-          { expr: "T<sup>2</sup> &prop; a<sup>3</sup>", note: "Keplers drittes Gesetz erklärt, warum äussere Monde langsamer umlaufen." }
+          { expr: "T<sup>2</sup> &prop; a<sup>3</sup>", note: "Keplers drittes Gesetz erklÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤rt, warum ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤ussere Monde langsamer umlaufen." }
         ],
         details: [
           "Hervorgehoben sind die vier galileischen Monde plus einige weitere bekannte Begleiter.",
-          "NASA führt für Jupiter 101 bestätigte Monde; gezeichnet wird bewusst nur eine kuratierte Auswahl."
+          "NASA fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼hrt fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r Jupiter 101 bestÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤tigte Monde; gezeichnet wird bewusst nur eine kuratierte Auswahl."
         ],
         links: [
           { label: "NASA: Jupiter Moons", url: "https://science.nasa.gov/jupiter/jupiter-moons/" },
@@ -698,17 +700,17 @@ window.PLANETENUHR_CARD_HELP = {
       },
       earth_moon: {
         intro: [
-          "Diese Kachel bündelt drei eng zusammenhängende Ansichten: Erde-Mond-Szene, Finsternisgeometrie und Tageslichtdaten für den gewählten Ort.",
+          "Diese Kachel bÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼ndelt drei eng zusammenhÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤ngende Ansichten: Erde-Mond-Szene, Finsternisgeometrie und Tageslichtdaten fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r den gewÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤hlten Ort.",
           "Sie ist die datums- und ortssensibelste Kachel im ganzen Dashboard."
         ],
         formulas: [
           { expr: "Alter = ((t - t<sub>0</sub>) mod 29.530588861 d)", note: "Mondalter aus Referenz-Neumond und synodischem Monat." },
           { expr: "Beleuchtung = 0.5 (1 - cos(2&pi;f))", note: "Beleuchteter Anteil aus der Phasenfraktion f." },
-          { expr: "cos H = (cos Z - sin &delta; sin &phi;) / (cos &delta; cos &phi;)", note: "Grundbeziehung hinter Sonnenaufgang, Sonnenuntergang und Dämmerung." }
+          { expr: "cos H = (cos Z - sin &delta; sin &phi;) / (cos &delta; cos &phi;)", note: "Grundbeziehung hinter Sonnenaufgang, Sonnenuntergang und DÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤mmerung." }
         ],
         details: [
-          "Die Finsternis-Grafik prüft Neu-/Vollmond-Geometrie zusammen mit Knotennahe und zeigt damit, wann Finsternisbedingungen günstig sind.",
-          "Sonnenaufgang, Sonnenuntergang, Dämmerung, blaue Stunde und goldene Stunde werden für die aktuell gewählte Stadt neu berechnet."
+          "Die Finsternis-Grafik prÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼ft Neu-/Vollmond-Geometrie zusammen mit Knotennahe und zeigt damit, wann Finsternisbedingungen gÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼nstig sind.",
+          "Sonnenaufgang, Sonnenuntergang, DÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤mmerung, blaue Stunde und goldene Stunde werden fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r die aktuell gewÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤hlte Stadt neu berechnet."
         ],
         links: [
           { label: "NASA: Eclipses", url: "https://science.nasa.gov/eclipses/" },
@@ -718,11 +720,11 @@ window.PLANETENUHR_CARD_HELP = {
       },
       planet_systems: {
         intro: [
-          "Diese Vergleichskachel skizziert ausgewählte Mondsysteme von Mars, Saturn, Uranus und Neptun nebeneinander.",
-          "Sie soll vor allem Grössenfamilien und bekannte Namen zeigen, nicht vollständige Satellitenkataloge."
+          "Diese Vergleichskachel skizziert ausgewÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤hlte Mondsysteme von Mars, Saturn, Uranus und Neptun nebeneinander.",
+          "Sie soll vor allem GrÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¶ssenfamilien und bekannte Namen zeigen, nicht vollstÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤ndige Satellitenkataloge."
         ],
         formulas: [
-          { expr: "T<sup>2</sup> &prop; a<sup>3</sup>", note: "Dasselbe Bahngesetz prägt auch Planet-Mond-Systeme." }
+          { expr: "T<sup>2</sup> &prop; a<sup>3</sup>", note: "Dasselbe Bahngesetz prÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤gt auch Planet-Mond-Systeme." }
         ],
         details: [
           "Die aktuellen Summen in der Legende sind Mars 2, Saturn 274, Uranus 28 und Neptun 16.",
@@ -736,26 +738,28 @@ window.PLANETENUHR_CARD_HELP = {
       },
       sky_calendar: {
         intro: [
-          "Der Himmelskalender ist eine kuratierte Ereignisliste für Finsternisse, Meteorpeaks, Mondereignisse, Planetentermine und Jahreszeitenmarker.",
-          "Die Filter helfen beim Fokussieren, während die Nächstes-Ereignis-Zeile den nächsten relevanten Termin sofort sichtbar hält."
+          "Der Himmelskalender verbindet eine gefilterte Ereignisliste mit einer echten Monatsansicht für Finsternisse, Meteorpeaks, Mondereignisse, Planetentermine und Jahreszeitenmarker.",
+          "Mit Liste liest du kompakt, mit Kalender blätterst du taggenau durch den gewählten Monat."
         ],
         details: [
-          "Die Kalendereinträge liegen in einer eigenen Config-Datei und reichen derzeit von 2026 bis Januar 2028.",
+          "Die Kalendereinträge liegen in eigenen Konfigurationsdateien und reichen derzeit von 2026 bis Dezember 2040.",
+          "Die Download-Buttons erzeugen ICS-Kalenderdateien. Das ist ein verbreitetes Kalenderformat, das sich in Apple Kalender, Google Kalender, Outlook und viele Handy-Kalender importieren lässt.",
           "Diese Kachel ist redaktionell gepflegt und darf deshalb berechnete Zeitpunkte mit handschriftlichen Beobachtungshinweisen mischen."
         ],
         links: [
           { label: "NASA: Eclipses", url: "https://science.nasa.gov/eclipses/" },
-          { label: "NASA: Meteors and Meteorites", url: "https://science.nasa.gov/solar-system/meteors-meteorites/" }
+          { label: "NASA: Meteors and Meteorites", url: "https://science.nasa.gov/solar-system/meteors-meteorites/" },
+          { label: "Wikipedia: iCalendar", url: "https://de.wikipedia.org/wiki/ICalendar" }
         ]
       },
       bsky_feed: {
         intro: [
-          "Diese Kachel zeigt für jeden konfigurierten Bluesky-Account den neuesten Bildbeitrag samt Avatar und Datum.",
-          "Falls es heute noch keinen Bildpost gibt, kann stattdessen der letzte verfügbare Bildpost gezeigt werden."
+          "Diese Kachel zeigt fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r jeden konfigurierten Bluesky-Account den neuesten Bildbeitrag samt Avatar und Datum.",
+          "Falls es heute noch keinen Bildpost gibt, kann stattdessen der letzte verfÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼gbare Bildpost gezeigt werden."
         ],
         details: [
           "Bei einem Aufruf per file:// bleibt die Kachel verborgen, weil dort kein Feed-Fetching laufen soll.",
-          "Jeder Account wird als eigener Abschnitt gerendert, sodass mehrere Quellen untereinander in einer scrollbaren Kachel erscheinen können."
+          "Jeder Account wird als eigener Abschnitt gerendert, sodass mehrere Quellen untereinander in einer scrollbaren Kachel erscheinen kÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¶nnen."
         ],
         links: [
           { label: "Bluesky Feed API", url: "https://docs.bsky.app/docs/api/app-bsky-feed-get-author-feed" },
@@ -944,7 +948,7 @@ window.PLANETENUHR_CARD_HELP = {
       conjunctions: {
         intro: [
           "Cette carte parcourt une fenetre de temps autour de la date choisie et marque des minima approches de separation angulaire entre planetes.",
-          "Elle sert d'aperçu rapide des rapprochements, pas d'ephemeride de precision observatoire."
+          "Elle sert d'aperÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§u rapide des rapprochements, pas d'ephemeride de precision observatoire."
         ],
         formulas: [
           { expr: "&Delta; = | signed( &lambda;<sub>A</sub> - &lambda;<sub>B</sub> ) |", note: "Separation angulaire en longitude ecliptique entre deux planetes." }
@@ -1118,16 +1122,18 @@ window.PLANETENUHR_CARD_HELP = {
       },
       sky_calendar: {
         intro: [
-          "Le calendrier du ciel est une liste d'evenements selectionnes: eclipses, maxima meteoritiques, jalons lunaires, phenomenes planetaires et saisons.",
-          "Les filtres servent a isoler un theme, tandis que la ligne du prochain evenement garde le rendez-vous le plus proche sous les yeux."
+          "Le calendrier du ciel combine une liste d'evenements filtres avec une vraie vue mensuelle pour les eclipses, les maxima meteoritiques, les jalons lunaires, les phenomenes planetaires et les saisons.",
+          "Le mode Liste sert a la lecture compacte, le mode Calendrier a parcourir le mois jour par jour."
         ],
         details: [
-          "Les entrees du calendrier vivent dans un fichier de configuration dedie et couvrent actuellement 2026 jusqu'a janvier 2028.",
+          "Les entrees du calendrier vivent dans des fichiers de configuration dedies et couvrent actuellement 2026 jusqu'a decembre 2040.",
+          "Les boutons de telechargement creent des fichiers ICS. C'est un format de calendrier courant que l'on peut importer dans Apple Calendar, Google Calendar, Outlook et beaucoup d'apps mobiles.",
           "Cette carte est editorialisee: elle peut donc melanger horaires calcules et notes d'observation redigees a la main."
         ],
         links: [
           { label: "NASA: Eclipses", url: "https://science.nasa.gov/eclipses/" },
-          { label: "NASA: Meteors and Meteorites", url: "https://science.nasa.gov/solar-system/meteors-meteorites/" }
+          { label: "NASA: Meteors and Meteorites", url: "https://science.nasa.gov/solar-system/meteors-meteorites/" },
+          { label: "Wikipedia: iCalendar", url: "https://fr.wikipedia.org/wiki/ICalendar" }
         ]
       },
       bsky_feed: {

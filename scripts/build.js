@@ -2,6 +2,7 @@
 
 const fs = require("fs");
 const path = require("path");
+const { generateIcsFiles } = require("./generate-ics");
 
 /**
  * Returns the repository root based on the current working directory.
@@ -25,6 +26,7 @@ function getRequiredFiles() {
     "phenomena-config.js",
     "small-bodies-config.js",
     "bsky-feed-config.js",
+    "site.webmanifest",
     "favicon.svg",
     "image_og.jpg"
   ];
@@ -71,7 +73,7 @@ function collectMissingFiles(repositoryRoot, requiredFiles) {
  */
 function finishBuild(missingFiles) {
   if (missingFiles.length === 0) {
-    console.log("Build validation passed. Required static files are present and encoding was checked in prebuild.");
+    console.log("Build validation passed. Required static files are present, ICS files were generated and encoding was checked in prebuild.");
     return;
   }
 
@@ -88,6 +90,7 @@ function finishBuild(missingFiles) {
  */
 function main() {
   const repositoryRoot = getRepositoryRoot();
+  generateIcsFiles(repositoryRoot);
   const requiredFiles = getRequiredFiles();
   const missingFiles = collectMissingFiles(repositoryRoot, requiredFiles);
   finishBuild(missingFiles);

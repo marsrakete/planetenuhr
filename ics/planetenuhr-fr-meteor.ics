@@ -1,0 +1,1508 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//marsrakete//Planetenuhr//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Planetenuhr meteor (fr)
+X-WR-TIMEZONE:Europe/Berlin
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2026-01-04-maximum-des-quadrantides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260104
+DTEND;VALUE=DATE:20260105
+SUMMARY:Maximum des Quadrantides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Bon depuis l'Europe avant l'aube\, mais la Lune peut gêner\n\nMaximum court et intense\; le radiant nord est favorable pour l'Europe.
+X-PLANETENUHR-VISIBILITY:Bon depuis l'Europe avant l'aube\, mais la Lune peut gêner
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2026-04-22-maximum-des-lyrides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260422
+DTEND;VALUE=DATE:20260423
+SUMMARY:Maximum des Lyrides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible depuis l'Europe après minuit\n\nPluie de météores printanière modérée\; meilleure sous un ciel sombre.
+X-PLANETENUHR-VISIBILITY:Visible depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2026-05-06-maximum-des-ta-aquarides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260506
+DTEND;VALUE=DATE:20260507
+SUMMARY:Maximum des Êta aquarides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Radiant bas depuis l'Europe avant l'aube\n\nMétéores de la comète de Halley\; mieux visibles plus au sud\, mais quelques météores sont possibles en Europe.
+X-PLANETENUHR-VISIBILITY:Radiant bas depuis l'Europe avant l'aube
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2026-07-30-maximum-des-delta-aquarides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260730
+DTEND;VALUE=DATE:20260731
+SUMMARY:Maximum des Delta-Aquarides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Radiant sud bas\; depuis l'Europe\, au mieux après minuit\n\nPic d'un essaim actif environ du 2026-07-12 au 2026-08-23\; un ciel sombre loin des lumières urbaines aide nettement.
+X-PLANETENUHR-VISIBILITY:Radiant sud bas\; depuis l'Europe\, au mieux après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2026-07-31-maximum-des-alpha-capricornides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260731
+DTEND;VALUE=DATE:20260801
+SUMMARY:Maximum des Alpha-Capricornides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible depuis l'Europe après minuit\, bas au sud\n\nPic d'un essaim actif environ du 2026-07-07 au 2026-08-15\; des météores plus lents peuvent produire de belles boules de feu.
+X-PLANETENUHR-VISIBILITY:Visible depuis l'Europe après minuit\, bas au sud
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2026-08-12-maximum-des-pers-ides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260812
+DTEND;VALUE=DATE:20260813
+SUMMARY:Maximum des Perséides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Bon depuis l'Europe après minuit\n\nSouvent une des meilleures pluies de météores du nord\; un ciel sombre aide beaucoup.
+X-PLANETENUHR-VISIBILITY:Bon depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2026-10-21-maximum-des-orionides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20261021
+DTEND;VALUE=DATE:20261022
+SUMMARY:Maximum des Orionides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible depuis l'Europe après minuit\n\nMétéores rapides issus des débris de la comète de Halley\; meilleurs avant l'aube.
+X-PLANETENUHR-VISIBILITY:Visible depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2026-11-17-maximum-des-l-onides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20261117
+DTEND;VALUE=DATE:20261118
+SUMMARY:Maximum des Léonides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible depuis l'Europe après minuit\n\nGénéralement modeste\, mais connue historiquement pour des sursauts occasionnels.
+X-PLANETENUHR-VISIBILITY:Visible depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2026-12-14-maximum-des-g-minides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20261214
+DTEND;VALUE=DATE:20261215
+SUMMARY:Maximum des Géminides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Très bon depuis l'Europe\n\nSouvent la plus forte pluie de météores annuelle\, meilleure de la fin de soirée à l'aube.
+X-PLANETENUHR-VISIBILITY:Très bon depuis l'Europe
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2026-12-22-maximum-des-ursides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20261222
+DTEND;VALUE=DATE:20261223
+SUMMARY:Maximum des Ursides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible depuis l'Europe toute la nuit\n\nPluie de météores nordique modeste\, proche du solstice de décembre.
+X-PLANETENUHR-VISIBILITY:Visible depuis l'Europe toute la nuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2027-01-03-maximum-des-quadrantides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270103
+DTEND;VALUE=DATE:20270104
+SUMMARY:Maximum des Quadrantides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Bon depuis l'Europe avant l'aube\n\nMaximum court et intense\; le radiant nord est favorable pour l'Europe.
+X-PLANETENUHR-VISIBILITY:Bon depuis l'Europe avant l'aube
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2027-04-22-maximum-des-lyrides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270422
+DTEND;VALUE=DATE:20270423
+SUMMARY:Maximum des Lyrides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible depuis l'Europe après minuit\n\nPluie de météores printanière modérée\; meilleure sous un ciel sombre.
+X-PLANETENUHR-VISIBILITY:Visible depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2027-05-06-maximum-des-ta-aquarides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270506
+DTEND;VALUE=DATE:20270507
+SUMMARY:Maximum des Êta aquarides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Radiant bas depuis l'Europe avant l'aube\n\nMétéores de la comète de Halley\; les taux sont plus faibles en Europe que plus au sud.
+X-PLANETENUHR-VISIBILITY:Radiant bas depuis l'Europe avant l'aube
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2027-07-30-maximum-des-delta-aquarides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270730
+DTEND;VALUE=DATE:20270731
+SUMMARY:Maximum des Delta-Aquarides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Radiant sud bas\; depuis l'Europe\, au mieux après minuit\n\nPic d'un essaim actif environ du 2027-07-12 au 2027-08-23\; un ciel sombre loin des lumières urbaines aide nettement.
+X-PLANETENUHR-VISIBILITY:Radiant sud bas\; depuis l'Europe\, au mieux après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2027-07-31-maximum-des-alpha-capricornides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270731
+DTEND;VALUE=DATE:20270801
+SUMMARY:Maximum des Alpha-Capricornides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible depuis l'Europe après minuit\, bas au sud\n\nPic d'un essaim actif environ du 2027-07-07 au 2027-08-15\; des météores plus lents peuvent produire de belles boules de feu.
+X-PLANETENUHR-VISIBILITY:Visible depuis l'Europe après minuit\, bas au sud
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2027-08-12-maximum-des-pers-ides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270812
+DTEND;VALUE=DATE:20270813
+SUMMARY:Maximum des Perséides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Bon depuis l'Europe après minuit\n\nPluie estivale fiable\; meilleure lorsque le radiant est plus haut.
+X-PLANETENUHR-VISIBILITY:Bon depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2027-10-21-maximum-des-orionides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20271021
+DTEND;VALUE=DATE:20271022
+SUMMARY:Maximum des Orionides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible depuis l'Europe après minuit\n\nMétéores rapides de la comète de Halley\; meilleurs avant l'aube.
+X-PLANETENUHR-VISIBILITY:Visible depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2027-11-17-maximum-des-l-onides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20271117
+DTEND;VALUE=DATE:20271118
+SUMMARY:Maximum des Léonides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible depuis l'Europe après minuit\n\nGénéralement modeste en dehors des années de tempête.
+X-PLANETENUHR-VISIBILITY:Visible depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2027-12-14-maximum-des-g-minides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20271214
+DTEND;VALUE=DATE:20271215
+SUMMARY:Maximum des Géminides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Très bon depuis l'Europe\n\nUne des plus fortes pluies de météores annuelles\, surtout sous un ciel sombre.
+X-PLANETENUHR-VISIBILITY:Très bon depuis l'Europe
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2027-12-22-maximum-des-ursides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20271222
+DTEND;VALUE=DATE:20271223
+SUMMARY:Maximum des Ursides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible depuis l'Europe toute la nuit\n\nPluie de météores nordique modeste\; meilleure sous un ciel sombre.
+X-PLANETENUHR-VISIBILITY:Visible depuis l'Europe toute la nuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2028-01-03-maximum-des-quadrantids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280103
+DTEND;VALUE=DATE:20280104
+SUMMARY:Maximum des Quadrantids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Bootes. Fenêtre d'activité approximative du 12-28 au 01-12.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2028-04-22-maximum-des-lyrids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280422
+DTEND;VALUE=DATE:20280423
+SUMMARY:Maximum des Lyrids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Lyra. Fenêtre d'activité approximative du 04-16 au 04-25.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2028-05-06-maximum-des-eta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280506
+DTEND;VALUE=DATE:20280507
+SUMMARY:Maximum des Eta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 04-19 au 05-28.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2028-07-30-maximum-des-delta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280730
+DTEND;VALUE=DATE:20280731
+SUMMARY:Maximum des Delta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 07-12 au 08-23.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2028-08-12-maximum-des-perseids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280812
+DTEND;VALUE=DATE:20280813
+SUMMARY:Maximum des Perseids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Perseus. Fenêtre d'activité approximative du 07-17 au 08-24.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2028-10-08-maximum-des-draconids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281008
+DTEND;VALUE=DATE:20281009
+SUMMARY:Maximum des Draconids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Draco. Fenêtre d'activité approximative du 10-06 au 10-10.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2028-10-21-maximum-des-orionids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281021
+DTEND;VALUE=DATE:20281022
+SUMMARY:Maximum des Orionids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Orion. Fenêtre d'activité approximative du 10-02 au 11-07.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2028-11-17-maximum-des-leonids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281117
+DTEND;VALUE=DATE:20281118
+SUMMARY:Maximum des Leonids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Leo. Fenêtre d'activité approximative du 11-06 au 11-30.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2028-12-14-maximum-des-geminids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281214
+DTEND;VALUE=DATE:20281215
+SUMMARY:Maximum des Geminids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Gemini. Fenêtre d'activité approximative du 12-04 au 12-20.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2028-12-22-maximum-des-ursids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281222
+DTEND;VALUE=DATE:20281223
+SUMMARY:Maximum des Ursids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Ursa Minor. Fenêtre d'activité approximative du 12-17 au 12-26.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2029-01-03-maximum-des-quadrantids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290103
+DTEND;VALUE=DATE:20290104
+SUMMARY:Maximum des Quadrantids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Bootes. Fenêtre d'activité approximative du 12-28 au 01-12.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2029-04-22-maximum-des-lyrids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290422
+DTEND;VALUE=DATE:20290423
+SUMMARY:Maximum des Lyrids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Lyra. Fenêtre d'activité approximative du 04-16 au 04-25.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2029-05-06-maximum-des-eta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290506
+DTEND;VALUE=DATE:20290507
+SUMMARY:Maximum des Eta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 04-19 au 05-28.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2029-07-30-maximum-des-delta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290730
+DTEND;VALUE=DATE:20290731
+SUMMARY:Maximum des Delta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 07-12 au 08-23.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2029-08-12-maximum-des-perseids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290812
+DTEND;VALUE=DATE:20290813
+SUMMARY:Maximum des Perseids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Perseus. Fenêtre d'activité approximative du 07-17 au 08-24.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2029-10-08-maximum-des-draconids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291008
+DTEND;VALUE=DATE:20291009
+SUMMARY:Maximum des Draconids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Draco. Fenêtre d'activité approximative du 10-06 au 10-10.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2029-10-21-maximum-des-orionids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291021
+DTEND;VALUE=DATE:20291022
+SUMMARY:Maximum des Orionids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Orion. Fenêtre d'activité approximative du 10-02 au 11-07.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2029-11-17-maximum-des-leonids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291117
+DTEND;VALUE=DATE:20291118
+SUMMARY:Maximum des Leonids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Leo. Fenêtre d'activité approximative du 11-06 au 11-30.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2029-12-14-maximum-des-geminids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291214
+DTEND;VALUE=DATE:20291215
+SUMMARY:Maximum des Geminids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Gemini. Fenêtre d'activité approximative du 12-04 au 12-20.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2029-12-22-maximum-des-ursids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291222
+DTEND;VALUE=DATE:20291223
+SUMMARY:Maximum des Ursids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Ursa Minor. Fenêtre d'activité approximative du 12-17 au 12-26.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2030-01-03-maximum-des-quadrantids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300103
+DTEND;VALUE=DATE:20300104
+SUMMARY:Maximum des Quadrantids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Bootes. Fenêtre d'activité approximative du 12-28 au 01-12.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2030-04-22-maximum-des-lyrids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300422
+DTEND;VALUE=DATE:20300423
+SUMMARY:Maximum des Lyrids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Lyra. Fenêtre d'activité approximative du 04-16 au 04-25.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2030-05-06-maximum-des-eta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300506
+DTEND;VALUE=DATE:20300507
+SUMMARY:Maximum des Eta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 04-19 au 05-28.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2030-07-30-maximum-des-delta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300730
+DTEND;VALUE=DATE:20300731
+SUMMARY:Maximum des Delta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 07-12 au 08-23.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2030-08-12-maximum-des-perseids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300812
+DTEND;VALUE=DATE:20300813
+SUMMARY:Maximum des Perseids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Perseus. Fenêtre d'activité approximative du 07-17 au 08-24.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2030-10-08-maximum-des-draconids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301008
+DTEND;VALUE=DATE:20301009
+SUMMARY:Maximum des Draconids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Draco. Fenêtre d'activité approximative du 10-06 au 10-10.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2030-10-21-maximum-des-orionids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301021
+DTEND;VALUE=DATE:20301022
+SUMMARY:Maximum des Orionids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Orion. Fenêtre d'activité approximative du 10-02 au 11-07.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2030-11-17-maximum-des-leonids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301117
+DTEND;VALUE=DATE:20301118
+SUMMARY:Maximum des Leonids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Leo. Fenêtre d'activité approximative du 11-06 au 11-30.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2030-12-14-maximum-des-geminids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301214
+DTEND;VALUE=DATE:20301215
+SUMMARY:Maximum des Geminids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Gemini. Fenêtre d'activité approximative du 12-04 au 12-20.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2030-12-22-maximum-des-ursids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301222
+DTEND;VALUE=DATE:20301223
+SUMMARY:Maximum des Ursids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Ursa Minor. Fenêtre d'activité approximative du 12-17 au 12-26.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2031-01-03-maximum-des-quadrantids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310103
+DTEND;VALUE=DATE:20310104
+SUMMARY:Maximum des Quadrantids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Bootes. Fenêtre d'activité approximative du 12-28 au 01-12.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2031-04-22-maximum-des-lyrids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310422
+DTEND;VALUE=DATE:20310423
+SUMMARY:Maximum des Lyrids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Lyra. Fenêtre d'activité approximative du 04-16 au 04-25.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2031-05-06-maximum-des-eta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310506
+DTEND;VALUE=DATE:20310507
+SUMMARY:Maximum des Eta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 04-19 au 05-28.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2031-07-30-maximum-des-delta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310730
+DTEND;VALUE=DATE:20310731
+SUMMARY:Maximum des Delta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 07-12 au 08-23.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2031-08-12-maximum-des-perseids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310812
+DTEND;VALUE=DATE:20310813
+SUMMARY:Maximum des Perseids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Perseus. Fenêtre d'activité approximative du 07-17 au 08-24.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2031-10-08-maximum-des-draconids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311008
+DTEND;VALUE=DATE:20311009
+SUMMARY:Maximum des Draconids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Draco. Fenêtre d'activité approximative du 10-06 au 10-10.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2031-10-21-maximum-des-orionids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311021
+DTEND;VALUE=DATE:20311022
+SUMMARY:Maximum des Orionids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Orion. Fenêtre d'activité approximative du 10-02 au 11-07.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2031-11-17-maximum-des-leonids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311117
+DTEND;VALUE=DATE:20311118
+SUMMARY:Maximum des Leonids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Leo. Fenêtre d'activité approximative du 11-06 au 11-30.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2031-12-14-maximum-des-geminids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311214
+DTEND;VALUE=DATE:20311215
+SUMMARY:Maximum des Geminids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Gemini. Fenêtre d'activité approximative du 12-04 au 12-20.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2031-12-22-maximum-des-ursids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311222
+DTEND;VALUE=DATE:20311223
+SUMMARY:Maximum des Ursids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Ursa Minor. Fenêtre d'activité approximative du 12-17 au 12-26.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2032-01-03-maximum-des-quadrantids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320103
+DTEND;VALUE=DATE:20320104
+SUMMARY:Maximum des Quadrantids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Bootes. Fenêtre d'activité approximative du 12-28 au 01-12.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2032-04-22-maximum-des-lyrids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320422
+DTEND;VALUE=DATE:20320423
+SUMMARY:Maximum des Lyrids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Lyra. Fenêtre d'activité approximative du 04-16 au 04-25.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2032-05-06-maximum-des-eta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320506
+DTEND;VALUE=DATE:20320507
+SUMMARY:Maximum des Eta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 04-19 au 05-28.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2032-07-30-maximum-des-delta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320730
+DTEND;VALUE=DATE:20320731
+SUMMARY:Maximum des Delta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 07-12 au 08-23.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2032-08-12-maximum-des-perseids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320812
+DTEND;VALUE=DATE:20320813
+SUMMARY:Maximum des Perseids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Perseus. Fenêtre d'activité approximative du 07-17 au 08-24.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2032-10-08-maximum-des-draconids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321008
+DTEND;VALUE=DATE:20321009
+SUMMARY:Maximum des Draconids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Draco. Fenêtre d'activité approximative du 10-06 au 10-10.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2032-10-21-maximum-des-orionids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321021
+DTEND;VALUE=DATE:20321022
+SUMMARY:Maximum des Orionids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Orion. Fenêtre d'activité approximative du 10-02 au 11-07.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2032-11-17-maximum-des-leonids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321117
+DTEND;VALUE=DATE:20321118
+SUMMARY:Maximum des Leonids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Leo. Fenêtre d'activité approximative du 11-06 au 11-30.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2032-12-14-maximum-des-geminids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321214
+DTEND;VALUE=DATE:20321215
+SUMMARY:Maximum des Geminids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Gemini. Fenêtre d'activité approximative du 12-04 au 12-20.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2032-12-22-maximum-des-ursids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321222
+DTEND;VALUE=DATE:20321223
+SUMMARY:Maximum des Ursids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Ursa Minor. Fenêtre d'activité approximative du 12-17 au 12-26.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2033-01-03-maximum-des-quadrantids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330103
+DTEND;VALUE=DATE:20330104
+SUMMARY:Maximum des Quadrantids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Bootes. Fenêtre d'activité approximative du 12-28 au 01-12.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2033-04-22-maximum-des-lyrids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330422
+DTEND;VALUE=DATE:20330423
+SUMMARY:Maximum des Lyrids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Lyra. Fenêtre d'activité approximative du 04-16 au 04-25.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2033-05-06-maximum-des-eta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330506
+DTEND;VALUE=DATE:20330507
+SUMMARY:Maximum des Eta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 04-19 au 05-28.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2033-07-30-maximum-des-delta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330730
+DTEND;VALUE=DATE:20330731
+SUMMARY:Maximum des Delta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 07-12 au 08-23.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2033-08-12-maximum-des-perseids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330812
+DTEND;VALUE=DATE:20330813
+SUMMARY:Maximum des Perseids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Perseus. Fenêtre d'activité approximative du 07-17 au 08-24.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2033-10-08-maximum-des-draconids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331008
+DTEND;VALUE=DATE:20331009
+SUMMARY:Maximum des Draconids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Draco. Fenêtre d'activité approximative du 10-06 au 10-10.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2033-10-21-maximum-des-orionids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331021
+DTEND;VALUE=DATE:20331022
+SUMMARY:Maximum des Orionids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Orion. Fenêtre d'activité approximative du 10-02 au 11-07.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2033-11-17-maximum-des-leonids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331117
+DTEND;VALUE=DATE:20331118
+SUMMARY:Maximum des Leonids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Leo. Fenêtre d'activité approximative du 11-06 au 11-30.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2033-12-14-maximum-des-geminids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331214
+DTEND;VALUE=DATE:20331215
+SUMMARY:Maximum des Geminids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Gemini. Fenêtre d'activité approximative du 12-04 au 12-20.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2033-12-22-maximum-des-ursids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331222
+DTEND;VALUE=DATE:20331223
+SUMMARY:Maximum des Ursids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Ursa Minor. Fenêtre d'activité approximative du 12-17 au 12-26.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2034-01-03-maximum-des-quadrantids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340103
+DTEND;VALUE=DATE:20340104
+SUMMARY:Maximum des Quadrantids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Bootes. Fenêtre d'activité approximative du 12-28 au 01-12.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2034-04-22-maximum-des-lyrids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340422
+DTEND;VALUE=DATE:20340423
+SUMMARY:Maximum des Lyrids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Lyra. Fenêtre d'activité approximative du 04-16 au 04-25.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2034-05-06-maximum-des-eta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340506
+DTEND;VALUE=DATE:20340507
+SUMMARY:Maximum des Eta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 04-19 au 05-28.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2034-07-30-maximum-des-delta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340730
+DTEND;VALUE=DATE:20340731
+SUMMARY:Maximum des Delta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 07-12 au 08-23.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2034-08-12-maximum-des-perseids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340812
+DTEND;VALUE=DATE:20340813
+SUMMARY:Maximum des Perseids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Perseus. Fenêtre d'activité approximative du 07-17 au 08-24.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2034-10-08-maximum-des-draconids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20341008
+DTEND;VALUE=DATE:20341009
+SUMMARY:Maximum des Draconids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Draco. Fenêtre d'activité approximative du 10-06 au 10-10.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2034-10-21-maximum-des-orionids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20341021
+DTEND;VALUE=DATE:20341022
+SUMMARY:Maximum des Orionids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Orion. Fenêtre d'activité approximative du 10-02 au 11-07.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2034-11-17-maximum-des-leonids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20341117
+DTEND;VALUE=DATE:20341118
+SUMMARY:Maximum des Leonids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Leo. Fenêtre d'activité approximative du 11-06 au 11-30.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2034-12-14-maximum-des-geminids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20341214
+DTEND;VALUE=DATE:20341215
+SUMMARY:Maximum des Geminids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Gemini. Fenêtre d'activité approximative du 12-04 au 12-20.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2034-12-22-maximum-des-ursids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20341222
+DTEND;VALUE=DATE:20341223
+SUMMARY:Maximum des Ursids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Ursa Minor. Fenêtre d'activité approximative du 12-17 au 12-26.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2035-01-03-maximum-des-quadrantids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350103
+DTEND;VALUE=DATE:20350104
+SUMMARY:Maximum des Quadrantids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Bootes. Fenêtre d'activité approximative du 12-28 au 01-12.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2035-04-22-maximum-des-lyrids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350422
+DTEND;VALUE=DATE:20350423
+SUMMARY:Maximum des Lyrids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Lyra. Fenêtre d'activité approximative du 04-16 au 04-25.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2035-05-06-maximum-des-eta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350506
+DTEND;VALUE=DATE:20350507
+SUMMARY:Maximum des Eta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 04-19 au 05-28.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2035-07-30-maximum-des-delta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350730
+DTEND;VALUE=DATE:20350731
+SUMMARY:Maximum des Delta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 07-12 au 08-23.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2035-08-12-maximum-des-perseids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350812
+DTEND;VALUE=DATE:20350813
+SUMMARY:Maximum des Perseids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Perseus. Fenêtre d'activité approximative du 07-17 au 08-24.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2035-10-08-maximum-des-draconids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20351008
+DTEND;VALUE=DATE:20351009
+SUMMARY:Maximum des Draconids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Draco. Fenêtre d'activité approximative du 10-06 au 10-10.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2035-10-21-maximum-des-orionids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20351021
+DTEND;VALUE=DATE:20351022
+SUMMARY:Maximum des Orionids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Orion. Fenêtre d'activité approximative du 10-02 au 11-07.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2035-11-17-maximum-des-leonids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20351117
+DTEND;VALUE=DATE:20351118
+SUMMARY:Maximum des Leonids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Leo. Fenêtre d'activité approximative du 11-06 au 11-30.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2035-12-14-maximum-des-geminids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20351214
+DTEND;VALUE=DATE:20351215
+SUMMARY:Maximum des Geminids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Gemini. Fenêtre d'activité approximative du 12-04 au 12-20.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2035-12-22-maximum-des-ursids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20351222
+DTEND;VALUE=DATE:20351223
+SUMMARY:Maximum des Ursids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Ursa Minor. Fenêtre d'activité approximative du 12-17 au 12-26.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2036-01-03-maximum-des-quadrantids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360103
+DTEND;VALUE=DATE:20360104
+SUMMARY:Maximum des Quadrantids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Bootes. Fenêtre d'activité approximative du 12-28 au 01-12.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2036-04-22-maximum-des-lyrids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360422
+DTEND;VALUE=DATE:20360423
+SUMMARY:Maximum des Lyrids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Lyra. Fenêtre d'activité approximative du 04-16 au 04-25.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2036-05-06-maximum-des-eta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360506
+DTEND;VALUE=DATE:20360507
+SUMMARY:Maximum des Eta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 04-19 au 05-28.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2036-07-30-maximum-des-delta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360730
+DTEND;VALUE=DATE:20360731
+SUMMARY:Maximum des Delta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 07-12 au 08-23.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2036-08-12-maximum-des-perseids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360812
+DTEND;VALUE=DATE:20360813
+SUMMARY:Maximum des Perseids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Perseus. Fenêtre d'activité approximative du 07-17 au 08-24.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2036-10-08-maximum-des-draconids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20361008
+DTEND;VALUE=DATE:20361009
+SUMMARY:Maximum des Draconids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Draco. Fenêtre d'activité approximative du 10-06 au 10-10.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2036-10-21-maximum-des-orionids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20361021
+DTEND;VALUE=DATE:20361022
+SUMMARY:Maximum des Orionids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Orion. Fenêtre d'activité approximative du 10-02 au 11-07.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2036-11-17-maximum-des-leonids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20361117
+DTEND;VALUE=DATE:20361118
+SUMMARY:Maximum des Leonids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Leo. Fenêtre d'activité approximative du 11-06 au 11-30.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2036-12-14-maximum-des-geminids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20361214
+DTEND;VALUE=DATE:20361215
+SUMMARY:Maximum des Geminids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Gemini. Fenêtre d'activité approximative du 12-04 au 12-20.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2036-12-22-maximum-des-ursids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20361222
+DTEND;VALUE=DATE:20361223
+SUMMARY:Maximum des Ursids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Ursa Minor. Fenêtre d'activité approximative du 12-17 au 12-26.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2037-01-03-maximum-des-quadrantids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370103
+DTEND;VALUE=DATE:20370104
+SUMMARY:Maximum des Quadrantids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Bootes. Fenêtre d'activité approximative du 12-28 au 01-12.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2037-04-22-maximum-des-lyrids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370422
+DTEND;VALUE=DATE:20370423
+SUMMARY:Maximum des Lyrids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Lyra. Fenêtre d'activité approximative du 04-16 au 04-25.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2037-05-06-maximum-des-eta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370506
+DTEND;VALUE=DATE:20370507
+SUMMARY:Maximum des Eta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 04-19 au 05-28.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2037-07-30-maximum-des-delta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370730
+DTEND;VALUE=DATE:20370731
+SUMMARY:Maximum des Delta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 07-12 au 08-23.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2037-08-12-maximum-des-perseids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370812
+DTEND;VALUE=DATE:20370813
+SUMMARY:Maximum des Perseids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Perseus. Fenêtre d'activité approximative du 07-17 au 08-24.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2037-10-08-maximum-des-draconids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20371008
+DTEND;VALUE=DATE:20371009
+SUMMARY:Maximum des Draconids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Draco. Fenêtre d'activité approximative du 10-06 au 10-10.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2037-10-21-maximum-des-orionids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20371021
+DTEND;VALUE=DATE:20371022
+SUMMARY:Maximum des Orionids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Orion. Fenêtre d'activité approximative du 10-02 au 11-07.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2037-11-17-maximum-des-leonids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20371117
+DTEND;VALUE=DATE:20371118
+SUMMARY:Maximum des Leonids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Leo. Fenêtre d'activité approximative du 11-06 au 11-30.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2037-12-14-maximum-des-geminids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20371214
+DTEND;VALUE=DATE:20371215
+SUMMARY:Maximum des Geminids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Gemini. Fenêtre d'activité approximative du 12-04 au 12-20.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2037-12-22-maximum-des-ursids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20371222
+DTEND;VALUE=DATE:20371223
+SUMMARY:Maximum des Ursids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Ursa Minor. Fenêtre d'activité approximative du 12-17 au 12-26.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2038-01-03-maximum-des-quadrantids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380103
+DTEND;VALUE=DATE:20380104
+SUMMARY:Maximum des Quadrantids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Bootes. Fenêtre d'activité approximative du 12-28 au 01-12.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2038-04-22-maximum-des-lyrids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380422
+DTEND;VALUE=DATE:20380423
+SUMMARY:Maximum des Lyrids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Lyra. Fenêtre d'activité approximative du 04-16 au 04-25.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2038-05-06-maximum-des-eta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380506
+DTEND;VALUE=DATE:20380507
+SUMMARY:Maximum des Eta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 04-19 au 05-28.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2038-07-30-maximum-des-delta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380730
+DTEND;VALUE=DATE:20380731
+SUMMARY:Maximum des Delta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 07-12 au 08-23.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2038-08-12-maximum-des-perseids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380812
+DTEND;VALUE=DATE:20380813
+SUMMARY:Maximum des Perseids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Perseus. Fenêtre d'activité approximative du 07-17 au 08-24.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2038-10-08-maximum-des-draconids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381008
+DTEND;VALUE=DATE:20381009
+SUMMARY:Maximum des Draconids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Draco. Fenêtre d'activité approximative du 10-06 au 10-10.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2038-10-21-maximum-des-orionids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381021
+DTEND;VALUE=DATE:20381022
+SUMMARY:Maximum des Orionids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Orion. Fenêtre d'activité approximative du 10-02 au 11-07.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2038-11-17-maximum-des-leonids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381117
+DTEND;VALUE=DATE:20381118
+SUMMARY:Maximum des Leonids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Leo. Fenêtre d'activité approximative du 11-06 au 11-30.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2038-12-14-maximum-des-geminids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381214
+DTEND;VALUE=DATE:20381215
+SUMMARY:Maximum des Geminids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Gemini. Fenêtre d'activité approximative du 12-04 au 12-20.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2038-12-22-maximum-des-ursids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381222
+DTEND;VALUE=DATE:20381223
+SUMMARY:Maximum des Ursids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Ursa Minor. Fenêtre d'activité approximative du 12-17 au 12-26.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2039-01-03-maximum-des-quadrantids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390103
+DTEND;VALUE=DATE:20390104
+SUMMARY:Maximum des Quadrantids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Bootes. Fenêtre d'activité approximative du 12-28 au 01-12.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2039-04-22-maximum-des-lyrids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390422
+DTEND;VALUE=DATE:20390423
+SUMMARY:Maximum des Lyrids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Lyra. Fenêtre d'activité approximative du 04-16 au 04-25.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2039-05-06-maximum-des-eta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390506
+DTEND;VALUE=DATE:20390507
+SUMMARY:Maximum des Eta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 04-19 au 05-28.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2039-07-30-maximum-des-delta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390730
+DTEND;VALUE=DATE:20390731
+SUMMARY:Maximum des Delta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 07-12 au 08-23.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2039-08-12-maximum-des-perseids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390812
+DTEND;VALUE=DATE:20390813
+SUMMARY:Maximum des Perseids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Perseus. Fenêtre d'activité approximative du 07-17 au 08-24.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2039-10-08-maximum-des-draconids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391008
+DTEND;VALUE=DATE:20391009
+SUMMARY:Maximum des Draconids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Draco. Fenêtre d'activité approximative du 10-06 au 10-10.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2039-10-21-maximum-des-orionids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391021
+DTEND;VALUE=DATE:20391022
+SUMMARY:Maximum des Orionids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Orion. Fenêtre d'activité approximative du 10-02 au 11-07.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2039-11-17-maximum-des-leonids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391117
+DTEND;VALUE=DATE:20391118
+SUMMARY:Maximum des Leonids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Leo. Fenêtre d'activité approximative du 11-06 au 11-30.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2039-12-14-maximum-des-geminids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391214
+DTEND;VALUE=DATE:20391215
+SUMMARY:Maximum des Geminids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Gemini. Fenêtre d'activité approximative du 12-04 au 12-20.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2039-12-22-maximum-des-ursids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391222
+DTEND;VALUE=DATE:20391223
+SUMMARY:Maximum des Ursids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Ursa Minor. Fenêtre d'activité approximative du 12-17 au 12-26.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2040-01-03-maximum-des-quadrantids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400103
+DTEND;VALUE=DATE:20400104
+SUMMARY:Maximum des Quadrantids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Bootes. Fenêtre d'activité approximative du 12-28 au 01-12.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2040-04-22-maximum-des-lyrids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400422
+DTEND;VALUE=DATE:20400423
+SUMMARY:Maximum des Lyrids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Lyra. Fenêtre d'activité approximative du 04-16 au 04-25.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2040-05-06-maximum-des-eta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400506
+DTEND;VALUE=DATE:20400507
+SUMMARY:Maximum des Eta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 04-19 au 05-28.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2040-07-30-maximum-des-delta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400730
+DTEND;VALUE=DATE:20400731
+SUMMARY:Maximum des Delta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 07-12 au 08-23.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2040-08-12-maximum-des-perseids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400812
+DTEND;VALUE=DATE:20400813
+SUMMARY:Maximum des Perseids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Perseus. Fenêtre d'activité approximative du 07-17 au 08-24.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2040-10-08-maximum-des-draconids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401008
+DTEND;VALUE=DATE:20401009
+SUMMARY:Maximum des Draconids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Draco. Fenêtre d'activité approximative du 10-06 au 10-10.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2040-10-21-maximum-des-orionids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401021
+DTEND;VALUE=DATE:20401022
+SUMMARY:Maximum des Orionids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Orion. Fenêtre d'activité approximative du 10-02 au 11-07.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2040-11-17-maximum-des-leonids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401117
+DTEND;VALUE=DATE:20401118
+SUMMARY:Maximum des Leonids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Leo. Fenêtre d'activité approximative du 11-06 au 11-30.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2040-12-14-maximum-des-geminids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401214
+DTEND;VALUE=DATE:20401215
+SUMMARY:Maximum des Geminids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Gemini. Fenêtre d'activité approximative du 12-04 au 12-20.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2040-12-22-maximum-des-ursids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401222
+DTEND;VALUE=DATE:20401223
+SUMMARY:Maximum des Ursids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Ursa Minor. Fenêtre d'activité approximative du 12-17 au 12-26.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+END:VCALENDAR

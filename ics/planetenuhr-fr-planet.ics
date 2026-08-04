@@ -1,0 +1,418 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//marsrakete//Planetenuhr//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Planetenuhr planet (fr)
+X-WR-TIMEZONE:Europe/Berlin
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2026-01-03-terre-au-p-rih-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260103
+DTEND;VALUE=DATE:20260104
+SUMMARY:Terre au périhélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct\; disque solaire légèrement plus grand\n\nLa Terre est au plus près du Soleil le 2026-01-03 (vers 17:16 UTC)\; les saisons restent surtout dues à l'inclinaison de l'axe.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct\; disque solaire légèrement plus grand
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2026-01-10-jupiter-en-opposition@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260110
+DTEND;VALUE=DATE:20260111
+SUMMARY:Jupiter en opposition
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Excellente visibilité le soir et la nuit\n\nJupiter est brillante et haute dans le ciel hivernal\; bonne cible au télescope.
+X-PLANETENUHR-VISIBILITY:Excellente visibilité le soir et la nuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2026-02-19-mercure-sa-plus-grande-longation-est@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260219
+DTEND;VALUE=DATE:20260220
+SUMMARY:Mercure à sa plus grande élongation est
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Meilleure apparition du soir de Mercure en 2026 pour l'Europe du Nord\n\nChercher bas à l’ouest après le coucher du Soleil\; croissant lunaire\, Mercure\, Vénus et Saturne sont proches autour du 18-20 février.
+X-PLANETENUHR-VISIBILITY:Meilleure apparition du soir de Mercure en 2026 pour l'Europe du Nord
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2026-06-09-conjonction-v-nus-jupiter@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260609
+DTEND;VALUE=DATE:20260610
+SUMMARY:Conjonction Vénus-Jupiter
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Basse dans le crépuscule occidental\n\nLes deux planètes les plus brillantes apparaissent séparées d’environ 1\,6 degré\; horizon ouest dégagé nécessaire.
+X-PLANETENUHR-VISIBILITY:Basse dans le crépuscule occidental
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2026-07-06-terre-l-aph-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260706
+DTEND;VALUE=DATE:20260707
+SUMMARY:Terre à l'aphélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct\; disque solaire légèrement plus petit\n\nLa Terre atteint sa distance maximale au Soleil le 2026-07-06 (vers 17:31 UTC)\; les saisons restent surtout dues à l'inclinaison de l'axe.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct\; disque solaire légèrement plus petit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2026-09-19-v-nus-sa-meilleure-visibilit-du-soir@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260919
+DTEND;VALUE=DATE:20260920
+SUMMARY:Vénus à sa meilleure visibilité du soir
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Étoile du soir très brillante\n\nBonne visibilité du soir autour de cette date\; Vénus est remarquable après le coucher du Soleil.
+X-PLANETENUHR-VISIBILITY:Étoile du soir très brillante
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2026-10-04-saturne-en-opposition@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20261004
+DTEND;VALUE=DATE:20261005
+SUMMARY:Saturne en opposition
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Visible toute la nuit\n\nSaturne est la plus brillante et bien placée\; ses anneaux recommencent lentement à s’ouvrir.
+X-PLANETENUHR-VISIBILITY:Visible toute la nuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2026-11-15-conjonction-mars-jupiter@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20261115
+DTEND;VALUE=DATE:20261116
+SUMMARY:Conjonction Mars-Jupiter
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Ciel du matin\n\nMars et Jupiter apparaissent proches avant l’aube.
+X-PLANETENUHR-VISIBILITY:Ciel du matin
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2026-11-29-v-nus-sa-meilleure-visibilit-du-matin@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20261129
+DTEND;VALUE=DATE:20261130
+SUMMARY:Vénus à sa meilleure visibilité du matin
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Étoile du matin brillante\n\nVénus devient un objet très visible avant le lever du Soleil.
+X-PLANETENUHR-VISIBILITY:Étoile du matin brillante
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2027-01-03-terre-au-p-rih-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270103
+DTEND;VALUE=DATE:20270104
+SUMMARY:Terre au périhélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct\; disque solaire légèrement plus grand\n\nLa Terre est au plus près du Soleil le 2027-01-03 (vers 02:33 UTC)\; les saisons restent surtout dues à l'inclinaison de l'axe.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct\; disque solaire légèrement plus grand
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2027-01-03-v-nus-sa-plus-grande-longation-ouest@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270103
+DTEND;VALUE=DATE:20270104
+SUMMARY:Vénus à sa plus grande élongation ouest
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Excellente visibilité matinale\n\nVénus est loin du Soleil dans le ciel du matin.
+X-PLANETENUHR-VISIBILITY:Excellente visibilité matinale
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2027-05-08-conjonction-v-nus-saturne@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270508
+DTEND;VALUE=DATE:20270509
+SUMMARY:Conjonction Vénus-Saturne
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Aube orientale\, basse\n\nRapprochement serré\, mais faible hauteur et crépuscule peuvent compliquer l’observation.
+X-PLANETENUHR-VISIBILITY:Aube orientale\, basse
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2027-07-05-terre-l-aph-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270705
+DTEND;VALUE=DATE:20270706
+SUMMARY:Terre à l'aphélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct\; disque solaire légèrement plus petit\n\nLa Terre atteint sa distance maximale au Soleil le 2027-07-05 (vers 05:06 UTC)\; les saisons restent surtout dues à l'inclinaison de l'axe.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct\; disque solaire légèrement plus petit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2027-08-25-conjonction-v-nus-jupiter@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270825
+DTEND;VALUE=DATE:20270826
+SUMMARY:Conjonction Vénus-Jupiter
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Très proche du Soleil\; difficile ou dangereuse à observer\n\nRapprochement géométrique\, mais à environ 4 degrés du Soleil. Ne pas chercher avec optique près du Soleil.
+X-PLANETENUHR-VISIBILITY:Très proche du Soleil\; difficile ou dangereuse à observer
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2027-11-25-conjonction-v-nus-mars@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20271125
+DTEND;VALUE=DATE:20271126
+SUMMARY:Conjonction Vénus-Mars
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Ciel du matin\n\nRapprochement planétaire\; Vénus est beaucoup plus brillante que Mars.
+X-PLANETENUHR-VISIBILITY:Ciel du matin
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2028-01-03-terre-au-p-rih-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280103
+DTEND;VALUE=DATE:20280104
+SUMMARY:Terre au périhélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus grand\n\nLa Terre est au plus près du Soleil \; les saisons dépendent néanmoins surtout de l'inclinaison de l'axe.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus grand
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2028-07-04-terre-l-aph-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280704
+DTEND;VALUE=DATE:20280705
+SUMMARY:Terre à l’aphélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus petit\n\nLa Terre est au plus loin du Soleil \; l'été boréal reste causé par l'inclinaison de l'axe et non par la distance.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus petit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2029-01-03-terre-au-p-rih-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290103
+DTEND;VALUE=DATE:20290104
+SUMMARY:Terre au périhélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus grand\n\nLa Terre est au plus près du Soleil \; les saisons dépendent néanmoins surtout de l'inclinaison de l'axe.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus grand
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2029-07-04-terre-l-aph-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290704
+DTEND;VALUE=DATE:20290705
+SUMMARY:Terre à l’aphélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus petit\n\nLa Terre est au plus loin du Soleil \; l'été boréal reste causé par l'inclinaison de l'axe et non par la distance.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus petit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2030-01-03-terre-au-p-rih-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300103
+DTEND;VALUE=DATE:20300104
+SUMMARY:Terre au périhélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus grand\n\nLa Terre est au plus près du Soleil \; les saisons dépendent néanmoins surtout de l'inclinaison de l'axe.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus grand
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2030-07-04-terre-l-aph-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300704
+DTEND;VALUE=DATE:20300705
+SUMMARY:Terre à l’aphélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus petit\n\nLa Terre est au plus loin du Soleil \; l'été boréal reste causé par l'inclinaison de l'axe et non par la distance.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus petit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2031-01-03-terre-au-p-rih-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310103
+DTEND;VALUE=DATE:20310104
+SUMMARY:Terre au périhélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus grand\n\nLa Terre est au plus près du Soleil \; les saisons dépendent néanmoins surtout de l'inclinaison de l'axe.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus grand
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2031-07-04-terre-l-aph-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310704
+DTEND;VALUE=DATE:20310705
+SUMMARY:Terre à l’aphélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus petit\n\nLa Terre est au plus loin du Soleil \; l'été boréal reste causé par l'inclinaison de l'axe et non par la distance.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus petit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2032-01-03-terre-au-p-rih-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320103
+DTEND;VALUE=DATE:20320104
+SUMMARY:Terre au périhélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus grand\n\nLa Terre est au plus près du Soleil \; les saisons dépendent néanmoins surtout de l'inclinaison de l'axe.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus grand
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2032-07-04-terre-l-aph-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320704
+DTEND;VALUE=DATE:20320705
+SUMMARY:Terre à l’aphélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus petit\n\nLa Terre est au plus loin du Soleil \; l'été boréal reste causé par l'inclinaison de l'axe et non par la distance.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus petit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2033-01-03-terre-au-p-rih-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330103
+DTEND;VALUE=DATE:20330104
+SUMMARY:Terre au périhélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus grand\n\nLa Terre est au plus près du Soleil \; les saisons dépendent néanmoins surtout de l'inclinaison de l'axe.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus grand
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2033-07-04-terre-l-aph-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330704
+DTEND;VALUE=DATE:20330705
+SUMMARY:Terre à l’aphélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus petit\n\nLa Terre est au plus loin du Soleil \; l'été boréal reste causé par l'inclinaison de l'axe et non par la distance.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus petit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2034-01-03-terre-au-p-rih-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340103
+DTEND;VALUE=DATE:20340104
+SUMMARY:Terre au périhélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus grand\n\nLa Terre est au plus près du Soleil \; les saisons dépendent néanmoins surtout de l'inclinaison de l'axe.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus grand
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2034-07-04-terre-l-aph-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340704
+DTEND;VALUE=DATE:20340705
+SUMMARY:Terre à l’aphélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus petit\n\nLa Terre est au plus loin du Soleil \; l'été boréal reste causé par l'inclinaison de l'axe et non par la distance.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus petit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2035-01-03-terre-au-p-rih-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350103
+DTEND;VALUE=DATE:20350104
+SUMMARY:Terre au périhélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus grand\n\nLa Terre est au plus près du Soleil \; les saisons dépendent néanmoins surtout de l'inclinaison de l'axe.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus grand
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2035-07-04-terre-l-aph-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350704
+DTEND;VALUE=DATE:20350705
+SUMMARY:Terre à l’aphélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus petit\n\nLa Terre est au plus loin du Soleil \; l'été boréal reste causé par l'inclinaison de l'axe et non par la distance.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus petit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2036-01-03-terre-au-p-rih-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360103
+DTEND;VALUE=DATE:20360104
+SUMMARY:Terre au périhélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus grand\n\nLa Terre est au plus près du Soleil \; les saisons dépendent néanmoins surtout de l'inclinaison de l'axe.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus grand
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2036-07-04-terre-l-aph-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360704
+DTEND;VALUE=DATE:20360705
+SUMMARY:Terre à l’aphélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus petit\n\nLa Terre est au plus loin du Soleil \; l'été boréal reste causé par l'inclinaison de l'axe et non par la distance.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus petit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2037-01-03-terre-au-p-rih-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370103
+DTEND;VALUE=DATE:20370104
+SUMMARY:Terre au périhélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus grand\n\nLa Terre est au plus près du Soleil \; les saisons dépendent néanmoins surtout de l'inclinaison de l'axe.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus grand
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2037-07-04-terre-l-aph-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370704
+DTEND;VALUE=DATE:20370705
+SUMMARY:Terre à l’aphélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus petit\n\nLa Terre est au plus loin du Soleil \; l'été boréal reste causé par l'inclinaison de l'axe et non par la distance.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus petit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2038-01-03-terre-au-p-rih-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380103
+DTEND;VALUE=DATE:20380104
+SUMMARY:Terre au périhélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus grand\n\nLa Terre est au plus près du Soleil \; les saisons dépendent néanmoins surtout de l'inclinaison de l'axe.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus grand
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2038-07-04-terre-l-aph-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380704
+DTEND;VALUE=DATE:20380705
+SUMMARY:Terre à l’aphélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus petit\n\nLa Terre est au plus loin du Soleil \; l'été boréal reste causé par l'inclinaison de l'axe et non par la distance.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus petit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2039-01-03-terre-au-p-rih-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390103
+DTEND;VALUE=DATE:20390104
+SUMMARY:Terre au périhélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus grand\n\nLa Terre est au plus près du Soleil \; les saisons dépendent néanmoins surtout de l'inclinaison de l'axe.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus grand
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2039-07-04-terre-l-aph-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390704
+DTEND;VALUE=DATE:20390705
+SUMMARY:Terre à l’aphélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus petit\n\nLa Terre est au plus loin du Soleil \; l'été boréal reste causé par l'inclinaison de l'axe et non par la distance.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus petit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2040-01-03-terre-au-p-rih-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400103
+DTEND;VALUE=DATE:20400104
+SUMMARY:Terre au périhélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus grand\n\nLa Terre est au plus près du Soleil \; les saisons dépendent néanmoins surtout de l'inclinaison de l'axe.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus grand
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2040-07-04-terre-l-aph-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400704
+DTEND;VALUE=DATE:20400705
+SUMMARY:Terre à l’aphélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus petit\n\nLa Terre est au plus loin du Soleil \; l'été boréal reste causé par l'inclinaison de l'axe et non par la distance.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus petit
+END:VEVENT
+END:VCALENDAR

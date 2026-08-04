@@ -1,0 +1,1098 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//marsrakete//Planetenuhr//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Planetenuhr moon (de)
+X-WR-TIMEZONE:Europe/Berlin
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2026-02-24-mond-in-erdn-he@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260224
+DTEND;VALUE=DATE:20260225
+SUMMARY:Mond in Erdnähe
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Kein auffälliges Einzelereignis\n\nDer Mond ist der Erde am nächsten\; scheinbarer Durchmesser leicht größer als durchschnittlich.
+X-PLANETENUHR-VISIBILITY:Kein auffälliges Einzelereignis
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2026-06-17-mondsichel-bei-venus@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260617
+DTEND;VALUE=DATE:20260618
+SUMMARY:Mondsichel bei Venus
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Westliche Abenddämmerung\n\nSchmale Mondsichel und helle Venus bilden ein enges Abendpaar\; optische Geräte erst nach Sonnenuntergang verwenden.
+X-PLANETENUHR-VISIBILITY:Westliche Abenddämmerung
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2026-08-10-mond-nahe-erdn-he@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260810
+DTEND;VALUE=DATE:20260811
+SUMMARY:Mond nahe Erdnähe
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nZwei Tage vor der europäischen totalen Sonnenfinsternis steht der Mond nah genug\, um etwas größer zu wirken.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2027-02-19-mond-in-erdn-he@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270219
+DTEND;VALUE=DATE:20270220
+SUMMARY:Mond in Erdnähe
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nDer Mond ist kurz vor der Halbschattenfinsternis vom 20. Februar nahe an der Erde.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2027-02-20-vollmond-nahe-erdn-he@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270220
+DTEND;VALUE=DATE:20270221
+SUMMARY:Vollmond nahe Erdnähe
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: In Europa während der Halbschattenfinsternis sichtbar\n\nGrößer wirkender Vollmond\; die schwache Halbschatten-Abdunklung ist bei guten Bedingungen erkennbar.
+X-PLANETENUHR-VISIBILITY:In Europa während der Halbschattenfinsternis sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2028-03-10-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280310
+DTEND;VALUE=DATE:20280311
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2028-03-24-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280324
+DTEND;VALUE=DATE:20280325
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2028-06-01-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280601
+DTEND;VALUE=DATE:20280602
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2028-06-15-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280615
+DTEND;VALUE=DATE:20280616
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2028-09-05-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280905
+DTEND;VALUE=DATE:20280906
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2028-09-19-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280919
+DTEND;VALUE=DATE:20280920
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2028-12-11-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281211
+DTEND;VALUE=DATE:20281212
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2028-12-25-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281225
+DTEND;VALUE=DATE:20281226
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2029-03-04-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290304
+DTEND;VALUE=DATE:20290305
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2029-03-17-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290317
+DTEND;VALUE=DATE:20290318
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2029-06-08-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290608
+DTEND;VALUE=DATE:20290609
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2029-06-22-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290622
+DTEND;VALUE=DATE:20290623
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2029-09-12-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290912
+DTEND;VALUE=DATE:20290913
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2029-09-26-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290926
+DTEND;VALUE=DATE:20290927
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2029-12-04-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291204
+DTEND;VALUE=DATE:20291205
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2029-12-18-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291218
+DTEND;VALUE=DATE:20291219
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2030-03-11-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300311
+DTEND;VALUE=DATE:20300312
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2030-03-24-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300324
+DTEND;VALUE=DATE:20300325
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2030-06-01-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300601
+DTEND;VALUE=DATE:20300602
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2030-06-15-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300615
+DTEND;VALUE=DATE:20300616
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2030-09-06-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300906
+DTEND;VALUE=DATE:20300907
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2030-09-19-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300919
+DTEND;VALUE=DATE:20300920
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2030-12-11-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301211
+DTEND;VALUE=DATE:20301212
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2030-12-25-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301225
+DTEND;VALUE=DATE:20301226
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2031-03-04-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310304
+DTEND;VALUE=DATE:20310305
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2031-03-17-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310317
+DTEND;VALUE=DATE:20310318
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2031-06-08-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310608
+DTEND;VALUE=DATE:20310609
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2031-06-22-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310622
+DTEND;VALUE=DATE:20310623
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2031-09-13-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310913
+DTEND;VALUE=DATE:20310914
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2031-09-26-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310926
+DTEND;VALUE=DATE:20310927
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2031-12-04-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311204
+DTEND;VALUE=DATE:20311205
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2031-12-18-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311218
+DTEND;VALUE=DATE:20311219
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2032-03-10-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320310
+DTEND;VALUE=DATE:20320311
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2032-03-23-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320323
+DTEND;VALUE=DATE:20320324
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2032-06-14-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320614
+DTEND;VALUE=DATE:20320615
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2032-06-28-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320628
+DTEND;VALUE=DATE:20320629
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2032-09-05-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320905
+DTEND;VALUE=DATE:20320906
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2032-09-19-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320919
+DTEND;VALUE=DATE:20320920
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2032-12-10-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321210
+DTEND;VALUE=DATE:20321211
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2032-12-24-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321224
+DTEND;VALUE=DATE:20321225
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2033-03-03-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330303
+DTEND;VALUE=DATE:20330304
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2033-03-17-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330317
+DTEND;VALUE=DATE:20330318
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2033-06-07-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330607
+DTEND;VALUE=DATE:20330608
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2033-06-21-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330621
+DTEND;VALUE=DATE:20330622
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2033-09-12-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330912
+DTEND;VALUE=DATE:20330913
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2033-09-26-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330926
+DTEND;VALUE=DATE:20330927
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2033-12-03-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331203
+DTEND;VALUE=DATE:20331204
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2033-12-17-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331217
+DTEND;VALUE=DATE:20331218
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2034-03-10-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340310
+DTEND;VALUE=DATE:20340311
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2034-03-24-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340324
+DTEND;VALUE=DATE:20340325
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2034-06-14-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340614
+DTEND;VALUE=DATE:20340615
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2034-06-28-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340628
+DTEND;VALUE=DATE:20340629
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2034-09-05-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340905
+DTEND;VALUE=DATE:20340906
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2034-09-19-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340919
+DTEND;VALUE=DATE:20340920
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2034-12-10-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20341210
+DTEND;VALUE=DATE:20341211
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2034-12-24-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20341224
+DTEND;VALUE=DATE:20341225
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2035-03-03-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350303
+DTEND;VALUE=DATE:20350304
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2035-03-17-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350317
+DTEND;VALUE=DATE:20350318
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2035-06-08-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350608
+DTEND;VALUE=DATE:20350609
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2035-06-21-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350621
+DTEND;VALUE=DATE:20350622
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2035-09-12-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350912
+DTEND;VALUE=DATE:20350913
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2035-09-26-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350926
+DTEND;VALUE=DATE:20350927
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2035-12-04-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20351204
+DTEND;VALUE=DATE:20351205
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2035-12-17-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20351217
+DTEND;VALUE=DATE:20351218
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2036-03-09-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360309
+DTEND;VALUE=DATE:20360310
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2036-03-23-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360323
+DTEND;VALUE=DATE:20360324
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2036-06-14-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360614
+DTEND;VALUE=DATE:20360615
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2036-06-27-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360627
+DTEND;VALUE=DATE:20360628
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2036-09-04-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360904
+DTEND;VALUE=DATE:20360905
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2036-09-18-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360918
+DTEND;VALUE=DATE:20360919
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2036-12-10-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20361210
+DTEND;VALUE=DATE:20361211
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2036-12-23-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20361223
+DTEND;VALUE=DATE:20361224
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2037-03-02-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370302
+DTEND;VALUE=DATE:20370303
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2037-03-16-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370316
+DTEND;VALUE=DATE:20370317
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2037-06-07-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370607
+DTEND;VALUE=DATE:20370608
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2037-06-21-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370621
+DTEND;VALUE=DATE:20370622
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2037-09-11-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370911
+DTEND;VALUE=DATE:20370912
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2037-09-25-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370925
+DTEND;VALUE=DATE:20370926
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2037-12-03-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20371203
+DTEND;VALUE=DATE:20371204
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2037-12-17-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20371217
+DTEND;VALUE=DATE:20371218
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2038-03-09-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380309
+DTEND;VALUE=DATE:20380310
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2038-03-23-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380323
+DTEND;VALUE=DATE:20380324
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2038-06-14-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380614
+DTEND;VALUE=DATE:20380615
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2038-06-28-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380628
+DTEND;VALUE=DATE:20380629
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2038-09-04-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380904
+DTEND;VALUE=DATE:20380905
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2038-09-18-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380918
+DTEND;VALUE=DATE:20380919
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2038-12-10-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381210
+DTEND;VALUE=DATE:20381211
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2038-12-24-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381224
+DTEND;VALUE=DATE:20381225
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2039-03-02-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390302
+DTEND;VALUE=DATE:20390303
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2039-03-16-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390316
+DTEND;VALUE=DATE:20390317
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2039-06-07-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390607
+DTEND;VALUE=DATE:20390608
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2039-06-21-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390621
+DTEND;VALUE=DATE:20390622
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2039-09-11-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390911
+DTEND;VALUE=DATE:20390912
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2039-09-25-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390925
+DTEND;VALUE=DATE:20390926
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2039-12-03-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391203
+DTEND;VALUE=DATE:20391204
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2039-12-17-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391217
+DTEND;VALUE=DATE:20391218
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2040-03-08-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400308
+DTEND;VALUE=DATE:20400309
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2040-03-22-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400322
+DTEND;VALUE=DATE:20400323
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2040-06-13-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400613
+DTEND;VALUE=DATE:20400614
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2040-06-27-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400627
+DTEND;VALUE=DATE:20400628
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2040-09-04-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400904
+DTEND;VALUE=DATE:20400905
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2040-09-17-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400917
+DTEND;VALUE=DATE:20400918
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2040-12-09-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401209
+DTEND;VALUE=DATE:20401210
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2040-12-23-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401223
+DTEND;VALUE=DATE:20401224
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+END:VCALENDAR

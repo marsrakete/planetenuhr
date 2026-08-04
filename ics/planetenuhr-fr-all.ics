@@ -1,0 +1,4248 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//marsrakete//Planetenuhr//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Planetenuhr Sky Calendar (fr)
+X-WR-TIMEZONE:Europe/Berlin
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2026-01-03-terre-au-p-rih-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260103
+DTEND;VALUE=DATE:20260104
+SUMMARY:Terre au périhélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct\; disque solaire légèrement plus grand\n\nLa Terre est au plus près du Soleil le 2026-01-03 (vers 17:16 UTC)\; les saisons restent surtout dues à l'inclinaison de l'axe.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct\; disque solaire légèrement plus grand
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2026-01-04-maximum-des-quadrantides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260104
+DTEND;VALUE=DATE:20260105
+SUMMARY:Maximum des Quadrantides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Bon depuis l'Europe avant l'aube\, mais la Lune peut gêner\n\nMaximum court et intense\; le radiant nord est favorable pour l'Europe.
+X-PLANETENUHR-VISIBILITY:Bon depuis l'Europe avant l'aube\, mais la Lune peut gêner
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2026-01-10-jupiter-en-opposition@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260110
+DTEND;VALUE=DATE:20260111
+SUMMARY:Jupiter en opposition
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Excellente visibilité le soir et la nuit\n\nJupiter est brillante et haute dans le ciel hivernal\; bonne cible au télescope.
+X-PLANETENUHR-VISIBILITY:Excellente visibilité le soir et la nuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2026-02-19-mercure-sa-plus-grande-longation-est@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260219
+DTEND;VALUE=DATE:20260220
+SUMMARY:Mercure à sa plus grande élongation est
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Meilleure apparition du soir de Mercure en 2026 pour l'Europe du Nord\n\nChercher bas à l’ouest après le coucher du Soleil\; croissant lunaire\, Mercure\, Vénus et Saturne sont proches autour du 18-20 février.
+X-PLANETENUHR-VISIBILITY:Meilleure apparition du soir de Mercure en 2026 pour l'Europe du Nord
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2026-02-24-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260224
+DTEND;VALUE=DATE:20260225
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Pas un événement visuel marqué\n\nLa Lune est au plus près de la Terre\; diamètre apparent légèrement supérieur à la moyenne.
+X-PLANETENUHR-VISIBILITY:Pas un événement visuel marqué
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2026-03-20-quinoxe-de-mars@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260320
+DTEND;VALUE=DATE:20260321
+SUMMARY:Équinoxe de mars
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nDébut du printemps astronomique dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2026-04-22-maximum-des-lyrides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260422
+DTEND;VALUE=DATE:20260423
+SUMMARY:Maximum des Lyrides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible depuis l'Europe après minuit\n\nPluie de météores printanière modérée\; meilleure sous un ciel sombre.
+X-PLANETENUHR-VISIBILITY:Visible depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2026-05-06-maximum-des-ta-aquarides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260506
+DTEND;VALUE=DATE:20260507
+SUMMARY:Maximum des Êta aquarides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Radiant bas depuis l'Europe avant l'aube\n\nMétéores de la comète de Halley\; mieux visibles plus au sud\, mais quelques météores sont possibles en Europe.
+X-PLANETENUHR-VISIBILITY:Radiant bas depuis l'Europe avant l'aube
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2026-06-09-conjonction-v-nus-jupiter@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260609
+DTEND;VALUE=DATE:20260610
+SUMMARY:Conjonction Vénus-Jupiter
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Basse dans le crépuscule occidental\n\nLes deux planètes les plus brillantes apparaissent séparées d’environ 1\,6 degré\; horizon ouest dégagé nécessaire.
+X-PLANETENUHR-VISIBILITY:Basse dans le crépuscule occidental
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2026-06-17-croissant-de-lune-pr-s-de-v-nus@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260617
+DTEND;VALUE=DATE:20260618
+SUMMARY:Croissant de Lune près de Vénus
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Crépuscule occidental\n\nLa fine Lune et Vénus brillante forment un joli duo du soir\; attendre le coucher du Soleil avant toute optique.
+X-PLANETENUHR-VISIBILITY:Crépuscule occidental
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2026-06-21-solstice-de-juin@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260621
+DTEND;VALUE=DATE:20260622
+SUMMARY:Solstice de juin
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nJour le plus long de l'année dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2026-07-06-terre-l-aph-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260706
+DTEND;VALUE=DATE:20260707
+SUMMARY:Terre à l'aphélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct\; disque solaire légèrement plus petit\n\nLa Terre atteint sa distance maximale au Soleil le 2026-07-06 (vers 17:31 UTC)\; les saisons restent surtout dues à l'inclinaison de l'axe.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct\; disque solaire légèrement plus petit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2026-07-30-maximum-des-delta-aquarides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260730
+DTEND;VALUE=DATE:20260731
+SUMMARY:Maximum des Delta-Aquarides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Radiant sud bas\; depuis l'Europe\, au mieux après minuit\n\nPic d'un essaim actif environ du 2026-07-12 au 2026-08-23\; un ciel sombre loin des lumières urbaines aide nettement.
+X-PLANETENUHR-VISIBILITY:Radiant sud bas\; depuis l'Europe\, au mieux après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2026-07-31-maximum-des-alpha-capricornides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260731
+DTEND;VALUE=DATE:20260801
+SUMMARY:Maximum des Alpha-Capricornides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible depuis l'Europe après minuit\, bas au sud\n\nPic d'un essaim actif environ du 2026-07-07 au 2026-08-15\; des météores plus lents peuvent produire de belles boules de feu.
+X-PLANETENUHR-VISIBILITY:Visible depuis l'Europe après minuit\, bas au sud
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2026-08-10-lune-proche-du-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260810
+DTEND;VALUE=DATE:20260811
+SUMMARY:Lune proche du périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune subtilement plus grande\n\nDeux jours avant l'éclipse solaire totale européenne\, la Lune est assez proche pour sembler légèrement plus grande.
+X-PLANETENUHR-VISIBILITY:Lune subtilement plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2026-08-12-clipse-solaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260812
+DTEND;VALUE=DATE:20260813
+SUMMARY:Éclipse solaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Totale en Islande et dans le nord de l'Espagne\; partielle dans une grande partie de l'Europe\n\nMeilleure bande de totalité européenne: Islande et nord de l'Espagne/région des Baléares.
+X-PLANETENUHR-VISIBILITY:Totale en Islande et dans le nord de l'Espagne\; partielle dans une grande partie de l'Europe
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2026-08-12-maximum-des-pers-ides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260812
+DTEND;VALUE=DATE:20260813
+SUMMARY:Maximum des Perséides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Bon depuis l'Europe après minuit\n\nSouvent une des meilleures pluies de météores du nord\; un ciel sombre aide beaucoup.
+X-PLANETENUHR-VISIBILITY:Bon depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2026-08-28-clipse-lunaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260828
+DTEND;VALUE=DATE:20260829
+SUMMARY:Éclipse lunaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Partiellement visible depuis l'Europe\n\nÉclipse partielle profonde\; meilleures vues plus à l'ouest\, visible autour du coucher de la Lune dans certaines régions d'Europe.
+X-PLANETENUHR-VISIBILITY:Partiellement visible depuis l'Europe
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2026-09-19-v-nus-sa-meilleure-visibilit-du-soir@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260919
+DTEND;VALUE=DATE:20260920
+SUMMARY:Vénus à sa meilleure visibilité du soir
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Étoile du soir très brillante\n\nBonne visibilité du soir autour de cette date\; Vénus est remarquable après le coucher du Soleil.
+X-PLANETENUHR-VISIBILITY:Étoile du soir très brillante
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2026-09-23-quinoxe-de-septembre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260923
+DTEND;VALUE=DATE:20260924
+SUMMARY:Équinoxe de septembre
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nDébut de l'automne astronomique dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2026-10-04-saturne-en-opposition@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20261004
+DTEND;VALUE=DATE:20261005
+SUMMARY:Saturne en opposition
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Visible toute la nuit\n\nSaturne est la plus brillante et bien placée\; ses anneaux recommencent lentement à s’ouvrir.
+X-PLANETENUHR-VISIBILITY:Visible toute la nuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2026-10-21-maximum-des-orionides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20261021
+DTEND;VALUE=DATE:20261022
+SUMMARY:Maximum des Orionides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible depuis l'Europe après minuit\n\nMétéores rapides issus des débris de la comète de Halley\; meilleurs avant l'aube.
+X-PLANETENUHR-VISIBILITY:Visible depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2026-11-15-conjonction-mars-jupiter@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20261115
+DTEND;VALUE=DATE:20261116
+SUMMARY:Conjonction Mars-Jupiter
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Ciel du matin\n\nMars et Jupiter apparaissent proches avant l’aube.
+X-PLANETENUHR-VISIBILITY:Ciel du matin
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2026-11-17-maximum-des-l-onides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20261117
+DTEND;VALUE=DATE:20261118
+SUMMARY:Maximum des Léonides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible depuis l'Europe après minuit\n\nGénéralement modeste\, mais connue historiquement pour des sursauts occasionnels.
+X-PLANETENUHR-VISIBILITY:Visible depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2026-11-29-v-nus-sa-meilleure-visibilit-du-matin@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20261129
+DTEND;VALUE=DATE:20261130
+SUMMARY:Vénus à sa meilleure visibilité du matin
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Étoile du matin brillante\n\nVénus devient un objet très visible avant le lever du Soleil.
+X-PLANETENUHR-VISIBILITY:Étoile du matin brillante
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2026-12-14-maximum-des-g-minides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20261214
+DTEND;VALUE=DATE:20261215
+SUMMARY:Maximum des Géminides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Très bon depuis l'Europe\n\nSouvent la plus forte pluie de météores annuelle\, meilleure de la fin de soirée à l'aube.
+X-PLANETENUHR-VISIBILITY:Très bon depuis l'Europe
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2026-12-21-solstice-de-d-cembre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20261221
+DTEND;VALUE=DATE:20261222
+SUMMARY:Solstice de décembre
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nJour le plus court de l'année dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2026-12-22-maximum-des-ursides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20261222
+DTEND;VALUE=DATE:20261223
+SUMMARY:Maximum des Ursides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible depuis l'Europe toute la nuit\n\nPluie de météores nordique modeste\, proche du solstice de décembre.
+X-PLANETENUHR-VISIBILITY:Visible depuis l'Europe toute la nuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2027-01-03-maximum-des-quadrantides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270103
+DTEND;VALUE=DATE:20270104
+SUMMARY:Maximum des Quadrantides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Bon depuis l'Europe avant l'aube\n\nMaximum court et intense\; le radiant nord est favorable pour l'Europe.
+X-PLANETENUHR-VISIBILITY:Bon depuis l'Europe avant l'aube
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2027-01-03-terre-au-p-rih-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270103
+DTEND;VALUE=DATE:20270104
+SUMMARY:Terre au périhélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct\; disque solaire légèrement plus grand\n\nLa Terre est au plus près du Soleil le 2027-01-03 (vers 02:33 UTC)\; les saisons restent surtout dues à l'inclinaison de l'axe.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct\; disque solaire légèrement plus grand
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2027-01-03-v-nus-sa-plus-grande-longation-ouest@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270103
+DTEND;VALUE=DATE:20270104
+SUMMARY:Vénus à sa plus grande élongation ouest
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Excellente visibilité matinale\n\nVénus est loin du Soleil dans le ciel du matin.
+X-PLANETENUHR-VISIBILITY:Excellente visibilité matinale
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2027-02-19-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270219
+DTEND;VALUE=DATE:20270220
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune subtilement plus grande\n\nLa Lune est proche de la Terre peu avant l'éclipse pénombrale du 20 février.
+X-PLANETENUHR-VISIBILITY:Lune subtilement plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2027-02-20-clipse-lunaire-p-nombrale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270220
+DTEND;VALUE=DATE:20270221
+SUMMARY:Éclipse lunaire pénombrale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible depuis l'Europe\n\nAssombrissement pénombral subtil\; entièrement visible dans une grande partie de l'Europe.
+X-PLANETENUHR-VISIBILITY:Visible depuis l'Europe
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2027-02-20-pleine-lune-proche-du-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270220
+DTEND;VALUE=DATE:20270221
+SUMMARY:Pleine Lune proche du périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Visible depuis l'Europe pendant l'éclipse pénombrale\n\nPleine Lune plus grande\; faible assombrissement pénombral visible sous de bonnes conditions.
+X-PLANETENUHR-VISIBILITY:Visible depuis l'Europe pendant l'éclipse pénombrale
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2027-03-20-quinoxe-de-mars@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270320
+DTEND;VALUE=DATE:20270321
+SUMMARY:Équinoxe de mars
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nDébut du printemps astronomique dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2027-04-22-maximum-des-lyrides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270422
+DTEND;VALUE=DATE:20270423
+SUMMARY:Maximum des Lyrides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible depuis l'Europe après minuit\n\nPluie de météores printanière modérée\; meilleure sous un ciel sombre.
+X-PLANETENUHR-VISIBILITY:Visible depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2027-05-06-maximum-des-ta-aquarides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270506
+DTEND;VALUE=DATE:20270507
+SUMMARY:Maximum des Êta aquarides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Radiant bas depuis l'Europe avant l'aube\n\nMétéores de la comète de Halley\; les taux sont plus faibles en Europe que plus au sud.
+X-PLANETENUHR-VISIBILITY:Radiant bas depuis l'Europe avant l'aube
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2027-05-08-conjonction-v-nus-saturne@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270508
+DTEND;VALUE=DATE:20270509
+SUMMARY:Conjonction Vénus-Saturne
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Aube orientale\, basse\n\nRapprochement serré\, mais faible hauteur et crépuscule peuvent compliquer l’observation.
+X-PLANETENUHR-VISIBILITY:Aube orientale\, basse
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2027-06-21-solstice-de-juin@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270621
+DTEND;VALUE=DATE:20270622
+SUMMARY:Solstice de juin
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nJour le plus long de l'année dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2027-07-05-terre-l-aph-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270705
+DTEND;VALUE=DATE:20270706
+SUMMARY:Terre à l'aphélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct\; disque solaire légèrement plus petit\n\nLa Terre atteint sa distance maximale au Soleil le 2027-07-05 (vers 05:06 UTC)\; les saisons restent surtout dues à l'inclinaison de l'axe.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct\; disque solaire légèrement plus petit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2027-07-30-maximum-des-delta-aquarides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270730
+DTEND;VALUE=DATE:20270731
+SUMMARY:Maximum des Delta-Aquarides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Radiant sud bas\; depuis l'Europe\, au mieux après minuit\n\nPic d'un essaim actif environ du 2027-07-12 au 2027-08-23\; un ciel sombre loin des lumières urbaines aide nettement.
+X-PLANETENUHR-VISIBILITY:Radiant sud bas\; depuis l'Europe\, au mieux après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2027-07-31-maximum-des-alpha-capricornides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270731
+DTEND;VALUE=DATE:20270801
+SUMMARY:Maximum des Alpha-Capricornides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible depuis l'Europe après minuit\, bas au sud\n\nPic d'un essaim actif environ du 2027-07-07 au 2027-08-15\; des météores plus lents peuvent produire de belles boules de feu.
+X-PLANETENUHR-VISIBILITY:Visible depuis l'Europe après minuit\, bas au sud
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2027-08-02-clipse-solaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270802
+DTEND;VALUE=DATE:20270803
+SUMMARY:Éclipse solaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Totale dans l'extrême sud de l'Espagne/Gibraltar\; partielle dans la majeure partie de l'Europe\n\nLa bande de totalité européenne touche le sud de l'Espagne près de Cadix/Malaga et Gibraltar.
+X-PLANETENUHR-VISIBILITY:Totale dans l'extrême sud de l'Espagne/Gibraltar\; partielle dans la majeure partie de l'Europe
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2027-08-12-maximum-des-pers-ides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270812
+DTEND;VALUE=DATE:20270813
+SUMMARY:Maximum des Perséides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Bon depuis l'Europe après minuit\n\nPluie estivale fiable\; meilleure lorsque le radiant est plus haut.
+X-PLANETENUHR-VISIBILITY:Bon depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2027-08-25-conjonction-v-nus-jupiter@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270825
+DTEND;VALUE=DATE:20270826
+SUMMARY:Conjonction Vénus-Jupiter
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Très proche du Soleil\; difficile ou dangereuse à observer\n\nRapprochement géométrique\, mais à environ 4 degrés du Soleil. Ne pas chercher avec optique près du Soleil.
+X-PLANETENUHR-VISIBILITY:Très proche du Soleil\; difficile ou dangereuse à observer
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2027-09-23-quinoxe-de-septembre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270923
+DTEND;VALUE=DATE:20270924
+SUMMARY:Équinoxe de septembre
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nDébut de l'automne astronomique dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2027-10-21-maximum-des-orionides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20271021
+DTEND;VALUE=DATE:20271022
+SUMMARY:Maximum des Orionides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible depuis l'Europe après minuit\n\nMétéores rapides de la comète de Halley\; meilleurs avant l'aube.
+X-PLANETENUHR-VISIBILITY:Visible depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2027-11-17-maximum-des-l-onides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20271117
+DTEND;VALUE=DATE:20271118
+SUMMARY:Maximum des Léonides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible depuis l'Europe après minuit\n\nGénéralement modeste en dehors des années de tempête.
+X-PLANETENUHR-VISIBILITY:Visible depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2027-11-25-conjonction-v-nus-mars@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20271125
+DTEND;VALUE=DATE:20271126
+SUMMARY:Conjonction Vénus-Mars
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Ciel du matin\n\nRapprochement planétaire\; Vénus est beaucoup plus brillante que Mars.
+X-PLANETENUHR-VISIBILITY:Ciel du matin
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2027-12-14-maximum-des-g-minides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20271214
+DTEND;VALUE=DATE:20271215
+SUMMARY:Maximum des Géminides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Très bon depuis l'Europe\n\nUne des plus fortes pluies de météores annuelles\, surtout sous un ciel sombre.
+X-PLANETENUHR-VISIBILITY:Très bon depuis l'Europe
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2027-12-22-maximum-des-ursides@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20271222
+DTEND;VALUE=DATE:20271223
+SUMMARY:Maximum des Ursides
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible depuis l'Europe toute la nuit\n\nPluie de météores nordique modeste\; meilleure sous un ciel sombre.
+X-PLANETENUHR-VISIBILITY:Visible depuis l'Europe toute la nuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2027-12-22-solstice-de-d-cembre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20271222
+DTEND;VALUE=DATE:20271223
+SUMMARY:Solstice de décembre
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nJour le plus court de l'année dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2028-01-03-maximum-des-quadrantids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280103
+DTEND;VALUE=DATE:20280104
+SUMMARY:Maximum des Quadrantids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Bootes. Fenêtre d'activité approximative du 12-28 au 01-12.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2028-01-03-terre-au-p-rih-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280103
+DTEND;VALUE=DATE:20280104
+SUMMARY:Terre au périhélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus grand\n\nLa Terre est au plus près du Soleil \; les saisons dépendent néanmoins surtout de l'inclinaison de l'axe.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus grand
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2028-01-12-clipse-lunaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280112
+DTEND;VALUE=DATE:20280113
+SUMMARY:Éclipse lunaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : Americas\, Europe\, Africa.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2028-01-26-clipse-solaire-annulaire@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280126
+DTEND;VALUE=DATE:20280127
+SUMMARY:Éclipse solaire annulaire
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Annulaire dans certaines parties du Portugal et de l'Espagne\; partielle en Europe occidentale\n\nÉclipse annulaire dans la péninsule Ibérique\; ailleurs en Europe occidentale\, seulement partielle.
+X-PLANETENUHR-VISIBILITY:Annulaire dans certaines parties du Portugal et de l'Espagne\; partielle en Europe occidentale
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2028-03-10-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280310
+DTEND;VALUE=DATE:20280311
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2028-03-20-quinoxe-de-mars@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280320
+DTEND;VALUE=DATE:20280321
+SUMMARY:Équinoxe de mars
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nDébut du printemps astronomique dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2028-03-24-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280324
+DTEND;VALUE=DATE:20280325
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2028-04-22-maximum-des-lyrids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280422
+DTEND;VALUE=DATE:20280423
+SUMMARY:Maximum des Lyrids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Lyra. Fenêtre d'activité approximative du 04-16 au 04-25.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2028-05-06-maximum-des-eta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280506
+DTEND;VALUE=DATE:20280507
+SUMMARY:Maximum des Eta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 04-19 au 05-28.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2028-06-01-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280601
+DTEND;VALUE=DATE:20280602
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2028-06-15-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280615
+DTEND;VALUE=DATE:20280616
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2028-06-21-solstice-de-juin@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280621
+DTEND;VALUE=DATE:20280622
+SUMMARY:Solstice de juin
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nJour le plus long de l'année dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2028-07-04-terre-l-aph-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280704
+DTEND;VALUE=DATE:20280705
+SUMMARY:Terre à l’aphélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus petit\n\nLa Terre est au plus loin du Soleil \; l'été boréal reste causé par l'inclinaison de l'axe et non par la distance.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus petit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2028-07-06-clipse-lunaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280706
+DTEND;VALUE=DATE:20280707
+SUMMARY:Éclipse lunaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : Europe\, Africa\, Asia\, Australia.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2028-07-22-clipse-solaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280722
+DTEND;VALUE=DATE:20280723
+SUMMARY:Éclipse solaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Totale sur la ligne centrale\, partielle ailleurs dans la zone de visibilité\n\nRégion NASA de visibilité : SE Asia\, E. Indies\, Australia\, N.Z.. Ligne centrale : Australia\, N. Z..
+X-PLANETENUHR-VISIBILITY:Totale sur la ligne centrale\, partielle ailleurs dans la zone de visibilité
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2028-07-30-maximum-des-delta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280730
+DTEND;VALUE=DATE:20280731
+SUMMARY:Maximum des Delta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 07-12 au 08-23.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2028-08-12-maximum-des-perseids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280812
+DTEND;VALUE=DATE:20280813
+SUMMARY:Maximum des Perseids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Perseus. Fenêtre d'activité approximative du 07-17 au 08-24.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2028-09-05-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280905
+DTEND;VALUE=DATE:20280906
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2028-09-19-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280919
+DTEND;VALUE=DATE:20280920
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2028-09-22-quinoxe-de-septembre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280922
+DTEND;VALUE=DATE:20280923
+SUMMARY:Équinoxe de septembre
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nDébut de l'automne astronomique dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2028-10-08-maximum-des-draconids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281008
+DTEND;VALUE=DATE:20281009
+SUMMARY:Maximum des Draconids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Draco. Fenêtre d'activité approximative du 10-06 au 10-10.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2028-10-21-maximum-des-orionids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281021
+DTEND;VALUE=DATE:20281022
+SUMMARY:Maximum des Orionids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Orion. Fenêtre d'activité approximative du 10-02 au 11-07.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2028-11-17-maximum-des-leonids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281117
+DTEND;VALUE=DATE:20281118
+SUMMARY:Maximum des Leonids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Leo. Fenêtre d'activité approximative du 11-06 au 11-30.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2028-12-11-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281211
+DTEND;VALUE=DATE:20281212
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2028-12-14-maximum-des-geminids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281214
+DTEND;VALUE=DATE:20281215
+SUMMARY:Maximum des Geminids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Gemini. Fenêtre d'activité approximative du 12-04 au 12-20.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2028-12-21-solstice-de-d-cembre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281221
+DTEND;VALUE=DATE:20281222
+SUMMARY:Solstice de décembre
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nJour le plus court de l'année dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2028-12-22-maximum-des-ursids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281222
+DTEND;VALUE=DATE:20281223
+SUMMARY:Maximum des Ursids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Ursa Minor. Fenêtre d'activité approximative du 12-17 au 12-26.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2028-12-25-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281225
+DTEND;VALUE=DATE:20281226
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2028-12-31-clipse-lunaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281231
+DTEND;VALUE=DATE:20290101
+SUMMARY:Éclipse lunaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible totalement selon la région\n\nRégion NASA de visibilité : Europe\, Africa\, Asia\, Australia\, Pacific.
+X-PLANETENUHR-VISIBILITY:Visible totalement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2029-01-03-maximum-des-quadrantids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290103
+DTEND;VALUE=DATE:20290104
+SUMMARY:Maximum des Quadrantids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Bootes. Fenêtre d'activité approximative du 12-28 au 01-12.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2029-01-03-terre-au-p-rih-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290103
+DTEND;VALUE=DATE:20290104
+SUMMARY:Terre au périhélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus grand\n\nLa Terre est au plus près du Soleil \; les saisons dépendent néanmoins surtout de l'inclinaison de l'axe.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus grand
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2029-01-14-clipse-solaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290114
+DTEND;VALUE=DATE:20290115
+SUMMARY:Éclipse solaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : N. America\, C. America.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2029-03-04-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290304
+DTEND;VALUE=DATE:20290305
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2029-03-17-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290317
+DTEND;VALUE=DATE:20290318
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2029-03-20-quinoxe-de-mars@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290320
+DTEND;VALUE=DATE:20290321
+SUMMARY:Équinoxe de mars
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nDébut du printemps astronomique dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2029-04-22-maximum-des-lyrids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290422
+DTEND;VALUE=DATE:20290423
+SUMMARY:Maximum des Lyrids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Lyra. Fenêtre d'activité approximative du 04-16 au 04-25.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2029-05-06-maximum-des-eta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290506
+DTEND;VALUE=DATE:20290507
+SUMMARY:Maximum des Eta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 04-19 au 05-28.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2029-06-08-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290608
+DTEND;VALUE=DATE:20290609
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2029-06-12-clipse-solaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290612
+DTEND;VALUE=DATE:20290613
+SUMMARY:Éclipse solaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : Arctic\, Scandanavia\, Alaska\, n Asia\, n Canada.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2029-06-21-solstice-de-juin@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290621
+DTEND;VALUE=DATE:20290622
+SUMMARY:Solstice de juin
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nJour le plus long de l'année dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2029-06-22-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290622
+DTEND;VALUE=DATE:20290623
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2029-06-26-clipse-lunaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290626
+DTEND;VALUE=DATE:20290627
+SUMMARY:Éclipse lunaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible totalement selon la région\n\nRégion NASA de visibilité : Americas\, Europe\, Africa\, Mid East.
+X-PLANETENUHR-VISIBILITY:Visible totalement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2029-07-04-terre-l-aph-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290704
+DTEND;VALUE=DATE:20290705
+SUMMARY:Terre à l’aphélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus petit\n\nLa Terre est au plus loin du Soleil \; l'été boréal reste causé par l'inclinaison de l'axe et non par la distance.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus petit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2029-07-11-clipse-solaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290711
+DTEND;VALUE=DATE:20290712
+SUMMARY:Éclipse solaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : s Chile\, s Argentina.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2029-07-30-maximum-des-delta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290730
+DTEND;VALUE=DATE:20290731
+SUMMARY:Maximum des Delta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 07-12 au 08-23.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2029-08-12-maximum-des-perseids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290812
+DTEND;VALUE=DATE:20290813
+SUMMARY:Maximum des Perseids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Perseus. Fenêtre d'activité approximative du 07-17 au 08-24.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2029-09-12-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290912
+DTEND;VALUE=DATE:20290913
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2029-09-22-quinoxe-de-septembre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290922
+DTEND;VALUE=DATE:20290923
+SUMMARY:Équinoxe de septembre
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nDébut de l'automne astronomique dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2029-09-26-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290926
+DTEND;VALUE=DATE:20290927
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2029-10-08-maximum-des-draconids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291008
+DTEND;VALUE=DATE:20291009
+SUMMARY:Maximum des Draconids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Draco. Fenêtre d'activité approximative du 10-06 au 10-10.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2029-10-21-maximum-des-orionids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291021
+DTEND;VALUE=DATE:20291022
+SUMMARY:Maximum des Orionids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Orion. Fenêtre d'activité approximative du 10-02 au 11-07.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2029-11-17-maximum-des-leonids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291117
+DTEND;VALUE=DATE:20291118
+SUMMARY:Maximum des Leonids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Leo. Fenêtre d'activité approximative du 11-06 au 11-30.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2029-12-04-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291204
+DTEND;VALUE=DATE:20291205
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2029-12-05-clipse-solaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291205
+DTEND;VALUE=DATE:20291206
+SUMMARY:Éclipse solaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : s Argentina\, s Chile\, Antarctica.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2029-12-14-maximum-des-geminids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291214
+DTEND;VALUE=DATE:20291215
+SUMMARY:Maximum des Geminids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Gemini. Fenêtre d'activité approximative du 12-04 au 12-20.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2029-12-18-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291218
+DTEND;VALUE=DATE:20291219
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2029-12-20-clipse-lunaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291220
+DTEND;VALUE=DATE:20291221
+SUMMARY:Éclipse lunaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible totalement selon la région\n\nRégion NASA de visibilité : Americas\, Europe\, Africa\, Asia.
+X-PLANETENUHR-VISIBILITY:Visible totalement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2029-12-21-solstice-de-d-cembre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291221
+DTEND;VALUE=DATE:20291222
+SUMMARY:Solstice de décembre
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nJour le plus court de l'année dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2029-12-22-maximum-des-ursids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291222
+DTEND;VALUE=DATE:20291223
+SUMMARY:Maximum des Ursids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Ursa Minor. Fenêtre d'activité approximative du 12-17 au 12-26.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2030-01-03-maximum-des-quadrantids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300103
+DTEND;VALUE=DATE:20300104
+SUMMARY:Maximum des Quadrantids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Bootes. Fenêtre d'activité approximative du 12-28 au 01-12.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2030-01-03-terre-au-p-rih-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300103
+DTEND;VALUE=DATE:20300104
+SUMMARY:Terre au périhélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus grand\n\nLa Terre est au plus près du Soleil \; les saisons dépendent néanmoins surtout de l'inclinaison de l'axe.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus grand
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2030-03-11-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300311
+DTEND;VALUE=DATE:20300312
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2030-03-20-quinoxe-de-mars@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300320
+DTEND;VALUE=DATE:20300321
+SUMMARY:Équinoxe de mars
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nDébut du printemps astronomique dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2030-03-24-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300324
+DTEND;VALUE=DATE:20300325
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2030-04-22-maximum-des-lyrids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300422
+DTEND;VALUE=DATE:20300423
+SUMMARY:Maximum des Lyrids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Lyra. Fenêtre d'activité approximative du 04-16 au 04-25.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2030-05-06-maximum-des-eta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300506
+DTEND;VALUE=DATE:20300507
+SUMMARY:Maximum des Eta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 04-19 au 05-28.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2030-06-01-clipse-solaire-annulaire@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300601
+DTEND;VALUE=DATE:20300602
+SUMMARY:Éclipse solaire annulaire
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Annulaire sur la ligne centrale\, partielle ailleurs dans la zone de visibilité\n\nRégion NASA de visibilité : Europe\, n Africa\, Mid East\, Asia\, Arctic\, Alaska. Ligne centrale : Algeria\, Tunisia\, Greece\, Turkey\, Russia\, n. China\, Japan.
+X-PLANETENUHR-VISIBILITY:Annulaire sur la ligne centrale\, partielle ailleurs dans la zone de visibilité
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2030-06-01-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300601
+DTEND;VALUE=DATE:20300602
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2030-06-15-clipse-lunaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300615
+DTEND;VALUE=DATE:20300616
+SUMMARY:Éclipse lunaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : Europe\, Africa\, Asia\, Australia.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2030-06-15-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300615
+DTEND;VALUE=DATE:20300616
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2030-06-21-solstice-de-juin@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300621
+DTEND;VALUE=DATE:20300622
+SUMMARY:Solstice de juin
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nJour le plus long de l'année dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2030-07-04-terre-l-aph-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300704
+DTEND;VALUE=DATE:20300705
+SUMMARY:Terre à l’aphélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus petit\n\nLa Terre est au plus loin du Soleil \; l'été boréal reste causé par l'inclinaison de l'axe et non par la distance.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus petit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2030-07-30-maximum-des-delta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300730
+DTEND;VALUE=DATE:20300731
+SUMMARY:Maximum des Delta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 07-12 au 08-23.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2030-08-12-maximum-des-perseids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300812
+DTEND;VALUE=DATE:20300813
+SUMMARY:Maximum des Perseids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Perseus. Fenêtre d'activité approximative du 07-17 au 08-24.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2030-09-06-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300906
+DTEND;VALUE=DATE:20300907
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2030-09-19-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300919
+DTEND;VALUE=DATE:20300920
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2030-09-22-quinoxe-de-septembre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300922
+DTEND;VALUE=DATE:20300923
+SUMMARY:Équinoxe de septembre
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nDébut de l'automne astronomique dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2030-10-08-maximum-des-draconids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301008
+DTEND;VALUE=DATE:20301009
+SUMMARY:Maximum des Draconids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Draco. Fenêtre d'activité approximative du 10-06 au 10-10.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2030-10-21-maximum-des-orionids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301021
+DTEND;VALUE=DATE:20301022
+SUMMARY:Maximum des Orionids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Orion. Fenêtre d'activité approximative du 10-02 au 11-07.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2030-11-17-maximum-des-leonids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301117
+DTEND;VALUE=DATE:20301118
+SUMMARY:Maximum des Leonids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Leo. Fenêtre d'activité approximative du 11-06 au 11-30.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2030-11-25-clipse-solaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301125
+DTEND;VALUE=DATE:20301126
+SUMMARY:Éclipse solaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Totale sur la ligne centrale\, partielle ailleurs dans la zone de visibilité\n\nRégion NASA de visibilité : s Africa\, s Indian Oc.\, E. Indies\, Australia\, Antarctica. Ligne centrale : Botswana\, S. Africa\, Australia.
+X-PLANETENUHR-VISIBILITY:Totale sur la ligne centrale\, partielle ailleurs dans la zone de visibilité
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2030-12-09-clipse-lunaire-par-la-p-nombre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301209
+DTEND;VALUE=DATE:20301210
+SUMMARY:Éclipse lunaire par la pénombre
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible dans la pénombre selon la région\n\nRégion NASA de visibilité : Americas\, Europe\, Africa\, Asia.
+X-PLANETENUHR-VISIBILITY:Visible dans la pénombre selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2030-12-11-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301211
+DTEND;VALUE=DATE:20301212
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2030-12-14-maximum-des-geminids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301214
+DTEND;VALUE=DATE:20301215
+SUMMARY:Maximum des Geminids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Gemini. Fenêtre d'activité approximative du 12-04 au 12-20.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2030-12-21-solstice-de-d-cembre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301221
+DTEND;VALUE=DATE:20301222
+SUMMARY:Solstice de décembre
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nJour le plus court de l'année dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2030-12-22-maximum-des-ursids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301222
+DTEND;VALUE=DATE:20301223
+SUMMARY:Maximum des Ursids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Ursa Minor. Fenêtre d'activité approximative du 12-17 au 12-26.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2030-12-25-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301225
+DTEND;VALUE=DATE:20301226
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2031-01-03-maximum-des-quadrantids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310103
+DTEND;VALUE=DATE:20310104
+SUMMARY:Maximum des Quadrantids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Bootes. Fenêtre d'activité approximative du 12-28 au 01-12.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2031-01-03-terre-au-p-rih-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310103
+DTEND;VALUE=DATE:20310104
+SUMMARY:Terre au périhélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus grand\n\nLa Terre est au plus près du Soleil \; les saisons dépendent néanmoins surtout de l'inclinaison de l'axe.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus grand
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2031-03-04-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310304
+DTEND;VALUE=DATE:20310305
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2031-03-17-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310317
+DTEND;VALUE=DATE:20310318
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2031-03-20-quinoxe-de-mars@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310320
+DTEND;VALUE=DATE:20310321
+SUMMARY:Équinoxe de mars
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nDébut du printemps astronomique dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2031-04-22-maximum-des-lyrids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310422
+DTEND;VALUE=DATE:20310423
+SUMMARY:Maximum des Lyrids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Lyra. Fenêtre d'activité approximative du 04-16 au 04-25.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2031-05-06-maximum-des-eta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310506
+DTEND;VALUE=DATE:20310507
+SUMMARY:Maximum des Eta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 04-19 au 05-28.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2031-05-07-clipse-lunaire-par-la-p-nombre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310507
+DTEND;VALUE=DATE:20310508
+SUMMARY:Éclipse lunaire par la pénombre
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible dans la pénombre selon la région\n\nRégion NASA de visibilité : Americas\, Europe\, Africa.
+X-PLANETENUHR-VISIBILITY:Visible dans la pénombre selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2031-05-21-clipse-solaire-annulaire@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310521
+DTEND;VALUE=DATE:20310522
+SUMMARY:Éclipse solaire annulaire
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Annulaire sur la ligne centrale\, partielle ailleurs dans la zone de visibilité\n\nRégion NASA de visibilité : Africa\, s Asia\, E. Indies\, Australia. Ligne centrale : Angola\, Congo\, Zambia\, Tanzania\, s. India\, Malaysia\, Indonesia.
+X-PLANETENUHR-VISIBILITY:Annulaire sur la ligne centrale\, partielle ailleurs dans la zone de visibilité
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2031-06-05-clipse-lunaire-par-la-p-nombre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310605
+DTEND;VALUE=DATE:20310606
+SUMMARY:Éclipse lunaire par la pénombre
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible dans la pénombre selon la région\n\nRégion NASA de visibilité : East Indies\, Australia\, Pacific.
+X-PLANETENUHR-VISIBILITY:Visible dans la pénombre selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2031-06-08-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310608
+DTEND;VALUE=DATE:20310609
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2031-06-21-solstice-de-juin@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310621
+DTEND;VALUE=DATE:20310622
+SUMMARY:Solstice de juin
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nJour le plus long de l'année dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2031-06-22-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310622
+DTEND;VALUE=DATE:20310623
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2031-07-04-terre-l-aph-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310704
+DTEND;VALUE=DATE:20310705
+SUMMARY:Terre à l’aphélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus petit\n\nLa Terre est au plus loin du Soleil \; l'été boréal reste causé par l'inclinaison de l'axe et non par la distance.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus petit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2031-07-30-maximum-des-delta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310730
+DTEND;VALUE=DATE:20310731
+SUMMARY:Maximum des Delta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 07-12 au 08-23.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2031-08-12-maximum-des-perseids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310812
+DTEND;VALUE=DATE:20310813
+SUMMARY:Maximum des Perseids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Perseus. Fenêtre d'activité approximative du 07-17 au 08-24.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2031-09-13-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310913
+DTEND;VALUE=DATE:20310914
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2031-09-22-quinoxe-de-septembre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310922
+DTEND;VALUE=DATE:20310923
+SUMMARY:Équinoxe de septembre
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nDébut de l'automne astronomique dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2031-09-26-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310926
+DTEND;VALUE=DATE:20310927
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2031-10-08-maximum-des-draconids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311008
+DTEND;VALUE=DATE:20311009
+SUMMARY:Maximum des Draconids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Draco. Fenêtre d'activité approximative du 10-06 au 10-10.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2031-10-21-maximum-des-orionids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311021
+DTEND;VALUE=DATE:20311022
+SUMMARY:Maximum des Orionids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Orion. Fenêtre d'activité approximative du 10-02 au 11-07.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2031-10-30-clipse-lunaire-par-la-p-nombre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311030
+DTEND;VALUE=DATE:20311031
+SUMMARY:Éclipse lunaire par la pénombre
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible dans la pénombre selon la région\n\nRégion NASA de visibilité : Americas.
+X-PLANETENUHR-VISIBILITY:Visible dans la pénombre selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2031-11-14-clipse-solaire-hybride@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311114
+DTEND;VALUE=DATE:20311115
+SUMMARY:Éclipse solaire hybride
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Hybride sur la ligne centrale\, partielle ailleurs dans la zone de visibilité\n\nRégion NASA de visibilité : Pacific\, s US\, C. America\, nw S. America. Ligne centrale : Pacific\, Panama.
+X-PLANETENUHR-VISIBILITY:Hybride sur la ligne centrale\, partielle ailleurs dans la zone de visibilité
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2031-11-17-maximum-des-leonids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311117
+DTEND;VALUE=DATE:20311118
+SUMMARY:Maximum des Leonids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Leo. Fenêtre d'activité approximative du 11-06 au 11-30.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2031-12-04-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311204
+DTEND;VALUE=DATE:20311205
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2031-12-14-maximum-des-geminids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311214
+DTEND;VALUE=DATE:20311215
+SUMMARY:Maximum des Geminids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Gemini. Fenêtre d'activité approximative du 12-04 au 12-20.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2031-12-18-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311218
+DTEND;VALUE=DATE:20311219
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2031-12-21-solstice-de-d-cembre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311221
+DTEND;VALUE=DATE:20311222
+SUMMARY:Solstice de décembre
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nJour le plus court de l'année dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2031-12-22-maximum-des-ursids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311222
+DTEND;VALUE=DATE:20311223
+SUMMARY:Maximum des Ursids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Ursa Minor. Fenêtre d'activité approximative du 12-17 au 12-26.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2032-01-03-maximum-des-quadrantids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320103
+DTEND;VALUE=DATE:20320104
+SUMMARY:Maximum des Quadrantids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Bootes. Fenêtre d'activité approximative du 12-28 au 01-12.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2032-01-03-terre-au-p-rih-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320103
+DTEND;VALUE=DATE:20320104
+SUMMARY:Terre au périhélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus grand\n\nLa Terre est au plus près du Soleil \; les saisons dépendent néanmoins surtout de l'inclinaison de l'axe.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus grand
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2032-03-10-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320310
+DTEND;VALUE=DATE:20320311
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2032-03-20-quinoxe-de-mars@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320320
+DTEND;VALUE=DATE:20320321
+SUMMARY:Équinoxe de mars
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nDébut du printemps astronomique dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2032-03-23-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320323
+DTEND;VALUE=DATE:20320324
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2032-04-22-maximum-des-lyrids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320422
+DTEND;VALUE=DATE:20320423
+SUMMARY:Maximum des Lyrids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Lyra. Fenêtre d'activité approximative du 04-16 au 04-25.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2032-04-25-clipse-lunaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320425
+DTEND;VALUE=DATE:20320426
+SUMMARY:Éclipse lunaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible totalement selon la région\n\nRégion NASA de visibilité : e Africa\, Asia\, Australia\, Pacific.
+X-PLANETENUHR-VISIBILITY:Visible totalement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2032-05-06-maximum-des-eta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320506
+DTEND;VALUE=DATE:20320507
+SUMMARY:Maximum des Eta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 04-19 au 05-28.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2032-05-09-clipse-solaire-annulaire@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320509
+DTEND;VALUE=DATE:20320510
+SUMMARY:Éclipse solaire annulaire
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Annulaire sur la ligne centrale\, partielle ailleurs dans la zone de visibilité\n\nRégion NASA de visibilité : s S. America\, s Africa. Ligne centrale : s Atlantic.
+X-PLANETENUHR-VISIBILITY:Annulaire sur la ligne centrale\, partielle ailleurs dans la zone de visibilité
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2032-06-14-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320614
+DTEND;VALUE=DATE:20320615
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2032-06-21-solstice-de-juin@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320621
+DTEND;VALUE=DATE:20320622
+SUMMARY:Solstice de juin
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nJour le plus long de l'année dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2032-06-28-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320628
+DTEND;VALUE=DATE:20320629
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2032-07-04-terre-l-aph-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320704
+DTEND;VALUE=DATE:20320705
+SUMMARY:Terre à l’aphélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus petit\n\nLa Terre est au plus loin du Soleil \; l'été boréal reste causé par l'inclinaison de l'axe et non par la distance.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus petit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2032-07-30-maximum-des-delta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320730
+DTEND;VALUE=DATE:20320731
+SUMMARY:Maximum des Delta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 07-12 au 08-23.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2032-08-12-maximum-des-perseids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320812
+DTEND;VALUE=DATE:20320813
+SUMMARY:Maximum des Perseids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Perseus. Fenêtre d'activité approximative du 07-17 au 08-24.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2032-09-05-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320905
+DTEND;VALUE=DATE:20320906
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2032-09-19-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320919
+DTEND;VALUE=DATE:20320920
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2032-09-22-quinoxe-de-septembre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320922
+DTEND;VALUE=DATE:20320923
+SUMMARY:Équinoxe de septembre
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nDébut de l'automne astronomique dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2032-10-08-maximum-des-draconids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321008
+DTEND;VALUE=DATE:20321009
+SUMMARY:Maximum des Draconids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Draco. Fenêtre d'activité approximative du 10-06 au 10-10.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2032-10-18-clipse-lunaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321018
+DTEND;VALUE=DATE:20321019
+SUMMARY:Éclipse lunaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible totalement selon la région\n\nRégion NASA de visibilité : Africa\, Europe\, Asia\, Australia.
+X-PLANETENUHR-VISIBILITY:Visible totalement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2032-10-21-maximum-des-orionids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321021
+DTEND;VALUE=DATE:20321022
+SUMMARY:Maximum des Orionids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Orion. Fenêtre d'activité approximative du 10-02 au 11-07.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2032-11-03-clipse-solaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321103
+DTEND;VALUE=DATE:20321104
+SUMMARY:Éclipse solaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : Asia.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2032-11-17-maximum-des-leonids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321117
+DTEND;VALUE=DATE:20321118
+SUMMARY:Maximum des Leonids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Leo. Fenêtre d'activité approximative du 11-06 au 11-30.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2032-12-10-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321210
+DTEND;VALUE=DATE:20321211
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2032-12-14-maximum-des-geminids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321214
+DTEND;VALUE=DATE:20321215
+SUMMARY:Maximum des Geminids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Gemini. Fenêtre d'activité approximative du 12-04 au 12-20.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2032-12-21-solstice-de-d-cembre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321221
+DTEND;VALUE=DATE:20321222
+SUMMARY:Solstice de décembre
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nJour le plus court de l'année dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2032-12-22-maximum-des-ursids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321222
+DTEND;VALUE=DATE:20321223
+SUMMARY:Maximum des Ursids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Ursa Minor. Fenêtre d'activité approximative du 12-17 au 12-26.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2032-12-24-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321224
+DTEND;VALUE=DATE:20321225
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2033-01-03-maximum-des-quadrantids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330103
+DTEND;VALUE=DATE:20330104
+SUMMARY:Maximum des Quadrantids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Bootes. Fenêtre d'activité approximative du 12-28 au 01-12.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2033-01-03-terre-au-p-rih-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330103
+DTEND;VALUE=DATE:20330104
+SUMMARY:Terre au périhélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus grand\n\nLa Terre est au plus près du Soleil \; les saisons dépendent néanmoins surtout de l'inclinaison de l'axe.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus grand
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2033-03-03-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330303
+DTEND;VALUE=DATE:20330304
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2033-03-17-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330317
+DTEND;VALUE=DATE:20330318
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2033-03-20-quinoxe-de-mars@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330320
+DTEND;VALUE=DATE:20330321
+SUMMARY:Équinoxe de mars
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nDébut du printemps astronomique dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2033-03-30-clipse-solaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330330
+DTEND;VALUE=DATE:20330331
+SUMMARY:Éclipse solaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Totale sur la ligne centrale\, partielle ailleurs dans la zone de visibilité\n\nRégion NASA de visibilité : N. America. Ligne centrale : e Russia\, Alaska.
+X-PLANETENUHR-VISIBILITY:Totale sur la ligne centrale\, partielle ailleurs dans la zone de visibilité
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2033-04-14-clipse-lunaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330414
+DTEND;VALUE=DATE:20330415
+SUMMARY:Éclipse lunaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible totalement selon la région\n\nRégion NASA de visibilité : Europe\, Africa\, Asia\, Australia.
+X-PLANETENUHR-VISIBILITY:Visible totalement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2033-04-22-maximum-des-lyrids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330422
+DTEND;VALUE=DATE:20330423
+SUMMARY:Maximum des Lyrids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Lyra. Fenêtre d'activité approximative du 04-16 au 04-25.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2033-05-06-maximum-des-eta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330506
+DTEND;VALUE=DATE:20330507
+SUMMARY:Maximum des Eta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 04-19 au 05-28.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2033-06-07-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330607
+DTEND;VALUE=DATE:20330608
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2033-06-21-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330621
+DTEND;VALUE=DATE:20330622
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2033-06-21-solstice-de-juin@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330621
+DTEND;VALUE=DATE:20330622
+SUMMARY:Solstice de juin
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nJour le plus long de l'année dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2033-07-04-terre-l-aph-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330704
+DTEND;VALUE=DATE:20330705
+SUMMARY:Terre à l’aphélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus petit\n\nLa Terre est au plus loin du Soleil \; l'été boréal reste causé par l'inclinaison de l'axe et non par la distance.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus petit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2033-07-30-maximum-des-delta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330730
+DTEND;VALUE=DATE:20330731
+SUMMARY:Maximum des Delta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 07-12 au 08-23.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2033-08-12-maximum-des-perseids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330812
+DTEND;VALUE=DATE:20330813
+SUMMARY:Maximum des Perseids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Perseus. Fenêtre d'activité approximative du 07-17 au 08-24.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2033-09-12-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330912
+DTEND;VALUE=DATE:20330913
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2033-09-22-quinoxe-de-septembre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330922
+DTEND;VALUE=DATE:20330923
+SUMMARY:Équinoxe de septembre
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nDébut de l'automne astronomique dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2033-09-23-clipse-solaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330923
+DTEND;VALUE=DATE:20330924
+SUMMARY:Éclipse solaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : s S. America\, Antarctica.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2033-09-26-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330926
+DTEND;VALUE=DATE:20330927
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2033-10-08-clipse-lunaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331008
+DTEND;VALUE=DATE:20331009
+SUMMARY:Éclipse lunaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible totalement selon la région\n\nRégion NASA de visibilité : Asia\, Australia\, Pacific\, Americas.
+X-PLANETENUHR-VISIBILITY:Visible totalement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2033-10-08-maximum-des-draconids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331008
+DTEND;VALUE=DATE:20331009
+SUMMARY:Maximum des Draconids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Draco. Fenêtre d'activité approximative du 10-06 au 10-10.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2033-10-21-maximum-des-orionids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331021
+DTEND;VALUE=DATE:20331022
+SUMMARY:Maximum des Orionids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Orion. Fenêtre d'activité approximative du 10-02 au 11-07.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2033-11-17-maximum-des-leonids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331117
+DTEND;VALUE=DATE:20331118
+SUMMARY:Maximum des Leonids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Leo. Fenêtre d'activité approximative du 11-06 au 11-30.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2033-12-03-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331203
+DTEND;VALUE=DATE:20331204
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2033-12-14-maximum-des-geminids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331214
+DTEND;VALUE=DATE:20331215
+SUMMARY:Maximum des Geminids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Gemini. Fenêtre d'activité approximative du 12-04 au 12-20.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2033-12-17-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331217
+DTEND;VALUE=DATE:20331218
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2033-12-21-solstice-de-d-cembre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331221
+DTEND;VALUE=DATE:20331222
+SUMMARY:Solstice de décembre
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nJour le plus court de l'année dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2033-12-22-maximum-des-ursids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331222
+DTEND;VALUE=DATE:20331223
+SUMMARY:Maximum des Ursids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Ursa Minor. Fenêtre d'activité approximative du 12-17 au 12-26.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2034-01-03-maximum-des-quadrantids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340103
+DTEND;VALUE=DATE:20340104
+SUMMARY:Maximum des Quadrantids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Bootes. Fenêtre d'activité approximative du 12-28 au 01-12.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2034-01-03-terre-au-p-rih-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340103
+DTEND;VALUE=DATE:20340104
+SUMMARY:Terre au périhélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus grand\n\nLa Terre est au plus près du Soleil \; les saisons dépendent néanmoins surtout de l'inclinaison de l'axe.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus grand
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2034-03-10-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340310
+DTEND;VALUE=DATE:20340311
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2034-03-20-clipse-solaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340320
+DTEND;VALUE=DATE:20340321
+SUMMARY:Éclipse solaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Totale sur la ligne centrale\, partielle ailleurs dans la zone de visibilité\n\nRégion NASA de visibilité : Africa\, Europe\, w Asia. Ligne centrale : Nigeria\, Cameroon\, Chad\, Sudan\, Egypt\, Saudi Arabia\, Iran\, Afghanistan\, Pakistan\, India\, China.
+X-PLANETENUHR-VISIBILITY:Totale sur la ligne centrale\, partielle ailleurs dans la zone de visibilité
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2034-03-20-quinoxe-de-mars@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340320
+DTEND;VALUE=DATE:20340321
+SUMMARY:Équinoxe de mars
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nDébut du printemps astronomique dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2034-03-24-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340324
+DTEND;VALUE=DATE:20340325
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2034-04-03-clipse-lunaire-par-la-p-nombre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340403
+DTEND;VALUE=DATE:20340404
+SUMMARY:Éclipse lunaire par la pénombre
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible dans la pénombre selon la région\n\nRégion NASA de visibilité : Europe\, Africa\, Asia\, Australia.
+X-PLANETENUHR-VISIBILITY:Visible dans la pénombre selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2034-04-22-maximum-des-lyrids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340422
+DTEND;VALUE=DATE:20340423
+SUMMARY:Maximum des Lyrids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Lyra. Fenêtre d'activité approximative du 04-16 au 04-25.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2034-05-06-maximum-des-eta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340506
+DTEND;VALUE=DATE:20340507
+SUMMARY:Maximum des Eta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 04-19 au 05-28.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2034-06-14-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340614
+DTEND;VALUE=DATE:20340615
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2034-06-21-solstice-de-juin@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340621
+DTEND;VALUE=DATE:20340622
+SUMMARY:Solstice de juin
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nJour le plus long de l'année dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2034-06-28-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340628
+DTEND;VALUE=DATE:20340629
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2034-07-04-terre-l-aph-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340704
+DTEND;VALUE=DATE:20340705
+SUMMARY:Terre à l’aphélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus petit\n\nLa Terre est au plus loin du Soleil \; l'été boréal reste causé par l'inclinaison de l'axe et non par la distance.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus petit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2034-07-30-maximum-des-delta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340730
+DTEND;VALUE=DATE:20340731
+SUMMARY:Maximum des Delta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 07-12 au 08-23.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2034-08-12-maximum-des-perseids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340812
+DTEND;VALUE=DATE:20340813
+SUMMARY:Maximum des Perseids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Perseus. Fenêtre d'activité approximative du 07-17 au 08-24.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2034-09-05-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340905
+DTEND;VALUE=DATE:20340906
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2034-09-12-clipse-solaire-annulaire@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340912
+DTEND;VALUE=DATE:20340913
+SUMMARY:Éclipse solaire annulaire
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Annulaire sur la ligne centrale\, partielle ailleurs dans la zone de visibilité\n\nRégion NASA de visibilité : C. America\, S. America. Ligne centrale : Chile\, Bolivia\, Argentina\, Paraguay\, Brazil.
+X-PLANETENUHR-VISIBILITY:Annulaire sur la ligne centrale\, partielle ailleurs dans la zone de visibilité
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2034-09-19-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340919
+DTEND;VALUE=DATE:20340920
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2034-09-22-quinoxe-de-septembre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340922
+DTEND;VALUE=DATE:20340923
+SUMMARY:Équinoxe de septembre
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nDébut de l'automne astronomique dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2034-09-28-clipse-lunaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340928
+DTEND;VALUE=DATE:20340929
+SUMMARY:Éclipse lunaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : Americas\, Europe\, Africa.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2034-10-08-maximum-des-draconids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20341008
+DTEND;VALUE=DATE:20341009
+SUMMARY:Maximum des Draconids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Draco. Fenêtre d'activité approximative du 10-06 au 10-10.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2034-10-21-maximum-des-orionids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20341021
+DTEND;VALUE=DATE:20341022
+SUMMARY:Maximum des Orionids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Orion. Fenêtre d'activité approximative du 10-02 au 11-07.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2034-11-17-maximum-des-leonids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20341117
+DTEND;VALUE=DATE:20341118
+SUMMARY:Maximum des Leonids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Leo. Fenêtre d'activité approximative du 11-06 au 11-30.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2034-12-10-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20341210
+DTEND;VALUE=DATE:20341211
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2034-12-14-maximum-des-geminids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20341214
+DTEND;VALUE=DATE:20341215
+SUMMARY:Maximum des Geminids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Gemini. Fenêtre d'activité approximative du 12-04 au 12-20.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2034-12-21-solstice-de-d-cembre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20341221
+DTEND;VALUE=DATE:20341222
+SUMMARY:Solstice de décembre
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nJour le plus court de l'année dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2034-12-22-maximum-des-ursids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20341222
+DTEND;VALUE=DATE:20341223
+SUMMARY:Maximum des Ursids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Ursa Minor. Fenêtre d'activité approximative du 12-17 au 12-26.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2034-12-24-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20341224
+DTEND;VALUE=DATE:20341225
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2035-01-03-maximum-des-quadrantids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350103
+DTEND;VALUE=DATE:20350104
+SUMMARY:Maximum des Quadrantids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Bootes. Fenêtre d'activité approximative du 12-28 au 01-12.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2035-01-03-terre-au-p-rih-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350103
+DTEND;VALUE=DATE:20350104
+SUMMARY:Terre au périhélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus grand\n\nLa Terre est au plus près du Soleil \; les saisons dépendent néanmoins surtout de l'inclinaison de l'axe.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus grand
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2035-02-22-clipse-lunaire-par-la-p-nombre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350222
+DTEND;VALUE=DATE:20350223
+SUMMARY:Éclipse lunaire par la pénombre
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible dans la pénombre selon la région\n\nRégion NASA de visibilité : e Asia\, Pacific\, Americas.
+X-PLANETENUHR-VISIBILITY:Visible dans la pénombre selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2035-03-03-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350303
+DTEND;VALUE=DATE:20350304
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2035-03-09-clipse-solaire-annulaire@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350309
+DTEND;VALUE=DATE:20350310
+SUMMARY:Éclipse solaire annulaire
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Annulaire sur la ligne centrale\, partielle ailleurs dans la zone de visibilité\n\nRégion NASA de visibilité : Australia\, New Zealand\, s Pacific\, Mexico\, Antarctica. Ligne centrale : New Zealand\, Pacific.
+X-PLANETENUHR-VISIBILITY:Annulaire sur la ligne centrale\, partielle ailleurs dans la zone de visibilité
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2035-03-17-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350317
+DTEND;VALUE=DATE:20350318
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2035-03-20-quinoxe-de-mars@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350320
+DTEND;VALUE=DATE:20350321
+SUMMARY:Équinoxe de mars
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nDébut du printemps astronomique dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2035-04-22-maximum-des-lyrids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350422
+DTEND;VALUE=DATE:20350423
+SUMMARY:Maximum des Lyrids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Lyra. Fenêtre d'activité approximative du 04-16 au 04-25.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2035-05-06-maximum-des-eta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350506
+DTEND;VALUE=DATE:20350507
+SUMMARY:Maximum des Eta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 04-19 au 05-28.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2035-06-08-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350608
+DTEND;VALUE=DATE:20350609
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2035-06-21-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350621
+DTEND;VALUE=DATE:20350622
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2035-06-21-solstice-de-juin@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350621
+DTEND;VALUE=DATE:20350622
+SUMMARY:Solstice de juin
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nJour le plus long de l'année dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2035-07-04-terre-l-aph-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350704
+DTEND;VALUE=DATE:20350705
+SUMMARY:Terre à l’aphélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus petit\n\nLa Terre est au plus loin du Soleil \; l'été boréal reste causé par l'inclinaison de l'axe et non par la distance.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus petit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2035-07-30-maximum-des-delta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350730
+DTEND;VALUE=DATE:20350731
+SUMMARY:Maximum des Delta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 07-12 au 08-23.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2035-08-12-maximum-des-perseids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350812
+DTEND;VALUE=DATE:20350813
+SUMMARY:Maximum des Perseids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Perseus. Fenêtre d'activité approximative du 07-17 au 08-24.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2035-08-19-clipse-lunaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350819
+DTEND;VALUE=DATE:20350820
+SUMMARY:Éclipse lunaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : Americas\, Europe\, Africa\, Mid East.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2035-09-02-clipse-solaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350902
+DTEND;VALUE=DATE:20350903
+SUMMARY:Éclipse solaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Totale sur la ligne centrale\, partielle ailleurs dans la zone de visibilité\n\nRégion NASA de visibilité : e Asia\, Pacific. Ligne centrale : China\, Korea\, Japan\, Pacific.
+X-PLANETENUHR-VISIBILITY:Totale sur la ligne centrale\, partielle ailleurs dans la zone de visibilité
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2035-09-12-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350912
+DTEND;VALUE=DATE:20350913
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2035-09-22-quinoxe-de-septembre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350922
+DTEND;VALUE=DATE:20350923
+SUMMARY:Équinoxe de septembre
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nDébut de l'automne astronomique dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2035-09-26-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350926
+DTEND;VALUE=DATE:20350927
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2035-10-08-maximum-des-draconids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20351008
+DTEND;VALUE=DATE:20351009
+SUMMARY:Maximum des Draconids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Draco. Fenêtre d'activité approximative du 10-06 au 10-10.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2035-10-21-maximum-des-orionids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20351021
+DTEND;VALUE=DATE:20351022
+SUMMARY:Maximum des Orionids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Orion. Fenêtre d'activité approximative du 10-02 au 11-07.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2035-11-17-maximum-des-leonids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20351117
+DTEND;VALUE=DATE:20351118
+SUMMARY:Maximum des Leonids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Leo. Fenêtre d'activité approximative du 11-06 au 11-30.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2035-12-04-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20351204
+DTEND;VALUE=DATE:20351205
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2035-12-14-maximum-des-geminids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20351214
+DTEND;VALUE=DATE:20351215
+SUMMARY:Maximum des Geminids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Gemini. Fenêtre d'activité approximative du 12-04 au 12-20.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2035-12-17-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20351217
+DTEND;VALUE=DATE:20351218
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2035-12-21-solstice-de-d-cembre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20351221
+DTEND;VALUE=DATE:20351222
+SUMMARY:Solstice de décembre
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nJour le plus court de l'année dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2035-12-22-maximum-des-ursids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20351222
+DTEND;VALUE=DATE:20351223
+SUMMARY:Maximum des Ursids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Ursa Minor. Fenêtre d'activité approximative du 12-17 au 12-26.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2036-01-03-maximum-des-quadrantids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360103
+DTEND;VALUE=DATE:20360104
+SUMMARY:Maximum des Quadrantids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Bootes. Fenêtre d'activité approximative du 12-28 au 01-12.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2036-01-03-terre-au-p-rih-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360103
+DTEND;VALUE=DATE:20360104
+SUMMARY:Terre au périhélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus grand\n\nLa Terre est au plus près du Soleil \; les saisons dépendent néanmoins surtout de l'inclinaison de l'axe.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus grand
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2036-02-11-clipse-lunaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360211
+DTEND;VALUE=DATE:20360212
+SUMMARY:Éclipse lunaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible totalement selon la région\n\nRégion NASA de visibilité : Americas\, Europe\, Africa\,\, Asia\, w Australia.
+X-PLANETENUHR-VISIBILITY:Visible totalement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2036-02-27-clipse-solaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360227
+DTEND;VALUE=DATE:20360228
+SUMMARY:Éclipse solaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : Antarctica\, s Australia\, New Zealand.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2036-03-09-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360309
+DTEND;VALUE=DATE:20360310
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2036-03-20-quinoxe-de-mars@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360320
+DTEND;VALUE=DATE:20360321
+SUMMARY:Équinoxe de mars
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nDébut du printemps astronomique dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2036-03-23-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360323
+DTEND;VALUE=DATE:20360324
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2036-04-22-maximum-des-lyrids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360422
+DTEND;VALUE=DATE:20360423
+SUMMARY:Maximum des Lyrids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Lyra. Fenêtre d'activité approximative du 04-16 au 04-25.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2036-05-06-maximum-des-eta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360506
+DTEND;VALUE=DATE:20360507
+SUMMARY:Maximum des Eta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 04-19 au 05-28.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2036-06-14-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360614
+DTEND;VALUE=DATE:20360615
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2036-06-21-solstice-de-juin@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360621
+DTEND;VALUE=DATE:20360622
+SUMMARY:Solstice de juin
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nJour le plus long de l'année dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2036-06-27-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360627
+DTEND;VALUE=DATE:20360628
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2036-07-04-terre-l-aph-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360704
+DTEND;VALUE=DATE:20360705
+SUMMARY:Terre à l’aphélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus petit\n\nLa Terre est au plus loin du Soleil \; l'été boréal reste causé par l'inclinaison de l'axe et non par la distance.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus petit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2036-07-23-clipse-solaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360723
+DTEND;VALUE=DATE:20360724
+SUMMARY:Éclipse solaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : s Atlantic.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2036-07-30-maximum-des-delta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360730
+DTEND;VALUE=DATE:20360731
+SUMMARY:Maximum des Delta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 07-12 au 08-23.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2036-08-07-clipse-lunaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360807
+DTEND;VALUE=DATE:20360808
+SUMMARY:Éclipse lunaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible totalement selon la région\n\nRégion NASA de visibilité : Americas\, Europe\, Africa\, w Asia.
+X-PLANETENUHR-VISIBILITY:Visible totalement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2036-08-12-maximum-des-perseids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360812
+DTEND;VALUE=DATE:20360813
+SUMMARY:Maximum des Perseids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Perseus. Fenêtre d'activité approximative du 07-17 au 08-24.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2036-08-21-clipse-solaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360821
+DTEND;VALUE=DATE:20360822
+SUMMARY:Éclipse solaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : Alaska\, Canada\, Arctic\, w Europe\, nw Africa.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2036-09-04-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360904
+DTEND;VALUE=DATE:20360905
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2036-09-18-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360918
+DTEND;VALUE=DATE:20360919
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2036-09-22-quinoxe-de-septembre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360922
+DTEND;VALUE=DATE:20360923
+SUMMARY:Équinoxe de septembre
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nDébut de l'automne astronomique dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2036-10-08-maximum-des-draconids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20361008
+DTEND;VALUE=DATE:20361009
+SUMMARY:Maximum des Draconids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Draco. Fenêtre d'activité approximative du 10-06 au 10-10.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2036-10-21-maximum-des-orionids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20361021
+DTEND;VALUE=DATE:20361022
+SUMMARY:Maximum des Orionids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Orion. Fenêtre d'activité approximative du 10-02 au 11-07.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2036-11-17-maximum-des-leonids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20361117
+DTEND;VALUE=DATE:20361118
+SUMMARY:Maximum des Leonids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Leo. Fenêtre d'activité approximative du 11-06 au 11-30.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2036-12-10-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20361210
+DTEND;VALUE=DATE:20361211
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2036-12-14-maximum-des-geminids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20361214
+DTEND;VALUE=DATE:20361215
+SUMMARY:Maximum des Geminids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Gemini. Fenêtre d'activité approximative du 12-04 au 12-20.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2036-12-21-solstice-de-d-cembre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20361221
+DTEND;VALUE=DATE:20361222
+SUMMARY:Solstice de décembre
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nJour le plus court de l'année dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2036-12-22-maximum-des-ursids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20361222
+DTEND;VALUE=DATE:20361223
+SUMMARY:Maximum des Ursids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Ursa Minor. Fenêtre d'activité approximative du 12-17 au 12-26.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2036-12-23-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20361223
+DTEND;VALUE=DATE:20361224
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2037-01-03-maximum-des-quadrantids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370103
+DTEND;VALUE=DATE:20370104
+SUMMARY:Maximum des Quadrantids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Bootes. Fenêtre d'activité approximative du 12-28 au 01-12.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2037-01-03-terre-au-p-rih-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370103
+DTEND;VALUE=DATE:20370104
+SUMMARY:Terre au périhélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus grand\n\nLa Terre est au plus près du Soleil \; les saisons dépendent néanmoins surtout de l'inclinaison de l'axe.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus grand
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2037-01-16-clipse-solaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370116
+DTEND;VALUE=DATE:20370117
+SUMMARY:Éclipse solaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : n Africa\, Europe\, Mid East\, w Asia.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2037-01-31-clipse-lunaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370131
+DTEND;VALUE=DATE:20370201
+SUMMARY:Éclipse lunaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible totalement selon la région\n\nRégion NASA de visibilité : e Europe\, e Africa\, Asia\, Australia\, Pacific\, N.A..
+X-PLANETENUHR-VISIBILITY:Visible totalement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2037-03-02-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370302
+DTEND;VALUE=DATE:20370303
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2037-03-16-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370316
+DTEND;VALUE=DATE:20370317
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2037-03-20-quinoxe-de-mars@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370320
+DTEND;VALUE=DATE:20370321
+SUMMARY:Équinoxe de mars
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nDébut du printemps astronomique dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2037-04-22-maximum-des-lyrids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370422
+DTEND;VALUE=DATE:20370423
+SUMMARY:Maximum des Lyrids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Lyra. Fenêtre d'activité approximative du 04-16 au 04-25.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2037-05-06-maximum-des-eta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370506
+DTEND;VALUE=DATE:20370507
+SUMMARY:Maximum des Eta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 04-19 au 05-28.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2037-06-07-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370607
+DTEND;VALUE=DATE:20370608
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2037-06-21-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370621
+DTEND;VALUE=DATE:20370622
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2037-06-21-solstice-de-juin@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370621
+DTEND;VALUE=DATE:20370622
+SUMMARY:Solstice de juin
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nJour le plus long de l'année dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2037-07-04-terre-l-aph-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370704
+DTEND;VALUE=DATE:20370705
+SUMMARY:Terre à l’aphélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus petit\n\nLa Terre est au plus loin du Soleil \; l'été boréal reste causé par l'inclinaison de l'axe et non par la distance.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus petit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2037-07-13-clipse-solaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370713
+DTEND;VALUE=DATE:20370714
+SUMMARY:Éclipse solaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Totale sur la ligne centrale\, partielle ailleurs dans la zone de visibilité\n\nRégion NASA de visibilité : E. Indies\, Australia\, Pacific. Ligne centrale : Australia\, New Zealand.
+X-PLANETENUHR-VISIBILITY:Totale sur la ligne centrale\, partielle ailleurs dans la zone de visibilité
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2037-07-27-clipse-lunaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370727
+DTEND;VALUE=DATE:20370728
+SUMMARY:Éclipse lunaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : Americas\, Europe\, Africa.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2037-07-30-maximum-des-delta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370730
+DTEND;VALUE=DATE:20370731
+SUMMARY:Maximum des Delta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 07-12 au 08-23.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2037-08-12-maximum-des-perseids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370812
+DTEND;VALUE=DATE:20370813
+SUMMARY:Maximum des Perseids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Perseus. Fenêtre d'activité approximative du 07-17 au 08-24.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2037-09-11-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370911
+DTEND;VALUE=DATE:20370912
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2037-09-22-quinoxe-de-septembre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370922
+DTEND;VALUE=DATE:20370923
+SUMMARY:Équinoxe de septembre
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nDébut de l'automne astronomique dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2037-09-25-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370925
+DTEND;VALUE=DATE:20370926
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2037-10-08-maximum-des-draconids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20371008
+DTEND;VALUE=DATE:20371009
+SUMMARY:Maximum des Draconids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Draco. Fenêtre d'activité approximative du 10-06 au 10-10.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2037-10-21-maximum-des-orionids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20371021
+DTEND;VALUE=DATE:20371022
+SUMMARY:Maximum des Orionids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Orion. Fenêtre d'activité approximative du 10-02 au 11-07.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2037-11-17-maximum-des-leonids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20371117
+DTEND;VALUE=DATE:20371118
+SUMMARY:Maximum des Leonids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Leo. Fenêtre d'activité approximative du 11-06 au 11-30.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2037-12-03-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20371203
+DTEND;VALUE=DATE:20371204
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2037-12-14-maximum-des-geminids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20371214
+DTEND;VALUE=DATE:20371215
+SUMMARY:Maximum des Geminids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Gemini. Fenêtre d'activité approximative du 12-04 au 12-20.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2037-12-17-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20371217
+DTEND;VALUE=DATE:20371218
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2037-12-21-solstice-de-d-cembre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20371221
+DTEND;VALUE=DATE:20371222
+SUMMARY:Solstice de décembre
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nJour le plus court de l'année dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2037-12-22-maximum-des-ursids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20371222
+DTEND;VALUE=DATE:20371223
+SUMMARY:Maximum des Ursids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Ursa Minor. Fenêtre d'activité approximative du 12-17 au 12-26.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2038-01-03-maximum-des-quadrantids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380103
+DTEND;VALUE=DATE:20380104
+SUMMARY:Maximum des Quadrantids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Bootes. Fenêtre d'activité approximative du 12-28 au 01-12.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2038-01-03-terre-au-p-rih-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380103
+DTEND;VALUE=DATE:20380104
+SUMMARY:Terre au périhélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus grand\n\nLa Terre est au plus près du Soleil \; les saisons dépendent néanmoins surtout de l'inclinaison de l'axe.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus grand
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2038-01-05-clipse-solaire-annulaire@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380105
+DTEND;VALUE=DATE:20380106
+SUMMARY:Éclipse solaire annulaire
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Annulaire sur la ligne centrale\, partielle ailleurs dans la zone de visibilité\n\nRégion NASA de visibilité : e N. America\, n S. America\, Atlantic\, Africa\, Europe. Ligne centrale : Cuba\, Dom.Rep.\, Cote d'Ivoire\, Ghana\, Niger\, Chad\, Egypt.
+X-PLANETENUHR-VISIBILITY:Annulaire sur la ligne centrale\, partielle ailleurs dans la zone de visibilité
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2038-01-21-clipse-lunaire-par-la-p-nombre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380121
+DTEND;VALUE=DATE:20380122
+SUMMARY:Éclipse lunaire par la pénombre
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible dans la pénombre selon la région\n\nRégion NASA de visibilité : Americas\, Europe\, Africa.
+X-PLANETENUHR-VISIBILITY:Visible dans la pénombre selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2038-03-09-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380309
+DTEND;VALUE=DATE:20380310
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2038-03-20-quinoxe-de-mars@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380320
+DTEND;VALUE=DATE:20380321
+SUMMARY:Équinoxe de mars
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nDébut du printemps astronomique dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2038-03-23-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380323
+DTEND;VALUE=DATE:20380324
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2038-04-22-maximum-des-lyrids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380422
+DTEND;VALUE=DATE:20380423
+SUMMARY:Maximum des Lyrids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Lyra. Fenêtre d'activité approximative du 04-16 au 04-25.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2038-05-06-maximum-des-eta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380506
+DTEND;VALUE=DATE:20380507
+SUMMARY:Maximum des Eta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 04-19 au 05-28.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2038-06-14-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380614
+DTEND;VALUE=DATE:20380615
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2038-06-17-clipse-lunaire-par-la-p-nombre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380617
+DTEND;VALUE=DATE:20380618
+SUMMARY:Éclipse lunaire par la pénombre
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible dans la pénombre selon la région\n\nRégion NASA de visibilité : e N. America\, C. & S. America\, Africa\, w Europe.
+X-PLANETENUHR-VISIBILITY:Visible dans la pénombre selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2038-06-21-solstice-de-juin@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380621
+DTEND;VALUE=DATE:20380622
+SUMMARY:Solstice de juin
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nJour le plus long de l'année dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2038-06-28-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380628
+DTEND;VALUE=DATE:20380629
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2038-07-02-clipse-solaire-annulaire@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380702
+DTEND;VALUE=DATE:20380703
+SUMMARY:Éclipse solaire annulaire
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Annulaire sur la ligne centrale\, partielle ailleurs dans la zone de visibilité\n\nRégion NASA de visibilité : N. & C. America\, S. America\, Africa\, Europe\, Mid East. Ligne centrale : Colombia\, Venezuela\, Mauritania\, Morocco\, Mali\, Niger\, Chad\, Sudan\, Ethiopia\, Kenya.
+X-PLANETENUHR-VISIBILITY:Annulaire sur la ligne centrale\, partielle ailleurs dans la zone de visibilité
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2038-07-04-terre-l-aph-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380704
+DTEND;VALUE=DATE:20380705
+SUMMARY:Terre à l’aphélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus petit\n\nLa Terre est au plus loin du Soleil \; l'été boréal reste causé par l'inclinaison de l'axe et non par la distance.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus petit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2038-07-16-clipse-lunaire-par-la-p-nombre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380716
+DTEND;VALUE=DATE:20380717
+SUMMARY:Éclipse lunaire par la pénombre
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible dans la pénombre selon la région\n\nRégion NASA de visibilité : Australia\, e Asia\, Pacific\, w Americas.
+X-PLANETENUHR-VISIBILITY:Visible dans la pénombre selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2038-07-30-maximum-des-delta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380730
+DTEND;VALUE=DATE:20380731
+SUMMARY:Maximum des Delta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 07-12 au 08-23.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2038-08-12-maximum-des-perseids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380812
+DTEND;VALUE=DATE:20380813
+SUMMARY:Maximum des Perseids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Perseus. Fenêtre d'activité approximative du 07-17 au 08-24.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2038-09-04-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380904
+DTEND;VALUE=DATE:20380905
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2038-09-18-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380918
+DTEND;VALUE=DATE:20380919
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2038-09-22-quinoxe-de-septembre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380922
+DTEND;VALUE=DATE:20380923
+SUMMARY:Équinoxe de septembre
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nDébut de l'automne astronomique dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2038-10-08-maximum-des-draconids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381008
+DTEND;VALUE=DATE:20381009
+SUMMARY:Maximum des Draconids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Draco. Fenêtre d'activité approximative du 10-06 au 10-10.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2038-10-21-maximum-des-orionids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381021
+DTEND;VALUE=DATE:20381022
+SUMMARY:Maximum des Orionids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Orion. Fenêtre d'activité approximative du 10-02 au 11-07.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2038-11-17-maximum-des-leonids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381117
+DTEND;VALUE=DATE:20381118
+SUMMARY:Maximum des Leonids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Leo. Fenêtre d'activité approximative du 11-06 au 11-30.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2038-12-10-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381210
+DTEND;VALUE=DATE:20381211
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2038-12-11-clipse-lunaire-par-la-p-nombre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381211
+DTEND;VALUE=DATE:20381212
+SUMMARY:Éclipse lunaire par la pénombre
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible dans la pénombre selon la région\n\nRégion NASA de visibilité : Europe\, Africa\, Asia\, Australia.
+X-PLANETENUHR-VISIBILITY:Visible dans la pénombre selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2038-12-14-maximum-des-geminids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381214
+DTEND;VALUE=DATE:20381215
+SUMMARY:Maximum des Geminids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Gemini. Fenêtre d'activité approximative du 12-04 au 12-20.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2038-12-21-solstice-de-d-cembre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381221
+DTEND;VALUE=DATE:20381222
+SUMMARY:Solstice de décembre
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nJour le plus court de l'année dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2038-12-22-maximum-des-ursids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381222
+DTEND;VALUE=DATE:20381223
+SUMMARY:Maximum des Ursids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Ursa Minor. Fenêtre d'activité approximative du 12-17 au 12-26.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2038-12-24-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381224
+DTEND;VALUE=DATE:20381225
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2038-12-26-clipse-solaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381226
+DTEND;VALUE=DATE:20381227
+SUMMARY:Éclipse solaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Totale sur la ligne centrale\, partielle ailleurs dans la zone de visibilité\n\nRégion NASA de visibilité : se Asia\, E. Indies\, Australia\, New Zealand\, s Pacific\, Antarctica. Ligne centrale : Australia\, New Zealand\, s Pacific.
+X-PLANETENUHR-VISIBILITY:Totale sur la ligne centrale\, partielle ailleurs dans la zone de visibilité
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2039-01-03-maximum-des-quadrantids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390103
+DTEND;VALUE=DATE:20390104
+SUMMARY:Maximum des Quadrantids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Bootes. Fenêtre d'activité approximative du 12-28 au 01-12.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2039-01-03-terre-au-p-rih-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390103
+DTEND;VALUE=DATE:20390104
+SUMMARY:Terre au périhélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus grand\n\nLa Terre est au plus près du Soleil \; les saisons dépendent néanmoins surtout de l'inclinaison de l'axe.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus grand
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2039-03-02-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390302
+DTEND;VALUE=DATE:20390303
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2039-03-16-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390316
+DTEND;VALUE=DATE:20390317
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2039-03-20-quinoxe-de-mars@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390320
+DTEND;VALUE=DATE:20390321
+SUMMARY:Équinoxe de mars
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nDébut du printemps astronomique dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2039-04-22-maximum-des-lyrids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390422
+DTEND;VALUE=DATE:20390423
+SUMMARY:Maximum des Lyrids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Lyra. Fenêtre d'activité approximative du 04-16 au 04-25.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2039-05-06-maximum-des-eta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390506
+DTEND;VALUE=DATE:20390507
+SUMMARY:Maximum des Eta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 04-19 au 05-28.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2039-06-06-clipse-lunaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390606
+DTEND;VALUE=DATE:20390607
+SUMMARY:Éclipse lunaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : Europe\, Africa\, Asia\, Australia.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2039-06-07-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390607
+DTEND;VALUE=DATE:20390608
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2039-06-21-clipse-solaire-annulaire@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390621
+DTEND;VALUE=DATE:20390622
+SUMMARY:Éclipse solaire annulaire
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Annulaire sur la ligne centrale\, partielle ailleurs dans la zone de visibilité\n\nRégion NASA de visibilité : N. America\, w Europe. Ligne centrale : Alaska\, n Canada\, Norway\, Sweden\, Finland\, Estonia\, Russia.
+X-PLANETENUHR-VISIBILITY:Annulaire sur la ligne centrale\, partielle ailleurs dans la zone de visibilité
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2039-06-21-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390621
+DTEND;VALUE=DATE:20390622
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2039-06-21-solstice-de-juin@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390621
+DTEND;VALUE=DATE:20390622
+SUMMARY:Solstice de juin
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nJour le plus long de l'année dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2039-07-04-terre-l-aph-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390704
+DTEND;VALUE=DATE:20390705
+SUMMARY:Terre à l’aphélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus petit\n\nLa Terre est au plus loin du Soleil \; l'été boréal reste causé par l'inclinaison de l'axe et non par la distance.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus petit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2039-07-30-maximum-des-delta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390730
+DTEND;VALUE=DATE:20390731
+SUMMARY:Maximum des Delta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 07-12 au 08-23.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2039-08-12-maximum-des-perseids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390812
+DTEND;VALUE=DATE:20390813
+SUMMARY:Maximum des Perseids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Perseus. Fenêtre d'activité approximative du 07-17 au 08-24.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2039-09-11-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390911
+DTEND;VALUE=DATE:20390912
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2039-09-22-quinoxe-de-septembre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390922
+DTEND;VALUE=DATE:20390923
+SUMMARY:Équinoxe de septembre
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nDébut de l'automne astronomique dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2039-09-25-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390925
+DTEND;VALUE=DATE:20390926
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2039-10-08-maximum-des-draconids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391008
+DTEND;VALUE=DATE:20391009
+SUMMARY:Maximum des Draconids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Draco. Fenêtre d'activité approximative du 10-06 au 10-10.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2039-10-21-maximum-des-orionids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391021
+DTEND;VALUE=DATE:20391022
+SUMMARY:Maximum des Orionids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Orion. Fenêtre d'activité approximative du 10-02 au 11-07.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2039-11-17-maximum-des-leonids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391117
+DTEND;VALUE=DATE:20391118
+SUMMARY:Maximum des Leonids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Leo. Fenêtre d'activité approximative du 11-06 au 11-30.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2039-11-30-clipse-lunaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391130
+DTEND;VALUE=DATE:20391201
+SUMMARY:Éclipse lunaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : Europe\, Africa\, Asia\, Australia\, Pacific.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2039-12-03-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391203
+DTEND;VALUE=DATE:20391204
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2039-12-14-maximum-des-geminids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391214
+DTEND;VALUE=DATE:20391215
+SUMMARY:Maximum des Geminids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Gemini. Fenêtre d'activité approximative du 12-04 au 12-20.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2039-12-15-clipse-solaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391215
+DTEND;VALUE=DATE:20391216
+SUMMARY:Éclipse solaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Totale sur la ligne centrale\, partielle ailleurs dans la zone de visibilité\n\nRégion NASA de visibilité : s S. America\, Antarctica. Ligne centrale : Antarctica.
+X-PLANETENUHR-VISIBILITY:Totale sur la ligne centrale\, partielle ailleurs dans la zone de visibilité
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2039-12-17-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391217
+DTEND;VALUE=DATE:20391218
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2039-12-21-solstice-de-d-cembre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391221
+DTEND;VALUE=DATE:20391222
+SUMMARY:Solstice de décembre
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nJour le plus court de l'année dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2039-12-22-maximum-des-ursids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391222
+DTEND;VALUE=DATE:20391223
+SUMMARY:Maximum des Ursids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Ursa Minor. Fenêtre d'activité approximative du 12-17 au 12-26.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2040-01-03-maximum-des-quadrantids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400103
+DTEND;VALUE=DATE:20400104
+SUMMARY:Maximum des Quadrantids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Bootes. Fenêtre d'activité approximative du 12-28 au 01-12.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2040-01-03-terre-au-p-rih-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400103
+DTEND;VALUE=DATE:20400104
+SUMMARY:Terre au périhélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus grand\n\nLa Terre est au plus près du Soleil \; les saisons dépendent néanmoins surtout de l'inclinaison de l'axe.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus grand
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2040-03-08-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400308
+DTEND;VALUE=DATE:20400309
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2040-03-20-quinoxe-de-mars@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400320
+DTEND;VALUE=DATE:20400321
+SUMMARY:Équinoxe de mars
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nDébut du printemps astronomique dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2040-03-22-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400322
+DTEND;VALUE=DATE:20400323
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2040-04-22-maximum-des-lyrids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400422
+DTEND;VALUE=DATE:20400423
+SUMMARY:Maximum des Lyrids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Lyra. Fenêtre d'activité approximative du 04-16 au 04-25.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2040-05-06-maximum-des-eta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400506
+DTEND;VALUE=DATE:20400507
+SUMMARY:Maximum des Eta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 04-19 au 05-28.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2040-05-11-clipse-solaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400511
+DTEND;VALUE=DATE:20400512
+SUMMARY:Éclipse solaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : Australia\, N.Z.\, Antarctica.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2040-05-26-clipse-lunaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400526
+DTEND;VALUE=DATE:20400527
+SUMMARY:Éclipse lunaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible totalement selon la région\n\nRégion NASA de visibilité : e Asia\, Australia\, Pacific\, w Americas.
+X-PLANETENUHR-VISIBILITY:Visible totalement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2040-06-13-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400613
+DTEND;VALUE=DATE:20400614
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2040-06-21-solstice-de-juin@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400621
+DTEND;VALUE=DATE:20400622
+SUMMARY:Solstice de juin
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nJour le plus long de l'année dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2040-06-27-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400627
+DTEND;VALUE=DATE:20400628
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2040-07-04-terre-l-aph-lie@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400704
+DTEND;VALUE=DATE:20400705
+SUMMARY:Terre à l’aphélie
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Pas de changement visuel direct \; disque solaire légèrement plus petit\n\nLa Terre est au plus loin du Soleil \; l'été boréal reste causé par l'inclinaison de l'axe et non par la distance.
+X-PLANETENUHR-VISIBILITY:Pas de changement visuel direct \; disque solaire légèrement plus petit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2040-07-30-maximum-des-delta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400730
+DTEND;VALUE=DATE:20400731
+SUMMARY:Maximum des Delta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Aquarius. Fenêtre d'activité approximative du 07-12 au 08-23.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2040-08-12-maximum-des-perseids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400812
+DTEND;VALUE=DATE:20400813
+SUMMARY:Maximum des Perseids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Perseus. Fenêtre d'activité approximative du 07-17 au 08-24.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2040-09-04-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400904
+DTEND;VALUE=DATE:20400905
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2040-09-17-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400917
+DTEND;VALUE=DATE:20400918
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2040-09-22-quinoxe-de-septembre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400922
+DTEND;VALUE=DATE:20400923
+SUMMARY:Équinoxe de septembre
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nDébut de l'automne astronomique dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2040-10-08-maximum-des-draconids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401008
+DTEND;VALUE=DATE:20401009
+SUMMARY:Maximum des Draconids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Draco. Fenêtre d'activité approximative du 10-06 au 10-10.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2040-10-21-maximum-des-orionids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401021
+DTEND;VALUE=DATE:20401022
+SUMMARY:Maximum des Orionids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Orion. Fenêtre d'activité approximative du 10-02 au 11-07.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2040-11-04-clipse-solaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401104
+DTEND;VALUE=DATE:20401105
+SUMMARY:Éclipse solaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : N. & C. America.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2040-11-17-maximum-des-leonids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401117
+DTEND;VALUE=DATE:20401118
+SUMMARY:Maximum des Leonids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Leo. Fenêtre d'activité approximative du 11-06 au 11-30.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2040-11-18-clipse-lunaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401118
+DTEND;VALUE=DATE:20401119
+SUMMARY:Éclipse lunaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible totalement selon la région\n\nRégion NASA de visibilité : e Americas\, Europe\, Africa\, Asia\, Australia.
+X-PLANETENUHR-VISIBILITY:Visible totalement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2040-12-09-lune-au-p-rig-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401209
+DTEND;VALUE=DATE:20401210
+SUMMARY:Lune au périgée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus grande\n\nDate représentative de Lune proche pour ce trimestre \; la taille apparente est légèrement supérieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus grande
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2040-12-14-maximum-des-geminids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401214
+DTEND;VALUE=DATE:20401215
+SUMMARY:Maximum des Geminids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Gemini. Fenêtre d'activité approximative du 12-04 au 12-20.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-season-2040-12-21-solstice-de-d-cembre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401221
+DTEND;VALUE=DATE:20401222
+SUMMARY:Solstice de décembre
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Monde entier\n\nJour le plus court de l'année dans l'hémisphère nord.
+X-PLANETENUHR-VISIBILITY:Monde entier
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-meteor-2040-12-22-maximum-des-ursids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401222
+DTEND;VALUE=DATE:20401223
+SUMMARY:Maximum des Ursids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Généralement favorable depuis l'Europe après minuit\n\nPic annuel de cet essaim de météores \; radiant vers Ursa Minor. Fenêtre d'activité approximative du 12-17 au 12-26.
+X-PLANETENUHR-VISIBILITY:Généralement favorable depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-moon-2040-12-23-lune-l-apog-e@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401223
+DTEND;VALUE=DATE:20401224
+SUMMARY:Lune à l’apogée
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Lune un peu plus petite\n\nDate représentative de Lune lointaine pour ce trimestre \; la taille apparente est légèrement inférieure à la moyenne.
+X-PLANETENUHR-VISIBILITY:Lune un peu plus petite
+END:VEVENT
+END:VCALENDAR

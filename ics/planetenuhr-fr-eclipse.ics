@@ -1,0 +1,648 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//marsrakete//Planetenuhr//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Planetenuhr eclipse (fr)
+X-WR-TIMEZONE:Europe/Berlin
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2026-08-12-clipse-solaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260812
+DTEND;VALUE=DATE:20260813
+SUMMARY:Éclipse solaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Totale en Islande et dans le nord de l'Espagne\; partielle dans une grande partie de l'Europe\n\nMeilleure bande de totalité européenne: Islande et nord de l'Espagne/région des Baléares.
+X-PLANETENUHR-VISIBILITY:Totale en Islande et dans le nord de l'Espagne\; partielle dans une grande partie de l'Europe
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2026-08-28-clipse-lunaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260828
+DTEND;VALUE=DATE:20260829
+SUMMARY:Éclipse lunaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Partiellement visible depuis l'Europe\n\nÉclipse partielle profonde\; meilleures vues plus à l'ouest\, visible autour du coucher de la Lune dans certaines régions d'Europe.
+X-PLANETENUHR-VISIBILITY:Partiellement visible depuis l'Europe
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2027-02-20-clipse-lunaire-p-nombrale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270220
+DTEND;VALUE=DATE:20270221
+SUMMARY:Éclipse lunaire pénombrale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible depuis l'Europe\n\nAssombrissement pénombral subtil\; entièrement visible dans une grande partie de l'Europe.
+X-PLANETENUHR-VISIBILITY:Visible depuis l'Europe
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2027-08-02-clipse-solaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270802
+DTEND;VALUE=DATE:20270803
+SUMMARY:Éclipse solaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Totale dans l'extrême sud de l'Espagne/Gibraltar\; partielle dans la majeure partie de l'Europe\n\nLa bande de totalité européenne touche le sud de l'Espagne près de Cadix/Malaga et Gibraltar.
+X-PLANETENUHR-VISIBILITY:Totale dans l'extrême sud de l'Espagne/Gibraltar\; partielle dans la majeure partie de l'Europe
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2028-01-12-clipse-lunaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280112
+DTEND;VALUE=DATE:20280113
+SUMMARY:Éclipse lunaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : Americas\, Europe\, Africa.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2028-01-26-clipse-solaire-annulaire@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280126
+DTEND;VALUE=DATE:20280127
+SUMMARY:Éclipse solaire annulaire
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Annulaire dans certaines parties du Portugal et de l'Espagne\; partielle en Europe occidentale\n\nÉclipse annulaire dans la péninsule Ibérique\; ailleurs en Europe occidentale\, seulement partielle.
+X-PLANETENUHR-VISIBILITY:Annulaire dans certaines parties du Portugal et de l'Espagne\; partielle en Europe occidentale
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2028-07-06-clipse-lunaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280706
+DTEND;VALUE=DATE:20280707
+SUMMARY:Éclipse lunaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : Europe\, Africa\, Asia\, Australia.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2028-07-22-clipse-solaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280722
+DTEND;VALUE=DATE:20280723
+SUMMARY:Éclipse solaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Totale sur la ligne centrale\, partielle ailleurs dans la zone de visibilité\n\nRégion NASA de visibilité : SE Asia\, E. Indies\, Australia\, N.Z.. Ligne centrale : Australia\, N. Z..
+X-PLANETENUHR-VISIBILITY:Totale sur la ligne centrale\, partielle ailleurs dans la zone de visibilité
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2028-12-31-clipse-lunaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281231
+DTEND;VALUE=DATE:20290101
+SUMMARY:Éclipse lunaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible totalement selon la région\n\nRégion NASA de visibilité : Europe\, Africa\, Asia\, Australia\, Pacific.
+X-PLANETENUHR-VISIBILITY:Visible totalement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2029-01-14-clipse-solaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290114
+DTEND;VALUE=DATE:20290115
+SUMMARY:Éclipse solaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : N. America\, C. America.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2029-06-12-clipse-solaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290612
+DTEND;VALUE=DATE:20290613
+SUMMARY:Éclipse solaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : Arctic\, Scandanavia\, Alaska\, n Asia\, n Canada.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2029-06-26-clipse-lunaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290626
+DTEND;VALUE=DATE:20290627
+SUMMARY:Éclipse lunaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible totalement selon la région\n\nRégion NASA de visibilité : Americas\, Europe\, Africa\, Mid East.
+X-PLANETENUHR-VISIBILITY:Visible totalement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2029-07-11-clipse-solaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290711
+DTEND;VALUE=DATE:20290712
+SUMMARY:Éclipse solaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : s Chile\, s Argentina.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2029-12-05-clipse-solaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291205
+DTEND;VALUE=DATE:20291206
+SUMMARY:Éclipse solaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : s Argentina\, s Chile\, Antarctica.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2029-12-20-clipse-lunaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291220
+DTEND;VALUE=DATE:20291221
+SUMMARY:Éclipse lunaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible totalement selon la région\n\nRégion NASA de visibilité : Americas\, Europe\, Africa\, Asia.
+X-PLANETENUHR-VISIBILITY:Visible totalement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2030-06-01-clipse-solaire-annulaire@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300601
+DTEND;VALUE=DATE:20300602
+SUMMARY:Éclipse solaire annulaire
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Annulaire sur la ligne centrale\, partielle ailleurs dans la zone de visibilité\n\nRégion NASA de visibilité : Europe\, n Africa\, Mid East\, Asia\, Arctic\, Alaska. Ligne centrale : Algeria\, Tunisia\, Greece\, Turkey\, Russia\, n. China\, Japan.
+X-PLANETENUHR-VISIBILITY:Annulaire sur la ligne centrale\, partielle ailleurs dans la zone de visibilité
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2030-06-15-clipse-lunaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300615
+DTEND;VALUE=DATE:20300616
+SUMMARY:Éclipse lunaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : Europe\, Africa\, Asia\, Australia.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2030-11-25-clipse-solaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301125
+DTEND;VALUE=DATE:20301126
+SUMMARY:Éclipse solaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Totale sur la ligne centrale\, partielle ailleurs dans la zone de visibilité\n\nRégion NASA de visibilité : s Africa\, s Indian Oc.\, E. Indies\, Australia\, Antarctica. Ligne centrale : Botswana\, S. Africa\, Australia.
+X-PLANETENUHR-VISIBILITY:Totale sur la ligne centrale\, partielle ailleurs dans la zone de visibilité
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2030-12-09-clipse-lunaire-par-la-p-nombre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301209
+DTEND;VALUE=DATE:20301210
+SUMMARY:Éclipse lunaire par la pénombre
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible dans la pénombre selon la région\n\nRégion NASA de visibilité : Americas\, Europe\, Africa\, Asia.
+X-PLANETENUHR-VISIBILITY:Visible dans la pénombre selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2031-05-07-clipse-lunaire-par-la-p-nombre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310507
+DTEND;VALUE=DATE:20310508
+SUMMARY:Éclipse lunaire par la pénombre
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible dans la pénombre selon la région\n\nRégion NASA de visibilité : Americas\, Europe\, Africa.
+X-PLANETENUHR-VISIBILITY:Visible dans la pénombre selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2031-05-21-clipse-solaire-annulaire@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310521
+DTEND;VALUE=DATE:20310522
+SUMMARY:Éclipse solaire annulaire
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Annulaire sur la ligne centrale\, partielle ailleurs dans la zone de visibilité\n\nRégion NASA de visibilité : Africa\, s Asia\, E. Indies\, Australia. Ligne centrale : Angola\, Congo\, Zambia\, Tanzania\, s. India\, Malaysia\, Indonesia.
+X-PLANETENUHR-VISIBILITY:Annulaire sur la ligne centrale\, partielle ailleurs dans la zone de visibilité
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2031-06-05-clipse-lunaire-par-la-p-nombre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310605
+DTEND;VALUE=DATE:20310606
+SUMMARY:Éclipse lunaire par la pénombre
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible dans la pénombre selon la région\n\nRégion NASA de visibilité : East Indies\, Australia\, Pacific.
+X-PLANETENUHR-VISIBILITY:Visible dans la pénombre selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2031-10-30-clipse-lunaire-par-la-p-nombre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311030
+DTEND;VALUE=DATE:20311031
+SUMMARY:Éclipse lunaire par la pénombre
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible dans la pénombre selon la région\n\nRégion NASA de visibilité : Americas.
+X-PLANETENUHR-VISIBILITY:Visible dans la pénombre selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2031-11-14-clipse-solaire-hybride@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311114
+DTEND;VALUE=DATE:20311115
+SUMMARY:Éclipse solaire hybride
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Hybride sur la ligne centrale\, partielle ailleurs dans la zone de visibilité\n\nRégion NASA de visibilité : Pacific\, s US\, C. America\, nw S. America. Ligne centrale : Pacific\, Panama.
+X-PLANETENUHR-VISIBILITY:Hybride sur la ligne centrale\, partielle ailleurs dans la zone de visibilité
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2032-04-25-clipse-lunaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320425
+DTEND;VALUE=DATE:20320426
+SUMMARY:Éclipse lunaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible totalement selon la région\n\nRégion NASA de visibilité : e Africa\, Asia\, Australia\, Pacific.
+X-PLANETENUHR-VISIBILITY:Visible totalement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2032-05-09-clipse-solaire-annulaire@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320509
+DTEND;VALUE=DATE:20320510
+SUMMARY:Éclipse solaire annulaire
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Annulaire sur la ligne centrale\, partielle ailleurs dans la zone de visibilité\n\nRégion NASA de visibilité : s S. America\, s Africa. Ligne centrale : s Atlantic.
+X-PLANETENUHR-VISIBILITY:Annulaire sur la ligne centrale\, partielle ailleurs dans la zone de visibilité
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2032-10-18-clipse-lunaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321018
+DTEND;VALUE=DATE:20321019
+SUMMARY:Éclipse lunaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible totalement selon la région\n\nRégion NASA de visibilité : Africa\, Europe\, Asia\, Australia.
+X-PLANETENUHR-VISIBILITY:Visible totalement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2032-11-03-clipse-solaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321103
+DTEND;VALUE=DATE:20321104
+SUMMARY:Éclipse solaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : Asia.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2033-03-30-clipse-solaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330330
+DTEND;VALUE=DATE:20330331
+SUMMARY:Éclipse solaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Totale sur la ligne centrale\, partielle ailleurs dans la zone de visibilité\n\nRégion NASA de visibilité : N. America. Ligne centrale : e Russia\, Alaska.
+X-PLANETENUHR-VISIBILITY:Totale sur la ligne centrale\, partielle ailleurs dans la zone de visibilité
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2033-04-14-clipse-lunaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330414
+DTEND;VALUE=DATE:20330415
+SUMMARY:Éclipse lunaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible totalement selon la région\n\nRégion NASA de visibilité : Europe\, Africa\, Asia\, Australia.
+X-PLANETENUHR-VISIBILITY:Visible totalement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2033-09-23-clipse-solaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330923
+DTEND;VALUE=DATE:20330924
+SUMMARY:Éclipse solaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : s S. America\, Antarctica.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2033-10-08-clipse-lunaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331008
+DTEND;VALUE=DATE:20331009
+SUMMARY:Éclipse lunaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible totalement selon la région\n\nRégion NASA de visibilité : Asia\, Australia\, Pacific\, Americas.
+X-PLANETENUHR-VISIBILITY:Visible totalement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2034-03-20-clipse-solaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340320
+DTEND;VALUE=DATE:20340321
+SUMMARY:Éclipse solaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Totale sur la ligne centrale\, partielle ailleurs dans la zone de visibilité\n\nRégion NASA de visibilité : Africa\, Europe\, w Asia. Ligne centrale : Nigeria\, Cameroon\, Chad\, Sudan\, Egypt\, Saudi Arabia\, Iran\, Afghanistan\, Pakistan\, India\, China.
+X-PLANETENUHR-VISIBILITY:Totale sur la ligne centrale\, partielle ailleurs dans la zone de visibilité
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2034-04-03-clipse-lunaire-par-la-p-nombre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340403
+DTEND;VALUE=DATE:20340404
+SUMMARY:Éclipse lunaire par la pénombre
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible dans la pénombre selon la région\n\nRégion NASA de visibilité : Europe\, Africa\, Asia\, Australia.
+X-PLANETENUHR-VISIBILITY:Visible dans la pénombre selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2034-09-12-clipse-solaire-annulaire@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340912
+DTEND;VALUE=DATE:20340913
+SUMMARY:Éclipse solaire annulaire
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Annulaire sur la ligne centrale\, partielle ailleurs dans la zone de visibilité\n\nRégion NASA de visibilité : C. America\, S. America. Ligne centrale : Chile\, Bolivia\, Argentina\, Paraguay\, Brazil.
+X-PLANETENUHR-VISIBILITY:Annulaire sur la ligne centrale\, partielle ailleurs dans la zone de visibilité
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2034-09-28-clipse-lunaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340928
+DTEND;VALUE=DATE:20340929
+SUMMARY:Éclipse lunaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : Americas\, Europe\, Africa.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2035-02-22-clipse-lunaire-par-la-p-nombre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350222
+DTEND;VALUE=DATE:20350223
+SUMMARY:Éclipse lunaire par la pénombre
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible dans la pénombre selon la région\n\nRégion NASA de visibilité : e Asia\, Pacific\, Americas.
+X-PLANETENUHR-VISIBILITY:Visible dans la pénombre selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2035-03-09-clipse-solaire-annulaire@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350309
+DTEND;VALUE=DATE:20350310
+SUMMARY:Éclipse solaire annulaire
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Annulaire sur la ligne centrale\, partielle ailleurs dans la zone de visibilité\n\nRégion NASA de visibilité : Australia\, New Zealand\, s Pacific\, Mexico\, Antarctica. Ligne centrale : New Zealand\, Pacific.
+X-PLANETENUHR-VISIBILITY:Annulaire sur la ligne centrale\, partielle ailleurs dans la zone de visibilité
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2035-08-19-clipse-lunaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350819
+DTEND;VALUE=DATE:20350820
+SUMMARY:Éclipse lunaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : Americas\, Europe\, Africa\, Mid East.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2035-09-02-clipse-solaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350902
+DTEND;VALUE=DATE:20350903
+SUMMARY:Éclipse solaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Totale sur la ligne centrale\, partielle ailleurs dans la zone de visibilité\n\nRégion NASA de visibilité : e Asia\, Pacific. Ligne centrale : China\, Korea\, Japan\, Pacific.
+X-PLANETENUHR-VISIBILITY:Totale sur la ligne centrale\, partielle ailleurs dans la zone de visibilité
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2036-02-11-clipse-lunaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360211
+DTEND;VALUE=DATE:20360212
+SUMMARY:Éclipse lunaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible totalement selon la région\n\nRégion NASA de visibilité : Americas\, Europe\, Africa\,\, Asia\, w Australia.
+X-PLANETENUHR-VISIBILITY:Visible totalement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2036-02-27-clipse-solaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360227
+DTEND;VALUE=DATE:20360228
+SUMMARY:Éclipse solaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : Antarctica\, s Australia\, New Zealand.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2036-07-23-clipse-solaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360723
+DTEND;VALUE=DATE:20360724
+SUMMARY:Éclipse solaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : s Atlantic.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2036-08-07-clipse-lunaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360807
+DTEND;VALUE=DATE:20360808
+SUMMARY:Éclipse lunaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible totalement selon la région\n\nRégion NASA de visibilité : Americas\, Europe\, Africa\, w Asia.
+X-PLANETENUHR-VISIBILITY:Visible totalement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2036-08-21-clipse-solaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360821
+DTEND;VALUE=DATE:20360822
+SUMMARY:Éclipse solaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : Alaska\, Canada\, Arctic\, w Europe\, nw Africa.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2037-01-16-clipse-solaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370116
+DTEND;VALUE=DATE:20370117
+SUMMARY:Éclipse solaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : n Africa\, Europe\, Mid East\, w Asia.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2037-01-31-clipse-lunaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370131
+DTEND;VALUE=DATE:20370201
+SUMMARY:Éclipse lunaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible totalement selon la région\n\nRégion NASA de visibilité : e Europe\, e Africa\, Asia\, Australia\, Pacific\, N.A..
+X-PLANETENUHR-VISIBILITY:Visible totalement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2037-07-13-clipse-solaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370713
+DTEND;VALUE=DATE:20370714
+SUMMARY:Éclipse solaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Totale sur la ligne centrale\, partielle ailleurs dans la zone de visibilité\n\nRégion NASA de visibilité : E. Indies\, Australia\, Pacific. Ligne centrale : Australia\, New Zealand.
+X-PLANETENUHR-VISIBILITY:Totale sur la ligne centrale\, partielle ailleurs dans la zone de visibilité
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2037-07-27-clipse-lunaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370727
+DTEND;VALUE=DATE:20370728
+SUMMARY:Éclipse lunaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : Americas\, Europe\, Africa.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2038-01-05-clipse-solaire-annulaire@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380105
+DTEND;VALUE=DATE:20380106
+SUMMARY:Éclipse solaire annulaire
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Annulaire sur la ligne centrale\, partielle ailleurs dans la zone de visibilité\n\nRégion NASA de visibilité : e N. America\, n S. America\, Atlantic\, Africa\, Europe. Ligne centrale : Cuba\, Dom.Rep.\, Cote d'Ivoire\, Ghana\, Niger\, Chad\, Egypt.
+X-PLANETENUHR-VISIBILITY:Annulaire sur la ligne centrale\, partielle ailleurs dans la zone de visibilité
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2038-01-21-clipse-lunaire-par-la-p-nombre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380121
+DTEND;VALUE=DATE:20380122
+SUMMARY:Éclipse lunaire par la pénombre
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible dans la pénombre selon la région\n\nRégion NASA de visibilité : Americas\, Europe\, Africa.
+X-PLANETENUHR-VISIBILITY:Visible dans la pénombre selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2038-06-17-clipse-lunaire-par-la-p-nombre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380617
+DTEND;VALUE=DATE:20380618
+SUMMARY:Éclipse lunaire par la pénombre
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible dans la pénombre selon la région\n\nRégion NASA de visibilité : e N. America\, C. & S. America\, Africa\, w Europe.
+X-PLANETENUHR-VISIBILITY:Visible dans la pénombre selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2038-07-02-clipse-solaire-annulaire@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380702
+DTEND;VALUE=DATE:20380703
+SUMMARY:Éclipse solaire annulaire
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Annulaire sur la ligne centrale\, partielle ailleurs dans la zone de visibilité\n\nRégion NASA de visibilité : N. & C. America\, S. America\, Africa\, Europe\, Mid East. Ligne centrale : Colombia\, Venezuela\, Mauritania\, Morocco\, Mali\, Niger\, Chad\, Sudan\, Ethiopia\, Kenya.
+X-PLANETENUHR-VISIBILITY:Annulaire sur la ligne centrale\, partielle ailleurs dans la zone de visibilité
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2038-07-16-clipse-lunaire-par-la-p-nombre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380716
+DTEND;VALUE=DATE:20380717
+SUMMARY:Éclipse lunaire par la pénombre
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible dans la pénombre selon la région\n\nRégion NASA de visibilité : Australia\, e Asia\, Pacific\, w Americas.
+X-PLANETENUHR-VISIBILITY:Visible dans la pénombre selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2038-12-11-clipse-lunaire-par-la-p-nombre@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381211
+DTEND;VALUE=DATE:20381212
+SUMMARY:Éclipse lunaire par la pénombre
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible dans la pénombre selon la région\n\nRégion NASA de visibilité : Europe\, Africa\, Asia\, Australia.
+X-PLANETENUHR-VISIBILITY:Visible dans la pénombre selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2038-12-26-clipse-solaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381226
+DTEND;VALUE=DATE:20381227
+SUMMARY:Éclipse solaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Totale sur la ligne centrale\, partielle ailleurs dans la zone de visibilité\n\nRégion NASA de visibilité : se Asia\, E. Indies\, Australia\, New Zealand\, s Pacific\, Antarctica. Ligne centrale : Australia\, New Zealand\, s Pacific.
+X-PLANETENUHR-VISIBILITY:Totale sur la ligne centrale\, partielle ailleurs dans la zone de visibilité
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2039-06-06-clipse-lunaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390606
+DTEND;VALUE=DATE:20390607
+SUMMARY:Éclipse lunaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : Europe\, Africa\, Asia\, Australia.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2039-06-21-clipse-solaire-annulaire@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390621
+DTEND;VALUE=DATE:20390622
+SUMMARY:Éclipse solaire annulaire
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Annulaire sur la ligne centrale\, partielle ailleurs dans la zone de visibilité\n\nRégion NASA de visibilité : N. America\, w Europe. Ligne centrale : Alaska\, n Canada\, Norway\, Sweden\, Finland\, Estonia\, Russia.
+X-PLANETENUHR-VISIBILITY:Annulaire sur la ligne centrale\, partielle ailleurs dans la zone de visibilité
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2039-11-30-clipse-lunaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391130
+DTEND;VALUE=DATE:20391201
+SUMMARY:Éclipse lunaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : Europe\, Africa\, Asia\, Australia\, Pacific.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2039-12-15-clipse-solaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391215
+DTEND;VALUE=DATE:20391216
+SUMMARY:Éclipse solaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Totale sur la ligne centrale\, partielle ailleurs dans la zone de visibilité\n\nRégion NASA de visibilité : s S. America\, Antarctica. Ligne centrale : Antarctica.
+X-PLANETENUHR-VISIBILITY:Totale sur la ligne centrale\, partielle ailleurs dans la zone de visibilité
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2040-05-11-clipse-solaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400511
+DTEND;VALUE=DATE:20400512
+SUMMARY:Éclipse solaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : Australia\, N.Z.\, Antarctica.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2040-05-26-clipse-lunaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400526
+DTEND;VALUE=DATE:20400527
+SUMMARY:Éclipse lunaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible totalement selon la région\n\nRégion NASA de visibilité : e Asia\, Australia\, Pacific\, w Americas.
+X-PLANETENUHR-VISIBILITY:Visible totalement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2040-11-04-clipse-solaire-partielle@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401104
+DTEND;VALUE=DATE:20401105
+SUMMARY:Éclipse solaire partielle
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible partiellement selon la région\n\nRégion NASA de visibilité : N. & C. America.
+X-PLANETENUHR-VISIBILITY:Visible partiellement selon la région
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-eclipse-2040-11-18-clipse-lunaire-totale@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401118
+DTEND;VALUE=DATE:20401119
+SUMMARY:Éclipse lunaire totale
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible totalement selon la région\n\nRégion NASA de visibilité : e Americas\, Europe\, Africa\, Asia\, Australia.
+X-PLANETENUHR-VISIBILITY:Visible totalement selon la région
+END:VEVENT
+END:VCALENDAR

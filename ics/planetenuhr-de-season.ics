@@ -1,0 +1,608 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//marsrakete//Planetenuhr//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Planetenuhr season (de)
+X-WR-TIMEZONE:Europe/Berlin
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2026-03-20-m-rz-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260320
+DTEND;VALUE=DATE:20260321
+SUMMARY:März-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Frühlingsanfang auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2026-06-21-juni-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260621
+DTEND;VALUE=DATE:20260622
+SUMMARY:Juni-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nLängster Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2026-09-23-september-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260923
+DTEND;VALUE=DATE:20260924
+SUMMARY:September-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Herbstanfang auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2026-12-21-dezember-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20261221
+DTEND;VALUE=DATE:20261222
+SUMMARY:Dezember-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nKürzester Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2027-03-20-m-rz-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270320
+DTEND;VALUE=DATE:20270321
+SUMMARY:März-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Frühlingsanfang auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2027-06-21-juni-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270621
+DTEND;VALUE=DATE:20270622
+SUMMARY:Juni-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nLängster Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2027-09-23-september-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270923
+DTEND;VALUE=DATE:20270924
+SUMMARY:September-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Herbstanfang auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2027-12-22-dezember-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20271222
+DTEND;VALUE=DATE:20271223
+SUMMARY:Dezember-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nKürzester Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2028-03-20-m-rz-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280320
+DTEND;VALUE=DATE:20280321
+SUMMARY:März-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Frühlingsbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2028-06-21-juni-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280621
+DTEND;VALUE=DATE:20280622
+SUMMARY:Juni-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nLängster Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2028-09-22-september-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280922
+DTEND;VALUE=DATE:20280923
+SUMMARY:September-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Herbstbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2028-12-21-dezember-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281221
+DTEND;VALUE=DATE:20281222
+SUMMARY:Dezember-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nKürzester Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2029-03-20-m-rz-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290320
+DTEND;VALUE=DATE:20290321
+SUMMARY:März-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Frühlingsbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2029-06-21-juni-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290621
+DTEND;VALUE=DATE:20290622
+SUMMARY:Juni-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nLängster Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2029-09-22-september-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290922
+DTEND;VALUE=DATE:20290923
+SUMMARY:September-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Herbstbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2029-12-21-dezember-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291221
+DTEND;VALUE=DATE:20291222
+SUMMARY:Dezember-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nKürzester Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2030-03-20-m-rz-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300320
+DTEND;VALUE=DATE:20300321
+SUMMARY:März-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Frühlingsbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2030-06-21-juni-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300621
+DTEND;VALUE=DATE:20300622
+SUMMARY:Juni-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nLängster Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2030-09-22-september-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300922
+DTEND;VALUE=DATE:20300923
+SUMMARY:September-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Herbstbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2030-12-21-dezember-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301221
+DTEND;VALUE=DATE:20301222
+SUMMARY:Dezember-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nKürzester Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2031-03-20-m-rz-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310320
+DTEND;VALUE=DATE:20310321
+SUMMARY:März-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Frühlingsbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2031-06-21-juni-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310621
+DTEND;VALUE=DATE:20310622
+SUMMARY:Juni-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nLängster Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2031-09-22-september-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310922
+DTEND;VALUE=DATE:20310923
+SUMMARY:September-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Herbstbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2031-12-21-dezember-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311221
+DTEND;VALUE=DATE:20311222
+SUMMARY:Dezember-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nKürzester Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2032-03-20-m-rz-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320320
+DTEND;VALUE=DATE:20320321
+SUMMARY:März-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Frühlingsbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2032-06-21-juni-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320621
+DTEND;VALUE=DATE:20320622
+SUMMARY:Juni-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nLängster Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2032-09-22-september-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320922
+DTEND;VALUE=DATE:20320923
+SUMMARY:September-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Herbstbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2032-12-21-dezember-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321221
+DTEND;VALUE=DATE:20321222
+SUMMARY:Dezember-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nKürzester Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2033-03-20-m-rz-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330320
+DTEND;VALUE=DATE:20330321
+SUMMARY:März-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Frühlingsbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2033-06-21-juni-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330621
+DTEND;VALUE=DATE:20330622
+SUMMARY:Juni-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nLängster Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2033-09-22-september-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330922
+DTEND;VALUE=DATE:20330923
+SUMMARY:September-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Herbstbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2033-12-21-dezember-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331221
+DTEND;VALUE=DATE:20331222
+SUMMARY:Dezember-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nKürzester Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2034-03-20-m-rz-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340320
+DTEND;VALUE=DATE:20340321
+SUMMARY:März-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Frühlingsbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2034-06-21-juni-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340621
+DTEND;VALUE=DATE:20340622
+SUMMARY:Juni-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nLängster Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2034-09-22-september-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340922
+DTEND;VALUE=DATE:20340923
+SUMMARY:September-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Herbstbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2034-12-21-dezember-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20341221
+DTEND;VALUE=DATE:20341222
+SUMMARY:Dezember-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nKürzester Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2035-03-20-m-rz-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350320
+DTEND;VALUE=DATE:20350321
+SUMMARY:März-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Frühlingsbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2035-06-21-juni-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350621
+DTEND;VALUE=DATE:20350622
+SUMMARY:Juni-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nLängster Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2035-09-22-september-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350922
+DTEND;VALUE=DATE:20350923
+SUMMARY:September-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Herbstbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2035-12-21-dezember-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20351221
+DTEND;VALUE=DATE:20351222
+SUMMARY:Dezember-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nKürzester Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2036-03-20-m-rz-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360320
+DTEND;VALUE=DATE:20360321
+SUMMARY:März-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Frühlingsbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2036-06-21-juni-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360621
+DTEND;VALUE=DATE:20360622
+SUMMARY:Juni-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nLängster Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2036-09-22-september-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360922
+DTEND;VALUE=DATE:20360923
+SUMMARY:September-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Herbstbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2036-12-21-dezember-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20361221
+DTEND;VALUE=DATE:20361222
+SUMMARY:Dezember-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nKürzester Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2037-03-20-m-rz-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370320
+DTEND;VALUE=DATE:20370321
+SUMMARY:März-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Frühlingsbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2037-06-21-juni-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370621
+DTEND;VALUE=DATE:20370622
+SUMMARY:Juni-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nLängster Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2037-09-22-september-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370922
+DTEND;VALUE=DATE:20370923
+SUMMARY:September-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Herbstbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2037-12-21-dezember-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20371221
+DTEND;VALUE=DATE:20371222
+SUMMARY:Dezember-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nKürzester Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2038-03-20-m-rz-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380320
+DTEND;VALUE=DATE:20380321
+SUMMARY:März-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Frühlingsbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2038-06-21-juni-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380621
+DTEND;VALUE=DATE:20380622
+SUMMARY:Juni-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nLängster Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2038-09-22-september-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380922
+DTEND;VALUE=DATE:20380923
+SUMMARY:September-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Herbstbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2038-12-21-dezember-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381221
+DTEND;VALUE=DATE:20381222
+SUMMARY:Dezember-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nKürzester Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2039-03-20-m-rz-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390320
+DTEND;VALUE=DATE:20390321
+SUMMARY:März-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Frühlingsbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2039-06-21-juni-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390621
+DTEND;VALUE=DATE:20390622
+SUMMARY:Juni-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nLängster Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2039-09-22-september-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390922
+DTEND;VALUE=DATE:20390923
+SUMMARY:September-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Herbstbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2039-12-21-dezember-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391221
+DTEND;VALUE=DATE:20391222
+SUMMARY:Dezember-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nKürzester Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2040-03-20-m-rz-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400320
+DTEND;VALUE=DATE:20400321
+SUMMARY:März-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Frühlingsbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2040-06-21-juni-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400621
+DTEND;VALUE=DATE:20400622
+SUMMARY:Juni-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nLängster Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2040-09-22-september-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400922
+DTEND;VALUE=DATE:20400923
+SUMMARY:September-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Herbstbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2040-12-21-dezember-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401221
+DTEND;VALUE=DATE:20401222
+SUMMARY:Dezember-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nKürzester Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+END:VCALENDAR

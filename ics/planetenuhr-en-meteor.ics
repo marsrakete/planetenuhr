@@ -1,0 +1,1508 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//marsrakete//Planetenuhr//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Planetenuhr meteor (en)
+X-WR-TIMEZONE:Europe/Berlin
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2026-01-04-quadrantids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260104
+DTEND;VALUE=DATE:20260105
+SUMMARY:Quadrantids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Good from Europe before dawn\, but moonlight may interfere\n\nShort\, sharp maximum\; northern radiant is favorable for Europe.
+X-PLANETENUHR-VISIBILITY:Good from Europe before dawn\, but moonlight may interfere
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2026-04-22-lyrids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260422
+DTEND;VALUE=DATE:20260423
+SUMMARY:Lyrids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible from Europe after midnight\n\nModerate spring shower\; best from a dark site.
+X-PLANETENUHR-VISIBILITY:Visible from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2026-05-06-eta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260506
+DTEND;VALUE=DATE:20260507
+SUMMARY:Eta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Low radiant from Europe before dawn\n\nHalley-comet meteors\; better from southerly latitudes\, but some meteors are possible in Europe.
+X-PLANETENUHR-VISIBILITY:Low radiant from Europe before dawn
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2026-07-30-delta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260730
+DTEND;VALUE=DATE:20260731
+SUMMARY:Delta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Low southern radiant\; best from Europe after midnight\n\nPeak of a shower active roughly from 2026-07-12 to 2026-08-23\; darker skies away from city light help most.
+X-PLANETENUHR-VISIBILITY:Low southern radiant\; best from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2026-07-31-alpha-capricornids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260731
+DTEND;VALUE=DATE:20260801
+SUMMARY:Alpha Capricornids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible from Europe after midnight\, low in the south\n\nPeak of a shower active roughly from 2026-07-07 to 2026-08-15\; slower meteors can produce bright fireballs.
+X-PLANETENUHR-VISIBILITY:Visible from Europe after midnight\, low in the south
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2026-08-12-perseids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260812
+DTEND;VALUE=DATE:20260813
+SUMMARY:Perseids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Good from Europe after midnight\n\nUsually one of the best northern meteor showers\; dark skies help most.
+X-PLANETENUHR-VISIBILITY:Good from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2026-10-21-orionids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20261021
+DTEND;VALUE=DATE:20261022
+SUMMARY:Orionids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible from Europe after midnight\n\nFast meteors from debris of Halley comet\; best before dawn.
+X-PLANETENUHR-VISIBILITY:Visible from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2026-11-17-leonids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20261117
+DTEND;VALUE=DATE:20261118
+SUMMARY:Leonids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible from Europe after midnight\n\nUsually modest\, but known historically for occasional outbursts.
+X-PLANETENUHR-VISIBILITY:Visible from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2026-12-14-geminids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20261214
+DTEND;VALUE=DATE:20261215
+SUMMARY:Geminids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Very good from Europe\n\nOften the strongest annual meteor shower\, best late evening to dawn.
+X-PLANETENUHR-VISIBILITY:Very good from Europe
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2026-12-22-ursids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20261222
+DTEND;VALUE=DATE:20261223
+SUMMARY:Ursids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible from Europe all night\n\nA modest northern shower near the December solstice.
+X-PLANETENUHR-VISIBILITY:Visible from Europe all night
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2027-01-03-quadrantids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270103
+DTEND;VALUE=DATE:20270104
+SUMMARY:Quadrantids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Good from Europe before dawn\n\nShort\, sharp maximum\; northern radiant is favorable for Europe.
+X-PLANETENUHR-VISIBILITY:Good from Europe before dawn
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2027-04-22-lyrids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270422
+DTEND;VALUE=DATE:20270423
+SUMMARY:Lyrids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible from Europe after midnight\n\nModerate spring shower\; best from a dark site.
+X-PLANETENUHR-VISIBILITY:Visible from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2027-05-06-eta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270506
+DTEND;VALUE=DATE:20270507
+SUMMARY:Eta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Low radiant from Europe before dawn\n\nHalley-comet meteors\; rates are lower in Europe than farther south.
+X-PLANETENUHR-VISIBILITY:Low radiant from Europe before dawn
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2027-07-30-delta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270730
+DTEND;VALUE=DATE:20270731
+SUMMARY:Delta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Low southern radiant\; best from Europe after midnight\n\nPeak of a shower active roughly from 2027-07-12 to 2027-08-23\; darker skies away from city light help most.
+X-PLANETENUHR-VISIBILITY:Low southern radiant\; best from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2027-07-31-alpha-capricornids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270731
+DTEND;VALUE=DATE:20270801
+SUMMARY:Alpha Capricornids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible from Europe after midnight\, low in the south\n\nPeak of a shower active roughly from 2027-07-07 to 2027-08-15\; slower meteors can produce bright fireballs.
+X-PLANETENUHR-VISIBILITY:Visible from Europe after midnight\, low in the south
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2027-08-12-perseids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270812
+DTEND;VALUE=DATE:20270813
+SUMMARY:Perseids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Good from Europe after midnight\n\nReliable summer meteor shower\; best after the radiant rises high.
+X-PLANETENUHR-VISIBILITY:Good from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2027-10-21-orionids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20271021
+DTEND;VALUE=DATE:20271022
+SUMMARY:Orionids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible from Europe after midnight\n\nFast Halley-comet meteors\; best before dawn.
+X-PLANETENUHR-VISIBILITY:Visible from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2027-11-17-leonids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20271117
+DTEND;VALUE=DATE:20271118
+SUMMARY:Leonids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible from Europe after midnight\n\nUsually modest outside storm years.
+X-PLANETENUHR-VISIBILITY:Visible from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2027-12-14-geminids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20271214
+DTEND;VALUE=DATE:20271215
+SUMMARY:Geminids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Very good from Europe\n\nOne of the strongest annual meteor showers\, especially from dark locations.
+X-PLANETENUHR-VISIBILITY:Very good from Europe
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2027-12-22-ursids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20271222
+DTEND;VALUE=DATE:20271223
+SUMMARY:Ursids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible from Europe all night\n\nA modest northern shower\; best under dark skies.
+X-PLANETENUHR-VISIBILITY:Visible from Europe all night
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2028-01-03-quadrantids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280103
+DTEND;VALUE=DATE:20280104
+SUMMARY:Quadrantids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Bootes. Approximate activity window 12-28 to 01-12.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2028-04-22-lyrids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280422
+DTEND;VALUE=DATE:20280423
+SUMMARY:Lyrids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Lyra. Approximate activity window 04-16 to 04-25.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2028-05-06-eta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280506
+DTEND;VALUE=DATE:20280507
+SUMMARY:Eta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 04-19 to 05-28.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2028-07-30-delta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280730
+DTEND;VALUE=DATE:20280731
+SUMMARY:Delta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 07-12 to 08-23.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2028-08-12-perseids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280812
+DTEND;VALUE=DATE:20280813
+SUMMARY:Perseids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Perseus. Approximate activity window 07-17 to 08-24.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2028-10-08-draconids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281008
+DTEND;VALUE=DATE:20281009
+SUMMARY:Draconids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Draco. Approximate activity window 10-06 to 10-10.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2028-10-21-orionids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281021
+DTEND;VALUE=DATE:20281022
+SUMMARY:Orionids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Orion. Approximate activity window 10-02 to 11-07.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2028-11-17-leonids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281117
+DTEND;VALUE=DATE:20281118
+SUMMARY:Leonids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Leo. Approximate activity window 11-06 to 11-30.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2028-12-14-geminids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281214
+DTEND;VALUE=DATE:20281215
+SUMMARY:Geminids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Gemini. Approximate activity window 12-04 to 12-20.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2028-12-22-ursids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281222
+DTEND;VALUE=DATE:20281223
+SUMMARY:Ursids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Ursa Minor. Approximate activity window 12-17 to 12-26.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2029-01-03-quadrantids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290103
+DTEND;VALUE=DATE:20290104
+SUMMARY:Quadrantids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Bootes. Approximate activity window 12-28 to 01-12.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2029-04-22-lyrids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290422
+DTEND;VALUE=DATE:20290423
+SUMMARY:Lyrids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Lyra. Approximate activity window 04-16 to 04-25.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2029-05-06-eta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290506
+DTEND;VALUE=DATE:20290507
+SUMMARY:Eta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 04-19 to 05-28.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2029-07-30-delta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290730
+DTEND;VALUE=DATE:20290731
+SUMMARY:Delta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 07-12 to 08-23.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2029-08-12-perseids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290812
+DTEND;VALUE=DATE:20290813
+SUMMARY:Perseids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Perseus. Approximate activity window 07-17 to 08-24.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2029-10-08-draconids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291008
+DTEND;VALUE=DATE:20291009
+SUMMARY:Draconids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Draco. Approximate activity window 10-06 to 10-10.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2029-10-21-orionids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291021
+DTEND;VALUE=DATE:20291022
+SUMMARY:Orionids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Orion. Approximate activity window 10-02 to 11-07.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2029-11-17-leonids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291117
+DTEND;VALUE=DATE:20291118
+SUMMARY:Leonids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Leo. Approximate activity window 11-06 to 11-30.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2029-12-14-geminids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291214
+DTEND;VALUE=DATE:20291215
+SUMMARY:Geminids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Gemini. Approximate activity window 12-04 to 12-20.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2029-12-22-ursids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291222
+DTEND;VALUE=DATE:20291223
+SUMMARY:Ursids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Ursa Minor. Approximate activity window 12-17 to 12-26.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2030-01-03-quadrantids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300103
+DTEND;VALUE=DATE:20300104
+SUMMARY:Quadrantids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Bootes. Approximate activity window 12-28 to 01-12.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2030-04-22-lyrids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300422
+DTEND;VALUE=DATE:20300423
+SUMMARY:Lyrids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Lyra. Approximate activity window 04-16 to 04-25.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2030-05-06-eta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300506
+DTEND;VALUE=DATE:20300507
+SUMMARY:Eta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 04-19 to 05-28.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2030-07-30-delta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300730
+DTEND;VALUE=DATE:20300731
+SUMMARY:Delta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 07-12 to 08-23.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2030-08-12-perseids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300812
+DTEND;VALUE=DATE:20300813
+SUMMARY:Perseids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Perseus. Approximate activity window 07-17 to 08-24.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2030-10-08-draconids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301008
+DTEND;VALUE=DATE:20301009
+SUMMARY:Draconids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Draco. Approximate activity window 10-06 to 10-10.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2030-10-21-orionids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301021
+DTEND;VALUE=DATE:20301022
+SUMMARY:Orionids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Orion. Approximate activity window 10-02 to 11-07.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2030-11-17-leonids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301117
+DTEND;VALUE=DATE:20301118
+SUMMARY:Leonids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Leo. Approximate activity window 11-06 to 11-30.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2030-12-14-geminids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301214
+DTEND;VALUE=DATE:20301215
+SUMMARY:Geminids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Gemini. Approximate activity window 12-04 to 12-20.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2030-12-22-ursids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301222
+DTEND;VALUE=DATE:20301223
+SUMMARY:Ursids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Ursa Minor. Approximate activity window 12-17 to 12-26.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2031-01-03-quadrantids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310103
+DTEND;VALUE=DATE:20310104
+SUMMARY:Quadrantids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Bootes. Approximate activity window 12-28 to 01-12.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2031-04-22-lyrids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310422
+DTEND;VALUE=DATE:20310423
+SUMMARY:Lyrids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Lyra. Approximate activity window 04-16 to 04-25.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2031-05-06-eta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310506
+DTEND;VALUE=DATE:20310507
+SUMMARY:Eta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 04-19 to 05-28.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2031-07-30-delta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310730
+DTEND;VALUE=DATE:20310731
+SUMMARY:Delta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 07-12 to 08-23.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2031-08-12-perseids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310812
+DTEND;VALUE=DATE:20310813
+SUMMARY:Perseids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Perseus. Approximate activity window 07-17 to 08-24.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2031-10-08-draconids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311008
+DTEND;VALUE=DATE:20311009
+SUMMARY:Draconids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Draco. Approximate activity window 10-06 to 10-10.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2031-10-21-orionids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311021
+DTEND;VALUE=DATE:20311022
+SUMMARY:Orionids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Orion. Approximate activity window 10-02 to 11-07.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2031-11-17-leonids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311117
+DTEND;VALUE=DATE:20311118
+SUMMARY:Leonids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Leo. Approximate activity window 11-06 to 11-30.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2031-12-14-geminids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311214
+DTEND;VALUE=DATE:20311215
+SUMMARY:Geminids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Gemini. Approximate activity window 12-04 to 12-20.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2031-12-22-ursids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311222
+DTEND;VALUE=DATE:20311223
+SUMMARY:Ursids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Ursa Minor. Approximate activity window 12-17 to 12-26.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2032-01-03-quadrantids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320103
+DTEND;VALUE=DATE:20320104
+SUMMARY:Quadrantids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Bootes. Approximate activity window 12-28 to 01-12.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2032-04-22-lyrids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320422
+DTEND;VALUE=DATE:20320423
+SUMMARY:Lyrids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Lyra. Approximate activity window 04-16 to 04-25.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2032-05-06-eta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320506
+DTEND;VALUE=DATE:20320507
+SUMMARY:Eta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 04-19 to 05-28.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2032-07-30-delta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320730
+DTEND;VALUE=DATE:20320731
+SUMMARY:Delta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 07-12 to 08-23.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2032-08-12-perseids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320812
+DTEND;VALUE=DATE:20320813
+SUMMARY:Perseids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Perseus. Approximate activity window 07-17 to 08-24.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2032-10-08-draconids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321008
+DTEND;VALUE=DATE:20321009
+SUMMARY:Draconids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Draco. Approximate activity window 10-06 to 10-10.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2032-10-21-orionids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321021
+DTEND;VALUE=DATE:20321022
+SUMMARY:Orionids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Orion. Approximate activity window 10-02 to 11-07.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2032-11-17-leonids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321117
+DTEND;VALUE=DATE:20321118
+SUMMARY:Leonids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Leo. Approximate activity window 11-06 to 11-30.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2032-12-14-geminids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321214
+DTEND;VALUE=DATE:20321215
+SUMMARY:Geminids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Gemini. Approximate activity window 12-04 to 12-20.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2032-12-22-ursids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321222
+DTEND;VALUE=DATE:20321223
+SUMMARY:Ursids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Ursa Minor. Approximate activity window 12-17 to 12-26.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2033-01-03-quadrantids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330103
+DTEND;VALUE=DATE:20330104
+SUMMARY:Quadrantids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Bootes. Approximate activity window 12-28 to 01-12.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2033-04-22-lyrids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330422
+DTEND;VALUE=DATE:20330423
+SUMMARY:Lyrids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Lyra. Approximate activity window 04-16 to 04-25.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2033-05-06-eta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330506
+DTEND;VALUE=DATE:20330507
+SUMMARY:Eta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 04-19 to 05-28.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2033-07-30-delta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330730
+DTEND;VALUE=DATE:20330731
+SUMMARY:Delta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 07-12 to 08-23.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2033-08-12-perseids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330812
+DTEND;VALUE=DATE:20330813
+SUMMARY:Perseids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Perseus. Approximate activity window 07-17 to 08-24.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2033-10-08-draconids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331008
+DTEND;VALUE=DATE:20331009
+SUMMARY:Draconids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Draco. Approximate activity window 10-06 to 10-10.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2033-10-21-orionids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331021
+DTEND;VALUE=DATE:20331022
+SUMMARY:Orionids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Orion. Approximate activity window 10-02 to 11-07.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2033-11-17-leonids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331117
+DTEND;VALUE=DATE:20331118
+SUMMARY:Leonids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Leo. Approximate activity window 11-06 to 11-30.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2033-12-14-geminids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331214
+DTEND;VALUE=DATE:20331215
+SUMMARY:Geminids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Gemini. Approximate activity window 12-04 to 12-20.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2033-12-22-ursids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331222
+DTEND;VALUE=DATE:20331223
+SUMMARY:Ursids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Ursa Minor. Approximate activity window 12-17 to 12-26.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2034-01-03-quadrantids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340103
+DTEND;VALUE=DATE:20340104
+SUMMARY:Quadrantids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Bootes. Approximate activity window 12-28 to 01-12.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2034-04-22-lyrids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340422
+DTEND;VALUE=DATE:20340423
+SUMMARY:Lyrids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Lyra. Approximate activity window 04-16 to 04-25.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2034-05-06-eta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340506
+DTEND;VALUE=DATE:20340507
+SUMMARY:Eta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 04-19 to 05-28.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2034-07-30-delta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340730
+DTEND;VALUE=DATE:20340731
+SUMMARY:Delta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 07-12 to 08-23.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2034-08-12-perseids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340812
+DTEND;VALUE=DATE:20340813
+SUMMARY:Perseids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Perseus. Approximate activity window 07-17 to 08-24.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2034-10-08-draconids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20341008
+DTEND;VALUE=DATE:20341009
+SUMMARY:Draconids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Draco. Approximate activity window 10-06 to 10-10.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2034-10-21-orionids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20341021
+DTEND;VALUE=DATE:20341022
+SUMMARY:Orionids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Orion. Approximate activity window 10-02 to 11-07.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2034-11-17-leonids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20341117
+DTEND;VALUE=DATE:20341118
+SUMMARY:Leonids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Leo. Approximate activity window 11-06 to 11-30.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2034-12-14-geminids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20341214
+DTEND;VALUE=DATE:20341215
+SUMMARY:Geminids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Gemini. Approximate activity window 12-04 to 12-20.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2034-12-22-ursids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20341222
+DTEND;VALUE=DATE:20341223
+SUMMARY:Ursids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Ursa Minor. Approximate activity window 12-17 to 12-26.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2035-01-03-quadrantids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350103
+DTEND;VALUE=DATE:20350104
+SUMMARY:Quadrantids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Bootes. Approximate activity window 12-28 to 01-12.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2035-04-22-lyrids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350422
+DTEND;VALUE=DATE:20350423
+SUMMARY:Lyrids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Lyra. Approximate activity window 04-16 to 04-25.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2035-05-06-eta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350506
+DTEND;VALUE=DATE:20350507
+SUMMARY:Eta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 04-19 to 05-28.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2035-07-30-delta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350730
+DTEND;VALUE=DATE:20350731
+SUMMARY:Delta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 07-12 to 08-23.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2035-08-12-perseids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350812
+DTEND;VALUE=DATE:20350813
+SUMMARY:Perseids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Perseus. Approximate activity window 07-17 to 08-24.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2035-10-08-draconids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20351008
+DTEND;VALUE=DATE:20351009
+SUMMARY:Draconids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Draco. Approximate activity window 10-06 to 10-10.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2035-10-21-orionids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20351021
+DTEND;VALUE=DATE:20351022
+SUMMARY:Orionids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Orion. Approximate activity window 10-02 to 11-07.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2035-11-17-leonids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20351117
+DTEND;VALUE=DATE:20351118
+SUMMARY:Leonids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Leo. Approximate activity window 11-06 to 11-30.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2035-12-14-geminids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20351214
+DTEND;VALUE=DATE:20351215
+SUMMARY:Geminids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Gemini. Approximate activity window 12-04 to 12-20.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2035-12-22-ursids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20351222
+DTEND;VALUE=DATE:20351223
+SUMMARY:Ursids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Ursa Minor. Approximate activity window 12-17 to 12-26.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2036-01-03-quadrantids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360103
+DTEND;VALUE=DATE:20360104
+SUMMARY:Quadrantids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Bootes. Approximate activity window 12-28 to 01-12.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2036-04-22-lyrids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360422
+DTEND;VALUE=DATE:20360423
+SUMMARY:Lyrids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Lyra. Approximate activity window 04-16 to 04-25.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2036-05-06-eta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360506
+DTEND;VALUE=DATE:20360507
+SUMMARY:Eta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 04-19 to 05-28.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2036-07-30-delta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360730
+DTEND;VALUE=DATE:20360731
+SUMMARY:Delta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 07-12 to 08-23.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2036-08-12-perseids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360812
+DTEND;VALUE=DATE:20360813
+SUMMARY:Perseids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Perseus. Approximate activity window 07-17 to 08-24.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2036-10-08-draconids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20361008
+DTEND;VALUE=DATE:20361009
+SUMMARY:Draconids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Draco. Approximate activity window 10-06 to 10-10.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2036-10-21-orionids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20361021
+DTEND;VALUE=DATE:20361022
+SUMMARY:Orionids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Orion. Approximate activity window 10-02 to 11-07.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2036-11-17-leonids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20361117
+DTEND;VALUE=DATE:20361118
+SUMMARY:Leonids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Leo. Approximate activity window 11-06 to 11-30.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2036-12-14-geminids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20361214
+DTEND;VALUE=DATE:20361215
+SUMMARY:Geminids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Gemini. Approximate activity window 12-04 to 12-20.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2036-12-22-ursids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20361222
+DTEND;VALUE=DATE:20361223
+SUMMARY:Ursids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Ursa Minor. Approximate activity window 12-17 to 12-26.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2037-01-03-quadrantids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370103
+DTEND;VALUE=DATE:20370104
+SUMMARY:Quadrantids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Bootes. Approximate activity window 12-28 to 01-12.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2037-04-22-lyrids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370422
+DTEND;VALUE=DATE:20370423
+SUMMARY:Lyrids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Lyra. Approximate activity window 04-16 to 04-25.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2037-05-06-eta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370506
+DTEND;VALUE=DATE:20370507
+SUMMARY:Eta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 04-19 to 05-28.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2037-07-30-delta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370730
+DTEND;VALUE=DATE:20370731
+SUMMARY:Delta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 07-12 to 08-23.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2037-08-12-perseids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370812
+DTEND;VALUE=DATE:20370813
+SUMMARY:Perseids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Perseus. Approximate activity window 07-17 to 08-24.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2037-10-08-draconids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20371008
+DTEND;VALUE=DATE:20371009
+SUMMARY:Draconids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Draco. Approximate activity window 10-06 to 10-10.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2037-10-21-orionids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20371021
+DTEND;VALUE=DATE:20371022
+SUMMARY:Orionids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Orion. Approximate activity window 10-02 to 11-07.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2037-11-17-leonids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20371117
+DTEND;VALUE=DATE:20371118
+SUMMARY:Leonids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Leo. Approximate activity window 11-06 to 11-30.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2037-12-14-geminids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20371214
+DTEND;VALUE=DATE:20371215
+SUMMARY:Geminids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Gemini. Approximate activity window 12-04 to 12-20.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2037-12-22-ursids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20371222
+DTEND;VALUE=DATE:20371223
+SUMMARY:Ursids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Ursa Minor. Approximate activity window 12-17 to 12-26.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2038-01-03-quadrantids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380103
+DTEND;VALUE=DATE:20380104
+SUMMARY:Quadrantids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Bootes. Approximate activity window 12-28 to 01-12.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2038-04-22-lyrids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380422
+DTEND;VALUE=DATE:20380423
+SUMMARY:Lyrids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Lyra. Approximate activity window 04-16 to 04-25.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2038-05-06-eta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380506
+DTEND;VALUE=DATE:20380507
+SUMMARY:Eta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 04-19 to 05-28.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2038-07-30-delta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380730
+DTEND;VALUE=DATE:20380731
+SUMMARY:Delta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 07-12 to 08-23.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2038-08-12-perseids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380812
+DTEND;VALUE=DATE:20380813
+SUMMARY:Perseids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Perseus. Approximate activity window 07-17 to 08-24.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2038-10-08-draconids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381008
+DTEND;VALUE=DATE:20381009
+SUMMARY:Draconids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Draco. Approximate activity window 10-06 to 10-10.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2038-10-21-orionids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381021
+DTEND;VALUE=DATE:20381022
+SUMMARY:Orionids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Orion. Approximate activity window 10-02 to 11-07.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2038-11-17-leonids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381117
+DTEND;VALUE=DATE:20381118
+SUMMARY:Leonids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Leo. Approximate activity window 11-06 to 11-30.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2038-12-14-geminids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381214
+DTEND;VALUE=DATE:20381215
+SUMMARY:Geminids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Gemini. Approximate activity window 12-04 to 12-20.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2038-12-22-ursids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381222
+DTEND;VALUE=DATE:20381223
+SUMMARY:Ursids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Ursa Minor. Approximate activity window 12-17 to 12-26.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2039-01-03-quadrantids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390103
+DTEND;VALUE=DATE:20390104
+SUMMARY:Quadrantids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Bootes. Approximate activity window 12-28 to 01-12.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2039-04-22-lyrids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390422
+DTEND;VALUE=DATE:20390423
+SUMMARY:Lyrids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Lyra. Approximate activity window 04-16 to 04-25.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2039-05-06-eta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390506
+DTEND;VALUE=DATE:20390507
+SUMMARY:Eta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 04-19 to 05-28.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2039-07-30-delta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390730
+DTEND;VALUE=DATE:20390731
+SUMMARY:Delta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 07-12 to 08-23.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2039-08-12-perseids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390812
+DTEND;VALUE=DATE:20390813
+SUMMARY:Perseids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Perseus. Approximate activity window 07-17 to 08-24.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2039-10-08-draconids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391008
+DTEND;VALUE=DATE:20391009
+SUMMARY:Draconids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Draco. Approximate activity window 10-06 to 10-10.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2039-10-21-orionids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391021
+DTEND;VALUE=DATE:20391022
+SUMMARY:Orionids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Orion. Approximate activity window 10-02 to 11-07.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2039-11-17-leonids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391117
+DTEND;VALUE=DATE:20391118
+SUMMARY:Leonids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Leo. Approximate activity window 11-06 to 11-30.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2039-12-14-geminids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391214
+DTEND;VALUE=DATE:20391215
+SUMMARY:Geminids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Gemini. Approximate activity window 12-04 to 12-20.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2039-12-22-ursids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391222
+DTEND;VALUE=DATE:20391223
+SUMMARY:Ursids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Ursa Minor. Approximate activity window 12-17 to 12-26.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2040-01-03-quadrantids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400103
+DTEND;VALUE=DATE:20400104
+SUMMARY:Quadrantids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Bootes. Approximate activity window 12-28 to 01-12.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2040-04-22-lyrids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400422
+DTEND;VALUE=DATE:20400423
+SUMMARY:Lyrids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Lyra. Approximate activity window 04-16 to 04-25.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2040-05-06-eta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400506
+DTEND;VALUE=DATE:20400507
+SUMMARY:Eta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 04-19 to 05-28.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2040-07-30-delta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400730
+DTEND;VALUE=DATE:20400731
+SUMMARY:Delta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 07-12 to 08-23.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2040-08-12-perseids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400812
+DTEND;VALUE=DATE:20400813
+SUMMARY:Perseids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Perseus. Approximate activity window 07-17 to 08-24.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2040-10-08-draconids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401008
+DTEND;VALUE=DATE:20401009
+SUMMARY:Draconids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Draco. Approximate activity window 10-06 to 10-10.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2040-10-21-orionids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401021
+DTEND;VALUE=DATE:20401022
+SUMMARY:Orionids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Orion. Approximate activity window 10-02 to 11-07.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2040-11-17-leonids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401117
+DTEND;VALUE=DATE:20401118
+SUMMARY:Leonids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Leo. Approximate activity window 11-06 to 11-30.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2040-12-14-geminids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401214
+DTEND;VALUE=DATE:20401215
+SUMMARY:Geminids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Gemini. Approximate activity window 12-04 to 12-20.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2040-12-22-ursids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401222
+DTEND;VALUE=DATE:20401223
+SUMMARY:Ursids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Ursa Minor. Approximate activity window 12-17 to 12-26.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+END:VCALENDAR

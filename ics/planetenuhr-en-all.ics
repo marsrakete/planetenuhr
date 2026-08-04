@@ -1,0 +1,4248 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//marsrakete//Planetenuhr//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Planetenuhr Sky Calendar (en)
+X-WR-TIMEZONE:Europe/Berlin
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2026-01-03-earth-at-perihelion@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260103
+DTEND;VALUE=DATE:20260104
+SUMMARY:Earth at perihelion
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: No direct visual change\; solar disk slightly larger\n\nEarth is closest to the Sun on 2026-01-03 (about 17:16 UTC)\; seasons are still controlled mainly by axial tilt.
+X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly larger
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2026-01-04-quadrantids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260104
+DTEND;VALUE=DATE:20260105
+SUMMARY:Quadrantids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Good from Europe before dawn\, but moonlight may interfere\n\nShort\, sharp maximum\; northern radiant is favorable for Europe.
+X-PLANETENUHR-VISIBILITY:Good from Europe before dawn\, but moonlight may interfere
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2026-01-10-jupiter-at-opposition@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260110
+DTEND;VALUE=DATE:20260111
+SUMMARY:Jupiter at opposition
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Excellent evening and night visibility\n\nJupiter is bright and high in the winter sky\; good telescope target.
+X-PLANETENUHR-VISIBILITY:Excellent evening and night visibility
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2026-02-19-mercury-at-greatest-eastern-elongation@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260219
+DTEND;VALUE=DATE:20260220
+SUMMARY:Mercury at greatest eastern elongation
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Best 2026 evening apparition from northern Europe\n\nLook low in the west after sunset\; crescent Moon\, Mercury\, Venus and Saturn are nearby around Feb 18-20.
+X-PLANETENUHR-VISIBILITY:Best 2026 evening apparition from northern Europe
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2026-02-24-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260224
+DTEND;VALUE=DATE:20260225
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Not a visual event by itself\n\nMoon closest to Earth\; apparent size slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Not a visual event by itself
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2026-03-20-march-equinox@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260320
+DTEND;VALUE=DATE:20260321
+SUMMARY:March equinox
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nAstronomical spring begins in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2026-04-22-lyrids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260422
+DTEND;VALUE=DATE:20260423
+SUMMARY:Lyrids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible from Europe after midnight\n\nModerate spring shower\; best from a dark site.
+X-PLANETENUHR-VISIBILITY:Visible from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2026-05-06-eta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260506
+DTEND;VALUE=DATE:20260507
+SUMMARY:Eta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Low radiant from Europe before dawn\n\nHalley-comet meteors\; better from southerly latitudes\, but some meteors are possible in Europe.
+X-PLANETENUHR-VISIBILITY:Low radiant from Europe before dawn
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2026-06-09-venus-jupiter-conjunction@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260609
+DTEND;VALUE=DATE:20260610
+SUMMARY:Venus-Jupiter conjunction
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Low in the western evening twilight\n\nThe two brightest planets appear about 1.6 degrees apart\; clear western horizon needed.
+X-PLANETENUHR-VISIBILITY:Low in the western evening twilight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2026-06-17-crescent-moon-near-venus@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260617
+DTEND;VALUE=DATE:20260618
+SUMMARY:Crescent Moon near Venus
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Western twilight\n\nSlim Moon and bright Venus form a close evening pairing\; wait until after sunset before using optics.
+X-PLANETENUHR-VISIBILITY:Western twilight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2026-06-21-june-solstice@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260621
+DTEND;VALUE=DATE:20260622
+SUMMARY:June solstice
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nLongest day of the year in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2026-07-06-earth-at-aphelion@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260706
+DTEND;VALUE=DATE:20260707
+SUMMARY:Earth at aphelion
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: No direct visual change\; solar disk slightly smaller\n\nEarth reaches its farthest point from the Sun on 2026-07-06 (about 17:31 UTC)\; seasonal weather is still driven mainly by axial tilt.
+X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly smaller
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2026-07-30-delta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260730
+DTEND;VALUE=DATE:20260731
+SUMMARY:Delta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Low southern radiant\; best from Europe after midnight\n\nPeak of a shower active roughly from 2026-07-12 to 2026-08-23\; darker skies away from city light help most.
+X-PLANETENUHR-VISIBILITY:Low southern radiant\; best from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2026-07-31-alpha-capricornids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260731
+DTEND;VALUE=DATE:20260801
+SUMMARY:Alpha Capricornids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible from Europe after midnight\, low in the south\n\nPeak of a shower active roughly from 2026-07-07 to 2026-08-15\; slower meteors can produce bright fireballs.
+X-PLANETENUHR-VISIBILITY:Visible from Europe after midnight\, low in the south
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2026-08-10-moon-near-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260810
+DTEND;VALUE=DATE:20260811
+SUMMARY:Moon near perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nTwo days before the European total solar eclipse\, the Moon is close enough to appear slightly larger.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2026-08-12-perseids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260812
+DTEND;VALUE=DATE:20260813
+SUMMARY:Perseids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Good from Europe after midnight\n\nUsually one of the best northern meteor showers\; dark skies help most.
+X-PLANETENUHR-VISIBILITY:Good from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2026-08-12-total-solar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260812
+DTEND;VALUE=DATE:20260813
+SUMMARY:Total solar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Total in Iceland and northern Spain\; partial across much of Europe\n\nBest European totality path: Iceland and northern Spain/Balearic region.
+X-PLANETENUHR-VISIBILITY:Total in Iceland and northern Spain\; partial across much of Europe
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2026-08-28-partial-lunar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260828
+DTEND;VALUE=DATE:20260829
+SUMMARY:Partial lunar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Partly visible from Europe\n\nDeep partial eclipse\; best views farther west\, visible around moonset in parts of Europe.
+X-PLANETENUHR-VISIBILITY:Partly visible from Europe
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2026-09-19-venus-at-peak-evening-visibility@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260919
+DTEND;VALUE=DATE:20260920
+SUMMARY:Venus at peak evening visibility
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Very bright evening star\n\nGood evening visibility around this date\; Venus is prominent after sunset.
+X-PLANETENUHR-VISIBILITY:Very bright evening star
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2026-09-23-september-equinox@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260923
+DTEND;VALUE=DATE:20260924
+SUMMARY:September equinox
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nAstronomical autumn begins in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2026-10-04-saturn-at-opposition@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20261004
+DTEND;VALUE=DATE:20261005
+SUMMARY:Saturn at opposition
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Visible all night\n\nSaturn is brightest and best placed for observing\; rings appear slowly opening again.
+X-PLANETENUHR-VISIBILITY:Visible all night
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2026-10-21-orionids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20261021
+DTEND;VALUE=DATE:20261022
+SUMMARY:Orionids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible from Europe after midnight\n\nFast meteors from debris of Halley comet\; best before dawn.
+X-PLANETENUHR-VISIBILITY:Visible from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2026-11-15-mars-jupiter-conjunction@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20261115
+DTEND;VALUE=DATE:20261116
+SUMMARY:Mars-Jupiter conjunction
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Morning sky\n\nMars and Jupiter appear close together before dawn.
+X-PLANETENUHR-VISIBILITY:Morning sky
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2026-11-17-leonids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20261117
+DTEND;VALUE=DATE:20261118
+SUMMARY:Leonids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible from Europe after midnight\n\nUsually modest\, but known historically for occasional outbursts.
+X-PLANETENUHR-VISIBILITY:Visible from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2026-11-29-venus-at-peak-morning-visibility@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20261129
+DTEND;VALUE=DATE:20261130
+SUMMARY:Venus at peak morning visibility
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Bright morning star\n\nVenus becomes a strong pre-dawn object.
+X-PLANETENUHR-VISIBILITY:Bright morning star
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2026-12-14-geminids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20261214
+DTEND;VALUE=DATE:20261215
+SUMMARY:Geminids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Very good from Europe\n\nOften the strongest annual meteor shower\, best late evening to dawn.
+X-PLANETENUHR-VISIBILITY:Very good from Europe
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2026-12-21-december-solstice@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20261221
+DTEND;VALUE=DATE:20261222
+SUMMARY:December solstice
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nShortest day of the year in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2026-12-22-ursids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20261222
+DTEND;VALUE=DATE:20261223
+SUMMARY:Ursids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible from Europe all night\n\nA modest northern shower near the December solstice.
+X-PLANETENUHR-VISIBILITY:Visible from Europe all night
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2027-01-03-earth-at-perihelion@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270103
+DTEND;VALUE=DATE:20270104
+SUMMARY:Earth at perihelion
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: No direct visual change\; solar disk slightly larger\n\nEarth is closest to the Sun on 2027-01-03 (about 02:33 UTC)\; seasons are still controlled mainly by axial tilt.
+X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly larger
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2027-01-03-quadrantids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270103
+DTEND;VALUE=DATE:20270104
+SUMMARY:Quadrantids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Good from Europe before dawn\n\nShort\, sharp maximum\; northern radiant is favorable for Europe.
+X-PLANETENUHR-VISIBILITY:Good from Europe before dawn
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2027-01-03-venus-at-greatest-western-elongation@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270103
+DTEND;VALUE=DATE:20270104
+SUMMARY:Venus at greatest western elongation
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Excellent morning visibility\n\nVenus is far from the Sun in the morning sky.
+X-PLANETENUHR-VISIBILITY:Excellent morning visibility
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2027-02-19-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270219
+DTEND;VALUE=DATE:20270220
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nThe Moon is close to Earth shortly before the Feb 20 penumbral eclipse.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2027-02-20-full-moon-near-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270220
+DTEND;VALUE=DATE:20270221
+SUMMARY:Full Moon near perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Visible from Europe during the penumbral eclipse\n\nA larger-looking full Moon\; gentle penumbral shading is visible under good conditions.
+X-PLANETENUHR-VISIBILITY:Visible from Europe during the penumbral eclipse
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2027-02-20-penumbral-lunar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270220
+DTEND;VALUE=DATE:20270221
+SUMMARY:Penumbral lunar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible from Europe\n\nSubtle penumbral dimming\; fully visible across much of Europe.
+X-PLANETENUHR-VISIBILITY:Visible from Europe
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2027-03-20-march-equinox@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270320
+DTEND;VALUE=DATE:20270321
+SUMMARY:March equinox
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nAstronomical spring begins in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2027-04-22-lyrids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270422
+DTEND;VALUE=DATE:20270423
+SUMMARY:Lyrids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible from Europe after midnight\n\nModerate spring shower\; best from a dark site.
+X-PLANETENUHR-VISIBILITY:Visible from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2027-05-06-eta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270506
+DTEND;VALUE=DATE:20270507
+SUMMARY:Eta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Low radiant from Europe before dawn\n\nHalley-comet meteors\; rates are lower in Europe than farther south.
+X-PLANETENUHR-VISIBILITY:Low radiant from Europe before dawn
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2027-05-08-venus-saturn-conjunction@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270508
+DTEND;VALUE=DATE:20270509
+SUMMARY:Venus-Saturn conjunction
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Morning/eastern twilight\, low\n\nClose pairing\, but altitude and twilight may make the view challenging.
+X-PLANETENUHR-VISIBILITY:Morning/eastern twilight\, low
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2027-06-21-june-solstice@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270621
+DTEND;VALUE=DATE:20270622
+SUMMARY:June solstice
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nLongest day of the year in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2027-07-05-earth-at-aphelion@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270705
+DTEND;VALUE=DATE:20270706
+SUMMARY:Earth at aphelion
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: No direct visual change\; solar disk slightly smaller\n\nEarth reaches its farthest point from the Sun on 2027-07-05 (about 05:06 UTC)\; seasonal weather is still driven mainly by axial tilt.
+X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly smaller
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2027-07-30-delta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270730
+DTEND;VALUE=DATE:20270731
+SUMMARY:Delta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Low southern radiant\; best from Europe after midnight\n\nPeak of a shower active roughly from 2027-07-12 to 2027-08-23\; darker skies away from city light help most.
+X-PLANETENUHR-VISIBILITY:Low southern radiant\; best from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2027-07-31-alpha-capricornids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270731
+DTEND;VALUE=DATE:20270801
+SUMMARY:Alpha Capricornids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible from Europe after midnight\, low in the south\n\nPeak of a shower active roughly from 2027-07-07 to 2027-08-15\; slower meteors can produce bright fireballs.
+X-PLANETENUHR-VISIBILITY:Visible from Europe after midnight\, low in the south
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2027-08-02-total-solar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270802
+DTEND;VALUE=DATE:20270803
+SUMMARY:Total solar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Total in far southern Spain/Gibraltar\; partial in most of Europe\n\nEuropean totality path touches southern Spain near Cadiz/Malaga and Gibraltar.
+X-PLANETENUHR-VISIBILITY:Total in far southern Spain/Gibraltar\; partial in most of Europe
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2027-08-12-perseids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270812
+DTEND;VALUE=DATE:20270813
+SUMMARY:Perseids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Good from Europe after midnight\n\nReliable summer meteor shower\; best after the radiant rises high.
+X-PLANETENUHR-VISIBILITY:Good from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2027-08-25-venus-jupiter-conjunction@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270825
+DTEND;VALUE=DATE:20270826
+SUMMARY:Venus-Jupiter conjunction
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Very close to the Sun\; difficult or unsafe to observe\n\nGeometrically close\, but only about 4 degrees from the Sun. Do not search with optical aid near the Sun.
+X-PLANETENUHR-VISIBILITY:Very close to the Sun\; difficult or unsafe to observe
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2027-09-23-september-equinox@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270923
+DTEND;VALUE=DATE:20270924
+SUMMARY:September equinox
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nAstronomical autumn begins in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2027-10-21-orionids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20271021
+DTEND;VALUE=DATE:20271022
+SUMMARY:Orionids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible from Europe after midnight\n\nFast Halley-comet meteors\; best before dawn.
+X-PLANETENUHR-VISIBILITY:Visible from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2027-11-17-leonids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20271117
+DTEND;VALUE=DATE:20271118
+SUMMARY:Leonids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible from Europe after midnight\n\nUsually modest outside storm years.
+X-PLANETENUHR-VISIBILITY:Visible from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2027-11-25-venus-mars-conjunction@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20271125
+DTEND;VALUE=DATE:20271126
+SUMMARY:Venus-Mars conjunction
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Morning sky\n\nClose bright-planet pairing with Venus much brighter than Mars.
+X-PLANETENUHR-VISIBILITY:Morning sky
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2027-12-14-geminids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20271214
+DTEND;VALUE=DATE:20271215
+SUMMARY:Geminids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Very good from Europe\n\nOne of the strongest annual meteor showers\, especially from dark locations.
+X-PLANETENUHR-VISIBILITY:Very good from Europe
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2027-12-22-december-solstice@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20271222
+DTEND;VALUE=DATE:20271223
+SUMMARY:December solstice
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nShortest day of the year in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2027-12-22-ursids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20271222
+DTEND;VALUE=DATE:20271223
+SUMMARY:Ursids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Visible from Europe all night\n\nA modest northern shower\; best under dark skies.
+X-PLANETENUHR-VISIBILITY:Visible from Europe all night
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2028-01-03-earth-at-perihelion@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280103
+DTEND;VALUE=DATE:20280104
+SUMMARY:Earth at perihelion
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: No direct visual change\; solar disk slightly larger\n\nEarth is closest to the Sun\; the seasons still depend mainly on axial tilt.
+X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly larger
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2028-01-03-quadrantids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280103
+DTEND;VALUE=DATE:20280104
+SUMMARY:Quadrantids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Bootes. Approximate activity window 12-28 to 01-12.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2028-01-12-partial-lunar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280112
+DTEND;VALUE=DATE:20280113
+SUMMARY:Partial lunar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Partially visible depending on region\n\nNASA visibility region: Americas\, Europe\, Africa.
+X-PLANETENUHR-VISIBILITY:Partially visible depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2028-01-26-annular-solar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280126
+DTEND;VALUE=DATE:20280127
+SUMMARY:Annular solar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Annular in parts of Portugal and Spain\; partial in western Europe\n\nRing eclipse in Iberia\; elsewhere in western Europe only partial.
+X-PLANETENUHR-VISIBILITY:Annular in parts of Portugal and Spain\; partial in western Europe
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2028-03-10-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280310
+DTEND;VALUE=DATE:20280311
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2028-03-20-march-equinox@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280320
+DTEND;VALUE=DATE:20280321
+SUMMARY:March equinox
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nAstronomical spring begins in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2028-03-24-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280324
+DTEND;VALUE=DATE:20280325
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2028-04-22-lyrids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280422
+DTEND;VALUE=DATE:20280423
+SUMMARY:Lyrids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Lyra. Approximate activity window 04-16 to 04-25.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2028-05-06-eta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280506
+DTEND;VALUE=DATE:20280507
+SUMMARY:Eta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 04-19 to 05-28.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2028-06-01-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280601
+DTEND;VALUE=DATE:20280602
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2028-06-15-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280615
+DTEND;VALUE=DATE:20280616
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2028-06-21-june-solstice@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280621
+DTEND;VALUE=DATE:20280622
+SUMMARY:June solstice
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nLongest day of the year in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2028-07-04-earth-at-aphelion@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280704
+DTEND;VALUE=DATE:20280705
+SUMMARY:Earth at aphelion
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: No direct visual change\; solar disk slightly smaller\n\nEarth is farthest from the Sun\; northern summer is still driven by axial tilt\, not distance.
+X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly smaller
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2028-07-06-partial-lunar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280706
+DTEND;VALUE=DATE:20280707
+SUMMARY:Partial lunar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Partially visible depending on region\n\nNASA visibility region: Europe\, Africa\, Asia\, Australia.
+X-PLANETENUHR-VISIBILITY:Partially visible depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2028-07-22-total-solar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280722
+DTEND;VALUE=DATE:20280723
+SUMMARY:Total solar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Total along the central path\, partial elsewhere in the visibility zone\n\nNASA visibility region: SE Asia\, E. Indies\, Australia\, N.Z.. Central path: Australia\, N. Z..
+X-PLANETENUHR-VISIBILITY:Total along the central path\, partial elsewhere in the visibility zone
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2028-07-30-delta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280730
+DTEND;VALUE=DATE:20280731
+SUMMARY:Delta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 07-12 to 08-23.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2028-08-12-perseids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280812
+DTEND;VALUE=DATE:20280813
+SUMMARY:Perseids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Perseus. Approximate activity window 07-17 to 08-24.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2028-09-05-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280905
+DTEND;VALUE=DATE:20280906
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2028-09-19-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280919
+DTEND;VALUE=DATE:20280920
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2028-09-22-september-equinox@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280922
+DTEND;VALUE=DATE:20280923
+SUMMARY:September equinox
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nAstronomical autumn begins in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2028-10-08-draconids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281008
+DTEND;VALUE=DATE:20281009
+SUMMARY:Draconids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Draco. Approximate activity window 10-06 to 10-10.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2028-10-21-orionids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281021
+DTEND;VALUE=DATE:20281022
+SUMMARY:Orionids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Orion. Approximate activity window 10-02 to 11-07.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2028-11-17-leonids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281117
+DTEND;VALUE=DATE:20281118
+SUMMARY:Leonids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Leo. Approximate activity window 11-06 to 11-30.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2028-12-11-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281211
+DTEND;VALUE=DATE:20281212
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2028-12-14-geminids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281214
+DTEND;VALUE=DATE:20281215
+SUMMARY:Geminids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Gemini. Approximate activity window 12-04 to 12-20.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2028-12-21-december-solstice@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281221
+DTEND;VALUE=DATE:20281222
+SUMMARY:December solstice
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nShortest day of the year in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2028-12-22-ursids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281222
+DTEND;VALUE=DATE:20281223
+SUMMARY:Ursids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Ursa Minor. Approximate activity window 12-17 to 12-26.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2028-12-25-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281225
+DTEND;VALUE=DATE:20281226
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2028-12-31-total-lunar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281231
+DTEND;VALUE=DATE:20290101
+SUMMARY:Total lunar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Totally visible depending on region\n\nNASA visibility region: Europe\, Africa\, Asia\, Australia\, Pacific.
+X-PLANETENUHR-VISIBILITY:Totally visible depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2029-01-03-earth-at-perihelion@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290103
+DTEND;VALUE=DATE:20290104
+SUMMARY:Earth at perihelion
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: No direct visual change\; solar disk slightly larger\n\nEarth is closest to the Sun\; the seasons still depend mainly on axial tilt.
+X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly larger
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2029-01-03-quadrantids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290103
+DTEND;VALUE=DATE:20290104
+SUMMARY:Quadrantids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Bootes. Approximate activity window 12-28 to 01-12.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2029-01-14-partial-solar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290114
+DTEND;VALUE=DATE:20290115
+SUMMARY:Partial solar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Partially visible depending on region\n\nNASA visibility region: N. America\, C. America.
+X-PLANETENUHR-VISIBILITY:Partially visible depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2029-03-04-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290304
+DTEND;VALUE=DATE:20290305
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2029-03-17-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290317
+DTEND;VALUE=DATE:20290318
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2029-03-20-march-equinox@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290320
+DTEND;VALUE=DATE:20290321
+SUMMARY:March equinox
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nAstronomical spring begins in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2029-04-22-lyrids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290422
+DTEND;VALUE=DATE:20290423
+SUMMARY:Lyrids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Lyra. Approximate activity window 04-16 to 04-25.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2029-05-06-eta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290506
+DTEND;VALUE=DATE:20290507
+SUMMARY:Eta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 04-19 to 05-28.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2029-06-08-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290608
+DTEND;VALUE=DATE:20290609
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2029-06-12-partial-solar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290612
+DTEND;VALUE=DATE:20290613
+SUMMARY:Partial solar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Partially visible depending on region\n\nNASA visibility region: Arctic\, Scandanavia\, Alaska\, n Asia\, n Canada.
+X-PLANETENUHR-VISIBILITY:Partially visible depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2029-06-21-june-solstice@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290621
+DTEND;VALUE=DATE:20290622
+SUMMARY:June solstice
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nLongest day of the year in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2029-06-22-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290622
+DTEND;VALUE=DATE:20290623
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2029-06-26-total-lunar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290626
+DTEND;VALUE=DATE:20290627
+SUMMARY:Total lunar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Totally visible depending on region\n\nNASA visibility region: Americas\, Europe\, Africa\, Mid East.
+X-PLANETENUHR-VISIBILITY:Totally visible depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2029-07-04-earth-at-aphelion@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290704
+DTEND;VALUE=DATE:20290705
+SUMMARY:Earth at aphelion
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: No direct visual change\; solar disk slightly smaller\n\nEarth is farthest from the Sun\; northern summer is still driven by axial tilt\, not distance.
+X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly smaller
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2029-07-11-partial-solar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290711
+DTEND;VALUE=DATE:20290712
+SUMMARY:Partial solar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Partially visible depending on region\n\nNASA visibility region: s Chile\, s Argentina.
+X-PLANETENUHR-VISIBILITY:Partially visible depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2029-07-30-delta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290730
+DTEND;VALUE=DATE:20290731
+SUMMARY:Delta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 07-12 to 08-23.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2029-08-12-perseids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290812
+DTEND;VALUE=DATE:20290813
+SUMMARY:Perseids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Perseus. Approximate activity window 07-17 to 08-24.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2029-09-12-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290912
+DTEND;VALUE=DATE:20290913
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2029-09-22-september-equinox@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290922
+DTEND;VALUE=DATE:20290923
+SUMMARY:September equinox
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nAstronomical autumn begins in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2029-09-26-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290926
+DTEND;VALUE=DATE:20290927
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2029-10-08-draconids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291008
+DTEND;VALUE=DATE:20291009
+SUMMARY:Draconids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Draco. Approximate activity window 10-06 to 10-10.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2029-10-21-orionids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291021
+DTEND;VALUE=DATE:20291022
+SUMMARY:Orionids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Orion. Approximate activity window 10-02 to 11-07.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2029-11-17-leonids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291117
+DTEND;VALUE=DATE:20291118
+SUMMARY:Leonids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Leo. Approximate activity window 11-06 to 11-30.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2029-12-04-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291204
+DTEND;VALUE=DATE:20291205
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2029-12-05-partial-solar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291205
+DTEND;VALUE=DATE:20291206
+SUMMARY:Partial solar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Partially visible depending on region\n\nNASA visibility region: s Argentina\, s Chile\, Antarctica.
+X-PLANETENUHR-VISIBILITY:Partially visible depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2029-12-14-geminids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291214
+DTEND;VALUE=DATE:20291215
+SUMMARY:Geminids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Gemini. Approximate activity window 12-04 to 12-20.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2029-12-18-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291218
+DTEND;VALUE=DATE:20291219
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2029-12-20-total-lunar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291220
+DTEND;VALUE=DATE:20291221
+SUMMARY:Total lunar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Totally visible depending on region\n\nNASA visibility region: Americas\, Europe\, Africa\, Asia.
+X-PLANETENUHR-VISIBILITY:Totally visible depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2029-12-21-december-solstice@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291221
+DTEND;VALUE=DATE:20291222
+SUMMARY:December solstice
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nShortest day of the year in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2029-12-22-ursids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291222
+DTEND;VALUE=DATE:20291223
+SUMMARY:Ursids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Ursa Minor. Approximate activity window 12-17 to 12-26.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2030-01-03-earth-at-perihelion@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300103
+DTEND;VALUE=DATE:20300104
+SUMMARY:Earth at perihelion
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: No direct visual change\; solar disk slightly larger\n\nEarth is closest to the Sun\; the seasons still depend mainly on axial tilt.
+X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly larger
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2030-01-03-quadrantids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300103
+DTEND;VALUE=DATE:20300104
+SUMMARY:Quadrantids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Bootes. Approximate activity window 12-28 to 01-12.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2030-03-11-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300311
+DTEND;VALUE=DATE:20300312
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2030-03-20-march-equinox@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300320
+DTEND;VALUE=DATE:20300321
+SUMMARY:March equinox
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nAstronomical spring begins in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2030-03-24-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300324
+DTEND;VALUE=DATE:20300325
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2030-04-22-lyrids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300422
+DTEND;VALUE=DATE:20300423
+SUMMARY:Lyrids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Lyra. Approximate activity window 04-16 to 04-25.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2030-05-06-eta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300506
+DTEND;VALUE=DATE:20300507
+SUMMARY:Eta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 04-19 to 05-28.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2030-06-01-annular-solar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300601
+DTEND;VALUE=DATE:20300602
+SUMMARY:Annular solar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Annular along the central path\, partial elsewhere in the visibility zone\n\nNASA visibility region: Europe\, n Africa\, Mid East\, Asia\, Arctic\, Alaska. Central path: Algeria\, Tunisia\, Greece\, Turkey\, Russia\, n. China\, Japan.
+X-PLANETENUHR-VISIBILITY:Annular along the central path\, partial elsewhere in the visibility zone
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2030-06-01-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300601
+DTEND;VALUE=DATE:20300602
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2030-06-15-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300615
+DTEND;VALUE=DATE:20300616
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2030-06-15-partial-lunar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300615
+DTEND;VALUE=DATE:20300616
+SUMMARY:Partial lunar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Partially visible depending on region\n\nNASA visibility region: Europe\, Africa\, Asia\, Australia.
+X-PLANETENUHR-VISIBILITY:Partially visible depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2030-06-21-june-solstice@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300621
+DTEND;VALUE=DATE:20300622
+SUMMARY:June solstice
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nLongest day of the year in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2030-07-04-earth-at-aphelion@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300704
+DTEND;VALUE=DATE:20300705
+SUMMARY:Earth at aphelion
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: No direct visual change\; solar disk slightly smaller\n\nEarth is farthest from the Sun\; northern summer is still driven by axial tilt\, not distance.
+X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly smaller
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2030-07-30-delta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300730
+DTEND;VALUE=DATE:20300731
+SUMMARY:Delta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 07-12 to 08-23.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2030-08-12-perseids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300812
+DTEND;VALUE=DATE:20300813
+SUMMARY:Perseids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Perseus. Approximate activity window 07-17 to 08-24.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2030-09-06-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300906
+DTEND;VALUE=DATE:20300907
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2030-09-19-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300919
+DTEND;VALUE=DATE:20300920
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2030-09-22-september-equinox@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300922
+DTEND;VALUE=DATE:20300923
+SUMMARY:September equinox
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nAstronomical autumn begins in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2030-10-08-draconids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301008
+DTEND;VALUE=DATE:20301009
+SUMMARY:Draconids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Draco. Approximate activity window 10-06 to 10-10.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2030-10-21-orionids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301021
+DTEND;VALUE=DATE:20301022
+SUMMARY:Orionids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Orion. Approximate activity window 10-02 to 11-07.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2030-11-17-leonids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301117
+DTEND;VALUE=DATE:20301118
+SUMMARY:Leonids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Leo. Approximate activity window 11-06 to 11-30.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2030-11-25-total-solar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301125
+DTEND;VALUE=DATE:20301126
+SUMMARY:Total solar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Total along the central path\, partial elsewhere in the visibility zone\n\nNASA visibility region: s Africa\, s Indian Oc.\, E. Indies\, Australia\, Antarctica. Central path: Botswana\, S. Africa\, Australia.
+X-PLANETENUHR-VISIBILITY:Total along the central path\, partial elsewhere in the visibility zone
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2030-12-09-penumbral-lunar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301209
+DTEND;VALUE=DATE:20301210
+SUMMARY:Penumbral lunar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible in the penumbra depending on region\n\nNASA visibility region: Americas\, Europe\, Africa\, Asia.
+X-PLANETENUHR-VISIBILITY:Visible in the penumbra depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2030-12-11-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301211
+DTEND;VALUE=DATE:20301212
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2030-12-14-geminids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301214
+DTEND;VALUE=DATE:20301215
+SUMMARY:Geminids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Gemini. Approximate activity window 12-04 to 12-20.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2030-12-21-december-solstice@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301221
+DTEND;VALUE=DATE:20301222
+SUMMARY:December solstice
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nShortest day of the year in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2030-12-22-ursids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301222
+DTEND;VALUE=DATE:20301223
+SUMMARY:Ursids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Ursa Minor. Approximate activity window 12-17 to 12-26.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2030-12-25-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301225
+DTEND;VALUE=DATE:20301226
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2031-01-03-earth-at-perihelion@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310103
+DTEND;VALUE=DATE:20310104
+SUMMARY:Earth at perihelion
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: No direct visual change\; solar disk slightly larger\n\nEarth is closest to the Sun\; the seasons still depend mainly on axial tilt.
+X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly larger
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2031-01-03-quadrantids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310103
+DTEND;VALUE=DATE:20310104
+SUMMARY:Quadrantids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Bootes. Approximate activity window 12-28 to 01-12.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2031-03-04-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310304
+DTEND;VALUE=DATE:20310305
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2031-03-17-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310317
+DTEND;VALUE=DATE:20310318
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2031-03-20-march-equinox@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310320
+DTEND;VALUE=DATE:20310321
+SUMMARY:March equinox
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nAstronomical spring begins in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2031-04-22-lyrids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310422
+DTEND;VALUE=DATE:20310423
+SUMMARY:Lyrids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Lyra. Approximate activity window 04-16 to 04-25.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2031-05-06-eta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310506
+DTEND;VALUE=DATE:20310507
+SUMMARY:Eta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 04-19 to 05-28.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2031-05-07-penumbral-lunar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310507
+DTEND;VALUE=DATE:20310508
+SUMMARY:Penumbral lunar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible in the penumbra depending on region\n\nNASA visibility region: Americas\, Europe\, Africa.
+X-PLANETENUHR-VISIBILITY:Visible in the penumbra depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2031-05-21-annular-solar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310521
+DTEND;VALUE=DATE:20310522
+SUMMARY:Annular solar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Annular along the central path\, partial elsewhere in the visibility zone\n\nNASA visibility region: Africa\, s Asia\, E. Indies\, Australia. Central path: Angola\, Congo\, Zambia\, Tanzania\, s. India\, Malaysia\, Indonesia.
+X-PLANETENUHR-VISIBILITY:Annular along the central path\, partial elsewhere in the visibility zone
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2031-06-05-penumbral-lunar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310605
+DTEND;VALUE=DATE:20310606
+SUMMARY:Penumbral lunar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible in the penumbra depending on region\n\nNASA visibility region: East Indies\, Australia\, Pacific.
+X-PLANETENUHR-VISIBILITY:Visible in the penumbra depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2031-06-08-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310608
+DTEND;VALUE=DATE:20310609
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2031-06-21-june-solstice@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310621
+DTEND;VALUE=DATE:20310622
+SUMMARY:June solstice
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nLongest day of the year in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2031-06-22-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310622
+DTEND;VALUE=DATE:20310623
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2031-07-04-earth-at-aphelion@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310704
+DTEND;VALUE=DATE:20310705
+SUMMARY:Earth at aphelion
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: No direct visual change\; solar disk slightly smaller\n\nEarth is farthest from the Sun\; northern summer is still driven by axial tilt\, not distance.
+X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly smaller
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2031-07-30-delta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310730
+DTEND;VALUE=DATE:20310731
+SUMMARY:Delta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 07-12 to 08-23.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2031-08-12-perseids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310812
+DTEND;VALUE=DATE:20310813
+SUMMARY:Perseids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Perseus. Approximate activity window 07-17 to 08-24.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2031-09-13-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310913
+DTEND;VALUE=DATE:20310914
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2031-09-22-september-equinox@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310922
+DTEND;VALUE=DATE:20310923
+SUMMARY:September equinox
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nAstronomical autumn begins in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2031-09-26-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310926
+DTEND;VALUE=DATE:20310927
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2031-10-08-draconids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311008
+DTEND;VALUE=DATE:20311009
+SUMMARY:Draconids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Draco. Approximate activity window 10-06 to 10-10.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2031-10-21-orionids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311021
+DTEND;VALUE=DATE:20311022
+SUMMARY:Orionids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Orion. Approximate activity window 10-02 to 11-07.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2031-10-30-penumbral-lunar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311030
+DTEND;VALUE=DATE:20311031
+SUMMARY:Penumbral lunar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible in the penumbra depending on region\n\nNASA visibility region: Americas.
+X-PLANETENUHR-VISIBILITY:Visible in the penumbra depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2031-11-14-hybrid-solar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311114
+DTEND;VALUE=DATE:20311115
+SUMMARY:Hybrid solar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Hybrid along the central path\, partial elsewhere in the visibility zone\n\nNASA visibility region: Pacific\, s US\, C. America\, nw S. America. Central path: Pacific\, Panama.
+X-PLANETENUHR-VISIBILITY:Hybrid along the central path\, partial elsewhere in the visibility zone
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2031-11-17-leonids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311117
+DTEND;VALUE=DATE:20311118
+SUMMARY:Leonids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Leo. Approximate activity window 11-06 to 11-30.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2031-12-04-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311204
+DTEND;VALUE=DATE:20311205
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2031-12-14-geminids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311214
+DTEND;VALUE=DATE:20311215
+SUMMARY:Geminids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Gemini. Approximate activity window 12-04 to 12-20.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2031-12-18-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311218
+DTEND;VALUE=DATE:20311219
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2031-12-21-december-solstice@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311221
+DTEND;VALUE=DATE:20311222
+SUMMARY:December solstice
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nShortest day of the year in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2031-12-22-ursids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311222
+DTEND;VALUE=DATE:20311223
+SUMMARY:Ursids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Ursa Minor. Approximate activity window 12-17 to 12-26.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2032-01-03-earth-at-perihelion@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320103
+DTEND;VALUE=DATE:20320104
+SUMMARY:Earth at perihelion
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: No direct visual change\; solar disk slightly larger\n\nEarth is closest to the Sun\; the seasons still depend mainly on axial tilt.
+X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly larger
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2032-01-03-quadrantids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320103
+DTEND;VALUE=DATE:20320104
+SUMMARY:Quadrantids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Bootes. Approximate activity window 12-28 to 01-12.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2032-03-10-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320310
+DTEND;VALUE=DATE:20320311
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2032-03-20-march-equinox@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320320
+DTEND;VALUE=DATE:20320321
+SUMMARY:March equinox
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nAstronomical spring begins in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2032-03-23-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320323
+DTEND;VALUE=DATE:20320324
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2032-04-22-lyrids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320422
+DTEND;VALUE=DATE:20320423
+SUMMARY:Lyrids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Lyra. Approximate activity window 04-16 to 04-25.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2032-04-25-total-lunar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320425
+DTEND;VALUE=DATE:20320426
+SUMMARY:Total lunar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Totally visible depending on region\n\nNASA visibility region: e Africa\, Asia\, Australia\, Pacific.
+X-PLANETENUHR-VISIBILITY:Totally visible depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2032-05-06-eta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320506
+DTEND;VALUE=DATE:20320507
+SUMMARY:Eta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 04-19 to 05-28.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2032-05-09-annular-solar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320509
+DTEND;VALUE=DATE:20320510
+SUMMARY:Annular solar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Annular along the central path\, partial elsewhere in the visibility zone\n\nNASA visibility region: s S. America\, s Africa. Central path: s Atlantic.
+X-PLANETENUHR-VISIBILITY:Annular along the central path\, partial elsewhere in the visibility zone
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2032-06-14-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320614
+DTEND;VALUE=DATE:20320615
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2032-06-21-june-solstice@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320621
+DTEND;VALUE=DATE:20320622
+SUMMARY:June solstice
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nLongest day of the year in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2032-06-28-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320628
+DTEND;VALUE=DATE:20320629
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2032-07-04-earth-at-aphelion@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320704
+DTEND;VALUE=DATE:20320705
+SUMMARY:Earth at aphelion
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: No direct visual change\; solar disk slightly smaller\n\nEarth is farthest from the Sun\; northern summer is still driven by axial tilt\, not distance.
+X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly smaller
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2032-07-30-delta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320730
+DTEND;VALUE=DATE:20320731
+SUMMARY:Delta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 07-12 to 08-23.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2032-08-12-perseids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320812
+DTEND;VALUE=DATE:20320813
+SUMMARY:Perseids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Perseus. Approximate activity window 07-17 to 08-24.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2032-09-05-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320905
+DTEND;VALUE=DATE:20320906
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2032-09-19-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320919
+DTEND;VALUE=DATE:20320920
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2032-09-22-september-equinox@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320922
+DTEND;VALUE=DATE:20320923
+SUMMARY:September equinox
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nAstronomical autumn begins in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2032-10-08-draconids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321008
+DTEND;VALUE=DATE:20321009
+SUMMARY:Draconids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Draco. Approximate activity window 10-06 to 10-10.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2032-10-18-total-lunar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321018
+DTEND;VALUE=DATE:20321019
+SUMMARY:Total lunar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Totally visible depending on region\n\nNASA visibility region: Africa\, Europe\, Asia\, Australia.
+X-PLANETENUHR-VISIBILITY:Totally visible depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2032-10-21-orionids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321021
+DTEND;VALUE=DATE:20321022
+SUMMARY:Orionids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Orion. Approximate activity window 10-02 to 11-07.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2032-11-03-partial-solar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321103
+DTEND;VALUE=DATE:20321104
+SUMMARY:Partial solar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Partially visible depending on region\n\nNASA visibility region: Asia.
+X-PLANETENUHR-VISIBILITY:Partially visible depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2032-11-17-leonids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321117
+DTEND;VALUE=DATE:20321118
+SUMMARY:Leonids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Leo. Approximate activity window 11-06 to 11-30.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2032-12-10-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321210
+DTEND;VALUE=DATE:20321211
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2032-12-14-geminids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321214
+DTEND;VALUE=DATE:20321215
+SUMMARY:Geminids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Gemini. Approximate activity window 12-04 to 12-20.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2032-12-21-december-solstice@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321221
+DTEND;VALUE=DATE:20321222
+SUMMARY:December solstice
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nShortest day of the year in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2032-12-22-ursids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321222
+DTEND;VALUE=DATE:20321223
+SUMMARY:Ursids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Ursa Minor. Approximate activity window 12-17 to 12-26.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2032-12-24-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321224
+DTEND;VALUE=DATE:20321225
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2033-01-03-earth-at-perihelion@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330103
+DTEND;VALUE=DATE:20330104
+SUMMARY:Earth at perihelion
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: No direct visual change\; solar disk slightly larger\n\nEarth is closest to the Sun\; the seasons still depend mainly on axial tilt.
+X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly larger
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2033-01-03-quadrantids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330103
+DTEND;VALUE=DATE:20330104
+SUMMARY:Quadrantids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Bootes. Approximate activity window 12-28 to 01-12.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2033-03-03-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330303
+DTEND;VALUE=DATE:20330304
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2033-03-17-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330317
+DTEND;VALUE=DATE:20330318
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2033-03-20-march-equinox@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330320
+DTEND;VALUE=DATE:20330321
+SUMMARY:March equinox
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nAstronomical spring begins in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2033-03-30-total-solar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330330
+DTEND;VALUE=DATE:20330331
+SUMMARY:Total solar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Total along the central path\, partial elsewhere in the visibility zone\n\nNASA visibility region: N. America. Central path: e Russia\, Alaska.
+X-PLANETENUHR-VISIBILITY:Total along the central path\, partial elsewhere in the visibility zone
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2033-04-14-total-lunar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330414
+DTEND;VALUE=DATE:20330415
+SUMMARY:Total lunar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Totally visible depending on region\n\nNASA visibility region: Europe\, Africa\, Asia\, Australia.
+X-PLANETENUHR-VISIBILITY:Totally visible depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2033-04-22-lyrids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330422
+DTEND;VALUE=DATE:20330423
+SUMMARY:Lyrids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Lyra. Approximate activity window 04-16 to 04-25.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2033-05-06-eta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330506
+DTEND;VALUE=DATE:20330507
+SUMMARY:Eta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 04-19 to 05-28.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2033-06-07-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330607
+DTEND;VALUE=DATE:20330608
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2033-06-21-june-solstice@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330621
+DTEND;VALUE=DATE:20330622
+SUMMARY:June solstice
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nLongest day of the year in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2033-06-21-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330621
+DTEND;VALUE=DATE:20330622
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2033-07-04-earth-at-aphelion@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330704
+DTEND;VALUE=DATE:20330705
+SUMMARY:Earth at aphelion
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: No direct visual change\; solar disk slightly smaller\n\nEarth is farthest from the Sun\; northern summer is still driven by axial tilt\, not distance.
+X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly smaller
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2033-07-30-delta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330730
+DTEND;VALUE=DATE:20330731
+SUMMARY:Delta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 07-12 to 08-23.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2033-08-12-perseids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330812
+DTEND;VALUE=DATE:20330813
+SUMMARY:Perseids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Perseus. Approximate activity window 07-17 to 08-24.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2033-09-12-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330912
+DTEND;VALUE=DATE:20330913
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2033-09-22-september-equinox@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330922
+DTEND;VALUE=DATE:20330923
+SUMMARY:September equinox
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nAstronomical autumn begins in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2033-09-23-partial-solar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330923
+DTEND;VALUE=DATE:20330924
+SUMMARY:Partial solar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Partially visible depending on region\n\nNASA visibility region: s S. America\, Antarctica.
+X-PLANETENUHR-VISIBILITY:Partially visible depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2033-09-26-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330926
+DTEND;VALUE=DATE:20330927
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2033-10-08-draconids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331008
+DTEND;VALUE=DATE:20331009
+SUMMARY:Draconids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Draco. Approximate activity window 10-06 to 10-10.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2033-10-08-total-lunar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331008
+DTEND;VALUE=DATE:20331009
+SUMMARY:Total lunar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Totally visible depending on region\n\nNASA visibility region: Asia\, Australia\, Pacific\, Americas.
+X-PLANETENUHR-VISIBILITY:Totally visible depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2033-10-21-orionids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331021
+DTEND;VALUE=DATE:20331022
+SUMMARY:Orionids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Orion. Approximate activity window 10-02 to 11-07.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2033-11-17-leonids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331117
+DTEND;VALUE=DATE:20331118
+SUMMARY:Leonids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Leo. Approximate activity window 11-06 to 11-30.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2033-12-03-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331203
+DTEND;VALUE=DATE:20331204
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2033-12-14-geminids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331214
+DTEND;VALUE=DATE:20331215
+SUMMARY:Geminids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Gemini. Approximate activity window 12-04 to 12-20.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2033-12-17-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331217
+DTEND;VALUE=DATE:20331218
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2033-12-21-december-solstice@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331221
+DTEND;VALUE=DATE:20331222
+SUMMARY:December solstice
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nShortest day of the year in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2033-12-22-ursids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331222
+DTEND;VALUE=DATE:20331223
+SUMMARY:Ursids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Ursa Minor. Approximate activity window 12-17 to 12-26.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2034-01-03-earth-at-perihelion@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340103
+DTEND;VALUE=DATE:20340104
+SUMMARY:Earth at perihelion
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: No direct visual change\; solar disk slightly larger\n\nEarth is closest to the Sun\; the seasons still depend mainly on axial tilt.
+X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly larger
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2034-01-03-quadrantids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340103
+DTEND;VALUE=DATE:20340104
+SUMMARY:Quadrantids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Bootes. Approximate activity window 12-28 to 01-12.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2034-03-10-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340310
+DTEND;VALUE=DATE:20340311
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2034-03-20-march-equinox@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340320
+DTEND;VALUE=DATE:20340321
+SUMMARY:March equinox
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nAstronomical spring begins in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2034-03-20-total-solar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340320
+DTEND;VALUE=DATE:20340321
+SUMMARY:Total solar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Total along the central path\, partial elsewhere in the visibility zone\n\nNASA visibility region: Africa\, Europe\, w Asia. Central path: Nigeria\, Cameroon\, Chad\, Sudan\, Egypt\, Saudi Arabia\, Iran\, Afghanistan\, Pakistan\, India\, China.
+X-PLANETENUHR-VISIBILITY:Total along the central path\, partial elsewhere in the visibility zone
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2034-03-24-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340324
+DTEND;VALUE=DATE:20340325
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2034-04-03-penumbral-lunar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340403
+DTEND;VALUE=DATE:20340404
+SUMMARY:Penumbral lunar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible in the penumbra depending on region\n\nNASA visibility region: Europe\, Africa\, Asia\, Australia.
+X-PLANETENUHR-VISIBILITY:Visible in the penumbra depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2034-04-22-lyrids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340422
+DTEND;VALUE=DATE:20340423
+SUMMARY:Lyrids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Lyra. Approximate activity window 04-16 to 04-25.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2034-05-06-eta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340506
+DTEND;VALUE=DATE:20340507
+SUMMARY:Eta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 04-19 to 05-28.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2034-06-14-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340614
+DTEND;VALUE=DATE:20340615
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2034-06-21-june-solstice@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340621
+DTEND;VALUE=DATE:20340622
+SUMMARY:June solstice
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nLongest day of the year in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2034-06-28-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340628
+DTEND;VALUE=DATE:20340629
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2034-07-04-earth-at-aphelion@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340704
+DTEND;VALUE=DATE:20340705
+SUMMARY:Earth at aphelion
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: No direct visual change\; solar disk slightly smaller\n\nEarth is farthest from the Sun\; northern summer is still driven by axial tilt\, not distance.
+X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly smaller
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2034-07-30-delta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340730
+DTEND;VALUE=DATE:20340731
+SUMMARY:Delta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 07-12 to 08-23.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2034-08-12-perseids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340812
+DTEND;VALUE=DATE:20340813
+SUMMARY:Perseids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Perseus. Approximate activity window 07-17 to 08-24.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2034-09-05-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340905
+DTEND;VALUE=DATE:20340906
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2034-09-12-annular-solar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340912
+DTEND;VALUE=DATE:20340913
+SUMMARY:Annular solar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Annular along the central path\, partial elsewhere in the visibility zone\n\nNASA visibility region: C. America\, S. America. Central path: Chile\, Bolivia\, Argentina\, Paraguay\, Brazil.
+X-PLANETENUHR-VISIBILITY:Annular along the central path\, partial elsewhere in the visibility zone
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2034-09-19-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340919
+DTEND;VALUE=DATE:20340920
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2034-09-22-september-equinox@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340922
+DTEND;VALUE=DATE:20340923
+SUMMARY:September equinox
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nAstronomical autumn begins in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2034-09-28-partial-lunar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340928
+DTEND;VALUE=DATE:20340929
+SUMMARY:Partial lunar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Partially visible depending on region\n\nNASA visibility region: Americas\, Europe\, Africa.
+X-PLANETENUHR-VISIBILITY:Partially visible depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2034-10-08-draconids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20341008
+DTEND;VALUE=DATE:20341009
+SUMMARY:Draconids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Draco. Approximate activity window 10-06 to 10-10.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2034-10-21-orionids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20341021
+DTEND;VALUE=DATE:20341022
+SUMMARY:Orionids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Orion. Approximate activity window 10-02 to 11-07.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2034-11-17-leonids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20341117
+DTEND;VALUE=DATE:20341118
+SUMMARY:Leonids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Leo. Approximate activity window 11-06 to 11-30.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2034-12-10-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20341210
+DTEND;VALUE=DATE:20341211
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2034-12-14-geminids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20341214
+DTEND;VALUE=DATE:20341215
+SUMMARY:Geminids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Gemini. Approximate activity window 12-04 to 12-20.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2034-12-21-december-solstice@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20341221
+DTEND;VALUE=DATE:20341222
+SUMMARY:December solstice
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nShortest day of the year in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2034-12-22-ursids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20341222
+DTEND;VALUE=DATE:20341223
+SUMMARY:Ursids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Ursa Minor. Approximate activity window 12-17 to 12-26.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2034-12-24-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20341224
+DTEND;VALUE=DATE:20341225
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2035-01-03-earth-at-perihelion@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350103
+DTEND;VALUE=DATE:20350104
+SUMMARY:Earth at perihelion
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: No direct visual change\; solar disk slightly larger\n\nEarth is closest to the Sun\; the seasons still depend mainly on axial tilt.
+X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly larger
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2035-01-03-quadrantids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350103
+DTEND;VALUE=DATE:20350104
+SUMMARY:Quadrantids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Bootes. Approximate activity window 12-28 to 01-12.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2035-02-22-penumbral-lunar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350222
+DTEND;VALUE=DATE:20350223
+SUMMARY:Penumbral lunar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible in the penumbra depending on region\n\nNASA visibility region: e Asia\, Pacific\, Americas.
+X-PLANETENUHR-VISIBILITY:Visible in the penumbra depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2035-03-03-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350303
+DTEND;VALUE=DATE:20350304
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2035-03-09-annular-solar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350309
+DTEND;VALUE=DATE:20350310
+SUMMARY:Annular solar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Annular along the central path\, partial elsewhere in the visibility zone\n\nNASA visibility region: Australia\, New Zealand\, s Pacific\, Mexico\, Antarctica. Central path: New Zealand\, Pacific.
+X-PLANETENUHR-VISIBILITY:Annular along the central path\, partial elsewhere in the visibility zone
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2035-03-17-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350317
+DTEND;VALUE=DATE:20350318
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2035-03-20-march-equinox@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350320
+DTEND;VALUE=DATE:20350321
+SUMMARY:March equinox
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nAstronomical spring begins in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2035-04-22-lyrids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350422
+DTEND;VALUE=DATE:20350423
+SUMMARY:Lyrids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Lyra. Approximate activity window 04-16 to 04-25.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2035-05-06-eta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350506
+DTEND;VALUE=DATE:20350507
+SUMMARY:Eta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 04-19 to 05-28.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2035-06-08-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350608
+DTEND;VALUE=DATE:20350609
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2035-06-21-june-solstice@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350621
+DTEND;VALUE=DATE:20350622
+SUMMARY:June solstice
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nLongest day of the year in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2035-06-21-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350621
+DTEND;VALUE=DATE:20350622
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2035-07-04-earth-at-aphelion@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350704
+DTEND;VALUE=DATE:20350705
+SUMMARY:Earth at aphelion
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: No direct visual change\; solar disk slightly smaller\n\nEarth is farthest from the Sun\; northern summer is still driven by axial tilt\, not distance.
+X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly smaller
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2035-07-30-delta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350730
+DTEND;VALUE=DATE:20350731
+SUMMARY:Delta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 07-12 to 08-23.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2035-08-12-perseids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350812
+DTEND;VALUE=DATE:20350813
+SUMMARY:Perseids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Perseus. Approximate activity window 07-17 to 08-24.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2035-08-19-partial-lunar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350819
+DTEND;VALUE=DATE:20350820
+SUMMARY:Partial lunar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Partially visible depending on region\n\nNASA visibility region: Americas\, Europe\, Africa\, Mid East.
+X-PLANETENUHR-VISIBILITY:Partially visible depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2035-09-02-total-solar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350902
+DTEND;VALUE=DATE:20350903
+SUMMARY:Total solar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Total along the central path\, partial elsewhere in the visibility zone\n\nNASA visibility region: e Asia\, Pacific. Central path: China\, Korea\, Japan\, Pacific.
+X-PLANETENUHR-VISIBILITY:Total along the central path\, partial elsewhere in the visibility zone
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2035-09-12-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350912
+DTEND;VALUE=DATE:20350913
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2035-09-22-september-equinox@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350922
+DTEND;VALUE=DATE:20350923
+SUMMARY:September equinox
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nAstronomical autumn begins in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2035-09-26-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350926
+DTEND;VALUE=DATE:20350927
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2035-10-08-draconids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20351008
+DTEND;VALUE=DATE:20351009
+SUMMARY:Draconids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Draco. Approximate activity window 10-06 to 10-10.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2035-10-21-orionids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20351021
+DTEND;VALUE=DATE:20351022
+SUMMARY:Orionids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Orion. Approximate activity window 10-02 to 11-07.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2035-11-17-leonids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20351117
+DTEND;VALUE=DATE:20351118
+SUMMARY:Leonids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Leo. Approximate activity window 11-06 to 11-30.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2035-12-04-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20351204
+DTEND;VALUE=DATE:20351205
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2035-12-14-geminids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20351214
+DTEND;VALUE=DATE:20351215
+SUMMARY:Geminids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Gemini. Approximate activity window 12-04 to 12-20.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2035-12-17-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20351217
+DTEND;VALUE=DATE:20351218
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2035-12-21-december-solstice@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20351221
+DTEND;VALUE=DATE:20351222
+SUMMARY:December solstice
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nShortest day of the year in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2035-12-22-ursids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20351222
+DTEND;VALUE=DATE:20351223
+SUMMARY:Ursids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Ursa Minor. Approximate activity window 12-17 to 12-26.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2036-01-03-earth-at-perihelion@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360103
+DTEND;VALUE=DATE:20360104
+SUMMARY:Earth at perihelion
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: No direct visual change\; solar disk slightly larger\n\nEarth is closest to the Sun\; the seasons still depend mainly on axial tilt.
+X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly larger
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2036-01-03-quadrantids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360103
+DTEND;VALUE=DATE:20360104
+SUMMARY:Quadrantids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Bootes. Approximate activity window 12-28 to 01-12.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2036-02-11-total-lunar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360211
+DTEND;VALUE=DATE:20360212
+SUMMARY:Total lunar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Totally visible depending on region\n\nNASA visibility region: Americas\, Europe\, Africa\,\, Asia\, w Australia.
+X-PLANETENUHR-VISIBILITY:Totally visible depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2036-02-27-partial-solar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360227
+DTEND;VALUE=DATE:20360228
+SUMMARY:Partial solar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Partially visible depending on region\n\nNASA visibility region: Antarctica\, s Australia\, New Zealand.
+X-PLANETENUHR-VISIBILITY:Partially visible depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2036-03-09-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360309
+DTEND;VALUE=DATE:20360310
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2036-03-20-march-equinox@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360320
+DTEND;VALUE=DATE:20360321
+SUMMARY:March equinox
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nAstronomical spring begins in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2036-03-23-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360323
+DTEND;VALUE=DATE:20360324
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2036-04-22-lyrids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360422
+DTEND;VALUE=DATE:20360423
+SUMMARY:Lyrids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Lyra. Approximate activity window 04-16 to 04-25.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2036-05-06-eta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360506
+DTEND;VALUE=DATE:20360507
+SUMMARY:Eta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 04-19 to 05-28.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2036-06-14-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360614
+DTEND;VALUE=DATE:20360615
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2036-06-21-june-solstice@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360621
+DTEND;VALUE=DATE:20360622
+SUMMARY:June solstice
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nLongest day of the year in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2036-06-27-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360627
+DTEND;VALUE=DATE:20360628
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2036-07-04-earth-at-aphelion@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360704
+DTEND;VALUE=DATE:20360705
+SUMMARY:Earth at aphelion
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: No direct visual change\; solar disk slightly smaller\n\nEarth is farthest from the Sun\; northern summer is still driven by axial tilt\, not distance.
+X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly smaller
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2036-07-23-partial-solar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360723
+DTEND;VALUE=DATE:20360724
+SUMMARY:Partial solar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Partially visible depending on region\n\nNASA visibility region: s Atlantic.
+X-PLANETENUHR-VISIBILITY:Partially visible depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2036-07-30-delta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360730
+DTEND;VALUE=DATE:20360731
+SUMMARY:Delta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 07-12 to 08-23.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2036-08-07-total-lunar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360807
+DTEND;VALUE=DATE:20360808
+SUMMARY:Total lunar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Totally visible depending on region\n\nNASA visibility region: Americas\, Europe\, Africa\, w Asia.
+X-PLANETENUHR-VISIBILITY:Totally visible depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2036-08-12-perseids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360812
+DTEND;VALUE=DATE:20360813
+SUMMARY:Perseids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Perseus. Approximate activity window 07-17 to 08-24.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2036-08-21-partial-solar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360821
+DTEND;VALUE=DATE:20360822
+SUMMARY:Partial solar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Partially visible depending on region\n\nNASA visibility region: Alaska\, Canada\, Arctic\, w Europe\, nw Africa.
+X-PLANETENUHR-VISIBILITY:Partially visible depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2036-09-04-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360904
+DTEND;VALUE=DATE:20360905
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2036-09-18-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360918
+DTEND;VALUE=DATE:20360919
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2036-09-22-september-equinox@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360922
+DTEND;VALUE=DATE:20360923
+SUMMARY:September equinox
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nAstronomical autumn begins in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2036-10-08-draconids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20361008
+DTEND;VALUE=DATE:20361009
+SUMMARY:Draconids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Draco. Approximate activity window 10-06 to 10-10.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2036-10-21-orionids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20361021
+DTEND;VALUE=DATE:20361022
+SUMMARY:Orionids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Orion. Approximate activity window 10-02 to 11-07.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2036-11-17-leonids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20361117
+DTEND;VALUE=DATE:20361118
+SUMMARY:Leonids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Leo. Approximate activity window 11-06 to 11-30.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2036-12-10-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20361210
+DTEND;VALUE=DATE:20361211
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2036-12-14-geminids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20361214
+DTEND;VALUE=DATE:20361215
+SUMMARY:Geminids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Gemini. Approximate activity window 12-04 to 12-20.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2036-12-21-december-solstice@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20361221
+DTEND;VALUE=DATE:20361222
+SUMMARY:December solstice
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nShortest day of the year in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2036-12-22-ursids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20361222
+DTEND;VALUE=DATE:20361223
+SUMMARY:Ursids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Ursa Minor. Approximate activity window 12-17 to 12-26.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2036-12-23-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20361223
+DTEND;VALUE=DATE:20361224
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2037-01-03-earth-at-perihelion@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370103
+DTEND;VALUE=DATE:20370104
+SUMMARY:Earth at perihelion
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: No direct visual change\; solar disk slightly larger\n\nEarth is closest to the Sun\; the seasons still depend mainly on axial tilt.
+X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly larger
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2037-01-03-quadrantids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370103
+DTEND;VALUE=DATE:20370104
+SUMMARY:Quadrantids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Bootes. Approximate activity window 12-28 to 01-12.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2037-01-16-partial-solar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370116
+DTEND;VALUE=DATE:20370117
+SUMMARY:Partial solar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Partially visible depending on region\n\nNASA visibility region: n Africa\, Europe\, Mid East\, w Asia.
+X-PLANETENUHR-VISIBILITY:Partially visible depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2037-01-31-total-lunar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370131
+DTEND;VALUE=DATE:20370201
+SUMMARY:Total lunar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Totally visible depending on region\n\nNASA visibility region: e Europe\, e Africa\, Asia\, Australia\, Pacific\, N.A..
+X-PLANETENUHR-VISIBILITY:Totally visible depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2037-03-02-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370302
+DTEND;VALUE=DATE:20370303
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2037-03-16-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370316
+DTEND;VALUE=DATE:20370317
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2037-03-20-march-equinox@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370320
+DTEND;VALUE=DATE:20370321
+SUMMARY:March equinox
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nAstronomical spring begins in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2037-04-22-lyrids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370422
+DTEND;VALUE=DATE:20370423
+SUMMARY:Lyrids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Lyra. Approximate activity window 04-16 to 04-25.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2037-05-06-eta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370506
+DTEND;VALUE=DATE:20370507
+SUMMARY:Eta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 04-19 to 05-28.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2037-06-07-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370607
+DTEND;VALUE=DATE:20370608
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2037-06-21-june-solstice@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370621
+DTEND;VALUE=DATE:20370622
+SUMMARY:June solstice
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nLongest day of the year in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2037-06-21-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370621
+DTEND;VALUE=DATE:20370622
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2037-07-04-earth-at-aphelion@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370704
+DTEND;VALUE=DATE:20370705
+SUMMARY:Earth at aphelion
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: No direct visual change\; solar disk slightly smaller\n\nEarth is farthest from the Sun\; northern summer is still driven by axial tilt\, not distance.
+X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly smaller
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2037-07-13-total-solar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370713
+DTEND;VALUE=DATE:20370714
+SUMMARY:Total solar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Total along the central path\, partial elsewhere in the visibility zone\n\nNASA visibility region: E. Indies\, Australia\, Pacific. Central path: Australia\, New Zealand.
+X-PLANETENUHR-VISIBILITY:Total along the central path\, partial elsewhere in the visibility zone
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2037-07-27-partial-lunar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370727
+DTEND;VALUE=DATE:20370728
+SUMMARY:Partial lunar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Partially visible depending on region\n\nNASA visibility region: Americas\, Europe\, Africa.
+X-PLANETENUHR-VISIBILITY:Partially visible depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2037-07-30-delta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370730
+DTEND;VALUE=DATE:20370731
+SUMMARY:Delta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 07-12 to 08-23.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2037-08-12-perseids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370812
+DTEND;VALUE=DATE:20370813
+SUMMARY:Perseids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Perseus. Approximate activity window 07-17 to 08-24.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2037-09-11-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370911
+DTEND;VALUE=DATE:20370912
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2037-09-22-september-equinox@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370922
+DTEND;VALUE=DATE:20370923
+SUMMARY:September equinox
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nAstronomical autumn begins in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2037-09-25-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370925
+DTEND;VALUE=DATE:20370926
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2037-10-08-draconids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20371008
+DTEND;VALUE=DATE:20371009
+SUMMARY:Draconids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Draco. Approximate activity window 10-06 to 10-10.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2037-10-21-orionids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20371021
+DTEND;VALUE=DATE:20371022
+SUMMARY:Orionids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Orion. Approximate activity window 10-02 to 11-07.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2037-11-17-leonids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20371117
+DTEND;VALUE=DATE:20371118
+SUMMARY:Leonids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Leo. Approximate activity window 11-06 to 11-30.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2037-12-03-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20371203
+DTEND;VALUE=DATE:20371204
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2037-12-14-geminids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20371214
+DTEND;VALUE=DATE:20371215
+SUMMARY:Geminids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Gemini. Approximate activity window 12-04 to 12-20.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2037-12-17-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20371217
+DTEND;VALUE=DATE:20371218
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2037-12-21-december-solstice@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20371221
+DTEND;VALUE=DATE:20371222
+SUMMARY:December solstice
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nShortest day of the year in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2037-12-22-ursids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20371222
+DTEND;VALUE=DATE:20371223
+SUMMARY:Ursids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Ursa Minor. Approximate activity window 12-17 to 12-26.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2038-01-03-earth-at-perihelion@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380103
+DTEND;VALUE=DATE:20380104
+SUMMARY:Earth at perihelion
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: No direct visual change\; solar disk slightly larger\n\nEarth is closest to the Sun\; the seasons still depend mainly on axial tilt.
+X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly larger
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2038-01-03-quadrantids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380103
+DTEND;VALUE=DATE:20380104
+SUMMARY:Quadrantids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Bootes. Approximate activity window 12-28 to 01-12.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2038-01-05-annular-solar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380105
+DTEND;VALUE=DATE:20380106
+SUMMARY:Annular solar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Annular along the central path\, partial elsewhere in the visibility zone\n\nNASA visibility region: e N. America\, n S. America\, Atlantic\, Africa\, Europe. Central path: Cuba\, Dom.Rep.\, Cote d'Ivoire\, Ghana\, Niger\, Chad\, Egypt.
+X-PLANETENUHR-VISIBILITY:Annular along the central path\, partial elsewhere in the visibility zone
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2038-01-21-penumbral-lunar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380121
+DTEND;VALUE=DATE:20380122
+SUMMARY:Penumbral lunar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible in the penumbra depending on region\n\nNASA visibility region: Americas\, Europe\, Africa.
+X-PLANETENUHR-VISIBILITY:Visible in the penumbra depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2038-03-09-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380309
+DTEND;VALUE=DATE:20380310
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2038-03-20-march-equinox@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380320
+DTEND;VALUE=DATE:20380321
+SUMMARY:March equinox
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nAstronomical spring begins in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2038-03-23-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380323
+DTEND;VALUE=DATE:20380324
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2038-04-22-lyrids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380422
+DTEND;VALUE=DATE:20380423
+SUMMARY:Lyrids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Lyra. Approximate activity window 04-16 to 04-25.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2038-05-06-eta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380506
+DTEND;VALUE=DATE:20380507
+SUMMARY:Eta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 04-19 to 05-28.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2038-06-14-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380614
+DTEND;VALUE=DATE:20380615
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2038-06-17-penumbral-lunar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380617
+DTEND;VALUE=DATE:20380618
+SUMMARY:Penumbral lunar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible in the penumbra depending on region\n\nNASA visibility region: e N. America\, C. & S. America\, Africa\, w Europe.
+X-PLANETENUHR-VISIBILITY:Visible in the penumbra depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2038-06-21-june-solstice@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380621
+DTEND;VALUE=DATE:20380622
+SUMMARY:June solstice
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nLongest day of the year in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2038-06-28-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380628
+DTEND;VALUE=DATE:20380629
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2038-07-02-annular-solar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380702
+DTEND;VALUE=DATE:20380703
+SUMMARY:Annular solar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Annular along the central path\, partial elsewhere in the visibility zone\n\nNASA visibility region: N. & C. America\, S. America\, Africa\, Europe\, Mid East. Central path: Colombia\, Venezuela\, Mauritania\, Morocco\, Mali\, Niger\, Chad\, Sudan\, Ethiopia\, Kenya.
+X-PLANETENUHR-VISIBILITY:Annular along the central path\, partial elsewhere in the visibility zone
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2038-07-04-earth-at-aphelion@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380704
+DTEND;VALUE=DATE:20380705
+SUMMARY:Earth at aphelion
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: No direct visual change\; solar disk slightly smaller\n\nEarth is farthest from the Sun\; northern summer is still driven by axial tilt\, not distance.
+X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly smaller
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2038-07-16-penumbral-lunar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380716
+DTEND;VALUE=DATE:20380717
+SUMMARY:Penumbral lunar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible in the penumbra depending on region\n\nNASA visibility region: Australia\, e Asia\, Pacific\, w Americas.
+X-PLANETENUHR-VISIBILITY:Visible in the penumbra depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2038-07-30-delta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380730
+DTEND;VALUE=DATE:20380731
+SUMMARY:Delta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 07-12 to 08-23.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2038-08-12-perseids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380812
+DTEND;VALUE=DATE:20380813
+SUMMARY:Perseids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Perseus. Approximate activity window 07-17 to 08-24.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2038-09-04-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380904
+DTEND;VALUE=DATE:20380905
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2038-09-18-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380918
+DTEND;VALUE=DATE:20380919
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2038-09-22-september-equinox@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380922
+DTEND;VALUE=DATE:20380923
+SUMMARY:September equinox
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nAstronomical autumn begins in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2038-10-08-draconids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381008
+DTEND;VALUE=DATE:20381009
+SUMMARY:Draconids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Draco. Approximate activity window 10-06 to 10-10.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2038-10-21-orionids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381021
+DTEND;VALUE=DATE:20381022
+SUMMARY:Orionids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Orion. Approximate activity window 10-02 to 11-07.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2038-11-17-leonids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381117
+DTEND;VALUE=DATE:20381118
+SUMMARY:Leonids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Leo. Approximate activity window 11-06 to 11-30.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2038-12-10-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381210
+DTEND;VALUE=DATE:20381211
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2038-12-11-penumbral-lunar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381211
+DTEND;VALUE=DATE:20381212
+SUMMARY:Penumbral lunar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Visible in the penumbra depending on region\n\nNASA visibility region: Europe\, Africa\, Asia\, Australia.
+X-PLANETENUHR-VISIBILITY:Visible in the penumbra depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2038-12-14-geminids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381214
+DTEND;VALUE=DATE:20381215
+SUMMARY:Geminids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Gemini. Approximate activity window 12-04 to 12-20.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2038-12-21-december-solstice@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381221
+DTEND;VALUE=DATE:20381222
+SUMMARY:December solstice
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nShortest day of the year in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2038-12-22-ursids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381222
+DTEND;VALUE=DATE:20381223
+SUMMARY:Ursids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Ursa Minor. Approximate activity window 12-17 to 12-26.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2038-12-24-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381224
+DTEND;VALUE=DATE:20381225
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2038-12-26-total-solar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381226
+DTEND;VALUE=DATE:20381227
+SUMMARY:Total solar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Total along the central path\, partial elsewhere in the visibility zone\n\nNASA visibility region: se Asia\, E. Indies\, Australia\, New Zealand\, s Pacific\, Antarctica. Central path: Australia\, New Zealand\, s Pacific.
+X-PLANETENUHR-VISIBILITY:Total along the central path\, partial elsewhere in the visibility zone
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2039-01-03-earth-at-perihelion@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390103
+DTEND;VALUE=DATE:20390104
+SUMMARY:Earth at perihelion
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: No direct visual change\; solar disk slightly larger\n\nEarth is closest to the Sun\; the seasons still depend mainly on axial tilt.
+X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly larger
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2039-01-03-quadrantids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390103
+DTEND;VALUE=DATE:20390104
+SUMMARY:Quadrantids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Bootes. Approximate activity window 12-28 to 01-12.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2039-03-02-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390302
+DTEND;VALUE=DATE:20390303
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2039-03-16-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390316
+DTEND;VALUE=DATE:20390317
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2039-03-20-march-equinox@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390320
+DTEND;VALUE=DATE:20390321
+SUMMARY:March equinox
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nAstronomical spring begins in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2039-04-22-lyrids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390422
+DTEND;VALUE=DATE:20390423
+SUMMARY:Lyrids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Lyra. Approximate activity window 04-16 to 04-25.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2039-05-06-eta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390506
+DTEND;VALUE=DATE:20390507
+SUMMARY:Eta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 04-19 to 05-28.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2039-06-06-partial-lunar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390606
+DTEND;VALUE=DATE:20390607
+SUMMARY:Partial lunar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Partially visible depending on region\n\nNASA visibility region: Europe\, Africa\, Asia\, Australia.
+X-PLANETENUHR-VISIBILITY:Partially visible depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2039-06-07-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390607
+DTEND;VALUE=DATE:20390608
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2039-06-21-annular-solar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390621
+DTEND;VALUE=DATE:20390622
+SUMMARY:Annular solar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Annular along the central path\, partial elsewhere in the visibility zone\n\nNASA visibility region: N. America\, w Europe. Central path: Alaska\, n Canada\, Norway\, Sweden\, Finland\, Estonia\, Russia.
+X-PLANETENUHR-VISIBILITY:Annular along the central path\, partial elsewhere in the visibility zone
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2039-06-21-june-solstice@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390621
+DTEND;VALUE=DATE:20390622
+SUMMARY:June solstice
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nLongest day of the year in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2039-06-21-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390621
+DTEND;VALUE=DATE:20390622
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2039-07-04-earth-at-aphelion@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390704
+DTEND;VALUE=DATE:20390705
+SUMMARY:Earth at aphelion
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: No direct visual change\; solar disk slightly smaller\n\nEarth is farthest from the Sun\; northern summer is still driven by axial tilt\, not distance.
+X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly smaller
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2039-07-30-delta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390730
+DTEND;VALUE=DATE:20390731
+SUMMARY:Delta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 07-12 to 08-23.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2039-08-12-perseids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390812
+DTEND;VALUE=DATE:20390813
+SUMMARY:Perseids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Perseus. Approximate activity window 07-17 to 08-24.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2039-09-11-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390911
+DTEND;VALUE=DATE:20390912
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2039-09-22-september-equinox@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390922
+DTEND;VALUE=DATE:20390923
+SUMMARY:September equinox
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nAstronomical autumn begins in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2039-09-25-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390925
+DTEND;VALUE=DATE:20390926
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2039-10-08-draconids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391008
+DTEND;VALUE=DATE:20391009
+SUMMARY:Draconids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Draco. Approximate activity window 10-06 to 10-10.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2039-10-21-orionids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391021
+DTEND;VALUE=DATE:20391022
+SUMMARY:Orionids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Orion. Approximate activity window 10-02 to 11-07.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2039-11-17-leonids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391117
+DTEND;VALUE=DATE:20391118
+SUMMARY:Leonids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Leo. Approximate activity window 11-06 to 11-30.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2039-11-30-partial-lunar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391130
+DTEND;VALUE=DATE:20391201
+SUMMARY:Partial lunar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Partially visible depending on region\n\nNASA visibility region: Europe\, Africa\, Asia\, Australia\, Pacific.
+X-PLANETENUHR-VISIBILITY:Partially visible depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2039-12-03-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391203
+DTEND;VALUE=DATE:20391204
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2039-12-14-geminids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391214
+DTEND;VALUE=DATE:20391215
+SUMMARY:Geminids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Gemini. Approximate activity window 12-04 to 12-20.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2039-12-15-total-solar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391215
+DTEND;VALUE=DATE:20391216
+SUMMARY:Total solar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Total along the central path\, partial elsewhere in the visibility zone\n\nNASA visibility region: s S. America\, Antarctica. Central path: Antarctica.
+X-PLANETENUHR-VISIBILITY:Total along the central path\, partial elsewhere in the visibility zone
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2039-12-17-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391217
+DTEND;VALUE=DATE:20391218
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2039-12-21-december-solstice@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391221
+DTEND;VALUE=DATE:20391222
+SUMMARY:December solstice
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nShortest day of the year in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2039-12-22-ursids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391222
+DTEND;VALUE=DATE:20391223
+SUMMARY:Ursids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Ursa Minor. Approximate activity window 12-17 to 12-26.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2040-01-03-earth-at-perihelion@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400103
+DTEND;VALUE=DATE:20400104
+SUMMARY:Earth at perihelion
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: No direct visual change\; solar disk slightly larger\n\nEarth is closest to the Sun\; the seasons still depend mainly on axial tilt.
+X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly larger
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2040-01-03-quadrantids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400103
+DTEND;VALUE=DATE:20400104
+SUMMARY:Quadrantids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Bootes. Approximate activity window 12-28 to 01-12.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2040-03-08-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400308
+DTEND;VALUE=DATE:20400309
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2040-03-20-march-equinox@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400320
+DTEND;VALUE=DATE:20400321
+SUMMARY:March equinox
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nAstronomical spring begins in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2040-03-22-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400322
+DTEND;VALUE=DATE:20400323
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2040-04-22-lyrids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400422
+DTEND;VALUE=DATE:20400423
+SUMMARY:Lyrids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Lyra. Approximate activity window 04-16 to 04-25.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2040-05-06-eta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400506
+DTEND;VALUE=DATE:20400507
+SUMMARY:Eta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 04-19 to 05-28.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2040-05-11-partial-solar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400511
+DTEND;VALUE=DATE:20400512
+SUMMARY:Partial solar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Partially visible depending on region\n\nNASA visibility region: Australia\, N.Z.\, Antarctica.
+X-PLANETENUHR-VISIBILITY:Partially visible depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2040-05-26-total-lunar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400526
+DTEND;VALUE=DATE:20400527
+SUMMARY:Total lunar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Totally visible depending on region\n\nNASA visibility region: e Asia\, Australia\, Pacific\, w Americas.
+X-PLANETENUHR-VISIBILITY:Totally visible depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2040-06-13-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400613
+DTEND;VALUE=DATE:20400614
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2040-06-21-june-solstice@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400621
+DTEND;VALUE=DATE:20400622
+SUMMARY:June solstice
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nLongest day of the year in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2040-06-27-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400627
+DTEND;VALUE=DATE:20400628
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2040-07-04-earth-at-aphelion@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400704
+DTEND;VALUE=DATE:20400705
+SUMMARY:Earth at aphelion
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: No direct visual change\; solar disk slightly smaller\n\nEarth is farthest from the Sun\; northern summer is still driven by axial tilt\, not distance.
+X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly smaller
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2040-07-30-delta-aquariids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400730
+DTEND;VALUE=DATE:20400731
+SUMMARY:Delta Aquariids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Aquarius. Approximate activity window 07-12 to 08-23.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2040-08-12-perseids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400812
+DTEND;VALUE=DATE:20400813
+SUMMARY:Perseids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Perseus. Approximate activity window 07-17 to 08-24.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2040-09-04-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400904
+DTEND;VALUE=DATE:20400905
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2040-09-17-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400917
+DTEND;VALUE=DATE:20400918
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2040-09-22-september-equinox@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400922
+DTEND;VALUE=DATE:20400923
+SUMMARY:September equinox
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nAstronomical autumn begins in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2040-10-08-draconids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401008
+DTEND;VALUE=DATE:20401009
+SUMMARY:Draconids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Draco. Approximate activity window 10-06 to 10-10.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2040-10-21-orionids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401021
+DTEND;VALUE=DATE:20401022
+SUMMARY:Orionids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Orion. Approximate activity window 10-02 to 11-07.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2040-11-04-partial-solar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401104
+DTEND;VALUE=DATE:20401105
+SUMMARY:Partial solar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Partially visible depending on region\n\nNASA visibility region: N. & C. America.
+X-PLANETENUHR-VISIBILITY:Partially visible depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2040-11-17-leonids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401117
+DTEND;VALUE=DATE:20401118
+SUMMARY:Leonids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Leo. Approximate activity window 11-06 to 11-30.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-eclipse-2040-11-18-total-lunar-eclipse@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401118
+DTEND;VALUE=DATE:20401119
+SUMMARY:Total lunar eclipse
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Totally visible depending on region\n\nNASA visibility region: e Americas\, Europe\, Africa\, Asia\, Australia.
+X-PLANETENUHR-VISIBILITY:Totally visible depending on region
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2040-12-09-moon-at-perigee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401209
+DTEND;VALUE=DATE:20401210
+SUMMARY:Moon at perigee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle larger Moon\n\nRepresentative near-Earth Moon date for this quarter\; apparent size is slightly larger than average.
+X-PLANETENUHR-VISIBILITY:Subtle larger Moon
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2040-12-14-geminids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401214
+DTEND;VALUE=DATE:20401215
+SUMMARY:Geminids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Gemini. Approximate activity window 12-04 to 12-20.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-season-2040-12-21-december-solstice@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401221
+DTEND;VALUE=DATE:20401222
+SUMMARY:December solstice
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Worldwide\n\nShortest day of the year in the northern hemisphere.
+X-PLANETENUHR-VISIBILITY:Worldwide
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-meteor-2040-12-22-ursids-meteor-shower-maximum@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401222
+DTEND;VALUE=DATE:20401223
+SUMMARY:Ursids meteor shower maximum
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Usually favorable from Europe after midnight\n\nAnnual peak of this meteor shower\; radiant near Ursa Minor. Approximate activity window 12-17 to 12-26.
+X-PLANETENUHR-VISIBILITY:Usually favorable from Europe after midnight
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-moon-2040-12-23-moon-at-apogee@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401223
+DTEND;VALUE=DATE:20401224
+SUMMARY:Moon at apogee
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Subtle smaller Moon\n\nRepresentative far-Earth Moon date for this quarter\; apparent size is slightly smaller than average.
+X-PLANETENUHR-VISIBILITY:Subtle smaller Moon
+END:VEVENT
+END:VCALENDAR

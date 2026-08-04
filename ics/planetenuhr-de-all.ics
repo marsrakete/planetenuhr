@@ -1,0 +1,4248 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//marsrakete//Planetenuhr//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Planetenuhr Sky Calendar (de)
+X-WR-TIMEZONE:Europe/Berlin
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2026-01-03-erde-im-perihel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260103
+DTEND;VALUE=DATE:20260104
+SUMMARY:Erde im Perihel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte sichtbare Veränderung\; Sonnenscheibe minimal größer\n\nDie Erde ist am 2026-01-03 (ca. 17:16 UTC) der Sonne am nächsten\; die Jahreszeiten werden trotzdem vor allem von der Achsneigung bestimmt.
+X-PLANETENUHR-VISIBILITY:Keine direkte sichtbare Veränderung\; Sonnenscheibe minimal größer
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2026-01-04-maximum-der-quadrantiden@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260104
+DTEND;VALUE=DATE:20260105
+SUMMARY:Maximum der Quadrantiden
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Gut in Europa vor der Dämmerung\, aber Mondlicht kann stören\n\nKurzes\, scharfes Maximum\; der nördliche Radiant ist für Europa günstig.
+X-PLANETENUHR-VISIBILITY:Gut in Europa vor der Dämmerung\, aber Mondlicht kann stören
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2026-01-10-jupiter-in-opposition@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260110
+DTEND;VALUE=DATE:20260111
+SUMMARY:Jupiter in Opposition
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Sehr gute Abend- und Nachtsichtbarkeit\n\nJupiter ist hell und steht hoch am Winterhimmel\; gutes Ziel fürs Teleskop.
+X-PLANETENUHR-VISIBILITY:Sehr gute Abend- und Nachtsichtbarkeit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2026-02-19-merkur-in-gr-ter-stlicher-elongation@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260219
+DTEND;VALUE=DATE:20260220
+SUMMARY:Merkur in größter östlicher Elongation
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Beste Merkur-Abendsichtbarkeit 2026 für Nordeuropa\n\nTief im Westen nach Sonnenuntergang suchen\; Sichelmond\, Merkur\, Venus und Saturn stehen um den 18.-20. Februar nahe beieinander.
+X-PLANETENUHR-VISIBILITY:Beste Merkur-Abendsichtbarkeit 2026 für Nordeuropa
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2026-02-24-mond-in-erdn-he@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260224
+DTEND;VALUE=DATE:20260225
+SUMMARY:Mond in Erdnähe
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Kein auffälliges Einzelereignis\n\nDer Mond ist der Erde am nächsten\; scheinbarer Durchmesser leicht größer als durchschnittlich.
+X-PLANETENUHR-VISIBILITY:Kein auffälliges Einzelereignis
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2026-03-20-m-rz-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260320
+DTEND;VALUE=DATE:20260321
+SUMMARY:März-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Frühlingsanfang auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2026-04-22-maximum-der-lyriden@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260422
+DTEND;VALUE=DATE:20260423
+SUMMARY:Maximum der Lyriden
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: In Europa nach Mitternacht sichtbar\n\nMäßiger Frühlings-Meteorstrom\; am besten an einem dunklen Standort.
+X-PLANETENUHR-VISIBILITY:In Europa nach Mitternacht sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2026-05-06-maximum-der-eta-aquariiden@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260506
+DTEND;VALUE=DATE:20260507
+SUMMARY:Maximum der Eta-Aquariiden
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Niedriger Radiant in Europa vor der Dämmerung\n\nMeteore des Halleyschen Kometen\; weiter südlich besser\, in Europa aber einzelne Meteore möglich.
+X-PLANETENUHR-VISIBILITY:Niedriger Radiant in Europa vor der Dämmerung
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2026-06-09-konjunktion-venus-jupiter@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260609
+DTEND;VALUE=DATE:20260610
+SUMMARY:Konjunktion Venus-Jupiter
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Tief in der westlichen Abenddämmerung\n\nDie beiden hellsten Planeten stehen etwa 1\,6 Grad auseinander\; freie Westsicht nötig.
+X-PLANETENUHR-VISIBILITY:Tief in der westlichen Abenddämmerung
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2026-06-17-mondsichel-bei-venus@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260617
+DTEND;VALUE=DATE:20260618
+SUMMARY:Mondsichel bei Venus
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Westliche Abenddämmerung\n\nSchmale Mondsichel und helle Venus bilden ein enges Abendpaar\; optische Geräte erst nach Sonnenuntergang verwenden.
+X-PLANETENUHR-VISIBILITY:Westliche Abenddämmerung
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2026-06-21-juni-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260621
+DTEND;VALUE=DATE:20260622
+SUMMARY:Juni-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nLängster Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2026-07-06-erde-im-aphel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260706
+DTEND;VALUE=DATE:20260707
+SUMMARY:Erde im Aphel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte sichtbare Veränderung\; Sonnenscheibe minimal kleiner\n\nDie Erde erreicht am 2026-07-06 (ca. 17:31 UTC) ihren größten Sonnenabstand\; das Wetter bleibt vor allem von der Achsneigung bestimmt.
+X-PLANETENUHR-VISIBILITY:Keine direkte sichtbare Veränderung\; Sonnenscheibe minimal kleiner
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2026-07-30-maximum-der-delta-aquariiden@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260730
+DTEND;VALUE=DATE:20260731
+SUMMARY:Maximum der Delta-Aquariiden
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Tiefer südlicher Radiant\; in Europa am besten nach Mitternacht\n\nPeak eines Stroms\, der ungefähr von 2026-07-12 bis 2026-08-23 aktiv ist\; dunkler Himmel fern von Stadtlicht hilft deutlich.
+X-PLANETENUHR-VISIBILITY:Tiefer südlicher Radiant\; in Europa am besten nach Mitternacht
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2026-07-31-maximum-der-alpha-capricorniden@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260731
+DTEND;VALUE=DATE:20260801
+SUMMARY:Maximum der Alpha-Capricorniden
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: In Europa nach Mitternacht sichtbar\, tief im Süden\n\nPeak eines Stroms\, der ungefähr von 2026-07-07 bis 2026-08-15 aktiv ist\; langsamere Meteore können helle Feuerkugeln liefern.
+X-PLANETENUHR-VISIBILITY:In Europa nach Mitternacht sichtbar\, tief im Süden
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2026-08-10-mond-nahe-erdn-he@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260810
+DTEND;VALUE=DATE:20260811
+SUMMARY:Mond nahe Erdnähe
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nZwei Tage vor der europäischen totalen Sonnenfinsternis steht der Mond nah genug\, um etwas größer zu wirken.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2026-08-12-maximum-der-perseiden@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260812
+DTEND;VALUE=DATE:20260813
+SUMMARY:Maximum der Perseiden
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Gut in Europa nach Mitternacht\n\nMeist einer der besten nördlichen Meteorströme\; dunkler Himmel hilft sehr.
+X-PLANETENUHR-VISIBILITY:Gut in Europa nach Mitternacht
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2026-08-12-totale-sonnenfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260812
+DTEND;VALUE=DATE:20260813
+SUMMARY:Totale Sonnenfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Total in Island und Nordspanien\; partiell in weiten Teilen Europas\n\nBeste europäische Totalitätszone: Island und Nordspanien/Balearen-Region.
+X-PLANETENUHR-VISIBILITY:Total in Island und Nordspanien\; partiell in weiten Teilen Europas
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2026-08-28-partielle-mondfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260828
+DTEND;VALUE=DATE:20260829
+SUMMARY:Partielle Mondfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Teilweise in Europa sichtbar\n\nTiefe partielle Finsternis\; beste Sicht weiter westlich\, in Teilen Europas um Monduntergang.
+X-PLANETENUHR-VISIBILITY:Teilweise in Europa sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2026-09-19-venus-mit-bester-abendsichtbarkeit@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260919
+DTEND;VALUE=DATE:20260920
+SUMMARY:Venus mit bester Abendsichtbarkeit
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Sehr heller Abendstern\n\nGute Abendsichtbarkeit um dieses Datum\; Venus ist nach Sonnenuntergang auffällig.
+X-PLANETENUHR-VISIBILITY:Sehr heller Abendstern
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2026-09-23-september-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20260923
+DTEND;VALUE=DATE:20260924
+SUMMARY:September-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Herbstanfang auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2026-10-04-saturn-in-opposition@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20261004
+DTEND;VALUE=DATE:20261005
+SUMMARY:Saturn in Opposition
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Die ganze Nacht sichtbar\n\nSaturn ist am hellsten und günstig platziert\; die Ringe öffnen sich langsam wieder.
+X-PLANETENUHR-VISIBILITY:Die ganze Nacht sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2026-10-21-maximum-der-orioniden@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20261021
+DTEND;VALUE=DATE:20261022
+SUMMARY:Maximum der Orioniden
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: In Europa nach Mitternacht sichtbar\n\nSchnelle Meteore aus Staub des Halleyschen Kometen\; am besten vor der Dämmerung.
+X-PLANETENUHR-VISIBILITY:In Europa nach Mitternacht sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2026-11-15-konjunktion-mars-jupiter@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20261115
+DTEND;VALUE=DATE:20261116
+SUMMARY:Konjunktion Mars-Jupiter
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Morgenhimmel\n\nMars und Jupiter erscheinen vor der Morgendämmerung nahe beieinander.
+X-PLANETENUHR-VISIBILITY:Morgenhimmel
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2026-11-17-maximum-der-leoniden@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20261117
+DTEND;VALUE=DATE:20261118
+SUMMARY:Maximum der Leoniden
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: In Europa nach Mitternacht sichtbar\n\nMeist eher moderat\, historisch aber für gelegentliche Ausbrüche bekannt.
+X-PLANETENUHR-VISIBILITY:In Europa nach Mitternacht sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2026-11-29-venus-mit-bester-morgensichtbarkeit@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20261129
+DTEND;VALUE=DATE:20261130
+SUMMARY:Venus mit bester Morgensichtbarkeit
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Heller Morgenstern\n\nVenus wird zu einem auffälligen Objekt vor Sonnenaufgang.
+X-PLANETENUHR-VISIBILITY:Heller Morgenstern
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2026-12-14-maximum-der-geminiden@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20261214
+DTEND;VALUE=DATE:20261215
+SUMMARY:Maximum der Geminiden
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Sehr gut in Europa sichtbar\n\nOft der stärkste jährliche Meteorstrom\, am besten vom späten Abend bis zur Dämmerung.
+X-PLANETENUHR-VISIBILITY:Sehr gut in Europa sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2026-12-21-dezember-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20261221
+DTEND;VALUE=DATE:20261222
+SUMMARY:Dezember-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nKürzester Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2026-12-22-maximum-der-ursiden@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20261222
+DTEND;VALUE=DATE:20261223
+SUMMARY:Maximum der Ursiden
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: In Europa die ganze Nacht sichtbar\n\nEin eher mäßiger nördlicher Meteorstrom nahe der Dezember-Sonnenwende.
+X-PLANETENUHR-VISIBILITY:In Europa die ganze Nacht sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2027-01-03-erde-im-perihel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270103
+DTEND;VALUE=DATE:20270104
+SUMMARY:Erde im Perihel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte sichtbare Veränderung\; Sonnenscheibe minimal größer\n\nDie Erde ist am 2027-01-03 (ca. 02:33 UTC) der Sonne am nächsten\; die Jahreszeiten werden trotzdem vor allem von der Achsneigung bestimmt.
+X-PLANETENUHR-VISIBILITY:Keine direkte sichtbare Veränderung\; Sonnenscheibe minimal größer
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2027-01-03-maximum-der-quadrantiden@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270103
+DTEND;VALUE=DATE:20270104
+SUMMARY:Maximum der Quadrantiden
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Gut in Europa vor der Dämmerung\n\nKurzes\, scharfes Maximum\; der nördliche Radiant ist für Europa günstig.
+X-PLANETENUHR-VISIBILITY:Gut in Europa vor der Dämmerung
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2027-01-03-venus-in-gr-ter-westlicher-elongation@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270103
+DTEND;VALUE=DATE:20270104
+SUMMARY:Venus in größter westlicher Elongation
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Sehr gute Morgensichtbarkeit\n\nVenus steht am Morgenhimmel weit von der Sonne entfernt.
+X-PLANETENUHR-VISIBILITY:Sehr gute Morgensichtbarkeit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2027-02-19-mond-in-erdn-he@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270219
+DTEND;VALUE=DATE:20270220
+SUMMARY:Mond in Erdnähe
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nDer Mond ist kurz vor der Halbschattenfinsternis vom 20. Februar nahe an der Erde.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2027-02-20-halbschatten-mondfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270220
+DTEND;VALUE=DATE:20270221
+SUMMARY:Halbschatten-Mondfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: In Europa sichtbar\n\nDezente Halbschatten-Abdunklung\; in weiten Teilen Europas vollständig sichtbar.
+X-PLANETENUHR-VISIBILITY:In Europa sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2027-02-20-vollmond-nahe-erdn-he@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270220
+DTEND;VALUE=DATE:20270221
+SUMMARY:Vollmond nahe Erdnähe
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: In Europa während der Halbschattenfinsternis sichtbar\n\nGrößer wirkender Vollmond\; die schwache Halbschatten-Abdunklung ist bei guten Bedingungen erkennbar.
+X-PLANETENUHR-VISIBILITY:In Europa während der Halbschattenfinsternis sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2027-03-20-m-rz-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270320
+DTEND;VALUE=DATE:20270321
+SUMMARY:März-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Frühlingsanfang auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2027-04-22-maximum-der-lyriden@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270422
+DTEND;VALUE=DATE:20270423
+SUMMARY:Maximum der Lyriden
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: In Europa nach Mitternacht sichtbar\n\nMäßiger Frühlings-Meteorstrom\; am besten an einem dunklen Standort.
+X-PLANETENUHR-VISIBILITY:In Europa nach Mitternacht sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2027-05-06-maximum-der-eta-aquariiden@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270506
+DTEND;VALUE=DATE:20270507
+SUMMARY:Maximum der Eta-Aquariiden
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Niedriger Radiant in Europa vor der Dämmerung\n\nMeteore des Halleyschen Kometen\; die Raten sind in Europa niedriger als weiter südlich.
+X-PLANETENUHR-VISIBILITY:Niedriger Radiant in Europa vor der Dämmerung
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2027-05-08-konjunktion-venus-saturn@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270508
+DTEND;VALUE=DATE:20270509
+SUMMARY:Konjunktion Venus-Saturn
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Morgen-/Ostdämmerung\, niedrig\n\nEnge Begegnung\, aber geringe Höhe und Dämmerung können die Beobachtung erschweren.
+X-PLANETENUHR-VISIBILITY:Morgen-/Ostdämmerung\, niedrig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2027-06-21-juni-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270621
+DTEND;VALUE=DATE:20270622
+SUMMARY:Juni-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nLängster Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2027-07-05-erde-im-aphel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270705
+DTEND;VALUE=DATE:20270706
+SUMMARY:Erde im Aphel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte sichtbare Veränderung\; Sonnenscheibe minimal kleiner\n\nDie Erde erreicht am 2027-07-05 (ca. 05:06 UTC) ihren größten Sonnenabstand\; das Wetter bleibt vor allem von der Achsneigung bestimmt.
+X-PLANETENUHR-VISIBILITY:Keine direkte sichtbare Veränderung\; Sonnenscheibe minimal kleiner
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2027-07-30-maximum-der-delta-aquariiden@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270730
+DTEND;VALUE=DATE:20270731
+SUMMARY:Maximum der Delta-Aquariiden
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Tiefer südlicher Radiant\; in Europa am besten nach Mitternacht\n\nPeak eines Stroms\, der ungefähr von 2027-07-12 bis 2027-08-23 aktiv ist\; dunkler Himmel fern von Stadtlicht hilft deutlich.
+X-PLANETENUHR-VISIBILITY:Tiefer südlicher Radiant\; in Europa am besten nach Mitternacht
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2027-07-31-maximum-der-alpha-capricorniden@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270731
+DTEND;VALUE=DATE:20270801
+SUMMARY:Maximum der Alpha-Capricorniden
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: In Europa nach Mitternacht sichtbar\, tief im Süden\n\nPeak eines Stroms\, der ungefähr von 2027-07-07 bis 2027-08-15 aktiv ist\; langsamere Meteore können helle Feuerkugeln liefern.
+X-PLANETENUHR-VISIBILITY:In Europa nach Mitternacht sichtbar\, tief im Süden
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2027-08-02-totale-sonnenfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270802
+DTEND;VALUE=DATE:20270803
+SUMMARY:Totale Sonnenfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Total im äußersten Süden Spaniens/Gibraltar\; partiell in fast ganz Europa\n\nDie europäische Totalitätszone berührt Südspanien bei Cadiz/Malaga und Gibraltar.
+X-PLANETENUHR-VISIBILITY:Total im äußersten Süden Spaniens/Gibraltar\; partiell in fast ganz Europa
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2027-08-12-maximum-der-perseiden@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270812
+DTEND;VALUE=DATE:20270813
+SUMMARY:Maximum der Perseiden
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Gut in Europa nach Mitternacht\n\nZuverlässiger Sommer-Meteorstrom\; am besten\, wenn der Radiant höher steht.
+X-PLANETENUHR-VISIBILITY:Gut in Europa nach Mitternacht
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2027-08-25-konjunktion-venus-jupiter@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270825
+DTEND;VALUE=DATE:20270826
+SUMMARY:Konjunktion Venus-Jupiter
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Sehr sonnennah\; schwierig oder unsicher zu beobachten\n\nGeometrisch eng\, aber nur etwa 4 Grad von der Sonne entfernt. Nicht mit Optik in Sonnennähe suchen.
+X-PLANETENUHR-VISIBILITY:Sehr sonnennah\; schwierig oder unsicher zu beobachten
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2027-09-23-september-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20270923
+DTEND;VALUE=DATE:20270924
+SUMMARY:September-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Herbstanfang auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2027-10-21-maximum-der-orioniden@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20271021
+DTEND;VALUE=DATE:20271022
+SUMMARY:Maximum der Orioniden
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: In Europa nach Mitternacht sichtbar\n\nSchnelle Meteore des Halleyschen Kometen\; am besten vor der Dämmerung.
+X-PLANETENUHR-VISIBILITY:In Europa nach Mitternacht sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2027-11-17-maximum-der-leoniden@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20271117
+DTEND;VALUE=DATE:20271118
+SUMMARY:Maximum der Leoniden
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: In Europa nach Mitternacht sichtbar\n\nAußerhalb von Sturmjahren meist eher moderat.
+X-PLANETENUHR-VISIBILITY:In Europa nach Mitternacht sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2027-11-25-konjunktion-venus-mars@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20271125
+DTEND;VALUE=DATE:20271126
+SUMMARY:Konjunktion Venus-Mars
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Morgenhimmel\n\nEnges Planetenpaar\; Venus ist deutlich heller als Mars.
+X-PLANETENUHR-VISIBILITY:Morgenhimmel
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2027-12-14-maximum-der-geminiden@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20271214
+DTEND;VALUE=DATE:20271215
+SUMMARY:Maximum der Geminiden
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Sehr gut in Europa sichtbar\n\nEiner der stärksten jährlichen Meteorströme\, besonders an dunklen Standorten.
+X-PLANETENUHR-VISIBILITY:Sehr gut in Europa sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2027-12-22-dezember-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20271222
+DTEND;VALUE=DATE:20271223
+SUMMARY:Dezember-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nKürzester Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2027-12-22-maximum-der-ursiden@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20271222
+DTEND;VALUE=DATE:20271223
+SUMMARY:Maximum der Ursiden
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: In Europa die ganze Nacht sichtbar\n\nEin eher mäßiger nördlicher Meteorstrom\; am besten bei dunklem Himmel.
+X-PLANETENUHR-VISIBILITY:In Europa die ganze Nacht sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2028-01-03-erde-im-perihel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280103
+DTEND;VALUE=DATE:20280104
+SUMMARY:Erde im Perihel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer\n\nDie Erde ist der Sonne am nächsten\; die Jahreszeiten werden trotzdem vor allem von der Achsneigung bestimmt.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2028-01-03-maximum-der-quadrantids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280103
+DTEND;VALUE=DATE:20280104
+SUMMARY:Maximum der Quadrantids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Bootes. Aktivitätsfenster ungefähr 12-28 bis 01-12.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2028-01-12-partielle-mondfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280112
+DTEND;VALUE=DATE:20280113
+SUMMARY:Partielle Mondfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional partiell sichtbar\n\nNASA-Sichtbarkeitsregion: Americas\, Europe\, Africa.
+X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2028-01-26-ringf-rmige-sonnenfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280126
+DTEND;VALUE=DATE:20280127
+SUMMARY:Ringförmige Sonnenfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Ringförmig in Teilen Portugals und Spaniens\; partiell in Westeuropa\n\nRingfinsternis auf der Iberischen Halbinsel\; sonst in Westeuropa partiell.
+X-PLANETENUHR-VISIBILITY:Ringförmig in Teilen Portugals und Spaniens\; partiell in Westeuropa
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2028-03-10-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280310
+DTEND;VALUE=DATE:20280311
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2028-03-20-m-rz-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280320
+DTEND;VALUE=DATE:20280321
+SUMMARY:März-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Frühlingsbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2028-03-24-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280324
+DTEND;VALUE=DATE:20280325
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2028-04-22-maximum-der-lyrids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280422
+DTEND;VALUE=DATE:20280423
+SUMMARY:Maximum der Lyrids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Lyra. Aktivitätsfenster ungefähr 04-16 bis 04-25.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2028-05-06-maximum-der-eta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280506
+DTEND;VALUE=DATE:20280507
+SUMMARY:Maximum der Eta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Aquarius. Aktivitätsfenster ungefähr 04-19 bis 05-28.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2028-06-01-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280601
+DTEND;VALUE=DATE:20280602
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2028-06-15-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280615
+DTEND;VALUE=DATE:20280616
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2028-06-21-juni-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280621
+DTEND;VALUE=DATE:20280622
+SUMMARY:Juni-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nLängster Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2028-07-04-erde-im-aphel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280704
+DTEND;VALUE=DATE:20280705
+SUMMARY:Erde im Aphel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner\n\nDie Erde ist der Sonne am fernsten\; der Nordsommer entsteht trotzdem durch die Achsneigung und nicht durch die Entfernung.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2028-07-06-partielle-mondfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280706
+DTEND;VALUE=DATE:20280707
+SUMMARY:Partielle Mondfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional partiell sichtbar\n\nNASA-Sichtbarkeitsregion: Europe\, Africa\, Asia\, Australia.
+X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2028-07-22-totale-sonnenfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280722
+DTEND;VALUE=DATE:20280723
+SUMMARY:Totale Sonnenfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Entlang der Totalitätszone total\, sonst regional partiell sichtbar\n\nNASA-Sichtbarkeitsregion: SE Asia\, E. Indies\, Australia\, N.Z.. Zentralzone: Australia\, N. Z..
+X-PLANETENUHR-VISIBILITY:Entlang der Totalitätszone total\, sonst regional partiell sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2028-07-30-maximum-der-delta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280730
+DTEND;VALUE=DATE:20280731
+SUMMARY:Maximum der Delta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Aquarius. Aktivitätsfenster ungefähr 07-12 bis 08-23.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2028-08-12-maximum-der-perseids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280812
+DTEND;VALUE=DATE:20280813
+SUMMARY:Maximum der Perseids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Perseus. Aktivitätsfenster ungefähr 07-17 bis 08-24.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2028-09-05-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280905
+DTEND;VALUE=DATE:20280906
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2028-09-19-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280919
+DTEND;VALUE=DATE:20280920
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2028-09-22-september-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20280922
+DTEND;VALUE=DATE:20280923
+SUMMARY:September-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Herbstbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2028-10-08-maximum-der-draconids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281008
+DTEND;VALUE=DATE:20281009
+SUMMARY:Maximum der Draconids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Draco. Aktivitätsfenster ungefähr 10-06 bis 10-10.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2028-10-21-maximum-der-orionids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281021
+DTEND;VALUE=DATE:20281022
+SUMMARY:Maximum der Orionids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Orion. Aktivitätsfenster ungefähr 10-02 bis 11-07.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2028-11-17-maximum-der-leonids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281117
+DTEND;VALUE=DATE:20281118
+SUMMARY:Maximum der Leonids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Leo. Aktivitätsfenster ungefähr 11-06 bis 11-30.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2028-12-11-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281211
+DTEND;VALUE=DATE:20281212
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2028-12-14-maximum-der-geminids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281214
+DTEND;VALUE=DATE:20281215
+SUMMARY:Maximum der Geminids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Gemini. Aktivitätsfenster ungefähr 12-04 bis 12-20.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2028-12-21-dezember-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281221
+DTEND;VALUE=DATE:20281222
+SUMMARY:Dezember-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nKürzester Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2028-12-22-maximum-der-ursids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281222
+DTEND;VALUE=DATE:20281223
+SUMMARY:Maximum der Ursids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Ursa Minor. Aktivitätsfenster ungefähr 12-17 bis 12-26.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2028-12-25-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281225
+DTEND;VALUE=DATE:20281226
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2028-12-31-totale-mondfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20281231
+DTEND;VALUE=DATE:20290101
+SUMMARY:Totale Mondfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional total sichtbar\n\nNASA-Sichtbarkeitsregion: Europe\, Africa\, Asia\, Australia\, Pacific.
+X-PLANETENUHR-VISIBILITY:Regional total sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2029-01-03-erde-im-perihel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290103
+DTEND;VALUE=DATE:20290104
+SUMMARY:Erde im Perihel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer\n\nDie Erde ist der Sonne am nächsten\; die Jahreszeiten werden trotzdem vor allem von der Achsneigung bestimmt.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2029-01-03-maximum-der-quadrantids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290103
+DTEND;VALUE=DATE:20290104
+SUMMARY:Maximum der Quadrantids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Bootes. Aktivitätsfenster ungefähr 12-28 bis 01-12.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2029-01-14-partielle-sonnenfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290114
+DTEND;VALUE=DATE:20290115
+SUMMARY:Partielle Sonnenfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional partiell sichtbar\n\nNASA-Sichtbarkeitsregion: N. America\, C. America.
+X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2029-03-04-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290304
+DTEND;VALUE=DATE:20290305
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2029-03-17-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290317
+DTEND;VALUE=DATE:20290318
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2029-03-20-m-rz-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290320
+DTEND;VALUE=DATE:20290321
+SUMMARY:März-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Frühlingsbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2029-04-22-maximum-der-lyrids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290422
+DTEND;VALUE=DATE:20290423
+SUMMARY:Maximum der Lyrids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Lyra. Aktivitätsfenster ungefähr 04-16 bis 04-25.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2029-05-06-maximum-der-eta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290506
+DTEND;VALUE=DATE:20290507
+SUMMARY:Maximum der Eta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Aquarius. Aktivitätsfenster ungefähr 04-19 bis 05-28.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2029-06-08-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290608
+DTEND;VALUE=DATE:20290609
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2029-06-12-partielle-sonnenfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290612
+DTEND;VALUE=DATE:20290613
+SUMMARY:Partielle Sonnenfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional partiell sichtbar\n\nNASA-Sichtbarkeitsregion: Arctic\, Scandanavia\, Alaska\, n Asia\, n Canada.
+X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2029-06-21-juni-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290621
+DTEND;VALUE=DATE:20290622
+SUMMARY:Juni-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nLängster Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2029-06-22-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290622
+DTEND;VALUE=DATE:20290623
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2029-06-26-totale-mondfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290626
+DTEND;VALUE=DATE:20290627
+SUMMARY:Totale Mondfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional total sichtbar\n\nNASA-Sichtbarkeitsregion: Americas\, Europe\, Africa\, Mid East.
+X-PLANETENUHR-VISIBILITY:Regional total sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2029-07-04-erde-im-aphel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290704
+DTEND;VALUE=DATE:20290705
+SUMMARY:Erde im Aphel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner\n\nDie Erde ist der Sonne am fernsten\; der Nordsommer entsteht trotzdem durch die Achsneigung und nicht durch die Entfernung.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2029-07-11-partielle-sonnenfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290711
+DTEND;VALUE=DATE:20290712
+SUMMARY:Partielle Sonnenfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional partiell sichtbar\n\nNASA-Sichtbarkeitsregion: s Chile\, s Argentina.
+X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2029-07-30-maximum-der-delta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290730
+DTEND;VALUE=DATE:20290731
+SUMMARY:Maximum der Delta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Aquarius. Aktivitätsfenster ungefähr 07-12 bis 08-23.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2029-08-12-maximum-der-perseids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290812
+DTEND;VALUE=DATE:20290813
+SUMMARY:Maximum der Perseids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Perseus. Aktivitätsfenster ungefähr 07-17 bis 08-24.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2029-09-12-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290912
+DTEND;VALUE=DATE:20290913
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2029-09-22-september-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290922
+DTEND;VALUE=DATE:20290923
+SUMMARY:September-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Herbstbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2029-09-26-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20290926
+DTEND;VALUE=DATE:20290927
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2029-10-08-maximum-der-draconids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291008
+DTEND;VALUE=DATE:20291009
+SUMMARY:Maximum der Draconids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Draco. Aktivitätsfenster ungefähr 10-06 bis 10-10.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2029-10-21-maximum-der-orionids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291021
+DTEND;VALUE=DATE:20291022
+SUMMARY:Maximum der Orionids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Orion. Aktivitätsfenster ungefähr 10-02 bis 11-07.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2029-11-17-maximum-der-leonids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291117
+DTEND;VALUE=DATE:20291118
+SUMMARY:Maximum der Leonids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Leo. Aktivitätsfenster ungefähr 11-06 bis 11-30.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2029-12-04-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291204
+DTEND;VALUE=DATE:20291205
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2029-12-05-partielle-sonnenfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291205
+DTEND;VALUE=DATE:20291206
+SUMMARY:Partielle Sonnenfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional partiell sichtbar\n\nNASA-Sichtbarkeitsregion: s Argentina\, s Chile\, Antarctica.
+X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2029-12-14-maximum-der-geminids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291214
+DTEND;VALUE=DATE:20291215
+SUMMARY:Maximum der Geminids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Gemini. Aktivitätsfenster ungefähr 12-04 bis 12-20.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2029-12-18-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291218
+DTEND;VALUE=DATE:20291219
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2029-12-20-totale-mondfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291220
+DTEND;VALUE=DATE:20291221
+SUMMARY:Totale Mondfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional total sichtbar\n\nNASA-Sichtbarkeitsregion: Americas\, Europe\, Africa\, Asia.
+X-PLANETENUHR-VISIBILITY:Regional total sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2029-12-21-dezember-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291221
+DTEND;VALUE=DATE:20291222
+SUMMARY:Dezember-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nKürzester Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2029-12-22-maximum-der-ursids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20291222
+DTEND;VALUE=DATE:20291223
+SUMMARY:Maximum der Ursids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Ursa Minor. Aktivitätsfenster ungefähr 12-17 bis 12-26.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2030-01-03-erde-im-perihel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300103
+DTEND;VALUE=DATE:20300104
+SUMMARY:Erde im Perihel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer\n\nDie Erde ist der Sonne am nächsten\; die Jahreszeiten werden trotzdem vor allem von der Achsneigung bestimmt.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2030-01-03-maximum-der-quadrantids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300103
+DTEND;VALUE=DATE:20300104
+SUMMARY:Maximum der Quadrantids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Bootes. Aktivitätsfenster ungefähr 12-28 bis 01-12.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2030-03-11-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300311
+DTEND;VALUE=DATE:20300312
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2030-03-20-m-rz-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300320
+DTEND;VALUE=DATE:20300321
+SUMMARY:März-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Frühlingsbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2030-03-24-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300324
+DTEND;VALUE=DATE:20300325
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2030-04-22-maximum-der-lyrids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300422
+DTEND;VALUE=DATE:20300423
+SUMMARY:Maximum der Lyrids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Lyra. Aktivitätsfenster ungefähr 04-16 bis 04-25.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2030-05-06-maximum-der-eta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300506
+DTEND;VALUE=DATE:20300507
+SUMMARY:Maximum der Eta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Aquarius. Aktivitätsfenster ungefähr 04-19 bis 05-28.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2030-06-01-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300601
+DTEND;VALUE=DATE:20300602
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2030-06-01-ringf-rmige-sonnenfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300601
+DTEND;VALUE=DATE:20300602
+SUMMARY:Ringförmige Sonnenfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Entlang der Ringzone ringförmig\, sonst regional partiell sichtbar\n\nNASA-Sichtbarkeitsregion: Europe\, n Africa\, Mid East\, Asia\, Arctic\, Alaska. Zentralzone: Algeria\, Tunisia\, Greece\, Turkey\, Russia\, n. China\, Japan.
+X-PLANETENUHR-VISIBILITY:Entlang der Ringzone ringförmig\, sonst regional partiell sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2030-06-15-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300615
+DTEND;VALUE=DATE:20300616
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2030-06-15-partielle-mondfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300615
+DTEND;VALUE=DATE:20300616
+SUMMARY:Partielle Mondfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional partiell sichtbar\n\nNASA-Sichtbarkeitsregion: Europe\, Africa\, Asia\, Australia.
+X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2030-06-21-juni-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300621
+DTEND;VALUE=DATE:20300622
+SUMMARY:Juni-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nLängster Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2030-07-04-erde-im-aphel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300704
+DTEND;VALUE=DATE:20300705
+SUMMARY:Erde im Aphel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner\n\nDie Erde ist der Sonne am fernsten\; der Nordsommer entsteht trotzdem durch die Achsneigung und nicht durch die Entfernung.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2030-07-30-maximum-der-delta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300730
+DTEND;VALUE=DATE:20300731
+SUMMARY:Maximum der Delta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Aquarius. Aktivitätsfenster ungefähr 07-12 bis 08-23.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2030-08-12-maximum-der-perseids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300812
+DTEND;VALUE=DATE:20300813
+SUMMARY:Maximum der Perseids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Perseus. Aktivitätsfenster ungefähr 07-17 bis 08-24.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2030-09-06-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300906
+DTEND;VALUE=DATE:20300907
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2030-09-19-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300919
+DTEND;VALUE=DATE:20300920
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2030-09-22-september-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20300922
+DTEND;VALUE=DATE:20300923
+SUMMARY:September-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Herbstbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2030-10-08-maximum-der-draconids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301008
+DTEND;VALUE=DATE:20301009
+SUMMARY:Maximum der Draconids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Draco. Aktivitätsfenster ungefähr 10-06 bis 10-10.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2030-10-21-maximum-der-orionids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301021
+DTEND;VALUE=DATE:20301022
+SUMMARY:Maximum der Orionids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Orion. Aktivitätsfenster ungefähr 10-02 bis 11-07.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2030-11-17-maximum-der-leonids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301117
+DTEND;VALUE=DATE:20301118
+SUMMARY:Maximum der Leonids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Leo. Aktivitätsfenster ungefähr 11-06 bis 11-30.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2030-11-25-totale-sonnenfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301125
+DTEND;VALUE=DATE:20301126
+SUMMARY:Totale Sonnenfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Entlang der Totalitätszone total\, sonst regional partiell sichtbar\n\nNASA-Sichtbarkeitsregion: s Africa\, s Indian Oc.\, E. Indies\, Australia\, Antarctica. Zentralzone: Botswana\, S. Africa\, Australia.
+X-PLANETENUHR-VISIBILITY:Entlang der Totalitätszone total\, sonst regional partiell sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2030-12-09-halbschatten-mondfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301209
+DTEND;VALUE=DATE:20301210
+SUMMARY:Halbschatten-Mondfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional im Halbschatten sichtbar\n\nNASA-Sichtbarkeitsregion: Americas\, Europe\, Africa\, Asia.
+X-PLANETENUHR-VISIBILITY:Regional im Halbschatten sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2030-12-11-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301211
+DTEND;VALUE=DATE:20301212
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2030-12-14-maximum-der-geminids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301214
+DTEND;VALUE=DATE:20301215
+SUMMARY:Maximum der Geminids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Gemini. Aktivitätsfenster ungefähr 12-04 bis 12-20.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2030-12-21-dezember-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301221
+DTEND;VALUE=DATE:20301222
+SUMMARY:Dezember-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nKürzester Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2030-12-22-maximum-der-ursids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301222
+DTEND;VALUE=DATE:20301223
+SUMMARY:Maximum der Ursids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Ursa Minor. Aktivitätsfenster ungefähr 12-17 bis 12-26.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2030-12-25-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20301225
+DTEND;VALUE=DATE:20301226
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2031-01-03-erde-im-perihel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310103
+DTEND;VALUE=DATE:20310104
+SUMMARY:Erde im Perihel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer\n\nDie Erde ist der Sonne am nächsten\; die Jahreszeiten werden trotzdem vor allem von der Achsneigung bestimmt.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2031-01-03-maximum-der-quadrantids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310103
+DTEND;VALUE=DATE:20310104
+SUMMARY:Maximum der Quadrantids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Bootes. Aktivitätsfenster ungefähr 12-28 bis 01-12.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2031-03-04-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310304
+DTEND;VALUE=DATE:20310305
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2031-03-17-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310317
+DTEND;VALUE=DATE:20310318
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2031-03-20-m-rz-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310320
+DTEND;VALUE=DATE:20310321
+SUMMARY:März-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Frühlingsbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2031-04-22-maximum-der-lyrids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310422
+DTEND;VALUE=DATE:20310423
+SUMMARY:Maximum der Lyrids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Lyra. Aktivitätsfenster ungefähr 04-16 bis 04-25.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2031-05-06-maximum-der-eta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310506
+DTEND;VALUE=DATE:20310507
+SUMMARY:Maximum der Eta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Aquarius. Aktivitätsfenster ungefähr 04-19 bis 05-28.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2031-05-07-halbschatten-mondfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310507
+DTEND;VALUE=DATE:20310508
+SUMMARY:Halbschatten-Mondfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional im Halbschatten sichtbar\n\nNASA-Sichtbarkeitsregion: Americas\, Europe\, Africa.
+X-PLANETENUHR-VISIBILITY:Regional im Halbschatten sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2031-05-21-ringf-rmige-sonnenfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310521
+DTEND;VALUE=DATE:20310522
+SUMMARY:Ringförmige Sonnenfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Entlang der Ringzone ringförmig\, sonst regional partiell sichtbar\n\nNASA-Sichtbarkeitsregion: Africa\, s Asia\, E. Indies\, Australia. Zentralzone: Angola\, Congo\, Zambia\, Tanzania\, s. India\, Malaysia\, Indonesia.
+X-PLANETENUHR-VISIBILITY:Entlang der Ringzone ringförmig\, sonst regional partiell sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2031-06-05-halbschatten-mondfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310605
+DTEND;VALUE=DATE:20310606
+SUMMARY:Halbschatten-Mondfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional im Halbschatten sichtbar\n\nNASA-Sichtbarkeitsregion: East Indies\, Australia\, Pacific.
+X-PLANETENUHR-VISIBILITY:Regional im Halbschatten sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2031-06-08-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310608
+DTEND;VALUE=DATE:20310609
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2031-06-21-juni-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310621
+DTEND;VALUE=DATE:20310622
+SUMMARY:Juni-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nLängster Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2031-06-22-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310622
+DTEND;VALUE=DATE:20310623
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2031-07-04-erde-im-aphel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310704
+DTEND;VALUE=DATE:20310705
+SUMMARY:Erde im Aphel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner\n\nDie Erde ist der Sonne am fernsten\; der Nordsommer entsteht trotzdem durch die Achsneigung und nicht durch die Entfernung.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2031-07-30-maximum-der-delta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310730
+DTEND;VALUE=DATE:20310731
+SUMMARY:Maximum der Delta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Aquarius. Aktivitätsfenster ungefähr 07-12 bis 08-23.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2031-08-12-maximum-der-perseids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310812
+DTEND;VALUE=DATE:20310813
+SUMMARY:Maximum der Perseids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Perseus. Aktivitätsfenster ungefähr 07-17 bis 08-24.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2031-09-13-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310913
+DTEND;VALUE=DATE:20310914
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2031-09-22-september-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310922
+DTEND;VALUE=DATE:20310923
+SUMMARY:September-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Herbstbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2031-09-26-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20310926
+DTEND;VALUE=DATE:20310927
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2031-10-08-maximum-der-draconids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311008
+DTEND;VALUE=DATE:20311009
+SUMMARY:Maximum der Draconids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Draco. Aktivitätsfenster ungefähr 10-06 bis 10-10.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2031-10-21-maximum-der-orionids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311021
+DTEND;VALUE=DATE:20311022
+SUMMARY:Maximum der Orionids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Orion. Aktivitätsfenster ungefähr 10-02 bis 11-07.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2031-10-30-halbschatten-mondfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311030
+DTEND;VALUE=DATE:20311031
+SUMMARY:Halbschatten-Mondfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional im Halbschatten sichtbar\n\nNASA-Sichtbarkeitsregion: Americas.
+X-PLANETENUHR-VISIBILITY:Regional im Halbschatten sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2031-11-14-hybride-sonnenfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311114
+DTEND;VALUE=DATE:20311115
+SUMMARY:Hybride Sonnenfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Entlang der Zentralzone hybrid\, sonst regional partiell sichtbar\n\nNASA-Sichtbarkeitsregion: Pacific\, s US\, C. America\, nw S. America. Zentralzone: Pacific\, Panama.
+X-PLANETENUHR-VISIBILITY:Entlang der Zentralzone hybrid\, sonst regional partiell sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2031-11-17-maximum-der-leonids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311117
+DTEND;VALUE=DATE:20311118
+SUMMARY:Maximum der Leonids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Leo. Aktivitätsfenster ungefähr 11-06 bis 11-30.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2031-12-04-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311204
+DTEND;VALUE=DATE:20311205
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2031-12-14-maximum-der-geminids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311214
+DTEND;VALUE=DATE:20311215
+SUMMARY:Maximum der Geminids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Gemini. Aktivitätsfenster ungefähr 12-04 bis 12-20.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2031-12-18-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311218
+DTEND;VALUE=DATE:20311219
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2031-12-21-dezember-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311221
+DTEND;VALUE=DATE:20311222
+SUMMARY:Dezember-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nKürzester Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2031-12-22-maximum-der-ursids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20311222
+DTEND;VALUE=DATE:20311223
+SUMMARY:Maximum der Ursids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Ursa Minor. Aktivitätsfenster ungefähr 12-17 bis 12-26.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2032-01-03-erde-im-perihel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320103
+DTEND;VALUE=DATE:20320104
+SUMMARY:Erde im Perihel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer\n\nDie Erde ist der Sonne am nächsten\; die Jahreszeiten werden trotzdem vor allem von der Achsneigung bestimmt.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2032-01-03-maximum-der-quadrantids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320103
+DTEND;VALUE=DATE:20320104
+SUMMARY:Maximum der Quadrantids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Bootes. Aktivitätsfenster ungefähr 12-28 bis 01-12.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2032-03-10-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320310
+DTEND;VALUE=DATE:20320311
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2032-03-20-m-rz-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320320
+DTEND;VALUE=DATE:20320321
+SUMMARY:März-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Frühlingsbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2032-03-23-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320323
+DTEND;VALUE=DATE:20320324
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2032-04-22-maximum-der-lyrids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320422
+DTEND;VALUE=DATE:20320423
+SUMMARY:Maximum der Lyrids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Lyra. Aktivitätsfenster ungefähr 04-16 bis 04-25.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2032-04-25-totale-mondfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320425
+DTEND;VALUE=DATE:20320426
+SUMMARY:Totale Mondfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional total sichtbar\n\nNASA-Sichtbarkeitsregion: e Africa\, Asia\, Australia\, Pacific.
+X-PLANETENUHR-VISIBILITY:Regional total sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2032-05-06-maximum-der-eta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320506
+DTEND;VALUE=DATE:20320507
+SUMMARY:Maximum der Eta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Aquarius. Aktivitätsfenster ungefähr 04-19 bis 05-28.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2032-05-09-ringf-rmige-sonnenfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320509
+DTEND;VALUE=DATE:20320510
+SUMMARY:Ringförmige Sonnenfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Entlang der Ringzone ringförmig\, sonst regional partiell sichtbar\n\nNASA-Sichtbarkeitsregion: s S. America\, s Africa. Zentralzone: s Atlantic.
+X-PLANETENUHR-VISIBILITY:Entlang der Ringzone ringförmig\, sonst regional partiell sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2032-06-14-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320614
+DTEND;VALUE=DATE:20320615
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2032-06-21-juni-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320621
+DTEND;VALUE=DATE:20320622
+SUMMARY:Juni-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nLängster Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2032-06-28-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320628
+DTEND;VALUE=DATE:20320629
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2032-07-04-erde-im-aphel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320704
+DTEND;VALUE=DATE:20320705
+SUMMARY:Erde im Aphel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner\n\nDie Erde ist der Sonne am fernsten\; der Nordsommer entsteht trotzdem durch die Achsneigung und nicht durch die Entfernung.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2032-07-30-maximum-der-delta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320730
+DTEND;VALUE=DATE:20320731
+SUMMARY:Maximum der Delta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Aquarius. Aktivitätsfenster ungefähr 07-12 bis 08-23.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2032-08-12-maximum-der-perseids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320812
+DTEND;VALUE=DATE:20320813
+SUMMARY:Maximum der Perseids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Perseus. Aktivitätsfenster ungefähr 07-17 bis 08-24.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2032-09-05-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320905
+DTEND;VALUE=DATE:20320906
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2032-09-19-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320919
+DTEND;VALUE=DATE:20320920
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2032-09-22-september-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20320922
+DTEND;VALUE=DATE:20320923
+SUMMARY:September-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Herbstbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2032-10-08-maximum-der-draconids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321008
+DTEND;VALUE=DATE:20321009
+SUMMARY:Maximum der Draconids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Draco. Aktivitätsfenster ungefähr 10-06 bis 10-10.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2032-10-18-totale-mondfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321018
+DTEND;VALUE=DATE:20321019
+SUMMARY:Totale Mondfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional total sichtbar\n\nNASA-Sichtbarkeitsregion: Africa\, Europe\, Asia\, Australia.
+X-PLANETENUHR-VISIBILITY:Regional total sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2032-10-21-maximum-der-orionids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321021
+DTEND;VALUE=DATE:20321022
+SUMMARY:Maximum der Orionids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Orion. Aktivitätsfenster ungefähr 10-02 bis 11-07.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2032-11-03-partielle-sonnenfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321103
+DTEND;VALUE=DATE:20321104
+SUMMARY:Partielle Sonnenfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional partiell sichtbar\n\nNASA-Sichtbarkeitsregion: Asia.
+X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2032-11-17-maximum-der-leonids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321117
+DTEND;VALUE=DATE:20321118
+SUMMARY:Maximum der Leonids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Leo. Aktivitätsfenster ungefähr 11-06 bis 11-30.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2032-12-10-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321210
+DTEND;VALUE=DATE:20321211
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2032-12-14-maximum-der-geminids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321214
+DTEND;VALUE=DATE:20321215
+SUMMARY:Maximum der Geminids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Gemini. Aktivitätsfenster ungefähr 12-04 bis 12-20.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2032-12-21-dezember-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321221
+DTEND;VALUE=DATE:20321222
+SUMMARY:Dezember-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nKürzester Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2032-12-22-maximum-der-ursids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321222
+DTEND;VALUE=DATE:20321223
+SUMMARY:Maximum der Ursids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Ursa Minor. Aktivitätsfenster ungefähr 12-17 bis 12-26.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2032-12-24-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20321224
+DTEND;VALUE=DATE:20321225
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2033-01-03-erde-im-perihel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330103
+DTEND;VALUE=DATE:20330104
+SUMMARY:Erde im Perihel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer\n\nDie Erde ist der Sonne am nächsten\; die Jahreszeiten werden trotzdem vor allem von der Achsneigung bestimmt.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2033-01-03-maximum-der-quadrantids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330103
+DTEND;VALUE=DATE:20330104
+SUMMARY:Maximum der Quadrantids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Bootes. Aktivitätsfenster ungefähr 12-28 bis 01-12.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2033-03-03-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330303
+DTEND;VALUE=DATE:20330304
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2033-03-17-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330317
+DTEND;VALUE=DATE:20330318
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2033-03-20-m-rz-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330320
+DTEND;VALUE=DATE:20330321
+SUMMARY:März-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Frühlingsbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2033-03-30-totale-sonnenfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330330
+DTEND;VALUE=DATE:20330331
+SUMMARY:Totale Sonnenfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Entlang der Totalitätszone total\, sonst regional partiell sichtbar\n\nNASA-Sichtbarkeitsregion: N. America. Zentralzone: e Russia\, Alaska.
+X-PLANETENUHR-VISIBILITY:Entlang der Totalitätszone total\, sonst regional partiell sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2033-04-14-totale-mondfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330414
+DTEND;VALUE=DATE:20330415
+SUMMARY:Totale Mondfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional total sichtbar\n\nNASA-Sichtbarkeitsregion: Europe\, Africa\, Asia\, Australia.
+X-PLANETENUHR-VISIBILITY:Regional total sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2033-04-22-maximum-der-lyrids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330422
+DTEND;VALUE=DATE:20330423
+SUMMARY:Maximum der Lyrids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Lyra. Aktivitätsfenster ungefähr 04-16 bis 04-25.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2033-05-06-maximum-der-eta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330506
+DTEND;VALUE=DATE:20330507
+SUMMARY:Maximum der Eta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Aquarius. Aktivitätsfenster ungefähr 04-19 bis 05-28.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2033-06-07-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330607
+DTEND;VALUE=DATE:20330608
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2033-06-21-juni-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330621
+DTEND;VALUE=DATE:20330622
+SUMMARY:Juni-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nLängster Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2033-06-21-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330621
+DTEND;VALUE=DATE:20330622
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2033-07-04-erde-im-aphel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330704
+DTEND;VALUE=DATE:20330705
+SUMMARY:Erde im Aphel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner\n\nDie Erde ist der Sonne am fernsten\; der Nordsommer entsteht trotzdem durch die Achsneigung und nicht durch die Entfernung.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2033-07-30-maximum-der-delta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330730
+DTEND;VALUE=DATE:20330731
+SUMMARY:Maximum der Delta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Aquarius. Aktivitätsfenster ungefähr 07-12 bis 08-23.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2033-08-12-maximum-der-perseids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330812
+DTEND;VALUE=DATE:20330813
+SUMMARY:Maximum der Perseids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Perseus. Aktivitätsfenster ungefähr 07-17 bis 08-24.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2033-09-12-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330912
+DTEND;VALUE=DATE:20330913
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2033-09-22-september-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330922
+DTEND;VALUE=DATE:20330923
+SUMMARY:September-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Herbstbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2033-09-23-partielle-sonnenfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330923
+DTEND;VALUE=DATE:20330924
+SUMMARY:Partielle Sonnenfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional partiell sichtbar\n\nNASA-Sichtbarkeitsregion: s S. America\, Antarctica.
+X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2033-09-26-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20330926
+DTEND;VALUE=DATE:20330927
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2033-10-08-maximum-der-draconids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331008
+DTEND;VALUE=DATE:20331009
+SUMMARY:Maximum der Draconids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Draco. Aktivitätsfenster ungefähr 10-06 bis 10-10.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2033-10-08-totale-mondfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331008
+DTEND;VALUE=DATE:20331009
+SUMMARY:Totale Mondfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional total sichtbar\n\nNASA-Sichtbarkeitsregion: Asia\, Australia\, Pacific\, Americas.
+X-PLANETENUHR-VISIBILITY:Regional total sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2033-10-21-maximum-der-orionids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331021
+DTEND;VALUE=DATE:20331022
+SUMMARY:Maximum der Orionids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Orion. Aktivitätsfenster ungefähr 10-02 bis 11-07.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2033-11-17-maximum-der-leonids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331117
+DTEND;VALUE=DATE:20331118
+SUMMARY:Maximum der Leonids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Leo. Aktivitätsfenster ungefähr 11-06 bis 11-30.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2033-12-03-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331203
+DTEND;VALUE=DATE:20331204
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2033-12-14-maximum-der-geminids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331214
+DTEND;VALUE=DATE:20331215
+SUMMARY:Maximum der Geminids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Gemini. Aktivitätsfenster ungefähr 12-04 bis 12-20.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2033-12-17-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331217
+DTEND;VALUE=DATE:20331218
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2033-12-21-dezember-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331221
+DTEND;VALUE=DATE:20331222
+SUMMARY:Dezember-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nKürzester Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2033-12-22-maximum-der-ursids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20331222
+DTEND;VALUE=DATE:20331223
+SUMMARY:Maximum der Ursids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Ursa Minor. Aktivitätsfenster ungefähr 12-17 bis 12-26.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2034-01-03-erde-im-perihel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340103
+DTEND;VALUE=DATE:20340104
+SUMMARY:Erde im Perihel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer\n\nDie Erde ist der Sonne am nächsten\; die Jahreszeiten werden trotzdem vor allem von der Achsneigung bestimmt.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2034-01-03-maximum-der-quadrantids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340103
+DTEND;VALUE=DATE:20340104
+SUMMARY:Maximum der Quadrantids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Bootes. Aktivitätsfenster ungefähr 12-28 bis 01-12.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2034-03-10-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340310
+DTEND;VALUE=DATE:20340311
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2034-03-20-m-rz-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340320
+DTEND;VALUE=DATE:20340321
+SUMMARY:März-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Frühlingsbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2034-03-20-totale-sonnenfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340320
+DTEND;VALUE=DATE:20340321
+SUMMARY:Totale Sonnenfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Entlang der Totalitätszone total\, sonst regional partiell sichtbar\n\nNASA-Sichtbarkeitsregion: Africa\, Europe\, w Asia. Zentralzone: Nigeria\, Cameroon\, Chad\, Sudan\, Egypt\, Saudi Arabia\, Iran\, Afghanistan\, Pakistan\, India\, China.
+X-PLANETENUHR-VISIBILITY:Entlang der Totalitätszone total\, sonst regional partiell sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2034-03-24-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340324
+DTEND;VALUE=DATE:20340325
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2034-04-03-halbschatten-mondfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340403
+DTEND;VALUE=DATE:20340404
+SUMMARY:Halbschatten-Mondfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional im Halbschatten sichtbar\n\nNASA-Sichtbarkeitsregion: Europe\, Africa\, Asia\, Australia.
+X-PLANETENUHR-VISIBILITY:Regional im Halbschatten sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2034-04-22-maximum-der-lyrids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340422
+DTEND;VALUE=DATE:20340423
+SUMMARY:Maximum der Lyrids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Lyra. Aktivitätsfenster ungefähr 04-16 bis 04-25.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2034-05-06-maximum-der-eta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340506
+DTEND;VALUE=DATE:20340507
+SUMMARY:Maximum der Eta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Aquarius. Aktivitätsfenster ungefähr 04-19 bis 05-28.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2034-06-14-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340614
+DTEND;VALUE=DATE:20340615
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2034-06-21-juni-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340621
+DTEND;VALUE=DATE:20340622
+SUMMARY:Juni-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nLängster Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2034-06-28-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340628
+DTEND;VALUE=DATE:20340629
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2034-07-04-erde-im-aphel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340704
+DTEND;VALUE=DATE:20340705
+SUMMARY:Erde im Aphel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner\n\nDie Erde ist der Sonne am fernsten\; der Nordsommer entsteht trotzdem durch die Achsneigung und nicht durch die Entfernung.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2034-07-30-maximum-der-delta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340730
+DTEND;VALUE=DATE:20340731
+SUMMARY:Maximum der Delta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Aquarius. Aktivitätsfenster ungefähr 07-12 bis 08-23.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2034-08-12-maximum-der-perseids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340812
+DTEND;VALUE=DATE:20340813
+SUMMARY:Maximum der Perseids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Perseus. Aktivitätsfenster ungefähr 07-17 bis 08-24.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2034-09-05-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340905
+DTEND;VALUE=DATE:20340906
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2034-09-12-ringf-rmige-sonnenfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340912
+DTEND;VALUE=DATE:20340913
+SUMMARY:Ringförmige Sonnenfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Entlang der Ringzone ringförmig\, sonst regional partiell sichtbar\n\nNASA-Sichtbarkeitsregion: C. America\, S. America. Zentralzone: Chile\, Bolivia\, Argentina\, Paraguay\, Brazil.
+X-PLANETENUHR-VISIBILITY:Entlang der Ringzone ringförmig\, sonst regional partiell sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2034-09-19-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340919
+DTEND;VALUE=DATE:20340920
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2034-09-22-september-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340922
+DTEND;VALUE=DATE:20340923
+SUMMARY:September-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Herbstbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2034-09-28-partielle-mondfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20340928
+DTEND;VALUE=DATE:20340929
+SUMMARY:Partielle Mondfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional partiell sichtbar\n\nNASA-Sichtbarkeitsregion: Americas\, Europe\, Africa.
+X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2034-10-08-maximum-der-draconids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20341008
+DTEND;VALUE=DATE:20341009
+SUMMARY:Maximum der Draconids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Draco. Aktivitätsfenster ungefähr 10-06 bis 10-10.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2034-10-21-maximum-der-orionids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20341021
+DTEND;VALUE=DATE:20341022
+SUMMARY:Maximum der Orionids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Orion. Aktivitätsfenster ungefähr 10-02 bis 11-07.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2034-11-17-maximum-der-leonids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20341117
+DTEND;VALUE=DATE:20341118
+SUMMARY:Maximum der Leonids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Leo. Aktivitätsfenster ungefähr 11-06 bis 11-30.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2034-12-10-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20341210
+DTEND;VALUE=DATE:20341211
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2034-12-14-maximum-der-geminids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20341214
+DTEND;VALUE=DATE:20341215
+SUMMARY:Maximum der Geminids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Gemini. Aktivitätsfenster ungefähr 12-04 bis 12-20.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2034-12-21-dezember-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20341221
+DTEND;VALUE=DATE:20341222
+SUMMARY:Dezember-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nKürzester Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2034-12-22-maximum-der-ursids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20341222
+DTEND;VALUE=DATE:20341223
+SUMMARY:Maximum der Ursids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Ursa Minor. Aktivitätsfenster ungefähr 12-17 bis 12-26.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2034-12-24-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20341224
+DTEND;VALUE=DATE:20341225
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2035-01-03-erde-im-perihel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350103
+DTEND;VALUE=DATE:20350104
+SUMMARY:Erde im Perihel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer\n\nDie Erde ist der Sonne am nächsten\; die Jahreszeiten werden trotzdem vor allem von der Achsneigung bestimmt.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2035-01-03-maximum-der-quadrantids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350103
+DTEND;VALUE=DATE:20350104
+SUMMARY:Maximum der Quadrantids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Bootes. Aktivitätsfenster ungefähr 12-28 bis 01-12.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2035-02-22-halbschatten-mondfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350222
+DTEND;VALUE=DATE:20350223
+SUMMARY:Halbschatten-Mondfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional im Halbschatten sichtbar\n\nNASA-Sichtbarkeitsregion: e Asia\, Pacific\, Americas.
+X-PLANETENUHR-VISIBILITY:Regional im Halbschatten sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2035-03-03-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350303
+DTEND;VALUE=DATE:20350304
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2035-03-09-ringf-rmige-sonnenfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350309
+DTEND;VALUE=DATE:20350310
+SUMMARY:Ringförmige Sonnenfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Entlang der Ringzone ringförmig\, sonst regional partiell sichtbar\n\nNASA-Sichtbarkeitsregion: Australia\, New Zealand\, s Pacific\, Mexico\, Antarctica. Zentralzone: New Zealand\, Pacific.
+X-PLANETENUHR-VISIBILITY:Entlang der Ringzone ringförmig\, sonst regional partiell sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2035-03-17-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350317
+DTEND;VALUE=DATE:20350318
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2035-03-20-m-rz-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350320
+DTEND;VALUE=DATE:20350321
+SUMMARY:März-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Frühlingsbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2035-04-22-maximum-der-lyrids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350422
+DTEND;VALUE=DATE:20350423
+SUMMARY:Maximum der Lyrids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Lyra. Aktivitätsfenster ungefähr 04-16 bis 04-25.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2035-05-06-maximum-der-eta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350506
+DTEND;VALUE=DATE:20350507
+SUMMARY:Maximum der Eta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Aquarius. Aktivitätsfenster ungefähr 04-19 bis 05-28.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2035-06-08-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350608
+DTEND;VALUE=DATE:20350609
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2035-06-21-juni-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350621
+DTEND;VALUE=DATE:20350622
+SUMMARY:Juni-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nLängster Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2035-06-21-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350621
+DTEND;VALUE=DATE:20350622
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2035-07-04-erde-im-aphel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350704
+DTEND;VALUE=DATE:20350705
+SUMMARY:Erde im Aphel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner\n\nDie Erde ist der Sonne am fernsten\; der Nordsommer entsteht trotzdem durch die Achsneigung und nicht durch die Entfernung.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2035-07-30-maximum-der-delta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350730
+DTEND;VALUE=DATE:20350731
+SUMMARY:Maximum der Delta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Aquarius. Aktivitätsfenster ungefähr 07-12 bis 08-23.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2035-08-12-maximum-der-perseids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350812
+DTEND;VALUE=DATE:20350813
+SUMMARY:Maximum der Perseids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Perseus. Aktivitätsfenster ungefähr 07-17 bis 08-24.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2035-08-19-partielle-mondfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350819
+DTEND;VALUE=DATE:20350820
+SUMMARY:Partielle Mondfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional partiell sichtbar\n\nNASA-Sichtbarkeitsregion: Americas\, Europe\, Africa\, Mid East.
+X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2035-09-02-totale-sonnenfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350902
+DTEND;VALUE=DATE:20350903
+SUMMARY:Totale Sonnenfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Entlang der Totalitätszone total\, sonst regional partiell sichtbar\n\nNASA-Sichtbarkeitsregion: e Asia\, Pacific. Zentralzone: China\, Korea\, Japan\, Pacific.
+X-PLANETENUHR-VISIBILITY:Entlang der Totalitätszone total\, sonst regional partiell sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2035-09-12-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350912
+DTEND;VALUE=DATE:20350913
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2035-09-22-september-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350922
+DTEND;VALUE=DATE:20350923
+SUMMARY:September-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Herbstbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2035-09-26-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20350926
+DTEND;VALUE=DATE:20350927
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2035-10-08-maximum-der-draconids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20351008
+DTEND;VALUE=DATE:20351009
+SUMMARY:Maximum der Draconids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Draco. Aktivitätsfenster ungefähr 10-06 bis 10-10.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2035-10-21-maximum-der-orionids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20351021
+DTEND;VALUE=DATE:20351022
+SUMMARY:Maximum der Orionids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Orion. Aktivitätsfenster ungefähr 10-02 bis 11-07.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2035-11-17-maximum-der-leonids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20351117
+DTEND;VALUE=DATE:20351118
+SUMMARY:Maximum der Leonids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Leo. Aktivitätsfenster ungefähr 11-06 bis 11-30.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2035-12-04-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20351204
+DTEND;VALUE=DATE:20351205
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2035-12-14-maximum-der-geminids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20351214
+DTEND;VALUE=DATE:20351215
+SUMMARY:Maximum der Geminids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Gemini. Aktivitätsfenster ungefähr 12-04 bis 12-20.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2035-12-17-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20351217
+DTEND;VALUE=DATE:20351218
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2035-12-21-dezember-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20351221
+DTEND;VALUE=DATE:20351222
+SUMMARY:Dezember-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nKürzester Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2035-12-22-maximum-der-ursids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20351222
+DTEND;VALUE=DATE:20351223
+SUMMARY:Maximum der Ursids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Ursa Minor. Aktivitätsfenster ungefähr 12-17 bis 12-26.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2036-01-03-erde-im-perihel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360103
+DTEND;VALUE=DATE:20360104
+SUMMARY:Erde im Perihel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer\n\nDie Erde ist der Sonne am nächsten\; die Jahreszeiten werden trotzdem vor allem von der Achsneigung bestimmt.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2036-01-03-maximum-der-quadrantids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360103
+DTEND;VALUE=DATE:20360104
+SUMMARY:Maximum der Quadrantids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Bootes. Aktivitätsfenster ungefähr 12-28 bis 01-12.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2036-02-11-totale-mondfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360211
+DTEND;VALUE=DATE:20360212
+SUMMARY:Totale Mondfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional total sichtbar\n\nNASA-Sichtbarkeitsregion: Americas\, Europe\, Africa\,\, Asia\, w Australia.
+X-PLANETENUHR-VISIBILITY:Regional total sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2036-02-27-partielle-sonnenfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360227
+DTEND;VALUE=DATE:20360228
+SUMMARY:Partielle Sonnenfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional partiell sichtbar\n\nNASA-Sichtbarkeitsregion: Antarctica\, s Australia\, New Zealand.
+X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2036-03-09-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360309
+DTEND;VALUE=DATE:20360310
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2036-03-20-m-rz-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360320
+DTEND;VALUE=DATE:20360321
+SUMMARY:März-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Frühlingsbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2036-03-23-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360323
+DTEND;VALUE=DATE:20360324
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2036-04-22-maximum-der-lyrids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360422
+DTEND;VALUE=DATE:20360423
+SUMMARY:Maximum der Lyrids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Lyra. Aktivitätsfenster ungefähr 04-16 bis 04-25.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2036-05-06-maximum-der-eta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360506
+DTEND;VALUE=DATE:20360507
+SUMMARY:Maximum der Eta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Aquarius. Aktivitätsfenster ungefähr 04-19 bis 05-28.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2036-06-14-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360614
+DTEND;VALUE=DATE:20360615
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2036-06-21-juni-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360621
+DTEND;VALUE=DATE:20360622
+SUMMARY:Juni-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nLängster Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2036-06-27-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360627
+DTEND;VALUE=DATE:20360628
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2036-07-04-erde-im-aphel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360704
+DTEND;VALUE=DATE:20360705
+SUMMARY:Erde im Aphel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner\n\nDie Erde ist der Sonne am fernsten\; der Nordsommer entsteht trotzdem durch die Achsneigung und nicht durch die Entfernung.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2036-07-23-partielle-sonnenfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360723
+DTEND;VALUE=DATE:20360724
+SUMMARY:Partielle Sonnenfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional partiell sichtbar\n\nNASA-Sichtbarkeitsregion: s Atlantic.
+X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2036-07-30-maximum-der-delta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360730
+DTEND;VALUE=DATE:20360731
+SUMMARY:Maximum der Delta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Aquarius. Aktivitätsfenster ungefähr 07-12 bis 08-23.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2036-08-07-totale-mondfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360807
+DTEND;VALUE=DATE:20360808
+SUMMARY:Totale Mondfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional total sichtbar\n\nNASA-Sichtbarkeitsregion: Americas\, Europe\, Africa\, w Asia.
+X-PLANETENUHR-VISIBILITY:Regional total sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2036-08-12-maximum-der-perseids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360812
+DTEND;VALUE=DATE:20360813
+SUMMARY:Maximum der Perseids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Perseus. Aktivitätsfenster ungefähr 07-17 bis 08-24.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2036-08-21-partielle-sonnenfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360821
+DTEND;VALUE=DATE:20360822
+SUMMARY:Partielle Sonnenfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional partiell sichtbar\n\nNASA-Sichtbarkeitsregion: Alaska\, Canada\, Arctic\, w Europe\, nw Africa.
+X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2036-09-04-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360904
+DTEND;VALUE=DATE:20360905
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2036-09-18-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360918
+DTEND;VALUE=DATE:20360919
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2036-09-22-september-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20360922
+DTEND;VALUE=DATE:20360923
+SUMMARY:September-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Herbstbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2036-10-08-maximum-der-draconids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20361008
+DTEND;VALUE=DATE:20361009
+SUMMARY:Maximum der Draconids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Draco. Aktivitätsfenster ungefähr 10-06 bis 10-10.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2036-10-21-maximum-der-orionids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20361021
+DTEND;VALUE=DATE:20361022
+SUMMARY:Maximum der Orionids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Orion. Aktivitätsfenster ungefähr 10-02 bis 11-07.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2036-11-17-maximum-der-leonids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20361117
+DTEND;VALUE=DATE:20361118
+SUMMARY:Maximum der Leonids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Leo. Aktivitätsfenster ungefähr 11-06 bis 11-30.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2036-12-10-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20361210
+DTEND;VALUE=DATE:20361211
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2036-12-14-maximum-der-geminids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20361214
+DTEND;VALUE=DATE:20361215
+SUMMARY:Maximum der Geminids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Gemini. Aktivitätsfenster ungefähr 12-04 bis 12-20.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2036-12-21-dezember-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20361221
+DTEND;VALUE=DATE:20361222
+SUMMARY:Dezember-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nKürzester Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2036-12-22-maximum-der-ursids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20361222
+DTEND;VALUE=DATE:20361223
+SUMMARY:Maximum der Ursids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Ursa Minor. Aktivitätsfenster ungefähr 12-17 bis 12-26.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2036-12-23-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20361223
+DTEND;VALUE=DATE:20361224
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2037-01-03-erde-im-perihel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370103
+DTEND;VALUE=DATE:20370104
+SUMMARY:Erde im Perihel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer\n\nDie Erde ist der Sonne am nächsten\; die Jahreszeiten werden trotzdem vor allem von der Achsneigung bestimmt.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2037-01-03-maximum-der-quadrantids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370103
+DTEND;VALUE=DATE:20370104
+SUMMARY:Maximum der Quadrantids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Bootes. Aktivitätsfenster ungefähr 12-28 bis 01-12.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2037-01-16-partielle-sonnenfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370116
+DTEND;VALUE=DATE:20370117
+SUMMARY:Partielle Sonnenfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional partiell sichtbar\n\nNASA-Sichtbarkeitsregion: n Africa\, Europe\, Mid East\, w Asia.
+X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2037-01-31-totale-mondfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370131
+DTEND;VALUE=DATE:20370201
+SUMMARY:Totale Mondfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional total sichtbar\n\nNASA-Sichtbarkeitsregion: e Europe\, e Africa\, Asia\, Australia\, Pacific\, N.A..
+X-PLANETENUHR-VISIBILITY:Regional total sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2037-03-02-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370302
+DTEND;VALUE=DATE:20370303
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2037-03-16-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370316
+DTEND;VALUE=DATE:20370317
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2037-03-20-m-rz-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370320
+DTEND;VALUE=DATE:20370321
+SUMMARY:März-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Frühlingsbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2037-04-22-maximum-der-lyrids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370422
+DTEND;VALUE=DATE:20370423
+SUMMARY:Maximum der Lyrids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Lyra. Aktivitätsfenster ungefähr 04-16 bis 04-25.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2037-05-06-maximum-der-eta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370506
+DTEND;VALUE=DATE:20370507
+SUMMARY:Maximum der Eta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Aquarius. Aktivitätsfenster ungefähr 04-19 bis 05-28.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2037-06-07-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370607
+DTEND;VALUE=DATE:20370608
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2037-06-21-juni-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370621
+DTEND;VALUE=DATE:20370622
+SUMMARY:Juni-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nLängster Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2037-06-21-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370621
+DTEND;VALUE=DATE:20370622
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2037-07-04-erde-im-aphel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370704
+DTEND;VALUE=DATE:20370705
+SUMMARY:Erde im Aphel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner\n\nDie Erde ist der Sonne am fernsten\; der Nordsommer entsteht trotzdem durch die Achsneigung und nicht durch die Entfernung.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2037-07-13-totale-sonnenfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370713
+DTEND;VALUE=DATE:20370714
+SUMMARY:Totale Sonnenfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Entlang der Totalitätszone total\, sonst regional partiell sichtbar\n\nNASA-Sichtbarkeitsregion: E. Indies\, Australia\, Pacific. Zentralzone: Australia\, New Zealand.
+X-PLANETENUHR-VISIBILITY:Entlang der Totalitätszone total\, sonst regional partiell sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2037-07-27-partielle-mondfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370727
+DTEND;VALUE=DATE:20370728
+SUMMARY:Partielle Mondfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional partiell sichtbar\n\nNASA-Sichtbarkeitsregion: Americas\, Europe\, Africa.
+X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2037-07-30-maximum-der-delta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370730
+DTEND;VALUE=DATE:20370731
+SUMMARY:Maximum der Delta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Aquarius. Aktivitätsfenster ungefähr 07-12 bis 08-23.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2037-08-12-maximum-der-perseids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370812
+DTEND;VALUE=DATE:20370813
+SUMMARY:Maximum der Perseids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Perseus. Aktivitätsfenster ungefähr 07-17 bis 08-24.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2037-09-11-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370911
+DTEND;VALUE=DATE:20370912
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2037-09-22-september-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370922
+DTEND;VALUE=DATE:20370923
+SUMMARY:September-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Herbstbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2037-09-25-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20370925
+DTEND;VALUE=DATE:20370926
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2037-10-08-maximum-der-draconids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20371008
+DTEND;VALUE=DATE:20371009
+SUMMARY:Maximum der Draconids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Draco. Aktivitätsfenster ungefähr 10-06 bis 10-10.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2037-10-21-maximum-der-orionids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20371021
+DTEND;VALUE=DATE:20371022
+SUMMARY:Maximum der Orionids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Orion. Aktivitätsfenster ungefähr 10-02 bis 11-07.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2037-11-17-maximum-der-leonids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20371117
+DTEND;VALUE=DATE:20371118
+SUMMARY:Maximum der Leonids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Leo. Aktivitätsfenster ungefähr 11-06 bis 11-30.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2037-12-03-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20371203
+DTEND;VALUE=DATE:20371204
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2037-12-14-maximum-der-geminids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20371214
+DTEND;VALUE=DATE:20371215
+SUMMARY:Maximum der Geminids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Gemini. Aktivitätsfenster ungefähr 12-04 bis 12-20.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2037-12-17-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20371217
+DTEND;VALUE=DATE:20371218
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2037-12-21-dezember-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20371221
+DTEND;VALUE=DATE:20371222
+SUMMARY:Dezember-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nKürzester Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2037-12-22-maximum-der-ursids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20371222
+DTEND;VALUE=DATE:20371223
+SUMMARY:Maximum der Ursids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Ursa Minor. Aktivitätsfenster ungefähr 12-17 bis 12-26.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2038-01-03-erde-im-perihel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380103
+DTEND;VALUE=DATE:20380104
+SUMMARY:Erde im Perihel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer\n\nDie Erde ist der Sonne am nächsten\; die Jahreszeiten werden trotzdem vor allem von der Achsneigung bestimmt.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2038-01-03-maximum-der-quadrantids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380103
+DTEND;VALUE=DATE:20380104
+SUMMARY:Maximum der Quadrantids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Bootes. Aktivitätsfenster ungefähr 12-28 bis 01-12.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2038-01-05-ringf-rmige-sonnenfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380105
+DTEND;VALUE=DATE:20380106
+SUMMARY:Ringförmige Sonnenfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Entlang der Ringzone ringförmig\, sonst regional partiell sichtbar\n\nNASA-Sichtbarkeitsregion: e N. America\, n S. America\, Atlantic\, Africa\, Europe. Zentralzone: Cuba\, Dom.Rep.\, Cote d'Ivoire\, Ghana\, Niger\, Chad\, Egypt.
+X-PLANETENUHR-VISIBILITY:Entlang der Ringzone ringförmig\, sonst regional partiell sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2038-01-21-halbschatten-mondfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380121
+DTEND;VALUE=DATE:20380122
+SUMMARY:Halbschatten-Mondfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional im Halbschatten sichtbar\n\nNASA-Sichtbarkeitsregion: Americas\, Europe\, Africa.
+X-PLANETENUHR-VISIBILITY:Regional im Halbschatten sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2038-03-09-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380309
+DTEND;VALUE=DATE:20380310
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2038-03-20-m-rz-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380320
+DTEND;VALUE=DATE:20380321
+SUMMARY:März-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Frühlingsbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2038-03-23-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380323
+DTEND;VALUE=DATE:20380324
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2038-04-22-maximum-der-lyrids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380422
+DTEND;VALUE=DATE:20380423
+SUMMARY:Maximum der Lyrids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Lyra. Aktivitätsfenster ungefähr 04-16 bis 04-25.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2038-05-06-maximum-der-eta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380506
+DTEND;VALUE=DATE:20380507
+SUMMARY:Maximum der Eta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Aquarius. Aktivitätsfenster ungefähr 04-19 bis 05-28.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2038-06-14-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380614
+DTEND;VALUE=DATE:20380615
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2038-06-17-halbschatten-mondfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380617
+DTEND;VALUE=DATE:20380618
+SUMMARY:Halbschatten-Mondfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional im Halbschatten sichtbar\n\nNASA-Sichtbarkeitsregion: e N. America\, C. & S. America\, Africa\, w Europe.
+X-PLANETENUHR-VISIBILITY:Regional im Halbschatten sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2038-06-21-juni-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380621
+DTEND;VALUE=DATE:20380622
+SUMMARY:Juni-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nLängster Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2038-06-28-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380628
+DTEND;VALUE=DATE:20380629
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2038-07-02-ringf-rmige-sonnenfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380702
+DTEND;VALUE=DATE:20380703
+SUMMARY:Ringförmige Sonnenfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Entlang der Ringzone ringförmig\, sonst regional partiell sichtbar\n\nNASA-Sichtbarkeitsregion: N. & C. America\, S. America\, Africa\, Europe\, Mid East. Zentralzone: Colombia\, Venezuela\, Mauritania\, Morocco\, Mali\, Niger\, Chad\, Sudan\, Ethiopia\, Kenya.
+X-PLANETENUHR-VISIBILITY:Entlang der Ringzone ringförmig\, sonst regional partiell sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2038-07-04-erde-im-aphel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380704
+DTEND;VALUE=DATE:20380705
+SUMMARY:Erde im Aphel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner\n\nDie Erde ist der Sonne am fernsten\; der Nordsommer entsteht trotzdem durch die Achsneigung und nicht durch die Entfernung.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2038-07-16-halbschatten-mondfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380716
+DTEND;VALUE=DATE:20380717
+SUMMARY:Halbschatten-Mondfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional im Halbschatten sichtbar\n\nNASA-Sichtbarkeitsregion: Australia\, e Asia\, Pacific\, w Americas.
+X-PLANETENUHR-VISIBILITY:Regional im Halbschatten sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2038-07-30-maximum-der-delta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380730
+DTEND;VALUE=DATE:20380731
+SUMMARY:Maximum der Delta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Aquarius. Aktivitätsfenster ungefähr 07-12 bis 08-23.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2038-08-12-maximum-der-perseids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380812
+DTEND;VALUE=DATE:20380813
+SUMMARY:Maximum der Perseids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Perseus. Aktivitätsfenster ungefähr 07-17 bis 08-24.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2038-09-04-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380904
+DTEND;VALUE=DATE:20380905
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2038-09-18-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380918
+DTEND;VALUE=DATE:20380919
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2038-09-22-september-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20380922
+DTEND;VALUE=DATE:20380923
+SUMMARY:September-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Herbstbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2038-10-08-maximum-der-draconids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381008
+DTEND;VALUE=DATE:20381009
+SUMMARY:Maximum der Draconids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Draco. Aktivitätsfenster ungefähr 10-06 bis 10-10.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2038-10-21-maximum-der-orionids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381021
+DTEND;VALUE=DATE:20381022
+SUMMARY:Maximum der Orionids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Orion. Aktivitätsfenster ungefähr 10-02 bis 11-07.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2038-11-17-maximum-der-leonids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381117
+DTEND;VALUE=DATE:20381118
+SUMMARY:Maximum der Leonids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Leo. Aktivitätsfenster ungefähr 11-06 bis 11-30.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2038-12-10-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381210
+DTEND;VALUE=DATE:20381211
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2038-12-11-halbschatten-mondfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381211
+DTEND;VALUE=DATE:20381212
+SUMMARY:Halbschatten-Mondfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional im Halbschatten sichtbar\n\nNASA-Sichtbarkeitsregion: Europe\, Africa\, Asia\, Australia.
+X-PLANETENUHR-VISIBILITY:Regional im Halbschatten sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2038-12-14-maximum-der-geminids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381214
+DTEND;VALUE=DATE:20381215
+SUMMARY:Maximum der Geminids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Gemini. Aktivitätsfenster ungefähr 12-04 bis 12-20.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2038-12-21-dezember-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381221
+DTEND;VALUE=DATE:20381222
+SUMMARY:Dezember-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nKürzester Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2038-12-22-maximum-der-ursids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381222
+DTEND;VALUE=DATE:20381223
+SUMMARY:Maximum der Ursids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Ursa Minor. Aktivitätsfenster ungefähr 12-17 bis 12-26.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2038-12-24-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381224
+DTEND;VALUE=DATE:20381225
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2038-12-26-totale-sonnenfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20381226
+DTEND;VALUE=DATE:20381227
+SUMMARY:Totale Sonnenfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Entlang der Totalitätszone total\, sonst regional partiell sichtbar\n\nNASA-Sichtbarkeitsregion: se Asia\, E. Indies\, Australia\, New Zealand\, s Pacific\, Antarctica. Zentralzone: Australia\, New Zealand\, s Pacific.
+X-PLANETENUHR-VISIBILITY:Entlang der Totalitätszone total\, sonst regional partiell sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2039-01-03-erde-im-perihel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390103
+DTEND;VALUE=DATE:20390104
+SUMMARY:Erde im Perihel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer\n\nDie Erde ist der Sonne am nächsten\; die Jahreszeiten werden trotzdem vor allem von der Achsneigung bestimmt.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2039-01-03-maximum-der-quadrantids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390103
+DTEND;VALUE=DATE:20390104
+SUMMARY:Maximum der Quadrantids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Bootes. Aktivitätsfenster ungefähr 12-28 bis 01-12.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2039-03-02-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390302
+DTEND;VALUE=DATE:20390303
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2039-03-16-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390316
+DTEND;VALUE=DATE:20390317
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2039-03-20-m-rz-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390320
+DTEND;VALUE=DATE:20390321
+SUMMARY:März-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Frühlingsbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2039-04-22-maximum-der-lyrids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390422
+DTEND;VALUE=DATE:20390423
+SUMMARY:Maximum der Lyrids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Lyra. Aktivitätsfenster ungefähr 04-16 bis 04-25.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2039-05-06-maximum-der-eta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390506
+DTEND;VALUE=DATE:20390507
+SUMMARY:Maximum der Eta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Aquarius. Aktivitätsfenster ungefähr 04-19 bis 05-28.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2039-06-06-partielle-mondfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390606
+DTEND;VALUE=DATE:20390607
+SUMMARY:Partielle Mondfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional partiell sichtbar\n\nNASA-Sichtbarkeitsregion: Europe\, Africa\, Asia\, Australia.
+X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2039-06-07-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390607
+DTEND;VALUE=DATE:20390608
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2039-06-21-juni-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390621
+DTEND;VALUE=DATE:20390622
+SUMMARY:Juni-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nLängster Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2039-06-21-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390621
+DTEND;VALUE=DATE:20390622
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2039-06-21-ringf-rmige-sonnenfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390621
+DTEND;VALUE=DATE:20390622
+SUMMARY:Ringförmige Sonnenfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Entlang der Ringzone ringförmig\, sonst regional partiell sichtbar\n\nNASA-Sichtbarkeitsregion: N. America\, w Europe. Zentralzone: Alaska\, n Canada\, Norway\, Sweden\, Finland\, Estonia\, Russia.
+X-PLANETENUHR-VISIBILITY:Entlang der Ringzone ringförmig\, sonst regional partiell sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2039-07-04-erde-im-aphel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390704
+DTEND;VALUE=DATE:20390705
+SUMMARY:Erde im Aphel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner\n\nDie Erde ist der Sonne am fernsten\; der Nordsommer entsteht trotzdem durch die Achsneigung und nicht durch die Entfernung.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2039-07-30-maximum-der-delta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390730
+DTEND;VALUE=DATE:20390731
+SUMMARY:Maximum der Delta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Aquarius. Aktivitätsfenster ungefähr 07-12 bis 08-23.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2039-08-12-maximum-der-perseids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390812
+DTEND;VALUE=DATE:20390813
+SUMMARY:Maximum der Perseids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Perseus. Aktivitätsfenster ungefähr 07-17 bis 08-24.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2039-09-11-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390911
+DTEND;VALUE=DATE:20390912
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2039-09-22-september-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390922
+DTEND;VALUE=DATE:20390923
+SUMMARY:September-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Herbstbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2039-09-25-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20390925
+DTEND;VALUE=DATE:20390926
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2039-10-08-maximum-der-draconids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391008
+DTEND;VALUE=DATE:20391009
+SUMMARY:Maximum der Draconids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Draco. Aktivitätsfenster ungefähr 10-06 bis 10-10.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2039-10-21-maximum-der-orionids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391021
+DTEND;VALUE=DATE:20391022
+SUMMARY:Maximum der Orionids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Orion. Aktivitätsfenster ungefähr 10-02 bis 11-07.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2039-11-17-maximum-der-leonids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391117
+DTEND;VALUE=DATE:20391118
+SUMMARY:Maximum der Leonids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Leo. Aktivitätsfenster ungefähr 11-06 bis 11-30.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2039-11-30-partielle-mondfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391130
+DTEND;VALUE=DATE:20391201
+SUMMARY:Partielle Mondfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional partiell sichtbar\n\nNASA-Sichtbarkeitsregion: Europe\, Africa\, Asia\, Australia\, Pacific.
+X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2039-12-03-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391203
+DTEND;VALUE=DATE:20391204
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2039-12-14-maximum-der-geminids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391214
+DTEND;VALUE=DATE:20391215
+SUMMARY:Maximum der Geminids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Gemini. Aktivitätsfenster ungefähr 12-04 bis 12-20.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2039-12-15-totale-sonnenfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391215
+DTEND;VALUE=DATE:20391216
+SUMMARY:Totale Sonnenfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Entlang der Totalitätszone total\, sonst regional partiell sichtbar\n\nNASA-Sichtbarkeitsregion: s S. America\, Antarctica. Zentralzone: Antarctica.
+X-PLANETENUHR-VISIBILITY:Entlang der Totalitätszone total\, sonst regional partiell sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2039-12-17-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391217
+DTEND;VALUE=DATE:20391218
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2039-12-21-dezember-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391221
+DTEND;VALUE=DATE:20391222
+SUMMARY:Dezember-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nKürzester Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2039-12-22-maximum-der-ursids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20391222
+DTEND;VALUE=DATE:20391223
+SUMMARY:Maximum der Ursids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Ursa Minor. Aktivitätsfenster ungefähr 12-17 bis 12-26.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2040-01-03-erde-im-perihel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400103
+DTEND;VALUE=DATE:20400104
+SUMMARY:Erde im Perihel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer\n\nDie Erde ist der Sonne am nächsten\; die Jahreszeiten werden trotzdem vor allem von der Achsneigung bestimmt.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig größer
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2040-01-03-maximum-der-quadrantids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400103
+DTEND;VALUE=DATE:20400104
+SUMMARY:Maximum der Quadrantids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Bootes. Aktivitätsfenster ungefähr 12-28 bis 01-12.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2040-03-08-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400308
+DTEND;VALUE=DATE:20400309
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2040-03-20-m-rz-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400320
+DTEND;VALUE=DATE:20400321
+SUMMARY:März-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Frühlingsbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2040-03-22-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400322
+DTEND;VALUE=DATE:20400323
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2040-04-22-maximum-der-lyrids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400422
+DTEND;VALUE=DATE:20400423
+SUMMARY:Maximum der Lyrids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Lyra. Aktivitätsfenster ungefähr 04-16 bis 04-25.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2040-05-06-maximum-der-eta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400506
+DTEND;VALUE=DATE:20400507
+SUMMARY:Maximum der Eta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Aquarius. Aktivitätsfenster ungefähr 04-19 bis 05-28.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2040-05-11-partielle-sonnenfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400511
+DTEND;VALUE=DATE:20400512
+SUMMARY:Partielle Sonnenfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional partiell sichtbar\n\nNASA-Sichtbarkeitsregion: Australia\, N.Z.\, Antarctica.
+X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2040-05-26-totale-mondfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400526
+DTEND;VALUE=DATE:20400527
+SUMMARY:Totale Mondfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional total sichtbar\n\nNASA-Sichtbarkeitsregion: e Asia\, Australia\, Pacific\, w Americas.
+X-PLANETENUHR-VISIBILITY:Regional total sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2040-06-13-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400613
+DTEND;VALUE=DATE:20400614
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2040-06-21-juni-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400621
+DTEND;VALUE=DATE:20400622
+SUMMARY:Juni-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nLängster Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2040-06-27-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400627
+DTEND;VALUE=DATE:20400628
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2040-07-04-erde-im-aphel@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400704
+DTEND;VALUE=DATE:20400705
+SUMMARY:Erde im Aphel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner\n\nDie Erde ist der Sonne am fernsten\; der Nordsommer entsteht trotzdem durch die Achsneigung und nicht durch die Entfernung.
+X-PLANETENUHR-VISIBILITY:Keine direkte Sichtänderung\; Sonnenscheibe geringfügig kleiner
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2040-07-30-maximum-der-delta-aquariids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400730
+DTEND;VALUE=DATE:20400731
+SUMMARY:Maximum der Delta Aquariids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Aquarius. Aktivitätsfenster ungefähr 07-12 bis 08-23.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2040-08-12-maximum-der-perseids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400812
+DTEND;VALUE=DATE:20400813
+SUMMARY:Maximum der Perseids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Perseus. Aktivitätsfenster ungefähr 07-17 bis 08-24.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2040-09-04-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400904
+DTEND;VALUE=DATE:20400905
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2040-09-17-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400917
+DTEND;VALUE=DATE:20400918
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2040-09-22-september-tagundnachtgleiche@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20400922
+DTEND;VALUE=DATE:20400923
+SUMMARY:September-Tagundnachtgleiche
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nAstronomischer Herbstbeginn auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2040-10-08-maximum-der-draconids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401008
+DTEND;VALUE=DATE:20401009
+SUMMARY:Maximum der Draconids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Draco. Aktivitätsfenster ungefähr 10-06 bis 10-10.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2040-10-21-maximum-der-orionids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401021
+DTEND;VALUE=DATE:20401022
+SUMMARY:Maximum der Orionids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Orion. Aktivitätsfenster ungefähr 10-02 bis 11-07.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2040-11-04-partielle-sonnenfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401104
+DTEND;VALUE=DATE:20401105
+SUMMARY:Partielle Sonnenfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional partiell sichtbar\n\nNASA-Sichtbarkeitsregion: N. & C. America.
+X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2040-11-17-maximum-der-leonids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401117
+DTEND;VALUE=DATE:20401118
+SUMMARY:Maximum der Leonids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Leo. Aktivitätsfenster ungefähr 11-06 bis 11-30.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-eclipse-2040-11-18-totale-mondfinsternis@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401118
+DTEND;VALUE=DATE:20401119
+SUMMARY:Totale Mondfinsternis
+CATEGORIES:ECLIPSE
+DESCRIPTION:Sichtbarkeit: Regional total sichtbar\n\nNASA-Sichtbarkeitsregion: e Americas\, Europe\, Africa\, Asia\, Australia.
+X-PLANETENUHR-VISIBILITY:Regional total sichtbar
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2040-12-09-mond-im-perig-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401209
+DTEND;VALUE=DATE:20401210
+SUMMARY:Mond im Perigäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent größerer Mond\n\nRepräsentativer erdnaher Mondtermin dieses Quartals\; die scheinbare Größe ist etwas überdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent größerer Mond
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2040-12-14-maximum-der-geminids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401214
+DTEND;VALUE=DATE:20401215
+SUMMARY:Maximum der Geminids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Gemini. Aktivitätsfenster ungefähr 12-04 bis 12-20.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-season-2040-12-21-dezember-sonnenwende@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401221
+DTEND;VALUE=DATE:20401222
+SUMMARY:Dezember-Sonnenwende
+CATEGORIES:SEASON
+DESCRIPTION:Sichtbarkeit: Weltweit\n\nKürzester Tag des Jahres auf der Nordhalbkugel.
+X-PLANETENUHR-VISIBILITY:Weltweit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-meteor-2040-12-22-maximum-der-ursids@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401222
+DTEND;VALUE=DATE:20401223
+SUMMARY:Maximum der Ursids
+CATEGORIES:METEOR
+DESCRIPTION:Sichtbarkeit: Von Europa aus meist nach Mitternacht günstig\n\nJährlicher Peak des Meteorstroms\; Radiant bei Ursa Minor. Aktivitätsfenster ungefähr 12-17 bis 12-26.
+X-PLANETENUHR-VISIBILITY:Von Europa aus meist nach Mitternacht günstig
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-moon-2040-12-23-mond-im-apog-um@marsrakete.github.io
+DTSTAMP:20260804T161637Z
+DTSTART;VALUE=DATE:20401223
+DTEND;VALUE=DATE:20401224
+SUMMARY:Mond im Apogäum
+CATEGORIES:MOON
+DESCRIPTION:Sichtbarkeit: Dezent kleinerer Mond\n\nRepräsentativer erdferner Mondtermin dieses Quartals\; die scheinbare Größe ist etwas unterdurchschnittlich.
+X-PLANETENUHR-VISIBILITY:Dezent kleinerer Mond
+END:VEVENT
+END:VCALENDAR

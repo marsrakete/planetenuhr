@@ -1,0 +1,158 @@
+{
+  "checkedOn": "2026-08-04",
+  "minimumCoverageDate": "2040-12-23",
+  "categories": [
+    {
+      "key": "eclipse",
+      "minimumCoverageDate": "2040-11-18"
+    },
+    {
+      "key": "meteor",
+      "minimumCoverageDate": "2040-12-14"
+    },
+    {
+      "key": "moon",
+      "minimumCoverageDate": "2040-11-18"
+    },
+    {
+      "key": "planet",
+      "minimumCoverageDate": "2040-07-04"
+    },
+    {
+      "key": "season",
+      "minimumCoverageDate": "2040-12-21"
+    }
+  ],
+  "sources": [
+    {
+      "key": "nasa-eclipse-main",
+      "label": "NASA Eclipse Web Site",
+      "url": "https://eclipse.gsfc.nasa.gov/eclipse.html",
+      "usedBy": [
+        "calendar-events.js",
+        "eclipse-calendar-config.js",
+        "eclipse-visibility-config.js",
+        "README.md"
+      ],
+      "categories": [
+        "eclipse",
+        "moon"
+      ],
+      "reviewIntervalDays": 120,
+      "lastReviewed": "2026-08-04",
+      "notes": "Primary reference for eclipse dates, types, wording and broad visibility regions."
+    },
+    {
+      "key": "nasa-solar-decade-2021",
+      "label": "NASA Solar Eclipses 2021-2030",
+      "url": "https://eclipse.gsfc.nasa.gov/SEdecade/SEdecade2021.html",
+      "usedBy": [
+        "eclipse-calendar-config.js",
+        "README.md"
+      ],
+      "categories": [
+        "eclipse"
+      ],
+      "reviewIntervalDays": 180,
+      "lastReviewed": "2026-08-04",
+      "notes": "Solar-eclipse decade table for generated entries and regional fallback logic."
+    },
+    {
+      "key": "nasa-solar-decade-2031",
+      "label": "NASA Solar Eclipses 2031-2040",
+      "url": "https://eclipse.gsfc.nasa.gov/SEdecade/SEdecade2031.html",
+      "usedBy": [
+        "eclipse-calendar-config.js",
+        "README.md"
+      ],
+      "categories": [
+        "eclipse"
+      ],
+      "reviewIntervalDays": 180,
+      "lastReviewed": "2026-08-04",
+      "notes": "Solar-eclipse decade table for generated entries through 2040."
+    },
+    {
+      "key": "nasa-lunar-decade-2021",
+      "label": "NASA Lunar Eclipses 2021-2030",
+      "url": "https://eclipse.gsfc.nasa.gov/LEdecade/LEdecade2021.html",
+      "usedBy": [
+        "eclipse-calendar-config.js",
+        "README.md"
+      ],
+      "categories": [
+        "eclipse",
+        "moon"
+      ],
+      "reviewIntervalDays": 180,
+      "lastReviewed": "2026-08-04",
+      "notes": "Lunar-eclipse decade table for generated entries and moon-related eclipse events."
+    },
+    {
+      "key": "nasa-lunar-decade-2031",
+      "label": "NASA Lunar Eclipses 2031-2040",
+      "url": "https://eclipse.gsfc.nasa.gov/LEdecade/LEdecade2031.html",
+      "usedBy": [
+        "eclipse-calendar-config.js",
+        "README.md"
+      ],
+      "categories": [
+        "eclipse",
+        "moon"
+      ],
+      "reviewIntervalDays": 180,
+      "lastReviewed": "2026-08-04",
+      "notes": "Lunar-eclipse decade table for generated entries through 2040."
+    },
+    {
+      "key": "imo-calendar",
+      "label": "International Meteor Organization Calendar",
+      "url": "https://www.imo.net/resources/calendar/",
+      "usedBy": [
+        "phenomena-config.js",
+        "extended-calendar-config.js",
+        "calendar-events.js",
+        "README.md"
+      ],
+      "categories": [
+        "meteor"
+      ],
+      "reviewIntervalDays": 120,
+      "lastReviewed": "2026-08-04",
+      "notes": "Peak dates, activity windows and observing context for recurring meteor-shower entries."
+    },
+    {
+      "key": "timeanddate-seasons",
+      "label": "timeanddate Seasons Calendar",
+      "url": "https://www.timeanddate.com/calendar/seasons.html",
+      "usedBy": [
+        "calendar-events.js",
+        "extended-calendar-config.js",
+        "README.md"
+      ],
+      "categories": [
+        "season"
+      ],
+      "reviewIntervalDays": 180,
+      "lastReviewed": "2026-08-04",
+      "notes": "Seasonal anchor dates and editorial wording for equinoxes and solstices."
+    },
+    {
+      "key": "in-the-sky-calendar",
+      "label": "In-The-Sky Astronomy Calendar",
+      "url": "https://in-the-sky.org/newscal.php",
+      "usedBy": [
+        "calendar-events.js",
+        "extended-calendar-config.js",
+        "README.md"
+      ],
+      "categories": [
+        "planet",
+        "moon"
+      ],
+      "reviewIntervalDays": 120,
+      "lastReviewed": "2026-08-04",
+      "notes": "Planetary events, conjunctions, elongations and selected Moon-planet encounters."
+    }
+  ]
+}

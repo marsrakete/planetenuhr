@@ -12,12 +12,22 @@ Planetenuhr ist ein statisches Astronomie-Dashboard als reine HTML-App. Die Anwe
   Inhalte für die `?`-Popups jeder Kachel
 - `calendar-events.js`  
   kuratierte Himmelskalender-Ereignisse
+- `eclipse-calendar-config.js`, `extended-calendar-config.js`  
+  automatisch ergänzte Finsternis- und wiederkehrende Kalenderereignisse
+- `calendar-sources.json`  
+  zentrale Quellenliste für den Himmelskalender mit Prüfintervallen und Abdeckungszielen
 - `phenomena-config.js`  
   Konfiguration für Meteorströme, Sternbilder, Raumsonden und weitere Phänomene
 - `small-bodies-config.js`  
   Kleinkörper, Kometen und Gürtel für die entsprechende Kachel
 - `bsky-feed-config.js`  
   konfigurierbare Bluesky-Accounts für die Bild-Feed-Kachel
+- `scripts/generate-ics.js`  
+  erzeugt ICS-Dateien aus dem zusammengeführten Himmelskalender
+- `scripts/check-calendar-sources.js`  
+  prüft Quellenliste, Pflegefälligkeiten, Kalenderabdeckung und optional die Erreichbarkeit der Quellen-URLs
+- `ics/`  
+  automatisch erzeugte Kalenderdateien pro Sprache und Kategorie
 - `image_og.jpg`, `favicon.svg`  
   Social Preview und Favicon
 
@@ -51,18 +61,24 @@ npm run build
 ```
 
 Vor jedem Build wird automatisch geprüft, ob verdächtige UTF-8- oder Mojibake-Artefakte im Repository enthalten sind.
+Außerdem erzeugt der Build jetzt aus der Kalender-Konfiguration automatisch die statischen ICS-Dateien im Ordner `ics/`.
 
 Zusätzlich stehen diese Kommandos bereit:
 
 ```text
 npm run check:encoding
+npm run check:calendar-sources
 npm run repair:encoding
+npm run build:ics
 ```
 
 - `check:encoding` bricht mit Fehler ab, wenn verdächtige Encoding-Artefakte gefunden werden.
+- `check:calendar-sources` listet die Himmelskalender-Quellen, berechnet nächste Prüftermine und kontrolliert die Kalenderabdeckung bis Ende 2040.
 - `repair:encoding` führt die bekannte Mojibake-Reparatur auf Textdateien im Repository aus.
+- `build:ics` lädt dieselben Kalenderquellen wie die App und schreibt daraus ICS-Dateien für `de`, `en` und `fr` sowie je Kategorie und als Gesamtkalender.
 
 Der gleiche Prüfschritt läuft außerdem automatisch in GitHub Actions bei Push und Pull Request, damit defekte Zeichen nicht unbemerkt online gehen.
+Zusätzlich läuft wöchentlich der Workflow `.github/workflows/calendar-source-review.yml`, der die Quellenpflege des Himmelskalenders überwacht.
 
 ## Zentrale Bedienung
 
@@ -784,6 +800,7 @@ Die sichtbare Phase kann klein sein, während Venus gleichzeitig relativ erdnah 
 ## Himmelskalender: Quellen
 
 Die Einträge in `calendar-events.js` sind manuell kuratiert und nicht automatisch synchronisiert.
+Die zentrale Pflege- und Prüfliste liegt in `calendar-sources.json`.
 
 - Finsternisse  
   NASA Eclipse Web Site  
@@ -800,6 +817,35 @@ Die Einträge in `calendar-events.js` sind manuell kuratiert und nicht automatis
 - Planetenereignisse, Konjunktionen, Oppositionen, Elongationen  
   In-The-Sky.org  
   https://in-the-sky.org/newscal.php
+
+### Geplante Quellenpflege
+
+Die regelmäßige Quellenprüfung ist jetzt im Projekt selbst hinterlegt:
+
+- `calendar-sources.json` definiert
+  - die verwendeten Kalenderquellen,
+  - welche Dateien sie speisen,
+  - zu welchen Kategorien sie gehören,
+  - wann sie zuletzt geprüft wurden,
+  - und in welchem Intervall sie erneut geprüft werden sollen.
+- `scripts/check-calendar-sources.js` prüft
+  - ob die Quellenliste vollständig ist,
+  - ob einzelne Quellen zur manuellen Nachprüfung fällig sind,
+  - ob der zusammengeführte Kalender je Sprache und Kategorie weiterhin bis 2040 reicht,
+  - und optional, ob die Quellen-URLs weiterhin erreichbar sind.
+- `.github/workflows/calendar-source-review.yml` startet diese Prüfung automatisch jeden Montag.
+
+Für einen lokalen Lauf:
+
+```text
+npm run check:calendar-sources
+```
+
+Für den strengen CI-Lauf mit URL-Prüfung:
+
+```text
+npm run check:calendar-sources:strict
+```
 
 ## Grenzen und Näherungen der App
 
