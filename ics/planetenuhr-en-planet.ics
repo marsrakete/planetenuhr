@@ -7,7 +7,7 @@ X-WR-CALNAME:Planetenuhr planet (en)
 X-WR-TIMEZONE:Europe/Berlin
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2026-01-03-earth-at-perihelion@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20260103
 DTEND;VALUE=DATE:20260104
 SUMMARY:Earth at perihelion
@@ -17,7 +17,7 @@ X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly larger
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2026-01-10-jupiter-at-opposition@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20260110
 DTEND;VALUE=DATE:20260111
 SUMMARY:Jupiter at opposition
@@ -27,7 +27,7 @@ X-PLANETENUHR-VISIBILITY:Excellent evening and night visibility
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2026-02-19-mercury-at-greatest-eastern-elongation@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20260219
 DTEND;VALUE=DATE:20260220
 SUMMARY:Mercury at greatest eastern elongation
@@ -37,7 +37,7 @@ X-PLANETENUHR-VISIBILITY:Best 2026 evening apparition from northern Europe
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2026-06-09-venus-jupiter-conjunction@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20260609
 DTEND;VALUE=DATE:20260610
 SUMMARY:Venus-Jupiter conjunction
@@ -47,7 +47,7 @@ X-PLANETENUHR-VISIBILITY:Low in the western evening twilight
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2026-07-06-earth-at-aphelion@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20260706
 DTEND;VALUE=DATE:20260707
 SUMMARY:Earth at aphelion
@@ -57,7 +57,7 @@ X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly smaller
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2026-09-19-venus-at-peak-evening-visibility@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20260919
 DTEND;VALUE=DATE:20260920
 SUMMARY:Venus at peak evening visibility
@@ -67,7 +67,7 @@ X-PLANETENUHR-VISIBILITY:Very bright evening star
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2026-10-04-saturn-at-opposition@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20261004
 DTEND;VALUE=DATE:20261005
 SUMMARY:Saturn at opposition
@@ -77,7 +77,7 @@ X-PLANETENUHR-VISIBILITY:Visible all night
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2026-11-15-mars-jupiter-conjunction@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20261115
 DTEND;VALUE=DATE:20261116
 SUMMARY:Mars-Jupiter conjunction
@@ -87,7 +87,7 @@ X-PLANETENUHR-VISIBILITY:Morning sky
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2026-11-29-venus-at-peak-morning-visibility@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20261129
 DTEND;VALUE=DATE:20261130
 SUMMARY:Venus at peak morning visibility
@@ -97,7 +97,7 @@ X-PLANETENUHR-VISIBILITY:Bright morning star
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2027-01-03-earth-at-perihelion@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20270103
 DTEND;VALUE=DATE:20270104
 SUMMARY:Earth at perihelion
@@ -107,7 +107,7 @@ X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly larger
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2027-01-03-venus-at-greatest-western-elongation@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20270103
 DTEND;VALUE=DATE:20270104
 SUMMARY:Venus at greatest western elongation
@@ -117,7 +117,7 @@ X-PLANETENUHR-VISIBILITY:Excellent morning visibility
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2027-05-08-venus-saturn-conjunction@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20270508
 DTEND;VALUE=DATE:20270509
 SUMMARY:Venus-Saturn conjunction
@@ -127,7 +127,7 @@ X-PLANETENUHR-VISIBILITY:Morning/eastern twilight\, low
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2027-07-05-earth-at-aphelion@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20270705
 DTEND;VALUE=DATE:20270706
 SUMMARY:Earth at aphelion
@@ -137,7 +137,7 @@ X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly smaller
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2027-08-25-venus-jupiter-conjunction@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20270825
 DTEND;VALUE=DATE:20270826
 SUMMARY:Venus-Jupiter conjunction
@@ -147,7 +147,7 @@ X-PLANETENUHR-VISIBILITY:Very close to the Sun\; difficult or unsafe to observe
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2027-11-25-venus-mars-conjunction@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20271125
 DTEND;VALUE=DATE:20271126
 SUMMARY:Venus-Mars conjunction
@@ -157,7 +157,7 @@ X-PLANETENUHR-VISIBILITY:Morning sky
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2028-01-03-earth-at-perihelion@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20280103
 DTEND;VALUE=DATE:20280104
 SUMMARY:Earth at perihelion
@@ -167,7 +167,7 @@ X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly larger
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2028-07-04-earth-at-aphelion@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20280704
 DTEND;VALUE=DATE:20280705
 SUMMARY:Earth at aphelion
@@ -177,7 +177,7 @@ X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly smaller
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2029-01-03-earth-at-perihelion@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20290103
 DTEND;VALUE=DATE:20290104
 SUMMARY:Earth at perihelion
@@ -187,7 +187,7 @@ X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly larger
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2029-07-04-earth-at-aphelion@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20290704
 DTEND;VALUE=DATE:20290705
 SUMMARY:Earth at aphelion
@@ -197,7 +197,7 @@ X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly smaller
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2030-01-03-earth-at-perihelion@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20300103
 DTEND;VALUE=DATE:20300104
 SUMMARY:Earth at perihelion
@@ -207,7 +207,7 @@ X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly larger
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2030-07-04-earth-at-aphelion@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20300704
 DTEND;VALUE=DATE:20300705
 SUMMARY:Earth at aphelion
@@ -217,7 +217,7 @@ X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly smaller
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2031-01-03-earth-at-perihelion@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20310103
 DTEND;VALUE=DATE:20310104
 SUMMARY:Earth at perihelion
@@ -227,7 +227,7 @@ X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly larger
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2031-07-04-earth-at-aphelion@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20310704
 DTEND;VALUE=DATE:20310705
 SUMMARY:Earth at aphelion
@@ -237,7 +237,7 @@ X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly smaller
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2032-01-03-earth-at-perihelion@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20320103
 DTEND;VALUE=DATE:20320104
 SUMMARY:Earth at perihelion
@@ -247,7 +247,7 @@ X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly larger
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2032-07-04-earth-at-aphelion@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20320704
 DTEND;VALUE=DATE:20320705
 SUMMARY:Earth at aphelion
@@ -257,7 +257,7 @@ X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly smaller
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2033-01-03-earth-at-perihelion@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20330103
 DTEND;VALUE=DATE:20330104
 SUMMARY:Earth at perihelion
@@ -267,7 +267,7 @@ X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly larger
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2033-07-04-earth-at-aphelion@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20330704
 DTEND;VALUE=DATE:20330705
 SUMMARY:Earth at aphelion
@@ -277,7 +277,7 @@ X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly smaller
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2034-01-03-earth-at-perihelion@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20340103
 DTEND;VALUE=DATE:20340104
 SUMMARY:Earth at perihelion
@@ -287,7 +287,7 @@ X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly larger
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2034-07-04-earth-at-aphelion@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20340704
 DTEND;VALUE=DATE:20340705
 SUMMARY:Earth at aphelion
@@ -297,7 +297,7 @@ X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly smaller
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2035-01-03-earth-at-perihelion@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20350103
 DTEND;VALUE=DATE:20350104
 SUMMARY:Earth at perihelion
@@ -307,7 +307,7 @@ X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly larger
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2035-07-04-earth-at-aphelion@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20350704
 DTEND;VALUE=DATE:20350705
 SUMMARY:Earth at aphelion
@@ -317,7 +317,7 @@ X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly smaller
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2036-01-03-earth-at-perihelion@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20360103
 DTEND;VALUE=DATE:20360104
 SUMMARY:Earth at perihelion
@@ -327,7 +327,7 @@ X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly larger
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2036-07-04-earth-at-aphelion@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20360704
 DTEND;VALUE=DATE:20360705
 SUMMARY:Earth at aphelion
@@ -337,7 +337,7 @@ X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly smaller
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2037-01-03-earth-at-perihelion@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20370103
 DTEND;VALUE=DATE:20370104
 SUMMARY:Earth at perihelion
@@ -347,7 +347,7 @@ X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly larger
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2037-07-04-earth-at-aphelion@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20370704
 DTEND;VALUE=DATE:20370705
 SUMMARY:Earth at aphelion
@@ -357,7 +357,7 @@ X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly smaller
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2038-01-03-earth-at-perihelion@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20380103
 DTEND;VALUE=DATE:20380104
 SUMMARY:Earth at perihelion
@@ -367,7 +367,7 @@ X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly larger
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2038-07-04-earth-at-aphelion@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20380704
 DTEND;VALUE=DATE:20380705
 SUMMARY:Earth at aphelion
@@ -377,7 +377,7 @@ X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly smaller
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2039-01-03-earth-at-perihelion@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20390103
 DTEND;VALUE=DATE:20390104
 SUMMARY:Earth at perihelion
@@ -387,7 +387,7 @@ X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly larger
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2039-07-04-earth-at-aphelion@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20390704
 DTEND;VALUE=DATE:20390705
 SUMMARY:Earth at aphelion
@@ -397,7 +397,7 @@ X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly smaller
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2040-01-03-earth-at-perihelion@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20400103
 DTEND;VALUE=DATE:20400104
 SUMMARY:Earth at perihelion
@@ -407,7 +407,7 @@ X-PLANETENUHR-VISIBILITY:No direct visual change\; solar disk slightly larger
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2040-07-04-earth-at-aphelion@marsrakete.github.io
-DTSTAMP:20260804T161637Z
+DTSTAMP:20260804T162705Z
 DTSTART;VALUE=DATE:20400704
 DTEND;VALUE=DATE:20400705
 SUMMARY:Earth at aphelion

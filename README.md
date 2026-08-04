@@ -833,6 +833,7 @@ Die regelmäßige Quellenprüfung ist jetzt im Projekt selbst hinterlegt:
   - ob einzelne Quellen zur manuellen Nachprüfung fällig sind,
   - ob der zusammengeführte Kalender je Sprache und Kategorie weiterhin bis 2040 reicht,
   - und optional, ob die Quellen-URLs weiterhin erreichbar sind.
+  - einzelne Quellen dürfen dabei bewusst akzeptierte Antwortcodes wie `403` definieren, wenn eine Seite in CI Bot-Schutz verwendet, aber als Quelle weiterhin gültig ist.
 - `.github/workflows/calendar-source-review.yml` startet diese Prüfung automatisch jeden Montag.
 
 Für einen lokalen Lauf:

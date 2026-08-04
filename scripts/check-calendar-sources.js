@@ -159,6 +159,18 @@ function validateSourceEntry(sourceEntry) {
     errors.push("Source " + String(sourceEntry.key || "(unknown)") + " must define a positive reviewIntervalDays value.");
   }
 
+  if (sourceEntry.acceptedStatusCodes !== undefined) {
+    if (!Array.isArray(sourceEntry.acceptedStatusCodes)) {
+      errors.push("Source " + String(sourceEntry.key || "(unknown)") + " must define acceptedStatusCodes as an array.");
+    } else {
+      sourceEntry.acceptedStatusCodes.forEach(statusCode => {
+        if (typeof statusCode !== "number" || statusCode < 100 || statusCode > 599) {
+          errors.push("Source " + String(sourceEntry.key || "(unknown)") + " contains an invalid accepted status code.");
+        }
+      });
+    }
+  }
+
   return errors;
 }
 
@@ -393,9 +405,20 @@ async function checkSourceLinks(sourceEntries) {
     try {
       const result = await requestUrlStatus(sourceEntry.url, 0);
       let ok = false;
+      let acceptedBlockedStatus = false;
+      let acceptedStatusCodes = [];
+
+      if (Array.isArray(sourceEntry.acceptedStatusCodes)) {
+        acceptedStatusCodes = sourceEntry.acceptedStatusCodes;
+      }
 
       if (result.statusCode >= 200 && result.statusCode < 400) {
         ok = true;
+      } else {
+        if (acceptedStatusCodes.includes(result.statusCode)) {
+          ok = true;
+          acceptedBlockedStatus = true;
+        }
       }
 
       rows.push({
@@ -403,7 +426,8 @@ async function checkSourceLinks(sourceEntries) {
         label: sourceEntry.label,
         url: sourceEntry.url,
         statusCode: result.statusCode,
-        ok
+        ok,
+        acceptedBlockedStatus
       });
     } catch (error) {
       rows.push({
@@ -481,6 +505,9 @@ function writeGithubSummary(reviewRows, languageRows, categoryRows, linkRows) {
 
     linkRows.forEach(row => {
       let statusText = String(row.statusCode);
+      if (row.acceptedBlockedStatus) {
+        statusText = String(row.statusCode) + " accepted";
+      }
       if (!row.ok && row.error) {
         statusText = row.error;
       }
@@ -556,6 +583,9 @@ function printLinkRows(linkRows) {
 
   linkRows.forEach(row => {
     let statusText = String(row.statusCode);
+    if (row.acceptedBlockedStatus) {
+      statusText = String(row.statusCode) + " accepted";
+    }
     if (!row.ok && row.error) {
       statusText = row.error;
     }
