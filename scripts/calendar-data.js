@@ -92,6 +92,30 @@ function getLanguageKeys(eventsByLanguage) {
 }
 
 /**
+ * Returns the category keys that appear in the merged calendar data across all
+ * supported languages.
+ * @param {Record<string, Array<object>>} eventsByLanguage Language-keyed calendar lists.
+ * @returns {string[]} Sorted unique category keys.
+ */
+function getCategoryKeys(eventsByLanguage) {
+  const categories = new Set();
+
+  Object.values(eventsByLanguage).forEach(languageEvents => {
+    if (!Array.isArray(languageEvents)) {
+      return;
+    }
+
+    languageEvents.forEach(event => {
+      if (event && event.category) {
+        categories.add(String(event.category));
+      }
+    });
+  });
+
+  return Array.from(categories).sort();
+}
+
+/**
  * Returns the event list for one language, sorted by date and title.
  * @param {Record<string, Array<object>>} eventsByLanguage Language-keyed calendar lists.
  * @param {string} languageKey UI language key.
@@ -124,6 +148,7 @@ function getSortedLanguageEvents(eventsByLanguage, languageKey) {
 
 module.exports = {
   createCalendarVmContext,
+  getCategoryKeys,
   getCalendarSourceFiles,
   getLanguageKeys,
   getRepositoryRoot,

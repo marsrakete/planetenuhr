@@ -61,24 +61,28 @@ npm run build
 ```
 
 Vor jedem Build wird automatisch geprüft, ob verdächtige UTF-8- oder Mojibake-Artefakte im Repository enthalten sind.
-Außerdem erzeugt der Build jetzt aus der Kalender-Konfiguration automatisch die statischen ICS-Dateien im Ordner `ics/`.
+Der Build erzeugt die ICS-Dateien nicht mehr automatisch, sondern prüft nur noch, ob die vorhandenen Dateien im Ordner `ics/` vollständig und aktuell sind.
 
 Zusätzlich stehen diese Kommandos bereit:
 
 ```text
 npm run check:encoding
 npm run check:calendar-sources
+npm run check:ics
 npm run repair:encoding
 npm run build:ics
 ```
 
 - `check:encoding` bricht mit Fehler ab, wenn verdächtige Encoding-Artefakte gefunden werden.
 - `check:calendar-sources` listet die Himmelskalender-Quellen, berechnet nächste Prüftermine und kontrolliert die Kalenderabdeckung bis Ende 2040.
+- `check:ics` prüft, ob die erzeugten ICS-Dateien vorhanden und neuer als die kalenderrelevanten Quelldateien sind.
 - `repair:encoding` führt die bekannte Mojibake-Reparatur auf Textdateien im Repository aus.
-- `build:ics` lädt dieselben Kalenderquellen wie die App und schreibt daraus ICS-Dateien für `de`, `en` und `fr` sowie je Kategorie und als Gesamtkalender.
+- `build:ics` lädt dieselben Kalenderquellen wie die App und schreibt die ICS-Dateien für `de`, `en` und `fr` sowie je Kategorie und als Gesamtkalender bewusst neu.
 
 Der gleiche Prüfschritt läuft außerdem automatisch in GitHub Actions bei Push und Pull Request, damit defekte Zeichen nicht unbemerkt online gehen.
 Zusätzlich läuft wöchentlich der Workflow `.github/workflows/calendar-source-review.yml`, der die Quellenpflege des Himmelskalenders überwacht.
+
+Wenn Kalenderquellen geändert wurden und die ICS-Dateien dadurch veraltet sind, meldet `npm run build` das explizit und fordert zu `npm run build:ics` auf.
 
 ## Zentrale Bedienung
 
@@ -98,6 +102,24 @@ Zusätzlich läuft wöchentlich der Workflow `.github/workflows/calendar-source-
   - Himmelskalender
 - Die Ortsauswahl beeinflusst vor allem Licht-, Sichtbarkeits- und Nachtkarten.
 - Viele Kacheln besitzen ein `?`-Popup mit kurzer Erklärung, Formeln und Quellenlinks.
+
+## URL-Parameter
+
+Die Seite unterstützt Deep-Links für Datum, Ort, Sprache und eine direkte Ziel-Kachel:
+
+```text
+?date=20260812&place=Madrid&lang=de&card=moon_nodes
+```
+
+- `date` akzeptiert `YYYYMMDD`, `YYYY-MM-DD` oder `YYYY.MM.DD`
+- `place` akzeptiert den Städtenamen oder den internen Orts-Schlüssel
+- `lang` unterstützt aktuell `de`, `en` und `fr`
+- `card` springt direkt zu einer Kachel über ihren internen Schlüssel, zum Beispiel:
+  - `solar_system`
+  - `moon_nodes`
+  - `sky_calendar`
+  - `earth_moon`
+  - `small_bodies`
 
 ## Kacheln im Überblick
 

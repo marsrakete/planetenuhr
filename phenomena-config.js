@@ -37,6 +37,76 @@ window.PLANETENUHR_PHENOMENA = {
     { key: "voyager_1", name: "Voyager 1", distanceAu: 165, angle: 18, region: "Interstellar space", color: "#ef4444" },
     { key: "voyager_2", name: "Voyager 2", distanceAu: 137, angle: 332, region: "Interstellar space", color: "#f43f5e" }
   ],
+  exoplanetSystems: [
+    {
+      key: "trappist_1",
+      name: "TRAPPIST-1",
+      starType: "Ultracool dwarf",
+      starMassSun: 0.09,
+      distanceLy: 40,
+      maxOrbitAu: 0.07,
+      color: "#f97316",
+      planets: [
+        { name: "b", orbitAu: 0.011 },
+        { name: "c", orbitAu: 0.015 },
+        { name: "d", orbitAu: 0.021 },
+        { name: "e", orbitAu: 0.028 },
+        { name: "f", orbitAu: 0.037 },
+        { name: "g", orbitAu: 0.045 },
+        { name: "h", orbitAu: 0.062 }
+      ]
+    },
+    {
+      key: "kepler_90",
+      name: "Kepler-90",
+      starType: "Sun-like",
+      starMassSun: 1.2,
+      distanceLy: 2790,
+      maxOrbitAu: 1.6,
+      color: "#2563eb",
+      planets: [
+        { name: "b", orbitAu: 0.074 },
+        { name: "c", orbitAu: 0.089 },
+        { name: "i", orbitAu: 0.107 },
+        { name: "d", orbitAu: 0.32 },
+        { name: "e", orbitAu: 0.42 },
+        { name: "f", orbitAu: 0.71 },
+        { name: "g", orbitAu: 1.01 },
+        { name: "h", orbitAu: 1.52 }
+      ]
+    },
+    {
+      key: "fiftyfive_cancri",
+      name: "55 Cancri",
+      starType: "G dwarf",
+      starMassSun: 0.96,
+      distanceLy: 41,
+      maxOrbitAu: 5.8,
+      color: "#7c3aed",
+      planets: [
+        { name: "e", orbitAu: 0.015 },
+        { name: "b", orbitAu: 0.11 },
+        { name: "c", orbitAu: 0.24 },
+        { name: "f", orbitAu: 0.78 },
+        { name: "d", orbitAu: 5.77 }
+      ]
+    },
+    {
+      key: "hr_8799",
+      name: "HR 8799",
+      starType: "A star",
+      starMassSun: 1.5,
+      distanceLy: 133,
+      maxOrbitAu: 70,
+      color: "#0f766e",
+      planets: [
+        { name: "e", orbitAu: 15 },
+        { name: "d", orbitAu: 24 },
+        { name: "c", orbitAu: 38 },
+        { name: "b", orbitAu: 68 }
+      ]
+    }
+  ],
   retrogradeBodies: ["mercury", "venus", "mars", "jupiter", "saturn", "uranus", "neptune"],
   planetPhaseBodies: ["mercury", "venus"],
   satellites: [

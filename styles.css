@@ -53,12 +53,18 @@
       min-height:180px;
       min-width:0;
       overflow-anchor:none;
+      scroll-margin-top:140px;
     }
     .wide-card{
       grid-column:auto;
     }
     .date-location-card{ order:10; }
     .solar-card{ order:20; }
+    .barycenter-card{ order:25; }
+    .lagrange-card{ order:27; }
+    .analemma-card{ order:28; }
+    .exoplanet-card{ order:29; }
+    .polaris-card{ order:29; }
     .small-bodies-card{ order:30; }
     .moon-nodes-card{ order:35; }
     .conjunction-card{ order:38; }
@@ -84,6 +90,7 @@
     .about-card{ order:130; }
     @media (min-width:1180px){
       .solar-card,
+      .barycenter-card,
       .small-bodies-card,
       .moon-nodes-card,
       .conjunction-card,
@@ -545,7 +552,13 @@
       font-weight:700;
       font-size:.82rem;
     }
+    .location-control span{
+      flex:0 0 auto;
+      white-space:nowrap;
+    }
     .location-control select{
+      flex:1 1 auto;
+      min-width:0;
       width:100%;
       padding:8px 12px;
       border:1px solid #d8e2ef;
@@ -555,6 +568,23 @@
       font-size:.9rem;
       box-shadow:none;
       margin:0;
+    }
+    html[lang="en"] .overlay-controls,
+    html[lang="fr"] .overlay-controls{
+      width:min(100%, 1280px);
+    }
+    html[lang="en"] .date-toolbar-slider,
+    html[lang="fr"] .date-toolbar-slider{
+      min-width:180px;
+    }
+    html[lang="en"] .date-toolbar-actions .date-auto-button,
+    html[lang="fr"] .date-toolbar-actions .date-auto-button{
+      min-width:108px;
+    }
+    html[lang="en"] .location-control,
+    html[lang="fr"] .location-control{
+      flex:0 1 250px;
+      min-width:250px;
     }
     .solar-slider-row{
       display:grid;
@@ -637,6 +667,383 @@
     .solar-planet.neptune{ width:15px; height:15px; margin:-7.5px 0 0 -7.5px; background:#4169e1; }
     .small-bodies-card{
       gap:12px;
+    }
+    .barycenter-map{
+      width:min(100%, 560px);
+      aspect-ratio:1.65;
+      margin-top:6px;
+      border-radius:24px;
+      background:
+        radial-gradient(circle at 50% 40%, rgba(255,255,255,.9), transparent 28%),
+        radial-gradient(circle at 50% 48%, rgba(148,163,184,.12), transparent 72%),
+        #ffffff;
+      box-shadow:inset 0 0 26px rgba(148,163,184,.14), 0 8px 22px rgba(0,0,0,.1);
+    }
+    .barycenter-map svg{
+      display:block;
+      width:100%;
+      height:100%;
+    }
+    .barycenter-controls{
+      width:min(100%, 560px);
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:8px;
+      margin-top:4px;
+    }
+    .barycenter-mode-button{
+      min-height:34px;
+      margin:0;
+      padding:7px 12px;
+      border-radius:999px;
+      border:1px solid #bfdbfe;
+      background:#f8fbff;
+      color:#0f172a;
+      font-size:.88rem;
+      font-weight:700;
+      line-height:1;
+      box-shadow:none;
+    }
+    .barycenter-mode-button:hover{
+      background:#eff6ff;
+      border-color:#93c5fd;
+    }
+    .barycenter-mode-button.active{
+      background:linear-gradient(135deg, #1d4ed8, #3b82f6);
+      color:#fff;
+      border-color:#2563eb;
+      box-shadow:0 8px 20px rgba(37,99,235,.18);
+    }
+    .barycenter-summary{
+      width:min(100%, 560px);
+    }
+    .analemma-map{
+      width:min(100%, 420px);
+      aspect-ratio:1;
+      margin-top:6px;
+      border-radius:22px;
+      background:
+        radial-gradient(circle at 50% 38%, rgba(255,255,255,.88), transparent 28%),
+        radial-gradient(circle at 50% 50%, rgba(148,163,184,.12), transparent 72%),
+        #ffffff;
+      box-shadow:inset 0 0 24px rgba(148,163,184,.14), 0 8px 22px rgba(0,0,0,.1);
+    }
+    .analemma-map svg{
+      display:block;
+      width:100%;
+      height:100%;
+    }
+    .lagrange-orbit{
+      fill:none;
+      stroke:#cbd5e1;
+      stroke-width:1.5;
+    }
+    .lagrange-guide{
+      stroke:rgba(59,130,246,.28);
+      stroke-width:1.3;
+      stroke-dasharray:4 4;
+    }
+    .lagrange-sun{
+      fill:#f8b43c;
+      stroke:#f59e0b;
+      stroke-width:2;
+    }
+    .lagrange-earth{
+      fill:#2563eb;
+      stroke:#ffffff;
+      stroke-width:2;
+    }
+    .lagrange-point{
+      fill:#8b5cf6;
+      stroke:#ffffff;
+      stroke-width:2;
+    }
+    .lagrange-jwst{
+      fill:#14b8a6;
+      stroke:#ffffff;
+      stroke-width:1.6;
+    }
+    .lagrange-label{
+      fill:#1f2937;
+      font-size:10px;
+      font-weight:600;
+      text-anchor:middle;
+      paint-order:stroke;
+      stroke:#fff;
+      stroke-width:3px;
+      stroke-linejoin:round;
+    }
+    .lagrange-small-label{
+      fill:#475569;
+      font-size:9px;
+      text-anchor:middle;
+      paint-order:stroke;
+      stroke:#fff;
+      stroke-width:3px;
+      stroke-linejoin:round;
+    }
+    .analemma-frame{
+      fill:#fbfdff;
+      stroke:#dbeafe;
+      stroke-width:1.2;
+    }
+    .analemma-axis{
+      stroke:#cbd5e1;
+      stroke-width:1.1;
+      stroke-dasharray:4 4;
+    }
+    .analemma-curve{
+      fill:none;
+      stroke:#2563eb;
+      stroke-width:2.8;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+    }
+    .analemma-month-dot{
+      fill:#f59e0b;
+      stroke:#ffffff;
+      stroke-width:1.1;
+    }
+    .analemma-month-label{
+      fill:#475569;
+      font-size:9px;
+      text-anchor:middle;
+      paint-order:stroke;
+      stroke:#fff;
+      stroke-width:3px;
+      stroke-linejoin:round;
+    }
+    .analemma-today{
+      fill:#ef4444;
+      stroke:#ffffff;
+      stroke-width:2;
+    }
+    .analemma-axis-label{
+      fill:#475569;
+      font-size:10px;
+      text-anchor:middle;
+      paint-order:stroke;
+      stroke:#fff;
+      stroke-width:3px;
+      stroke-linejoin:round;
+    }
+    .exoplanet-comparison{
+      width:min(100%, 840px);
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
+      gap:14px;
+      margin-top:4px;
+    }
+    .exoplanet-system-panel{
+      display:grid;
+      gap:8px;
+      padding:12px;
+      border:1px solid #dbeafe;
+      border-radius:14px;
+      background:linear-gradient(180deg,#fbfdff,#f7fbff);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.85);
+    }
+    .exoplanet-system-head{
+      display:grid;
+      gap:2px;
+      text-align:center;
+    }
+    .exoplanet-system-title{
+      font-size:.92rem;
+      font-weight:700;
+      color:var(--fg);
+    }
+    .exoplanet-system-meta,
+    .exoplanet-system-caption{
+      font-size:.77rem;
+      color:var(--muted);
+      text-align:center;
+    }
+    .exoplanet-system-map{
+      width:100%;
+      aspect-ratio:1;
+      border-radius:18px;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(255,255,255,.85), transparent 34%),
+        radial-gradient(circle at 50% 50%, rgba(148,163,184,.12), transparent 70%),
+        #ffffff;
+      box-shadow:inset 0 0 20px rgba(148,163,184,.12);
+    }
+    .exoplanet-system-map svg{
+      display:block;
+      width:100%;
+      height:100%;
+    }
+    .exoplanet-star-glow{
+      fill:rgba(251,191,36,.18);
+    }
+    .exoplanet-star{
+      stroke:#f59e0b;
+      stroke-width:1.5;
+    }
+    .exoplanet-orbit{
+      fill:none;
+      stroke:#d7e3f6;
+      stroke-width:1.1;
+    }
+    .exoplanet-planet{
+      stroke:#ffffff;
+      stroke-width:1.4;
+    }
+    .exoplanet-planet-label{
+      fill:#334155;
+      font-size:10px;
+      font-weight:700;
+      text-anchor:middle;
+      paint-order:stroke;
+      stroke:#ffffff;
+      stroke-width:2.4;
+      stroke-linejoin:round;
+    }
+    .exoplanet-summary{
+      width:min(100%, 760px);
+    }
+    .polaris-horizon{
+      stroke:#94a3b8;
+      stroke-width:1.6;
+    }
+    .polaris-axis{
+      stroke:#60a5fa;
+      stroke-width:1.4;
+      stroke-dasharray:5 4;
+    }
+    .polaris-ring{
+      fill:none;
+      stroke:rgba(37,99,235,.18);
+      stroke-width:1.5;
+    }
+    .polaris-guide{
+      fill:none;
+      stroke:rgba(37,99,235,.3);
+      stroke-width:1.2;
+      stroke-dasharray:3 4;
+    }
+    .polaris-pole-marker{
+      stroke:#2563eb;
+      stroke-width:2;
+      stroke-linecap:round;
+    }
+    .polaris-asterism{
+      fill:none;
+      stroke:rgba(37,99,235,.42);
+      stroke-width:1.5;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+    }
+    .polaris-star{
+      fill:#93c5fd;
+      stroke:#ffffff;
+      stroke-width:1.2;
+    }
+    .polaris-main-star{
+      fill:#f8fafc;
+      stroke:#60a5fa;
+      stroke-width:2;
+      filter:drop-shadow(0 0 6px rgba(96,165,250,.45));
+    }
+    .polaris-label{
+      fill:#475569;
+      font-size:12px;
+      font-weight:700;
+      text-anchor:middle;
+    }
+    .polaris-small-label{
+      fill:#334155;
+      font-size:11px;
+      font-weight:600;
+      paint-order:stroke;
+      stroke:#ffffff;
+      stroke-width:3px;
+      stroke-linejoin:round;
+    }
+    .barycenter-disc{
+      fill:#fbfdff;
+      stroke:rgba(191,219,254,.55);
+      stroke-width:1.2;
+    }
+    .barycenter-reference-ring{
+      fill:none;
+      stroke:rgba(148,163,184,.32);
+      stroke-width:1.1;
+      stroke-dasharray:4 5;
+    }
+    .barycenter-reference-label{
+      fill:#64748b;
+      font-size:10px;
+      paint-order:stroke;
+      stroke:#fff;
+      stroke-width:3px;
+      stroke-linejoin:round;
+    }
+    .barycenter-trail{
+      fill:none;
+      stroke:#2563eb;
+      stroke-width:3.2;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+      opacity:.96;
+    }
+    .barycenter-year-dot{
+      fill:#60a5fa;
+      stroke:#ffffff;
+      stroke-width:1.2;
+      opacity:.98;
+    }
+    .barycenter-year-label{
+      fill:#1f2937;
+      font-size:10px;
+      font-weight:600;
+      text-anchor:middle;
+      paint-order:stroke;
+      stroke:#fff;
+      stroke-width:3px;
+      stroke-linejoin:round;
+    }
+    .barycenter-connector{
+      stroke:rgba(30,64,175,.34);
+      stroke-width:1.4;
+      stroke-dasharray:4 4;
+    }
+    .barycenter-sun-disc{
+      fill:url(#barycenterSunGradient);
+      filter:url(#barycenterSunGlow);
+      opacity:.32;
+    }
+    .barycenter-sun-outline{
+      fill:none;
+      stroke:rgba(245,158,11,.92);
+      stroke-width:2.2;
+    }
+    .barycenter-sun-center-dot{
+      fill:#1f2937;
+      stroke:#fff;
+      stroke-width:1.4;
+    }
+    .barycenter-cross{
+      stroke:#1d4ed8;
+      stroke-width:2.4;
+      stroke-linecap:round;
+    }
+    .barycenter-label{
+      fill:#1f2937;
+      font-size:11px;
+      font-weight:600;
+      text-anchor:middle;
+      paint-order:stroke;
+      stroke:#fff;
+      stroke-width:3px;
+      stroke-linejoin:round;
+    }
+    .barycenter-caption{
+      fill:#64748b;
+      font-size:10px;
+      text-anchor:middle;
     }
     .small-bodies-map{
       width:min(100%, 680px);
@@ -796,6 +1203,169 @@
     }
     .astro-summary strong{
       color:var(--fg);
+    }
+    .eclipse-preview-card{
+      display:grid;
+      gap:10px;
+      margin-top:8px;
+      padding:12px;
+      border:1px solid #dbeafe;
+      border-radius:14px;
+      background:linear-gradient(180deg,#fbfdff,#f8fbff);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.8);
+    }
+    .eclipse-preview-head{
+      display:grid;
+      gap:3px;
+    }
+    .eclipse-preview-kicker{
+      color:#2563eb;
+      font-size:.74rem;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.03em;
+    }
+    .eclipse-preview-title{
+      color:var(--fg);
+      font-size:.95rem;
+      font-weight:700;
+    }
+    .eclipse-preview-meta{
+      color:var(--muted);
+      font-size:.78rem;
+    }
+    .eclipse-preview-warning{
+      display:grid;
+      grid-template-columns:28px minmax(0,1fr);
+      gap:10px;
+      align-items:start;
+      padding:10px 12px;
+      border:1px solid rgba(245,158,11,.26);
+      border-radius:12px;
+      background:linear-gradient(180deg,rgba(255,251,235,.98),rgba(255,247,237,.98));
+    }
+    .eclipse-preview-warning-icon{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      width:28px;
+      height:28px;
+      border-radius:50%;
+      background:rgba(251,191,36,.18);
+      color:#b45309;
+      font-size:1rem;
+      line-height:1;
+    }
+    .eclipse-preview-warning-copy{
+      display:grid;
+      gap:3px;
+    }
+    .eclipse-preview-warning-title{
+      color:#92400e;
+      font-size:.84rem;
+      font-weight:700;
+      line-height:1.25;
+    }
+    .eclipse-preview-warning-text{
+      color:#9a3412;
+      font-size:.77rem;
+      line-height:1.42;
+    }
+    .eclipse-preview-timeline{
+      display:grid;
+      gap:8px;
+    }
+    .eclipse-preview-row{
+      display:grid;
+      grid-template-columns:24px 56px minmax(0,1fr);
+      gap:10px;
+      align-items:start;
+    }
+    .eclipse-preview-icon-wrap{
+      position:relative;
+      display:flex;
+      justify-content:center;
+      min-height:34px;
+      padding-top:1px;
+    }
+    .eclipse-preview-line{
+      position:absolute;
+      top:18px;
+      bottom:-14px;
+      width:2px;
+      background:#cbd5e1;
+      border-radius:999px;
+    }
+    .eclipse-preview-line.is-last{
+      display:none;
+    }
+    .eclipse-preview-icon{
+      position:relative;
+      z-index:1;
+      width:18px;
+      height:18px;
+      border-radius:50%;
+      background:#f8fafc;
+      border:2px solid #94a3b8;
+      box-sizing:border-box;
+      flex:0 0 auto;
+    }
+    .eclipse-preview-icon.is-partial-solar{
+      background:
+        radial-gradient(circle at 34% 50%, #111827 0 34%, transparent 35%),
+        #fbbf24;
+      border-color:#f59e0b;
+    }
+    .eclipse-preview-icon.is-maximum-solar{
+      background:#111827;
+      border-color:#f59e0b;
+      box-shadow:0 0 0 2px rgba(251,191,36,.35);
+    }
+    .eclipse-preview-icon.is-partial-lunar{
+      background:
+        radial-gradient(circle at 66% 50%, #111827 0 34%, transparent 35%),
+        #f8c84b;
+      border-color:#f59e0b;
+    }
+    .eclipse-preview-icon.is-maximum-lunar{
+      background:#f59e0b;
+      border-color:#7c2d12;
+      box-shadow:0 0 0 2px rgba(245,158,11,.22);
+    }
+    .eclipse-preview-icon.is-penumbral{
+      background:#fde68a;
+      border-color:#d4d4d8;
+      box-shadow:inset 0 0 0 4px rgba(255,255,255,.45);
+    }
+    .eclipse-preview-icon.is-sunset{
+      border:none;
+      background:
+        linear-gradient(180deg, transparent 0 54%, #334155 54% 62%, transparent 62% 100%),
+        radial-gradient(circle at 50% 75%, #fbbf24 0 44%, transparent 45%);
+      border-radius:0;
+    }
+    .eclipse-preview-time{
+      color:var(--fg);
+      font-size:.88rem;
+      font-weight:700;
+      line-height:1.25;
+      padding-top:1px;
+    }
+    .eclipse-preview-copy{
+      display:grid;
+      gap:2px;
+    }
+    .eclipse-preview-label{
+      color:var(--fg);
+      font-size:.84rem;
+      font-weight:700;
+      line-height:1.25;
+    }
+    .eclipse-preview-text,
+    .eclipse-preview-note{
+      color:var(--muted);
+      font-size:.77rem;
+      line-height:1.42;
     }
     .moon-nodes-figure{
       width:min(100%, 560px);
@@ -1953,19 +2523,21 @@
     .calendar-timeline{
       width:100%;
       display:grid;
-      gap:10px;
+      gap:6px;
     }
     .calendar-item{
       position:relative;
       display:grid;
       grid-template-columns:auto 1fr;
-      gap:10px;
-      padding:10px 0 10px 2px;
+      gap:8px;
+      padding:7px 0 7px 2px;
       border-top:1px solid var(--border);
       text-align:left;
       min-width:0;
     }
     .calendar-item-content{
+      display:grid;
+      gap:2px;
       min-width:0;
     }
     .calendar-dot{
@@ -2014,28 +2586,29 @@
     .calendar-date{
       color:var(--muted);
       font-size:.78rem;
-      margin-bottom:2px;
+      line-height:1.2;
     }
     .calendar-title{
       font-weight:700;
       color:var(--fg);
-      margin-bottom:3px;
+      line-height:1.2;
     }
     .calendar-meta{
       display:inline-block;
-      margin-bottom:4px;
-      padding:2px 7px;
+      margin-bottom:1px;
+      padding:1px 6px;
       border-radius:999px;
       background:rgba(0,0,0,.06);
       color:var(--muted);
       font-size:.72rem;
+      line-height:1.2;
       max-width:100%;
       overflow-wrap:anywhere;
     }
     .calendar-note{
       color:var(--muted);
       font-size:.82rem;
-      line-height:1.35;
+      line-height:1.28;
       overflow-wrap:anywhere;
     }
     .calendar-event-trigger{
@@ -2787,6 +3360,17 @@
       font-size:1rem;
       color:#0f172a;
       white-space:normal;
+      overflow-x:auto;
+    }
+    .card-help-formula-expr.is-katex{
+      font-family:inherit;
+      line-height:1.2;
+    }
+    .card-help-formula-expr.is-katex .katex-display{
+      margin:.1rem 0;
+    }
+    .card-help-formula-expr.is-katex .katex{
+      font-size:1.05em;
     }
     .card-help-formula-note{
       margin-top:5px;

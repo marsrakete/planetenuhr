@@ -35,6 +35,9 @@
     content="Mondphase, Sonnensystem, Sichtbarkeit, Finsternisse und astronomische Ereignisse in einer interaktiven Übersicht."
   />
   <meta name="twitter:image" content="https://marsrakete.github.io/planetenuhr/image_og.jpg" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.18.0/dist/katex.min.css" integrity="sha384-KfwFj/Q/jGrY4ijtfzWyW5NXzT5irvfnTq6aRnH2xPvLzLdi1XyVr7w4l2uwTq0V" crossorigin="anonymous" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.18.0/dist/katex.min.js" integrity="sha384-OE4SMRr5gMJQzKSD08J46vKsKgY8NxVtO1LW+/q3NJ0WHsGsdN4oebgEjwwWuyvG" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.18.0/dist/contrib/auto-render.min.js" integrity="sha384-bjyGPfbij8/NDKJhSGZNP/khQVgtHUE5exjm4Ydllo42FwIgYsdLO2lXGmRBf5Mz" crossorigin="anonymous" onload="window.renderPlanetenuhrHelpMath && window.renderPlanetenuhrHelpMath()"></script>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -158,6 +161,46 @@
       <div class="legend-small" id="solarLegend">
         Heliocentric ecliptic view; distances compressed
       </div>
+    </div>
+
+    <div class="display-container barycenter-card astro-visual-card wide-card" data-help-key="barycenter">
+      <div class="group-title" id="titleBarycenter">Solar barycenter</div>
+      <div id="barycenterMap" class="barycenter-map" aria-label="Top-down solar barycenter view"></div>
+      <div class="barycenter-controls" role="group" aria-label="Barycenter influence mode">
+        <button id="btnBarycenterJupiter" class="barycenter-mode-button" type="button">Jupiter</button>
+        <button id="btnBarycenterJupiterSaturn" class="barycenter-mode-button" type="button">Jupiter + Saturn</button>
+        <button id="btnBarycenterAll" class="barycenter-mode-button" type="button">All planets</button>
+      </div>
+      <div id="barycenterSummary" class="astro-summary barycenter-summary"></div>
+      <div class="legend-small" id="barycenterLegend">Top-down wobble of the Sun around the solar-system barycenter</div>
+    </div>
+
+    <div class="display-container lagrange-card astro-visual-card" data-help-key="lagrange">
+      <div class="group-title" id="titleLagrange">Lagrange points</div>
+      <div id="lagrangeMap" class="astro-disc" aria-label="Sun-Earth Lagrange points"></div>
+      <div id="lagrangeSummary" class="astro-summary"></div>
+      <div class="legend-small" id="lagrangeLegend">Sun-Earth geometry schematic; L1/L2 distances exaggerated for readability</div>
+    </div>
+
+    <div class="display-container analemma-card astro-visual-card" data-help-key="analemma">
+      <div class="group-title" id="titleAnalemma">Analemma</div>
+      <div id="analemmaMap" class="analemma-map" aria-label="Analemma for the selected location"></div>
+      <div id="analemmaSummary" class="astro-summary"></div>
+      <div class="legend-small" id="analemmaLegend">12:00 local clock time; figure depends on year and selected location</div>
+    </div>
+
+    <div class="display-container exoplanet-card astro-visual-card wide-card" data-help-key="exoplanets">
+      <div class="group-title" id="titleExoplanets">Exoplanet comparison</div>
+      <div id="exoplanetComparison" class="exoplanet-comparison" aria-label="Comparison of selected exoplanet systems"></div>
+      <div id="exoplanetSummary" class="astro-summary exoplanet-summary"></div>
+      <div class="legend-small" id="exoplanetLegend">Each panel is normalized to its own outer orbit; motion is schematic</div>
+    </div>
+
+    <div class="display-container polaris-card astro-visual-card" data-help-key="polaris">
+      <div class="group-title" id="titlePolaris">Polaris & north celestial pole</div>
+      <div id="polarisMap" class="astro-disc" aria-label="Polaris and the north celestial pole"></div>
+      <div id="polarisSummary" class="astro-summary"></div>
+      <div class="legend-small" id="polarisLegend">North horizon view for the selected location; Polaris is shown with enlarged offset</div>
     </div>
 
     <div class="display-container small-bodies-card wide-card" data-help-key="small_bodies">
@@ -308,6 +351,37 @@
     <template id="summaryTextTemplate">
       <div class="summary-text" data-summary-text></div>
     </template>
+    <template id="eclipsePreviewTemplate">
+      <section class="eclipse-preview-card">
+        <div class="eclipse-preview-head">
+          <div class="eclipse-preview-kicker" data-eclipse-preview-kicker></div>
+          <div class="eclipse-preview-title" data-eclipse-preview-title></div>
+          <div class="eclipse-preview-meta" data-eclipse-preview-meta></div>
+        </div>
+        <div class="eclipse-preview-warning" data-eclipse-preview-warning hidden>
+          <span class="eclipse-preview-warning-icon" aria-hidden="true">☀</span>
+          <div class="eclipse-preview-warning-copy">
+            <div class="eclipse-preview-warning-title" data-eclipse-preview-warning-title></div>
+            <div class="eclipse-preview-warning-text" data-eclipse-preview-warning-text></div>
+          </div>
+        </div>
+        <div class="eclipse-preview-timeline" data-eclipse-preview-timeline></div>
+        <div class="eclipse-preview-note" data-eclipse-preview-note></div>
+      </section>
+    </template>
+    <template id="eclipsePreviewRowTemplate">
+      <div class="eclipse-preview-row">
+        <div class="eclipse-preview-icon-wrap">
+          <span class="eclipse-preview-line" data-eclipse-preview-line></span>
+          <span class="eclipse-preview-icon" data-eclipse-preview-icon></span>
+        </div>
+        <div class="eclipse-preview-time" data-eclipse-preview-time></div>
+        <div class="eclipse-preview-copy">
+          <div class="eclipse-preview-label" data-eclipse-preview-label></div>
+          <div class="eclipse-preview-text" data-eclipse-preview-text></div>
+        </div>
+      </div>
+    </template>
     <template id="satelliteSummaryItemTemplate">
       <div>
         <strong data-satellite-name></strong><br>
@@ -363,6 +437,16 @@
         <div class="calendar-meta" data-calendar-detail-meta></div>
         <div class="calendar-note" data-calendar-detail-note></div>
       </div>
+    </template>
+    <template id="exoplanetSystemTemplate">
+      <article class="exoplanet-system-panel">
+        <div class="exoplanet-system-head">
+          <div class="exoplanet-system-title" data-exoplanet-name></div>
+          <div class="exoplanet-system-meta" data-exoplanet-meta></div>
+        </div>
+        <div class="exoplanet-system-map" data-exoplanet-map></div>
+        <div class="exoplanet-system-caption" data-exoplanet-caption></div>
+      </article>
     </template>
 
     <div class="display-container inner-phases-card" data-help-key="inner_phases">
@@ -752,6 +836,7 @@
   <script src="extended-calendar-config.js"></script>
   <script src="locations-config.js"></script>
   <script src="eclipse-visibility-config.js"></script>
+  <script src="eclipse-phase-config.js"></script>
   <script>
 
   window.onerror = function(msg, url, line, col, error) {
@@ -766,14 +851,32 @@
     } else if (browserLanguage.startsWith('fr')) {
       lang = 'fr';
     }
+    const initialUrlParams = new URLSearchParams(window.location.search);
+    const requestedLanguageFromUrl = String(initialUrlParams.get('lang') || '').toLowerCase();
+    if (requestedLanguageFromUrl === 'de') {
+      lang = 'de';
+    } else if (requestedLanguageFromUrl === 'en') {
+      lang = 'en';
+    } else if (requestedLanguageFromUrl === 'fr') {
+      lang = 'fr';
+    }
 
     const translations = window.PLANETENUHR_TRANSLATIONS || {};
     const t = translations[lang] || translations.en || {};
     const cardHelp = window.PLANETENUHR_CARD_HELP || {};
     const calendarEventsByLang = window.PLANETENUHR_EVENTS || {};
     const smallBodiesConfig = window.PLANETENUHR_SMALL_BODIES || { belts:[], comets:[] };
-    const phenomenaConfig = window.PLANETENUHR_PHENOMENA || { meteorStreams:[], constellations:[], spacecraft:[], retrogradeBodies:[], planetPhaseBodies:[], satellites:[] };
+    const phenomenaConfig = window.PLANETENUHR_PHENOMENA || {
+      meteorStreams:[],
+      constellations:[],
+      spacecraft:[],
+      exoplanetSystems:[],
+      retrogradeBodies:[],
+      planetPhaseBodies:[],
+      satellites:[]
+    };
     const bskyFeeds = window.PLANETENUHR_BSKY_FEEDS || [];
+    const eclipsePhaseConfig = window.PLANETENUHR_ECLIPSE_PHASES || [];
     let locations = [];
     if (Array.isArray(window.PLANETENUHR_LOCATIONS) && window.PLANETENUHR_LOCATIONS.length) {
       locations = window.PLANETENUHR_LOCATIONS;
@@ -791,6 +894,8 @@
     let showAllCalendarEvents = false;
     let activeCalendarView = 'list';
     let selectedCalendarEventKey = '';
+    let barycenterInfluenceMode = 'all';
+    let requestedCardKey = '';
 
     function currentCardHelpPack(){
       return cardHelp[lang] || cardHelp.en || { sections:{}, cards:{} };
@@ -831,6 +936,140 @@
       fragment.querySelector('[data-summary-value]').textContent = value;
       target.appendChild(fragment);
     }
+
+    /**
+     * Converts the mixed HTML-plus-symbol notation used in help formulas into
+     * KaTeX-friendly TeX input.
+     * @param {string} formulaHtml Formula source from the help config.
+     * @returns {string} Normalized TeX string.
+     */
+    function helpFormulaHtmlToLatex(formulaHtml){
+      const wrapper = document.createElement('div');
+      wrapper.innerHTML = formulaHtml;
+      const latex = helpFormulaNodeToLatex(wrapper);
+      return latex.replace(/\s+/g, ' ').trim();
+    }
+
+    /**
+     * Converts a help-formula DOM subtree into TeX notation.
+     * @param {Node} node DOM node from the temporary help-formula wrapper.
+     * @returns {string} Partial TeX string for this subtree.
+     */
+    function helpFormulaNodeToLatex(node){
+      let latex = '';
+
+      node.childNodes.forEach(childNode => {
+        if (childNode.nodeType === Node.TEXT_NODE) {
+          latex += helpFormulaTextToLatex(childNode.textContent || '');
+          return;
+        }
+
+        if (childNode.nodeType !== Node.ELEMENT_NODE) {
+          return;
+        }
+
+        const tagName = childNode.tagName.toLowerCase();
+        if (tagName === 'sub') {
+          latex += '_{' + helpFormulaNodeToLatex(childNode) + '}';
+          return;
+        }
+
+        if (tagName === 'sup') {
+          latex += '^{' + helpFormulaNodeToLatex(childNode) + '}';
+          return;
+        }
+
+        if (tagName === 'br') {
+          latex += ' ';
+          return;
+        }
+
+        latex += helpFormulaNodeToLatex(childNode);
+      });
+
+      return latex;
+    }
+
+    /**
+     * Rewrites decoded symbols and plain-text operators into KaTeX-friendly TeX.
+     * @param {string} text Plain text fragment from a help formula.
+     * @returns {string} Converted TeX fragment.
+     */
+    function helpFormulaTextToLatex(text){
+      let latex = text;
+      latex = latex.replace(/\u00a0/g, ' ');
+      latex = latex.replace(/Δ/g, '\\Delta ');
+      latex = latex.replace(/δ/g, '\\delta ');
+      latex = latex.replace(/λ/g, '\\lambda ');
+      latex = latex.replace(/φ/g, '\\phi ');
+      latex = latex.replace(/ϕ/g, '\\phi ');
+      latex = latex.replace(/ϖ/g, '\\varpi ');
+      latex = latex.replace(/π/g, '\\pi ');
+      latex = latex.replace(/√/g, '\\sqrt');
+      latex = latex.replace(/·/g, '\\cdot ');
+      latex = latex.replace(/≈/g, '\\approx ');
+      latex = latex.replace(/∝/g, '\\propto ');
+      latex = latex.replace(/±/g, '\\pm ');
+      latex = latex.replace(/☉/g, '\\odot ');
+      latex = latex.replace(/°/g, '^\\circ ');
+      latex = latex.replace(/\bcos\b/g, '\\cos');
+      latex = latex.replace(/\bsin\b/g, '\\sin');
+      latex = latex.replace(/\blog\b/g, '\\log');
+      latex = latex.replace(/\bmin\b/g, '\\min');
+      latex = latex.replace(/\bmod\b/g, '\\bmod');
+      latex = latex.replace(/\bsigned\b/g, '\\operatorname{signed}');
+      latex = latex.replace(/\bclamp\b/g, '\\operatorname{clamp}');
+      latex = latex.replace(/(^|[^\\])frac\b/g, (match, prefix) => {
+        return prefix + '\\operatorname{frac}';
+      });
+      return latex;
+    }
+
+    /**
+     * Renders all help-formula expressions inside one popup with KaTeX when the
+     * library is available. If KaTeX is not loaded or parsing fails, the original
+     * text stays visible as a fallback.
+     * @param {ParentNode} root Popup root that contains help-formula elements.
+     * @returns {void}
+     */
+    function renderHelpMathInElement(root){
+      if (!root || !window.katex) {
+        return;
+      }
+
+      root.querySelectorAll('.card-help-formula-expr').forEach(node => {
+        const sourceHtml = node.innerHTML;
+        const latex = helpFormulaHtmlToLatex(sourceHtml);
+
+        if (!latex) {
+          return;
+        }
+
+        try {
+          window.katex.render(latex, node, {
+            throwOnError: false,
+            displayMode: true
+          });
+          node.classList.add('is-katex');
+        } catch (error) {
+          node.classList.remove('is-katex');
+        }
+      });
+    }
+
+    /**
+     * Renders every currently mounted help popup formula with KaTeX.
+     * This function is exposed globally so the deferred KaTeX loader can trigger
+     * it after the library becomes available.
+     * @returns {void}
+     */
+    function renderPlanetenuhrHelpMath(){
+      document.querySelectorAll('.card-help-popup').forEach(popup => {
+        renderHelpMathInElement(popup);
+      });
+    }
+
+    window.renderPlanetenuhrHelpMath = renderPlanetenuhrHelpMath;
 
     function renderCardHelpEntry(entry, sections, cardKey){
       let detailItems = [];
@@ -921,6 +1160,7 @@
         const popup = document.createElement('div');
         popup.className = 'card-help-popup';
         popup.innerHTML = renderCardHelpEntry(entry, sections, key);
+        renderHelpMathInElement(popup);
         wrap.appendChild(button);
         wrap.appendChild(popup);
         card.appendChild(wrap);
@@ -976,6 +1216,32 @@
       if (titleMoonNodes) titleMoonNodes.textContent = t.title_moon_nodes || 'Moon nodes & eclipse season';
       const moonNodesLegend = document.getElementById('moonNodesLegend');
       if (moonNodesLegend) moonNodesLegend.textContent = t.legend_moon_nodes || 'Node geometry and approximate eclipse-season cycle';
+      const titleBarycenter = document.getElementById('titleBarycenter');
+      if (titleBarycenter) titleBarycenter.textContent = t.title_barycenter || 'Solar barycenter';
+      const barycenterLegend = document.getElementById('barycenterLegend');
+      if (barycenterLegend) barycenterLegend.textContent = t.legend_barycenter || 'Top-down wobble of the Sun around the solar-system barycenter';
+      const btnBarycenterJupiter = document.getElementById('btnBarycenterJupiter');
+      if (btnBarycenterJupiter) btnBarycenterJupiter.textContent = t.barycenter_mode_jupiter || 'Jupiter';
+      const btnBarycenterJupiterSaturn = document.getElementById('btnBarycenterJupiterSaturn');
+      if (btnBarycenterJupiterSaturn) btnBarycenterJupiterSaturn.textContent = t.barycenter_mode_jupiter_saturn || 'Jupiter + Saturn';
+      const btnBarycenterAll = document.getElementById('btnBarycenterAll');
+      if (btnBarycenterAll) btnBarycenterAll.textContent = t.barycenter_mode_all || 'All planets';
+      const titleLagrange = document.getElementById('titleLagrange');
+      if (titleLagrange) titleLagrange.textContent = t.title_lagrange || 'Lagrange points';
+      const lagrangeLegend = document.getElementById('lagrangeLegend');
+      if (lagrangeLegend) lagrangeLegend.textContent = t.legend_lagrange || 'Sun-Earth geometry schematic; L1/L2 distances exaggerated for readability';
+      const titleAnalemma = document.getElementById('titleAnalemma');
+      if (titleAnalemma) titleAnalemma.textContent = t.title_analemma || 'Analemma';
+      const analemmaLegend = document.getElementById('analemmaLegend');
+      if (analemmaLegend) analemmaLegend.textContent = t.legend_analemma || '12:00 local clock time; figure depends on year and selected location';
+      const titleExoplanets = document.getElementById('titleExoplanets');
+      if (titleExoplanets) titleExoplanets.textContent = t.title_exoplanets || 'Exoplanet comparison';
+      const exoplanetLegend = document.getElementById('exoplanetLegend');
+      if (exoplanetLegend) exoplanetLegend.textContent = t.legend_exoplanets || 'Each panel is normalized to its own outer orbit; motion is schematic';
+      const titlePolaris = document.getElementById('titlePolaris');
+      if (titlePolaris) titlePolaris.textContent = t.title_polaris || 'Polaris & north celestial pole';
+      const polarisLegend = document.getElementById('polarisLegend');
+      if (polarisLegend) polarisLegend.textContent = t.legend_polaris || 'North horizon view for the selected location; Polaris is shown with enlarged offset';
       const titleConjunctions = document.getElementById('titleConjunctions');
       if (titleConjunctions) titleConjunctions.textContent = t.title_conjunctions || 'Planetary conjunctions';
       const conjunctionLegend = document.getElementById('conjunctionLegend');
@@ -1303,29 +1569,120 @@
     }
 
     /**
-     * Applies the initial date and place parameters from the current URL.
+     * Normalizes a card token from the URL so readable aliases and help keys
+     * can be matched without case or separator issues.
+     * @param {string} rawValue Raw card query parameter.
+     * @returns {string} Normalized card token, or an empty string when absent.
+     */
+    function normalizeCardToken(rawValue){
+      if (!rawValue) {
+        return '';
+      }
+      return String(rawValue)
+        .trim()
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '_')
+        .replace(/^_+/, '')
+        .replace(/_+$/, '');
+    }
+
+    /**
+     * Adds stable anchor ids to dashboard cards based on their help keys.
+     * This allows URL parameters to scroll directly to a specific card.
+     * @returns {void}
+     */
+    function applyCardAnchorIds(){
+      document.querySelectorAll('.display-container[data-help-key]').forEach(card => {
+        const helpKey = card.getAttribute('data-help-key');
+        const normalizedKey = normalizeCardToken(helpKey);
+        if (!normalizedKey) {
+          return;
+        }
+        if (!card.id) {
+          card.id = 'card-' + normalizedKey;
+        }
+      });
+    }
+
+    /**
+     * Resolves a dashboard card from the `card` URL parameter.
+     * Supported values are help keys such as `moon_nodes` or generated ids such
+     * as `card-moon_nodes`.
+     * @param {string} rawValue Raw card query parameter.
+     * @returns {HTMLElement|null} Matching card element, or null when not found.
+     */
+    function cardElementFromParameter(rawValue){
+      const normalized = normalizeCardToken(rawValue);
+      if (!normalized) {
+        return null;
+      }
+      const cards = Array.from(document.querySelectorAll('.display-container[data-help-key]'));
+      let index = 0;
+      while (index < cards.length) {
+        const card = cards[index];
+        const helpKey = normalizeCardToken(card.getAttribute('data-help-key'));
+        const cardId = normalizeCardToken(card.id);
+        if (helpKey === normalized) {
+          return card;
+        }
+        if (cardId === normalized) {
+          return card;
+        }
+        index += 1;
+      }
+      return null;
+    }
+
+    /**
+     * Scrolls the page to the card requested in the URL, if one was supplied.
+     * The scroll is delayed until masonry layout has stabilized so the target
+     * position remains correct.
+     * @returns {void}
+     */
+    function scrollToRequestedCard(){
+      if (!requestedCardKey) {
+        return;
+      }
+      const card = cardElementFromParameter(requestedCardKey);
+      if (!card) {
+        return;
+      }
+      card.scrollIntoView({
+        behavior:'smooth',
+        block:'start',
+        inline:'nearest'
+      });
+    }
+
+    /**
+     * Applies the initial date, place and card parameters from the current URL.
      * This runs once during startup before the first render so deep links can
-     * open directly on a specific day and city.
+     * open directly on a specific day, city and dashboard card.
      * @returns {void}
      */
     function applyInitialUrlState(){
-      const params = new URLSearchParams(window.location.search);
-      const requestedDate = parseDateParameter(params.get('date'));
+      const requestedDate = parseDateParameter(initialUrlParams.get('date'));
       if (requestedDate) {
         const today = new Date();
         today.setHours(0, 0, 0, 0);
         const differenceMs = requestedDate.getTime() - today.getTime();
         solarDayOffset = Math.round(differenceMs / 86400000);
       }
-      const requestedLocation = locationFromParameter(params.get('place'));
+      const requestedLocation = locationFromParameter(initialUrlParams.get('place'));
       if (requestedLocation) {
         selectedLocationKey = requestedLocation.key;
+      }
+      const requestedCard = normalizeCardToken(initialUrlParams.get('card'));
+      if (requestedCard) {
+        requestedCardKey = requestedCard;
       }
     }
 
     /**
-     * Writes the current date and place into the browser URL without navigating.
-     * The query parameters use `date=YYYYMMDD` and `place=<City Name>`.
+     * Writes the current date, place, language and requested card into the
+     * browser URL without navigating.
+     * The query parameters use `date=YYYYMMDD`, `place=<City Name>`,
+     * `lang=<de|en|fr>` and `card=<help_key>`.
      * @returns {void}
      */
     function syncUrlState(){
@@ -1338,6 +1695,16 @@
         url.searchParams.set('place', location.name);
       } else {
         url.searchParams.delete('place');
+      }
+      if (lang) {
+        url.searchParams.set('lang', lang);
+      } else {
+        url.searchParams.delete('lang');
+      }
+      if (requestedCardKey) {
+        url.searchParams.set('card', requestedCardKey);
+      } else {
+        url.searchParams.delete('card');
       }
       const nextUrl = url.pathname + url.search + url.hash;
       history.replaceState(null, '', nextUrl);
@@ -1541,8 +1908,8 @@
         'dusseldorf', 'dortmund', 'essen', 'leipzig', 'reykjavik', 'dublin',
         'london', 'amsterdam', 'brussels', 'paris', 'zurich', 'vienna',
         'prague', 'warsaw', 'copenhagen', 'oslo', 'stockholm', 'helsinki',
-        'lisbon', 'madrid', 'barcelona', 'bilbao', 'cadiz', 'malaga',
-        'gibraltar', 'rome', 'athens'
+        'lisbon', 'madrid', 'barcelona', 'bilbao', 'bordeaux', 'grenoble', 'cadiz', 'malaga',
+        'gibraltar', 'marseille', 'rome', 'athens'
       ].includes(location.key)) {
         tags.push('europe');
       }
@@ -1761,6 +2128,488 @@
         return entry.title.en;
       }
       return t.calendar_filter_eclipse || 'Eclipses';
+    }
+
+    /**
+     * Parses a `YYYY-MM-DD` date key into a local midday Date object.
+     * Midday avoids accidental day shifts when downstream calculations only need
+     * the calendar date and not the exact event second.
+     * @param {string} dateKey Date key in `YYYY-MM-DD` format.
+     * @returns {Date|null} Parsed local date or null for invalid input.
+     */
+    function parseDateKeyToDate(dateKey){
+      if (!dateKey || typeof dateKey !== 'string') {
+        return null;
+      }
+      const parts = dateKey.split('-');
+      if (parts.length !== 3) {
+        return null;
+      }
+      const year = Number(parts[0]);
+      const month = Number(parts[1]);
+      const day = Number(parts[2]);
+      if (!Number.isFinite(year) || !Number.isFinite(month) || !Number.isFinite(day)) {
+        return null;
+      }
+      return new Date(year, month - 1, day, 12, 0, 0, 0);
+    }
+
+    /**
+     * Returns the whole-calendar-day difference between two dates.
+     * Positive values mean `toDate` lies in the future relative to `fromDate`.
+     * @param {Date} fromDate Start date.
+     * @param {Date} toDate Target date.
+     * @returns {number} Integer calendar-day difference.
+     */
+    function calendarDayDifference(fromDate, toDate){
+      const start = new Date(fromDate.getFullYear(), fromDate.getMonth(), fromDate.getDate());
+      const target = new Date(toDate.getFullYear(), toDate.getMonth(), toDate.getDate());
+      return Math.round((target.getTime() - start.getTime()) / 86400000);
+    }
+
+    /**
+     * Finds the local phase-profile config for an exact curated eclipse date.
+     * @param {Date} date Calendar date to inspect.
+     * @returns {object|null} Matching phase-profile config entry or null.
+     */
+    function eclipsePhaseEntryForDate(date){
+      const dateKey = formatDateKey(date);
+      let index = 0;
+      while (index < eclipsePhaseConfig.length) {
+        const entry = eclipsePhaseConfig[index];
+        if (entry && entry.date === dateKey) {
+          return entry;
+        }
+        index += 1;
+      }
+      return null;
+    }
+
+    /**
+     * Checks whether the simplified local visibility means the eclipse is worth
+     * previewing for the selected city.
+     * @param {string} statusKey Simplified local visibility status.
+     * @returns {boolean} True when the event should get a local timeline preview.
+     */
+    function eclipseVisibilityIsPreviewable(statusKey){
+      if (statusKey === 'total') {
+        return true;
+      }
+      if (statusKey === 'annular') {
+        return true;
+      }
+      if (statusKey === 'hybrid') {
+        return true;
+      }
+      if (statusKey === 'partial') {
+        return true;
+      }
+      if (statusKey === 'partial_low') {
+        return true;
+      }
+      if (statusKey === 'penumbral') {
+        return true;
+      }
+      return false;
+    }
+
+    /**
+     * Chooses one coarse local timing profile for the selected city.
+     * Stage 1 keeps this deliberately broad and event-based instead of trying to
+     * simulate exact local contact times for every location.
+     * @param {object} location Selected location object.
+     * @returns {string} Timing-profile key.
+     */
+    function eclipseTimingProfileForLocation(location){
+      if (!location || !location.key) {
+        return 'europe';
+      }
+
+      if ([
+        'marseille', 'grenoble', 'barcelona', 'rome', 'athens', 'istanbul',
+        'cadiz', 'malaga', 'gibraltar'
+      ].includes(location.key)) {
+        return 'mediterranean_europe';
+      }
+
+      if ([
+        'berlin', 'hamburg', 'munich', 'cologne', 'frankfurt',
+        'stuttgart', 'dusseldorf', 'dortmund', 'essen', 'leipzig',
+        'zurich', 'vienna', 'prague', 'warsaw', 'copenhagen'
+      ].includes(location.key)) {
+        return 'central_europe';
+      }
+
+      if ([
+        'bordeaux', 'bilbao', 'lisbon', 'madrid', 'paris',
+        'brussels', 'london', 'dublin', 'amsterdam', 'reykjavik',
+        'oslo', 'stockholm', 'helsinki'
+      ].includes(location.key)) {
+        return 'west_europe';
+      }
+
+      return 'europe';
+    }
+
+    /**
+     * Resolves the configured phase list for one city and one curated eclipse.
+     * @param {object} phaseEntry Curated phase-profile config entry.
+     * @param {object} location Selected location object.
+     * @returns {Array<object>} Matching phase list.
+     */
+    function eclipsePhasesForLocationProfile(phaseEntry, location){
+      if (!phaseEntry || !phaseEntry.profiles) {
+        return [];
+      }
+
+      const profileKey = eclipseTimingProfileForLocation(location);
+      if (phaseEntry.profiles[profileKey]) {
+        return phaseEntry.profiles[profileKey];
+      }
+      if (phaseEntry.profiles.europe) {
+        return phaseEntry.profiles.europe;
+      }
+      const profileKeys = Object.keys(phaseEntry.profiles);
+      if (profileKeys.length) {
+        return phaseEntry.profiles[profileKeys[0]];
+      }
+      return [];
+    }
+
+    /**
+     * Converts a `HH:mm` string into minutes since midnight.
+     * @param {string} value Time string in `HH:mm` format.
+     * @returns {number} Minutes since midnight, or `NaN` for invalid input.
+     */
+    function timeStringToMinutes(value){
+      if (!value || typeof value !== 'string') {
+        return Number.NaN;
+      }
+      const parts = value.split(':');
+      if (parts.length !== 2) {
+        return Number.NaN;
+      }
+      const hour = Number(parts[0]);
+      const minute = Number(parts[1]);
+      if (!Number.isFinite(hour) || !Number.isFinite(minute)) {
+        return Number.NaN;
+      }
+      return hour * 60 + minute;
+    }
+
+    /**
+     * Finds the next curated local eclipse preview within ten calendar days.
+     * @param {Date} date Currently selected dashboard date.
+     * @param {object} location Selected location object.
+     * @returns {object|null} Preview payload or null when no nearby local event applies.
+     */
+    function upcomingLocalEclipsePreview(date, location){
+      let bestPreview = null;
+      let index = 0;
+
+      while (index < eclipsePhaseConfig.length) {
+        const phaseEntry = eclipsePhaseConfig[index];
+        const eventDate = parseDateKeyToDate(phaseEntry.date);
+        if (eventDate) {
+          const daysUntil = calendarDayDifference(date, eventDate);
+          if (daysUntil >= 0 && daysUntil <= 10) {
+            const visibility = eclipseVisibilityForLocation(eventDate, location);
+            if (visibility && eclipseVisibilityIsPreviewable(visibility.status)) {
+              const phases = eclipsePhasesForLocationProfile(phaseEntry, location);
+              if (phases.length) {
+                if (!bestPreview || daysUntil < bestPreview.daysUntil) {
+                  bestPreview = {
+                    phaseEntry,
+                    eventDate,
+                    daysUntil,
+                    visibility,
+                    phases
+                  };
+                }
+              }
+            }
+          }
+        }
+        index += 1;
+      }
+
+      return bestPreview;
+    }
+
+    /**
+     * Returns the localized label for one preview phase row.
+     * @param {string} phaseKind Internal phase key.
+     * @returns {string} Localized row label.
+     */
+    function eclipsePreviewPhaseLabel(phaseKind){
+      if (phaseKind === 'partial_start') {
+        return t.eclipse_preview_partial_start || 'Partial eclipse begins';
+      }
+      if (phaseKind === 'maximum') {
+        return t.eclipse_preview_maximum || 'Maximum eclipse';
+      }
+      if (phaseKind === 'partial_end') {
+        return t.eclipse_preview_partial_end || 'Partial eclipse ends';
+      }
+      if (phaseKind === 'penumbral_start') {
+        return t.eclipse_preview_penumbral_start || 'Penumbral phase begins';
+      }
+      if (phaseKind === 'penumbral_end') {
+        return t.eclipse_preview_penumbral_end || 'Penumbral phase ends';
+      }
+      if (phaseKind === 'sunset') {
+        return t.eclipse_preview_sunset || 'Sunset';
+      }
+      return t.eclipse_preview_phase || 'Phase';
+    }
+
+    /**
+     * Returns a short localized explanation for one preview phase row.
+     * @param {string} phaseKind Internal phase key.
+     * @param {string} eventKind Either `solar` or `lunar`.
+     * @param {string} visibilityStatus Simplified local visibility status.
+     * @returns {string} Localized descriptive sentence.
+     */
+    function eclipsePreviewPhaseText(phaseKind, eventKind, visibilityStatus){
+      if (phaseKind === 'partial_start') {
+        if (eventKind === 'solar') {
+          return t.eclipse_preview_partial_start_solar_text || 'First contact: the Moon touches the edge of the Sun.';
+        }
+        return t.eclipse_preview_partial_start_lunar_text || 'The Moon begins to enter Earth’s dark shadow.';
+      }
+      if (phaseKind === 'maximum') {
+        if (visibilityStatus === 'partial_low') {
+          return t.eclipse_preview_maximum_low_text || 'Maximum occurs very low above the horizon.';
+        }
+        return t.eclipse_preview_maximum_text || 'The eclipse reaches its strongest visible phase here.';
+      }
+      if (phaseKind === 'partial_end') {
+        if (eventKind === 'solar') {
+          return t.eclipse_preview_partial_end_solar_text || 'Last contact: the Moon leaves the Sun’s disk again.';
+        }
+        return t.eclipse_preview_partial_end_lunar_text || 'The Moon leaves Earth’s dark shadow again.';
+      }
+      if (phaseKind === 'penumbral_start') {
+        return t.eclipse_preview_penumbral_start_text || 'The Moon enters Earth’s penumbra.';
+      }
+      if (phaseKind === 'penumbral_end') {
+        return t.eclipse_preview_penumbral_end_text || 'The Moon leaves Earth’s penumbra again.';
+      }
+      if (phaseKind === 'sunset') {
+        return t.eclipse_preview_sunset_text || 'The Sun sets; any remaining solar eclipse phase is no longer visible.';
+      }
+      return '';
+    }
+
+    /**
+     * Returns one small icon token for the preview phase timeline.
+     * @param {string} phaseKind Internal phase key.
+     * @param {string} eventKind Either `solar` or `lunar`.
+     * @returns {string} CSS token for the phase icon.
+     */
+    function eclipsePreviewIconToken(phaseKind, eventKind){
+      if (phaseKind === 'maximum') {
+        if (eventKind === 'solar') {
+          return 'maximum-solar';
+        }
+        return 'maximum-lunar';
+      }
+      if (phaseKind === 'partial_start') {
+        if (eventKind === 'solar') {
+          return 'partial-solar';
+        }
+        return 'partial-lunar';
+      }
+      if (phaseKind === 'partial_end') {
+        if (eventKind === 'solar') {
+          return 'partial-solar';
+        }
+        return 'partial-lunar';
+      }
+      if (phaseKind === 'penumbral_start' || phaseKind === 'penumbral_end') {
+        return 'penumbral';
+      }
+      if (phaseKind === 'sunset') {
+        return 'sunset';
+      }
+      return 'partial-solar';
+    }
+
+    /**
+     * Builds the visible phase rows for the local ten-day eclipse preview.
+     * Solar events automatically insert the local sunset when it happens during
+     * the event window.
+     * @param {object} preview Preview payload from `upcomingLocalEclipsePreview`.
+     * @param {object} location Selected location object.
+     * @returns {Array<object>} Normalized row items for rendering.
+     */
+    function eclipsePreviewRows(preview, location){
+      const rows = [];
+      let index = 0;
+
+      while (index < preview.phases.length) {
+        const phase = preview.phases[index];
+        rows.push({
+          kind: phase.kind,
+          time: phase.time
+        });
+        index += 1;
+      }
+
+      if (preview.phaseEntry.kind === 'solar') {
+        const sunset = solarEventUtc(preview.eventDate, location.latitude, location.longitude, 90.833, false);
+        if (sunset) {
+          const sunsetText = fmtTimeOnly(sunset);
+          const sunsetMinutes = timeStringToMinutes(sunsetText);
+          if (Number.isFinite(sunsetMinutes)) {
+            let insertIndex = -1;
+            let rowIndex = 0;
+            while (rowIndex < rows.length) {
+              const rowMinutes = timeStringToMinutes(rows[rowIndex].time);
+              if (Number.isFinite(rowMinutes) && sunsetMinutes < rowMinutes) {
+                insertIndex = rowIndex;
+                break;
+              }
+              rowIndex += 1;
+            }
+            if (insertIndex === -1) {
+              let lastRowMinutes = Number.NaN;
+              if (rows.length) {
+                lastRowMinutes = timeStringToMinutes(rows[rows.length - 1].time);
+              }
+              if (Number.isFinite(lastRowMinutes) && sunsetMinutes < lastRowMinutes) {
+                insertIndex = rows.length - 1;
+              }
+            }
+            if (insertIndex >= 0) {
+              rows.splice(insertIndex, 0, {
+                kind: 'sunset',
+                time: sunsetText
+              });
+            }
+          }
+        }
+      }
+
+      let normalizedIndex = 0;
+      while (normalizedIndex < rows.length) {
+        rows[normalizedIndex].label = eclipsePreviewPhaseLabel(rows[normalizedIndex].kind);
+        rows[normalizedIndex].text = eclipsePreviewPhaseText(
+          rows[normalizedIndex].kind,
+          preview.phaseEntry.kind,
+          preview.visibility.status
+        );
+        rows[normalizedIndex].iconToken = eclipsePreviewIconToken(rows[normalizedIndex].kind, preview.phaseEntry.kind);
+        normalizedIndex += 1;
+      }
+
+      return rows;
+    }
+
+    /**
+     * Appends the local ten-day eclipse preparation timeline to the Moon-node
+     * summary when a curated nearby event exists for the selected city.
+     * @param {HTMLElement} summary Summary container inside the Moon-nodes card.
+     * @param {Date} date Currently selected dashboard date.
+     * @param {object} location Selected location object.
+     * @returns {void}
+     */
+    function appendEclipsePreview(summary, date, location){
+      if (!summary) {
+        return;
+      }
+
+      const preview = upcomingLocalEclipsePreview(date, location);
+      if (!preview) {
+        return;
+      }
+
+      const fragment = cloneTemplate('eclipsePreviewTemplate');
+      if (!fragment) {
+        return;
+      }
+
+      const card = fragment.querySelector('.eclipse-preview-card');
+      const kicker = fragment.querySelector('[data-eclipse-preview-kicker]');
+      const title = fragment.querySelector('[data-eclipse-preview-title]');
+      const meta = fragment.querySelector('[data-eclipse-preview-meta]');
+      const warning = fragment.querySelector('[data-eclipse-preview-warning]');
+      const warningTitle = fragment.querySelector('[data-eclipse-preview-warning-title]');
+      const warningText = fragment.querySelector('[data-eclipse-preview-warning-text]');
+      const timeline = fragment.querySelector('[data-eclipse-preview-timeline]');
+      const note = fragment.querySelector('[data-eclipse-preview-note]');
+
+      if (!card || !timeline) {
+        return;
+      }
+
+      const rows = eclipsePreviewRows(preview, location);
+      let rowIndex = 0;
+      while (rowIndex < rows.length) {
+        const rowData = rows[rowIndex];
+        const rowFragment = cloneTemplate('eclipsePreviewRowTemplate');
+        if (rowFragment) {
+          const line = rowFragment.querySelector('[data-eclipse-preview-line]');
+          const icon = rowFragment.querySelector('[data-eclipse-preview-icon]');
+          const time = rowFragment.querySelector('[data-eclipse-preview-time]');
+          const label = rowFragment.querySelector('[data-eclipse-preview-label]');
+          const text = rowFragment.querySelector('[data-eclipse-preview-text]');
+
+          if (line && rowIndex === rows.length - 1) {
+            line.classList.add('is-last');
+          }
+          if (icon) {
+            icon.classList.add('is-' + rowData.iconToken);
+          }
+          if (time) {
+            time.textContent = rowData.time;
+          }
+          if (label) {
+            label.textContent = rowData.label;
+          }
+          if (text) {
+            text.textContent = rowData.text;
+          }
+          timeline.appendChild(rowFragment);
+        }
+        rowIndex += 1;
+      }
+
+      if (kicker) {
+        if (preview.daysUntil === 0) {
+          kicker.textContent = t.eclipse_preview_today || 'Today';
+        } else {
+          let dayUnit = t.eclipse_preview_days || 'days';
+          if (preview.daysUntil === 1) {
+            dayUnit = t.eclipse_preview_day_singular || 'day';
+          }
+          kicker.textContent = (t.eclipse_preview_in_days || 'In') + ' ' + preview.daysUntil + ' ' + dayUnit;
+        }
+      }
+      if (title) {
+        title.textContent = eclipseVisibilityEventTitle(preview.visibility.entry);
+      }
+      if (meta) {
+        meta.textContent = location.name + ' · ' + fmtDateOnly(preview.eventDate) + ' · ' + eclipseVisibilityStatusLabel(preview.visibility.status);
+      }
+      if (warning) {
+        if (preview.phaseEntry.kind === 'solar') {
+          warning.hidden = false;
+        } else {
+          warning.hidden = true;
+        }
+      }
+      if (warningTitle) {
+        warningTitle.textContent = t.eclipse_preview_warning_title || 'Protect your eyes!';
+      }
+      if (warningText) {
+        warningText.textContent = t.eclipse_preview_warning_text || 'Never look at the Sun without proper eye protection. Permanent damage can result. The same applies to cameras and phones.';
+      }
+      if (note) {
+        note.textContent = t.eclipse_preview_note || 'Preparation view: local phase times are curated profile values for the selected city group and may differ by several minutes from a full eclipse calculator.';
+      }
+
+      summary.appendChild(fragment);
     }
 
     /**
@@ -2162,6 +3011,7 @@
           }
           appendSummaryText(summary, approximationNote);
         }
+        appendEclipsePreview(summary, date, location);
       }
     }
 
@@ -3014,6 +3864,7 @@
     let masonryObserver = null;
     let masonryAfterLayoutCallbacks = [];
     let persistentViewportAnchor = null;
+    let suppressMasonryObserver = false;
 
     function visibleGridCards(){
       const grid = document.querySelector('.grid');
@@ -3066,6 +3917,22 @@
       }
       if (masonryFrame) return;
       masonryFrame = requestAnimationFrame(updateMasonryLayout);
+    }
+
+    /**
+     * Temporarily mutes ResizeObserver-driven masonry recalculations during a
+     * larger batch refresh. This avoids repeated anchor corrections while many
+     * cards rebuild one after another.
+     * @param {Function} callback Refresh work to execute while observer relayouts are muted.
+     * @returns {void}
+     */
+    function withSuppressedMasonryObserver(callback){
+      suppressMasonryObserver = true;
+      try {
+        callback();
+      } finally {
+        suppressMasonryObserver = false;
+      }
     }
 
     /**
@@ -3183,7 +4050,9 @@
       } else {
         persistentViewportAnchor = null;
       }
-      refreshDateDrivenTiles();
+      withSuppressedMasonryObserver(() => {
+        refreshDateDrivenTiles();
+      });
       if (anchor) {
         scheduleMasonryLayout(() => {
           restoreViewportAnchor(anchor);
@@ -3194,7 +4063,12 @@
     function initMasonryLayout(){
       const cards = visibleGridCards();
       if ('ResizeObserver' in window) {
-        masonryObserver = new ResizeObserver(scheduleMasonryLayout);
+        masonryObserver = new ResizeObserver(() => {
+          if (suppressMasonryObserver) {
+            return;
+          }
+          scheduleMasonryLayout();
+        });
         cards.forEach(card => masonryObserver.observe(card));
       }
       window.addEventListener('resize', () => {
@@ -4233,6 +5107,96 @@
       return locations[0];
     }
 
+    /**
+     * Returns a localized country name for the location selector.
+     * The location config stores countries in German so the selector can map
+     * them into English and French without duplicating the full city list.
+     * @param {string} countryName Country label from the location config.
+     * @returns {string} Country label in the active UI language.
+     */
+    function localizedCountryName(countryName){
+      if (!countryName) {
+        return '';
+      }
+
+      const countryMap = {
+        Deutschland: { en:'Germany', de:'Deutschland', fr:'Allemagne' },
+        Island: { en:'Iceland', de:'Island', fr:'Islande' },
+        Irland: { en:'Ireland', de:'Irland', fr:'Irlande' },
+        'Vereinigtes Königreich': { en:'United Kingdom', de:'Vereinigtes Königreich', fr:'Royaume-Uni' },
+        Niederlande: { en:'Netherlands', de:'Niederlande', fr:'Pays-Bas' },
+        Belgien: { en:'Belgium', de:'Belgien', fr:'Belgique' },
+        Frankreich: { en:'France', de:'Frankreich', fr:'France' },
+        Schweiz: { en:'Switzerland', de:'Schweiz', fr:'Suisse' },
+        Österreich: { en:'Austria', de:'Österreich', fr:'Autriche' },
+        Tschechien: { en:'Czechia', de:'Tschechien', fr:'Tchéquie' },
+        Polen: { en:'Poland', de:'Polen', fr:'Pologne' },
+        Dänemark: { en:'Denmark', de:'Dänemark', fr:'Danemark' },
+        Norwegen: { en:'Norway', de:'Norwegen', fr:'Norvège' },
+        Schweden: { en:'Sweden', de:'Schweden', fr:'Suède' },
+        Finnland: { en:'Finland', de:'Finnland', fr:'Finlande' },
+        Portugal: { en:'Portugal', de:'Portugal', fr:'Portugal' },
+        Spanien: { en:'Spain', de:'Spanien', fr:'Espagne' },
+        Gibraltar: { en:'Gibraltar', de:'Gibraltar', fr:'Gibraltar' },
+        Italien: { en:'Italy', de:'Italien', fr:'Italie' },
+        Griechenland: { en:'Greece', de:'Griechenland', fr:'Grèce' },
+        Türkei: { en:'Turkey', de:'Türkei', fr:'Turquie' },
+        USA: { en:'USA', de:'USA', fr:'États-Unis' },
+        Kanada: { en:'Canada', de:'Kanada', fr:'Canada' },
+        Mexiko: { en:'Mexico', de:'Mexiko', fr:'Mexique' },
+        Brasilien: { en:'Brazil', de:'Brasilien', fr:'Brésil' },
+        Argentinien: { en:'Argentina', de:'Argentinien', fr:'Argentine' },
+        Chile: { en:'Chile', de:'Chile', fr:'Chili' },
+        Marokko: { en:'Morocco', de:'Marokko', fr:'Maroc' },
+        Ägypten: { en:'Egypt', de:'Ägypten', fr:'Égypte' },
+        Kenia: { en:'Kenya', de:'Kenia', fr:'Kenya' },
+        Südafrika: { en:'South Africa', de:'Südafrika', fr:'Afrique du Sud' },
+        Israel: { en:'Israel', de:'Israel', fr:'Israël' },
+        'Vereinigte Arabische Emirate': { en:'United Arab Emirates', de:'Vereinigte Arabische Emirate', fr:'Émirats arabes unis' },
+        Indien: { en:'India', de:'Indien', fr:'Inde' },
+        Thailand: { en:'Thailand', de:'Thailand', fr:'Thaïlande' },
+        Singapur: { en:'Singapore', de:'Singapur', fr:'Singapour' },
+        Indonesien: { en:'Indonesia', de:'Indonesien', fr:'Indonésie' },
+        Hongkong: { en:'Hong Kong', de:'Hongkong', fr:'Hong Kong' },
+        China: { en:'China', de:'China', fr:'Chine' },
+        Südkorea: { en:'South Korea', de:'Südkorea', fr:'Corée du Sud' },
+        Japan: { en:'Japan', de:'Japan', fr:'Japon' },
+        Australien: { en:'Australia', de:'Australien', fr:'Australie' },
+        Neuseeland: { en:'New Zealand', de:'Neuseeland', fr:'Nouvelle-Zélande' }
+      };
+
+      const entry = countryMap[countryName];
+      if (!entry) {
+        return countryName;
+      }
+      if (lang === 'fr') {
+        return entry.fr;
+      }
+      if (lang === 'en') {
+        return entry.en;
+      }
+      return entry.de;
+    }
+
+    /**
+     * Builds the visible label for one location-select option.
+     * The city name stays unchanged while the country part follows the active
+     * interface language.
+     * @param {object} location One configured location entry.
+     * @returns {string} Human-readable option label.
+     */
+    function locationOptionLabel(location){
+      if (!location) {
+        return '';
+      }
+      let label = location.name || '';
+      const countryLabel = localizedCountryName(location.country);
+      if (countryLabel) {
+        label += ', ' + countryLabel;
+      }
+      return label;
+    }
+
     function updateControlDateReadout(){
       const readout = document.getElementById('controlDateReadout');
       if (readout) readout.textContent = formatDateStamp(selectedSolarDate());
@@ -4330,11 +5294,7 @@
       locations.forEach(location => {
         const option = document.createElement('option');
         option.value = location.key;
-        let label = location.name;
-        if (location.country) {
-          label += ', ' + location.country;
-        }
-        option.textContent = label;
+        option.textContent = locationOptionLabel(location);
         selector.appendChild(option);
       });
       selector.value = selectedLocationKey;
@@ -4344,6 +5304,11 @@
       const date = selectedSolarDate();
       updateControlDateReadout();
       renderSolarSystem(date);
+      renderBarycenter(date);
+      renderLagrangePoints(date);
+      renderAnalemma(date);
+      renderExoplanetComparison(date);
+      renderPolarisNorth(date);
       renderMoonNodes(date);
       renderConjunctionTimeline(date);
       renderMeteorStreams(date);
@@ -4389,6 +5354,17 @@
       { key:'uranus',  a:[19.18916464,-0.00196176], e:[0.04725744,-0.00004397], i:[0.77263783,-0.00242939], L:[313.23810451,428.48202785], p:[170.95427630,0.40805281], n:[74.01692503,0.04240589] },
       { key:'neptune', a:[30.06992276,0.00026291], e:[0.00859048,0.00005105], i:[1.77004347,0.00035372], L:[-55.12002969,218.45945325], p:[44.96476227,-0.32241464], n:[131.78422574,-0.00508664] }
     ];
+    const solarPlanetMassRatios = {
+      mercury: 1.6601e-7,
+      venus: 2.4478e-6,
+      earth: 3.0035e-6,
+      mars: 3.2271e-7,
+      jupiter: 9.5479e-4,
+      saturn: 2.8589e-4,
+      uranus: 4.3662e-5,
+      neptune: 5.1514e-5
+    };
+    const sunRadiusAu = 0.00465047;
 
     function normalizeDeg(deg){
       return ((deg % 360) + 360) % 360;
@@ -4426,6 +5402,1238 @@
         return planetPosition(planet, date);
       }
       return null;
+    }
+
+    /**
+     * Returns the currently active planet set for the barycenter comparison card.
+     * @param {string} [mode=barycenterInfluenceMode] Selected influence mode key.
+     * @returns {string[]} Ordered list of planet keys included in the barycenter calculation.
+     */
+    function barycenterModePlanetKeys(mode = barycenterInfluenceMode){
+      if (mode === 'jupiter') {
+        return ['jupiter'];
+      }
+
+      if (mode === 'jupiter_saturn') {
+        return ['jupiter', 'saturn'];
+      }
+
+      return solarPlanets.map(planet => planet.key);
+    }
+
+    /**
+     * Returns the localized label for the barycenter influence mode.
+     * @param {string} [mode=barycenterInfluenceMode] Selected influence mode key.
+     * @returns {string} Localized mode label.
+     */
+    function barycenterModeLabel(mode = barycenterInfluenceMode){
+      if (mode === 'jupiter') {
+        return t.barycenter_mode_jupiter || 'Jupiter';
+      }
+
+      if (mode === 'jupiter_saturn') {
+        return t.barycenter_mode_jupiter_saturn || 'Jupiter + Saturn';
+      }
+
+      return t.barycenter_mode_all || 'All planets';
+    }
+
+    /**
+     * Returns the solar-system barycenter relative to the Sun for the given date.
+     * The result uses heliocentric planet positions together with approximate
+     * planetary mass ratios in units of solar masses.
+     * @param {Date} [date=selectedSolarDate()] Calendar date used for the position estimate.
+     * @param {string} [mode=barycenterInfluenceMode] Active influence mode that limits the included planets.
+     * @returns {object} Barycenter vector, distance and per-planet contribution data.
+     */
+    function solarBarycenter(date = selectedSolarDate(), mode = barycenterInfluenceMode){
+      let weightedX = 0;
+      let weightedY = 0;
+      let weightedZ = 0;
+      let planetMassTotal = 0;
+      const contributors = [];
+      const activeKeys = barycenterModePlanetKeys(mode);
+
+      solarPlanets.forEach(planet => {
+        if (!activeKeys.includes(planet.key)) {
+          return;
+        }
+
+        const massRatio = solarPlanetMassRatios[planet.key];
+        const position = planetPosition(planet, date);
+        if (!massRatio || !position) {
+          return;
+        }
+
+        weightedX += massRatio * position.x;
+        weightedY += massRatio * position.y;
+        weightedZ += massRatio * position.z;
+        planetMassTotal += massRatio;
+
+        contributors.push({
+          key: planet.key,
+          weightedDistance: massRatio * Math.sqrt(position.x * position.x + position.y * position.y + position.z * position.z)
+        });
+      });
+
+      const divisor = 1 + planetMassTotal;
+      const x = weightedX / divisor;
+      const y = weightedY / divisor;
+      const z = weightedZ / divisor;
+      const distanceAu = Math.sqrt(x * x + y * y + z * z);
+
+      contributors.sort((left, right) => right.weightedDistance - left.weightedDistance);
+
+      return {
+        x,
+        y,
+        z,
+        distanceAu,
+        contributors
+      };
+    }
+
+    /**
+     * Returns the Sun-center offset in a barycentric frame.
+     * In this simplified model the Sun sits at the negative of the barycenter
+     * vector that was measured from the Sun.
+     * @param {Date} [date=selectedSolarDate()] Calendar date used for the estimate.
+     * @param {string} [mode=barycenterInfluenceMode] Active influence mode that limits the included planets.
+     * @returns {object} Sun-center vector relative to the barycenter, in AU.
+     */
+    function sunOffsetFromBarycenter(date = selectedSolarDate(), mode = barycenterInfluenceMode){
+      const barycenter = solarBarycenter(date, mode);
+      return {
+        x: -barycenter.x,
+        y: -barycenter.y,
+        z: -barycenter.z,
+        distanceAu: barycenter.distanceAu,
+        contributors: barycenter.contributors
+      };
+    }
+
+    /**
+     * Samples the Sun's barycentric wobble around the selected date.
+     * The returned points form the multi-year trail shown in the barycenter card.
+     * @param {Date} [date=selectedSolarDate()] Center date of the sampled window.
+     * @param {number} [halfSpanDays=9125] Number of days sampled into past and future.
+     * @param {number} [stepDays=30] Sampling interval in days.
+     * @param {string} [mode=barycenterInfluenceMode] Active influence mode that limits the included planets.
+     * @returns {object[]} Ordered list of trail points with date and AU coordinates.
+     */
+    function barycenterTrail(date = selectedSolarDate(), halfSpanDays = 9125, stepDays = 30, mode = barycenterInfluenceMode){
+      const points = [];
+
+      for (let dayOffset = -halfSpanDays; dayOffset <= halfSpanDays; dayOffset += stepDays) {
+        const sampleDate = new Date(date.getTime() + dayOffset * 86400000);
+        const sunOffset = sunOffsetFromBarycenter(sampleDate, mode);
+        points.push({
+          date: sampleDate,
+          x: sunOffset.x,
+          y: sunOffset.y,
+          z: sunOffset.z,
+          distanceAu: sunOffset.distanceAu
+        });
+      }
+
+      return points;
+    }
+
+    /**
+     * Converts an AU-based top-down vector into the screen space of the
+     * barycenter card.
+     * @param {object} vector Position vector with x and y components in AU.
+     * @param {number} centerX Horizontal center of the drawing.
+     * @param {number} centerY Vertical center of the drawing.
+     * @param {number} pixelsPerAu Scale factor from AU to pixels.
+     * @returns {object} Screen-space point with x and y coordinates in pixels.
+     */
+    function barycenterScreenPoint(vector, centerX, centerY, pixelsPerAu){
+      return {
+        x: centerX + vector.x * pixelsPerAu,
+        y: centerY - vector.y * pixelsPerAu
+      };
+    }
+
+    /**
+     * Builds a simple SVG polyline path from sampled points.
+     * @param {object[]} points Ordered screen-space points with x and y values.
+     * @returns {string} SVG path string for a continuous line.
+     */
+    function barycenterTrailPath(points){
+      if (!points.length) {
+        return '';
+      }
+
+      let path = 'M ' + points[0].x.toFixed(2) + ' ' + points[0].y.toFixed(2);
+      for (let index = 1; index < points.length; index += 1) {
+        path += ' L ' + points[index].x.toFixed(2) + ' ' + points[index].y.toFixed(2);
+      }
+      return path;
+    }
+
+    /**
+     * Returns a simple approximate solar declination in degrees.
+     * @param {Date} date Calendar date used for the seasonal position.
+     * @returns {number} Approximate solar declination in degrees.
+     */
+    function approximateSolarDeclinationDegrees(date){
+      return 23.44 * Math.sin(2 * Math.PI * (dayOfYearLocal(date) - 80) / daysInYear(date.getFullYear()));
+    }
+
+    /**
+     * Returns a compact approximation of the equation of time in minutes.
+     * @param {Date} date Calendar date used for the annual solar offset.
+     * @returns {number} Equation of time in minutes.
+     */
+    function approximateEquationOfTimeMinutes(date){
+      const B = 2 * Math.PI * (dayOfYearLocal(date) - 81) / 364;
+      return 9.87 * Math.sin(2 * B) - 7.53 * Math.cos(B) - 1.5 * Math.sin(B);
+    }
+
+    /**
+     * Approximates the standard-meridian longitude used by civil clock time for
+     * a location. This keeps the analemma didactic even though the dashboard does
+     * not switch the whole page into the city's legal time zone.
+     * @param {object} location Active location object.
+     * @returns {number} Standard-meridian longitude in degrees.
+     */
+    function approximateTimeZoneMeridianDegrees(location){
+      return Math.round(location.longitude / 15) * 15;
+    }
+
+    /**
+     * Returns the offset between local clock noon and apparent solar noon.
+     * Positive values mean the Sun transits after 12:00 civil clock time.
+     * @param {Date} date Calendar date used for the approximation.
+     * @param {object} location Active location object.
+     * @returns {number} Noon offset in minutes.
+     */
+    function approximateSolarNoonOffsetMinutes(date, location){
+      const equationOfTime = approximateEquationOfTimeMinutes(date);
+      const meridian = approximateTimeZoneMeridianDegrees(location);
+      return equationOfTime + 4 * (location.longitude - meridian);
+    }
+
+    /**
+     * Returns the approximate solar altitude for local civil noon at the chosen
+     * location. The result is used for the location-dependent analemma view.
+     * @param {Date} date Calendar date used for the approximation.
+     * @param {object} location Active location object.
+     * @returns {number} Solar altitude in degrees.
+     */
+    function approximateNoonAltitudeDegrees(date, location){
+      const declination = approximateSolarDeclinationDegrees(date);
+      const hourAngle = approximateSolarNoonOffsetMinutes(date, location) / 4;
+      const latitudeRad = location.latitude * Math.PI / 180;
+      const declinationRad = declination * Math.PI / 180;
+      const hourAngleRad = hourAngle * Math.PI / 180;
+      const altitude = Math.asin(
+        Math.sin(latitudeRad) * Math.sin(declinationRad)
+        + Math.cos(latitudeRad) * Math.cos(declinationRad) * Math.cos(hourAngleRad)
+      );
+      return altitude * 180 / Math.PI;
+    }
+
+    /**
+     * Formats signed minute values for compact summary display.
+     * @param {number} minutes Signed minute value.
+     * @returns {string} Localized minute label with sign.
+     */
+    function formatSignedMinutes(minutes){
+      let prefix = '+';
+      if (minutes < 0) {
+        prefix = '−';
+      }
+      return prefix + Math.abs(minutes).toFixed(1) + ' min';
+    }
+
+    /**
+     * Renders the Sun-versus-barycenter hybrid card.
+     * The barycenter stays fixed in the middle, the Sun is drawn at its current
+     * offset, and a long trail shows how the solar center wanders around that
+     * common center of mass.
+     * @param {Date} [date=selectedSolarDate()] Calendar date used for the barycenter estimate.
+     * @returns {void}
+     */
+    function renderBarycenter(date = selectedSolarDate()){
+      const target = document.getElementById('barycenterMap');
+      const summary = document.getElementById('barycenterSummary');
+      if (!target || !summary) {
+        return;
+      }
+
+      const currentMode = barycenterInfluenceMode;
+      const currentSunOffset = sunOffsetFromBarycenter(date, currentMode);
+      const trail = barycenterTrail(date, 9125, 30, currentMode);
+
+      let maxTrailDistance = currentSunOffset.distanceAu;
+      let minTrailDistance = currentSunOffset.distanceAu;
+      trail.forEach(point => {
+        if (point.distanceAu > maxTrailDistance) {
+          maxTrailDistance = point.distanceAu;
+        }
+        if (point.distanceAu < minTrailDistance) {
+          minTrailDistance = point.distanceAu;
+        }
+      });
+
+      let displayRadiusAu = maxTrailDistance * 1.04;
+      const minimumDisplayRadius = sunRadiusAu * 1.8;
+      if (displayRadiusAu < minimumDisplayRadius) {
+        displayRadiusAu = minimumDisplayRadius;
+      }
+
+      const size = 560;
+      const height = 340;
+      const centerX = size / 2;
+      const centerY = 166;
+      const plotRadius = 128;
+      const pixelsPerAu = plotRadius / displayRadiusAu;
+      const solarRadiusPixels = sunRadiusAu * pixelsPerAu;
+      const svgNS = 'http://www.w3.org/2000/svg';
+
+      target.textContent = '';
+
+      const svg = document.createElementNS(svgNS, 'svg');
+      svg.setAttribute('viewBox', `0 0 ${size} ${height}`);
+      svg.setAttribute('role', 'img');
+      svg.setAttribute('aria-label', t.barycenter_aria || 'Top-down solar barycenter view');
+
+      const defs = document.createElementNS(svgNS, 'defs');
+      const sunGradient = document.createElementNS(svgNS, 'radialGradient');
+      sunGradient.setAttribute('id', 'barycenterSunGradient');
+      sunGradient.setAttribute('cx', '35%');
+      sunGradient.setAttribute('cy', '35%');
+      sunGradient.setAttribute('r', '70%');
+
+      const gradientStopA = document.createElementNS(svgNS, 'stop');
+      gradientStopA.setAttribute('offset', '0');
+      gradientStopA.setAttribute('stop-color', '#fff7b0');
+      sunGradient.appendChild(gradientStopA);
+
+      const gradientStopB = document.createElementNS(svgNS, 'stop');
+      gradientStopB.setAttribute('offset', '.56');
+      gradientStopB.setAttribute('stop-color', '#f8b43c');
+      sunGradient.appendChild(gradientStopB);
+
+      const gradientStopC = document.createElementNS(svgNS, 'stop');
+      gradientStopC.setAttribute('offset', '1');
+      gradientStopC.setAttribute('stop-color', '#b45309');
+      sunGradient.appendChild(gradientStopC);
+      defs.appendChild(sunGradient);
+
+      const sunGlow = document.createElementNS(svgNS, 'filter');
+      sunGlow.setAttribute('id', 'barycenterSunGlow');
+      sunGlow.setAttribute('x', '-80%');
+      sunGlow.setAttribute('y', '-80%');
+      sunGlow.setAttribute('width', '260%');
+      sunGlow.setAttribute('height', '260%');
+
+      const blur = document.createElementNS(svgNS, 'feGaussianBlur');
+      blur.setAttribute('stdDeviation', '8');
+      blur.setAttribute('result', 'glow');
+      sunGlow.appendChild(blur);
+
+      const merge = document.createElementNS(svgNS, 'feMerge');
+      const mergeGlow = document.createElementNS(svgNS, 'feMergeNode');
+      mergeGlow.setAttribute('in', 'glow');
+      merge.appendChild(mergeGlow);
+      const mergeSource = document.createElementNS(svgNS, 'feMergeNode');
+      mergeSource.setAttribute('in', 'SourceGraphic');
+      merge.appendChild(mergeSource);
+      sunGlow.appendChild(merge);
+      defs.appendChild(sunGlow);
+
+      svg.appendChild(defs);
+
+      const outerDisc = document.createElementNS(svgNS, 'circle');
+      outerDisc.setAttribute('cx', centerX);
+      outerDisc.setAttribute('cy', centerY);
+      outerDisc.setAttribute('r', plotRadius + 22);
+      outerDisc.setAttribute('class', 'barycenter-disc');
+      svg.appendChild(outerDisc);
+
+      const referenceRadii = [sunRadiusAu, sunRadiusAu * 2];
+      referenceRadii.forEach((radiusAu, index) => {
+        const ring = document.createElementNS(svgNS, 'circle');
+        ring.setAttribute('cx', centerX);
+        ring.setAttribute('cy', centerY);
+        ring.setAttribute('r', radiusAu * pixelsPerAu);
+        ring.setAttribute('class', 'barycenter-reference-ring');
+        svg.appendChild(ring);
+
+        const label = document.createElementNS(svgNS, 'text');
+        label.setAttribute('x', centerX + radiusAu * pixelsPerAu + 10);
+        label.setAttribute('y', centerY - 4 - index * 14);
+        label.setAttribute('class', 'barycenter-reference-label');
+        label.textContent = String(index + 1) + ' R☉';
+        svg.appendChild(label);
+      });
+
+      const trailScreenPoints = [];
+      trail.forEach(point => {
+        trailScreenPoints.push(barycenterScreenPoint(point, centerX, centerY, pixelsPerAu));
+      });
+
+      const trailPath = document.createElementNS(svgNS, 'path');
+      trailPath.setAttribute('d', barycenterTrailPath(trailScreenPoints));
+      trailPath.setAttribute('class', 'barycenter-trail');
+
+      const currentPoint = barycenterScreenPoint(currentSunOffset, centerX, centerY, pixelsPerAu);
+
+      const connector = document.createElementNS(svgNS, 'line');
+      connector.setAttribute('x1', centerX);
+      connector.setAttribute('y1', centerY);
+      connector.setAttribute('x2', currentPoint.x);
+      connector.setAttribute('y2', currentPoint.y);
+      connector.setAttribute('class', 'barycenter-connector');
+      svg.appendChild(connector);
+
+      const sunDisc = document.createElementNS(svgNS, 'circle');
+      sunDisc.setAttribute('cx', currentPoint.x);
+      sunDisc.setAttribute('cy', currentPoint.y);
+      sunDisc.setAttribute('r', solarRadiusPixels);
+      sunDisc.setAttribute('class', 'barycenter-sun-disc');
+      svg.appendChild(sunDisc);
+
+      const sunOutline = document.createElementNS(svgNS, 'circle');
+      sunOutline.setAttribute('cx', currentPoint.x);
+      sunOutline.setAttribute('cy', currentPoint.y);
+      sunOutline.setAttribute('r', solarRadiusPixels);
+      sunOutline.setAttribute('class', 'barycenter-sun-outline');
+      svg.appendChild(sunOutline);
+
+      svg.appendChild(trailPath);
+
+      trail.forEach((trailPoint, index) => {
+        if (index % 12 !== 0) {
+          return;
+        }
+
+        const point = trailScreenPoints[index];
+        const dot = document.createElementNS(svgNS, 'circle');
+        dot.setAttribute('cx', point.x);
+        dot.setAttribute('cy', point.y);
+        dot.setAttribute('r', '3.2');
+        dot.setAttribute('class', 'barycenter-year-dot');
+        svg.appendChild(dot);
+
+        const isFiveYearLabel = index % 60 === 0;
+        if (!isFiveYearLabel) {
+          return;
+        }
+
+        const label = document.createElementNS(svgNS, 'text');
+        label.setAttribute('x', point.x);
+        label.setAttribute('y', point.y - 10);
+        label.setAttribute('class', 'barycenter-year-label');
+        label.textContent = String(trailPoint.date.getFullYear());
+        svg.appendChild(label);
+      });
+
+      const sunCenterDot = document.createElementNS(svgNS, 'circle');
+      sunCenterDot.setAttribute('cx', currentPoint.x);
+      sunCenterDot.setAttribute('cy', currentPoint.y);
+      sunCenterDot.setAttribute('r', '3.4');
+      sunCenterDot.setAttribute('class', 'barycenter-sun-center-dot');
+      svg.appendChild(sunCenterDot);
+
+      const sunCenterLabel = document.createElementNS(svgNS, 'text');
+      sunCenterLabel.setAttribute('x', currentPoint.x);
+      sunCenterLabel.setAttribute('y', currentPoint.y - solarRadiusPixels - 10);
+      sunCenterLabel.setAttribute('class', 'barycenter-label');
+      sunCenterLabel.textContent = t.barycenter_sun_center || 'Sun center';
+      svg.appendChild(sunCenterLabel);
+
+      const barycenterCrossHorizontal = document.createElementNS(svgNS, 'line');
+      barycenterCrossHorizontal.setAttribute('x1', centerX - 8);
+      barycenterCrossHorizontal.setAttribute('y1', centerY);
+      barycenterCrossHorizontal.setAttribute('x2', centerX + 8);
+      barycenterCrossHorizontal.setAttribute('y2', centerY);
+      barycenterCrossHorizontal.setAttribute('class', 'barycenter-cross');
+      svg.appendChild(barycenterCrossHorizontal);
+
+      const barycenterCrossVertical = document.createElementNS(svgNS, 'line');
+      barycenterCrossVertical.setAttribute('x1', centerX);
+      barycenterCrossVertical.setAttribute('y1', centerY - 8);
+      barycenterCrossVertical.setAttribute('x2', centerX);
+      barycenterCrossVertical.setAttribute('y2', centerY + 8);
+      barycenterCrossVertical.setAttribute('class', 'barycenter-cross');
+      svg.appendChild(barycenterCrossVertical);
+
+      const barycenterLabel = document.createElementNS(svgNS, 'text');
+      barycenterLabel.setAttribute('x', centerX);
+      barycenterLabel.setAttribute('y', centerY + 20);
+      barycenterLabel.setAttribute('class', 'barycenter-label');
+      barycenterLabel.textContent = t.barycenter_cross || 'Barycenter';
+      svg.appendChild(barycenterLabel);
+
+      const trailCaption = document.createElementNS(svgNS, 'text');
+      trailCaption.setAttribute('x', centerX);
+      trailCaption.setAttribute('y', 312);
+      trailCaption.setAttribute('class', 'barycenter-caption');
+      trailCaption.textContent = t.barycenter_trail_caption || 'Blue path: Sun-center motion across 50 years';
+      svg.appendChild(trailCaption);
+
+      target.appendChild(svg);
+
+      summary.textContent = '';
+      syncBarycenterModeButtons();
+
+      let statusText = t.barycenter_status_inside || 'inside the Sun';
+      let summaryText = t.barycenter_summary_inside || 'The shared center of mass currently lies inside the solar disk.';
+      if (currentSunOffset.distanceAu > sunRadiusAu) {
+        statusText = t.barycenter_status_outside || 'outside the Sun';
+        summaryText = t.barycenter_summary_outside || 'The shared center of mass currently lies outside the solar disk.';
+      }
+
+      appendSummaryText(summary, summaryText);
+      appendSummaryLine(summary, (t.barycenter_mode || 'Influence') + ': ', barycenterModeLabel(currentMode));
+      appendSummaryLine(summary, (t.barycenter_status || 'Status') + ': ', statusText);
+      appendSummaryLine(summary, (t.barycenter_offset || 'Offset from Sun center') + ': ', (currentSunOffset.distanceAu / sunRadiusAu).toFixed(2) + ' R☉');
+      appendSummaryLine(summary, (t.barycenter_trail_span || '50-year span') + ': ', (minTrailDistance / sunRadiusAu).toFixed(2) + '-' + (maxTrailDistance / sunRadiusAu).toFixed(2) + ' R☉');
+
+      const topDrivers = currentSunOffset.contributors.slice(0, 3).map(entry => t['planet_' + entry.key] || entry.key);
+      let driverText = t.barycenter_driver_fallback || 'All planets';
+      if (topDrivers.length) {
+        driverText = topDrivers.join(' · ');
+      }
+      appendSummaryLine(summary, (t.barycenter_main_drivers || 'Main drivers') + ': ', driverText);
+    }
+
+    /**
+     * Synchronizes the active-state styling of the barycenter influence buttons.
+     * @returns {void}
+     */
+    function syncBarycenterModeButtons(){
+      const buttons = [
+        { id:'btnBarycenterJupiter', mode:'jupiter' },
+        { id:'btnBarycenterJupiterSaturn', mode:'jupiter_saturn' },
+        { id:'btnBarycenterAll', mode:'all' }
+      ];
+
+      buttons.forEach(entry => {
+        const button = document.getElementById(entry.id);
+        if (!button) {
+          return;
+        }
+
+        if (entry.mode === barycenterInfluenceMode) {
+          button.classList.add('active');
+          button.setAttribute('aria-pressed', 'true');
+        } else {
+          button.classList.remove('active');
+          button.setAttribute('aria-pressed', 'false');
+        }
+      });
+    }
+
+    /**
+     * Updates the barycenter comparison mode and rebuilds only that card.
+     * @param {string} mode Selected influence mode key.
+     * @returns {void}
+     */
+    function setBarycenterInfluenceMode(mode){
+      barycenterInfluenceMode = mode;
+      renderBarycenter(selectedSolarDate());
+      scheduleMasonryLayout();
+    }
+
+    /**
+     * Renders a schematic Sun-Earth Lagrange-point card for the selected date.
+     * The Earth's orbital phase follows the shared date control while the
+     * Sun-Earth geometry itself remains didactic rather than strictly to scale.
+     * @param {Date} [date=selectedSolarDate()] Calendar date used for Earth's orbital phase.
+     * @returns {void}
+     */
+    function renderLagrangePoints(date = selectedSolarDate()){
+      const target = document.getElementById('lagrangeMap');
+      const summary = document.getElementById('lagrangeSummary');
+      if (!target || !summary) {
+        return;
+      }
+
+      const size = 420;
+      const center = size / 2;
+      const orbitRadius = 128;
+      const earthFraction = (sunLongitude(date) / 360 + 0.5) % 1;
+      const earthPoint = polarPoint(center, orbitRadius, earthFraction);
+      const l4Point = polarPoint(center, orbitRadius, (earthFraction + 1 / 6) % 1);
+      const l5Point = polarPoint(center, orbitRadius, (earthFraction + 5 / 6) % 1);
+      const directionX = (earthPoint.x - center) / orbitRadius;
+      const directionY = (earthPoint.y - center) / orbitRadius;
+      const lagrangeOffset = 18;
+      const l1Point = {
+        x: earthPoint.x - directionX * lagrangeOffset,
+        y: earthPoint.y - directionY * lagrangeOffset
+      };
+      const l2Point = {
+        x: earthPoint.x + directionX * lagrangeOffset,
+        y: earthPoint.y + directionY * lagrangeOffset
+      };
+      const l3Point = {
+        x: center - directionX * orbitRadius,
+        y: center - directionY * orbitRadius
+      };
+      const svgNS = 'http://www.w3.org/2000/svg';
+
+      target.textContent = '';
+
+      const svg = document.createElementNS(svgNS, 'svg');
+      svg.setAttribute('viewBox', '0 0 ' + size + ' ' + size);
+      svg.setAttribute('role', 'img');
+      svg.setAttribute('aria-label', t.lagrange_aria || 'Sun-Earth Lagrange points');
+
+      const orbit = document.createElementNS(svgNS, 'circle');
+      orbit.setAttribute('cx', center);
+      orbit.setAttribute('cy', center);
+      orbit.setAttribute('r', orbitRadius);
+      orbit.setAttribute('class', 'lagrange-orbit');
+      svg.appendChild(orbit);
+
+      const triangleA = document.createElementNS(svgNS, 'line');
+      triangleA.setAttribute('x1', center);
+      triangleA.setAttribute('y1', center);
+      triangleA.setAttribute('x2', l4Point.x);
+      triangleA.setAttribute('y2', l4Point.y);
+      triangleA.setAttribute('class', 'lagrange-guide');
+      svg.appendChild(triangleA);
+
+      const triangleB = document.createElementNS(svgNS, 'line');
+      triangleB.setAttribute('x1', earthPoint.x);
+      triangleB.setAttribute('y1', earthPoint.y);
+      triangleB.setAttribute('x2', l4Point.x);
+      triangleB.setAttribute('y2', l4Point.y);
+      triangleB.setAttribute('class', 'lagrange-guide');
+      svg.appendChild(triangleB);
+
+      const triangleC = document.createElementNS(svgNS, 'line');
+      triangleC.setAttribute('x1', center);
+      triangleC.setAttribute('y1', center);
+      triangleC.setAttribute('x2', l5Point.x);
+      triangleC.setAttribute('y2', l5Point.y);
+      triangleC.setAttribute('class', 'lagrange-guide');
+      svg.appendChild(triangleC);
+
+      const triangleD = document.createElementNS(svgNS, 'line');
+      triangleD.setAttribute('x1', earthPoint.x);
+      triangleD.setAttribute('y1', earthPoint.y);
+      triangleD.setAttribute('x2', l5Point.x);
+      triangleD.setAttribute('y2', l5Point.y);
+      triangleD.setAttribute('class', 'lagrange-guide');
+      svg.appendChild(triangleD);
+
+      const sun = document.createElementNS(svgNS, 'circle');
+      sun.setAttribute('cx', center);
+      sun.setAttribute('cy', center);
+      sun.setAttribute('r', 20);
+      sun.setAttribute('class', 'lagrange-sun');
+      svg.appendChild(sun);
+
+      const earth = document.createElementNS(svgNS, 'circle');
+      earth.setAttribute('cx', earthPoint.x);
+      earth.setAttribute('cy', earthPoint.y);
+      earth.setAttribute('r', 10);
+      earth.setAttribute('class', 'lagrange-earth');
+      svg.appendChild(earth);
+
+      const jwst = document.createElementNS(svgNS, 'circle');
+      jwst.setAttribute('cx', l2Point.x + directionX * 6);
+      jwst.setAttribute('cy', l2Point.y + directionY * 6);
+      jwst.setAttribute('r', 4);
+      jwst.setAttribute('class', 'lagrange-jwst');
+      svg.appendChild(jwst);
+
+      const points = [
+        { label:'L1', point:l1Point },
+        { label:'L2', point:l2Point },
+        { label:'L3', point:l3Point },
+        { label:'L4', point:l4Point },
+        { label:'L5', point:l5Point }
+      ];
+
+      points.forEach(entry => {
+        const marker = document.createElementNS(svgNS, 'circle');
+        marker.setAttribute('cx', entry.point.x);
+        marker.setAttribute('cy', entry.point.y);
+        marker.setAttribute('r', 6);
+        marker.setAttribute('class', 'lagrange-point');
+        svg.appendChild(marker);
+
+        const label = document.createElementNS(svgNS, 'text');
+        label.setAttribute('x', entry.point.x);
+        label.setAttribute('y', entry.point.y - 12);
+        label.setAttribute('class', 'lagrange-label');
+        label.textContent = entry.label;
+        svg.appendChild(label);
+      });
+
+      const sunLabel = document.createElementNS(svgNS, 'text');
+      sunLabel.setAttribute('x', center);
+      sunLabel.setAttribute('y', center + 38);
+      sunLabel.setAttribute('class', 'lagrange-label');
+      sunLabel.textContent = t.eclipse_sun || 'Sun';
+      svg.appendChild(sunLabel);
+
+      const earthLabel = document.createElementNS(svgNS, 'text');
+      earthLabel.setAttribute('x', earthPoint.x);
+      earthLabel.setAttribute('y', earthPoint.y + 28);
+      earthLabel.setAttribute('class', 'lagrange-label');
+      earthLabel.textContent = t.planet_earth || 'Earth';
+      svg.appendChild(earthLabel);
+
+      const jwstLabel = document.createElementNS(svgNS, 'text');
+      jwstLabel.setAttribute('x', l2Point.x + directionX * 18);
+      jwstLabel.setAttribute('y', l2Point.y + directionY * 18);
+      jwstLabel.setAttribute('class', 'lagrange-small-label');
+      jwstLabel.textContent = 'JWST';
+      svg.appendChild(jwstLabel);
+
+      target.appendChild(svg);
+
+      summary.textContent = '';
+      appendSummaryText(summary, t.lagrange_summary || 'Lagrange points are places where gravity and orbital motion balance so a spacecraft can stay near the Sun-Earth system with relatively little station-keeping.');
+      appendSummaryLine(summary, (t.lagrange_system || 'System') + ': ', t.lagrange_system_value || 'Sun-Earth');
+      appendSummaryLine(summary, (t.lagrange_l1l2 || 'L1/L2 distance') + ': ', '~1.5 Mio. km');
+      appendSummaryLine(summary, (t.lagrange_stable || 'Stable points') + ': ', 'L4 · L5');
+      appendSummaryLine(summary, (t.lagrange_jwst || 'JWST') + ': ', t.lagrange_jwst_value || 'Halo orbit near L2');
+      appendSummaryLine(summary, (t.lagrange_jwst_reason || 'Why L2') + ': ', t.lagrange_jwst_reason_value || 'Sun, Earth and Moon stay on one side; deep space stays dark and cold.');
+    }
+
+    /**
+     * Renders a location-dependent analemma for 12:00 local clock time across
+     * the selected year. The horizontal axis reflects clock-versus-solar time
+     * offset while the vertical axis shows noon altitude for the selected place.
+     * @param {Date} [date=selectedSolarDate()] Calendar date that selects year and highlighted day.
+     * @returns {void}
+     */
+    function renderAnalemma(date = selectedSolarDate()){
+      const target = document.getElementById('analemmaMap');
+      const summary = document.getElementById('analemmaSummary');
+      const location = selectedLocation();
+      if (!target || !summary || !location) {
+        return;
+      }
+
+      const year = date.getFullYear();
+      const totalDays = daysInYear(year);
+      const samples = [];
+      let maxOffset = 0;
+      let minAltitude = 90;
+      let maxAltitude = -90;
+
+      for (let dayIndex = 0; dayIndex < totalDays; dayIndex += 1) {
+        const sampleDate = new Date(year, 0, dayIndex + 1);
+        const offsetMinutes = approximateSolarNoonOffsetMinutes(sampleDate, location);
+        const altitudeDegrees = approximateNoonAltitudeDegrees(sampleDate, location);
+        samples.push({
+          date: sampleDate,
+          offsetMinutes,
+          altitudeDegrees
+        });
+        maxOffset = Math.max(maxOffset, Math.abs(offsetMinutes));
+        minAltitude = Math.min(minAltitude, altitudeDegrees);
+        maxAltitude = Math.max(maxAltitude, altitudeDegrees);
+      }
+
+      const selectedDayIndex = Math.min(totalDays - 1, Math.max(0, dayOfYearLocal(date) - 1));
+      const selectedSample = samples[selectedDayIndex];
+      const svgNS = 'http://www.w3.org/2000/svg';
+      const width = 420;
+      const height = 420;
+      const left = 50;
+      const right = 372;
+      const top = 38;
+      const bottom = 356;
+      const verticalSpan = Math.max(20, maxAltitude - minAltitude);
+      const horizontalSpan = Math.max(8, maxOffset);
+
+      function plotX(offsetMinutes){
+        const ratio = (offsetMinutes + horizontalSpan) / (horizontalSpan * 2);
+        return left + ratio * (right - left);
+      }
+
+      function plotY(altitudeDegrees){
+        const ratio = (altitudeDegrees - minAltitude) / verticalSpan;
+        return bottom - ratio * (bottom - top);
+      }
+
+      let path = '';
+      samples.forEach((sample, index) => {
+        const x = plotX(sample.offsetMinutes);
+        const y = plotY(sample.altitudeDegrees);
+        if (index === 0) {
+          path = 'M ' + x.toFixed(2) + ' ' + y.toFixed(2);
+        } else {
+          path += ' L ' + x.toFixed(2) + ' ' + y.toFixed(2);
+        }
+      });
+
+      target.textContent = '';
+
+      const svg = document.createElementNS(svgNS, 'svg');
+      svg.setAttribute('viewBox', '0 0 420 420');
+      svg.setAttribute('role', 'img');
+      svg.setAttribute('aria-label', t.analemma_aria || 'Analemma for the selected location');
+
+      const frame = document.createElementNS(svgNS, 'rect');
+      frame.setAttribute('x', left);
+      frame.setAttribute('y', top);
+      frame.setAttribute('width', right - left);
+      frame.setAttribute('height', bottom - top);
+      frame.setAttribute('rx', 18);
+      frame.setAttribute('class', 'analemma-frame');
+      svg.appendChild(frame);
+
+      const noonAxis = document.createElementNS(svgNS, 'line');
+      noonAxis.setAttribute('x1', plotX(0));
+      noonAxis.setAttribute('y1', top);
+      noonAxis.setAttribute('x2', plotX(0));
+      noonAxis.setAttribute('y2', bottom);
+      noonAxis.setAttribute('class', 'analemma-axis');
+      svg.appendChild(noonAxis);
+
+      const medianAltitude = (minAltitude + maxAltitude) / 2;
+      const altitudeAxis = document.createElementNS(svgNS, 'line');
+      altitudeAxis.setAttribute('x1', left);
+      altitudeAxis.setAttribute('y1', plotY(medianAltitude));
+      altitudeAxis.setAttribute('x2', right);
+      altitudeAxis.setAttribute('y2', plotY(medianAltitude));
+      altitudeAxis.setAttribute('class', 'analemma-axis');
+      svg.appendChild(altitudeAxis);
+
+      const curve = document.createElementNS(svgNS, 'path');
+      curve.setAttribute('d', path);
+      curve.setAttribute('class', 'analemma-curve');
+      svg.appendChild(curve);
+
+      for (let month = 0; month < 12; month += 1) {
+        const monthDate = new Date(year, month, 1);
+        const monthSample = samples[dayOfYearLocal(monthDate) - 1];
+        const monthDot = document.createElementNS(svgNS, 'circle');
+        monthDot.setAttribute('cx', plotX(monthSample.offsetMinutes));
+        monthDot.setAttribute('cy', plotY(monthSample.altitudeDegrees));
+        monthDot.setAttribute('r', 3.2);
+        monthDot.setAttribute('class', 'analemma-month-dot');
+        svg.appendChild(monthDot);
+
+        const monthLabel = document.createElementNS(svgNS, 'text');
+        monthLabel.setAttribute('x', plotX(monthSample.offsetMinutes));
+        monthLabel.setAttribute('y', plotY(monthSample.altitudeDegrees) - 10);
+        monthLabel.setAttribute('class', 'analemma-month-label');
+        monthLabel.textContent = new Intl.DateTimeFormat(lang, { month:'short' }).format(monthDate).replace('.', '');
+        svg.appendChild(monthLabel);
+      }
+
+      const selectedPoint = document.createElementNS(svgNS, 'circle');
+      selectedPoint.setAttribute('cx', plotX(selectedSample.offsetMinutes));
+      selectedPoint.setAttribute('cy', plotY(selectedSample.altitudeDegrees));
+      selectedPoint.setAttribute('r', 5.2);
+      selectedPoint.setAttribute('class', 'analemma-today');
+      svg.appendChild(selectedPoint);
+
+      const xLabel = document.createElementNS(svgNS, 'text');
+      xLabel.setAttribute('x', (left + right) / 2);
+      xLabel.setAttribute('y', 392);
+      xLabel.setAttribute('class', 'analemma-axis-label');
+      xLabel.textContent = t.analemma_x_axis || 'clock offset vs. solar noon';
+      svg.appendChild(xLabel);
+
+      const yLabel = document.createElementNS(svgNS, 'text');
+      yLabel.setAttribute('x', 18);
+      yLabel.setAttribute('y', (top + bottom) / 2);
+      yLabel.setAttribute('transform', 'rotate(-90 18 ' + ((top + bottom) / 2) + ')');
+      yLabel.setAttribute('class', 'analemma-axis-label');
+      yLabel.textContent = t.analemma_y_axis || 'noon altitude';
+      svg.appendChild(yLabel);
+
+      target.appendChild(svg);
+
+      summary.textContent = '';
+      appendSummaryText(summary, t.analemma_summary || 'The analemma shows where the Sun would appear at the same civil clock time through the year. Here it is approximated for 12:00 at the selected location.');
+      appendSummaryLine(summary, (t.analemma_location || 'Location') + ': ', location.name);
+      appendSummaryLine(summary, (t.analemma_year || 'Year') + ': ', String(year));
+      appendSummaryLine(summary, (t.analemma_declination || 'Declination') + ': ', approximateSolarDeclinationDegrees(date).toFixed(1) + '°');
+      appendSummaryLine(summary, (t.analemma_eot || 'Equation of time') + ': ', formatSignedMinutes(approximateEquationOfTimeMinutes(date)));
+      appendSummaryLine(summary, (t.analemma_noon_offset || '12:00 vs. solar noon') + ': ', formatSignedMinutes(selectedSample.offsetMinutes));
+      appendSummaryLine(summary, (t.analemma_noon_altitude || 'Noon altitude') + ': ', selectedSample.altitudeDegrees.toFixed(1) + '°');
+    }
+
+    /**
+     * Computes a simple orbital period estimate from semi-major axis and host-star mass.
+     * Kepler's third law is used in solar units so the exoplanet comparison can
+     * animate schematic orbital phases without needing a full ephemeris.
+     * @param {number} orbitAu Semi-major axis in astronomical units.
+     * @param {number} starMassSun Host-star mass in solar masses.
+     * @returns {number} Estimated orbital period in Earth days.
+     */
+    function exoplanetPeriodDays(orbitAu, starMassSun){
+      let safeOrbit = orbitAu;
+      if (!Number.isFinite(safeOrbit) || safeOrbit <= 0) {
+        safeOrbit = 0.01;
+      }
+
+      let safeMass = starMassSun;
+      if (!Number.isFinite(safeMass) || safeMass <= 0) {
+        safeMass = 1;
+      }
+
+      const periodYears = Math.sqrt(Math.pow(safeOrbit, 3) / safeMass);
+      return periodYears * 365.25;
+    }
+
+    /**
+     * Builds the SVG mini-map for one exoplanet system panel.
+     * Each panel uses its own normalized outer orbit so very compact and very
+     * wide systems stay readable next to each other.
+     * @param {object} system Exoplanet system configuration entry.
+     * @param {Date} date Selected dashboard date.
+     * @param {number} systemIndex Stable index used only for label staggering.
+     * @returns {SVGElement} Finished schematic SVG element.
+     */
+    function createExoplanetSystemSvg(system, date, systemIndex){
+      const svgNS = 'http://www.w3.org/2000/svg';
+      const svg = document.createElementNS(svgNS, 'svg');
+      svg.setAttribute('viewBox', '0 0 220 220');
+      svg.setAttribute('aria-hidden', 'true');
+
+      const centerX = 110;
+      const centerY = 110;
+      const outerRadius = 78;
+      let maxOrbitAu = system.maxOrbitAu;
+      if (!Number.isFinite(maxOrbitAu) || maxOrbitAu <= 0) {
+        maxOrbitAu = 1;
+      }
+
+      const glow = document.createElementNS(svgNS, 'circle');
+      glow.setAttribute('cx', centerX);
+      glow.setAttribute('cy', centerY);
+      glow.setAttribute('r', 20);
+      glow.setAttribute('class', 'exoplanet-star-glow');
+      svg.appendChild(glow);
+
+      const star = document.createElementNS(svgNS, 'circle');
+      star.setAttribute('cx', centerX);
+      star.setAttribute('cy', centerY);
+      star.setAttribute('r', 9);
+      star.setAttribute('class', 'exoplanet-star');
+      star.setAttribute('fill', system.color || '#f59e0b');
+      svg.appendChild(star);
+
+      system.planets.forEach((planet, planetIndex) => {
+        const orbitRadius = 16 + (planet.orbitAu / maxOrbitAu) * (outerRadius - 16);
+        const orbit = document.createElementNS(svgNS, 'circle');
+        orbit.setAttribute('cx', centerX);
+        orbit.setAttribute('cy', centerY);
+        orbit.setAttribute('r', orbitRadius);
+        orbit.setAttribute('class', 'exoplanet-orbit');
+        svg.appendChild(orbit);
+
+        const periodDays = exoplanetPeriodDays(planet.orbitAu, system.starMassSun);
+        const daysSinceEpoch = julianDate(date) - 2451545;
+        const phaseBase = daysSinceEpoch / periodDays * 360;
+        const labelOffset = systemIndex * 31 + planetIndex * 57;
+        const angleDegrees = normalizeDeg(phaseBase + labelOffset);
+        const angleRadians = angleDegrees * Math.PI / 180;
+        const x = centerX + Math.cos(angleRadians) * orbitRadius;
+        const y = centerY + Math.sin(angleRadians) * orbitRadius;
+
+        const body = document.createElementNS(svgNS, 'circle');
+        body.setAttribute('cx', x);
+        body.setAttribute('cy', y);
+        body.setAttribute('r', 4.4);
+        body.setAttribute('class', 'exoplanet-planet');
+        body.setAttribute('fill', system.color || '#2563eb');
+        svg.appendChild(body);
+
+        const label = document.createElementNS(svgNS, 'text');
+        label.setAttribute('x', x);
+        label.setAttribute('y', y - 8);
+        label.setAttribute('class', 'exoplanet-planet-label');
+        label.textContent = planet.name;
+        svg.appendChild(label);
+      });
+
+      return svg;
+    }
+
+    /**
+     * Renders the exoplanet comparison card with several normalized system panels.
+     * The selected date advances the schematic orbital phases so the card feels
+     * alive without claiming precise exoplanet ephemerides.
+     * @param {Date} date Selected dashboard date.
+     * @returns {void}
+     */
+    function renderExoplanetComparison(date = selectedSolarDate()){
+      const target = document.getElementById('exoplanetComparison');
+      const summary = document.getElementById('exoplanetSummary');
+      if (!target || !summary) {
+        return;
+      }
+
+      target.textContent = '';
+      summary.textContent = '';
+
+      const systems = phenomenaConfig.exoplanetSystems || [];
+      if (!systems.length) {
+        appendSummaryText(summary, t.exoplanets_none || 'No exoplanet systems configured.');
+        return;
+      }
+
+      systems.forEach((system, systemIndex) => {
+        const fragment = cloneTemplate('exoplanetSystemTemplate');
+        if (!fragment) {
+          return;
+        }
+
+        const nameNode = fragment.querySelector('[data-exoplanet-name]');
+        const metaNode = fragment.querySelector('[data-exoplanet-meta]');
+        const mapNode = fragment.querySelector('[data-exoplanet-map]');
+        const captionNode = fragment.querySelector('[data-exoplanet-caption]');
+
+        if (nameNode) {
+          nameNode.textContent = system.name;
+        }
+        if (metaNode) {
+          metaNode.textContent = system.starType + ' · ' + system.distanceLy + ' ly';
+        }
+        if (mapNode) {
+          mapNode.appendChild(createExoplanetSystemSvg(system, date, systemIndex));
+        }
+        if (captionNode) {
+          captionNode.textContent = system.planets.length + ' ' + (t.exoplanets_planets || 'planets') + ' · ' + (t.exoplanets_outer_orbit || 'outer orbit') + ' ' + system.maxOrbitAu + ' AU';
+        }
+
+        target.appendChild(fragment);
+      });
+
+      appendSummaryText(summary, t.exoplanets_summary || 'These mini-systems compare how tightly packed or widely spread selected exoplanet families are. Each panel uses its own scale.');
+      appendSummaryLine(summary, (t.exoplanets_systems || 'Systems') + ': ', String(systems.length));
+      appendSummaryLine(summary, (t.exoplanets_focus || 'Compact example') + ': ', t.exoplanets_focus_value || 'TRAPPIST-1: all seven known planets orbit well inside Mercury.');
+      appendSummaryLine(summary, (t.exoplanets_wide || 'Wide example') + ': ', t.exoplanets_wide_value || 'HR 8799: giant planets spread across a region wider than the outer Solar System planets.');
+      appendSummaryLine(summary, (t.today || 'Today') + ': ', formatDateStamp(date));
+    }
+
+    /**
+     * Computes the local sidereal angle for a location.
+     * This is used to rotate the sky around the north celestial pole in the
+     * Polaris card so the scene follows the selected date and time.
+     * @param {Date} date Selected dashboard date.
+     * @param {number} longitudeDeg Geographic longitude in degrees, east positive.
+     * @returns {number} Local sidereal angle in degrees from 0 to 360.
+     */
+    function localSiderealAngleDegrees(date, longitudeDeg){
+      const jd = julianDate(date);
+      const T = (jd - 2451545.0) / 36525;
+      const gmst = 280.46061837
+        + 360.98564736629 * (jd - 2451545.0)
+        + 0.000387933 * T * T
+        - (T * T * T) / 38710000;
+      return normalizeDeg(gmst + longitudeDeg);
+    }
+
+    /**
+     * Rotates a 2D point around the origin.
+     * The helper keeps the Polaris sky sketch readable by reusing one set of
+     * asterism coordinates and turning it with sidereal time.
+     * @param {number} x X offset from the origin.
+     * @param {number} y Y offset from the origin.
+     * @param {number} angleDeg Rotation angle in degrees.
+     * @returns {{x:number, y:number}} Rotated point.
+     */
+    function rotatePoint(x, y, angleDeg){
+      const radians = angleDeg * Math.PI / 180;
+      const cosValue = Math.cos(radians);
+      const sinValue = Math.sin(radians);
+      return {
+        x: x * cosValue - y * sinValue,
+        y: x * sinValue + y * cosValue
+      };
+    }
+
+    /**
+     * Draws a simple rotating asterism around the north celestial pole.
+     * The coordinates are schematic and are only meant to explain that stars
+     * appear to circle the pole through the night.
+     * @param {SVGElement} svg Target SVG.
+     * @param {Array<number[]>} points Base point list around the origin.
+     * @param {number} angleDeg Rotation angle in degrees.
+     * @param {number} centerX Pole center X.
+     * @param {number} centerY Pole center Y.
+     * @param {string} className CSS class for the polyline.
+     * @returns {void}
+     */
+    function drawPolarAsterism(svg, points, angleDeg, centerX, centerY, className){
+      const svgNS = 'http://www.w3.org/2000/svg';
+      const rotated = [];
+
+      points.forEach(point => {
+        const rotatedPoint = rotatePoint(point[0], point[1], angleDeg);
+        rotated.push(rotatedPoint);
+      });
+
+      const polyline = document.createElementNS(svgNS, 'polyline');
+      const pointList = rotated.map(point => {
+        return (centerX + point.x) + ',' + (centerY + point.y);
+      }).join(' ');
+      polyline.setAttribute('points', pointList);
+      polyline.setAttribute('class', className);
+      svg.appendChild(polyline);
+
+      rotated.forEach(point => {
+        const star = document.createElementNS(svgNS, 'circle');
+        star.setAttribute('cx', centerX + point.x);
+        star.setAttribute('cy', centerY + point.y);
+        star.setAttribute('r', 2.6);
+        star.setAttribute('class', 'polaris-star');
+        svg.appendChild(star);
+      });
+    }
+
+    /**
+     * Renders the Polaris / north-celestial-pole card for the selected location.
+     * The altitude of the pole follows geographic latitude, while nearby
+     * asterisms rotate with sidereal time so the card visibly reacts to date changes.
+     * @param {Date} date Selected dashboard date.
+     * @returns {void}
+     */
+    function renderPolarisNorth(date = selectedSolarDate()){
+      const target = document.getElementById('polarisMap');
+      const summary = document.getElementById('polarisSummary');
+      if (!target || !summary) {
+        return;
+      }
+
+      target.textContent = '';
+      summary.textContent = '';
+
+      const location = selectedLocation();
+      const svgNS = 'http://www.w3.org/2000/svg';
+      const svg = document.createElementNS(svgNS, 'svg');
+      svg.setAttribute('viewBox', '0 0 420 420');
+      svg.setAttribute('aria-label', t.polaris_aria || 'Polaris and the north celestial pole');
+
+      const horizonY = 316;
+      const centerX = 210;
+      const latitude = location.latitude;
+      const clampedLatitude = Math.max(-75, Math.min(75, latitude));
+      const poleAltitude = Math.max(0, clampedLatitude);
+      const poleY = horizonY - poleAltitude * 2.4;
+      const siderealAngle = localSiderealAngleDegrees(date, location.longitude || 0);
+
+      const horizon = document.createElementNS(svgNS, 'line');
+      horizon.setAttribute('x1', 44);
+      horizon.setAttribute('y1', horizonY);
+      horizon.setAttribute('x2', 376);
+      horizon.setAttribute('y2', horizonY);
+      horizon.setAttribute('class', 'polaris-horizon');
+      svg.appendChild(horizon);
+
+      const northLabel = document.createElementNS(svgNS, 'text');
+      northLabel.setAttribute('x', centerX);
+      northLabel.setAttribute('y', horizonY + 24);
+      northLabel.setAttribute('class', 'polaris-label');
+      northLabel.textContent = 'N';
+      svg.appendChild(northLabel);
+
+      const axis = document.createElementNS(svgNS, 'line');
+      axis.setAttribute('x1', centerX);
+      axis.setAttribute('y1', horizonY);
+      axis.setAttribute('x2', centerX);
+      axis.setAttribute('y2', poleY);
+      axis.setAttribute('class', 'polaris-axis');
+      svg.appendChild(axis);
+
+      const poleRing = document.createElementNS(svgNS, 'circle');
+      poleRing.setAttribute('cx', centerX);
+      poleRing.setAttribute('cy', poleY);
+      poleRing.setAttribute('r', 76);
+      poleRing.setAttribute('class', 'polaris-ring');
+      svg.appendChild(poleRing);
+
+      const poleMarkerA = document.createElementNS(svgNS, 'line');
+      poleMarkerA.setAttribute('x1', centerX - 7);
+      poleMarkerA.setAttribute('y1', poleY - 7);
+      poleMarkerA.setAttribute('x2', centerX + 7);
+      poleMarkerA.setAttribute('y2', poleY + 7);
+      poleMarkerA.setAttribute('class', 'polaris-pole-marker');
+      svg.appendChild(poleMarkerA);
+
+      const poleMarkerB = document.createElementNS(svgNS, 'line');
+      poleMarkerB.setAttribute('x1', centerX - 7);
+      poleMarkerB.setAttribute('y1', poleY + 7);
+      poleMarkerB.setAttribute('x2', centerX + 7);
+      poleMarkerB.setAttribute('y2', poleY - 7);
+      poleMarkerB.setAttribute('class', 'polaris-pole-marker');
+      svg.appendChild(poleMarkerB);
+
+      const polarisOffsetPx = 10;
+      const polarisAngle = siderealAngle + 18;
+      const polarisPoint = rotatePoint(0, -polarisOffsetPx, polarisAngle);
+      const polarisX = centerX + polarisPoint.x;
+      const polarisY = poleY + polarisPoint.y;
+
+      const polarisGuide = document.createElementNS(svgNS, 'circle');
+      polarisGuide.setAttribute('cx', centerX);
+      polarisGuide.setAttribute('cy', poleY);
+      polarisGuide.setAttribute('r', polarisOffsetPx);
+      polarisGuide.setAttribute('class', 'polaris-guide');
+      svg.appendChild(polarisGuide);
+
+      const polaris = document.createElementNS(svgNS, 'circle');
+      polaris.setAttribute('cx', polarisX);
+      polaris.setAttribute('cy', polarisY);
+      polaris.setAttribute('r', 5.4);
+      polaris.setAttribute('class', 'polaris-star polaris-main-star');
+      svg.appendChild(polaris);
+
+      const polarisText = document.createElementNS(svgNS, 'text');
+      polarisText.setAttribute('x', polarisX + 9);
+      polarisText.setAttribute('y', polarisY - 8);
+      polarisText.setAttribute('class', 'polaris-small-label');
+      polarisText.textContent = t.polaris_name || 'Polaris';
+      svg.appendChild(polarisText);
+
+      const poleText = document.createElementNS(svgNS, 'text');
+      poleText.setAttribute('x', centerX + 11);
+      poleText.setAttribute('y', poleY + 4);
+      poleText.setAttribute('class', 'polaris-small-label');
+      poleText.textContent = t.polaris_ncp || 'North celestial pole';
+      svg.appendChild(poleText);
+
+      const bigDipperPoints = [
+        [-52, -28],
+        [-38, -18],
+        [-18, -16],
+        [2, -10],
+        [16, 2],
+        [28, 18],
+        [42, 30]
+      ];
+      const cassiopeiaPoints = [
+        [56, -10],
+        [42, -22],
+        [26, -8],
+        [12, -22],
+        [-2, -12]
+      ];
+      drawPolarAsterism(svg, bigDipperPoints, siderealAngle, centerX, poleY, 'polaris-asterism');
+      drawPolarAsterism(svg, cassiopeiaPoints, siderealAngle + 180, centerX, poleY, 'polaris-asterism');
+
+      target.appendChild(svg);
+
+      appendSummaryText(summary, t.polaris_summary || 'Polaris sits very close to the north celestial pole. Its height above the horizon is approximately your geographic latitude.');
+      appendSummaryLine(summary, (t.polaris_constellation || 'Constellation') + ': ', t.polaris_constellation_value || 'Ursa Minor (Little Bear); the asterism is the Little Dipper.');
+      appendSummaryLine(summary, (t.polaris_location || 'Location') + ': ', location.name);
+      appendSummaryLine(summary, (t.polaris_latitude || 'Latitude') + ': ', latitude.toFixed(1) + '°');
+      if (latitude >= 0) {
+        appendSummaryLine(summary, (t.polaris_altitude || 'Polaris altitude') + ': ', poleAltitude.toFixed(1) + '°');
+        appendSummaryLine(summary, (t.polaris_motion || 'Nightly motion') + ': ', t.polaris_motion_value || 'The surrounding stars circle the pole; Polaris traces only a tiny loop.');
+      } else {
+        appendSummaryLine(summary, (t.polaris_altitude || 'Polaris altitude') + ': ', t.polaris_below_horizon || 'Below the horizon at this southern location');
+      }
+      appendSummaryLine(summary, (t.today || 'Today') + ': ', formatDateStamp(date) + ' ' + fmtTimeOnly(date));
     }
 
     // Convert heliocentric positions into the observer's Earth-centered view:
@@ -6461,6 +8669,9 @@ function computeMoon(date){
         'btnSolarNextMonth',
         'btnSolarNextYear',
         'btnSolarAutoplay',
+        'btnBarycenterJupiter',
+        'btnBarycenterJupiterSaturn',
+        'btnBarycenterAll',
         'btnSolarPrevMobile',
         'btnSolarTodayMobile',
         'btnSolarNextMobile',
@@ -6477,6 +8688,30 @@ function computeMoon(date){
       selectedLocationKey = event.target.value;
       refreshDateDrivenTilesWithAnchor();
     });
+    const btnBarycenterJupiter = document.getElementById('btnBarycenterJupiter');
+    if (btnBarycenterJupiter) {
+      btnBarycenterJupiter.addEventListener('click', event => {
+        event.preventDefault();
+        btnBarycenterJupiter.blur();
+        setBarycenterInfluenceMode('jupiter');
+      });
+    }
+    const btnBarycenterJupiterSaturn = document.getElementById('btnBarycenterJupiterSaturn');
+    if (btnBarycenterJupiterSaturn) {
+      btnBarycenterJupiterSaturn.addEventListener('click', event => {
+        event.preventDefault();
+        btnBarycenterJupiterSaturn.blur();
+        setBarycenterInfluenceMode('jupiter_saturn');
+      });
+    }
+    const btnBarycenterAll = document.getElementById('btnBarycenterAll');
+    if (btnBarycenterAll) {
+      btnBarycenterAll.addEventListener('click', event => {
+        event.preventDefault();
+        btnBarycenterAll.blur();
+        setBarycenterInfluenceMode('all');
+      });
+    }
     const skyCalendarCard = document.getElementById('skyCalendarCard');
     if (skyCalendarCard) {
       skyCalendarCard.addEventListener('pointerdown', event => {
@@ -6542,6 +8777,7 @@ function computeMoon(date){
     }
     window.addEventListener('pointerup', stopSolarDateHold);
 
+    applyCardAnchorIds();
     applyInitialUrlState();
     populateLocationSelector();
     const solarDateSlider = document.getElementById('solarDateSlider');
@@ -6560,6 +8796,7 @@ function computeMoon(date){
     // Half-hourly refresh for time-dependent cards.
     initMasonryLayout();
     refreshDynamicTiles();
+    scheduleMasonryLayout(scrollToRequestedCard);
     setInterval(refreshDynamicTiles, 1800000);
 
 	    // --- Erde-Mond elliptische Bahn ---

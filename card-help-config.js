@@ -33,7 +33,8 @@ window.PLANETENUHR_CARD_HELP = {
         ],
         links: [
           { label: "JPL approximate planetary positions", url: "https://ssd.jpl.nasa.gov/planets/approx_pos.html" },
-          { label: "NOAA solar calculation details", url: "https://gml.noaa.gov/grad/solcalc/calcdetails.html" }
+          { label: "NOAA solar calculation details", url: "https://gml.noaa.gov/grad/solcalc/calcdetails.html" },
+          { label: "timeanddate: Astronomy overview", url: "https://www.timeanddate.com/astronomy/" }
         ]
       },
       solar_system: {
@@ -53,6 +54,96 @@ window.PLANETENUHR_CARD_HELP = {
         links: [
           { label: "JPL approximate positions of the planets", url: "https://ssd.jpl.nasa.gov/planets/approx_pos.html" },
           { label: "JPL Horizons ephemeris system", url: "https://ssd.jpl.nasa.gov/horizons/" }
+        ]
+      },
+      barycenter: {
+        intro: [
+          "This card shows the changing center of mass of the solar system in a top-down view close to the Sun.",
+          "The cross stays at the barycenter while the Sun wobbles around it, driven mainly by Jupiter and Saturn."
+        ],
+        formulas: [
+          { expr: "\\vec r<sub>B</sub> = \\frac{\\sum m<sub>i</sub> \\vec r<sub>i</sub>}{M<sub>☉</sub> + \\sum m<sub>i</sub>}", note: "Solar-system barycenter relative to the Sun from approximate heliocentric planet positions and mass ratios." },
+          { expr: "\\vec r<sub>☉</sub> = -\\vec r<sub>B</sub>", note: "In the barycentric frame, the Sun sits on the opposite side of the shared center of mass." }
+        ],
+        details: [
+          "The blue line is a fifty-year trail of the Sun center around the selected date.",
+          "The mode buttons let you compare how much of the wobble comes from Jupiter alone, from Jupiter plus Saturn, or from the full planetary system.",
+          "If the cross sits inside the solar disk, the barycenter is inside the Sun; if it falls outside, the barycenter lies beyond the photosphere."
+        ],
+        links: [
+          { label: "JPL glossary: barycenter", url: "https://ssd.jpl.nasa.gov/glossary/barycenter.html" },
+          { label: "NASA Space Place: What is a barycenter?", url: "https://spaceplace.nasa.gov/barycenter/en/" },
+          { label: "JPL approximate positions of the planets", url: "https://ssd.jpl.nasa.gov/planets/approx_pos.html" }
+        ]
+      },
+      lagrange: {
+        intro: [
+          "This card shows the five Sun-Earth Lagrange points in a rotating top-down schematic.",
+          "Lagrange points are places where gravity and orbital motion balance so spacecraft can remain near the Sun-Earth system with relatively little station-keeping."
+        ],
+        formulas: [
+          { expr: "L4, L5 = 60&deg; ahead / behind Earth", note: "The stable triangular points lead and trail Earth by about sixty degrees in the same orbit." },
+          { expr: "L1, L2 &asymp; 1.5 \\times 10^6 km from Earth", note: "Approximate Sun-Earth distances to the inner and outer collinear points." }
+        ],
+        details: [
+          "L1, L2 and L3 lie on the Sun-Earth line and are dynamically unstable.",
+          "L4 and L5 are the two stable triangle tips; JWST is shown near L2 because Sun, Earth and Moon stay on one side there, which keeps the telescope cold and pointed into deep space."
+        ],
+        links: [
+          { label: "NASA: What is a Lagrange point?", url: "https://science.nasa.gov/resource/what-is-a-lagrange-point/" },
+          { label: "NASA Webb: Orbit near L2", url: "https://science.nasa.gov/mission/webb/orbit/" }
+        ]
+      },
+      analemma: {
+        intro: [
+          "This card shows the analemma: the figure the Sun traces when viewed at the same civil clock time through the year.",
+          "Here the horizontal direction follows the clock-versus-solar-noon offset, while the vertical direction shows noon altitude for the selected place."
+        ],
+        formulas: [
+          { expr: "EoT = 9.87 sin(2B) - 7.53 cos(B) - 1.5 sin(B)", note: "Compact approximation of the equation of time in minutes." },
+          { expr: "&delta; &asymp; 23.44&deg; \\cdot sin( 2&pi;(DOY - 80) / daysInYear )", note: "Approximate solar declination through the year." }
+        ],
+        details: [
+          "The highlighted red point marks the selected date within the chosen year.",
+          "Because the dashboard keeps one page-wide time setting, this card approximates local civil noon from longitude rather than switching the whole app into the city's legal time zone."
+        ],
+        links: [
+          { label: "USNO: The Equation of Time", url: "https://aa.usno.navy.mil/faq/eqtime" },
+          { label: "NOAA solar calculation details", url: "https://gml.noaa.gov/grad/solcalc/calcdetails.html" }
+        ]
+      },
+      exoplanets: {
+        intro: [
+          "This card compares a few well-known exoplanet systems in a compact side-by-side layout.",
+          "Each panel uses its own outer orbit as the display scale, so the comparison focuses on architecture, not on one shared absolute size."
+        ],
+        formulas: [
+          { expr: "P^2 &asymp; a^3 / M<sub>*</sub>", note: "Simplified Kepler relation in solar units, used here for schematic orbital phase motion." }
+        ],
+        details: [
+          "TRAPPIST-1 shows how tightly packed rocky planets can be around a tiny star.",
+          "Kepler-90, 55 Cancri and HR 8799 provide broader layouts ranging from compact inner worlds to very wide giant-planet systems."
+        ],
+        links: [
+          { label: "NASA: TRAPPIST-1", url: "https://www.nasa.gov/trappist-1/" },
+          { label: "NASA: Exoplanet facts", url: "https://science.nasa.gov/exoplanets/facts/" },
+          { label: "NASA Exoplanet Archive", url: "https://exoplanetarchive.ipac.caltech.edu/" }
+        ]
+      },
+      polaris: {
+        intro: [
+          "This card shows the north horizon, Polaris, and the north celestial pole for the selected location.",
+          "The pole height above the horizon is approximately the observer latitude, while the surrounding stars rotate with sidereal time."
+        ],
+        formulas: [
+          { expr: "h<sub>pole</sub> &asymp; \\varphi", note: "In the northern hemisphere, the altitude of the north celestial pole roughly equals geographic latitude." }
+        ],
+        details: [
+          "Polaris is not exactly on the pole; the tiny circle around the pole is enlarged here so the offset stays visible.",
+          "The blue line marks Earth’s rotation axis projected into the sky, and the surrounding asterisms show how the sky turns around that axis through the night."
+        ],
+        links: [
+          { label: "NASA: What is the North Star?", url: "https://science.nasa.gov/solar-system/what-is-the-north-star-and-how-do-you-find-it/" }
         ]
       },
       small_bodies: {
@@ -155,7 +246,8 @@ window.PLANETENUHR_CARD_HELP = {
         ],
         links: [
           { label: "JPL approximate positions of the planets", url: "https://ssd.jpl.nasa.gov/planets/approx_pos.html" },
-          { label: "NASA Skywatching", url: "https://science.nasa.gov/skywatching/" }
+          { label: "NASA Skywatching", url: "https://science.nasa.gov/skywatching/" },
+          { label: "timeanddate: Night sky and planet visibility", url: "https://www.timeanddate.com/astronomy/night/" }
         ]
       },
       moon_nodes: {
@@ -174,7 +266,8 @@ window.PLANETENUHR_CARD_HELP = {
         ],
         links: [
           { label: "NASA: Eclipses", url: "https://science.nasa.gov/eclipses/" },
-          { label: "NASA: Moon", url: "https://science.nasa.gov/moon/" }
+          { label: "NASA: Moon", url: "https://science.nasa.gov/moon/" },
+          { label: "timeanddate: Eclipses", url: "https://www.timeanddate.com/eclipse/" }
         ]
       },
       conjunctions: {
@@ -365,7 +458,8 @@ window.PLANETENUHR_CARD_HELP = {
         links: [
           { label: "NASA: Eclipses", url: "https://science.nasa.gov/eclipses/" },
           { label: "NASA: Meteors and Meteorites", url: "https://science.nasa.gov/solar-system/meteors-meteorites/" },
-          { label: "Wikipedia: iCalendar", url: "https://en.wikipedia.org/wiki/ICalendar" }
+          { label: "Wikipedia: iCalendar", url: "https://en.wikipedia.org/wiki/ICalendar" },
+          { label: "timeanddate: Astronomy overview", url: "https://www.timeanddate.com/astronomy/" }
         ]
       },
       bsky_feed: {
@@ -387,8 +481,8 @@ window.PLANETENUHR_CARD_HELP = {
   de: {
     sections: {
       button: "Mehr Info",
-      title: "Diese Kachel erklÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤rt",
-      overview: "Kurz erklÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤rt",
+      title: "Diese Kachel erklärt",
+      overview: "Kurz erklärt",
       formulas: "Verwendete Formeln",
       details: "Daten & Hinweise",
       links: "Quellen & Vertiefung"
@@ -396,43 +490,44 @@ window.PLANETENUHR_CARD_HELP = {
     cards: {
       time: {
         intro: [
-          "Diese Kachel bÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼ndelt Live-Uhr, Stoppuhr, Countdown und Darstellungsoptionen an einer Stelle.",
+          "Diese Kachel bündelt Live-Uhr, Stoppuhr, Countdown und Darstellungsoptionen an einer Stelle.",
           "Sie arbeitet fast nur mit Browser-Logik und reagiert deshalb ohne externe Daten sofort."
         ],
         details: [
-          "Die Live-Zeit folgt der gewÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤hlten Zeitzone.",
+          "Die Live-Zeit folgt der gewählten Zeitzone.",
           "Stoppuhr und Countdown laufen lokal im Browser."
         ]
       },
       date_location: {
         intro: [
-          "Diese Kachel steuert das gemeinsame Datum fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r die Astronomie-Karten und den Beobachtungsort fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r ortsabhÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤ngige Ansichten.",
-          "Wenn hier das Datum geÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤ndert wird, aktualisieren sich Sonnensystem, Jahreszeiten, Mond, Sichtbarkeit und Tageslicht gemeinsam."
+          "Diese Kachel steuert das gemeinsame Datum für die Astronomie-Karten und den Beobachtungsort für ortsabhängige Ansichten.",
+          "Wenn hier das Datum geändert wird, aktualisieren sich Sonnensystem, Jahreszeiten, Mond, Sichtbarkeit und Tageslicht gemeinsam."
         ],
         formulas: [
           { expr: "t<sub>ausgewahlt</sub> = t<sub>jetzt</sub> + &Delta;d &middot; 86400 s", note: "Datumsverschiebung in ganzen Tagen." }
         ],
         details: [
-          "Der Slider behÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤lt bewusst die urspruengliche Spanne von -100 bis +100 Jahren.",
-          "Die Ortswahl bietet aktuell zehn grosse deutsche StÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤dte; die Seiten-Zeitzone selbst bleibt dabei unverÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤ndert."
+          "Der Slider behält bewusst die urspruengliche Spanne von -100 bis +100 Jahren.",
+          "Die Ortswahl bietet aktuell zehn grosse deutsche Städte; die Seiten-Zeitzone selbst bleibt dabei unverändert."
         ],
         links: [
           { label: "JPL: Approximate Positions of the Planets", url: "https://ssd.jpl.nasa.gov/planets/approx_pos.html" },
-          { label: "NOAA: Solar Calculation Details", url: "https://gml.noaa.gov/grad/solcalc/calcdetails.html" }
+          { label: "NOAA: Solar Calculation Details", url: "https://gml.noaa.gov/grad/solcalc/calcdetails.html" },
+          { label: "timeanddate: Astronomie-Überblick", url: "https://www.timeanddate.com/astronomy/" }
         ]
       },
       solar_system: {
         intro: [
-          "Hier siehst du die acht Planeten heliozentrisch in einer Draufsicht auf die Ekliptik fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r das gewÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤hlte Datum.",
-          "Die AbstÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤nde sind optisch komprimiert, damit auch die ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤usseren Planeten noch in eine kompakte KreisflÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤che passen."
+          "Hier siehst du die acht Planeten heliozentrisch in einer Draufsicht auf die Ekliptik für das gewählte Datum.",
+          "Die Abstände sind optisch komprimiert, damit auch die äusseren Planeten noch in eine kompakte Kreisfläche passen."
         ],
         formulas: [
           { expr: "T = (JD - 2451545.0) / 36525", note: "Jahrhunderte seit J2000.0." },
-          { expr: "M = L - &varpi;", note: "Mittlere Anomalie aus mittlerer LÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤nge und PerihellÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤nge." },
-          { expr: "x' = a(cos E - e), &nbsp; y' = a&radic;(1-e<sup>2</sup>) sin E", note: "Koordinaten in der Bahnebene nach der LÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¶sung der Kepler-Gleichung." }
+          { expr: "M = L - &varpi;", note: "Mittlere Anomalie aus mittlerer Länge und Perihellänge." },
+          { expr: "x' = a(cos E - e), &nbsp; y' = a&radic;(1-e<sup>2</sup>) sin E", note: "Koordinaten in der Bahnebene nach der Lösung der Kepler-Gleichung." }
         ],
         details: [
-          "Die Bahnelemente folgen der JPL-NÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤herung mit keplerschen Elementen fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r ÃƒÆ’Ã†â€™Ãƒâ€¦Ã¢â‚¬Å“bersichtsdarstellungen.",
+          "Die Bahnelemente folgen der JPL-Näherung mit keplerschen Elementen für Übersichtsdarstellungen.",
           "Die Karte ist schematisch, bleibt aber datumsgekoppelt und innerhalb der App konsistent."
         ],
         links: [
@@ -440,19 +535,109 @@ window.PLANETENUHR_CARD_HELP = {
           { label: "JPL Horizons", url: "https://ssd.jpl.nasa.gov/horizons/" }
         ]
       },
+      barycenter: {
+        intro: [
+          "Diese Kachel zeigt das veränderliche Gravitationszentrum des Sonnensystems als Draufsicht im Nahbereich der Sonne.",
+          "Das Kreuz bleibt im Baryzentrum stehen, während die Sonne darum taumelt; besonders stark treiben Jupiter und Saturn diese Bewegung."
+        ],
+        formulas: [
+          { expr: "\\vec r<sub>B</sub> = \\frac{\\sum m<sub>i</sub> \\vec r<sub>i</sub>}{M<sub>☉</sub> + \\sum m<sub>i</sub>}", note: "Baryzentrum des Sonnensystems relativ zur Sonne aus angenäherten heliozentrischen Planetenpositionen und Massenverhältnissen." },
+          { expr: "\\vec r<sub>☉</sub> = -\\vec r<sub>B</sub>", note: "Im baryzentrischen Bezugssystem liegt die Sonne auf der gegenüberliegenden Seite des gemeinsamen Schwerpunkts." }
+        ],
+        details: [
+          "Die blaue Linie zeigt die Fünfzig-Jahres-Spur des Sonnenzentrums rund um das gewählte Datum.",
+          "Mit den Modus-Buttons kannst du vergleichen, wie viel des Wobbelns von Jupiter allein, von Jupiter plus Saturn oder vom gesamten Planetensystem kommt.",
+          "Liegt das Kreuz innerhalb der Sonnenscheibe, befindet sich das Baryzentrum innerhalb der Sonne; liegt es außerhalb, ist der gemeinsame Schwerpunkt außerhalb der Photosphäre."
+        ],
+        links: [
+          { label: "JPL Glossar: Barycenter", url: "https://ssd.jpl.nasa.gov/glossary/barycenter.html" },
+          { label: "NASA Space Place: What is a barycenter?", url: "https://spaceplace.nasa.gov/barycenter/en/" },
+          { label: "JPL: Approximate Positions of the Planets", url: "https://ssd.jpl.nasa.gov/planets/approx_pos.html" }
+        ]
+      },
+      lagrange: {
+        intro: [
+          "Diese Kachel zeigt die fünf Sonne-Erde-Lagrange-Punkte als rotierende Draufsicht.",
+          "Lagrange-Punkte sind Orte, an denen sich Gravitation und Umlaufbewegung so ausgleichen, dass Raumsonden mit vergleichsweise wenig Korrekturaufwand in der Nähe des Sonne-Erde-Systems bleiben können."
+        ],
+        formulas: [
+          { expr: "L4, L5 = 60&deg; vor / hinter der Erde", note: "Die beiden stabilen Dreieckspunkte laufen in derselben Bahn rund sechzig Grad vor beziehungsweise hinter der Erde." },
+          { expr: "L1, L2 &asymp; 1.5 \\times 10^6 km von der Erde", note: "Genäherte Sonne-Erde-Distanzen zu den inneren und äußeren kollinearen Punkten." }
+        ],
+        details: [
+          "L1, L2 und L3 liegen auf der Sonne-Erde-Linie und sind dynamisch instabil.",
+          "L4 und L5 sind die beiden stabilen Dreiecksspitzen; JWST ist nahe L2 eingezeichnet, weil Sonne, Erde und Mond dort auf einer Seite bleiben und das Teleskop dadurch kühl in den tiefen Weltraum blicken kann."
+        ],
+        links: [
+          { label: "NASA: What is a Lagrange point?", url: "https://science.nasa.gov/resource/what-is-a-lagrange-point/" },
+          { label: "NASA Webb: Orbit near L2", url: "https://science.nasa.gov/mission/webb/orbit/" }
+        ]
+      },
+      analemma: {
+        intro: [
+          "Diese Kachel zeigt das Analemma: die Figur, die die Sonne im Jahreslauf zur gleichen zivilen Uhrzeit zeichnet.",
+          "Hier folgt die horizontale Richtung der Abweichung zwischen Uhrzeit und Sonnenmittag, die vertikale Richtung zeigt die Mittagshöhe für den gewählten Ort."
+        ],
+        formulas: [
+          { expr: "EoT = 9.87 sin(2B) - 7.53 cos(B) - 1.5 sin(B)", note: "Kompakte Näherung der Gleichung der Zeit in Minuten." },
+          { expr: "&delta; &asymp; 23.44&deg; \\cdot sin( 2&pi;(DOY - 80) / daysInYear )", note: "Genäherte Solardeklination im Jahreslauf." }
+        ],
+        details: [
+          "Der rote Punkt markiert das gewählte Datum innerhalb des ausgewählten Jahres.",
+          "Weil die Dashboard-Zeit global bleibt, nähert diese Kachel den lokalen zivilen Mittag aus der geografischen Länge an, statt die ganze App in die gesetzliche Zeitzone der Stadt umzuschalten."
+        ],
+        links: [
+          { label: "USNO: The Equation of Time", url: "https://aa.usno.navy.mil/faq/eqtime" },
+          { label: "NOAA: Solar Calculation Details", url: "https://gml.noaa.gov/grad/solcalc/calcdetails.html" }
+        ]
+      },
+      exoplanets: {
+        intro: [
+          "Diese Kachel vergleicht einige bekannte Exoplanetensysteme in einer kompakten Nebeneinander-Ansicht.",
+          "Jedes Teilbild nutzt seine eigene Außenbahn als Maßstab. Verglichen wird also die Architektur der Systeme, nicht eine gemeinsame absolute Größe."
+        ],
+        formulas: [
+          { expr: "P^2 &asymp; a^3 / M<sub>*</sub>", note: "Vereinfachtes Kepler-Gesetz in Sonneneinheiten; hier nur für die schematische Bahnbewegung genutzt." }
+        ],
+        details: [
+          "TRAPPIST-1 zeigt, wie eng gepackt felsige Planeten um einen kleinen Stern liegen können.",
+          "Kepler-90, 55 Cancri und HR 8799 liefern breitere Gegenbeispiele von kompakten Innenwelten bis zu weit verteilten Riesenplaneten."
+        ],
+        links: [
+          { label: "NASA: TRAPPIST-1", url: "https://www.nasa.gov/trappist-1/" },
+          { label: "NASA: Exoplaneten-Fakten", url: "https://science.nasa.gov/exoplanets/facts/" },
+          { label: "NASA Exoplanet Archive", url: "https://exoplanetarchive.ipac.caltech.edu/" }
+        ]
+      },
+      polaris: {
+        intro: [
+          "Diese Kachel zeigt Nordhorizont, Polarstern und Himmelsnordpol für den gewählten Ort.",
+          "Die Höhe des Pols über dem Horizont entspricht näherungsweise der geografischen Breite; die umliegenden Sterne drehen sich mit der Sternzeit darum."
+        ],
+        formulas: [
+          { expr: "h<sub>Pol</sub> &asymp; \\varphi", note: "Auf der Nordhalbkugel entspricht die Höhe des Himmelsnordpols näherungsweise der geografischen Breite." }
+        ],
+        details: [
+          "Der Polarstern sitzt nicht exakt auf dem Pol; der kleine Kreis um den Pol ist hier vergrößert, damit der Abstand sichtbar bleibt.",
+          "Die blaue Linie markiert die in den Himmel verlängerte Erdachse. Die umliegenden Sternfiguren zeigen, wie sich der Himmel in der Nacht darum dreht."
+        ],
+        links: [
+          { label: "NASA: Was ist der Polarstern?", url: "https://science.nasa.gov/solar-system/what-is-the-north-star-and-how-do-you-find-it/" }
+        ]
+      },
       small_bodies: {
         intro: [
-          "Diese Kachel versammelt ausgewÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤hlte berÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼hmte Kometenbahnen zusammen mit AsteroidengÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼rtel und KuipergÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼rtel.",
-          "Die Darstellung ist stark komprimiert, damit langperiodische Kometen, Sungrazer und GÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼rtelregionen zugleich lesbar bleiben."
+          "Diese Kachel versammelt ausgewählte berühmte Kometenbahnen zusammen mit Asteroidengürtel und Kuipergürtel.",
+          "Die Darstellung ist stark komprimiert, damit langperiodische Kometen, Sungrazer und Gürtelregionen zugleich lesbar bleiben."
         ],
         formulas: [
           { expr: "a = (q + Q) / 2", note: "Grosse Halbachse aus Perihel q und Aphel Q." },
-          { expr: "e = (Q - q) / (Q + q)", note: "ExzentrizitÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤t aus q und Q." },
-          { expr: "r<sub>plot</sub> = R<sub>max</sub> &radic;( clamp(r, 0.02, 60) / 60 )", note: "Verwendete Kompression fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r die KleinkÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¶rper-Karte." }
+          { expr: "e = (Q - q) / (Q + q)", note: "Exzentrizität aus q und Q." },
+          { expr: "r<sub>plot</sub> = R<sub>max</sub> &radic;( clamp(r, 0.02, 60) / 60 )", note: "Verwendete Kompression für die Kleinkörper-Karte." }
         ],
         details: [
           "Aktuell sind 20 benannte Kometen enthalten, darunter Halley, Hale-Bopp, Hyakutake, NEOWISE und ISON.",
-          "Der AsteroidengÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼rtel wird bei 2.1-3.3 AE gezeigt, der KuipergÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼rtel bei 30-50 AE."
+          "Der Asteroidengürtel wird bei 2.1-3.3 AE gezeigt, der Kuipergürtel bei 30-50 AE."
         ],
         links: [
           { label: "JPL Small-Body Database", url: "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html" },
@@ -461,15 +646,15 @@ window.PLANETENUHR_CARD_HELP = {
       },
       meteor_streams: {
         intro: [
-          "Der grosse Ring zeigt, wann wichtige MeteorstrÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¶me im Jahreslauf aktiv sind; das separate Radiantenfeld zeigt, aus welcher Himmelsrichtung sie scheinbar kommen.",
+          "Der grosse Ring zeigt, wann wichtige Meteorströme im Jahreslauf aktiv sind; das separate Radiantenfeld zeigt, aus welcher Himmelsrichtung sie scheinbar kommen.",
           "Das ist ein Kalender- und Orientierungstool, keine fotografische Himmelskarte."
         ],
         formulas: [
           { expr: "f<sub>Jahr</sub> = (DOY - 1) / daysInYear", note: "Ordnet einen Kalendertag auf den Jahresring ab." }
         ],
         details: [
-          "Farbige BÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¶gen markieren AktivitÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤tsfenster; die kleinen Punkte markieren die Peak-Daten.",
-          "Die Radianten sind schematisch ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼ber Azimut und HÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¶he fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r eine mitteleuropÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤ische Lesart angeordnet."
+          "Farbige Bögen markieren Aktivitätsfenster; die kleinen Punkte markieren die Peak-Daten.",
+          "Die Radianten sind schematisch über Azimut und Höhe für eine mitteleuropäische Lesart angeordnet."
         ],
         links: [
           { label: "NASA: Meteors and Meteorites", url: "https://science.nasa.gov/solar-system/meteors-meteorites/" },
@@ -479,11 +664,11 @@ window.PLANETENUHR_CARD_HELP = {
       constellation_month: {
         intro: [
           "Diese Monats-Kachel hebt jeweils ein gut auffindbares saisonales Sternbild mit vereinfachter Linienfigur und Sternnamen hervor.",
-          "Sie ist als freundliche Orientierung gedacht und nicht als vollstÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤ndiger Sternatlas."
+          "Sie ist als freundliche Orientierung gedacht und nicht als vollständiger Sternatlas."
         ],
         details: [
-          "Die Auswahl richtet sich nach dem Monat und ist auf eine mitteleuropÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤ische Saison-Lesart abgestimmt.",
-          "Sternnamen werden so gesetzt, dass sie auch auf kleineren Displays mÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¶glichst lesbar bleiben."
+          "Die Auswahl richtet sich nach dem Monat und ist auf eine mitteleuropäische Saison-Lesart abgestimmt.",
+          "Sternnamen werden so gesetzt, dass sie auch auf kleineren Displays möglichst lesbar bleiben."
         ],
         links: [
           { label: "NASA Skywatching", url: "https://science.nasa.gov/skywatching/" },
@@ -493,16 +678,16 @@ window.PLANETENUHR_CARD_HELP = {
       },
       season_axis: {
         intro: [
-          "Diese Kachel verbindet eine Draufsicht auf die Erdbahn mit einer seitlichen Nebenansicht fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r den Sonnenstand relativ zur Erdachse.",
-          "Zusammen erklÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤rt beides, warum dieselbe Erde im Jahreslauf mal lange helle und mal kurze tiefe Sonnentage hat."
+          "Diese Kachel verbindet eine Draufsicht auf die Erdbahn mit einer seitlichen Nebenansicht für den Sonnenstand relativ zur Erdachse.",
+          "Zusammen erklärt beides, warum dieselbe Erde im Jahreslauf mal lange helle und mal kurze tiefe Sonnentage hat."
         ],
         formulas: [
           { expr: "f = (DOY - 1) / daysInYear", note: "Jahresfortschritt seit dem 1. Januar." },
-          { expr: "&delta; &asymp; 23.44&deg; &middot; sin( 2&pi;(DOY - 80) / daysInYear )", note: "Vereinfachte Solardeklination fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r die Nebenansicht." }
+          { expr: "&delta; &asymp; 23.44&deg; &middot; sin( 2&pi;(DOY - 80) / daysInYear )", note: "Vereinfachte Solardeklination für die Nebenansicht." }
         ],
         details: [
-          "Die Prozentangabe ist der Jahresfortschritt, kein StÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤rkewert.",
-          "Die seitliche Ansicht ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤ndert sich mit dem gewÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤hlten Datum, der Sonnenwinkel lÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤uft also wirklich durch den Jahreszyklus."
+          "Die Prozentangabe ist der Jahresfortschritt, kein Stärkewert.",
+          "Die seitliche Ansicht ändert sich mit dem gewählten Datum, der Sonnenwinkel läuft also wirklich durch den Jahreszyklus."
         ],
         links: [
           { label: "NOAA: Solar Calculation Details", url: "https://gml.noaa.gov/grad/solcalc/calcdetails.html" },
@@ -512,14 +697,14 @@ window.PLANETENUHR_CARD_HELP = {
       spacecraft: {
         intro: [
           "Diese Kachel setzt einige wichtige Raumsonden in einer schematischen Draufsicht um die Sonne.",
-          "Sie ist fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r Relationen und Missionskontext gebaut, nicht fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r exakte Navigation."
+          "Sie ist für Relationen und Missionskontext gebaut, nicht für exakte Navigation."
         ],
         formulas: [
-          { expr: "r<sub>plot</sub> = R<sub>max</sub> log(1 + r) / log(1 + r<sub>max</sub>)", note: "Logarithmische Kompression fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r die heliozentrische Distanz in AE." }
+          { expr: "r<sub>plot</sub> = R<sub>max</sub> log(1 + r) / log(1 + r<sub>max</sub>)", note: "Logarithmische Kompression für die heliozentrische Distanz in AE." }
         ],
         details: [
           "Enthalten sind aktuell Parker Solar Probe, BepiColombo, JUICE, Juno, Europa Clipper, New Horizons, Pioneer 10/11 und die Voyagers.",
-          "Die gekrÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼mmten Linien sind stilisierte Flugbahnen, damit Marker und Labels lesbar bleiben."
+          "Die gekrümmten Linien sind stilisierte Flugbahnen, damit Marker und Labels lesbar bleiben."
         ],
         links: [
           { label: "JPL Horizons", url: "https://ssd.jpl.nasa.gov/horizons/" },
@@ -528,11 +713,11 @@ window.PLANETENUHR_CARD_HELP = {
       },
       visibility: {
         intro: [
-          "Diese Kachel schÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤tzt, ob ein Planet am gewÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤hlten Datum und Ort eher morgens oder eher abends gut steht.",
+          "Diese Kachel schätzt, ob ein Planet am gewählten Datum und Ort eher morgens oder eher abends gut steht.",
           "Sie ist eine schnelle visuelle Orientierung und kein vollwertiger Beobachtungsplaner."
         ],
         formulas: [
-          { expr: "Elongation = &lambda;<sub>Planet</sub> - &lambda;<sub>Sonne</sub>", note: "Vorzeichenbehaftete solare Elongation in ekliptischer LÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤nge." }
+          { expr: "Elongation = &lambda;<sub>Planet</sub> - &lambda;<sub>Sonne</sub>", note: "Vorzeichenbehaftete solare Elongation in ekliptischer Länge." }
         ],
         details: [
           "Positive Elongation wird als Abendsichtbarkeit, negative als Morgensichtbarkeit gelesen.",
@@ -540,38 +725,40 @@ window.PLANETENUHR_CARD_HELP = {
         ],
         links: [
           { label: "JPL: Approximate Positions of the Planets", url: "https://ssd.jpl.nasa.gov/planets/approx_pos.html" },
-          { label: "NASA Skywatching", url: "https://science.nasa.gov/skywatching/" }
+          { label: "NASA Skywatching", url: "https://science.nasa.gov/skywatching/" },
+          { label: "timeanddate: Nachthimmel und Planetensichtbarkeit", url: "https://www.timeanddate.com/astronomy/night/" }
         ]
       },
       moon_nodes: {
         intro: [
-          "Diese Kachel verbindet die Mondknoten-Geometrie mit einem angenÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤herten Finsternis-Saison-Zyklus fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r das gewÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤hlte Datum.",
+          "Diese Kachel verbindet die Mondknoten-Geometrie mit einem angenäherten Finsternis-Saison-Zyklus für das gewählte Datum.",
           "So wird sichtbar, warum Finsternisse in Saisonfenstern auftreten und nicht einfach jeden Monat."
         ],
         formulas: [
-          { expr: "d<sub>Knoten</sub> = min(f, 1-f) &middot; 27.2122 d", note: "GenÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤herte Distanz zum nÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤chsten Mondknoten aus der drakonitischen Phase f." },
-          { expr: "d<sub>Saison</sub> = min(s, P-s), &nbsp; P &asymp; 173.31 d", note: "GenÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤herte Distanz zum nÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤chsten Saisonzentrum." }
+          { expr: "d<sub>Knoten</sub> = min(f, 1-f) &middot; 27.2122 d", note: "Genäherte Distanz zum nächsten Mondknoten aus der drakonitischen Phase f." },
+          { expr: "d<sub>Saison</sub> = min(s, P-s), &nbsp; P &asymp; 173.31 d", note: "Genäherte Distanz zum nächsten Saisonzentrum." }
         ],
         details: [
-          "Die innere Bahn zeigt die Stellung des Mondes relativ zur Knotenlinie am gewÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤hlten Datum.",
-          "Der ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤uÃƒÆ’Ã†â€™Ãƒâ€¦Ã‚Â¸ere Ring nutzt eine wiederholte Saison-NÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤herung und ist als didaktische Zeitansicht gedacht."
+          "Die innere Bahn zeigt die Stellung des Mondes relativ zur Knotenlinie am gewählten Datum.",
+          "Der äußere Ring nutzt eine wiederholte Saison-Näherung und ist als didaktische Zeitansicht gedacht."
         ],
         links: [
           { label: "NASA: Eclipses", url: "https://science.nasa.gov/eclipses/" },
-          { label: "NASA: Moon", url: "https://science.nasa.gov/moon/" }
+          { label: "NASA: Moon", url: "https://science.nasa.gov/moon/" },
+          { label: "timeanddate: Finsternisse", url: "https://www.timeanddate.com/eclipse/" }
         ]
       },
       conjunctions: {
         intro: [
-          "Diese Kachel durchsucht ein Zeitfenster rund um das gewÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤hlte Datum und markiert angenÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤herte Minima im Winkelabstand zwischen Planeten.",
-          "Sie ist als schnelle Ereignisansicht fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r enge Begegnungen gedacht, nicht als observatoriumsgenaue Ephemeride."
+          "Diese Kachel durchsucht ein Zeitfenster rund um das gewählte Datum und markiert angenäherte Minima im Winkelabstand zwischen Planeten.",
+          "Sie ist als schnelle Ereignisansicht für enge Begegnungen gedacht, nicht als observatoriumsgenaue Ephemeride."
         ],
         formulas: [
-          { expr: "&Delta; = | signed( &lambda;<sub>A</sub> - &lambda;<sub>B</sub> ) |", note: "Winkelabstand in ekliptischer LÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤nge zwischen zwei Planeten." }
+          { expr: "&Delta; = | signed( &lambda;<sub>A</sub> - &lambda;<sub>B</sub> ) |", note: "Winkelabstand in ekliptischer Länge zwischen zwei Planeten." }
         ],
         details: [
-          "Die Zeitachse sucht lokale Minima der Abstandskurve innerhalb des gewÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤hlten Fensters.",
-          "Die Werte sind angenÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤hert und vor allem als Hinweis auf interessante Daten gedacht."
+          "Die Zeitachse sucht lokale Minima der Abstandskurve innerhalb des gewählten Fensters.",
+          "Die Werte sind angenähert und vor allem als Hinweis auf interessante Daten gedacht."
         ],
         links: [
           { label: "JPL: Approximate Positions of the Planets", url: "https://ssd.jpl.nasa.gov/planets/approx_pos.html" },
@@ -581,16 +768,16 @@ window.PLANETENUHR_CARD_HELP = {
       retrograde: {
         intro: [
           "Diese Kachel verfolgt, ob ein Planet aus Sicht der Erde gerade direkte oder retrograde scheinbare Bewegung zeigt.",
-          "Retrograd bedeutet hier eine temporÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤re westwÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤rtige Drift vor dem Sternhintergrund durch VerÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤nderungen der Beobachtungsgeometrie."
+          "Retrograd bedeutet hier eine temporäre westwärtige Drift vor dem Sternhintergrund durch Veränderungen der Beobachtungsgeometrie."
         ],
         formulas: [
-          { expr: "&Delta;&lambda; / Tag = signed( &lambda;<sub>geo</sub>(t+1d) - &lambda;<sub>geo</sub>(t-1d) ) / 2", note: "GenÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤herte tÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤gliche Scheinbewegung aus der geozentrischen LÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤nge." }
+          { expr: "&Delta;&lambda; / Tag = signed( &lambda;<sub>geo</sub>(t+1d) - &lambda;<sub>geo</sub>(t-1d) ) / 2", note: "Genäherte tägliche Scheinbewegung aus der geozentrischen Länge." }
         ],
         details: [
-          "Nahe Stationen werden ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼ber Vorzeichenwechsel der Scheinbewegung gesucht.",
+          "Nahe Stationen werden über Vorzeichenwechsel der Scheinbewegung gesucht.",
           "Die gelben Punkte auf dem Pfad markieren die beiden Stationen, an denen die scheinbare Bewegung die Richtung wechselt.",
           "Der blaue Punkt markiert die aktuelle Position des Planeten innerhalb des angezeigten Pfadfensters.",
-          "Die Werte sind angenÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤hert, aber datumsgekoppelt und fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r eine Dashboard-Lesart gut geeignet."
+          "Die Werte sind angenähert, aber datumsgekoppelt und für eine Dashboard-Lesart gut geeignet."
         ],
         links: [
           { label: "JPL: Approximate Positions of the Planets", url: "https://ssd.jpl.nasa.gov/planets/approx_pos.html" },
@@ -607,8 +794,8 @@ window.PLANETENUHR_CARD_HELP = {
           { expr: "k = (1 + cos i) / 2", note: "Beleuchteter Anteil k aus dem Phasenwinkel i am Planeten." }
         ],
         details: [
-          "Eine schmale Sichel bedeutet meist NÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤he zur unteren Konjunktion und teleskopisch einen grÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¶ÃƒÆ’Ã†â€™Ãƒâ€¦Ã‚Â¸eren scheinbaren Durchmesser.",
-          "GrÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¶ssere Elongation bedeutet oft bessere Sichtbarkeit am Morgen- oder Abendhimmel."
+          "Eine schmale Sichel bedeutet meist Nähe zur unteren Konjunktion und teleskopisch einen größeren scheinbaren Durchmesser.",
+          "Grössere Elongation bedeutet oft bessere Sichtbarkeit am Morgen- oder Abendhimmel."
         ],
         links: [
           { label: "NASA: Mercury", url: "https://science.nasa.gov/mercury/" },
@@ -618,11 +805,11 @@ window.PLANETENUHR_CARD_HELP = {
       },
       constellation_year: {
         intro: [
-          "Diese Jahresuhr legt die monatlichen Sternbild-Schwerpunkte ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼ber den kompletten Jahreskreis.",
+          "Diese Jahresuhr legt die monatlichen Sternbild-Schwerpunkte über den kompletten Jahreskreis.",
           "So wird sichtbar, wie sich der Saisonhimmel durch den Kalender dreht, statt jeden Monat isoliert zu betrachten."
         ],
         details: [
-          "Der hervorgehobene Marker lÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤uft mit dem gewÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤hlten Datum ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼ber den Jahresring.",
+          "Der hervorgehobene Marker läuft mit dem gewählten Datum über den Jahresring.",
           "Die Monatsfolge basiert auf derselben kuratierten Sternbildliste wie die Monats-Kachel."
         ],
         links: [
@@ -633,16 +820,16 @@ window.PLANETENUHR_CARD_HELP = {
       },
       night_visibility: {
         intro: [
-          "Diese Kachel spannt die ausgewÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤hlte Nacht von der AbenddÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤mmerung bis zur MorgendÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤mmerung auf und schÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤tzt, wann helle Planeten ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼ber dem Horizont stehen.",
-          "Sie bleibt bewusst angenÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤hert, ist aber deutlich informativer als nur Morgen/Abend."
+          "Diese Kachel spannt die ausgewählte Nacht von der Abenddämmerung bis zur Morgendämmerung auf und schätzt, wann helle Planeten über dem Horizont stehen.",
+          "Sie bleibt bewusst angenähert, ist aber deutlich informativer als nur Morgen/Abend."
         ],
         formulas: [
-          { expr: "t<sub>Transit</sub> &asymp; 12h + Elongation / 15", note: "GenÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤herte Meridiandurchgangszeit aus der solaren Elongation." },
-          { expr: "t<sub>Auf,Unter</sub> &asymp; t<sub>Transit</sub> &plusmn; 6h", note: "Einfache Horizont-NÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤herung fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r die Nachtbalken." }
+          { expr: "t<sub>Transit</sub> &asymp; 12h + Elongation / 15", note: "Genäherte Meridiandurchgangszeit aus der solaren Elongation." },
+          { expr: "t<sub>Auf,Unter</sub> &asymp; t<sub>Transit</sub> &plusmn; 6h", note: "Einfache Horizont-Näherung für die Nachtbalken." }
         ],
         details: [
-          "Die Balken werden auf die dunkle Nachtspanne zwischen Abend- und MorgendÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤mmerung beschnitten.",
-          "Das ist ein geometrischer Schnellblick und keine vollstÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤ndige HÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¶hen-/Azimut-Simulation."
+          "Die Balken werden auf die dunkle Nachtspanne zwischen Abend- und Morgendämmerung beschnitten.",
+          "Das ist ein geometrischer Schnellblick und keine vollständige Höhen-/Azimut-Simulation."
         ],
         links: [
           { label: "NOAA: Solar Calculation Details", url: "https://gml.noaa.gov/grad/solcalc/calcdetails.html" },
@@ -652,13 +839,13 @@ window.PLANETENUHR_CARD_HELP = {
       satellites: {
         intro: [
           "Diese Kachel zeigt einige helle oder bekannte Erdorbiter in schematischen niedrigen Erdorbits.",
-          "Die Marker bewegen sich mit dem gewÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤hlten Datum, sind aber keine Live-Positionen aus frischen TLE-Daten."
+          "Die Marker bewegen sich mit dem gewählten Datum, sind aber keine Live-Positionen aus frischen TLE-Daten."
         ],
         formulas: [
           { expr: "Phase = frac( Phase<sub>0</sub> + (t - t<sub>0</sub>) / P )", note: "Mittlere Orbitphase aus Referenzzeitpunkt und Umlaufzeit P." }
         ],
         details: [
-          "HÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¶he, Umlaufzeit und Inklination werden zur Einordnung angezeigt.",
+          "Höhe, Umlaufzeit und Inklination werden zur Einordnung angezeigt.",
           "Die Bahnebenen sind absichtlich stilisiert, damit mehrere Satelliten in einer Kachel lesbar bleiben."
         ],
         links: [
@@ -669,11 +856,11 @@ window.PLANETENUHR_CARD_HELP = {
       },
       aurora: {
         intro: [
-          "Diese Kachel schÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤tzt die heutige Polarlicht-Chance fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r Deutschland aus Live-Daten des Weltraumwetters.",
+          "Diese Kachel schätzt die heutige Polarlicht-Chance für Deutschland aus Live-Daten des Weltraumwetters.",
           "Sie ist absichtlich nicht an den Datumsregler gekoppelt, weil der Input echtzeitnah und nicht historisch ist."
         ],
         details: [
-          "Aktuell wird der neueste planetare Kp-Wert der NOAA SWPC geholt und in eine Deutschland-Lesart ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼bersetzt.",
+          "Aktuell wird der neueste planetare Kp-Wert der NOAA SWPC geholt und in eine Deutschland-Lesart übersetzt.",
           "Ein hoher Kp garantiert noch keine Sichtung; Dunkelheit, klares Wetter und das genaue Timing bleiben wichtig."
         ],
         links: [
@@ -683,15 +870,15 @@ window.PLANETENUHR_CARD_HELP = {
       },
       jupiter: {
         intro: [
-          "Diese Kachel zeigt Jupiter mit zehn ausgewÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤hlten Monden in beschleunigter, bewusst illustrativer Bewegung.",
-          "Lesbarkeit steht hier absichtlich etwas ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼ber physikalischer Exaktheit."
+          "Diese Kachel zeigt Jupiter mit zehn ausgewählten Monden in beschleunigter, bewusst illustrativer Bewegung.",
+          "Lesbarkeit steht hier absichtlich etwas über physikalischer Exaktheit."
         ],
         formulas: [
-          { expr: "T<sup>2</sup> &prop; a<sup>3</sup>", note: "Keplers drittes Gesetz erklÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤rt, warum ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤ussere Monde langsamer umlaufen." }
+          { expr: "T<sup>2</sup> &prop; a<sup>3</sup>", note: "Keplers drittes Gesetz erklärt, warum äussere Monde langsamer umlaufen." }
         ],
         details: [
           "Hervorgehoben sind die vier galileischen Monde plus einige weitere bekannte Begleiter.",
-          "NASA fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼hrt fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r Jupiter 101 bestÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤tigte Monde; gezeichnet wird bewusst nur eine kuratierte Auswahl."
+          "NASA führt für Jupiter 101 bestätigte Monde; gezeichnet wird bewusst nur eine kuratierte Auswahl."
         ],
         links: [
           { label: "NASA: Jupiter Moons", url: "https://science.nasa.gov/jupiter/jupiter-moons/" },
@@ -700,17 +887,17 @@ window.PLANETENUHR_CARD_HELP = {
       },
       earth_moon: {
         intro: [
-          "Diese Kachel bÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼ndelt drei eng zusammenhÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤ngende Ansichten: Erde-Mond-Szene, Finsternisgeometrie und Tageslichtdaten fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r den gewÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤hlten Ort.",
+          "Diese Kachel bündelt drei eng zusammenhängende Ansichten: Erde-Mond-Szene, Finsternisgeometrie und Tageslichtdaten für den gewählten Ort.",
           "Sie ist die datums- und ortssensibelste Kachel im ganzen Dashboard."
         ],
         formulas: [
           { expr: "Alter = ((t - t<sub>0</sub>) mod 29.530588861 d)", note: "Mondalter aus Referenz-Neumond und synodischem Monat." },
           { expr: "Beleuchtung = 0.5 (1 - cos(2&pi;f))", note: "Beleuchteter Anteil aus der Phasenfraktion f." },
-          { expr: "cos H = (cos Z - sin &delta; sin &phi;) / (cos &delta; cos &phi;)", note: "Grundbeziehung hinter Sonnenaufgang, Sonnenuntergang und DÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤mmerung." }
+          { expr: "cos H = (cos Z - sin &delta; sin &phi;) / (cos &delta; cos &phi;)", note: "Grundbeziehung hinter Sonnenaufgang, Sonnenuntergang und Dämmerung." }
         ],
         details: [
-          "Die Finsternis-Grafik prÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼ft Neu-/Vollmond-Geometrie zusammen mit Knotennahe und zeigt damit, wann Finsternisbedingungen gÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼nstig sind.",
-          "Sonnenaufgang, Sonnenuntergang, DÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤mmerung, blaue Stunde und goldene Stunde werden fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r die aktuell gewÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤hlte Stadt neu berechnet."
+          "Die Finsternis-Grafik prüft Neu-/Vollmond-Geometrie zusammen mit Knotennahe und zeigt damit, wann Finsternisbedingungen günstig sind.",
+          "Sonnenaufgang, Sonnenuntergang, Dämmerung, blaue Stunde und goldene Stunde werden für die aktuell gewählte Stadt neu berechnet."
         ],
         links: [
           { label: "NASA: Eclipses", url: "https://science.nasa.gov/eclipses/" },
@@ -720,11 +907,11 @@ window.PLANETENUHR_CARD_HELP = {
       },
       planet_systems: {
         intro: [
-          "Diese Vergleichskachel skizziert ausgewÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤hlte Mondsysteme von Mars, Saturn, Uranus und Neptun nebeneinander.",
-          "Sie soll vor allem GrÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¶ssenfamilien und bekannte Namen zeigen, nicht vollstÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤ndige Satellitenkataloge."
+          "Diese Vergleichskachel skizziert ausgewählte Mondsysteme von Mars, Saturn, Uranus und Neptun nebeneinander.",
+          "Sie soll vor allem Grössenfamilien und bekannte Namen zeigen, nicht vollständige Satellitenkataloge."
         ],
         formulas: [
-          { expr: "T<sup>2</sup> &prop; a<sup>3</sup>", note: "Dasselbe Bahngesetz prÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¤gt auch Planet-Mond-Systeme." }
+          { expr: "T<sup>2</sup> &prop; a<sup>3</sup>", note: "Dasselbe Bahngesetz prägt auch Planet-Mond-Systeme." }
         ],
         details: [
           "Die aktuellen Summen in der Legende sind Mars 2, Saturn 274, Uranus 28 und Neptun 16.",
@@ -749,17 +936,18 @@ window.PLANETENUHR_CARD_HELP = {
         links: [
           { label: "NASA: Eclipses", url: "https://science.nasa.gov/eclipses/" },
           { label: "NASA: Meteors and Meteorites", url: "https://science.nasa.gov/solar-system/meteors-meteorites/" },
-          { label: "Wikipedia: iCalendar", url: "https://de.wikipedia.org/wiki/ICalendar" }
+          { label: "Wikipedia: iCalendar", url: "https://de.wikipedia.org/wiki/ICalendar" },
+          { label: "timeanddate: Astronomie", url: "https://www.timeanddate.com/astronomy/" }
         ]
       },
       bsky_feed: {
         intro: [
-          "Diese Kachel zeigt fÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼r jeden konfigurierten Bluesky-Account den neuesten Bildbeitrag samt Avatar und Datum.",
-          "Falls es heute noch keinen Bildpost gibt, kann stattdessen der letzte verfÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼gbare Bildpost gezeigt werden."
+          "Diese Kachel zeigt für jeden konfigurierten Bluesky-Account den neuesten Bildbeitrag samt Avatar und Datum.",
+          "Falls es heute noch keinen Bildpost gibt, kann stattdessen der letzte verfügbare Bildpost gezeigt werden."
         ],
         details: [
           "Bei einem Aufruf per file:// bleibt die Kachel verborgen, weil dort kein Feed-Fetching laufen soll.",
-          "Jeder Account wird als eigener Abschnitt gerendert, sodass mehrere Quellen untereinander in einer scrollbaren Kachel erscheinen kÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¶nnen."
+          "Jeder Account wird als eigener Abschnitt gerendert, sodass mehrere Quellen untereinander in einer scrollbaren Kachel erscheinen können."
         ],
         links: [
           { label: "Bluesky Feed API", url: "https://docs.bsky.app/docs/api/app-bsky-feed-get-author-feed" },
@@ -802,7 +990,8 @@ window.PLANETENUHR_CARD_HELP = {
         ],
         links: [
           { label: "JPL: Approximate Positions of the Planets", url: "https://ssd.jpl.nasa.gov/planets/approx_pos.html" },
-          { label: "NOAA: Solar Calculation Details", url: "https://gml.noaa.gov/grad/solcalc/calcdetails.html" }
+          { label: "NOAA: Solar Calculation Details", url: "https://gml.noaa.gov/grad/solcalc/calcdetails.html" },
+          { label: "timeanddate: Vue d’ensemble astronomie", url: "https://www.timeanddate.com/astronomy/" }
         ]
       },
       solar_system: {
@@ -822,6 +1011,96 @@ window.PLANETENUHR_CARD_HELP = {
         links: [
           { label: "JPL: Approximate Positions of the Planets", url: "https://ssd.jpl.nasa.gov/planets/approx_pos.html" },
           { label: "JPL Horizons", url: "https://ssd.jpl.nasa.gov/horizons/" }
+        ]
+      },
+      barycenter: {
+        intro: [
+          "Cette carte montre le centre de masse variable du Système solaire dans une vue de dessus au voisinage du Soleil.",
+          "La croix reste au barycentre tandis que le Soleil oscille autour de lui, sous l’influence surtout de Jupiter et de Saturne."
+        ],
+        formulas: [
+          { expr: "\\vec r<sub>B</sub> = \\frac{\\sum m<sub>i</sub> \\vec r<sub>i</sub>}{M<sub>☉</sub> + \\sum m<sub>i</sub>}", note: "Barycentre du Système solaire par rapport au Soleil à partir de positions héliocentriques approchées et de rapports de masse." },
+          { expr: "\\vec r<sub>☉</sub> = -\\vec r<sub>B</sub>", note: "Dans le référentiel barycentrique, le Soleil se place du côté opposé au centre de masse commun." }
+        ],
+        details: [
+          "La ligne bleue montre la trajectoire du centre du Soleil sur cinquante ans autour de la date choisie.",
+          "Les boutons de mode permettent de comparer la part du mouvement due à Jupiter seul, à Jupiter plus Saturne, ou à l’ensemble du système planétaire.",
+          "Si la croix reste dans le disque solaire, le barycentre est à l’intérieur du Soleil ; si elle tombe hors du disque, il se situe au-delà de la photosphère."
+        ],
+        links: [
+          { label: "Glossaire JPL : barycenter", url: "https://ssd.jpl.nasa.gov/glossary/barycenter.html" },
+          { label: "NASA Space Place: What is a barycenter?", url: "https://spaceplace.nasa.gov/barycenter/en/" },
+          { label: "JPL: Approximate Positions of the Planets", url: "https://ssd.jpl.nasa.gov/planets/approx_pos.html" }
+        ]
+      },
+      lagrange: {
+        intro: [
+          "Cette carte montre les cinq points de Lagrange Soleil-Terre dans une vue de dessus en rotation.",
+          "Les points de Lagrange sont des zones où la gravité et le mouvement orbital s’équilibrent, ce qui permet à une sonde de rester près du système Soleil-Terre avec relativement peu de corrections."
+        ],
+        formulas: [
+          { expr: "L4, L5 = 60&deg; devant / derrière la Terre", note: "Les deux points stables triangulaires précèdent et suivent la Terre d’environ soixante degrés sur la même orbite." },
+          { expr: "L1, L2 &asymp; 1.5 \\times 10^6 km de la Terre", note: "Distance approximative Terre-Soleil vers les points colinéaires intérieur et extérieur." }
+        ],
+        details: [
+          "L1, L2 et L3 sont alignés sur l’axe Soleil-Terre et sont dynamiquement instables.",
+          "L4 et L5 sont les deux sommets stables du triangle; JWST est montré près de L2 parce que le Soleil, la Terre et la Lune restent du même côté, ce qui garde le télescope froid et tourné vers l’espace profond."
+        ],
+        links: [
+          { label: "NASA: What is a Lagrange point?", url: "https://science.nasa.gov/resource/what-is-a-lagrange-point/" },
+          { label: "NASA Webb: Orbit near L2", url: "https://science.nasa.gov/mission/webb/orbit/" }
+        ]
+      },
+      analemma: {
+        intro: [
+          "Cette carte montre l’analemme: la figure décrite par le Soleil lorsqu’on l’observe à la même heure civile tout au long de l’année.",
+          "Ici, l’horizontale représente l’écart entre l’heure civile et le midi solaire, tandis que la verticale montre la hauteur du Soleil à midi pour le lieu choisi."
+        ],
+        formulas: [
+          { expr: "EoT = 9.87 sin(2B) - 7.53 cos(B) - 1.5 sin(B)", note: "Approximation compacte de l’équation du temps en minutes." },
+          { expr: "&delta; &asymp; 23.44&deg; \\cdot sin( 2&pi;(DOY - 80) / daysInYear )", note: "Approximation de la déclinaison solaire au cours de l’année." }
+        ],
+        details: [
+          "Le point rouge marque la date sélectionnée dans l’année affichée.",
+          "Comme le tableau de bord garde un réglage horaire global, cette carte approche le midi civil local à partir de la longitude au lieu de basculer toute l’application dans le fuseau légal de la ville."
+        ],
+        links: [
+          { label: "USNO: The Equation of Time", url: "https://aa.usno.navy.mil/faq/eqtime" },
+          { label: "NOAA solar calculation details", url: "https://gml.noaa.gov/grad/solcalc/calcdetails.html" }
+        ]
+      },
+      exoplanets: {
+        intro: [
+          "Cette carte compare quelques systèmes d’exoplanètes célèbres dans une vue compacte côte à côte.",
+          "Chaque panneau prend sa propre orbite externe comme échelle d’affichage ; on compare donc l’architecture des systèmes plutôt qu’une taille absolue commune."
+        ],
+        formulas: [
+          { expr: "P^2 &asymp; a^3 / M<sub>*</sub>", note: "Relation de Kepler simplifiée en unités solaires, utilisée ici seulement pour un mouvement orbital schématique." }
+        ],
+        details: [
+          "TRAPPIST-1 montre à quel point des planètes rocheuses peuvent être serrées autour d’une petite étoile.",
+          "Kepler-90, 55 Cancri et HR 8799 offrent des contre-exemples plus étendus, des mondes internes compacts aux géantes très éloignées."
+        ],
+        links: [
+          { label: "NASA: TRAPPIST-1", url: "https://www.nasa.gov/trappist-1/" },
+          { label: "NASA: faits sur les exoplanètes", url: "https://science.nasa.gov/exoplanets/facts/" },
+          { label: "NASA Exoplanet Archive", url: "https://exoplanetarchive.ipac.caltech.edu/" }
+        ]
+      },
+      polaris: {
+        intro: [
+          "Cette carte montre l’horizon nord, Polaris et le pôle nord céleste pour le lieu choisi.",
+          "La hauteur du pôle au-dessus de l’horizon correspond approximativement à la latitude géographique, et les étoiles voisines tournent autour avec le temps sidéral."
+        ],
+        formulas: [
+          { expr: "h<sub>pôle</sub> &asymp; \\varphi", note: "Dans l’hémisphère nord, la hauteur du pôle nord céleste est approximativement égale à la latitude géographique." }
+        ],
+        details: [
+          "Polaris n’est pas exactement sur le pôle ; le petit cercle autour du pôle est agrandi ici pour rendre cet écart visible.",
+          "La ligne bleue prolonge l’axe de rotation de la Terre dans le ciel, et les astérismes voisins montrent la rotation apparente autour de cet axe."
+        ],
+        links: [
+          { label: "NASA: Qu’est-ce que l’étoile polaire ?", url: "https://science.nasa.gov/solar-system/what-is-the-north-star-and-how-do-you-find-it/" }
         ]
       },
       small_bodies: {
@@ -924,7 +1203,8 @@ window.PLANETENUHR_CARD_HELP = {
         ],
         links: [
           { label: "JPL: Approximate Positions of the Planets", url: "https://ssd.jpl.nasa.gov/planets/approx_pos.html" },
-          { label: "NASA Skywatching", url: "https://science.nasa.gov/skywatching/" }
+          { label: "NASA Skywatching", url: "https://science.nasa.gov/skywatching/" },
+          { label: "timeanddate: Ciel nocturne et visibilité des planètes", url: "https://www.timeanddate.com/astronomy/night/" }
         ]
       },
       moon_nodes: {
@@ -942,13 +1222,14 @@ window.PLANETENUHR_CARD_HELP = {
         ],
         links: [
           { label: "NASA: Eclipses", url: "https://science.nasa.gov/eclipses/" },
-          { label: "NASA: Moon", url: "https://science.nasa.gov/moon/" }
+          { label: "NASA: Moon", url: "https://science.nasa.gov/moon/" },
+          { label: "timeanddate: Éclipses", url: "https://www.timeanddate.com/eclipse/" }
         ]
       },
       conjunctions: {
         intro: [
           "Cette carte parcourt une fenetre de temps autour de la date choisie et marque des minima approches de separation angulaire entre planetes.",
-          "Elle sert d'aperÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§u rapide des rapprochements, pas d'ephemeride de precision observatoire."
+          "Elle sert d'aperçu rapide des rapprochements, pas d'ephemeride de precision observatoire."
         ],
         formulas: [
           { expr: "&Delta; = | signed( &lambda;<sub>A</sub> - &lambda;<sub>B</sub> ) |", note: "Separation angulaire en longitude ecliptique entre deux planetes." }
@@ -1133,7 +1414,8 @@ window.PLANETENUHR_CARD_HELP = {
         links: [
           { label: "NASA: Eclipses", url: "https://science.nasa.gov/eclipses/" },
           { label: "NASA: Meteors and Meteorites", url: "https://science.nasa.gov/solar-system/meteors-meteorites/" },
-          { label: "Wikipedia: iCalendar", url: "https://fr.wikipedia.org/wiki/ICalendar" }
+          { label: "Wikipedia: iCalendar", url: "https://fr.wikipedia.org/wiki/ICalendar" },
+          { label: "timeanddate: Astronomie", url: "https://www.timeanddate.com/astronomy/" }
         ]
       },
       bsky_feed: {

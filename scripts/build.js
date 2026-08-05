@@ -2,7 +2,7 @@
 
 const fs = require("fs");
 const path = require("path");
-const { generateIcsFiles } = require("./generate-ics");
+const { getIcsFreshnessState } = require("./check-ics-freshness");
 
 /**
  * Returns the repository root based on the current working directory.
@@ -69,18 +69,46 @@ function collectMissingFiles(repositoryRoot, requiredFiles) {
 /**
  * Prints a human-readable build summary and sets the proper exit code.
  * @param {string[]} missingFiles - Missing repository-relative file paths.
+ * @param {{missingFiles:string[], staleFiles:string[]}} icsState Current ICS freshness state.
  * @returns {void} No return value.
  */
-function finishBuild(missingFiles) {
-  if (missingFiles.length === 0) {
-    console.log("Build validation passed. Required static files are present, ICS files were generated and encoding was checked in prebuild.");
+function finishBuild(missingFiles, icsState) {
+  if (
+    missingFiles.length === 0
+    && icsState.missingFiles.length === 0
+    && icsState.staleFiles.length === 0
+  ) {
+    console.log("Build validation passed. Required static files are present, ICS files are up to date and encoding was checked in prebuild.");
     return;
   }
 
-  console.error("Build validation failed. Missing required files:");
-  for (const relativeFilePath of missingFiles) {
-    console.error("- " + relativeFilePath);
+  console.error("Build validation failed.");
+
+  if (missingFiles.length > 0) {
+    console.error("Missing required files:");
+    for (const relativeFilePath of missingFiles) {
+      console.error("- " + relativeFilePath);
+    }
   }
+
+  if (icsState.missingFiles.length > 0) {
+    console.error("Missing generated ICS files:");
+    icsState.missingFiles.forEach(filePath => {
+      console.error("- " + filePath);
+    });
+  }
+
+  if (icsState.staleFiles.length > 0) {
+    console.error("Outdated ICS files:");
+    icsState.staleFiles.forEach(filePath => {
+      console.error("- " + filePath);
+    });
+  }
+
+  if (icsState.missingFiles.length > 0 || icsState.staleFiles.length > 0) {
+    console.error("Run `npm run build:ics` after calendar changes.");
+  }
+
   process.exitCode = 1;
 }
 
@@ -90,10 +118,10 @@ function finishBuild(missingFiles) {
  */
 function main() {
   const repositoryRoot = getRepositoryRoot();
-  generateIcsFiles(repositoryRoot);
   const requiredFiles = getRequiredFiles();
   const missingFiles = collectMissingFiles(repositoryRoot, requiredFiles);
-  finishBuild(missingFiles);
+  const icsState = getIcsFreshnessState(repositoryRoot);
+  finishBuild(missingFiles, icsState);
 }
 
 main();
