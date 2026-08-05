@@ -1277,7 +1277,7 @@
     }
     .eclipse-preview-row{
       display:grid;
-      grid-template-columns:24px 56px minmax(0,1fr);
+      grid-template-columns:24px 56px 84px minmax(0,1fr);
       gap:10px;
       align-items:start;
     }
@@ -1351,6 +1351,83 @@
       line-height:1.25;
       padding-top:1px;
     }
+    .eclipse-preview-direction{
+      display:grid;
+      justify-items:center;
+      gap:4px;
+      padding-top:1px;
+    }
+    .eclipse-preview-compass{
+      position:relative;
+      width:40px;
+      height:40px;
+      border:1px solid #cbd5e1;
+      border-radius:50%;
+      background:radial-gradient(circle at 50% 38%, #ffffff, #f8fbff);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.75);
+    }
+    .eclipse-preview-compass-north{
+      position:absolute;
+      left:50%;
+      top:2px;
+      transform:translateX(-50%);
+      color:#64748b;
+      font-size:.56rem;
+      font-weight:700;
+      line-height:1;
+    }
+    .eclipse-preview-compass-dot{
+      position:absolute;
+      left:50%;
+      top:50%;
+      width:5px;
+      height:5px;
+      border-radius:50%;
+      background:#1d4ed8;
+      transform:translate(-50%, -50%);
+      box-shadow:0 0 0 2px rgba(255,255,255,.9);
+    }
+    .eclipse-preview-compass-arrow{
+      position:absolute;
+      left:50%;
+      top:50%;
+      width:2px;
+      height:15px;
+      background:#1d4ed8;
+      border-radius:999px;
+      transform-origin:50% 100%;
+      transform:translate(-50%, -100%) rotate(0deg);
+      box-shadow:0 0 0 1px rgba(255,255,255,.5);
+    }
+    .eclipse-preview-compass-arrow::before{
+      content:"";
+      position:absolute;
+      left:50%;
+      top:-4px;
+      width:0;
+      height:0;
+      transform:translateX(-50%);
+      border-left:4px solid transparent;
+      border-right:4px solid transparent;
+      border-bottom:7px solid #1d4ed8;
+    }
+    .eclipse-preview-direction-copy{
+      display:grid;
+      gap:1px;
+      justify-items:center;
+      text-align:center;
+    }
+    .eclipse-preview-direction-main{
+      color:var(--fg);
+      font-size:.73rem;
+      font-weight:700;
+      line-height:1.2;
+    }
+    .eclipse-preview-direction-sub{
+      color:var(--muted);
+      font-size:.68rem;
+      line-height:1.25;
+    }
     .eclipse-preview-copy{
       display:grid;
       gap:2px;
@@ -1366,6 +1443,25 @@
       color:var(--muted);
       font-size:.77rem;
       line-height:1.42;
+    }
+    @media (max-width: 640px){
+      .eclipse-preview-row{
+        grid-template-columns:24px 52px minmax(0,1fr);
+      }
+      .eclipse-preview-direction{
+        grid-column:2 / span 2;
+        grid-row:2;
+        justify-items:start;
+        grid-template-columns:40px minmax(0,1fr);
+        align-items:center;
+      }
+      .eclipse-preview-direction-copy{
+        justify-items:start;
+        text-align:left;
+      }
+      .eclipse-preview-copy{
+        grid-column:3;
+      }
     }
     .moon-nodes-figure{
       width:min(100%, 560px);
@@ -1864,6 +1960,64 @@
       text-align:left;
       display:grid;
       gap:4px;
+    }
+    .constellation-skyhint{
+      width:min(100%, 460px);
+      display:grid;
+      grid-template-columns:120px minmax(0,1fr);
+      gap:12px;
+      align-items:center;
+      padding:10px 12px;
+      border:1px solid #dbeafe;
+      border-radius:12px;
+      background:linear-gradient(180deg,#fbfdff,#f8fbff);
+    }
+    .constellation-skyhint-map{
+      width:120px;
+      height:120px;
+      border-radius:50%;
+      background:radial-gradient(circle at 50% 35%, rgba(255,255,255,.82), rgba(241,245,249,.96));
+      box-shadow:inset 0 0 18px rgba(148,163,184,.16);
+    }
+    .constellation-skyhint-map svg{
+      display:block;
+      width:100%;
+      height:100%;
+    }
+    .constellation-skyhint-cardinal{
+      fill:#64748b;
+      font-size:9px;
+      font-weight:700;
+    }
+    .constellation-skyhint-dot{
+      fill:#2563eb;
+      stroke:#ffffff;
+      stroke-width:2;
+    }
+    .constellation-skyhint-copy{
+      display:grid;
+      gap:3px;
+      color:var(--muted);
+      font-size:.78rem;
+      text-align:left;
+    }
+    .constellation-skyhint-title{
+      color:var(--fg);
+      font-size:.82rem;
+      font-weight:700;
+    }
+    .constellation-skyhint-line{
+      line-height:1.35;
+    }
+    @media (max-width: 640px){
+      .constellation-skyhint{
+        grid-template-columns:1fr;
+        justify-items:center;
+      }
+      .constellation-skyhint-copy{
+        justify-items:center;
+        text-align:center;
+      }
     }
     .season-orbit{
       fill:none;

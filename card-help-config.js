@@ -187,9 +187,13 @@ window.PLANETENUHR_CARD_HELP = {
           "This monthly card highlights one easy seasonal constellation with a simplified stick figure and named stars.",
           "It is meant as a friendly orientation aid, not as a complete star atlas."
         ],
+        formulas: [
+          { expr: "r = R (1 - altitude / 90)", note: "The small sky hint maps altitude onto a horizon circle: high objects move toward the center." }
+        ],
         details: [
           "The chosen object depends on the month and is tuned for a Central European seasonal reading.",
-          "Named stars are placed to stay legible on small screens."
+          "Named stars are placed to stay legible on small screens.",
+          "The added sky hint is a compact evening-sky guide with approximate azimuth and altitude for a Central European reading."
         ],
         links: [
           { label: "NASA Skywatching", url: "https://science.nasa.gov/skywatching/" },
@@ -257,12 +261,16 @@ window.PLANETENUHR_CARD_HELP = {
         ],
         formulas: [
           { expr: "d<sub>node</sub> = min(f, 1-f) &middot; 27.2122 d", note: "Approximate distance to the nearest lunar node from the draconic phase f." },
-          { expr: "d<sub>season</sub> = min(s, P-s), &nbsp; P &asymp; 173.31 d", note: "Approximate distance to the nearest eclipse-season center." }
+          { expr: "d<sub>season</sub> = min(s, P-s), &nbsp; P &asymp; 173.31 d", note: "Approximate distance to the nearest eclipse-season center." },
+          { expr: "UTC &asymp; t<sub>local</sub> - offset<sub>zone</sub>", note: "The preview converts curated local phase times into approximate UTC instants with the selected city's time zone." },
+          { expr: "H = LST - &alpha;, &nbsp; sin h = sin &phi; sin &delta; + cos &phi; cos &delta; cos H", note: "Hour angle H and altitude h from local sidereal time, latitude &phi;, right ascension &alpha; and declination &delta;." },
+          { expr: "A = atan2( sin H, cos H sin &phi; - tan &delta; cos &phi; )", note: "Approximate azimuth A used for the compass direction in the eclipse preview." }
         ],
         details: [
           "The inner orbit shows where the Moon sits relative to the node line on the selected date.",
           "The two small blue markers are the lunar nodes, not extra bodies: they mark where the Moon's tilted orbit crosses the ecliptic plane.",
-          "The outer season ring uses a repeating eclipse-season approximation; it is designed as an educational timing aid."
+          "The outer season ring uses a repeating eclipse-season approximation; it is designed as an educational timing aid.",
+          "Direction, horizon height and compass arrow in the preview are observing aids, not a full local eclipse simulator."
         ],
         links: [
           { label: "NASA: Eclipses", url: "https://science.nasa.gov/eclipses/" },
@@ -666,9 +674,13 @@ window.PLANETENUHR_CARD_HELP = {
           "Diese Monats-Kachel hebt jeweils ein gut auffindbares saisonales Sternbild mit vereinfachter Linienfigur und Sternnamen hervor.",
           "Sie ist als freundliche Orientierung gedacht und nicht als vollständiger Sternatlas."
         ],
+        formulas: [
+          { expr: "r = R (1 - Höhe / 90)", note: "Die kleine Himmelsanzeige bildet die Höhe auf einen Horizontkreis ab: hohe Objekte wandern zur Mitte." }
+        ],
         details: [
           "Die Auswahl richtet sich nach dem Monat und ist auf eine mitteleuropäische Saison-Lesart abgestimmt.",
-          "Sternnamen werden so gesetzt, dass sie auch auf kleineren Displays möglichst lesbar bleiben."
+          "Sternnamen werden so gesetzt, dass sie auch auf kleineren Displays möglichst lesbar bleiben.",
+          "Die zusätzliche Himmelsanzeige ist ein kompakter Abendhimmel-Hinweis mit angenähertem Azimut und Höhe für Mitteleuropa."
         ],
         links: [
           { label: "NASA Skywatching", url: "https://science.nasa.gov/skywatching/" },
@@ -736,11 +748,15 @@ window.PLANETENUHR_CARD_HELP = {
         ],
         formulas: [
           { expr: "d<sub>Knoten</sub> = min(f, 1-f) &middot; 27.2122 d", note: "Genäherte Distanz zum nächsten Mondknoten aus der drakonitischen Phase f." },
-          { expr: "d<sub>Saison</sub> = min(s, P-s), &nbsp; P &asymp; 173.31 d", note: "Genäherte Distanz zum nächsten Saisonzentrum." }
+          { expr: "d<sub>Saison</sub> = min(s, P-s), &nbsp; P &asymp; 173.31 d", note: "Genäherte Distanz zum nächsten Saisonzentrum." },
+          { expr: "UTC &asymp; t<sub>lokal</sub> - Offset<sub>Zone</sub>", note: "Die Vorschau übersetzt kuratierte lokale Phasenzeiten mit der Zeitzone der gewählten Stadt in angenäherte UTC-Zeitpunkte." },
+          { expr: "H = LST - &alpha;, &nbsp; sin h = sin &phi; sin &delta; + cos &phi; cos &delta; cos H", note: "Stundenwinkel H und Höhe h aus lokaler Sternzeit, Breite &phi;, Rektaszension &alpha; und Deklination &delta;." },
+          { expr: "A = atan2( sin H, cos H sin &phi; - tan &delta; cos &phi; )", note: "Genäherter Azimut A für die Kompassrichtung in der Finsternis-Vorschau." }
         ],
         details: [
           "Die innere Bahn zeigt die Stellung des Mondes relativ zur Knotenlinie am gewählten Datum.",
-          "Der äußere Ring nutzt eine wiederholte Saison-Näherung und ist als didaktische Zeitansicht gedacht."
+          "Der äußere Ring nutzt eine wiederholte Saison-Näherung und ist als didaktische Zeitansicht gedacht.",
+          "Richtung, Höhe über dem Horizont und Kompasspfeil in der Vorschau sind Beobachtungshilfen und kein vollständiger lokaler Finsternisrechner."
         ],
         links: [
           { label: "NASA: Eclipses", url: "https://science.nasa.gov/eclipses/" },
@@ -1144,9 +1160,13 @@ window.PLANETENUHR_CARD_HELP = {
           "Cette carte mensuelle met en avant une constellation saisonniere facile a reconnaitre avec une figure simplifiee et quelques noms d'etoiles.",
           "Elle sert surtout d'aide d'orientation, pas d'atlas complet."
         ],
+        formulas: [
+          { expr: "r = R (1 - hauteur / 90)", note: "Le petit repere du ciel projette la hauteur sur un cercle d'horizon : les objets eleves se rapprochent du centre." }
+        ],
         details: [
           "Le choix depend du mois et vise une lecture saisonniere pour l'Europe centrale.",
-          "Les noms d'etoiles sont places pour rester lisibles sur des ecrans compacts."
+          "Les noms d'etoiles sont places pour rester lisibles sur des ecrans compacts.",
+          "Le petit repere du ciel est un guide compact du ciel du soir avec azimut et hauteur approximatifs pour l'Europe centrale."
         ],
         links: [
           { label: "NASA Skywatching", url: "https://science.nasa.gov/skywatching/" },
@@ -1214,11 +1234,15 @@ window.PLANETENUHR_CARD_HELP = {
         ],
         formulas: [
           { expr: "d<sub>noeud</sub> = min(f, 1-f) &middot; 27.2122 d", note: "Distance approximee au noeud lunaire le plus proche a partir de la phase draconitique f." },
-          { expr: "d<sub>saison</sub> = min(s, P-s), &nbsp; P &asymp; 173.31 d", note: "Distance approximee au centre de la saison d'eclipses." }
+          { expr: "d<sub>saison</sub> = min(s, P-s), &nbsp; P &asymp; 173.31 d", note: "Distance approximee au centre de la saison d'eclipses." },
+          { expr: "UTC &asymp; t<sub>local</sub> - offset<sub>zone</sub>", note: "L'aperçu convertit les heures locales editorialisees en instants UTC approximatifs avec le fuseau horaire de la ville choisie." },
+          { expr: "H = LST - &alpha;, &nbsp; sin h = sin &phi; sin &delta; + cos &phi; cos &delta; cos H", note: "Angle horaire H et hauteur h a partir du temps sideral local, de la latitude &phi;, de l'ascension droite &alpha; et de la declinaison &delta;." },
+          { expr: "A = atan2( sin H, cos H sin &phi; - tan &delta; cos &phi; )", note: "Azimut approche A utilise pour la boussole de l'aperçu d'eclipse." }
         ],
         details: [
           "L'orbite interieure montre la position de la Lune par rapport a la ligne des noeuds pour la date choisie.",
-          "L'anneau exterieur utilise une approximation repetitive du cycle des saisons d'eclipses a but pedagogique."
+          "L'anneau exterieur utilise une approximation repetitive du cycle des saisons d'eclipses a but pedagogique.",
+          "La direction, la hauteur sur l'horizon et la fleche de boussole sont des aides d'observation, pas un simulateur local complet d'eclipse."
         ],
         links: [
           { label: "NASA: Eclipses", url: "https://science.nasa.gov/eclipses/" },

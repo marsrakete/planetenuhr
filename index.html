@@ -242,6 +242,7 @@
     <div class="display-container constellation-card astro-visual-card" data-help-key="constellation_month">
       <div class="group-title" id="titleConstellationMonth">Constellation of the month</div>
       <div id="constellationMap" class="constellation-map" aria-label="Constellation of the month"></div>
+      <div id="constellationSkyHint" class="constellation-skyhint"></div>
       <div id="constellationSummary" class="constellation-summary"></div>
       <div class="legend-small" id="constellationLegend">Seasonal highlight for Central Europe</div>
     </div>
@@ -376,6 +377,17 @@
           <span class="eclipse-preview-icon" data-eclipse-preview-icon></span>
         </div>
         <div class="eclipse-preview-time" data-eclipse-preview-time></div>
+        <div class="eclipse-preview-direction" data-eclipse-preview-direction>
+          <div class="eclipse-preview-compass" data-eclipse-preview-compass>
+            <span class="eclipse-preview-compass-north">N</span>
+            <span class="eclipse-preview-compass-arrow" data-eclipse-preview-compass-arrow></span>
+            <span class="eclipse-preview-compass-dot"></span>
+          </div>
+          <div class="eclipse-preview-direction-copy">
+            <div class="eclipse-preview-direction-main" data-eclipse-preview-direction-main></div>
+            <div class="eclipse-preview-direction-sub" data-eclipse-preview-direction-sub></div>
+          </div>
+        </div>
         <div class="eclipse-preview-copy">
           <div class="eclipse-preview-label" data-eclipse-preview-label></div>
           <div class="eclipse-preview-text" data-eclipse-preview-text></div>
@@ -2298,6 +2310,442 @@
     }
 
     /**
+     * Maps one configured city to a representative IANA time-zone id.
+     * The eclipse preview uses this to translate curated local phase times into
+     * approximate UTC timestamps before the compass geometry is computed.
+     * @param {object} location Selected location object.
+     * @returns {string} IANA time-zone id.
+     */
+    function locationTimeZoneId(location){
+      if (!location || !location.key) {
+        return 'Europe/Berlin';
+      }
+
+      if ([
+        'berlin', 'hamburg', 'munich', 'cologne', 'frankfurt',
+        'stuttgart', 'dusseldorf', 'dortmund', 'essen', 'leipzig',
+        'zurich', 'vienna', 'prague', 'warsaw', 'copenhagen',
+        'oslo', 'stockholm', 'rome', 'gibraltar'
+      ].includes(location.key)) {
+        return 'Europe/Berlin';
+      }
+      if (['paris', 'bordeaux', 'grenoble', 'marseille', 'brussels', 'amsterdam'].includes(location.key)) {
+        return 'Europe/Paris';
+      }
+      if (['london'].includes(location.key)) {
+        return 'Europe/London';
+      }
+      if (['dublin'].includes(location.key)) {
+        return 'Europe/Dublin';
+      }
+      if (['lisbon'].includes(location.key)) {
+        return 'Europe/Lisbon';
+      }
+      if (['reykjavik'].includes(location.key)) {
+        return 'Atlantic/Reykjavik';
+      }
+      if (['madrid', 'barcelona', 'bilbao', 'cadiz', 'malaga'].includes(location.key)) {
+        return 'Europe/Madrid';
+      }
+      if (['helsinki'].includes(location.key)) {
+        return 'Europe/Helsinki';
+      }
+      if (['athens'].includes(location.key)) {
+        return 'Europe/Athens';
+      }
+      if (['istanbul'].includes(location.key)) {
+        return 'Europe/Istanbul';
+      }
+      if (['casablanca'].includes(location.key)) {
+        return 'Africa/Casablanca';
+      }
+      if (['cairo'].includes(location.key)) {
+        return 'Africa/Cairo';
+      }
+      if (['jerusalem'].includes(location.key)) {
+        return 'Asia/Jerusalem';
+      }
+      if (['dubai'].includes(location.key)) {
+        return 'Asia/Dubai';
+      }
+      if (['delhi'].includes(location.key)) {
+        return 'Asia/Kolkata';
+      }
+      if (['bangkok'].includes(location.key)) {
+        return 'Asia/Bangkok';
+      }
+      if (['singapore'].includes(location.key)) {
+        return 'Asia/Singapore';
+      }
+      if (['jakarta'].includes(location.key)) {
+        return 'Asia/Jakarta';
+      }
+      if (['hong_kong'].includes(location.key)) {
+        return 'Asia/Hong_Kong';
+      }
+      if (['shanghai', 'beijing'].includes(location.key)) {
+        return 'Asia/Shanghai';
+      }
+      if (['seoul'].includes(location.key)) {
+        return 'Asia/Seoul';
+      }
+      if (['tokyo'].includes(location.key)) {
+        return 'Asia/Tokyo';
+      }
+      if (['new_york', 'toronto'].includes(location.key)) {
+        return 'America/Toronto';
+      }
+      if (['los_angeles', 'vancouver'].includes(location.key)) {
+        return 'America/Vancouver';
+      }
+      if (['mexico_city'].includes(location.key)) {
+        return 'America/Mexico_City';
+      }
+      if (['rio'].includes(location.key)) {
+        return 'America/Sao_Paulo';
+      }
+      if (['buenos_aires'].includes(location.key)) {
+        return 'America/Argentina/Buenos_Aires';
+      }
+      if (['santiago'].includes(location.key)) {
+        return 'America/Santiago';
+      }
+      if (['nairobi'].includes(location.key)) {
+        return 'Africa/Nairobi';
+      }
+      if (['cape_town'].includes(location.key)) {
+        return 'Africa/Johannesburg';
+      }
+      if (['sydney'].includes(location.key)) {
+        return 'Australia/Sydney';
+      }
+      if (['melbourne'].includes(location.key)) {
+        return 'Australia/Melbourne';
+      }
+      if (['auckland'].includes(location.key)) {
+        return 'Pacific/Auckland';
+      }
+
+      return 'Europe/Berlin';
+    }
+
+    /**
+     * Parses an offset string such as `GMT+2` or `UTC-05:30` into minutes.
+     * @param {string} offsetText Offset label from `Intl.DateTimeFormat`.
+     * @returns {number} Signed offset in minutes east of UTC.
+     */
+    function parseTimeZoneOffsetMinutes(offsetText){
+      if (!offsetText) {
+        return 0;
+      }
+      const normalized = String(offsetText).replace('UTC', 'GMT');
+      if (normalized === 'GMT') {
+        return 0;
+      }
+      const match = normalized.match(/^GMT([+-])(\d{1,2})(?::?(\d{2}))?$/);
+      if (!match) {
+        return 0;
+      }
+      let sign = 1;
+      if (match[1] === '-') {
+        sign = -1;
+      }
+      const hourValue = Number(match[2] || 0);
+      const minuteValue = Number(match[3] || 0);
+      return sign * (hourValue * 60 + minuteValue);
+    }
+
+    /**
+     * Returns the civil-clock offset for a city at a specific instant.
+     * This uses the browser's time-zone database so DST is handled where the
+     * underlying environment supports the chosen IANA identifier.
+     * @param {Date} date Instant to evaluate.
+     * @param {string} timeZoneId IANA time-zone id.
+     * @returns {number} Signed offset in minutes east of UTC.
+     */
+    function timeZoneOffsetMinutesAt(date, timeZoneId){
+      const formatter = new Intl.DateTimeFormat('en-US', {
+        timeZone: timeZoneId,
+        timeZoneName:'shortOffset',
+        hour:'2-digit',
+        minute:'2-digit'
+      });
+      const parts = formatter.formatToParts(date);
+      let index = 0;
+      while (index < parts.length) {
+        if (parts[index].type === 'timeZoneName') {
+          return parseTimeZoneOffsetMinutes(parts[index].value);
+        }
+        index += 1;
+      }
+      return 0;
+    }
+
+    /**
+     * Converts a curated local phase time into an approximate UTC `Date`.
+     * @param {Date} calendarDate Calendar day of the eclipse event.
+     * @param {object} location Selected location object.
+     * @param {string} timeText Curated local clock time in `HH:MM`.
+     * @returns {Date|null} Approximate UTC timestamp for the city and clock time.
+     */
+    function eclipsePhaseLocalDate(calendarDate, location, timeText){
+      const minutes = timeStringToMinutes(timeText);
+      if (!Number.isFinite(minutes)) {
+        return null;
+      }
+      const timeZoneId = locationTimeZoneId(location);
+      const year = calendarDate.getFullYear();
+      const month = calendarDate.getMonth();
+      const day = calendarDate.getDate();
+      const hour = Math.floor(minutes / 60);
+      const minute = minutes % 60;
+      const roughUtc = new Date(Date.UTC(year, month, day, hour, minute, 0));
+      const offsetMinutes = timeZoneOffsetMinutesAt(roughUtc, timeZoneId);
+      return new Date(Date.UTC(year, month, day, hour, minute, 0) - offsetMinutes * 60000);
+    }
+
+    /**
+     * Returns the mean obliquity of the ecliptic in degrees.
+     * @param {Date} date Instant used for the slow secular correction.
+     * @returns {number} Obliquity in degrees.
+     */
+    function meanObliquityDegrees(date){
+      const T = (julianDate(date) - 2451545.0) / 36525;
+      return 23.439291 - 0.0130042 * T;
+    }
+
+    /**
+     * Converts ecliptic longitude/latitude into equatorial right ascension and declination.
+     * @param {number} longitudeDeg Ecliptic longitude in degrees.
+     * @param {number} latitudeDeg Ecliptic latitude in degrees.
+     * @param {Date} date Instant used for the obliquity.
+     * @returns {{rightAscensionDeg:number, declinationDeg:number}} Equatorial coordinates.
+     */
+    function eclipticToEquatorial(longitudeDeg, latitudeDeg, date){
+      const epsilon = meanObliquityDegrees(date) * Math.PI / 180;
+      const lambda = longitudeDeg * Math.PI / 180;
+      const beta = latitudeDeg * Math.PI / 180;
+      const sinLambda = Math.sin(lambda);
+      const cosLambda = Math.cos(lambda);
+      const sinBeta = Math.sin(beta);
+      const cosBeta = Math.cos(beta);
+      const y = sinLambda * Math.cos(epsilon) - Math.tan(beta) * Math.sin(epsilon);
+      const x = cosLambda;
+      const rightAscensionDeg = normalizeDeg(Math.atan2(y, x) * 180 / Math.PI);
+      const declinationDeg = Math.asin(
+        sinBeta * Math.cos(epsilon) + cosBeta * Math.sin(epsilon) * sinLambda
+      ) * 180 / Math.PI;
+      return {
+        rightAscensionDeg,
+        declinationDeg
+      };
+    }
+
+    /**
+     * Returns approximate equatorial coordinates for the Sun.
+     * @param {Date} date Instant to evaluate.
+     * @returns {{rightAscensionDeg:number, declinationDeg:number}} Approximate solar coordinates.
+     */
+    function solarEquatorialCoordinates(date){
+      return eclipticToEquatorial(sunLongitude(date), 0, date);
+    }
+
+    /**
+     * Returns approximate equatorial coordinates for the Moon.
+     * The Moon longitude follows the existing phase-based dashboard model, while
+     * the latitude follows the draconic node cycle so eclipse previews can show
+     * a plausible sky direction without claiming observatory precision.
+     * @param {Date} date Instant to evaluate.
+     * @returns {{rightAscensionDeg:number, declinationDeg:number}} Approximate lunar coordinates.
+     */
+    function moonEquatorialCoordinates(date){
+      const eclipticLongitude = bodyEclipticLongitude('moon', date);
+      const nodeState = moonNodeDistance(date);
+      const eclipticLatitude = 5.145 * Math.sin(nodeState.phase * Math.PI * 2);
+      return eclipticToEquatorial(eclipticLongitude, eclipticLatitude, date);
+    }
+
+    /**
+     * Converts equatorial coordinates into local horizontal coordinates.
+     * Azimuth is measured from north through east.
+     * @param {Date} date Instant to evaluate.
+     * @param {object} location Selected location object.
+     * @param {{rightAscensionDeg:number, declinationDeg:number}} equatorial Equatorial coordinates.
+     * @returns {{azimuthDeg:number, altitudeDeg:number}} Local horizontal coordinates.
+     */
+    function horizontalCoordinates(date, location, equatorial){
+      const siderealAngle = localSiderealAngleDegrees(date, location.longitude || 0);
+      const hourAngleDeg = signedDeg(siderealAngle - equatorial.rightAscensionDeg);
+      const latitudeRad = (location.latitude || 0) * Math.PI / 180;
+      const hourAngleRad = hourAngleDeg * Math.PI / 180;
+      const declinationRad = equatorial.declinationDeg * Math.PI / 180;
+      const altitudeDeg = Math.asin(
+        Math.sin(latitudeRad) * Math.sin(declinationRad)
+        + Math.cos(latitudeRad) * Math.cos(declinationRad) * Math.cos(hourAngleRad)
+      ) * 180 / Math.PI;
+      const azimuthRad = Math.atan2(
+        Math.sin(hourAngleRad),
+        Math.cos(hourAngleRad) * Math.sin(latitudeRad) - Math.tan(declinationRad) * Math.cos(latitudeRad)
+      );
+      return {
+        azimuthDeg: normalizeDeg(azimuthRad * 180 / Math.PI + 180),
+        altitudeDeg
+      };
+    }
+
+    /**
+     * Returns localized 16-point compass abbreviations for the current language.
+     * @returns {Array<string>} Compass labels from north clockwise.
+     */
+    function compassDirectionLabels(){
+      if (lang === 'de') {
+        return ['N', 'NNO', 'NO', 'ONO', 'O', 'OSO', 'SO', 'SSO', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW'];
+      }
+      if (lang === 'fr') {
+        return ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSO', 'SO', 'OSO', 'O', 'ONO', 'NO', 'NNO'];
+      }
+      return ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW'];
+    }
+
+    /**
+     * Converts an azimuth into a localized 16-point compass label.
+     * @param {number} azimuthDeg Azimuth from north through east.
+     * @returns {string} Localized compass abbreviation.
+     */
+    function compassLabelForAzimuth(azimuthDeg){
+      const labels = compassDirectionLabels();
+      const normalizedAzimuth = normalizeDeg(azimuthDeg);
+      const index = Math.round(normalizedAzimuth / 22.5) % 16;
+      return labels[index];
+    }
+
+    /**
+     * Converts an altitude angle into a practical arm's-length rule of thumb.
+     * Small angles stay in thumb widths, medium angles switch to fingers,
+     * fist and hand span, and high angles use an elbow-length style cue.
+     * @param {number} altitudeDeg Altitude in degrees above the horizon.
+     * @returns {string} Localized everyday estimate, or an empty string below the horizon.
+     */
+    function altitudeThumbEstimate(altitudeDeg){
+      if (!Number.isFinite(altitudeDeg) || altitudeDeg <= 0) {
+        return '';
+      }
+
+      if (lang === 'de') {
+        if (altitudeDeg < 3) {
+          return 'ca. 1 Daumenbreit';
+        }
+        if (altitudeDeg < 6) {
+          return 'ca. 2 Daumenbreit';
+        }
+        if (altitudeDeg < 8) {
+          return 'ca. 3 Fingerbreit';
+        }
+        if (altitudeDeg < 15) {
+          return 'ca. 1 Faust hoch';
+        }
+        if (altitudeDeg < 28) {
+          return 'ca. 1 Handspanne hoch';
+        }
+        if (altitudeDeg < 45) {
+          return 'ca. 1 Elle hoch';
+        }
+        return 'deutlich über 1 Elle';
+      }
+
+      if (lang === 'fr') {
+        if (altitudeDeg < 3) {
+          return 'env. 1 pouce';
+        }
+        if (altitudeDeg < 6) {
+          return 'env. 2 pouces';
+        }
+        if (altitudeDeg < 8) {
+          return 'env. 3 doigts';
+        }
+        if (altitudeDeg < 15) {
+          return 'env. 1 poing';
+        }
+        if (altitudeDeg < 28) {
+          return 'env. 1 empan';
+        }
+        if (altitudeDeg < 45) {
+          return 'env. 1 coudée';
+        }
+        return 'nettement plus haut qu’une coudée';
+      }
+
+      if (altitudeDeg < 3) {
+        return 'about 1 thumb width';
+      }
+      if (altitudeDeg < 6) {
+        return 'about 2 thumb widths';
+      }
+      if (altitudeDeg < 8) {
+        return 'about 3 finger widths';
+      }
+      if (altitudeDeg < 15) {
+        return 'about 1 fist high';
+      }
+      if (altitudeDeg < 28) {
+        return 'about 1 hand span high';
+      }
+      if (altitudeDeg < 45) {
+        return 'about 1 cubit high';
+      }
+      return 'well above 1 cubit';
+    }
+
+    /**
+     * Builds the compass and altitude guidance for one eclipse preview row.
+     * @param {object} preview Preview payload from `upcomingLocalEclipsePreview`.
+     * @param {object} location Selected location object.
+     * @param {object} row One normalized preview row.
+     * @returns {object|null} Compass payload, or null when the row has no time-based sky position.
+     */
+    function eclipsePreviewLookDirection(preview, location, row){
+      if (!preview || !location || !row || !row.time) {
+        return null;
+      }
+      const phaseDate = eclipsePhaseLocalDate(preview.eventDate, location, row.time);
+      if (!phaseDate) {
+        return null;
+      }
+
+      let equatorial = null;
+      if (preview.phaseEntry.kind === 'solar' || row.kind === 'sunset') {
+        equatorial = solarEquatorialCoordinates(phaseDate);
+      } else {
+        equatorial = moonEquatorialCoordinates(phaseDate);
+      }
+      const horizontal = horizontalCoordinates(phaseDate, location, equatorial);
+      if (!Number.isFinite(horizontal.azimuthDeg) || !Number.isFinite(horizontal.altitudeDeg)) {
+        return null;
+      }
+      const directionLabel = compassLabelForAzimuth(horizontal.azimuthDeg);
+      if (!directionLabel) {
+        return null;
+      }
+      let altitudeText = Math.abs(horizontal.altitudeDeg).toFixed(1) + '°';
+      const thumbEstimate = altitudeThumbEstimate(horizontal.altitudeDeg);
+      if (horizontal.altitudeDeg >= 0) {
+        altitudeText += ' ' + (t.eclipse_preview_above_horizon || 'above horizon');
+        if (thumbEstimate) {
+          altitudeText += ' · ' + thumbEstimate;
+        }
+      } else {
+        altitudeText += ' ' + (t.eclipse_preview_below_horizon || 'below horizon');
+      }
+      return {
+        azimuthDeg: horizontal.azimuthDeg,
+        altitudeDeg: horizontal.altitudeDeg,
+        directionLabel,
+        mainText: directionLabel + ' · ' + horizontal.azimuthDeg.toFixed(0) + '°',
+        subText: altitudeText
+      };
+    }
+
+    /**
      * Finds the next curated local eclipse preview within ten calendar days.
      * @param {Date} date Currently selected dashboard date.
      * @param {object} location Selected location object.
@@ -2500,6 +2948,7 @@
           preview.visibility.status
         );
         rows[normalizedIndex].iconToken = eclipsePreviewIconToken(rows[normalizedIndex].kind, preview.phaseEntry.kind);
+        rows[normalizedIndex].lookDirection = eclipsePreviewLookDirection(preview, location, rows[normalizedIndex]);
         normalizedIndex += 1;
       }
 
@@ -2552,6 +3001,10 @@
           const line = rowFragment.querySelector('[data-eclipse-preview-line]');
           const icon = rowFragment.querySelector('[data-eclipse-preview-icon]');
           const time = rowFragment.querySelector('[data-eclipse-preview-time]');
+          const direction = rowFragment.querySelector('[data-eclipse-preview-direction]');
+          const compassArrow = rowFragment.querySelector('[data-eclipse-preview-compass-arrow]');
+          const directionMain = rowFragment.querySelector('[data-eclipse-preview-direction-main]');
+          const directionSub = rowFragment.querySelector('[data-eclipse-preview-direction-sub]');
           const label = rowFragment.querySelector('[data-eclipse-preview-label]');
           const text = rowFragment.querySelector('[data-eclipse-preview-text]');
 
@@ -2563,6 +3016,22 @@
           }
           if (time) {
             time.textContent = rowData.time;
+          }
+          if (rowData.lookDirection) {
+            if (direction) {
+              direction.hidden = false;
+            }
+            if (compassArrow) {
+              compassArrow.style.transform = 'translate(-50%, -100%) rotate(' + rowData.lookDirection.azimuthDeg.toFixed(1) + 'deg)';
+            }
+            if (directionMain) {
+              directionMain.textContent = rowData.lookDirection.mainText;
+            }
+            if (directionSub) {
+              directionSub.textContent = rowData.lookDirection.subText;
+            }
+          } else if (direction) {
+            direction.hidden = true;
           }
           if (label) {
             label.textContent = rowData.label;
@@ -5389,7 +5858,7 @@
       if (key === 'sun') return sunLongitude(date);
       if (key === 'moon') {
         const moon = computeMoon(date);
-        return normalizeDeg(sunLongitude(date) + moon.phase * 360);
+        return normalizeDeg(sunLongitude(date) + moon.frac * 360);
       }
       const planet = solarPlanets.find(item => item.key === key);
       if (!planet) return 0;
@@ -7710,6 +8179,7 @@
      */
     function renderConstellationOfMonth(date = new Date()){
       const target = document.getElementById('constellationMap');
+      const skyHint = document.getElementById('constellationSkyHint');
       const summary = document.getElementById('constellationSummary');
       if (!target) return;
       const month = date.getMonth() + 1;
@@ -7773,6 +8243,90 @@
         svg.appendChild(text);
       });
       target.appendChild(svg);
+      if (skyHint) {
+        skyHint.innerHTML = '';
+        if (Number.isFinite(item.skyAngle) && Number.isFinite(item.skyAltitude)) {
+          const map = document.createElement('div');
+          map.className = 'constellation-skyhint-map';
+          const hintSvg = document.createElementNS(svgNS, 'svg');
+          hintSvg.setAttribute('viewBox', '0 0 120 120');
+          hintSvg.setAttribute('role', 'img');
+          hintSvg.setAttribute('aria-label', (t.constellation_month_where || 'Where to look') + ': ' + item.name);
+
+          const horizon = document.createElementNS(svgNS, 'circle');
+          horizon.setAttribute('cx', 60);
+          horizon.setAttribute('cy', 60);
+          horizon.setAttribute('r', 46);
+          horizon.setAttribute('fill', 'none');
+          horizon.setAttribute('stroke', '#cbd5e1');
+          horizon.setAttribute('stroke-width', '1.2');
+          hintSvg.appendChild(horizon);
+
+          const northLabel = document.createElementNS(svgNS, 'text');
+          northLabel.setAttribute('x', 60);
+          northLabel.setAttribute('y', 12);
+          northLabel.setAttribute('class', 'constellation-skyhint-cardinal');
+          northLabel.setAttribute('text-anchor', 'middle');
+          northLabel.textContent = 'N';
+          hintSvg.appendChild(northLabel);
+
+          const eastLabel = document.createElementNS(svgNS, 'text');
+          eastLabel.setAttribute('x', 108);
+          eastLabel.setAttribute('y', 64);
+          eastLabel.setAttribute('class', 'constellation-skyhint-cardinal');
+          eastLabel.setAttribute('text-anchor', 'middle');
+          eastLabel.textContent = 'E';
+          hintSvg.appendChild(eastLabel);
+
+          const southLabel = document.createElementNS(svgNS, 'text');
+          southLabel.setAttribute('x', 60);
+          southLabel.setAttribute('y', 114);
+          southLabel.setAttribute('class', 'constellation-skyhint-cardinal');
+          southLabel.setAttribute('text-anchor', 'middle');
+          southLabel.textContent = 'S';
+          hintSvg.appendChild(southLabel);
+
+          const westLabel = document.createElementNS(svgNS, 'text');
+          westLabel.setAttribute('x', 12);
+          westLabel.setAttribute('y', 64);
+          westLabel.setAttribute('class', 'constellation-skyhint-cardinal');
+          westLabel.setAttribute('text-anchor', 'middle');
+          westLabel.textContent = 'W';
+          hintSvg.appendChild(westLabel);
+
+          const angle = item.skyAngle * Math.PI / 180 - Math.PI / 2;
+          const radius = 46 * (1 - item.skyAltitude / 90);
+          const dotX = 60 + Math.cos(angle) * radius;
+          const dotY = 60 + Math.sin(angle) * radius;
+
+          const dot = document.createElementNS(svgNS, 'circle');
+          dot.setAttribute('cx', dotX.toFixed(1));
+          dot.setAttribute('cy', dotY.toFixed(1));
+          dot.setAttribute('r', 5);
+          dot.setAttribute('class', 'constellation-skyhint-dot');
+          hintSvg.appendChild(dot);
+
+          map.appendChild(hintSvg);
+          skyHint.appendChild(map);
+
+          const copy = document.createElement('div');
+          copy.className = 'constellation-skyhint-copy';
+          const headline = document.createElement('div');
+          headline.className = 'constellation-skyhint-title';
+          headline.textContent = t.constellation_month_where || 'Where to look';
+          const direction = document.createElement('div');
+          direction.className = 'constellation-skyhint-line';
+          direction.textContent = compassLabelForAzimuth(item.skyAngle) + ' · ' + item.skyAngle.toFixed(0) + '°';
+          const altitude = document.createElement('div');
+          altitude.className = 'constellation-skyhint-line';
+          altitude.textContent = item.skyAltitude.toFixed(0) + '° ' + (t.constellation_month_above_horizon || 'above horizon') + ' · ' + altitudeThumbEstimate(item.skyAltitude);
+          const timeOfDay = document.createElement('div');
+          timeOfDay.className = 'constellation-skyhint-line';
+          timeOfDay.textContent = t.constellation_month_evening || 'Evening sky';
+          copy.append(headline, direction, altitude, timeOfDay);
+          skyHint.appendChild(copy);
+        }
+      }
       if (summary) {
         let highlight = item.highlight || '';
         if (typeof item.highlight === 'object') {
