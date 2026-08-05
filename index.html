@@ -2592,18 +2592,23 @@
       if (meta) {
         meta.textContent = location.name + ' · ' + fmtDateOnly(preview.eventDate) + ' · ' + eclipseVisibilityStatusLabel(preview.visibility.status);
       }
+      let warningTitleText = '';
+      let warningBodyText = '';
+      if (preview.phaseEntry.kind === 'solar') {
+        warningTitleText = t.eclipse_preview_warning_title || 'Protect your eyes!';
+        warningBodyText = t.eclipse_preview_warning_text || 'Never look at the Sun without proper eye protection. Permanent damage can result. The same applies to cameras and phones.';
+      } else {
+        warningTitleText = t.eclipse_preview_lunar_note_title || 'Safe to watch';
+        warningBodyText = t.eclipse_preview_lunar_note_text || 'A lunar eclipse can be observed safely with the naked eye. Binoculars or a telephoto lens can make color and shadow details easier to see.';
+      }
       if (warning) {
-        if (preview.phaseEntry.kind === 'solar') {
-          warning.hidden = false;
-        } else {
-          warning.hidden = true;
-        }
+        warning.hidden = false;
       }
       if (warningTitle) {
-        warningTitle.textContent = t.eclipse_preview_warning_title || 'Protect your eyes!';
+        warningTitle.textContent = warningTitleText;
       }
       if (warningText) {
-        warningText.textContent = t.eclipse_preview_warning_text || 'Never look at the Sun without proper eye protection. Permanent damage can result. The same applies to cameras and phones.';
+        warningText.textContent = warningBodyText;
       }
       if (note) {
         note.textContent = t.eclipse_preview_note || 'Preparation view: local phase times are curated profile values for the selected city group and may differ by several minutes from a full eclipse calculator.';
