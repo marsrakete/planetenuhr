@@ -24,4 +24,4 @@ jobs:
         run: npm install
 
       - name: Review calendar sources and coverage
-        run: npm run check:calendar-sources:strict
+        run: npm run review:calendar-sources:strict

@@ -9,6 +9,7 @@ const {
   getRepositoryRoot,
   loadCalendarEvents
 } = require("./calendar-data");
+const { buildExpectedIcsFileMap } = require("./generate-ics");
 
 /**
  * Returns the absolute output directory for generated ICS files.
@@ -55,25 +56,6 @@ function isExistingFile(filePath) {
 }
 
 /**
- * Returns the newest source modification timestamp among the calendar source
- * files.
- * @param {string[]} sourceFiles Absolute calendar source file paths.
- * @returns {Date} Newest modification timestamp.
- */
-function getLatestSourceTimestamp(sourceFiles) {
-  let latestTimestamp = new Date(0);
-
-  sourceFiles.forEach(sourcePath => {
-    const stats = fs.statSync(sourcePath);
-    if (stats.mtime > latestTimestamp) {
-      latestTimestamp = stats.mtime;
-    }
-  });
-
-  return latestTimestamp;
-}
-
-/**
  * Returns the freshness state of the generated ICS files relative to the
  * calendar source files.
  * @param {string} repositoryRoot Absolute repository root path.
@@ -84,9 +66,17 @@ function getIcsFreshnessState(repositoryRoot) {
   const expectedFileNames = getExpectedIcsFileNames(eventsByLanguage);
   const icsDirectory = getIcsOutputDirectory(repositoryRoot);
   const sourceFiles = getCalendarSourceFiles(repositoryRoot);
-  const latestSourceTimestamp = getLatestSourceTimestamp(sourceFiles);
+  const expectedFiles = buildExpectedIcsFileMap(repositoryRoot);
+  let latestSourceTimestamp = new Date(0);
   const missingFiles = [];
   const staleFiles = [];
+
+  sourceFiles.forEach(sourcePath => {
+    const stats = fs.statSync(sourcePath);
+    if (stats.mtime > latestSourceTimestamp) {
+      latestSourceTimestamp = stats.mtime;
+    }
+  });
 
   expectedFileNames.forEach(fileName => {
     const filePath = path.join(icsDirectory, fileName);
@@ -96,8 +86,9 @@ function getIcsFreshnessState(repositoryRoot) {
       return;
     }
 
-    const fileStats = fs.statSync(filePath);
-    if (fileStats.mtime < latestSourceTimestamp) {
+    const currentContent = fs.readFileSync(filePath, "utf8");
+    const expectedContent = expectedFiles.get(filePath);
+    if (currentContent !== expectedContent) {
       staleFiles.push(path.join("ics", fileName));
     }
   });

@@ -423,11 +423,13 @@ window.PLANETENUHR_CARD_HELP = {
         formulas: [
           { expr: "age = ((t - t<sub>0</sub>) mod 29.530588861 d)", note: "Moon age from a reference new moon and the synodic month." },
           { expr: "illum = 0.5 (1 - cos(2&pi;f))", note: "Illuminated fraction from lunar phase fraction f." },
-          { expr: "cos H = (cos Z - sin &delta; sin &phi;) / (cos &delta; cos &phi;)", note: "Solar event relation behind sunrise, sunset and twilight times." }
+          { expr: "cos H = (cos Z - sin &delta; sin &phi;) / (cos &delta; cos &phi;)", note: "Solar event relation behind sunrise, sunset and twilight times." },
+          { expr: "H = LST - &alpha;, &nbsp; sin h = sin &phi; sin &delta; + cos &phi; cos &delta; cos H", note: "Approximate Moon altitude h from local sidereal time, latitude &phi;, right ascension &alpha; and declination &delta;." }
         ],
         details: [
           "The eclipse panel checks new/full moon geometry together with node proximity, so it shows when eclipse conditions are favorable.",
-          "Sunrise, sunset, dawn, dusk, blue hour and golden hour are recomputed for the currently selected German city."
+          "Sunrise, sunset, dawn, dusk, blue hour and golden hour are recomputed for the currently selected German city.",
+          "The Moon direction line uses the same approximate local sky conversion as the eclipse preview so azimuth and horizon height read the same way."
         ],
         links: [
           { label: "NASA: Eclipses", url: "https://science.nasa.gov/eclipses/" },

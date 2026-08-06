@@ -2437,6 +2437,51 @@
       border-radius:999px;
       transform:translateX(-50%);
     }
+    .moon-local-position{
+      margin-top:8px;
+      font-size:.83rem;
+      color:var(--muted);
+      line-height:1.45;
+    }
+    .em-next-full{
+      margin-top:8px;
+      font-size:.95rem;
+      color:var(--muted);
+      line-height:1.4;
+    }
+    .moon-local-position-label{
+      color:var(--muted);
+      font-size:.77rem;
+      font-weight:600;
+      letter-spacing:.01em;
+      margin-bottom:6px;
+    }
+    .moon-local-position-body{
+      display:grid;
+      grid-template-columns:40px minmax(0, 1fr);
+      gap:10px;
+      align-items:center;
+    }
+    .moon-local-position-compass{
+      width:40px;
+      height:40px;
+    }
+    .moon-local-position-copy{
+      display:grid;
+      gap:1px;
+      min-width:0;
+    }
+    .moon-local-position-main{
+      color:var(--fg);
+      font-size:.82rem;
+      font-weight:700;
+      line-height:1.25;
+    }
+    .moon-local-position-sub{
+      color:var(--muted);
+      font-size:.76rem;
+      line-height:1.32;
+    }
     .visibility-card{
       gap:10px;
     }

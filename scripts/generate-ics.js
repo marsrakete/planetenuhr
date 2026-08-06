@@ -19,6 +19,26 @@ function getIcsOutputDirectory(repositoryRoot) {
   return path.join(repositoryRoot, "ics");
 }
 
+/**
+ * Returns the newest modification timestamp among the calendar source files.
+ * The generator uses this timestamp as a stable DTSTAMP anchor so repeated
+ * builds from unchanged calendar data produce byte-identical ICS files.
+ * @param {string[]} sourceFiles Absolute calendar source file paths.
+ * @returns {Date} Newest source modification timestamp.
+ */
+function getLatestSourceTimestamp(sourceFiles) {
+  let latestTimestamp = new Date(0);
+
+  sourceFiles.forEach(sourcePath => {
+    const stats = fs.statSync(sourcePath);
+    if (stats.mtime > latestTimestamp) {
+      latestTimestamp = stats.mtime;
+    }
+  });
+
+  return latestTimestamp;
+}
+
 
 /**
  * Returns the category keys that appear in the merged calendar data across all
@@ -259,28 +279,27 @@ function writeTextFile(outputPath, content) {
 }
 
 /**
- * Generates all language-specific and category-specific ICS files from the
- * merged calendar configuration.
+ * Builds the complete expected ICS output in memory.
+ * The returned map uses absolute output file paths as keys and deterministic
+ * file content as values.
  * @param {string} repositoryRoot Absolute repository root path.
- * @returns {string[]} Absolute output file paths that were written.
+ * @returns {Map<string, string>} Expected ICS output files keyed by absolute path.
  */
-function generateIcsFiles(repositoryRoot) {
+function buildExpectedIcsFileMap(repositoryRoot) {
   const eventsByLanguage = loadCalendarEvents(repositoryRoot);
   const languages = getLanguageKeys(eventsByLanguage);
   const categories = getCategoryKeys(eventsByLanguage);
   const outputDirectory = getIcsOutputDirectory(repositoryRoot);
-  const now = new Date();
-  const writtenFiles = [];
-
-  ensureOutputDirectory(outputDirectory);
+  const sourceFiles = getCalendarSourceFiles(repositoryRoot);
+  const stampDate = getLatestSourceTimestamp(sourceFiles);
+  const expectedFiles = new Map();
 
   languages.forEach(languageKey => {
     const languageEvents = getSortedLanguageEvents(eventsByLanguage, languageKey);
 
     const allFilePath = buildOutputFilePath(outputDirectory, languageKey, null);
-    const allCalendarContent = buildCalendarIcs(languageKey, languageEvents, null, now);
-    writeTextFile(allFilePath, allCalendarContent);
-    writtenFiles.push(allFilePath);
+    const allCalendarContent = buildCalendarIcs(languageKey, languageEvents, null, stampDate);
+    expectedFiles.set(allFilePath, allCalendarContent);
 
     categories.forEach(categoryKey => {
       const categoryEvents = filterEventsByCategory(languageEvents, categoryKey);
@@ -289,10 +308,30 @@ function generateIcsFiles(repositoryRoot) {
       }
 
       const categoryFilePath = buildOutputFilePath(outputDirectory, languageKey, categoryKey);
-      const categoryCalendarContent = buildCalendarIcs(languageKey, categoryEvents, categoryKey, now);
-      writeTextFile(categoryFilePath, categoryCalendarContent);
-      writtenFiles.push(categoryFilePath);
+      const categoryCalendarContent = buildCalendarIcs(languageKey, categoryEvents, categoryKey, stampDate);
+      expectedFiles.set(categoryFilePath, categoryCalendarContent);
     });
+  });
+
+  return expectedFiles;
+}
+
+/**
+ * Generates all language-specific and category-specific ICS files from the
+ * merged calendar configuration.
+ * @param {string} repositoryRoot Absolute repository root path.
+ * @returns {string[]} Absolute output file paths that were written.
+ */
+function generateIcsFiles(repositoryRoot) {
+  const outputDirectory = getIcsOutputDirectory(repositoryRoot);
+  const expectedFiles = buildExpectedIcsFileMap(repositoryRoot);
+  const writtenFiles = [];
+
+  ensureOutputDirectory(outputDirectory);
+
+  expectedFiles.forEach((content, outputPath) => {
+    writeTextFile(outputPath, content);
+    writtenFiles.push(outputPath);
   });
 
   return writtenFiles;
@@ -325,5 +364,6 @@ if (require.main === module) {
 }
 
 module.exports = {
+  buildExpectedIcsFileMap,
   generateIcsFiles
 };

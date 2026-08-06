@@ -543,6 +543,7 @@
           </div>
           <div class="em-info">
             <div id="emPhaseText">Phase: New Moon (0%)</div>
+            <div id="moonNextFull" class="em-next-full">Next full moon: -</div>
           </div>
 
         </div>
@@ -579,8 +580,19 @@
             <div id="moonTimelineToday" class="moon-timeline-today" style="left:0%"></div>
           </div>
 
-          <div id="moonNextFull" style="margin-top:10px; font-size:.95rem;">
-            Next full moon: -
+          <div id="moonLocalPosition" class="moon-local-position">
+            <div id="moonLocalPositionLabel" class="moon-local-position-label">Moon here</div>
+            <div class="moon-local-position-body">
+              <div class="eclipse-preview-compass moon-local-position-compass" aria-hidden="true">
+                <span class="eclipse-preview-compass-north">N</span>
+                <span id="moonLocalCompassArrow" class="eclipse-preview-compass-arrow"></span>
+                <span class="eclipse-preview-compass-dot"></span>
+              </div>
+              <div class="moon-local-position-copy">
+                <div id="moonLocalPositionMain" class="moon-local-position-main">-</div>
+                <div id="moonLocalPositionSub" class="moon-local-position-sub">-</div>
+              </div>
+            </div>
           </div>
 
           <div class="eclipse-geometry">
@@ -2743,6 +2755,123 @@
         mainText: directionLabel + ' · ' + horizontal.azimuthDeg.toFixed(0) + '°',
         subText: altitudeText
       };
+    }
+
+    /**
+     * Returns the approximate Moon direction for the selected place and date.
+     * The dashboard reuses the same Moon-coordinate approximation as the eclipse
+     * preview so the wording stays consistent across cards.
+     * @param {Date} date Selected dashboard date.
+     * @param {object} location Selected location object.
+     * @returns {object|null} Local Moon direction payload, or null when unavailable.
+     */
+    function moonLookDirectionForDate(date, location){
+      if (!date || !location) {
+        return null;
+      }
+      const equatorial = moonEquatorialCoordinates(date);
+      const horizontal = horizontalCoordinates(date, location, equatorial);
+      if (!Number.isFinite(horizontal.azimuthDeg) || !Number.isFinite(horizontal.altitudeDeg)) {
+        return null;
+      }
+      const directionLabel = compassLabelForAzimuth(horizontal.azimuthDeg);
+      if (!directionLabel) {
+        return null;
+      }
+      let altitudeText = Math.abs(horizontal.altitudeDeg).toFixed(1) + '°';
+      const thumbEstimate = altitudeThumbEstimate(horizontal.altitudeDeg);
+      if (horizontal.altitudeDeg >= 0) {
+        altitudeText += ' ' + (t.eclipse_preview_above_horizon || 'above horizon');
+        if (thumbEstimate) {
+          altitudeText += ' · ' + thumbEstimate;
+        }
+      } else {
+        altitudeText += ' ' + (t.eclipse_preview_below_horizon || 'below horizon');
+      }
+      return {
+        directionLabel,
+        azimuthDeg: horizontal.azimuthDeg,
+        altitudeText
+      };
+    }
+
+    /**
+     * Returns the reference timestamp for the Moon direction display.
+     * On normal days the Moon card follows the currently selected date and time.
+     * On a local eclipse day the card switches to the most meaningful eclipse
+     * phase time so the Moon direction matches the eclipse preview wording.
+     * @param {Date} date Currently selected dashboard date.
+     * @param {object} location Selected location object.
+     * @returns {Date} Reference timestamp for the local Moon direction display.
+     */
+    function moonDirectionReferenceDate(date, location){
+      if (!date || !location) {
+        return date;
+      }
+
+      const preview = upcomingLocalEclipsePreview(date, location);
+      if (!preview || !preview.eventDate) {
+        return date;
+      }
+
+      if (formatDateStamp(preview.eventDate) !== formatDateStamp(date)) {
+        return date;
+      }
+
+      let bestPhaseDate = null;
+      let index = 0;
+      while (index < preview.phases.length) {
+        const phase = preview.phases[index];
+        if (phase.kind === 'maximum' && phase.time) {
+          bestPhaseDate = eclipsePhaseLocalDate(preview.eventDate, location, phase.time);
+          break;
+        }
+        index += 1;
+      }
+
+      if (bestPhaseDate) {
+        return bestPhaseDate;
+      }
+
+      index = 0;
+      while (index < preview.phases.length) {
+        const phase = preview.phases[index];
+        if (phase.time) {
+          bestPhaseDate = eclipsePhaseLocalDate(preview.eventDate, location, phase.time);
+          if (bestPhaseDate) {
+            return bestPhaseDate;
+          }
+        }
+        index += 1;
+      }
+
+      return date;
+    }
+
+    /**
+     * Returns the localized label for the Moon direction block.
+     * Normal days use the currently selected date at the current clock time.
+     * Local eclipse days switch to the eclipse phase time so the label should
+     * say that explicitly.
+     * @param {Date} date Currently selected dashboard date.
+     * @param {object} location Selected location object.
+     * @returns {string} Localized label for the Moon direction block.
+     */
+    function moonDirectionLabel(date, location){
+      if (!date || !location) {
+        return t.moon_here_current_time || t.moon_here || 'Moon here at this time';
+      }
+
+      const preview = upcomingLocalEclipsePreview(date, location);
+      if (!preview || !preview.eventDate) {
+        return t.moon_here_current_time || t.moon_here || 'Moon here at this time';
+      }
+
+      if (formatDateStamp(preview.eventDate) !== formatDateStamp(date)) {
+        return t.moon_here_current_time || t.moon_here || 'Moon here at this time';
+      }
+
+      return t.moon_here_eclipse_time || t.moon_here || 'Moon here at eclipse time';
     }
 
     /**
@@ -9053,11 +9182,11 @@ function computeMoon(date){
       }
     }
 
-    function renderMoon(){
-      const now = new Date();
+    function renderMoon(date = selectedSolarDate()){
       const tz  = document.getElementById('timezone').value;
-      const m   = computeMoon(now);
-      const nf  = nextFullMoon(now);
+      const m   = computeMoon(date);
+      const nf  = nextFullMoon(date);
+      const location = selectedLocation();
 
       const moonIcon = document.getElementById('moonIcon');
       const moonText = document.getElementById('moonText');
@@ -9089,12 +9218,31 @@ function computeMoon(date){
       // Nächster Vollmond
       const nextFull = document.getElementById('moonNextFull');
       if (nextFull) nextFull.textContent = t.next_full + ': ' + fmtTZ(nf, tz);
+      const moonLocalPositionLabel = document.getElementById('moonLocalPositionLabel');
+      const moonLocalPositionMain = document.getElementById('moonLocalPositionMain');
+      const moonLocalPositionSub = document.getElementById('moonLocalPositionSub');
+      const moonLocalCompassArrow = document.getElementById('moonLocalCompassArrow');
+      if (moonLocalPositionLabel && moonLocalPositionMain && moonLocalPositionSub && moonLocalCompassArrow) {
+        moonLocalPositionLabel.textContent = moonDirectionLabel(date, location);
+        const moonDirectionDate = moonDirectionReferenceDate(date, location);
+        const moonDirection = moonLookDirectionForDate(moonDirectionDate, location);
+        if (moonDirection) {
+          moonLocalCompassArrow.style.transform =
+            'translate(-50%, -100%) rotate(' + moonDirection.azimuthDeg.toFixed(1) + 'deg)';
+          moonLocalPositionMain.textContent =
+            moonDirection.directionLabel + ' · ' + moonDirection.azimuthDeg.toFixed(0) + '°';
+          moonLocalPositionSub.textContent = moonDirection.altitudeText;
+        } else {
+          moonLocalCompassArrow.style.transform = 'translate(-50%, -100%) rotate(0deg)';
+          moonLocalPositionMain.textContent = '-';
+          moonLocalPositionSub.textContent = '-';
+        }
+      }
       renderEclipseGeometry(selectedSolarDate());
     }
 
-    function renderEarthMoon(){
-      const now = new Date();
-      const m   = computeMoon(now);
+    function renderEarthMoon(date = selectedSolarDate()){
+      const m   = computeMoon(date);
       const emIcon = document.getElementById('emIcon');
       const emPhaseText = document.getElementById('emPhaseText');
       if (emIcon) emIcon.textContent = m.icon;

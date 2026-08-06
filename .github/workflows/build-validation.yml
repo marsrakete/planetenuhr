@@ -23,4 +23,4 @@ jobs:
         run: npm install
 
       - name: Run build validation
-        run: npm run build
+        run: npm run validate:repo

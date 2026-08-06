@@ -57,11 +57,30 @@ start-server.ps1
 Auch wenn die App statisch ist, gibt es jetzt einen regulären Build-Prüfschritt:
 
 ```text
-npm run build
+npm run validate:repo
 ```
 
 Vor jedem Build wird automatisch geprüft, ob verdächtige UTF-8- oder Mojibake-Artefakte im Repository enthalten sind.
-Der Build erzeugt die ICS-Dateien nicht mehr automatisch, sondern prüft nur noch, ob die vorhandenen Dateien im Ordner `ics/` vollständig und aktuell sind.
+Der Build erzeugt die ICS-Dateien nicht automatisch, sondern prüft nur noch, ob die vorhandenen Dateien im Ordner `ics/` vollständig und aktuell sind.
+
+### Empfohlener Kalender-Ablauf
+
+Die Kalenderpflege ist bewusst in drei getrennte Schritte aufgeteilt:
+
+1. `review:calendar-sources`  
+   Prüft, ob die gepflegten Quellen und Reichweitenziele noch plausibel aktuell sind.
+2. Config-Dateien anpassen  
+   Nur wenn sich daraus echte Änderungen ergeben, werden `calendar-events.js`, `eclipse-calendar-config.js`, `extended-calendar-config.js` oder verwandte Kalender-Configs gepflegt.
+3. `generate:calendar-artifacts`  
+   Erzeugt danach die abgeleiteten ICS-Dateien neu.
+4. `validate:repo`  
+   Prüft abschließend, dass Encoding, statische Dateien und ICS-Artefakte konsistent sind.
+
+Kurz gesagt:
+
+```text
+Quellen prüfen -> Config pflegen -> ICS neu erzeugen -> Repository validieren
+```
 
 Zusätzlich stehen diese Kommandos bereit:
 
@@ -71,18 +90,30 @@ npm run check:calendar-sources
 npm run check:ics
 npm run repair:encoding
 npm run build:ics
+npm run review:calendar-sources
+npm run review:calendar-sources:strict
+npm run generate:calendar-artifacts
+npm run validate:calendar-artifacts
+npm run refresh:calendar-artifacts
+npm run validate:repo
 ```
 
 - `check:encoding` bricht mit Fehler ab, wenn verdächtige Encoding-Artefakte gefunden werden.
 - `check:calendar-sources` listet die Himmelskalender-Quellen, berechnet nächste Prüftermine und kontrolliert die Kalenderabdeckung bis Ende 2040.
-- `check:ics` prüft, ob die erzeugten ICS-Dateien vorhanden und neuer als die kalenderrelevanten Quelldateien sind.
+- `check:ics` prüft, ob die erzeugten ICS-Dateien vorhanden sind und inhaltlich zum aktuellen Kalenderstand passen.
 - `repair:encoding` führt die bekannte Mojibake-Reparatur auf Textdateien im Repository aus.
 - `build:ics` lädt dieselben Kalenderquellen wie die App und schreibt die ICS-Dateien für `de`, `en` und `fr` sowie je Kategorie und als Gesamtkalender bewusst neu.
+- `review:calendar-sources` ist die lesbare Alias-Bezeichnung für die Quellenprüfung.
+- `review:calendar-sources:strict` prüft zusätzlich Link-Erreichbarkeit und eignet sich für GitHub Actions.
+- `generate:calendar-artifacts` ist die lesbare Alias-Bezeichnung für die bewusste Neuerzeugung der ICS-Dateien.
+- `validate:calendar-artifacts` prüft nur die generierten ICS-Artefakte.
+- `refresh:calendar-artifacts` erzeugt ICS-Dateien neu und validiert sie direkt danach.
+- `validate:repo` ist die lesbare Alias-Bezeichnung für den vollständigen Repository-Buildcheck.
 
 Der gleiche Prüfschritt läuft außerdem automatisch in GitHub Actions bei Push und Pull Request, damit defekte Zeichen nicht unbemerkt online gehen.
 Zusätzlich läuft wöchentlich der Workflow `.github/workflows/calendar-source-review.yml`, der die Quellenpflege des Himmelskalenders überwacht.
 
-Wenn Kalenderquellen geändert wurden und die ICS-Dateien dadurch veraltet sind, meldet `npm run build` das explizit und fordert zu `npm run build:ics` auf.
+Wenn Kalender-Configs geändert wurden und die ICS-Dateien dadurch veraltet sind, meldet `npm run validate:repo` das explizit und fordert zur Neuerzeugung der Kalender-Artefakte auf.
 
 ## Zentrale Bedienung
 

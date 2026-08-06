@@ -8,9 +8,15 @@
     "check:calendar-sources": "node scripts/check-calendar-sources.js",
     "check:calendar-sources:strict": "node scripts/check-calendar-sources.js --strict --check-links",
     "check:ics": "node scripts/check-ics-freshness.js",
+    "review:calendar-sources": "npm run check:calendar-sources",
+    "review:calendar-sources:strict": "npm run check:calendar-sources:strict",
     "repair:encoding": "node scripts/repair-mojibake.js",
     "build:ics": "node scripts/generate-ics.js",
+    "generate:calendar-artifacts": "npm run build:ics",
+    "validate:calendar-artifacts": "npm run check:ics",
+    "refresh:calendar-artifacts": "npm run generate:calendar-artifacts && npm run validate:calendar-artifacts",
     "prebuild": "npm run check:encoding",
-    "build": "node scripts/build.js"
+    "build": "node scripts/build.js",
+    "validate:repo": "npm run build"
   }
 }
