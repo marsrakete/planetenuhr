@@ -352,6 +352,13 @@
     <template id="summaryTextTemplate">
       <div class="summary-text" data-summary-text></div>
     </template>
+    <template id="cardSizeControlTemplate">
+      <div class="card-size-control" role="group">
+        <button type="button" class="card-size-button" data-card-size-option="normal">1×</button>
+        <button type="button" class="card-size-button" data-card-size-option="wide">2×</button>
+        <button type="button" class="card-size-button" data-card-size-option="large">2×+</button>
+      </div>
+    </template>
     <template id="eclipsePreviewTemplate">
       <section class="eclipse-preview-card">
         <div class="eclipse-preview-head">
@@ -918,8 +925,17 @@
     let showAllCalendarEvents = false;
     let activeCalendarView = 'list';
     let selectedCalendarEventKey = '';
+    const compactCalendarListLimit = 4;
     let barycenterInfluenceMode = 'all';
     let requestedCardKey = '';
+    const cardSizeStorageKey = 'planetenuhr-card-sizes-v1';
+    const supportedCardSizes = ['normal', 'wide', 'large'];
+    const specialDefaultCardSizes = {
+      earth_moon: 'wide',
+      retrograde: 'wide',
+      constellation_year: 'large'
+    };
+    let storedCardSizes = {};
 
     function currentCardHelpPack(){
       return cardHelp[lang] || cardHelp.en || { sections:{}, cards:{} };
@@ -1342,6 +1358,9 @@
       document.getElementById('titleOtherPlanets').textContent = t.title_other_planets;
       document.getElementById('otherPlanetsLegend').textContent = t.legend_other_planets;
       document.getElementById('titleSkyCalendar').textContent = t.title_sky_calendar;
+      resizableDashboardCards().forEach(card => {
+        updateCardSizeControlState(card);
+      });
 
       const lblIll = document.getElementById('labelIllum');
       if (lblIll) lblIll.textContent = t.label_illum;
@@ -1626,6 +1645,324 @@
           card.id = 'card-' + normalizedKey;
         }
       });
+    }
+
+    /**
+     * Resolves the stable storage key for one resizable dashboard card.
+     * The help key already identifies most content cards consistently across
+     * languages and reloads, so it is reused for local layout persistence.
+     * @param {HTMLElement} card Dashboard card element.
+     * @returns {string} Stable card key, or an empty string when none is available.
+     */
+    function resizableCardKey(card){
+      if (!card) {
+        return '';
+      }
+      const helpKey = card.getAttribute('data-help-key');
+      return normalizeCardToken(helpKey);
+    }
+
+    /**
+     * Returns all dashboard cards that support the user size control.
+     * Utility cards outside the main content grid are excluded on purpose so
+     * the dashboard remains predictable and the top date bar stays fixed.
+     * @returns {HTMLElement[]} Resizable content cards.
+     */
+    function resizableDashboardCards(){
+      return Array.from(document.querySelectorAll('.grid .display-container[data-help-key]'))
+        .filter(card => !card.classList.contains('time-card'));
+    }
+
+    /**
+     * Checks whether one card size token is supported by the dashboard.
+     * @param {string} size Requested size token.
+     * @returns {boolean} True when the token is one of the supported size levels.
+     */
+    function isSupportedCardSize(size){
+      let index = 0;
+      while (index < supportedCardSizes.length) {
+        if (supportedCardSizes[index] === size) {
+          return true;
+        }
+        index += 1;
+      }
+      return false;
+    }
+
+    /**
+     * Resolves the built-in default size for one dashboard card.
+     * Cards that already had a broader editorial layout keep that as their
+     * default, while all remaining cards start in their normal footprint.
+     * @param {HTMLElement} card Dashboard card element.
+     * @returns {string} Default size token: `normal`, `wide` or `large`.
+     */
+    function defaultCardSize(card){
+      const cardKey = resizableCardKey(card);
+      if (cardKey && specialDefaultCardSizes[cardKey]) {
+        return specialDefaultCardSizes[cardKey];
+      }
+      if (card && card.classList.contains('wide-card')) {
+        return 'wide';
+      }
+      return 'normal';
+    }
+
+    /**
+     * Loads persisted card size overrides from localStorage.
+     * Invalid or stale payloads are ignored so a broken saved value never
+     * blocks the dashboard from loading.
+     * @returns {object} Stored size map keyed by card help key.
+     */
+    function loadStoredCardSizes(){
+      if (!window.localStorage) {
+        return {};
+      }
+
+      try {
+        const rawValue = window.localStorage.getItem(cardSizeStorageKey);
+        if (!rawValue) {
+          return {};
+        }
+        const parsedValue = JSON.parse(rawValue);
+        if (!parsedValue || typeof parsedValue !== 'object' || Array.isArray(parsedValue)) {
+          return {};
+        }
+        return parsedValue;
+      } catch (error) {
+        return {};
+      }
+    }
+
+    /**
+     * Persists the current user-selected card sizes in localStorage.
+     * The write is wrapped defensively because privacy settings can block local
+     * storage even on normal web pages.
+     * @returns {void}
+     */
+    function saveStoredCardSizes(){
+      if (!window.localStorage) {
+        return;
+      }
+
+      try {
+        window.localStorage.setItem(cardSizeStorageKey, JSON.stringify(storedCardSizes));
+      } catch (error) {
+        return;
+      }
+    }
+
+    /**
+     * Resolves the effective size for one dashboard card from user override or
+     * built-in default.
+     * @param {HTMLElement} card Dashboard card element.
+     * @returns {string} Effective size token.
+     */
+    function effectiveCardSize(card){
+      const cardKey = resizableCardKey(card);
+      if (cardKey && isSupportedCardSize(storedCardSizes[cardKey])) {
+        return storedCardSizes[cardKey];
+      }
+      return defaultCardSize(card);
+    }
+
+    /**
+     * Updates the active state and localized labels of one card-size control.
+     * The visible button labels stay compact, while titles and aria labels are
+     * translated for clarity and accessibility.
+     * @param {HTMLElement} card Dashboard card element.
+     * @returns {void}
+     */
+    function updateCardSizeControlState(card){
+      if (!card) {
+        return;
+      }
+
+      const control = card.querySelector('.card-size-control');
+      if (!control) {
+        return;
+      }
+
+      const activeSize = effectiveCardSize(card);
+      control.setAttribute('aria-label', t.card_size_group || 'Card size');
+
+      control.querySelectorAll('[data-card-size-option]').forEach(button => {
+        const size = button.getAttribute('data-card-size-option');
+        let label = size;
+        let title = size;
+
+        if (size === 'normal') {
+          label = '1×';
+          title = t.card_size_normal || 'Normal size';
+        } else if (size === 'wide') {
+          label = '2×';
+          title = t.card_size_wide || 'Wide size';
+        } else if (size === 'large') {
+          label = '2×+';
+          title = t.card_size_large || 'Large size';
+        }
+
+        button.textContent = label;
+        button.setAttribute('title', title);
+        button.setAttribute('aria-label', title);
+
+        if (size === activeSize) {
+          button.classList.add('active');
+          button.setAttribute('aria-pressed', 'true');
+        } else {
+          button.classList.remove('active');
+          button.setAttribute('aria-pressed', 'false');
+        }
+      });
+    }
+
+    /**
+     * Applies one resolved size token to the card element itself.
+     * The CSS layer translates the token into responsive grid spans and, for
+     * the large size, into a roomier minimum height.
+     * @param {HTMLElement} card Dashboard card element.
+     * @param {string} size Effective size token.
+     * @returns {void}
+     */
+    function applyCardSizeToElement(card, size){
+      if (!card) {
+        return;
+      }
+
+      if (!isSupportedCardSize(size)) {
+        size = defaultCardSize(card);
+      }
+
+      card.classList.add('card-size-enabled');
+      card.setAttribute('data-card-size', size);
+      updateCardSizeControlState(card);
+    }
+
+    /**
+     * Applies the current persisted size map to every resizable dashboard card.
+     * @returns {void}
+     */
+    function applyStoredCardSizes(){
+      resizableDashboardCards().forEach(card => {
+        applyCardSizeToElement(card, effectiveCardSize(card));
+      });
+    }
+
+    /**
+     * Stores a new size for one dashboard card and updates the element.
+     * @param {HTMLElement} card Dashboard card element.
+     * @param {string} size Requested size token.
+     * @returns {void}
+     */
+    function setDashboardCardSize(card, size){
+      const cardKey = resizableCardKey(card);
+      if (!card || !cardKey || !isSupportedCardSize(size)) {
+        return;
+      }
+
+      const currentSize = effectiveCardSize(card);
+      if (currentSize === size) {
+        return;
+      }
+
+      storedCardSizes[cardKey] = size;
+      saveStoredCardSizes();
+
+      renderWithViewportAnchor(() => {
+        applyCardSizeToElement(card, size);
+      });
+    }
+
+    /**
+     * Creates and wires the per-card size controls from the shared template.
+     * Each content card receives the same compact three-step chooser so the UI
+     * stays consistent across the dashboard.
+     * @returns {void}
+     */
+    function initCardSizeControls(){
+      storedCardSizes = loadStoredCardSizes();
+
+      resizableDashboardCards().forEach(card => {
+        if (!resizableCardKey(card)) {
+          return;
+        }
+        if (card.querySelector('.card-size-control')) {
+          return;
+        }
+
+        const fragment = cloneTemplate('cardSizeControlTemplate');
+        if (!fragment) {
+          return;
+        }
+
+        const control = fragment.querySelector('.card-size-control');
+        control.addEventListener('click', event => {
+          event.stopPropagation();
+        });
+
+        card.addEventListener('pointerdown', event => {
+          if (!window.matchMedia('(hover: none), (pointer: coarse)').matches) {
+            return;
+          }
+
+          if (event.target.closest('button, a, input, select, textarea, summary, .card-help-popup')) {
+            return;
+          }
+
+          const isAlreadyOpen = card.classList.contains('is-card-tools-open');
+          document.querySelectorAll('.display-container.is-card-tools-open').forEach(openCard => {
+            if (openCard !== card) {
+              openCard.classList.remove('is-card-tools-open');
+            }
+          });
+
+          if (isAlreadyOpen) {
+            card.classList.remove('is-card-tools-open');
+          } else {
+            card.classList.add('is-card-tools-open');
+          }
+        });
+
+        control.querySelectorAll('[data-card-size-option]').forEach(button => {
+          button.addEventListener('pointerdown', event => {
+            event.preventDefault();
+          });
+          button.addEventListener('click', event => {
+            event.preventDefault();
+            event.stopPropagation();
+            button.blur();
+            const requestedSize = button.getAttribute('data-card-size-option');
+            setDashboardCardSize(card, requestedSize);
+            if (window.matchMedia('(hover: none), (pointer: coarse)').matches) {
+              card.classList.remove('is-card-tools-open');
+            }
+          });
+        });
+
+        card.appendChild(fragment);
+      });
+
+      if (!window.__planetenuhrCardSizeControlsWired) {
+        document.addEventListener('pointerdown', event => {
+          if (!window.matchMedia('(hover: none), (pointer: coarse)').matches) {
+            return;
+          }
+
+          if (event.target.closest('.card-size-control')) {
+            return;
+          }
+
+          if (event.target.closest('.display-container[data-help-key]')) {
+            return;
+          }
+
+          document.querySelectorAll('.display-container.is-card-tools-open').forEach(card => {
+            card.classList.remove('is-card-tools-open');
+          });
+        });
+        window.__planetenuhrCardSizeControlsWired = true;
+      }
+
+      applyStoredCardSizes();
     }
 
     /**
@@ -3624,8 +3961,8 @@
       if (!target) return;
       const windowDays = 60;
       const events = computeConjunctionEvents(date, windowDays);
-      const width = 560;
-      const height = 132;
+      const width = 760;
+      const height = 172;
       const svgNS = 'http://www.w3.org/2000/svg';
       target.innerHTML = '';
       const svg = document.createElementNS(svgNS, 'svg');
@@ -3633,9 +3970,9 @@
 
       const axis = document.createElementNS(svgNS, 'line');
       axis.setAttribute('x1', 30);
-      axis.setAttribute('y1', 70);
+      axis.setAttribute('y1', 92);
       axis.setAttribute('x2', width - 30);
-      axis.setAttribute('y2', 70);
+      axis.setAttribute('y2', 92);
       axis.setAttribute('stroke', '#cbd5e1');
       axis.setAttribute('stroke-width', '2');
       svg.appendChild(axis);
@@ -3644,9 +3981,9 @@
         const x = 30 + ((monthOffset + 2) / 4) * (width - 60);
         const tick = document.createElementNS(svgNS, 'line');
         tick.setAttribute('x1', x);
-        tick.setAttribute('y1', 58);
+        tick.setAttribute('y1', 78);
         tick.setAttribute('x2', x);
-        tick.setAttribute('y2', 82);
+        tick.setAttribute('y2', 106);
         let tickStroke = '#94a3b8';
         let tickStrokeWidth = '1';
         if (monthOffset === 0) {
@@ -3659,7 +3996,7 @@
         const monthDate = new Date(date.getFullYear(), date.getMonth() + monthOffset, 1);
         const label = document.createElementNS(svgNS, 'text');
         label.setAttribute('x', x);
-        label.setAttribute('y', 98);
+        label.setAttribute('y', 126);
         label.setAttribute('class', 'meteor-month-label');
         label.textContent = monthShortLabel(monthDate.getMonth());
         svg.appendChild(label);
@@ -3667,15 +4004,15 @@
 
       events.forEach((event, index) => {
         const x = 30 + ((event.offsetDays + windowDays) / (windowDays * 2)) * (width - 60);
-        let y = 28;
+        let y = 42;
         if (index % 2 === 0) {
-          y = 48;
+          y = 66;
         }
         const stem = document.createElementNS(svgNS, 'line');
         stem.setAttribute('x1', x);
         stem.setAttribute('y1', y + 6);
         stem.setAttribute('x2', x);
-        stem.setAttribute('y2', 70);
+        stem.setAttribute('y2', 92);
         stem.setAttribute('stroke', '#bfdbfe');
         stem.setAttribute('stroke-width', '1.5');
         svg.appendChild(stem);
@@ -3689,7 +4026,7 @@
         svg.appendChild(dot);
         const label = document.createElementNS(svgNS, 'text');
         label.setAttribute('x', x);
-        label.setAttribute('y', y - 10);
+        label.setAttribute('y', y - 14);
         label.setAttribute('class', 'meteor-month-label');
         label.textContent = conjunctionPairLabel(event.a, event.b);
         svg.appendChild(label);
@@ -3715,38 +4052,87 @@
     // - miniature line figures outside the ring
     // - a current-date marker along the yearly cycle
     //
-    // This is a visual year clock, not a literal sky projection.
+    /**
+     * Renders the yearly constellation wheel.
+     * This is a visual month-by-month orientation aid, not a literal sky
+     * projection. The card emphasizes the annual cycle of constellations with
+     * month ticks, an outer instrument ring and a current-date marker.
+     * @param {Date} [date=selectedSolarDate()] Selected dashboard date.
+     * @returns {void}
+     */
     function renderConstellationYear(date = selectedSolarDate()){
       const target = document.getElementById('constellationYearMap');
       const summary = document.getElementById('constellationYearSummary');
       if (!target) return;
       const items = phenomenaConfig.constellations || [];
-      const size = 620;
+      const size = 760;
       const center = size / 2;
-      const radius = 182;
-      const iconRadius = 56;
+      const radius = 224;
+      const iconRadius = 64;
       const svgNS = 'http://www.w3.org/2000/svg';
       target.innerHTML = '';
       const svg = document.createElementNS(svgNS, 'svg');
       svg.setAttribute('viewBox', `0 0 ${size} ${size}`);
 
+      const defs = document.createElementNS(svgNS, 'defs');
+      const dialGradient = document.createElementNS(svgNS, 'radialGradient');
+      dialGradient.setAttribute('id', 'constellationYearDialGradient');
+      dialGradient.setAttribute('cx', '50%');
+      dialGradient.setAttribute('cy', '46%');
+      dialGradient.setAttribute('r', '72%');
+      [
+        { offset:'0%', color:'#ffffff' },
+        { offset:'68%', color:'#f7fbff' },
+        { offset:'100%', color:'#edf4ff' }
+      ].forEach(stopConfig => {
+        const stop = document.createElementNS(svgNS, 'stop');
+        stop.setAttribute('offset', stopConfig.offset);
+        stop.setAttribute('stop-color', stopConfig.color);
+        dialGradient.appendChild(stop);
+      });
+      defs.appendChild(dialGradient);
+      svg.appendChild(defs);
+
+      const dial = document.createElementNS(svgNS, 'circle');
+      dial.setAttribute('cx', center);
+      dial.setAttribute('cy', center);
+      dial.setAttribute('r', radius + 74);
+      dial.setAttribute('class', 'constellation-year-dial');
+      svg.appendChild(dial);
+
+      const outerRing = document.createElementNS(svgNS, 'circle');
+      outerRing.setAttribute('cx', center);
+      outerRing.setAttribute('cy', center);
+      outerRing.setAttribute('r', radius + 34);
+      outerRing.setAttribute('class', 'constellation-year-outer-ring');
+      svg.appendChild(outerRing);
+
       const ring = document.createElementNS(svgNS, 'circle');
       ring.setAttribute('cx', center);
       ring.setAttribute('cy', center);
       ring.setAttribute('r', radius);
-      ring.setAttribute('fill', 'none');
-      ring.setAttribute('stroke', '#dbeafe');
-      ring.setAttribute('stroke-width', '28');
+      ring.setAttribute('class', 'constellation-year-month-ring');
       svg.appendChild(ring);
 
       const innerRing = document.createElementNS(svgNS, 'circle');
       innerRing.setAttribute('cx', center);
       innerRing.setAttribute('cy', center);
-      innerRing.setAttribute('r', 92);
-      innerRing.setAttribute('fill', 'none');
-      innerRing.setAttribute('stroke', '#e2e8f0');
-      innerRing.setAttribute('stroke-width', '2');
+      innerRing.setAttribute('r', 118);
+      innerRing.setAttribute('class', 'constellation-year-inner-ring');
       svg.appendChild(innerRing);
+
+      for (let tickIndex = 0; tickIndex < 12; tickIndex++) {
+        const tickFraction = tickIndex / 12;
+        const tickStart = polarPoint(center, radius + 18, tickFraction);
+        const tickEnd = polarPoint(center, radius + 46, tickFraction);
+        const tick = document.createElementNS(svgNS, 'line');
+        tick.setAttribute('x1', tickStart.x);
+        tick.setAttribute('y1', tickStart.y);
+        tick.setAttribute('x2', tickEnd.x);
+        tick.setAttribute('y2', tickEnd.y);
+        tick.setAttribute('class', 'constellation-year-tick');
+        svg.appendChild(tick);
+      }
 
       items.forEach(item => {
         const fraction = (item.month - 1) / 12;
@@ -3765,7 +4151,7 @@
         marker.setAttribute('fill', markerFill);
         svg.appendChild(marker);
 
-        const monthPoint = polarPoint(center, 76, fraction);
+        const monthPoint = polarPoint(center, 96, fraction);
         const monthLabel = document.createElementNS(svgNS, 'text');
         monthLabel.setAttribute('x', monthPoint.x);
         monthLabel.setAttribute('y', monthPoint.y);
@@ -3773,7 +4159,7 @@
         monthLabel.textContent = monthShortLabel(item.month - 1).replace('.', '');
         svg.appendChild(monthLabel);
 
-        const miniPoint = polarPoint(center, radius + 52, fraction);
+        const miniPoint = polarPoint(center, radius + 72, fraction);
         const mini = document.createElementNS(svgNS, 'g');
         mini.setAttribute('transform', `translate(${miniPoint.x} ${miniPoint.y})`);
 
@@ -3813,7 +4199,7 @@
           mini.appendChild(starNode);
         });
 
-        const namePoint = polarPoint(center, radius + 102, fraction);
+        const namePoint = polarPoint(center, radius + 138, fraction);
         const angle = fraction * Math.PI * 2 - Math.PI / 2;
         const topBottomBias = Math.sin(angle);
         const horizontalBias = Math.cos(angle);
@@ -3834,8 +4220,8 @@
           rawLabelY -= 8;
         }
 
-        const labelX = Math.max(34, Math.min(size - 34, rawLabelX));
-        const labelY = Math.max(20, Math.min(size - 20, rawLabelY));
+        const labelX = Math.max(38, Math.min(size - 38, rawLabelX));
+        const labelY = Math.max(24, Math.min(size - 24, rawLabelY));
         const label = document.createElementNS(svgNS, 'text');
         let textAnchor = 'middle';
         if (horizontalBias > 0.32) {
@@ -3862,11 +4248,11 @@
       });
 
       const fraction = (dayOfYearLocal(date) - 1) / daysInYear(date.getFullYear());
-      const todayPoint = polarPoint(center, radius - 20, fraction);
+      const todayPoint = polarPoint(center, radius - 22, fraction);
       const today = document.createElementNS(svgNS, 'circle');
       today.setAttribute('cx', todayPoint.x);
       today.setAttribute('cy', todayPoint.y);
-      today.setAttribute('r', 8);
+      today.setAttribute('r', 10);
       today.setAttribute('fill', '#f59e0b');
       today.setAttribute('stroke', '#fff');
       today.setAttribute('stroke-width', '2');
@@ -4468,12 +4854,128 @@
     let masonryAfterLayoutCallbacks = [];
     let persistentViewportAnchor = null;
     let suppressMasonryObserver = false;
+    let deferMasonryLayout = false;
+    let deferredMasonryLayoutRequested = false;
 
     function visibleGridCards(){
       const grid = document.querySelector('.grid');
       if (!grid) return [];
       return Array.from(grid.querySelectorAll('.display-container'))
         .filter(card => getComputedStyle(card).display !== 'none');
+    }
+
+    /**
+     * Returns a conservative card height for masonry row-span calculation.
+     * Some browsers, especially on tablets, can report a temporarily smaller
+     * `getBoundingClientRect().height` while SVG labels, web fonts or late
+     * layout passes are still settling. The masonry layout uses the largest
+     * available box metric so cards never receive a span that is too short.
+     * @param {HTMLElement} card Dashboard card whose height should be measured.
+     * @returns {number} Stable pixel height for masonry span calculation.
+     */
+    function masonryCardHeight(card){
+      if (!card) {
+        return 0;
+      }
+
+      const rectHeight = card.getBoundingClientRect().height;
+      const scrollHeight = card.scrollHeight;
+      const offsetHeight = card.offsetHeight;
+      let height = rectHeight;
+
+      if (scrollHeight > height) {
+        height = scrollHeight;
+      }
+      if (offsetHeight > height) {
+        height = offsetHeight;
+      }
+
+      return height;
+    }
+
+    /**
+     * Queues a small series of deferred masonry recalculations.
+     * Tablet browsers can finish SVG text placement, font fallback swaps and
+     * intrinsic media sizing a little after the initial render pass. The extra
+     * checks keep grid spans in sync without requiring a manual refresh.
+     * @returns {void}
+     */
+    function scheduleDeferredMasonryPasses(){
+      scheduleMasonryLayout();
+
+      requestAnimationFrame(() => {
+        scheduleMasonryLayout();
+      });
+
+      window.setTimeout(() => {
+        scheduleMasonryLayout();
+      }, 120);
+
+      window.setTimeout(() => {
+        scheduleMasonryLayout();
+      }, 320);
+    }
+
+    /**
+     * Requests one masonry relayout for the dashboard.
+     * During batched redraws the request is only remembered so repeated card
+     * renders do not keep restarting the full grid calculation.
+     * @param {Function} [afterLayout] Optional callback that should run after the next layout pass.
+     * @returns {void}
+     */
+    function requestMasonryLayout(afterLayout){
+      if (deferMasonryLayout) {
+        deferredMasonryLayoutRequested = true;
+        if (typeof afterLayout === 'function') {
+          masonryAfterLayoutCallbacks.push(afterLayout);
+        }
+        return;
+      }
+
+      scheduleMasonryLayout(afterLayout);
+    }
+
+    /**
+     * Runs several render steps while collapsing repeated masonry requests into
+     * a single final relayout.
+     * This keeps date-driven card updates from rebuilding the visible grid over
+     * and over again while individual cards are still refreshing.
+     * @param {Function} callback Render work to execute inside the batch.
+     * @param {Function} [afterLayout] Optional callback for the final layout pass.
+     * @returns {void}
+     */
+    function runWithDeferredMasonryLayout(callback, afterLayout){
+      const previousDeferredState = deferMasonryLayout;
+      const previousPendingState = deferredMasonryLayoutRequested;
+
+      deferMasonryLayout = true;
+      deferredMasonryLayoutRequested = false;
+
+      callback();
+
+      const shouldLayout = deferredMasonryLayoutRequested;
+
+      deferMasonryLayout = previousDeferredState;
+      deferredMasonryLayoutRequested = previousPendingState;
+
+      if (previousDeferredState) {
+        if (shouldLayout) {
+          deferredMasonryLayoutRequested = true;
+          if (typeof afterLayout === 'function') {
+            masonryAfterLayoutCallbacks.push(afterLayout);
+          }
+        }
+        return;
+      }
+
+      if (shouldLayout) {
+        requestMasonryLayout(afterLayout);
+        return;
+      }
+
+      if (typeof afterLayout === 'function') {
+        afterLayout();
+      }
     }
 
     function updateMasonryLayout(){
@@ -4507,8 +5009,8 @@
       const rowHeight = parseFloat(style.gridAutoRows) || 8;
       const rowGap = parseFloat(style.rowGap) || 20;
       cards.forEach(card => {
-        const height = card.getBoundingClientRect().height;
-        const span = Math.max(1, Math.ceil((height + rowGap) / (rowHeight + rowGap)));
+        const height = masonryCardHeight(card);
+        const span = Math.max(1, Math.ceil((height + rowGap + 2) / (rowHeight + rowGap)));
         card.style.gridRowEnd = 'span ' + span;
       });
       finishMasonryLayout();
@@ -4560,8 +5062,8 @@
       const style = getComputedStyle(grid);
       const rowHeight = parseFloat(style.gridAutoRows) || 8;
       const rowGap = parseFloat(style.rowGap) || 20;
-      const height = card.getBoundingClientRect().height;
-      const span = Math.max(1, Math.ceil((height + rowGap) / (rowHeight + rowGap)));
+      const height = masonryCardHeight(card);
+      const span = Math.max(1, Math.ceil((height + rowGap + 2) / (rowHeight + rowGap)));
       card.style.gridRowEnd = 'span ' + span;
     }
 
@@ -4654,13 +5156,14 @@
         persistentViewportAnchor = null;
       }
       withSuppressedMasonryObserver(() => {
-        refreshDateDrivenTiles();
-      });
-      if (anchor) {
-        scheduleMasonryLayout(() => {
-          restoreViewportAnchor(anchor);
+        runWithDeferredMasonryLayout(() => {
+          refreshDateDrivenTiles();
+        }, () => {
+          if (anchor) {
+            restoreViewportAnchor(anchor);
+          }
         });
-      }
+      });
     }
 
     function initMasonryLayout(){
@@ -4676,7 +5179,22 @@
       }
       window.addEventListener('resize', () => {
         syncDateMobilePanelForViewport();
-        scheduleMasonryLayout();
+        scheduleDeferredMasonryPasses();
+      });
+      window.addEventListener('load', () => {
+        scheduleDeferredMasonryPasses();
+      });
+      if (document.fonts && typeof document.fonts.ready === 'object' && typeof document.fonts.ready.then === 'function') {
+        document.fonts.ready.then(() => {
+          scheduleDeferredMasonryPasses();
+        });
+      }
+      visibleGridCards().forEach(card => {
+        card.querySelectorAll('img').forEach(image => {
+          image.addEventListener('load', () => {
+            updateSingleCardMasonryLayout(card);
+          });
+        });
       });
       scheduleMasonryLayout();
     }
@@ -5122,7 +5640,7 @@
       const nodes = [];
       let visibleEvents = events;
       if (!showAllCalendarEvents) {
-        visibleEvents = events.slice(0, 6);
+        visibleEvents = events.slice(0, compactCalendarListLimit);
       }
 
       if (visibleEvents.length === 0) {
@@ -5386,7 +5904,7 @@
         monthView.classList.remove('is-active');
         monthView.setAttribute('aria-hidden', 'true');
         timeline.setAttribute('aria-hidden', 'false');
-        if (visibleEvents.length <= 6) {
+        if (visibleEvents.length <= compactCalendarListLimit) {
           showAllButton.hidden = true;
         } else {
           showAllButton.hidden = false;
@@ -5399,7 +5917,7 @@
       }
 
       syncCalendarViewStackHeight();
-      updateSingleCardMasonryLayout(calendarCard);
+      requestMasonryLayout();
     }
 
     /**
@@ -5841,7 +6359,7 @@
         card.classList.add('mobile-collapsed');
         button.setAttribute('aria-expanded', 'false');
       }
-      scheduleMasonryLayout();
+      requestMasonryLayout();
     }
 
     /**
@@ -5922,20 +6440,21 @@
       renderInnerPlanetPhases(date);
       renderSunlight(date);
       renderVisibility(date);
+      renderNightVisibility(date);
       renderSatellites(date);
       renderEclipseGeometry(date);
       renderCalendar();
-      scheduleMasonryLayout();
     }
 
     // Rebuilds the time-sensitive astronomy panels.
     function updateInfrequent() {
-      renderMoon();
-      renderEarthMoon();
-      renderSmallBodies();
-      renderSpacecraft();
-      refreshDateDrivenTiles();
-      scheduleMasonryLayout();
+      runWithDeferredMasonryLayout(() => {
+        renderMoon();
+        renderEarthMoon();
+        renderSmallBodies();
+        renderSpacecraft();
+        refreshDateDrivenTiles();
+      });
     }
 
     function refreshDynamicTiles(){
@@ -5943,7 +6462,6 @@
       updateInfrequent();
       loadAuroraChance();
       loadBlueskyFeed();
-      scheduleMasonryLayout();
     }
 
     // Solar-system model: approximate heliocentric J2000 orbital elements.
@@ -6540,7 +7058,7 @@
     function setBarycenterInfluenceMode(mode){
       barycenterInfluenceMode = mode;
       renderBarycenter(selectedSolarDate());
-      scheduleMasonryLayout();
+      requestMasonryLayout();
     }
 
     /**
@@ -7095,6 +7613,28 @@
     }
 
     /**
+     * Projects a point from a north-facing sky dome onto the 2D card.
+     * The azimuth offset is measured from north toward east/west, while the
+     * altitude uses a simple orthographic dome so horizon, zenith and Polaris
+     * read like a small observing-window rather than a flat diagram.
+     * @param {number} centerX Dome center X on the horizon line.
+     * @param {number} horizonY Horizon baseline Y.
+     * @param {number} domeRadius Radius of the visible half dome.
+     * @param {number} azimuthOffsetDeg Horizontal offset from north in degrees.
+     * @param {number} altitudeDeg Altitude above the horizon in degrees.
+     * @returns {{x:number,y:number}} Projected card coordinates.
+     */
+    function projectNorthDomePoint(centerX, horizonY, domeRadius, azimuthOffsetDeg, altitudeDeg){
+      const azimuthRadians = azimuthOffsetDeg * Math.PI / 180;
+      const altitudeRadians = altitudeDeg * Math.PI / 180;
+      const horizontalRadius = domeRadius * Math.cos(altitudeRadians);
+      return {
+        x: centerX + horizontalRadius * Math.sin(azimuthRadians),
+        y: horizonY - domeRadius * Math.sin(altitudeRadians)
+      };
+    }
+
+    /**
      * Renders the Polaris / north-celestial-pole card for the selected location.
      * The altitude of the pole follows geographic latitude, while nearby
      * asterisms rotate with sidereal time so the card visibly reacts to date changes.
@@ -7117,21 +7657,85 @@
       svg.setAttribute('viewBox', '0 0 420 420');
       svg.setAttribute('aria-label', t.polaris_aria || 'Polaris and the north celestial pole');
 
-      const horizonY = 316;
+      const defs = document.createElementNS(svgNS, 'defs');
+      const skyGradient = document.createElementNS(svgNS, 'radialGradient');
+      skyGradient.setAttribute('id', 'polarisSkyGradient');
+      skyGradient.setAttribute('cx', '50%');
+      skyGradient.setAttribute('cy', '30%');
+      skyGradient.setAttribute('r', '78%');
+      [
+        { offset:'0%', color:'#17325f' },
+        { offset:'58%', color:'#0f2443' },
+        { offset:'100%', color:'#07111f' }
+      ].forEach(stopConfig => {
+        const stop = document.createElementNS(svgNS, 'stop');
+        stop.setAttribute('offset', stopConfig.offset);
+        stop.setAttribute('stop-color', stopConfig.color);
+        skyGradient.appendChild(stop);
+      });
+      defs.appendChild(skyGradient);
+      svg.appendChild(defs);
+
+      const background = document.createElementNS(svgNS, 'rect');
+      background.setAttribute('x', '0');
+      background.setAttribute('y', '0');
+      background.setAttribute('width', '420');
+      background.setAttribute('height', '420');
+      background.setAttribute('rx', '16');
+      background.setAttribute('class', 'polaris-sky-panel');
+      svg.appendChild(background);
+
+      const horizonY = 330;
       const centerX = 210;
+      const domeRadius = 154;
       const latitude = location.latitude;
       const clampedLatitude = Math.max(-75, Math.min(75, latitude));
       const poleAltitude = Math.max(0, clampedLatitude);
-      const poleY = horizonY - poleAltitude * 2.4;
       const siderealAngle = localSiderealAngleDegrees(date, location.longitude || 0);
+      const polePoint = projectNorthDomePoint(centerX, horizonY, domeRadius, 0, poleAltitude);
+      const poleX = polePoint.x;
+      const poleY = polePoint.y;
+
+      const domePath = document.createElementNS(svgNS, 'path');
+      domePath.setAttribute('d', 'M ' + (centerX - domeRadius) + ' ' + horizonY + ' A ' + domeRadius + ' ' + domeRadius + ' 0 0 1 ' + (centerX + domeRadius) + ' ' + horizonY);
+      domePath.setAttribute('class', 'polaris-dome');
+      svg.appendChild(domePath);
+
+      [15, 30, 45, 60].forEach(altitude => {
+        const altitudeRadius = domeRadius * Math.cos(altitude * Math.PI / 180);
+        const altitudeY = horizonY - domeRadius * Math.sin(altitude * Math.PI / 180);
+        const arc = document.createElementNS(svgNS, 'path');
+        arc.setAttribute('d', 'M ' + (centerX - altitudeRadius) + ' ' + altitudeY + ' A ' + altitudeRadius + ' ' + altitudeRadius + ' 0 0 1 ' + (centerX + altitudeRadius) + ' ' + altitudeY);
+        arc.setAttribute('class', 'polaris-altitude-arc');
+        svg.appendChild(arc);
+      });
+
+      [-60, -30, 0, 30, 60].forEach(azimuthOffset => {
+        const topPoint = projectNorthDomePoint(centerX, horizonY, domeRadius, azimuthOffset, 82);
+        const bottomPoint = projectNorthDomePoint(centerX, horizonY, domeRadius, azimuthOffset, 0);
+        const azimuthLine = document.createElementNS(svgNS, 'line');
+        azimuthLine.setAttribute('x1', topPoint.x);
+        azimuthLine.setAttribute('y1', topPoint.y);
+        azimuthLine.setAttribute('x2', bottomPoint.x);
+        azimuthLine.setAttribute('y2', bottomPoint.y);
+        azimuthLine.setAttribute('class', 'polaris-azimuth-line');
+        svg.appendChild(azimuthLine);
+      });
 
       const horizon = document.createElementNS(svgNS, 'line');
-      horizon.setAttribute('x1', 44);
+      horizon.setAttribute('x1', centerX - domeRadius);
       horizon.setAttribute('y1', horizonY);
-      horizon.setAttribute('x2', 376);
+      horizon.setAttribute('x2', centerX + domeRadius);
       horizon.setAttribute('y2', horizonY);
       horizon.setAttribute('class', 'polaris-horizon');
       svg.appendChild(horizon);
+
+      const westLabel = document.createElementNS(svgNS, 'text');
+      westLabel.setAttribute('x', centerX - domeRadius + 6);
+      westLabel.setAttribute('y', horizonY + 24);
+      westLabel.setAttribute('class', 'polaris-label');
+      westLabel.textContent = 'W';
+      svg.appendChild(westLabel);
 
       const northLabel = document.createElementNS(svgNS, 'text');
       northLabel.setAttribute('x', centerX);
@@ -7140,49 +7744,95 @@
       northLabel.textContent = 'N';
       svg.appendChild(northLabel);
 
+      const eastLabel = document.createElementNS(svgNS, 'text');
+      eastLabel.setAttribute('x', centerX + domeRadius - 6);
+      eastLabel.setAttribute('y', horizonY + 24);
+      eastLabel.setAttribute('class', 'polaris-label');
+      eastLabel.textContent = 'E';
+      svg.appendChild(eastLabel);
+
+      const zenithLabel = document.createElementNS(svgNS, 'text');
+      zenithLabel.setAttribute('x', centerX);
+      zenithLabel.setAttribute('y', horizonY - domeRadius - 10);
+      zenithLabel.setAttribute('class', 'polaris-label');
+      zenithLabel.textContent = t.polaris_zenith || 'Zenith';
+      svg.appendChild(zenithLabel);
+
       const axis = document.createElementNS(svgNS, 'line');
       axis.setAttribute('x1', centerX);
       axis.setAttribute('y1', horizonY);
-      axis.setAttribute('x2', centerX);
+      axis.setAttribute('x2', poleX);
       axis.setAttribute('y2', poleY);
       axis.setAttribute('class', 'polaris-axis');
       svg.appendChild(axis);
 
-      const poleRing = document.createElementNS(svgNS, 'circle');
-      poleRing.setAttribute('cx', centerX);
-      poleRing.setAttribute('cy', poleY);
-      poleRing.setAttribute('r', 76);
-      poleRing.setAttribute('class', 'polaris-ring');
-      svg.appendChild(poleRing);
+      [22, 46, 74].forEach(trailRadius => {
+        const trail = document.createElementNS(svgNS, 'circle');
+        trail.setAttribute('cx', poleX);
+        trail.setAttribute('cy', poleY);
+        trail.setAttribute('r', trailRadius);
+        trail.setAttribute('class', 'polaris-ring');
+        svg.appendChild(trail);
+      });
 
       const poleMarkerA = document.createElementNS(svgNS, 'line');
-      poleMarkerA.setAttribute('x1', centerX - 7);
+      poleMarkerA.setAttribute('x1', poleX - 7);
       poleMarkerA.setAttribute('y1', poleY - 7);
-      poleMarkerA.setAttribute('x2', centerX + 7);
+      poleMarkerA.setAttribute('x2', poleX + 7);
       poleMarkerA.setAttribute('y2', poleY + 7);
       poleMarkerA.setAttribute('class', 'polaris-pole-marker');
       svg.appendChild(poleMarkerA);
 
       const poleMarkerB = document.createElementNS(svgNS, 'line');
-      poleMarkerB.setAttribute('x1', centerX - 7);
+      poleMarkerB.setAttribute('x1', poleX - 7);
       poleMarkerB.setAttribute('y1', poleY + 7);
-      poleMarkerB.setAttribute('x2', centerX + 7);
+      poleMarkerB.setAttribute('x2', poleX + 7);
       poleMarkerB.setAttribute('y2', poleY - 7);
       poleMarkerB.setAttribute('class', 'polaris-pole-marker');
       svg.appendChild(poleMarkerB);
 
-      const polarisOffsetPx = 10;
-      const polarisAngle = siderealAngle + 18;
-      const polarisPoint = rotatePoint(0, -polarisOffsetPx, polarisAngle);
-      const polarisX = centerX + polarisPoint.x;
-      const polarisY = poleY + polarisPoint.y;
+      const backgroundStars = [
+        [34, 60, 1.1], [88, 48, 1.4], [122, 82, 1.1], [168, 42, 1.2], [246, 50, 1.3], [318, 72, 1.1], [370, 54, 1.3],
+        [58, 124, 1.2], [108, 116, 1.1], [154, 142, 1.2], [216, 110, 1.3], [286, 136, 1.1], [334, 122, 1.2],
+        [72, 196, 1.3], [136, 184, 1.1], [196, 204, 1.2], [256, 188, 1.2], [318, 214, 1.1]
+      ];
+      backgroundStars.forEach(starConfig => {
+        const star = document.createElementNS(svgNS, 'circle');
+        star.setAttribute('cx', String(starConfig[0]));
+        star.setAttribute('cy', String(starConfig[1]));
+        star.setAttribute('r', String(starConfig[2]));
+        star.setAttribute('class', 'polaris-background-star');
+        svg.appendChild(star);
+      });
 
+      const polarisOffsetAltitude = 0.7;
+      const polarisTrailRadius = 8;
       const polarisGuide = document.createElementNS(svgNS, 'circle');
-      polarisGuide.setAttribute('cx', centerX);
+      polarisGuide.setAttribute('cx', poleX);
       polarisGuide.setAttribute('cy', poleY);
-      polarisGuide.setAttribute('r', polarisOffsetPx);
+      polarisGuide.setAttribute('r', polarisTrailRadius);
       polarisGuide.setAttribute('class', 'polaris-guide');
       svg.appendChild(polarisGuide);
+
+      const polarisRotationPoint = rotatePoint(0, -polarisTrailRadius, siderealAngle + 18);
+      const polarisX = poleX + polarisRotationPoint.x;
+      const polarisY = poleY + polarisRotationPoint.y;
+
+      const polarisHorizonPoint = projectNorthDomePoint(centerX, horizonY, domeRadius, 0, poleAltitude - polarisOffsetAltitude);
+      const polarisSightLine = document.createElementNS(svgNS, 'line');
+      polarisSightLine.setAttribute('x1', centerX);
+      polarisSightLine.setAttribute('y1', horizonY);
+      polarisSightLine.setAttribute('x2', polarisHorizonPoint.x);
+      polarisSightLine.setAttribute('y2', polarisHorizonPoint.y);
+      polarisSightLine.setAttribute('class', 'polaris-sight-line');
+      svg.appendChild(polarisSightLine);
+
+      const polarisLabelAnchor = document.createElementNS(svgNS, 'text');
+      polarisLabelAnchor.setAttribute('x', centerX + 36);
+      polarisLabelAnchor.setAttribute('y', horizonY - domeRadius * 0.58);
+      polarisLabelAnchor.setAttribute('class', 'polaris-small-label');
+      polarisLabelAnchor.textContent = t.polaris_constellation_short || 'Ursa Minor';
+      svg.appendChild(polarisLabelAnchor);
 
       const polaris = document.createElementNS(svgNS, 'circle');
       polaris.setAttribute('cx', polarisX);
@@ -7193,36 +7843,53 @@
 
       const polarisText = document.createElementNS(svgNS, 'text');
       polarisText.setAttribute('x', polarisX + 9);
-      polarisText.setAttribute('y', polarisY - 8);
+      polarisText.setAttribute('y', polarisY - 10);
       polarisText.setAttribute('class', 'polaris-small-label');
       polarisText.textContent = t.polaris_name || 'Polaris';
       svg.appendChild(polarisText);
 
       const poleText = document.createElementNS(svgNS, 'text');
-      poleText.setAttribute('x', centerX + 11);
+      poleText.setAttribute('x', poleX + 12);
       poleText.setAttribute('y', poleY + 4);
       poleText.setAttribute('class', 'polaris-small-label');
       poleText.textContent = t.polaris_ncp || 'North celestial pole';
       svg.appendChild(poleText);
 
-      const bigDipperPoints = [
-        [-52, -28],
-        [-38, -18],
-        [-18, -16],
-        [2, -10],
-        [16, 2],
-        [28, 18],
-        [42, 30]
+      const ursaMinorOffsets = [
+        [2, 0.7],
+        [12, -2.6],
+        [24, -6.8],
+        [36, -12.0],
+        [44, -10.6],
+        [54, -8.2],
+        [63, -5.0]
       ];
-      const cassiopeiaPoints = [
-        [56, -10],
-        [42, -22],
-        [26, -8],
-        [12, -22],
-        [-2, -12]
-      ];
-      drawPolarAsterism(svg, bigDipperPoints, siderealAngle, centerX, poleY, 'polaris-asterism');
-      drawPolarAsterism(svg, cassiopeiaPoints, siderealAngle + 180, centerX, poleY, 'polaris-asterism');
+      const rotatedUrsaMinor = [];
+      ursaMinorOffsets.forEach(offset => {
+        const rotatedOffset = rotatePoint(offset[0], offset[1], siderealAngle * 0.22);
+        const point = projectNorthDomePoint(centerX, horizonY, domeRadius, rotatedOffset.x, poleAltitude + rotatedOffset.y);
+        rotatedUrsaMinor.push(point);
+      });
+
+      const ursaMinorLine = document.createElementNS(svgNS, 'polyline');
+      ursaMinorLine.setAttribute('points', rotatedUrsaMinor.map(point => point.x + ',' + point.y).join(' '));
+      ursaMinorLine.setAttribute('class', 'polaris-asterism');
+      svg.appendChild(ursaMinorLine);
+
+      rotatedUrsaMinor.forEach((point, index) => {
+        const star = document.createElementNS(svgNS, 'circle');
+        star.setAttribute('cx', point.x);
+        star.setAttribute('cy', point.y);
+        let radius = 2.6;
+        if (index === 0) {
+          radius = 4.8;
+        } else if (index < 3) {
+          radius = 3.1;
+        }
+        star.setAttribute('r', radius);
+        star.setAttribute('class', 'polaris-star');
+        svg.appendChild(star);
+      });
 
       target.appendChild(svg);
 
@@ -7905,7 +8572,7 @@
           appendSummaryLine(summary, label + ': ', String(value));
         });
       }
-      scheduleMasonryLayout();
+      requestMasonryLayout();
     }
 
     function dayOfYearLocal(date){
@@ -8124,7 +8791,7 @@
         appendSummaryLine(summary, (t.meteor_next_peak || 'Next peak') + ': ', nextPeakText);
       }
       renderMeteorRadiants(date, active);
-      scheduleMasonryLayout();
+      requestMasonryLayout();
     }
 
     function renderMeteorRadiants(date, activeStreams){
@@ -8321,6 +8988,73 @@
       svg.setAttribute('viewBox', '0 0 ' + size + ' ' + size);
       svg.setAttribute('role', 'img');
       svg.setAttribute('aria-label', (t.title_constellation_month || 'Constellation of the month') + ': ' + item.name);
+
+      const defs = document.createElementNS(svgNS, 'defs');
+      const skyGradient = document.createElementNS(svgNS, 'radialGradient');
+      skyGradient.setAttribute('id', 'constellationSkyGradient');
+      skyGradient.setAttribute('cx', '50%');
+      skyGradient.setAttribute('cy', '38%');
+      skyGradient.setAttribute('r', '74%');
+      [
+        { offset:'0%', color:'#17325f' },
+        { offset:'54%', color:'#0f2548' },
+        { offset:'100%', color:'#081426' }
+      ].forEach(stopConfig => {
+        const stop = document.createElementNS(svgNS, 'stop');
+        stop.setAttribute('offset', stopConfig.offset);
+        stop.setAttribute('stop-color', stopConfig.color);
+        skyGradient.appendChild(stop);
+      });
+      defs.appendChild(skyGradient);
+
+      const starGlow = document.createElementNS(svgNS, 'filter');
+      starGlow.setAttribute('id', 'constellationStarGlow');
+      starGlow.setAttribute('x', '-50%');
+      starGlow.setAttribute('y', '-50%');
+      starGlow.setAttribute('width', '200%');
+      starGlow.setAttribute('height', '200%');
+      const blur = document.createElementNS(svgNS, 'feGaussianBlur');
+      blur.setAttribute('stdDeviation', '2.4');
+      blur.setAttribute('result', 'blur');
+      starGlow.appendChild(blur);
+      const merge = document.createElementNS(svgNS, 'feMerge');
+      const mergeBlur = document.createElementNS(svgNS, 'feMergeNode');
+      mergeBlur.setAttribute('in', 'blur');
+      merge.appendChild(mergeBlur);
+      const mergeGraphic = document.createElementNS(svgNS, 'feMergeNode');
+      mergeGraphic.setAttribute('in', 'SourceGraphic');
+      merge.appendChild(mergeGraphic);
+      starGlow.appendChild(merge);
+      defs.appendChild(starGlow);
+      svg.appendChild(defs);
+
+      const background = document.createElementNS(svgNS, 'rect');
+      background.setAttribute('x', '0');
+      background.setAttribute('y', '0');
+      background.setAttribute('width', String(size));
+      background.setAttribute('height', String(size));
+      background.setAttribute('rx', '16');
+      background.setAttribute('class', 'constellation-sky-panel');
+      svg.appendChild(background);
+
+      const backgroundStars = [
+        [42, 56, 1.2], [88, 74, 1.6], [144, 44, 1.1], [206, 66, 1.3],
+        [286, 52, 1.5], [344, 84, 1.2], [398, 48, 1.4], [62, 136, 1.2],
+        [124, 160, 1.1], [188, 116, 1.5], [276, 146, 1.1], [360, 132, 1.3],
+        [404, 174, 1.1], [54, 232, 1.4], [110, 254, 1.1], [172, 214, 1.2],
+        [248, 262, 1.5], [322, 234, 1.1], [386, 278, 1.3], [74, 332, 1.2],
+        [142, 352, 1.4], [224, 326, 1.1], [296, 358, 1.2], [366, 336, 1.4],
+        [414, 392, 1.2], [96, 404, 1.1], [176, 410, 1.3], [266, 404, 1.2]
+      ];
+      backgroundStars.forEach(starConfig => {
+        const star = document.createElementNS(svgNS, 'circle');
+        star.setAttribute('cx', String(starConfig[0]));
+        star.setAttribute('cy', String(starConfig[1]));
+        star.setAttribute('r', String(starConfig[2]));
+        star.setAttribute('class', 'constellation-background-star');
+        svg.appendChild(star);
+      });
+
       (item.lines || []).forEach(([from, to]) => {
         const a = item.stars[from];
         const b = item.stars[to];
@@ -8476,7 +9210,7 @@
           summary.appendChild(fragment);
         }
       }
-      scheduleMasonryLayout();
+      requestMasonryLayout();
     }
 
     function seasonNameForFraction(fraction){
@@ -8659,41 +9393,96 @@
         appendSummaryLine(summary, (t.season_progress || 'Year progress since Jan 1') + ': ', Math.round(fraction * 100) + '%');
         appendSummaryLine(summary, (t.season_solar_tilt || 'Solar tilt') + ': ', Math.abs(declination).toFixed(1) + '° ' + solarTiltCopy);
       }
-      scheduleMasonryLayout();
+      requestMasonryLayout();
     }
 
+    /**
+     * Renders the spacecraft card as a framed top-down heliocentric plot.
+     * The diagram uses logarithmic distance rings and light reference axes so
+     * the result reads more like a navigation chart than a glowing orbit disc.
+     * @returns {void}
+     */
     function renderSpacecraft(){
       const target = document.getElementById('spacecraftMap');
       const summary = document.getElementById('spacecraftSummary');
       if (!target) return;
       const size = 460;
       const center = size / 2;
-      const maxRadius = size * 0.42;
+      const maxRadius = size * 0.365;
       const maxAu = 180;
+      const referenceAuValues = [1, 5.2, 30, 100];
       const svgNS = 'http://www.w3.org/2000/svg';
       target.innerHTML = '';
       const svg = document.createElementNS(svgNS, 'svg');
       svg.setAttribute('viewBox', '0 0 ' + size + ' ' + size);
       svg.setAttribute('role', 'img');
       svg.setAttribute('aria-label', t.spacecraft_aria || 'Approximate spacecraft distances from the Sun');
-      [1, 5.2, 30, 100].forEach(au => {
+
+      const frame = document.createElementNS(svgNS, 'rect');
+      frame.setAttribute('x', '34');
+      frame.setAttribute('y', '34');
+      frame.setAttribute('width', String(size - 68));
+      frame.setAttribute('height', String(size - 68));
+      frame.setAttribute('rx', '18');
+      frame.setAttribute('class', 'spacecraft-plot-frame');
+      svg.appendChild(frame);
+
+      const axisHorizontal = document.createElementNS(svgNS, 'line');
+      axisHorizontal.setAttribute('x1', '52');
+      axisHorizontal.setAttribute('y1', String(center));
+      axisHorizontal.setAttribute('x2', String(size - 52));
+      axisHorizontal.setAttribute('y2', String(center));
+      axisHorizontal.setAttribute('class', 'spacecraft-axis');
+      svg.appendChild(axisHorizontal);
+
+      const axisVertical = document.createElementNS(svgNS, 'line');
+      axisVertical.setAttribute('x1', String(center));
+      axisVertical.setAttribute('y1', '52');
+      axisVertical.setAttribute('x2', String(center));
+      axisVertical.setAttribute('y2', String(size - 52));
+      axisVertical.setAttribute('class', 'spacecraft-axis');
+      svg.appendChild(axisVertical);
+
+      referenceAuValues.forEach(au => {
+        const orbitRadius = Math.log10(1 + au) / Math.log10(1 + maxAu) * maxRadius;
         const orbit = document.createElementNS(svgNS, 'circle');
         orbit.setAttribute('cx', center);
         orbit.setAttribute('cy', center);
-        orbit.setAttribute('r', Math.log10(1 + au) / Math.log10(1 + maxAu) * maxRadius);
+        orbit.setAttribute('r', orbitRadius);
         orbit.setAttribute('class', 'spacecraft-orbit');
         svg.appendChild(orbit);
+
+        const orbitLabel = document.createElementNS(svgNS, 'text');
+        orbitLabel.setAttribute('x', String(center + orbitRadius + 8));
+        orbitLabel.setAttribute('y', String(center - 6));
+        orbitLabel.setAttribute('class', 'spacecraft-ring-label');
+        orbitLabel.textContent = au + ' AU';
+        svg.appendChild(orbitLabel);
       });
+
       const sun = document.createElementNS(svgNS, 'circle');
       sun.setAttribute('cx', center);
       sun.setAttribute('cy', center);
       sun.setAttribute('r', 15);
-      sun.setAttribute('fill', '#f8b43c');
+      sun.setAttribute('class', 'spacecraft-sun');
       svg.appendChild(sun);
+
+      const sunLabel = document.createElementNS(svgNS, 'text');
+      sunLabel.setAttribute('x', String(center));
+      sunLabel.setAttribute('y', String(center + 32));
+      sunLabel.setAttribute('text-anchor', 'middle');
+      sunLabel.setAttribute('class', 'spacecraft-center-label');
+      sunLabel.textContent = t.eclipse_sun || 'Sun';
+      svg.appendChild(sunLabel);
+
       (phenomenaConfig.spacecraft || []).forEach((craft, index) => {
         let craftAngle = index * 36;
         if (craft.angle !== undefined && craft.angle !== null) {
           craftAngle = craft.angle;
+        }
+        let craftColor = '#2563eb';
+        if (craft.color) {
+          craftColor = craft.color;
         }
         const angle = craftAngle * Math.PI / 180;
         const radius = Math.log10(1 + craft.distanceAu) / Math.log10(1 + maxAu) * maxRadius;
@@ -8707,13 +9496,13 @@
         const track = document.createElementNS(svgNS, 'path');
         track.setAttribute('d', `M ${center} ${center} C ${c1x.toFixed(1)} ${c1y.toFixed(1)}, ${c2x.toFixed(1)} ${c2y.toFixed(1)}, ${x.toFixed(1)} ${y.toFixed(1)}`);
         track.setAttribute('class', 'spacecraft-track');
-        track.setAttribute('stroke', craft.color || '#2563eb');
+        track.setAttribute('stroke', craftColor);
         svg.appendChild(track);
         const marker = document.createElementNS(svgNS, 'circle');
         marker.setAttribute('cx', x);
         marker.setAttribute('cy', y);
-        marker.setAttribute('r', 7);
-        marker.setAttribute('fill', craft.color || '#2563eb');
+        marker.setAttribute('r', 6);
+        marker.setAttribute('fill', craftColor);
         marker.setAttribute('class', 'spacecraft-marker');
         svg.appendChild(marker);
         const label = document.createElementNS(svgNS, 'text');
@@ -8756,7 +9545,7 @@
         appendSummaryLine(summary, (t.spacecraft_farthest || 'Farthest') + ': ', farthestText);
         appendSummaryLine(summary, (t.spacecraft_count || 'Shown') + ': ', String((phenomenaConfig.spacecraft || []).length));
       }
-      scheduleMasonryLayout();
+      requestMasonryLayout();
     }
 
     let solarAutoplayInterval = null;
@@ -9487,6 +10276,7 @@ function computeMoon(date){
     applyCardAnchorIds();
     applyInitialUrlState();
     populateLocationSelector();
+    initCardSizeControls();
     const solarDateSlider = document.getElementById('solarDateSlider');
     if (solarDateSlider) {
       solarDateSlider.value = String(solarDayOffset);

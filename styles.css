@@ -58,52 +58,219 @@
     .wide-card{
       grid-column:auto;
     }
+    .display-container.card-size-enabled{
+      position:relative;
+    }
+    .display-container.card-size-enabled[data-help-key] .group-title{
+      width:calc(100% - 66px);
+      max-width:calc(100% - 66px);
+      align-self:center;
+      margin-left:auto;
+      margin-right:auto;
+    }
+    .card-size-control{
+      position:absolute;
+      top:-6px;
+      left:-6px;
+      z-index:7;
+      display:inline-flex;
+      align-items:center;
+      gap:1px;
+      padding:1px 2px;
+      border:1px solid rgba(148,163,184,.34);
+      border-radius:12px;
+      background:rgba(255,255,255,.92);
+      box-shadow:0 2px 6px rgba(15,23,42,.06);
+      opacity:0;
+      pointer-events:none;
+      transform:translateY(-2px);
+      transition:opacity .16s ease, transform .16s ease;
+    }
+    .display-container.card-size-enabled:hover .card-size-control,
+    .display-container.card-size-enabled:focus-within .card-size-control,
+    .display-container.card-size-enabled.is-card-tools-open .card-size-control{
+      opacity:1;
+      pointer-events:auto;
+      transform:translateY(0);
+    }
+    .card-size-button{
+      margin:0;
+      min-width:0;
+      min-height:18px;
+      padding:1px 5px;
+      border-radius:10px;
+      border:1px solid transparent;
+      background:transparent;
+      color:#475569;
+      font-size:.54rem;
+      font-weight:700;
+      line-height:1;
+      box-shadow:none;
+    }
+    .card-size-button:hover,
+    .card-size-button:focus-visible{
+      background:#eff6ff;
+      color:#1d4ed8;
+      outline:none;
+    }
+    .card-size-button.active{
+      background:#2563eb;
+      color:#fff;
+    }
+    @media (min-width:900px){
+      .display-container[data-card-size="normal"]{
+        grid-column:span 1 !important;
+      }
+      .display-container[data-card-size="wide"]{
+        grid-column:span 2 !important;
+        min-height:320px;
+      }
+      .display-container[data-card-size="large"]{
+        grid-column:span 2 !important;
+        min-height:560px;
+      }
+      .display-container[data-card-size="wide"] .astro-disc{
+        width:min(100%, 540px);
+      }
+      .display-container[data-card-size="wide"] .astro-summary{
+        width:min(100%, 540px);
+      }
+      .display-container[data-card-size="large"] .astro-disc{
+        width:min(100%, 660px);
+      }
+      .display-container[data-card-size="large"] .astro-summary{
+        width:min(100%, 660px);
+      }
+      .display-container[data-card-size="wide"] .solar-system,
+      .display-container[data-card-size="wide"] .barycenter-map,
+      .display-container[data-card-size="wide"] .moon-nodes-figure{
+        width:min(100%, 720px);
+      }
+      .display-container[data-card-size="large"] .solar-system,
+      .display-container[data-card-size="large"] .barycenter-map,
+      .display-container[data-card-size="large"] .moon-nodes-figure{
+        width:min(100%, 860px);
+      }
+      .display-container[data-card-size="wide"] .small-bodies-map{
+        width:min(100%, 820px);
+      }
+      .display-container[data-card-size="large"] .small-bodies-map{
+        width:min(100%, 980px);
+      }
+      .display-container[data-card-size="wide"] .conjunction-timeline,
+      .display-container[data-card-size="wide"] .conjunction-summary{
+        width:min(100%, 860px);
+      }
+      .display-container[data-card-size="large"] .conjunction-timeline,
+      .display-container[data-card-size="large"] .conjunction-summary{
+        width:min(100%, 1020px);
+      }
+      .display-container[data-card-size="wide"] .constellation-map{
+        width:min(100%, 560px);
+      }
+      .display-container[data-card-size="large"] .constellation-map{
+        width:min(100%, 700px);
+      }
+      .display-container[data-card-size="wide"] .constellation-year-disc,
+      .display-container[data-card-size="wide"] .constellation-year-card .astro-summary{
+        width:min(100%, 980px);
+      }
+      .display-container[data-card-size="large"] .constellation-year-disc,
+      .display-container[data-card-size="large"] .constellation-year-card .astro-summary{
+        width:min(100%, 1120px);
+      }
+      .display-container[data-card-size="wide"] .analemma-map{
+        width:min(100%, 520px);
+      }
+      .display-container[data-card-size="large"] .analemma-map{
+        width:min(100%, 620px);
+      }
+      .display-container[data-card-size="wide"] .exoplanet-comparison{
+        width:min(100%, 980px);
+      }
+      .display-container[data-card-size="large"] .exoplanet-comparison{
+        width:min(100%, 1180px);
+      }
+      .display-container[data-card-size="wide"] .jupiter-system{
+        width:min(100%, 500px);
+      }
+      .display-container[data-card-size="large"] .jupiter-system{
+        width:min(100%, 620px);
+      }
+      .display-container[data-card-size="wide"] .retrograde-panel,
+      .display-container[data-card-size="wide"] .night-visibility-panel,
+      .display-container[data-card-size="wide"] .visibility-list{
+        width:min(100%, 560px);
+      }
+      .display-container[data-card-size="large"] .retrograde-panel,
+      .display-container[data-card-size="large"] .night-visibility-panel,
+      .display-container[data-card-size="large"] .visibility-list{
+        width:min(100%, 720px);
+      }
+    }
+    @media (min-width:1500px){
+      .display-container[data-card-size="large"]{
+        grid-column:span 3 !important;
+      }
+    }
     .date-location-card{ order:10; }
     .solar-card{ order:20; }
-    .barycenter-card{ order:25; }
-    .lagrange-card{ order:27; }
-    .analemma-card{ order:28; }
-    .exoplanet-card{ order:29; }
-    .polaris-card{ order:29; }
-    .small-bodies-card{ order:30; }
-    .moon-nodes-card{ order:35; }
-    .conjunction-card{ order:38; }
-    .meteor-card{ order:40; }
-    .constellation-card{ order:50; }
-    .constellation-year-card{ order:55; }
-    .season-card{ order:60; }
-    .spacecraft-card{ order:70; }
-    .jupiter-card{ order:70; }
-    .visibility-card{ order:80; }
-    .retrograde-card{ order:82; }
-    .inner-phases-card{ order:84; }
-    .night-visibility-card{ order:86; }
-    .satellite-card{ order:88; }
-    .aurora-card{ order:118; }
-    .earth-card{ order:90; }
-    .system-card{ order:100; }
+    .earth-card{ order:24; }
+    .moon-nodes-card{ order:26; }
+    .visibility-card{ order:28; }
     .sky-calendar-card{
-      order:110;
+      order:30;
       overflow-anchor:none;
     }
-    .bsky-card{ order:120; }
-    .about-card{ order:130; }
+    .bsky-card{ order:32; }
+    .aurora-card{ order:34; }
+    .about-card{ order:36; }
+    .small-bodies-card{ order:40; }
+    .spacecraft-card{ order:42; }
+    .system-card{ order:44; }
+    .jupiter-card{ order:46; }
+    .constellation-card{ order:50; }
+    .constellation-year-card{ order:52; }
+    .meteor-card{ order:54; }
+    .season-card{ order:56; }
+    .conjunction-card{ order:58; }
+    .retrograde-card{ order:60; }
+    .inner-phases-card{ order:62; }
+    .satellite-card{ order:64; }
+    .night-visibility-card{ order:66; }
+    .barycenter-card{ order:70; }
+    .lagrange-card{ order:72; }
+    .analemma-card{ order:74; }
+    .polaris-card{ order:76; }
+    .exoplanet-card{ order:78; }
     @media (min-width:1180px){
       .solar-card,
-      .barycenter-card,
-      .small-bodies-card,
       .moon-nodes-card,
-      .conjunction-card,
-      .night-visibility-card,
-      .satellite-card,
-      .aurora-card,
-      .meteor-card,
-      .constellation-card,
-      .spacecraft-card,
-      .jupiter-card,
+      .sky-calendar-card,
+      .small-bodies-card,
       .system-card,
-      .sky-calendar-card{
+      .satellite-card,
+      .barycenter-card,
+      .conjunction-card{
         grid-column:span 2;
+      }
+      .constellation-year-card{
+        grid-column:span 2;
+      }
+    }
+    @media (min-width:900px){
+      .earth-card,
+      .retrograde-card{
+        grid-column:span 2;
+      }
+      .jupiter-card{
+        min-height:520px;
+      }
+      .inner-phases-card{
+        min-height:420px;
+      }
+      .bsky-card{
+        min-height:420px;
       }
     }
     .time-card{
@@ -904,25 +1071,47 @@
     .exoplanet-summary{
       width:min(100%, 760px);
     }
+    .polaris-sky-panel{
+      fill:url(#polarisSkyGradient);
+    }
+    .polaris-dome{
+      fill:none;
+      stroke:rgba(191,219,254,.64);
+      stroke-width:1.8;
+    }
     .polaris-horizon{
-      stroke:#94a3b8;
-      stroke-width:1.6;
+      stroke:#dbeafe;
+      stroke-width:1.8;
     }
     .polaris-axis{
       stroke:#60a5fa;
       stroke-width:1.4;
       stroke-dasharray:5 4;
     }
+    .polaris-altitude-arc{
+      fill:none;
+      stroke:rgba(191,219,254,.16);
+      stroke-width:1.1;
+    }
+    .polaris-azimuth-line{
+      stroke:rgba(191,219,254,.12);
+      stroke-width:1;
+    }
     .polaris-ring{
       fill:none;
-      stroke:rgba(37,99,235,.18);
-      stroke-width:1.5;
+      stroke:rgba(96,165,250,.22);
+      stroke-width:1.2;
     }
     .polaris-guide{
       fill:none;
-      stroke:rgba(37,99,235,.3);
-      stroke-width:1.2;
+      stroke:rgba(96,165,250,.45);
+      stroke-width:1.1;
       stroke-dasharray:3 4;
+    }
+    .polaris-sight-line{
+      stroke:rgba(250,204,21,.45);
+      stroke-width:1.2;
+      stroke-dasharray:4 4;
     }
     .polaris-pole-marker{
       stroke:#2563eb;
@@ -931,35 +1120,38 @@
     }
     .polaris-asterism{
       fill:none;
-      stroke:rgba(37,99,235,.42);
+      stroke:rgba(125,211,252,.7);
       stroke-width:1.5;
       stroke-linecap:round;
       stroke-linejoin:round;
     }
+    .polaris-background-star{
+      fill:rgba(226,232,240,.78);
+    }
     .polaris-star{
-      fill:#93c5fd;
-      stroke:#ffffff;
-      stroke-width:1.2;
+      fill:#dbeafe;
+      stroke:rgba(255,255,255,.9);
+      stroke-width:1;
     }
     .polaris-main-star{
-      fill:#f8fafc;
-      stroke:#60a5fa;
-      stroke-width:2;
-      filter:drop-shadow(0 0 6px rgba(96,165,250,.45));
+      fill:#fef9c3;
+      stroke:#f8fafc;
+      stroke-width:1.6;
+      filter:drop-shadow(0 0 8px rgba(253,224,71,.5));
     }
     .polaris-label{
-      fill:#475569;
+      fill:#cbd5e1;
       font-size:12px;
       font-weight:700;
       text-anchor:middle;
     }
     .polaris-small-label{
-      fill:#334155;
+      fill:#f8fafc;
       font-size:11px;
       font-weight:600;
       paint-order:stroke;
-      stroke:#ffffff;
-      stroke-width:3px;
+      stroke:rgba(15,23,42,.8);
+      stroke-width:4px;
       stroke-linejoin:round;
     }
     .barycenter-disc{
@@ -1690,7 +1882,7 @@
       gap:8px 12px;
     }
     .conjunction-timeline{
-      width:min(100%, 560px);
+      width:min(100%, 760px);
       display:grid;
       gap:8px;
     }
@@ -1704,7 +1896,7 @@
       box-shadow:inset 0 0 14px rgba(148,163,184,.18);
     }
     .conjunction-summary{
-      width:min(100%, 520px);
+      width:min(100%, 760px);
       display:grid;
       gap:4px;
       color:var(--muted);
@@ -1712,33 +1904,61 @@
       text-align:left;
     }
     .constellation-year-card{
-      min-width:min(100%, 560px);
+      min-width:min(100%, 980px);
     }
     .constellation-year-disc{
-      width:min(100%, 520px);
+      width:min(100%, 900px);
       aspect-ratio:1;
       margin-top:4px;
       border-radius:50%;
       background:
-        radial-gradient(circle at 50% 50%, rgba(255,255,255,.82), transparent 40%),
-        radial-gradient(circle at 50% 50%, rgba(96,165,250,.08), transparent 68%),
+        radial-gradient(circle at 50% 50%, rgba(255,255,255,.72), transparent 34%),
+        radial-gradient(circle at 50% 50%, rgba(59,130,246,.08), transparent 70%),
         #ffffff;
-      box-shadow:inset 0 0 20px rgba(148,163,184,.16), 0 8px 20px rgba(0,0,0,.08);
+      box-shadow:inset 0 0 24px rgba(148,163,184,.15), 0 10px 24px rgba(15,23,42,.08);
     }
     .constellation-year-disc svg{
       display:block;
       width:100%;
       height:100%;
     }
+    .constellation-year-card .astro-summary{
+      width:min(100%, 900px);
+    }
+    .constellation-year-dial{
+      fill:url(#constellationYearDialGradient);
+      stroke:#d9e5f4;
+      stroke-width:1.4;
+    }
+    .constellation-year-outer-ring{
+      fill:none;
+      stroke:#e1ecf8;
+      stroke-width:20;
+    }
+    .constellation-year-month-ring{
+      fill:none;
+      stroke:#cfe0f5;
+      stroke-width:30;
+    }
+    .constellation-year-inner-ring{
+      fill:none;
+      stroke:#d9e2ee;
+      stroke-width:2;
+    }
+    .constellation-year-tick{
+      stroke:#94a3b8;
+      stroke-width:1.6;
+      stroke-linecap:round;
+    }
     .constellation-month-label{
-      font-size:10px;
+      font-size:12px;
       fill:#475569;
       text-anchor:middle;
       dominant-baseline:middle;
-      font-weight:600;
+      font-weight:700;
     }
     .constellation-name-label{
-      font-size:12px;
+      font-size:14px;
       fill:#334155;
       text-anchor:middle;
       dominant-baseline:middle;
@@ -1747,18 +1967,18 @@
     .constellation-mini-ring{
       fill:rgba(255,255,255,.86);
       stroke:#bfdbfe;
-      stroke-width:1.2;
+      stroke-width:1.4;
     }
     .constellation-mini-line{
       stroke:#94a3b8;
-      stroke-width:1.1;
+      stroke-width:1.2;
       fill:none;
       stroke-linecap:round;
     }
     .constellation-mini-star{
       fill:#2563eb;
       stroke:#fff;
-      stroke-width:.8;
+      stroke-width:1;
     }
     .constellation-mini-star.current{
       fill:#f59e0b;
@@ -1915,36 +2135,43 @@
       width:min(100%, 460px);
       aspect-ratio:1;
       margin-top:4px;
-      border-radius:8px;
-      background:
-        radial-gradient(circle at 50% 30%, rgba(96,165,250,.14), transparent 48%),
-        linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
-      box-shadow:inset 0 0 18px rgba(148,163,184,.18);
+      border-radius:16px;
+      background:linear-gradient(180deg, #0f1f3d 0%, #091325 100%);
+      box-shadow:inset 0 0 24px rgba(15,23,42,.42), 0 8px 22px rgba(0,0,0,.12);
     }
     .constellation-map svg{
       display:block;
       width:100%;
       height:100%;
+      border-radius:16px;
+    }
+    .constellation-sky-panel{
+      fill:url(#constellationSkyGradient);
+    }
+    .constellation-background-star{
+      fill:rgba(255,255,255,.72);
+      filter:url(#constellationStarGlow);
     }
     .constellation-line{
-      stroke:#64748b;
-      stroke-width:1.4;
-      opacity:.72;
+      stroke:#93c5fd;
+      stroke-width:1.5;
+      opacity:.88;
     }
     .constellation-star{
-      fill:#f59e0b;
-      stroke:#fff;
+      fill:#fde68a;
+      stroke:#ffffff;
       stroke-width:1.5;
+      filter:url(#constellationStarGlow);
     }
     .constellation-star.main{
-      fill:#2563eb;
+      fill:#bfdbfe;
     }
     .constellation-star-label{
-      fill:#1f2937;
+      fill:#eff6ff;
       font-size:12px;
       font-weight:600;
       paint-order:stroke;
-      stroke:#fff;
+      stroke:#081426;
       stroke-width:4px;
       stroke-linejoin:round;
     }
@@ -2080,12 +2307,23 @@
       stroke-width:3px;
       stroke-linejoin:round;
     }
+    .spacecraft-plot-frame{
+      fill:#fbfdff;
+      stroke:#dbe7f3;
+      stroke-width:1.2;
+    }
+    .spacecraft-axis{
+      stroke:#d7dee8;
+      stroke-width:1;
+      stroke-dasharray:5 5;
+    }
     .spacecraft-track{
       fill:none;
       stroke:#cbd5e1;
-      stroke-width:1.2;
+      stroke-width:1.15;
       stroke-linecap:round;
-      stroke-dasharray:4 4;
+      stroke-dasharray:5 4;
+      opacity:.88;
     }
     .spacecraft-marker{
       stroke:#fff;
@@ -2099,19 +2337,58 @@
       stroke-width:3px;
       stroke-linejoin:round;
     }
+    .meteor-card{
+      padding:18px 10px 18px;
+    }
+    .spacecraft-ring-label{
+      fill:#64748b;
+      font-size:9px;
+      font-weight:600;
+      paint-order:stroke;
+      stroke:#fff;
+      stroke-width:3px;
+      stroke-linejoin:round;
+    }
+    .spacecraft-center-label{
+      fill:#475569;
+      font-size:10px;
+      font-weight:700;
+      paint-order:stroke;
+      stroke:#fff;
+      stroke-width:3px;
+      stroke-linejoin:round;
+    }
+    .spacecraft-sun{
+      fill:#f8b43c;
+      stroke:#f59e0b;
+      stroke-width:1.2;
+    }
+    .spacecraft-card{
+      padding:10px 8px 10px;
+      align-items:center;
+    }
     .spacecraft-card .astro-disc{
-      width:min(100%, 460px);
+      width:100%;
+      max-width:none;
+      aspect-ratio:1.02;
+      border-radius:16px;
+      background:none;
+      box-shadow:none;
+      margin-top:0;
       overflow:visible;
     }
     .spacecraft-card .astro-disc svg{
       overflow:visible;
       border-radius:0;
     }
+    .spacecraft-card .astro-summary{
+      width:100%;
+    }
     .spacecraft-orbit{
       fill:none;
-      stroke:#cbd5e1;
+      stroke:#c3d4e8;
       stroke-width:1;
-      opacity:.24;
+      opacity:.58;
     }
     /* Earth-Moon system */
     .earthmoon-wrap{
@@ -2491,10 +2768,14 @@
       gap:8px;
     }
     .visibility-color-legend{
-      width:100%;
+      width:fit-content;
+      max-width:100%;
+      margin:0 auto;
       display:grid;
-      grid-template-columns:repeat(2, minmax(0,1fr));
+      grid-template-columns:repeat(2, max-content);
       gap:6px 10px;
+      justify-content:center;
+      justify-items:start;
       font-size:.75rem;
       color:var(--muted);
     }
@@ -2728,24 +3009,24 @@
       position:relative;
       display:grid;
       grid-template-columns:auto 1fr;
-      gap:8px;
-      padding:7px 0 7px 2px;
+      gap:7px;
+      padding:5px 0 5px 1px;
       border-top:1px solid var(--border);
       text-align:left;
       min-width:0;
     }
     .calendar-item-content{
       display:grid;
-      gap:2px;
+      gap:1px;
       min-width:0;
     }
     .calendar-dot{
-      width:12px;
-      height:12px;
-      margin-top:4px;
+      width:10px;
+      height:10px;
+      margin-top:3px;
       border-radius:50%;
       background:var(--accent);
-      box-shadow:0 0 0 3px rgba(0,123,255,.12);
+      box-shadow:0 0 0 2px rgba(0,123,255,.12);
     }
     .calendar-item.category-eclipse .calendar-dot{ background:#1d4ed8; }
     .calendar-item.category-meteor .calendar-dot{ background:#7c3aed; }
@@ -2784,30 +3065,31 @@
     }
     .calendar-date{
       color:var(--muted);
-      font-size:.78rem;
+      font-size:.75rem;
       line-height:1.2;
     }
     .calendar-title{
       font-weight:700;
       color:var(--fg);
       line-height:1.2;
+      font-size:.95rem;
     }
     .calendar-meta{
       display:inline-block;
       margin-bottom:1px;
-      padding:1px 6px;
+      padding:1px 5px;
       border-radius:999px;
       background:rgba(0,0,0,.06);
       color:var(--muted);
-      font-size:.72rem;
+      font-size:.69rem;
       line-height:1.2;
       max-width:100%;
       overflow-wrap:anywhere;
     }
     .calendar-note{
       color:var(--muted);
-      font-size:.82rem;
-      line-height:1.28;
+      font-size:.78rem;
+      line-height:1.22;
       overflow-wrap:anywhere;
     }
     .calendar-event-trigger{
@@ -3016,14 +3298,14 @@
       align-items:center;
       justify-content:center;
       align-self:center;
-      min-height:42px;
-      margin-top:12px;
-      padding:10px 18px;
+      min-height:38px;
+      margin-top:8px;
+      padding:8px 16px;
       border-radius:12px;
       border:1px solid var(--accent);
       background:var(--accent);
       color:#fff;
-      font-size:.9rem;
+      font-size:.86rem;
       font-weight:700;
       opacity:1;
       visibility:visible;
@@ -3469,25 +3751,28 @@
     }
     .card-help{
       position:absolute;
-      top:14px;
-      right:14px;
+      top:-6px;
+      right:-6px;
       z-index:8;
     }
     .card-help.open{
       z-index:32;
     }
     .card-help-button{
-      width:34px;
-      height:34px;
+      width:18px;
+      height:18px;
       margin:0;
       padding:0;
-      border-radius:50%;
+      min-width:18px;
+      min-height:18px;
+      border-radius:10px;
       border:1px solid rgba(148,163,184,.45);
       background:#fff;
       color:#1d4ed8;
-      font-size:1rem;
+      font-size:.58rem;
       font-weight:700;
-      box-shadow:0 8px 20px rgba(15,23,42,.10);
+      line-height:1;
+      box-shadow:0 2px 6px rgba(15,23,42,.06);
     }
     .card-help-button:hover,
     .card-help-button:focus-visible{
@@ -3497,7 +3782,7 @@
     }
     .card-help-popup{
       position:absolute;
-      top:42px;
+      top:24px;
       right:0;
       width:min(420px, calc(100vw - 52px));
       max-height:min(68vh, 620px);
@@ -3713,6 +3998,12 @@ select {
     padding-right: 46px;
   }
 
+  .display-container.card-size-enabled[data-help-key] .group-title {
+    width: calc(100% - 60px);
+    max-width: calc(100% - 60px);
+    text-align: center;
+  }
+
   .overlay-controls {
     top: 8px;
     padding: 0 8px;
@@ -3764,8 +4055,21 @@ select {
   }
 
   .card-help {
-    top: 10px;
-    right: 10px;
+    top: -5px;
+    right: -5px;
+  }
+
+  .card-size-control {
+    top: -5px;
+    left: -5px;
+    gap: 1px;
+    padding: 1px 2px;
+  }
+
+  .card-size-button {
+    min-height: 17px;
+    padding: 1px 4px;
+    font-size: 0.52rem;
   }
 
   .card-help-button {
@@ -3824,8 +4128,23 @@ select {
   }
 
   .card-help {
+    top: -4px;
+    right: -4px;
+  }
+
+  .display-container.card-size-enabled[data-help-key] .group-title {
+    width: calc(100% - 56px);
+    max-width: calc(100% - 56px);
+  }
+
+  .card-help {
     top: 8px;
     right: 8px;
+  }
+
+  .card-size-control {
+    top: -4px;
+    left: -4px;
   }
 
   .card-help-button {
