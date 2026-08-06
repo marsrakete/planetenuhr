@@ -4853,6 +4853,7 @@
     let masonryObserver = null;
     let masonryAfterLayoutCallbacks = [];
     let persistentViewportAnchor = null;
+    let persistentScrollPosition = null;
     let suppressMasonryObserver = false;
     let deferMasonryLayout = false;
     let deferredMasonryLayoutRequested = false;
@@ -4989,6 +4990,13 @@
           persistentViewportAnchor.remaining -= 1;
           if (persistentViewportAnchor.remaining <= 0) {
             persistentViewportAnchor = null;
+          }
+        }
+        if (persistentScrollPosition && persistentScrollPosition.position) {
+          restorePageScrollPosition(persistentScrollPosition.position);
+          persistentScrollPosition.remaining -= 1;
+          if (persistentScrollPosition.remaining <= 0) {
+            persistentScrollPosition = null;
           }
         }
         const callbacks = masonryAfterLayoutCallbacks.splice(0, masonryAfterLayoutCallbacks.length);
@@ -5150,10 +5158,19 @@
 
     function refreshDateDrivenTilesWithAnchor(){
       const anchor = captureViewportAnchor();
+      const scrollPosition = capturePageScrollPosition();
       if (anchor) {
-        persistentViewportAnchor = { anchor, remaining:3 };
+        persistentViewportAnchor = {
+          anchor: anchor,
+          remaining: 4
+        };
+        persistentScrollPosition = null;
       } else {
         persistentViewportAnchor = null;
+        persistentScrollPosition = {
+          position: scrollPosition,
+          remaining: 4
+        };
       }
       withSuppressedMasonryObserver(() => {
         runWithDeferredMasonryLayout(() => {
@@ -5161,6 +5178,8 @@
         }, () => {
           if (anchor) {
             restoreViewportAnchor(anchor);
+          } else {
+            restorePageScrollPosition(scrollPosition);
           }
         });
       });
