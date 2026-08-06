@@ -7827,13 +7827,6 @@
       polarisSightLine.setAttribute('class', 'polaris-sight-line');
       svg.appendChild(polarisSightLine);
 
-      const polarisLabelAnchor = document.createElementNS(svgNS, 'text');
-      polarisLabelAnchor.setAttribute('x', centerX + 36);
-      polarisLabelAnchor.setAttribute('y', horizonY - domeRadius * 0.58);
-      polarisLabelAnchor.setAttribute('class', 'polaris-small-label');
-      polarisLabelAnchor.textContent = t.polaris_constellation_short || 'Ursa Minor';
-      svg.appendChild(polarisLabelAnchor);
-
       const polaris = document.createElementNS(svgNS, 'circle');
       polaris.setAttribute('cx', polarisX);
       polaris.setAttribute('cy', polarisY);
@@ -7855,20 +7848,22 @@
       poleText.textContent = t.polaris_ncp || 'North celestial pole';
       svg.appendChild(poleText);
 
-      const ursaMinorOffsets = [
-        [2, 0.7],
-        [12, -2.6],
-        [24, -6.8],
-        [36, -12.0],
-        [44, -10.6],
-        [54, -8.2],
-        [63, -5.0]
+      const ursaMinorBasePoints = [
+        [0, 0],
+        [18, -16],
+        [40, -29],
+        [66, -36],
+        [88, -22],
+        [82, 6],
+        [54, 12]
       ];
       const rotatedUrsaMinor = [];
-      ursaMinorOffsets.forEach(offset => {
-        const rotatedOffset = rotatePoint(offset[0], offset[1], siderealAngle * 0.22);
-        const point = projectNorthDomePoint(centerX, horizonY, domeRadius, rotatedOffset.x, poleAltitude + rotatedOffset.y);
-        rotatedUrsaMinor.push(point);
+      ursaMinorBasePoints.forEach(point => {
+        const rotatedPoint = rotatePoint(point[0], point[1], siderealAngle * 0.12);
+        rotatedUrsaMinor.push({
+          x: polarisX + rotatedPoint.x,
+          y: polarisY + rotatedPoint.y
+        });
       });
 
       const ursaMinorLine = document.createElementNS(svgNS, 'polyline');
@@ -7890,6 +7885,27 @@
         star.setAttribute('class', 'polaris-star');
         svg.appendChild(star);
       });
+
+      const asterismLabel = document.createElementNS(svgNS, 'text');
+      asterismLabel.setAttribute('x', rotatedUrsaMinor[4].x + 10);
+      asterismLabel.setAttribute('y', rotatedUrsaMinor[4].y - 18);
+      asterismLabel.setAttribute('class', 'polaris-small-label');
+      asterismLabel.textContent = t.polaris_asterism_label || 'Ursa Minor';
+      svg.appendChild(asterismLabel);
+
+      const kochabLabel = document.createElementNS(svgNS, 'text');
+      kochabLabel.setAttribute('x', rotatedUrsaMinor[4].x + 10);
+      kochabLabel.setAttribute('y', rotatedUrsaMinor[4].y - 2);
+      kochabLabel.setAttribute('class', 'polaris-small-label');
+      kochabLabel.textContent = 'Kochab';
+      svg.appendChild(kochabLabel);
+
+      const pherkadLabel = document.createElementNS(svgNS, 'text');
+      pherkadLabel.setAttribute('x', rotatedUrsaMinor[5].x + 10);
+      pherkadLabel.setAttribute('y', rotatedUrsaMinor[5].y + 4);
+      pherkadLabel.setAttribute('class', 'polaris-small-label');
+      pherkadLabel.textContent = 'Pherkad';
+      svg.appendChild(pherkadLabel);
 
       target.appendChild(svg);
 
