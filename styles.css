@@ -623,10 +623,90 @@
       color:#fff !important;
       border:1px solid #2563eb !important;
     }
-    .date-mobile-toggle-button{
+    .date-settings-toggle-button{
       min-width:34px;
+      min-height:34px;
       padding:7px 0;
+      border-radius:999px;
       color:#1d4ed8 !important;
+      font-size:.98rem;
+      font-weight:700;
+      line-height:1;
+    }
+    .date-toolbar-settings{
+      flex:0 0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+    }
+    .date-settings-panel{
+      width:min(100%, 420px);
+      margin-left:auto;
+      display:none;
+      gap:12px;
+      padding:12px;
+      border:1px solid #dbeafe;
+      border-radius:16px;
+      background:rgba(255,255,255,.97);
+      box-shadow:0 12px 28px rgba(15,23,42,.10);
+    }
+    .date-location-card.settings-open .date-settings-panel{
+      display:grid;
+    }
+    .date-settings-group{
+      display:grid;
+      gap:8px;
+    }
+    .date-settings-label{
+      color:#0f172a;
+      font-size:.8rem;
+      font-weight:700;
+      line-height:1.2;
+      text-align:left;
+    }
+    .date-settings-panel select{
+      width:100%;
+      min-width:0;
+      min-height:0;
+      margin:0;
+      padding:8px 12px;
+      border:1px solid #d8e2ef;
+      border-radius:999px;
+      background:#fff;
+      color:var(--fg);
+      font-size:.9rem;
+      box-shadow:none;
+    }
+    .global-card-size-control{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      justify-content:flex-start;
+    }
+    .global-card-size-button{
+      min-height:34px;
+      margin:0;
+      padding:7px 12px;
+      border-radius:999px;
+      border:1px solid #bfdbfe;
+      background:#f8fbff;
+      color:#0f172a;
+      font-size:.82rem;
+      font-weight:700;
+      line-height:1;
+      box-shadow:none;
+    }
+    .global-card-size-button:hover,
+    .global-card-size-button:focus-visible{
+      background:#eff6ff;
+      border-color:#93c5fd;
+      outline:none;
+    }
+    .global-card-size-button.active{
+      background:linear-gradient(135deg, #1d4ed8, #3b82f6);
+      color:#fff;
+      border-color:#2563eb;
+      box-shadow:0 8px 20px rgba(37,99,235,.18);
     }
     .date-mobile-panel{
       display:block;
@@ -707,35 +787,6 @@
     .date-toolbar-actions .date-today-button:hover{
       background:linear-gradient(135deg, #1e40af, #2563eb);
     }
-    .location-control{
-      flex:0 1 180px;
-      min-width:150px;
-      display:flex;
-      align-items:center;
-      gap:8px;
-      margin:0;
-      text-align:left;
-      color:#0f172a;
-      font-weight:700;
-      font-size:.82rem;
-    }
-    .location-control span{
-      flex:0 0 auto;
-      white-space:nowrap;
-    }
-    .location-control select{
-      flex:1 1 auto;
-      min-width:0;
-      width:100%;
-      padding:8px 12px;
-      border:1px solid #d8e2ef;
-      border-radius:999px;
-      background:#fff;
-      color:var(--fg);
-      font-size:.9rem;
-      box-shadow:none;
-      margin:0;
-    }
     html[lang="en"] .overlay-controls,
     html[lang="fr"] .overlay-controls{
       width:min(100%, 1280px);
@@ -748,10 +799,9 @@
     html[lang="fr"] .date-toolbar-actions .date-auto-button{
       min-width:108px;
     }
-    html[lang="en"] .location-control,
-    html[lang="fr"] .location-control{
-      flex:0 1 250px;
-      min-width:250px;
+    html[lang="en"] .date-settings-panel,
+    html[lang="fr"] .date-settings-panel{
+      width:min(100%, 460px);
     }
     .solar-slider-row{
       display:grid;
@@ -1904,7 +1954,8 @@
       text-align:left;
     }
     .constellation-year-card{
-      min-width:min(100%, 980px);
+      width:100%;
+      min-width:0;
     }
     .constellation-year-disc{
       width:min(100%, 900px);
@@ -3595,15 +3646,9 @@
       .date-toolbar-actions{
         flex:0 0 auto;
       }
-      .location-control{
-        flex:0 1 220px;
-        min-width:0;
-        max-width:220px;
+      .date-settings-panel{
+        width:min(100%, 440px);
         margin-left:auto;
-        justify-content:flex-end;
-      }
-      .location-control select{
-        min-width:0;
       }
     }
     @media (max-width:1180px){
@@ -3660,6 +3705,9 @@
       .date-location-card.mobile-collapsed .date-mobile-panel{
         display:none;
       }
+      .date-location-card.settings-open .date-mobile-panel{
+        display:block;
+      }
       .date-location-card.mobile-collapsed .date-mobile-bar{
         min-height:40px;
       }
@@ -3671,7 +3719,7 @@
       }
       .date-toolbar-slider,
       .date-toolbar-actions,
-      .location-control{
+      .date-toolbar-settings{
         flex-basis:100%;
       }
       .date-toolbar-actions{
@@ -3703,8 +3751,12 @@
         order:10;
         grid-column:1 / -1;
       }
-      .location-control{
-        margin-right:0;
+      .date-toolbar-settings{
+        justify-content:flex-end;
+      }
+      .date-settings-panel{
+        width:100%;
+        margin-left:0;
       }
       .small-bodies-label{
         font-size:13px;
@@ -3993,7 +4045,7 @@ select {
 }
 
 #locationSelector {
-  min-width: 180px;
+  min-width: 0;
   width: 100%;
   min-height: 0;
 }
@@ -4046,6 +4098,13 @@ select {
     font-size: 0.84rem;
   }
 
+  .date-settings-toggle-button {
+    min-width: 32px;
+    min-height: 32px;
+    padding: 6px 0;
+    font-size: 0.9rem;
+  }
+
   .solar-slider-row {
     width: 100%;
     order: 3;
@@ -4058,6 +4117,17 @@ select {
 
   .date-toolbar-actions {
     gap: 8px;
+  }
+
+  .date-settings-panel {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .global-card-size-button {
+    min-height: 32px;
+    padding: 6px 10px;
+    font-size: 0.78rem;
   }
 
   .group-title {
@@ -4137,6 +4207,13 @@ select {
     min-width: 30px;
     min-height: 30px;
     padding: 5px 8px;
+  }
+
+  .date-settings-toggle-button {
+    min-width: 30px;
+    min-height: 30px;
+    padding: 5px 0;
+    font-size: 0.84rem;
   }
 
   .display-container[data-help-key] {

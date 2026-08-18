@@ -52,7 +52,7 @@
           <button id="btnSolarPrevMobile" class="date-mobile-step-button" type="button" aria-label="Previous day">‹</button>
           <button id="btnSolarTodayMobile" class="date-mobile-today-button" type="button">Today</button>
           <button id="btnSolarNextMobile" class="date-mobile-step-button" type="button" aria-label="Next day">›</button>
-          <button id="btnDateMobileToggle" class="date-mobile-toggle-button" type="button" aria-expanded="false" aria-label="More controls">⋯</button>
+          <button id="btnDateMobileToggle" class="date-settings-toggle-button" type="button" aria-expanded="false" aria-label="Open settings" data-date-settings-toggle>☰</button>
         </div>
       </div>
       <div id="dateMobilePanel" class="date-mobile-panel">
@@ -77,11 +77,24 @@
           <button id="btnSolarNextYear" type="button" aria-label="Next year">+1J</button>
           <button id="btnSolarAutoplay" class="date-auto-button" type="button" aria-pressed="false" aria-label="Start time-lapse">Zeitraffer</button>
         </div>
-        <label class="location-control" for="locationSelector">
-          <span id="labelLocation">Location</span>
-          <select id="locationSelector"></select>
-        </label>
+        <div class="date-toolbar-settings">
+          <button id="btnDateSettingsDesktop" class="date-settings-toggle-button" type="button" aria-expanded="false" aria-label="Open settings" data-date-settings-toggle>☰</button>
+        </div>
       </div>
+      </div>
+      <div id="dateSettingsPanel" class="date-settings-panel" aria-hidden="true">
+        <div class="date-settings-group">
+          <div id="labelLocation" class="date-settings-label">Location</div>
+          <select id="locationSelector"></select>
+        </div>
+        <div class="date-settings-group">
+          <div id="labelGlobalCardSize" class="date-settings-label">All cards</div>
+          <div id="globalCardSizeControl" class="global-card-size-control" role="group" aria-label="All card sizes">
+            <button type="button" class="global-card-size-button" data-global-card-size="normal">1×</button>
+            <button type="button" class="global-card-size-button" data-global-card-size="wide">2×</button>
+            <button type="button" class="global-card-size-button" data-global-card-size="large">3×</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -936,6 +949,7 @@
       constellation_year: 'large'
     };
     let storedCardSizes = {};
+    let dateSettingsPanelOpen = false;
 
     function currentCardHelpPack(){
       return cardHelp[lang] || cardHelp.en || { sections:{}, cards:{} };
@@ -975,6 +989,69 @@
       fragment.querySelector('[data-summary-label]').textContent = label;
       fragment.querySelector('[data-summary-value]').textContent = value;
       target.appendChild(fragment);
+    }
+
+    /**
+     * Returns the shared card size when every resizable card currently uses the
+     * same token. Mixed states return an empty string so the global control can
+     * stay neutral.
+     * @returns {string} Shared size token or an empty string for mixed sizes.
+     */
+    function sharedDashboardCardSize(){
+      const cards = resizableDashboardCards();
+      if (!cards.length) {
+        return '';
+      }
+
+      const firstSize = effectiveCardSize(cards[0]);
+      let index = 1;
+      while (index < cards.length) {
+        if (effectiveCardSize(cards[index]) !== firstSize) {
+          return '';
+        }
+        index += 1;
+      }
+
+      return firstSize;
+    }
+
+    /**
+     * Updates the compact global size buttons in the date settings panel.
+     * The control highlights only when every dashboard card shares one size.
+     * @returns {void}
+     */
+    function updateGlobalCardSizeControlState(){
+      const control = document.getElementById('globalCardSizeControl');
+      if (!control) {
+        return;
+      }
+
+      const sharedSize = sharedDashboardCardSize();
+      control.setAttribute('aria-label', t.date_global_card_size || 'All cards');
+
+      control.querySelectorAll('[data-global-card-size]').forEach(button => {
+        const size = button.getAttribute('data-global-card-size');
+        let title = size;
+
+        if (size === 'normal') {
+          title = t.card_size_normal || 'Normal size';
+        } else if (size === 'wide') {
+          title = t.card_size_wide || 'Wide size';
+        } else if (size === 'large') {
+          title = t.card_size_large || 'Large size';
+        }
+
+        button.setAttribute('title', title);
+        button.setAttribute('aria-label', title);
+
+        if (sharedSize && sharedSize === size) {
+          button.classList.add('active');
+          button.setAttribute('aria-pressed', 'true');
+        } else {
+          button.classList.remove('active');
+          button.setAttribute('aria-pressed', 'false');
+        }
+      });
     }
 
     /**
@@ -1240,14 +1317,15 @@
       if (titleDateLocation) titleDateLocation.textContent = t.title_date_location;
       const labelLocation = document.getElementById('labelLocation');
       if (labelLocation) labelLocation.textContent = t.label_location;
+      const labelGlobalCardSize = document.getElementById('labelGlobalCardSize');
+      if (labelGlobalCardSize) labelGlobalCardSize.textContent = t.date_global_card_size || 'All cards';
       const btnSolarTodayMobile = document.getElementById('btnSolarTodayMobile');
       if (btnSolarTodayMobile) {
         btnSolarTodayMobile.textContent = t.solar_today;
       }
-      const btnDateMobileToggle = document.getElementById('btnDateMobileToggle');
-      if (btnDateMobileToggle) {
-        btnDateMobileToggle.setAttribute('aria-label', t.date_more_controls || 'More controls');
-      }
+      document.querySelectorAll('[data-date-settings-toggle]').forEach(button => {
+        button.setAttribute('aria-label', t.date_settings_toggle || 'Open settings');
+      });
       const titleSmallBodies = document.getElementById('titleSmallBodies');
       if (titleSmallBodies) titleSmallBodies.textContent = t.title_small_bodies;
       const smallBodiesLegend = document.getElementById('smallBodiesLegend');
@@ -1325,6 +1403,8 @@
       document.getElementById('btnSolarPrevYear').setAttribute('aria-label', t.solar_prev_year);
       document.getElementById('btnSolarNextYear').setAttribute('aria-label', t.solar_next_year);
       updateSolarAutoplayButton();
+      updateGlobalCardSizeControlState();
+      updateDateSettingsToggleState();
       const labelStepYear = document.getElementById('labelStepYear');
       if (labelStepYear) labelStepYear.textContent = t.date_step_year;
       const labelStepMonth = document.getElementById('labelStepMonth');
@@ -1845,6 +1925,7 @@
       resizableDashboardCards().forEach(card => {
         applyCardSizeToElement(card, effectiveCardSize(card));
       });
+      updateGlobalCardSizeControlState();
     }
 
     /**
@@ -1868,7 +1949,67 @@
       saveStoredCardSizes();
 
       renderWithViewportAnchor(() => {
-        applyCardSizeToElement(card, size);
+        runWithDeferredMasonryLayout(() => {
+          applyCardSizeToElement(card, size);
+          updateGlobalCardSizeControlState();
+          rerenderCardsAfterSizeChange();
+        });
+      });
+    }
+
+    /**
+     * Applies one size token to every resizable dashboard card at once.
+     * The individual per-card storage map is updated so the shared choice
+     * persists across reloads and later single-card adjustments.
+     * @param {string} size Requested shared size token.
+     * @returns {void}
+     */
+    function setAllDashboardCardSizes(size){
+      if (!isSupportedCardSize(size)) {
+        return;
+      }
+
+      const cards = resizableDashboardCards();
+      if (!cards.length) {
+        return;
+      }
+
+      const currentSharedSize = sharedDashboardCardSize();
+      if (currentSharedSize === size) {
+        return;
+      }
+
+      renderWithViewportAnchor(() => {
+        runWithDeferredMasonryLayout(() => {
+          cards.forEach(card => {
+            const cardKey = resizableCardKey(card);
+            if (!cardKey) {
+              return;
+            }
+            storedCardSizes[cardKey] = size;
+            applyCardSizeToElement(card, size);
+          });
+
+          saveStoredCardSizes();
+          updateGlobalCardSizeControlState();
+          rerenderCardsAfterSizeChange();
+        });
+      });
+    }
+
+    /**
+     * Rebuilds cards whose internal SVG layout depends on the current card
+     * width or height. A pure class change is not enough for these cards,
+     * because their drawing code samples the container size during render.
+     * @returns {void}
+     */
+    function rerenderCardsAfterSizeChange(){
+      runWithDeferredMasonryLayout(() => {
+        renderMoon();
+        renderEarthMoon();
+        renderSmallBodies();
+        renderSpacecraft();
+        refreshDateDrivenTiles();
       });
     }
 
@@ -1963,6 +2104,65 @@
       }
 
       applyStoredCardSizes();
+    }
+
+    /**
+     * Wires the shared date settings panel controls.
+     * The panel can be opened from the mobile summary bar and from the desktop
+     * toolbar, while outside clicks and Escape close it again.
+     * @returns {void}
+     */
+    function initDateSettingsControls(){
+      document.querySelectorAll('[data-date-settings-toggle]').forEach(button => {
+        button.addEventListener('pointerdown', event => {
+          event.stopPropagation();
+        });
+        button.addEventListener('click', event => {
+          event.preventDefault();
+          event.stopPropagation();
+          button.blur();
+          toggleDateSettingsPanel();
+        });
+      });
+
+      const globalSizeControl = document.getElementById('globalCardSizeControl');
+      if (globalSizeControl) {
+        globalSizeControl.querySelectorAll('[data-global-card-size]').forEach(button => {
+          button.addEventListener('pointerdown', event => {
+            event.stopPropagation();
+          });
+          button.addEventListener('click', event => {
+            event.preventDefault();
+            event.stopPropagation();
+            button.blur();
+            const requestedSize = button.getAttribute('data-global-card-size');
+            setAllDashboardCardSizes(requestedSize);
+          });
+        });
+      }
+
+      if (!window.__planetenuhrDateSettingsWired) {
+        document.addEventListener('pointerdown', event => {
+          if (event.target.closest('#dateSettingsPanel')) {
+            return;
+          }
+
+          if (event.target.closest('[data-date-settings-toggle]')) {
+            return;
+          }
+
+          setDateSettingsPanelOpen(false);
+        });
+        document.addEventListener('keydown', event => {
+          if (event.key === 'Escape') {
+            setDateSettingsPanelOpen(false);
+          }
+        });
+        window.__planetenuhrDateSettingsWired = true;
+      }
+
+      updateDateSettingsToggleState();
+      updateGlobalCardSizeControlState();
     }
 
     /**
@@ -6362,21 +6562,17 @@
      */
     function setDateMobilePanelOpen(isOpen){
       const card = document.querySelector('.date-location-card');
-      const button = document.getElementById('btnDateMobileToggle');
-      if (!card || !button) {
+      if (!card) {
         return;
       }
       if (window.innerWidth > 760) {
         card.classList.remove('mobile-collapsed');
-        button.setAttribute('aria-expanded', 'false');
         return;
       }
       if (isOpen) {
         card.classList.remove('mobile-collapsed');
-        button.setAttribute('aria-expanded', 'true');
       } else {
         card.classList.add('mobile-collapsed');
-        button.setAttribute('aria-expanded', 'false');
       }
       requestMasonryLayout();
     }
@@ -6407,19 +6603,77 @@
      */
     function syncDateMobilePanelForViewport(){
       const card = document.querySelector('.date-location-card');
-      const button = document.getElementById('btnDateMobileToggle');
-      if (!card || !button) {
+      if (!card) {
         return;
       }
       if (window.innerWidth <= 760) {
         if (!card.classList.contains('mobile-collapsed')) {
           card.classList.add('mobile-collapsed');
         }
-        button.setAttribute('aria-expanded', 'false');
         return;
       }
       card.classList.remove('mobile-collapsed');
-      button.setAttribute('aria-expanded', 'false');
+    }
+
+    /**
+     * Synchronizes the two settings-toggle buttons with the current panel state.
+     * Both mobile and desktop entry points always reflect the same expanded
+     * state so assistive technologies stay accurate.
+     * @returns {void}
+     */
+    function updateDateSettingsToggleState(){
+      document.querySelectorAll('[data-date-settings-toggle]').forEach(button => {
+        button.setAttribute('aria-expanded', String(dateSettingsPanelOpen));
+      });
+    }
+
+    /**
+     * Opens or closes the compact settings panel that contains the location
+     * selector and the global card-size shortcuts.
+     * @param {boolean} isOpen Desired settings-panel state.
+     * @returns {void}
+     */
+    function setDateSettingsPanelOpen(isOpen){
+      const card = document.querySelector('.date-location-card');
+      const panel = document.getElementById('dateSettingsPanel');
+      if (!card || !panel) {
+        return;
+      }
+
+      const nextState = Boolean(isOpen);
+      if (dateSettingsPanelOpen === nextState && panel.hidden === !nextState) {
+        return;
+      }
+
+      dateSettingsPanelOpen = nextState;
+      panel.setAttribute('aria-hidden', String(!dateSettingsPanelOpen));
+
+      if (dateSettingsPanelOpen) {
+        card.classList.add('settings-open');
+        if (window.innerWidth <= 760) {
+          card.classList.remove('mobile-collapsed');
+        }
+      } else {
+        card.classList.remove('settings-open');
+        if (window.innerWidth <= 760) {
+          card.classList.add('mobile-collapsed');
+        }
+      }
+
+      updateDateSettingsToggleState();
+      requestMasonryLayout();
+    }
+
+    /**
+     * Toggles the shared date settings panel.
+     * @returns {void}
+     */
+    function toggleDateSettingsPanel(){
+      if (dateSettingsPanelOpen) {
+        setDateSettingsPanelOpen(false);
+      } else {
+        setDateSettingsPanelOpen(true);
+      }
     }
 
     /**
@@ -10178,8 +10432,6 @@ function computeMoon(date){
     document.getElementById('btnSolarPrevYear').addEventListener('click', () => stepSolarDateByMonths(-12));
     document.getElementById('btnSolarNextYear').addEventListener('click', () => stepSolarDateByMonths(12));
     document.getElementById('btnSolarAutoplay').addEventListener('click', toggleSolarAutoplay);
-    document.getElementById('btnDateMobileToggle').addEventListener('click', toggleDateMobilePanel);
-    document.getElementById('btnDateMobileToggle').addEventListener('pointerdown', event => event.stopPropagation());
     document.getElementById('btnDateMobileBar').addEventListener('click', event => {
       if (window.innerWidth > 760) {
         return;
@@ -10205,8 +10457,7 @@ function computeMoon(date){
         'btnBarycenterAll',
         'btnSolarPrevMobile',
         'btnSolarTodayMobile',
-        'btnSolarNextMobile',
-        'btnDateMobileToggle'
+        'btnSolarNextMobile'
       ].forEach(id => {
         const button = document.getElementById(id);
         if (!button) return;
@@ -10217,6 +10468,7 @@ function computeMoon(date){
       });
     document.getElementById('locationSelector').addEventListener('change', event => {
       selectedLocationKey = event.target.value;
+      setDateSettingsPanelOpen(false);
       refreshDateDrivenTilesWithAnchor();
     });
     const btnBarycenterJupiter = document.getElementById('btnBarycenterJupiter');
@@ -10312,6 +10564,7 @@ function computeMoon(date){
     applyInitialUrlState();
     populateLocationSelector();
     initCardSizeControls();
+    initDateSettingsControls();
     const solarDateSlider = document.getElementById('solarDateSlider');
     if (solarDateSlider) {
       solarDateSlider.value = String(solarDayOffset);
