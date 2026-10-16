@@ -3069,6 +3069,12 @@
       visibility:visible;
       pointer-events:auto;
     }
+    @media (max-width:760px){
+      .calendar-view-stack{
+        /* Override the shared inline height: only the active view needs space on mobile. */
+        height:auto !important;
+      }
+    }
     .calendar-month-view[hidden],
     .calendar-detail[hidden]{
       display:none !important;
