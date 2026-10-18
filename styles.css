@@ -3677,6 +3677,10 @@
       }
     }
     @media (max-width:760px){
+      .card-size-control,
+      .date-card-size-settings{
+        display:none;
+      }
       body{
         padding:12px;
       }

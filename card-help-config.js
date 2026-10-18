@@ -1461,3 +1461,130 @@ window.PLANETENUHR_CARD_HELP = {
     }
   }
 };
+
+window.PLANETENUHR_CARD_HELP.en.cards.planet_horizon = {
+  "intro": [
+    "A panorama of the seven other planets for the selected location and instant. Shading marks the area below the horizon.",
+    "Select a numbered planet to inspect its direction and altitude. The ±12-hour slider only changes this card."
+  ],
+  "details": [
+    "Times use the selected city's time zone. Selected time restores the shared dashboard instant.",
+    "J2000 positions are precessed to the date, then converted using local sidereal time. No refraction, nutation, aberration or observed light-time correction.",
+    "Position above the horizon does not guarantee visibility. The orbital elements are fitted to 1800–2050; dates outside this interval are extrapolated."
+  ],
+  "links": [
+    {
+      "label": "JPL approximate positions",
+      "url": "https://ssd.jpl.nasa.gov/planets/approx_pos.html"
+    }
+  ]
+};
+
+window.PLANETENUHR_CARD_HELP.en.cards.light_travel = {
+  "intro": [
+    "Follow sunlight from the Sun to any of the eight planets. Travel time follows the computed solar distance on the selected date."
+  ],
+  "formulas": [
+    {
+      "expr": "t = r / c",
+      "note": "One-way vacuum travel time; 1 AU = 149,597,870.7 km, c = 299,792.458 km/s."
+    }
+  ],
+  "details": [
+    "The destination is held at its computed position. Motion during flight is not followed.",
+    "The route is schematic. Start at zero in real time: one real second equals one journey second. You can move the slider manually; an active journey continues from there. Changing planet or date resets the journey. Progress p = min(1, p₀ + elapsed time / travel time), where p₀ is the manually chosen starting fraction."
+  ],
+  "links": [
+    {
+      "label": "JPL astrodynamic parameters",
+      "url": "https://ssd.jpl.nasa.gov/astro_par.html"
+    }
+  ]
+};
+
+window.PLANETENUHR_CARD_HELP.de.cards.planet_horizon = {
+  "intro": [
+    "Ein Panorama der sieben anderen Planeten für den gewählten Ort und Zeitpunkt. Die Schattierung kennzeichnet den Bereich unter dem Horizont.",
+    "Ein nummerierter Planet lässt sich auswählen, um Richtung und Höhe abzulesen. Der Zeitregler erkundet ±12 Stunden und verändert nur diese Kachel."
+  ],
+  "details": [
+    "Die Uhrzeit folgt der Zeitzone des gewählten Ortes. Ausgewählte Zeit setzt den lokalen Zeitversatz zurück.",
+    "J2000-Positionen werden auf das Datum präzediert und mit der lokalen Sternzeit in Horizontkoordinaten umgerechnet. Ohne Brechung, Nutation, Aberration und Lichtzeitkorrektur der beobachteten Positionen.",
+    "Über dem Horizont bedeutet nicht automatisch sichtbar. Die Bahnelemente gelten für 1800–2050; außerhalb wird extrapoliert."
+  ],
+  "links": [
+    {
+      "label": "JPL: Genäherte Planetenpositionen",
+      "url": "https://ssd.jpl.nasa.gov/planets/approx_pos.html"
+    }
+  ]
+};
+
+window.PLANETENUHR_CARD_HELP.de.cards.light_travel = {
+  "intro": [
+    "Eine Lichtreise von der Sonne zu einem der acht Planeten. Die Reisezeit folgt dem berechneten Sonnenabstand am gewählten Datum."
+  ],
+  "formulas": [
+    {
+      "expr": "t = r / c",
+      "note": "Einfache Lichtlaufzeit im Vakuum; 1 AE = 149.597.870,7 km, c = 299.792,458 km/s."
+    }
+  ],
+  "details": [
+    "Das Ziel bleibt an der berechneten Position. Die Bewegung während des Lichtflugs wird nicht nachgeführt.",
+    "Die Strecke ist schematisch. Start bei null in Echtzeit: Eine echte Sekunde entspricht einer Reisesekunde. Der Regler lässt sich manuell verschieben; eine laufende Reise geht dort weiter. Bei Planeten- oder Datumswechsel beginnt die Reise neu. Fortschritt p = min(1, p₀ + verstrichene Zeit / Lichtlaufzeit), wobei p₀ der manuell gewählte Startanteil ist."
+  ],
+  "links": [
+    {
+      "label": "JPL: Astronomische Konstanten",
+      "url": "https://ssd.jpl.nasa.gov/astro_par.html"
+    }
+  ]
+};
+
+window.PLANETENUHR_CARD_HELP.fr.cards.planet_horizon = {
+  "intro": [
+    "Un panorama des sept autres planètes pour le lieu et l’instant choisis. La zone ombrée est sous l’horizon.",
+    "Sélectionnez une planète numérotée pour lire sa direction et sa hauteur. Le curseur explore ±12 heures et ne modifie que cette carte."
+  ],
+  "details": [
+    "L’heure suit le fuseau du lieu choisi. Heure sélectionnée rétablit l’instant partagé.",
+    "Les positions J2000 sont précessées à la date, puis converties avec le temps sidéral local. Sans réfraction, nutation, aberration ni correction du temps de lumière observé.",
+    "Au-dessus de l’horizon ne signifie pas forcément visible. Les éléments orbitaux sont valables pour 1800–2050 ; au-delà, ils sont extrapolés."
+  ],
+  "links": [
+    {
+      "label": "JPL : positions approchées",
+      "url": "https://ssd.jpl.nasa.gov/planets/approx_pos.html"
+    }
+  ]
+};
+
+window.PLANETENUHR_CARD_HELP.fr.cards.light_travel = {
+  "intro": [
+    "Un voyage de la lumière du Soleil vers l’une des huit planètes. La durée dépend de la distance au Soleil calculée pour la date choisie."
+  ],
+  "formulas": [
+    {
+      "expr": "t = r / c",
+      "note": "Trajet simple dans le vide ; 1 UA = 149 597 870,7 km, c = 299 792,458 km/s."
+    }
+  ],
+  "details": [
+    "La destination reste à sa position calculée, sans suivre son mouvement pendant le trajet.",
+    "Trajet schématique. Départ à zéro en temps réel : une seconde réelle correspond à une seconde de voyage. Le curseur peut être déplacé à la main ; un voyage en cours continue à partir de là. Changer de planète ou de date remet le voyage à zéro. Progression p = min(1, p₀ + temps écoulé / durée du trajet), où p₀ est la fraction de départ choisie manuellement."
+  ],
+  "links": [
+    {
+      "label": "JPL : constantes astronomiques",
+      "url": "https://ssd.jpl.nasa.gov/astro_par.html"
+    }
+  ]
+};
+
+window.PLANETENUHR_CARD_HELP.en.cards.planet_horizon.details.push("The sky colour and local-day band follow the solar altitude: sunrise/set at −0.8333°, civil twilight to −6°, nautical twilight to −12°, astronomical twilight to −18°, then night. The day band follows the city's actual civil day, including DST, polar day and polar night. The cursor follows the local exploratory time; it does not rebuild the controls.");
+window.PLANETENUHR_CARD_HELP.de.cards.planet_horizon.details.push("Himmelsfarbe und Tagesband folgen der Sonnenhöhe: Auf-/Untergang bei −0,8333°, bürgerliche Dämmerung bis −6°, nautische bis −12°, astronomische bis −18°, danach Nacht. Das Zeitband folgt dem tatsächlichen lokalen Tag einschließlich Zeitumstellung, Polartag und Polarnacht. Der Zeiger folgt der erkundeten Uhrzeit, ohne die Bedienelemente neu aufzubauen.");
+window.PLANETENUHR_CARD_HELP.fr.cards.planet_horizon.details.push("La couleur du ciel et la bande du jour local suivent la hauteur solaire : lever/coucher à −0,8333°, crépuscule civil jusqu’à −6°, nautique jusqu’à −12°, astronomique jusqu’à −18°, puis nuit. La bande respecte la journée locale réelle, les changements d’heure et les jours/nuits polaires. Le curseur suit l’heure explorée sans recréer les commandes.");
+window.PLANETENUHR_CARD_HELP.en.cards.planet_horizon.links.push({ label:"USNO: Rise, set and twilight definitions", url:"https://aa.usno.navy.mil/faq/RST_defs" });
+window.PLANETENUHR_CARD_HELP.de.cards.planet_horizon.links.push({ label:"USNO: Aufgang, Untergang und Dämmerung", url:"https://aa.usno.navy.mil/faq/RST_defs" });
+window.PLANETENUHR_CARD_HELP.fr.cards.planet_horizon.links.push({ label:"USNO : lever, coucher et crépuscules", url:"https://aa.usno.navy.mil/faq/RST_defs" });

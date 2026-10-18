@@ -20,6 +20,10 @@ function getRequiredFiles() {
   return [
     "index.html",
     "styles.css",
+    "astronomy-explorer.css",
+    "astronomy-explorer-config.js",
+    "astronomy-explorer-model.js",
+    "astronomy-explorer.js",
     "translations.js",
     "card-help-config.js",
     "calendar-events.js",

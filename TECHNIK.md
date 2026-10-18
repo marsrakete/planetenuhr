@@ -1,0 +1,330 @@
+# Technik der Planetenuhr
+
+Diese Datei beschreibt Aufbau, Entwicklung und Pflege der App. [Zur Übersicht im README](README.md) · [Zu den Berechnungen](BERECHNUNGEN.md)
+
+## Projektstruktur
+
+- `index.html`, `styles.css`
+  Seitenstruktur, Vorlagen, Darstellung, Interaktion und bestehende astronomische Berechnungen
+- `astronomy-explorer.js`, `astronomy-explorer.css`
+  Horizontpanorama und interaktive Lichtreise; verwenden die gemeinsamen Datums-, Orts- und Kachelgrößen-Einstellungen
+- `astronomy-explorer-config.js`, `astronomy-explorer-model.js`
+  Physikalische Konstanten, Planetenlisten, Umrechnung von J2000 in mittlere Äquatorkoordinaten des Datums sowie Lichtlaufzeiten
+- `translations.js`\
+  UI-Texte in Englisch, Deutsch und Französisch
+- `card-help-config.js`\
+  Inhalte für die `?`-Popups jeder Kachel
+- `calendar-events.js`\
+  kuratierte Himmelskalender-Ereignisse
+- `eclipse-calendar-config.js`, `extended-calendar-config.js`\
+  automatisch ergänzte Finsternis- und wiederkehrende Kalenderereignisse
+- `calendar-sources.json`\
+  zentrale Quellenliste für den Himmelskalender mit Prüfintervallen und Abdeckungszielen
+- `phenomena-config.js`\
+  Konfiguration für Meteorströme, Sternbilder, Raumsonden und weitere Phänomene
+- `small-bodies-config.js`\
+  Kleinkörper, Kometen und Gürtel für die entsprechende Kachel
+- `bsky-feed-config.js`\
+  konfigurierbare Bluesky-Accounts für die Bild-Feed-Kachel
+- `scripts/generate-ics.js`\
+  erzeugt ICS-Dateien aus dem zusammengeführten Himmelskalender
+- `scripts/check-calendar-sources.js`\
+  prüft Quellenliste, Pflegefälligkeiten, Kalenderabdeckung und optional die Erreichbarkeit der Quellen-URLs
+- `ics/`\
+  automatisch erzeugte Kalenderdateien pro Sprache und Kategorie
+- `image_og.jpg`, `favicon.svg`\
+  Social Preview und Favicon
+
+## Architektur und Render-Zyklus
+
+Die App ist als einzelne statische HTML-Datei aufgebaut. Struktur, Styling, Interaktion und Berechnungen leben überwiegend in `index.html`, während Inhalte und Texte in separate Konfigurationsdateien ausgelagert sind.
+
+### Zentrale Zustände
+
+Die wichtigsten globalen Zustände sind:
+
+- `solarDayOffset`\
+  verschiebt das gewählte Datum relativ zu `Date.now()`
+- `selectedLocationKey`\
+  bestimmt die aktuell gewählte Stadt
+- Sprachzustand über `lang` und `translations.js`
+
+Die zentrale Datumsfunktion ist:
+
+- `index.html:4570`\
+  `selectedSolarDate()`
+
+Die zentrale Ortsfunktion ist:
+
+- `index.html:4574`\
+  `selectedLocation()`
+
+### Datums- und Ortsfluss
+
+Das Overlay `Datum & Ort` verändert nicht direkt jede Kachel einzeln. Stattdessen aktualisiert es den globalen Zustand und stößt danach einen gemeinsamen Refresh an.
+
+Wichtige Stellen:
+
+- `index.html:4248`\
+  `refreshDateDrivenTilesWithAnchor()` aktualisiert datumsabhängige Kacheln und versucht die Scroll-Position stabil zu halten.
+- `index.html:4596`\
+  `refreshDateDrivenTiles()` rendert alle datumsgekoppelten Astro-Kacheln neu.
+- `index.html:6332`\
+  Beim Ortswechsel wird ebenfalls `refreshDateDrivenTilesWithAnchor()` ausgelöst.
+
+Damit hängen unter anderem diese Kacheln direkt am gewählten Datum:
+
+- Sonnensystem
+- Mondknoten & Finsternis-Saison
+- Planetenkonjunktionen
+- Meteorströme
+- Sternbild des Monats
+- Jahresuhr der Sternbilder
+- Jahreszeiten
+- Retrograd-Phasen
+- Merkur- & Venus-Phasen
+- Tag/Nacht und Sichtbarkeit
+- Finsternis-Geometrie
+
+### Render-Organisation
+
+Die Seite ist funktional in einzelne Renderer zerlegt. Fast jede größere Kachel besitzt eine eigene Renderfunktion, zum Beispiel:
+
+- `renderSolarSystem(...)`
+- `renderMoonNodes(...)`
+- `renderConjunctionTimeline(...)`
+- `renderSeasonAxis(...)`
+- `renderRetrogradePhases(...)`
+- `renderInnerPlanetPhases(...)`
+- `renderVisibility(...)`
+- `renderNightVisibility(...)`
+- `renderSmallBodies()`
+- `renderSpacecraft()`
+
+Das ist bewusst kein Komponenten-Framework, sondern eine leicht lesbare „one file app“ mit klaren Render-Einstiegspunkten.
+
+### Konfiguration vs. Berechnung
+
+Die App trennt sichtbare Inhalte von Berechnungslogik:
+
+- `translations.js`\
+  UI-Texte
+- `card-help-config.js`\
+  Inhalte der `?`-Popups
+- `calendar-events.js`\
+  kuratierte Ereignisse
+- `phenomena-config.js`\
+  Meteorströme, Raumsonden, Sternbilder und weitere Phänomene
+- `small-bodies-config.js`\
+  Kometen und Gürtel
+- `bsky-feed-config.js`\
+  Bluesky-Feed-Konten
+
+Die mathematische und grafische Verarbeitung liegt überwiegend in `index.html`; die neuen Astronomie-Kacheln verwenden zusätzlich `astronomy-explorer.js` und `astronomy-explorer-model.js`.
+
+### Dynamische Aktualisierung
+
+Nicht alles hängt nur am manuellen Datumswechsel. Es gibt zusätzlich laufende oder periodische Updates:
+
+- `index.html:6373`\
+  `setInterval(updateTime, 1000)` für die Uhr
+- `index.html:6377`\
+  `refreshDynamicTiles()`
+- `index.html:6378`\
+  halbstündlicher Refresh für zeitabhängige Kacheln
+
+So bleiben aktuelle Elemente wie Uhrzeit, Tageslicht, Kalenderbezüge oder Feed-Inhalte nicht auf dem Stand des Seitenladens stehen.
+
+### Layout und Reflow
+
+Nach vielen Render-Vorgängen wird das Kartenlayout erneut organisiert:
+
+- `index.html:4221`\
+  `scheduleMasonryLayout(...)`
+
+Diese Funktion wird nach zahlreichen Kachel-Updates erneut aufgerufen, damit unterschiedlich hohe Karten im Grid sinnvoll neu einsortiert werden.
+
+### Lokale Aktualisierung der Astronomie-Kacheln
+
+Lokale Auswahlen behalten ihre Buttons, Regler und SVG-Markierungen im DOM. Die Planetenauswahl ändert nur Hervorhebung, Beschriftung und Detailtext; der Lichtreise-Regler verwendet bereits berechnete Reisedaten. Nur bei Zeit-, Datums- oder Ortsänderungen werden die betreffenden Positionen neu berechnet. Höhenänderungen einer Kachel werden lokal übernommen. Auch bei einer vollständigen Rasterberechnung bleiben die bisherigen Höhenbelegungen während der Messung bestehen, damit die Seite nicht vorübergehend zusammenfällt und die Scrollposition verliert.
+
+Die Tagessegmente werden pro Ort, Zeitzone und lokalem Datum zwischengespeichert. Beim Erkunden innerhalb desselben Tages bleiben Zeitband, SVG-Markierungen und Bedienelemente bestehen; nur Lichtzustand, Zeiger und Positionen werden aktualisiert.
+
+## Code-Stil
+
+- Lesbarkeit geht vor Verdichtung.
+- Bei mehrstufiger UI- oder Geometrie-Logik werden klare `if / else if / else`-Blöcke bevorzugt.
+- Keine Ternaries; stattdessen klare `if / else`-Blöcke.
+- Kleine Konfigurations- oder Platzierungsregeln sollen so geschrieben sein, dass sie später ohne Rätselraten angepasst werden können.
+
+## Start
+
+Die App kann direkt geöffnet werden:
+
+```text
+index.html
+```
+
+Alternativ kann lokal ein einfacher Server genutzt werden:
+
+```text
+start-server.ps1
+```
+
+## Build und Encoding-Schutz
+
+Auch wenn die App statisch ist, gibt es jetzt einen regulären Build-Prüfschritt:
+
+```text
+npm run validate:repo
+```
+
+Vor jedem Build wird automatisch geprüft, ob verdächtige UTF-8- oder Mojibake-Artefakte im Repository enthalten sind.
+Der Build erzeugt die ICS-Dateien nicht automatisch, sondern prüft nur noch, ob die vorhandenen Dateien im Ordner `ics/` vollständig und aktuell sind.
+
+## Empfohlener Kalender-Ablauf
+
+Die Kalenderpflege ist bewusst in drei getrennte Schritte aufgeteilt:
+
+1. `review:calendar-sources`\
+   Prüft, ob die gepflegten Quellen und Reichweitenziele noch plausibel aktuell sind.
+2. Config-Dateien anpassen\
+   Nur wenn sich daraus echte Änderungen ergeben, werden `calendar-events.js`, `eclipse-calendar-config.js`, `extended-calendar-config.js` oder verwandte Kalender-Configs gepflegt.
+3. `generate:calendar-artifacts`\
+   Erzeugt danach die abgeleiteten ICS-Dateien neu.
+4. `validate:repo`\
+   Prüft abschließend, dass Encoding, statische Dateien und ICS-Artefakte konsistent sind.
+
+Kurz gesagt:
+
+```text
+Quellen prüfen -> Config pflegen -> ICS neu erzeugen -> Repository validieren
+```
+
+Zusätzlich stehen diese Kommandos bereit:
+
+```text
+npm run check:encoding
+npm run check:calendar-sources
+npm run check:ics
+npm run repair:encoding
+npm run build:ics
+npm run review:calendar-sources
+npm run review:calendar-sources:strict
+npm run generate:calendar-artifacts
+npm run validate:calendar-artifacts
+npm run refresh:calendar-artifacts
+npm run validate:repo
+```
+
+- `check:encoding` bricht mit Fehler ab, wenn verdächtige Encoding-Artefakte gefunden werden.
+- `check:calendar-sources` listet die Himmelskalender-Quellen, berechnet nächste Prüftermine und kontrolliert die Kalenderabdeckung bis Ende 2040.
+- `check:ics` prüft, ob die erzeugten ICS-Dateien vorhanden sind und inhaltlich zum aktuellen Kalenderstand passen.
+- `repair:encoding` führt die bekannte Mojibake-Reparatur auf Textdateien im Repository aus.
+- `build:ics` lädt dieselben Kalenderquellen wie die App und schreibt die ICS-Dateien für `de`, `en` und `fr` sowie je Kategorie und als Gesamtkalender bewusst neu.
+- `review:calendar-sources` ist die lesbare Alias-Bezeichnung für die Quellenprüfung.
+- `review:calendar-sources:strict` prüft zusätzlich Link-Erreichbarkeit und eignet sich für GitHub Actions.
+- `generate:calendar-artifacts` ist die lesbare Alias-Bezeichnung für die bewusste Neuerzeugung der ICS-Dateien.
+- `validate:calendar-artifacts` prüft nur die generierten ICS-Artefakte.
+- `refresh:calendar-artifacts` erzeugt ICS-Dateien neu und validiert sie direkt danach.
+- `validate:repo` ist die lesbare Alias-Bezeichnung für den vollständigen Repository-Buildcheck.
+
+Der gleiche Prüfschritt läuft außerdem automatisch in GitHub Actions bei Push und Pull Request, damit defekte Zeichen nicht unbemerkt online gehen.
+Zusätzlich läuft wöchentlich der Workflow `.github/workflows/calendar-source-review.yml`, der die Quellenpflege des Himmelskalenders überwacht.
+
+Wenn Kalender-Configs geändert wurden und die ICS-Dateien dadurch veraltet sind, meldet `npm run validate:repo` das explizit und fordert zur Neuerzeugung der Kalender-Artefakte auf.
+
+### Rechenprüfungen
+
+Rechenprüfungen: `npm run test:explorer`. Die statische Projektvalidierung ersetzt keine Browser- oder Geräteprüfung.
+
+## Quellenpflege des Himmelskalenders
+
+Die regelmäßige Quellenprüfung ist jetzt im Projekt selbst hinterlegt:
+
+- `calendar-sources.json` definiert
+  - die verwendeten Kalenderquellen,
+  - welche Dateien sie speisen,
+  - zu welchen Kategorien sie gehören,
+  - wann sie zuletzt geprüft wurden,
+  - und in welchem Intervall sie erneut geprüft werden sollen.
+- `scripts/check-calendar-sources.js` prüft
+  - ob die Quellenliste vollständig ist,
+  - ob einzelne Quellen zur manuellen Nachprüfung fällig sind,
+  - ob der zusammengeführte Kalender je Sprache und Kategorie weiterhin bis 2040 reicht,
+  - und optional, ob die Quellen-URLs weiterhin erreichbar sind.
+  - einzelne Quellen dürfen dabei bewusst akzeptierte Antwortcodes wie `403` definieren, wenn eine Seite in CI Bot-Schutz verwendet, aber als Quelle weiterhin gültig ist.
+- `.github/workflows/calendar-source-review.yml` startet diese Prüfung automatisch jeden Montag.
+
+Für einen lokalen Lauf:
+
+```text
+npm run check:calendar-sources
+```
+
+Für den strengen CI-Lauf mit URL-Prüfung:
+
+```text
+npm run check:calendar-sources:strict
+```
+
+## Wichtige Konfigurationsdateien
+
+### `calendar-events.js`
+
+Enthält die kuratierte Ereignisliste für den Himmelskalender. Aktuell gepflegt für 2026 bis Januar 2028.
+
+Kategorien:
+
+- `eclipse`
+- `meteor`
+- `planet`
+- `moon`
+- `season`
+
+### `phenomena-config.js`
+
+Enthält strukturierte Daten für:
+
+- Meteorströme
+- monatliche Sternbilder
+- Raumsonden
+- retrograd darzustellende Planeten
+- innere Planetenphasen
+- Satelliten
+
+### `small-bodies-config.js`
+
+Enthält Kometen und weitere Kleinkörper für die Bahn-Darstellung.
+
+### `bsky-feed-config.js`
+
+Enthält eine Liste von Bluesky-Accounts:
+
+```js
+{
+  handle: "dlr-next.bsky.social",
+  profileUrl: "https://bsky.app/profile/dlr-next.bsky.social",
+  label: "DLR-next"
+}
+```
+
+Für jeden Eintrag zeigt die App den neuesten Bildpost; wenn heute noch kein Bildpost existiert, wird optional der letzte Bildpost gezeigt.
+
+## Open Graph und Social Preview
+
+Die Seite besitzt Meta-Tags für:
+
+- `title`
+- `description`
+- `og:title`
+- `og:description`
+- `og:site_name`
+- `og:image`
+- `twitter:card`
+
+Das Vorschaubild liegt in:
+
+```text
+image_og.jpg
+```

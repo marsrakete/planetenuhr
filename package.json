@@ -5,6 +5,7 @@
   "description": "Static astronomy dashboard with build-time validation checks.",
   "scripts": {
     "check:encoding": "node scripts/check-encoding.js",
+    "test:explorer": "node --test scripts/astronomy-explorer.test.js",
     "check:calendar-sources": "node scripts/check-calendar-sources.js",
     "check:calendar-sources:strict": "node scripts/check-calendar-sources.js --strict --check-links",
     "check:ics": "node scripts/check-ics-freshness.js",

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -39,6 +39,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.18.0/dist/katex.min.js" integrity="sha384-OE4SMRr5gMJQzKSD08J46vKsKgY8NxVtO1LW+/q3NJ0WHsGsdN4oebgEjwwWuyvG" crossorigin="anonymous"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.18.0/dist/contrib/auto-render.min.js" integrity="sha384-bjyGPfbij8/NDKJhSGZNP/khQVgtHUE5exjm4Ydllo42FwIgYsdLO2lXGmRBf5Mz" crossorigin="anonymous" onload="window.renderPlanetenuhrHelpMath && window.renderPlanetenuhrHelpMath()"></script>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="astronomy-explorer.css" />
 </head>
 <body>
   <div class="overlay-controls">
@@ -87,7 +88,7 @@
           <div id="labelLocation" class="date-settings-label">Location</div>
           <select id="locationSelector"></select>
         </div>
-        <div class="date-settings-group">
+        <div class="date-settings-group date-card-size-settings">
           <div id="labelGlobalCardSize" class="date-settings-label">All cards</div>
           <div id="globalCardSizeControl" class="global-card-size-control" role="group" aria-label="All card sizes">
             <button type="button" class="global-card-size-button" data-global-card-size="normal">1×</button>
@@ -304,6 +305,65 @@
       </div>
       <div class="legend-small" id="visibilityLegend">Approximate for Berlin; based on solar elongation</div>
     </div>
+
+    <section class="display-container horizon-card wide-card" data-help-key="planet_horizon">
+      <h2 class="group-title" data-explorer-text="title_planet_horizon"></h2>
+      <div class="explorer-context" id="horizonContext"></div>
+      <div id="horizonLightState" class="horizon-light-state" role="status"></div>
+      <svg id="planetHorizonPlot" class="horizon-plot" role="img"></svg>
+      <div class="horizon-daylight-panel">
+        <div class="horizon-band-heading"><span data-explorer-text="horizon_day_course"></span><span id="horizonBandDate"></span></div>
+        <div id="horizonLightBand" class="horizon-light-band" role="img">
+          <div id="horizonLightSegments" class="horizon-light-segments" aria-hidden="true"></div>
+          <span id="horizonLightCursor" class="horizon-light-cursor" aria-hidden="true"></span>
+        </div>
+        <div id="horizonLightTicks" class="horizon-light-ticks" aria-hidden="true"></div>
+        <div id="horizonLightLegend" class="horizon-light-legend"></div>
+        <div class="horizon-solar-events"><span id="horizonSunrise"></span><span id="horizonSunset"></span></div>
+        <div id="horizonPolarNote" class="explorer-note" hidden></div>
+      </div>
+      <div class="explorer-slider-heading">
+        <label for="horizonTimeOffset" data-explorer-text="horizon_explore_time"></label>
+        <output id="horizonTimeValue" for="horizonTimeOffset"></output>
+      </div>
+      <input id="horizonTimeOffset" class="explorer-slider" type="range" min="-12" max="12" step="0.5" value="0" />
+      <div class="explorer-range-ends"><span>−12 h</span><button id="horizonReset" class="explorer-reset" type="button" data-explorer-text="horizon_reset"></button><span>+12 h</span></div>
+      <div id="horizonPlanetList" class="horizon-planet-list"></div>
+      <div id="horizonSelection" class="explorer-detail" role="status"></div>
+      <div id="horizonDaylight" class="explorer-note"></div>
+      <div id="horizonAccuracy" class="explorer-note" hidden></div>
+      <div class="legend-small" data-explorer-text="horizon_legend"></div>
+    </section>
+    <section class="display-container light-travel-card" data-help-key="light_travel">
+      <h2 class="group-title" data-explorer-text="title_light_travel"></h2>
+      <div class="explorer-context" data-explorer-text="light_question"></div>
+      <div id="lightTravelTargets" class="light-travel-targets" role="group"></div>
+      <output id="lightTravelDuration" class="light-travel-duration"></output>
+      <div id="lightTravelRoute" class="explorer-context"></div>
+      <div class="light-travel-track" aria-hidden="true">
+        <div class="light-travel-beam"></div><div id="lightTravelBeam" class="light-travel-progress"></div><div id="lightTravelPhoton" class="light-travel-photon"></div>
+        <div class="light-travel-end light-travel-origin"><span class="light-travel-orb"></span><span data-explorer-text="eclipse_sun"></span></div>
+        <div class="light-travel-end light-travel-destination"><span class="light-travel-orb"></span><span id="lightTravelTargetName"></span></div>
+      </div>
+      <div class="explorer-slider-heading"><label for="lightTravelProgress" data-explorer-text="light_follow"></label><output id="lightTravelElapsed" for="lightTravelProgress"></output></div>
+      <input id="lightTravelProgress" class="explorer-slider" type="range" min="0" max="100" step="any" value="0" />
+      <div class="explorer-range-ends"><button id="lightTravelStart" type="button" class="explorer-reset" data-explorer-text="light_start"></button><button id="lightTravelReset" type="button" class="explorer-reset" data-explorer-text="light_reset"></button></div>
+      <div id="lightTravelState" class="explorer-note" role="status"></div>
+      <div id="lightTravelRemaining" class="explorer-detail"></div>
+      <div id="lightTravelDistance" class="explorer-note"></div>
+      <div id="lightTravelDate" class="explorer-note"></div>
+      <div id="lightTravelAccuracy" class="explorer-note" hidden></div>
+      <div class="legend-small" data-explorer-text="light_legend"></div>
+    </section>
+    <template id="horizonPlanetTemplate">
+      <button type="button" class="horizon-planet" aria-pressed="false"><span data-horizon-name></span><span data-horizon-position></span></button>
+    </template>
+    <template id="lightTravelTargetTemplate"><button type="button" class="light-travel-target" aria-pressed="false"></button></template>
+    <template id="horizonMarkerTemplate"><svg xmlns="http://www.w3.org/2000/svg"><g class="horizon-marker"><title></title><circle r="5"></circle><text text-anchor="middle"></text></g></svg></template>
+    <template id="horizonSkyTemplate"><svg xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="horizonSkyGradient" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" class="horizon-sky-top"></stop><stop offset="100%" class="horizon-sky-bottom"></stop></linearGradient></defs><rect class="horizon-sky" fill="url(#horizonSkyGradient)"></rect></svg></template>
+    <template id="horizonLightSegmentTemplate"><span class="horizon-light-segment"></span></template>
+    <template id="horizonLightTickTemplate"><span class="horizon-light-tick"></span></template>
+    <template id="horizonLightLegendTemplate"><span class="horizon-light-legend-item"><i class="horizon-light-swatch" aria-hidden="true"></i><span data-light-phase-name></span></span></template>
 
     <div class="display-container retrograde-card" data-help-key="retrograde">
       <div class="group-title" id="titleRetrograde">Retrograde phases</div>
@@ -881,6 +941,9 @@
   <script src="locations-config.js"></script>
   <script src="eclipse-visibility-config.js"></script>
   <script src="eclipse-phase-config.js"></script>
+  <script src="astronomy-explorer-config.js"></script>
+  <script src="astronomy-explorer-model.js"></script>
+  <script src="astronomy-explorer.js"></script>
   <script>
 
   window.onerror = function(msg, url, line, col, error) {
@@ -950,6 +1013,7 @@
     };
     let storedCardSizes = {};
     let dateSettingsPanelOpen = false;
+    let astronomyExplorer = null;
 
     function currentCardHelpPack(){
       return cardHelp[lang] || cardHelp.en || { sections:{}, cards:{} };
@@ -1564,6 +1628,17 @@
         if (key && t['moon_' + key]) el.textContent = t['moon_' + key];
       });
       renderCalendar();
+    }
+
+    /**
+     * Refreshes the horizon and light-travel cards from the shared dashboard state.
+     * @param {Date} [date=selectedSolarDate()] Instant selected by the date controls.
+     * @returns {void}
+     */
+    function renderAstronomyExplorer(date = selectedSolarDate()){
+      if (astronomyExplorer) {
+        astronomyExplorer.render(date);
+      }
     }
 
     function fmtTZ(d, tz){
@@ -5179,6 +5254,11 @@
       }
     }
 
+    /**
+     * Recalculates grid spans without collapsing the page during measurement.
+     * Existing spans remain in place until all intrinsic card heights are known.
+     * @returns {void}
+     */
     function updateMasonryLayout(){
       masonryFrame = 0;
       const grid = document.querySelector('.grid');
@@ -5204,11 +5284,10 @@
           try { callback(); } catch (error) {}
         });
       };
-      cards.forEach(card => {
-        card.style.gridRowEnd = '';
-      });
-
       if (window.innerWidth <= 760) {
+        cards.forEach(card => {
+          card.style.gridRowEnd = '';
+        });
         finishMasonryLayout();
         return;
       }
@@ -5216,10 +5295,18 @@
       const style = getComputedStyle(grid);
       const rowHeight = parseFloat(style.gridAutoRows) || 8;
       const rowGap = parseFloat(style.rowGap) || 20;
-      cards.forEach(card => {
+      // With align-items:start, cards retain their intrinsic height inside their
+      // current spans. Clearing all spans before measuring collapses the page
+      // temporarily and lets the browser clamp a scrolled viewport to the top.
+      const spans = cards.map(card => {
         const height = masonryCardHeight(card);
-        const span = Math.max(1, Math.ceil((height + rowGap + 2) / (rowHeight + rowGap)));
-        card.style.gridRowEnd = 'span ' + span;
+        return Math.max(1, Math.ceil((height + rowGap + 2) / (rowHeight + rowGap)));
+      });
+      cards.forEach((card, index) => {
+        const rowEnd = 'span ' + spans[index];
+        if (card.style.gridRowEnd !== rowEnd) {
+          card.style.gridRowEnd = rowEnd;
+        }
       });
       finishMasonryLayout();
     }
@@ -5259,8 +5346,8 @@
       if (!card) {
         return;
       }
-      card.style.gridRowEnd = '';
       if (window.innerWidth <= 760) {
+        card.style.gridRowEnd = '';
         return;
       }
       const grid = document.querySelector('.grid');
@@ -5272,7 +5359,10 @@
       const rowGap = parseFloat(style.rowGap) || 20;
       const height = masonryCardHeight(card);
       const span = Math.max(1, Math.ceil((height + rowGap + 2) / (rowHeight + rowGap)));
-      card.style.gridRowEnd = 'span ' + span;
+      const rowEnd = 'span ' + span;
+      if (card.style.gridRowEnd !== rowEnd) {
+        card.style.gridRowEnd = rowEnd;
+      }
     }
 
     function captureViewportAnchor(){
@@ -6697,6 +6787,7 @@
     function refreshDateDrivenTiles(){
       const date = selectedSolarDate();
       updateControlDateReadout();
+      renderAstronomyExplorer(date);
       renderSolarSystem(date);
       renderBarycenter(date);
       renderLagrangePoints(date);
@@ -10570,6 +10661,20 @@ function computeMoon(date){
       solarDateSlider.value = String(solarDayOffset);
       solarDateSlider.setAttribute('aria-valuenow', String(solarDayOffset));
     }
+    astronomyExplorer = window.PLANETENUHR_EXPLORER.create({
+      getDate: selectedSolarDate,
+      getLocation: selectedLocation,
+      getTimeZone: locationTimeZoneId,
+      getTranslations: () => t,
+      getLanguage: () => lang,
+      getHeliocentricPosition: heliocentricPosition,
+      getGeocentricVector: geocentricVector,
+      getHorizontalCoordinates: horizontalCoordinates,
+      getAltitudeEstimate: altitudeThumbEstimate,
+      getAltitudeEstimate: altitudeThumbEstimate,
+      requestLayout: requestMasonryLayout,
+      updateCardLayout: updateSingleCardMasonryLayout
+    });
     applyI18n();
     syncDateMobilePanelForViewport();
     initCardHelp();
