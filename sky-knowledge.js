@@ -43,6 +43,7 @@ window.PLANETENUHR_KNOWLEDGE = (() => {
     const own = fragment.querySelector('[data-knowledge-own]');
     const sourceList = fragment.querySelector('[data-knowledge-sources]');
     const nextButton = document.getElementById('knowledgeNext');
+    const graphics = window.PLANETENUHR_KNOWLEDGE_GRAPHICS.create(fragment.querySelector('[data-knowledge-graphic]'));
     let order = shuffledIds(entries, null);
     let cursor = 0;
     let renderedId = '';
@@ -103,6 +104,7 @@ window.PLANETENUHR_KNOWLEDGE = (() => {
       note.textContent = copy.note || '';
       own.hidden = !entry.ownWording;
       own.textContent = labels.knowledge_own_wording;
+      graphics.render(entry.id, language);
       renderSources(entry);
       dependencies.updateCardLayout(card);
     }

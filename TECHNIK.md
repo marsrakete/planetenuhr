@@ -6,6 +6,7 @@ Diese Datei beschreibt Aufbau, Entwicklung und Pflege der App. [Zur Übersicht i
 
 - `mnemonics-config.js`: 31 geprüfte Inhalte mit stabilen IDs, Kategorien, Originalsprache, deutschen/englischen/französischen Texten und Quellen; Stand 19. Oktober 2026.
 - `sky-knowledge.js`, `sky-knowledge.css`: Controller und Darstellung der Kachel „Himmelswissen“.
+- `sky-knowledge-graphics-config.js`, `sky-knowledge-graphics.js`: lokalisierte Bildunterschriften und deklarative SVG-Szenen sowie deren Template-Renderer.
 
 
 - `index.html`, `styles.css`
@@ -340,6 +341,10 @@ Die Einträge in `mnemonics-config.js` haben `id`, `kind` (`mnemonic`, `planet`,
 Beim Laden mischt Fisher–Yates alle IDs. Erst nach einer vollständigen Runde wird erneut gemischt; ein unmittelbarer Wiederholer über die Rundengrenze wird vermieden. Erneute Textaktualisierungen behalten Eintrag und Reihenfolge bei. Der Controller verwendet HTML-Templates und behält Artikel und Button im DOM. Änderungen aktualisieren nur diese Kachel im Masonry-Layout. Es gibt keine Timer und keine Kopplung an Datum oder Ort.
 
 Quellen belegen bei eigenen Formulierungen den Sachinhalt. Die französische p/d-Formulierung fasst eine belegte Methode zusammen; sie ist kein historisch belegtes wörtliches Zitat. Einschränkungen gehören in die sichtbaren `note`-Texte und nicht nur in die ?-Hilfe.
+
+Die 31 Einträge verweisen über ihre IDs in `sky-knowledge-graphics-config.js` auf 29 statische Lehrgrafiken. Wiederverwendete Motive (Planetenfolge, Sternfarben) teilen eine Szene. Jede Szene enthält lokalisierte `caption`-Texte und eine Liste von SVG-Primitiven mit Geometrie und gegebenenfalls lokalisiertem `text`. Sichtbare Texte gehören in diese Konfiguration. Der Renderer klont ausschließlich die SVG-Templates aus `index.html` und setzt Attribute sowie `textContent`; Artikel, Figur und Steuerelemente bleiben erhalten. Bei unveränderter Szene und Sprache bleibt auch das SVG erhalten. Die Grafik hat einen zugänglichen Namen und eine sichtbare Bildunterschrift; Farbe ist nie der einzige Bedeutungsträger.
+
+Die Bilder zeigen keine aktuellen Himmelspositionen. Maßstäbe, verwendete Zahlen und Grenzen sind in `BERECHNUNGEN.md` erläutert. Zusätzliche Sternbildquellen stehen direkt bei den entsprechenden Einträgen.
 
 Prüfung: `npm run test:knowledge` kontrolliert den Inhaltsvertrag, Quellen, Sprachabdeckung und Mischrunden. Browserprüfungen sind zusätzlich für Layout, Fokus und Scrollposition nötig.
 

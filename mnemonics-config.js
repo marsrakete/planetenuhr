@@ -391,6 +391,10 @@ window.PLANETENUHR_MNEMONICS = {
         {
           "label": "NASA · Venus",
           "url": "https://science.nasa.gov/venus/venus-facts/"
+        },
+        {
+          "label": "NASA · Mercury",
+          "url": "https://science.nasa.gov/mercury/facts/"
         }
       ]
     },
@@ -607,6 +611,10 @@ window.PLANETENUHR_MNEMONICS = {
         {
           "label": "NASA · Sirius",
           "url": "https://science.nasa.gov/asset/hubble/the-dog-star-sirius-and-its-tiny-companion/"
+        },
+        {
+          "label": "IAU · Canis Major",
+          "url": "https://iauarchive.eso.org/public/images/detail/cma/"
         }
       ]
     },
@@ -631,6 +639,10 @@ window.PLANETENUHR_MNEMONICS = {
         {
           "label": "NASA · Regulus",
           "url": "https://science.nasa.gov/image-article/apod-1999-august-02-regulus-occulted/"
+        },
+        {
+          "label": "IAU · Leo",
+          "url": "https://iauarchive.eso.org/public/images/detail/leo/"
         }
       ]
     },
@@ -655,6 +667,10 @@ window.PLANETENUHR_MNEMONICS = {
         {
           "label": "NASA · Betelgeuse",
           "url": "https://science.nasa.gov/universe/what-is-betelgeuse-inside-the-strange-volatile-star/"
+        },
+        {
+          "label": "IAU · Orion",
+          "url": "https://iauarchive.eso.org/public/images/detail/ori/"
         }
       ]
     },

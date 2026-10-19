@@ -364,6 +364,10 @@
         <h3 class="knowledge-title" data-knowledge-title></h3>
         <blockquote class="knowledge-original" data-knowledge-original hidden></blockquote>
         <p class="knowledge-subtitle" data-knowledge-subtitle hidden></p>
+        <figure class="knowledge-graphic" data-knowledge-graphic>
+          <div data-knowledge-drawing></div>
+          <figcaption></figcaption>
+        </figure>
         <p class="knowledge-explanation" data-knowledge-explanation></p>
         <p class="knowledge-note" data-knowledge-note hidden></p>
         <p class="knowledge-own" data-knowledge-own hidden></p>
@@ -371,6 +375,13 @@
         <div class="knowledge-sources" data-knowledge-sources></div>
       </article>
     </template>
+    <template id="knowledgeGraphicTemplate"><svg class="knowledge-drawing" viewBox="0 0 360 158" role="img" focusable="false"></svg></template>
+    <template id="knowledgeGraphic-circle"><svg><circle /></svg></template>
+    <template id="knowledgeGraphic-line"><svg><line /></svg></template>
+    <template id="knowledgeGraphic-path"><svg><path /></svg></template>
+    <template id="knowledgeGraphic-text"><svg><text /></svg></template>
+    <template id="knowledgeGraphic-rect"><svg><rect /></svg></template>
+    <template id="knowledgeGraphic-ellipse"><svg><ellipse /></svg></template>
     <template id="knowledgeSourceTemplate"><a target="_blank" rel="noopener noreferrer"></a></template>
     <section class="display-container horizon-card wide-card" data-help-key="planet_horizon">
       <h2 class="group-title" data-explorer-text="title_planet_horizon"></h2>
@@ -1011,6 +1022,8 @@
   <script src="astronomy-explorer-model.js"></script>
   <script src="astronomy-explorer.js"></script>
   <script src="mnemonics-config.js"></script>
+  <script src="sky-knowledge-graphics-config.js"></script>
+  <script src="sky-knowledge-graphics.js"></script>
   <script src="sky-knowledge.js"></script>
   <script src="idefix-config.js"></script>
   <script src="idefix-ephemeris.js"></script>

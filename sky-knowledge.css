@@ -17,3 +17,24 @@
 .knowledge-source-label { width:100%; color:var(--muted); font-size:.75rem; text-align:left; }
 .knowledge-sources { display:flex; flex-wrap:wrap; gap:8px; font-size:.78rem; line-height:1.5; }
 .knowledge-sources a { color:var(--accent); overflow-wrap:anywhere; }
+
+.knowledge-graphic { margin:0; min-width:0; }
+.knowledge-drawing {
+  display:block;
+  width:100%;
+  max-width:440px;
+  height:auto;
+  margin:0 auto;
+  padding:6px;
+  box-sizing:border-box;
+  border-radius:10px;
+  background:#0d1930;
+  color:#e9f0ff;
+  fill:currentColor;
+  font-size:13px;
+  font-family:inherit;
+  stroke-width:1.6px;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.knowledge-graphic figcaption { margin:7px 0 0; color:var(--muted); font-size:.76rem; line-height:1.5; }

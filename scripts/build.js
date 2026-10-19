@@ -26,6 +26,8 @@ function getRequiredFiles() {
     "astronomy-explorer.js",
     "mnemonics-config.js",
     "sky-knowledge.js",
+    "sky-knowledge-graphics-config.js",
+    "sky-knowledge-graphics.js",
     "sky-knowledge.css",
     "idefix-config.js",
     "idefix-ephemeris.js",

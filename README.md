@@ -17,7 +17,7 @@ Der Himmel über der Horizontlinie wird passend zu Tag, Morgen-/Abenddämmerung 
 
 Die Rechenmodelle, Konstanten und Näherungen stehen in [BERECHNUNGEN.md](BERECHNUNGEN.md).
 
-**Himmelswissen** zeigt 31 kurze Eselsbrücken, Merksätze und Fakten über Planeten und Sterne. Beim Laden wird zufällig gemischt; „Nächster“ führt ohne automatische Wechsel durch alle Einträge. Fremdsprachige Originale bleiben als eigene Einträge erhalten und erhalten in den anderen App-Sprachen einen übersetzten Untertitel. Erklärungen, Quellen und regionale Hinweise stehen direkt dabei.
+**Himmelswissen** zeigt 31 kurze Eselsbrücken, Merksätze und Fakten über Planeten und Sterne. Beim Laden wird zufällig gemischt; „Nächster“ führt ohne automatische Wechsel durch alle Einträge. Fremdsprachige Originale bleiben als eigene Einträge erhalten und erhalten in den anderen App-Sprachen einen übersetzten Untertitel. Kleine Grafiken veranschaulichen jeden Eintrag, etwa durch Sternbildskizzen, Farbreihen und Größenvergleiche. Erklärungen, Quellen und regionale Hinweise stehen direkt dabei; Bildunterschriften erläutern die schematische Darstellung.
 
 **IDEFIX auf dem Weg zu Phobos** zeigt Sonne, Erde, Mars und die Reise von MMX mit dem Rover als Pixelspur. Phobos ist separat vergrößert dargestellt. Regler und Tages-, Monats- und Jahresschritte erkunden den Missionsplan bis 2031. Die Markierung basiert auf einer JAXA/JPL-Bahnvorhersage bis Ende 2028, nicht auf Live-Telemetrie; spätere Zielmarkierungen sind als Planung gekennzeichnet. Der zuletzt bestätigte Missionsstand steht mit Prüfdatum und Links zu JAXA-Missionsnews, DLR, CNES und ESA daneben. IDEFIX verbleibt nach der geplanten Landung auf Phobos; die Probenkapsel soll zur Erde zurückkehren.
 

@@ -1594,6 +1594,7 @@ window.PLANETENUHR_CARD_HELP.de.cards.sky_knowledge = {
     "31 kurze Einträge: elf Eselsbrücken und Merksätze, zehn Planetenfakten und zehn Sternenfakten."
   ],
   "details": [
+    "Jeder Eintrag hat eine kleine statische Grafik mit sichtbarer Bildunterschrift. Größen, Abstände, Sternbildlinien und Farben sind überwiegend schematisch; Ausnahmen und verwendete Zahlen werden erläutert. Die Bilder zeigen keine aktuellen Positionen oder Mondphasen. Die Fusion ist stark vereinfacht.",
     "Beim Laden wird die Reihenfolge zufällig gemischt. „Nächster“ zeigt jeden Eintrag einmal, bevor eine neue Runde beginnt. Es gibt keinen automatischen Wechsel.",
     "Fremdsprachige Originale bleiben erhalten und bilden eigene Einträge. In den anderen Sprachen erscheint darunter ein übersetzter Untertitel; die Erklärung folgt der App-Sprache.",
     "Quellen und örtliche Einschränkungen stehen direkt beim Eintrag. Eigene Formulierungen sind gekennzeichnet; ihre Quelle belegt den Sachinhalt, nicht den Wortlaut. Die französische p/d-Regel fasst eine belegte Merkmethode zusammen.",
@@ -1605,6 +1606,7 @@ window.PLANETENUHR_CARD_HELP.en.cards.sky_knowledge = {
     "31 short entries: eleven mnemonics and memory aids, ten planet facts and ten star facts."
   ],
   "details": [
+    "Each entry has a small static graphic with a visible caption. Sizes, distances, constellation lines and colours are mostly schematic; exceptions and numerical values are explained. Images do not show current positions or Moon phases. Fusion is highly simplified.",
     "The order is shuffled on loading. “Next” shows each entry once before a new round begins. Entries never rotate automatically.",
     "Foreign-language originals remain unchanged and are separate entries. Other languages show a translated subtitle; explanations follow the app language.",
     "Sources and regional limitations appear with each entry. App-authored wording is marked; its source supports the facts rather than the wording. The French p/d rule summarizes a documented memory technique.",
@@ -1616,6 +1618,7 @@ window.PLANETENUHR_CARD_HELP.fr.cards.sky_knowledge = {
     "31 entrées courtes : onze astuces et aides-mémoire, dix faits sur les planètes et dix sur les étoiles."
   ],
   "details": [
+    "Chaque entrée comporte un petit schéma statique avec une légende visible. Tailles, distances, lignes des constellations et couleurs sont généralement schématiques ; les exceptions et valeurs sont expliquées. Les images ne montrent ni positions ni phases lunaires actuelles. La fusion est très simplifiée.",
     "L’ordre est mélangé au chargement. « Suivant » affiche chaque entrée une fois avant de commencer une nouvelle série. Il n’y a aucun changement automatique.",
     "Les originaux en langue étrangère restent inchangés et constituent des entrées distinctes. Les autres langues affichent un sous-titre traduit ; les explications suivent la langue de l’application.",
     "Les sources et les limites régionales figurent dans chaque entrée. Les formulations originales sont signalées ; leur source confirme les faits, pas le texte. La règle française p/d résume une méthode mnémotechnique documentée.",

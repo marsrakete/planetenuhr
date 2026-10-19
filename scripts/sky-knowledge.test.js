@@ -5,7 +5,7 @@ const vm = require('node:vm');
 const { test } = require('node:test');
 const root = path.resolve(__dirname, '..');
 const realm = vm.createContext({ window:{} });
-for (const file of ['mnemonics-config.js', 'sky-knowledge.js', 'translations.js', 'card-help-config.js']) {
+for (const file of ['mnemonics-config.js', 'sky-knowledge-graphics-config.js', 'sky-knowledge.js', 'translations.js', 'card-help-config.js']) {
   vm.runInContext(fs.readFileSync(path.join(root, file), 'utf8'), realm, {filename:file});
 }
 const entries = realm.window.PLANETENUHR_MNEMONICS.entries;
@@ -71,4 +71,47 @@ test('card labels and help are available in all three languages', () => {
     assert.ok(labels.knowledge_counter.includes('{current}') && labels.knowledge_counter.includes('{total}'));
     assert.ok(realm.window.PLANETENUHR_CARD_HELP[language].cards.sky_knowledge.intro.length);
   }
+});
+
+
+test('every entry has a template-supported teaching diagram and complete localized captions', () => {
+  const config = realm.window.PLANETENUHR_KNOWLEDGE_GRAPHICS_CONFIG;
+  const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+  assert.deepEqual(Object.keys(config.entries).sort(), Array.from(entries, entry => entry.id).sort());
+  const allowedTags = ['circle', 'line', 'path', 'text', 'rect', 'ellipse'];
+  const allowedAttrs = ['cx','cy','r','fill','stroke','stroke-width','stroke-dasharray','x1','y1','x2','y2','d','x','y','text-anchor','font-size','width','height','rx','ry'];
+  for (const scene of Object.values(config.scenes)) {
+    for (const language of ['de','en','fr']) {
+      assert.ok(scene.caption[language].trim());
+    }
+    assert.ok(scene.shapes.length);
+    for (const shape of scene.shapes) {
+      assert.ok(allowedTags.includes(shape.tag));
+      assert.ok(html.includes('id="knowledgeGraphic-' + shape.tag + '"'));
+      for (const [name,value] of Object.entries(shape.attrs)) {
+        assert.ok(allowedAttrs.includes(name), name);
+        assert.ok(typeof value === 'number' || typeof value === 'string');
+        if (typeof value === 'number') assert.ok(Number.isFinite(value));
+      }
+      if (shape.tag === 'text') {
+        if (typeof shape.text === 'string') assert.ok(shape.text.trim());
+        else for (const language of ['de','en','fr']) assert.ok(shape.text[language].trim());
+      }
+    }
+  }
+  for (const sceneId of Object.values(config.entries)) assert.ok(config.scenes[sceneId], sceneId);
+});
+
+test('quantitative comparisons preserve their stated scales and localized compass directions', () => {
+  const scenes = realm.window.PLANETENUHR_KNOWLEDGE_GRAPHICS_CONFIG.scenes;
+  const circles = scenes['jupiter-size'].shapes.filter(shape => shape.tag === 'circle');
+  assert.equal(circles[1].attrs.r / circles[0].attrs.r, 11);
+  const times = scenes['venus-spin'].shapes.filter(shape => shape.tag === 'rect');
+  assert.equal(times[0].attrs.width / times[1].attrs.width, 243 / 225);
+  const temperatures = scenes['venus-heat'].shapes.filter(shape => shape.tag === 'rect');
+  assert.equal(temperatures[0].attrs.width, 430 * 0.6);
+  assert.equal(temperatures[1].attrs.width, 467 * 0.6);
+  const directions = scenes.compass.shapes.filter(shape => shape.tag === 'text');
+  assert.equal(directions.find(shape => shape.attrs.x === 252).text.de, 'O');
+  assert.equal(directions.find(shape => shape.attrs.x === 108).text.fr, 'O');
 });
