@@ -619,3 +619,43 @@ Fortschritt: p = min(1, p₀ + Δt / t), mit gewähltem Startanteil p₀, tatsä
 Der Fortschritt wird beim manuellen Verschieben neu angesetzt. Während der Reise läuft die Zeit im Verhältnis 1:1; verzögerte Aktualisierungen im Hintergrund werden anhand der tatsächlich verstrichenen Zeit nachgeholt.
 
 Quellen: [JPL-Bahnelemente](https://ssd.jpl.nasa.gov/planets/approx_pos.html), [JPL-Konstanten](https://ssd.jpl.nasa.gov/astro_par.html), [IAU-1976-Präzessionswinkel / ERFA](https://github.com/liberfa/erfa/blob/master/src/prec76.c).
+
+## IDEFIX und MMX: Positionsanzeige und Missionsplan
+
+Die Reise verwendet geometrische heliozentrische Vektoren der JAXA-Vorstartplanung aus [JPL Horizons](https://ssd-api.jpl.nasa.gov/doc/horizons.html), Objekt −239, nicht eine selbst konstruierte Transferellipse. Der gespeicherte Stand ist eine Vorhersage vom 7. Oktober 2026 und keine Live-Telemetrie.
+
+### Interpolation innerhalb der Datenabdeckung
+
+Gespeicherte Reihen enthalten UTC-Zeitstempel und die drei Positionskomponenten X, Y, Z in AE im Rahmen „Ecliptic of J2000.0 / ICRF“. Zwischen benachbarten Zeitpunkten t₀ und t₁ gilt:
+
+`u = (t − t₀) / (t₁ − t₀)`
+
+`r(t) = (1 − u) r₀ + u r₁`
+
+r₀ und r₁ sind Vektoren; dieselbe Gewichtung wird für X, Y und Z verwendet. Außerhalb der gespeicherten Zeiten wird keine Position berechnet. Die lineare Interpolation und zeitliche Abtastung sind für die heliozentrische Übersicht gedacht, nicht für Navigation, lokale Marsorbits oder eine genaue Lage gegenüber Phobos. Der Datensatz beginnt erst nach dem Start; diese Lücke wird nicht durch einen erfundenen Weg aufgefüllt.
+
+### Projektion und Pixelspur
+
+`xSVG = 310 + 94 X`
+
+`ySVG = 180 − 94 Y`
+
+Die Konstanten definieren Sonnenmittelpunkt und AE-Maßstab im SVG. Die Ansicht zeigt die Ekliptikebene von oben; Z wird nicht dargestellt. Für Sonne, Erde und Mars werden die vorhandenen JPL-Kepler-Näherungen der App verwendet; die gerenderte MMX-Bahn stammt separat aus Horizons. Beide verwenden heliocentrische J2000-Ekliptikkoordinaten, aber nicht dieselbe numerische Genauigkeit. Körper und Markierungen sind zur Lesbarkeit vergrößert.
+
+Jeder zeitlich bereits erreichte gespeicherte Vektor erzeugt einen kleinen Pixel. Die gestrichelte Linie zeigt die gesamte gespeicherte Planbahn. Die aktuelle Markierung folgt dem interpolierten Vektor, auch wenn dieser zum heutigen Zeitpunkt nur eine Vorhersage ist.
+
+### Phobos im vergrößerten Detail
+
+Nach dem [NASA Mars Fact Sheet](https://nssdc.gsfc.nasa.gov/planetary/factsheet/marsfact.html?level=1) beträgt die mittlere siderische Umlaufzeit von Phobos etwa T = 0,31891 Tage, rund 7 Stunden und 39 Minuten. Für die Skizze gilt:
+
+`φ = 2π frac((t − t₀) / T)`
+
+`x = 100 + 60 cos(φ); y = 92 − 60 sin(φ)`
+
+t und t₀ werden in derselben Zeiteinheit eingesetzt. frac bezeichnet den auf [0, 1) normalisierten gebrochenen Anteil. t₀ = J2000 ist ein frei gewählter grafischer Phasenursprung. Kreisbahn, Orientierung, Abstände und Körpergrößen sind schematisch: Es wird keine reale Phobos-Länge oder Landestelle behauptet.
+
+### Belegte Ereignisse und zukünftige Phasen
+
+Die bestätigte Startmeldung wird mit eigenem Prüfdatum aus der [CNES-Chronik](https://cnes.fr/en/projects/mmx) dargestellt. Die JAXA-Startzeit entspricht dem 19. Oktober 2026, 19:41:03 UTC, beziehungsweise dem 20. Oktober in Japan. [ESA](https://www.esa.int/Science_Exploration/Space_Science/Mars_moon_lander_set_to_launch_on_19_October) und [DLR](https://www.dlr.de/de/aktuelles/nachrichten/2026/auf-zu-den-marsmonden-mission-mmx-und-rover-idefix-bereit-zum-start) beschreiben Marsankunft 2027 und Roverabsetzen Ende 2028/Anfang 2029 als Planung.
+
+Die Tagesgrenzen der Zeitleistenabschnitte und Sprungdaten sind illustrative Einordnungen, keine offiziell bestätigten Manövertermine. Nach Ende der Horizons-Abdeckung markiert ein hohles Symbol lediglich den geplanten Zielbereich bei Phobos. Ob Landung und Betrieb tatsächlich erfolgen, muss durch neue Meldungen bestätigt werden. IDEFIX soll auf Phobos verbleiben; die für 2031 geplante Rückkehr betrifft das Probenmaterial.

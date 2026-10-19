@@ -1,0 +1,52 @@
+.idefix-card { order:23; gap:12px; }
+.idefix-card .group-title { margin:0; font-size:1.15rem; }
+.idefix-intro { margin:0; color:var(--muted); font-size:.86rem; line-height:1.5; text-align:center; }
+.idefix-views { display:grid; grid-template-columns:minmax(0,1fr) 180px; align-items:center; gap:8px; width:100%; padding:8px; border-radius:12px; background:#0b1730; color:#e8efff; }
+.idefix-overview { display:block; width:100%; height:auto; overflow:visible; }
+.idefix-overview text { fill:#edf3ff; font-size:var(--idefix-label-size,18px); paint-order:stroke; stroke:#0b1730; stroke-width:3px; stroke-linejoin:round; }
+.idefix-orbit { fill:none; stroke-width:1; }
+.idefix-orbit-earth { stroke:#52c7ed66; }
+.idefix-orbit-mars { stroke:#f69a7066; }
+.idefix-prediction { fill:none; stroke:#b0bddd; stroke-width:1.2; stroke-dasharray:3 5; opacity:.55; }
+.idefix-trail-pixel { fill:#ffcf58; shape-rendering:crispEdges; }
+.idefix-sun circle { fill:#ffcf58; filter:drop-shadow(0 0 5px #e5a12088); }
+.idefix-earth circle { fill:#62d4ff; stroke:#0b1730; stroke-width:2px; }
+.idefix-mars circle { fill:#ed916c; stroke:#0b1730; stroke-width:2px; }
+.idefix-probe rect { fill:#ffe38d; stroke:#fff; stroke-width:1; shape-rendering:crispEdges; }
+.idefix-probe path { stroke:#ffe38d; stroke-width:2; fill:none; }
+.idefix-card[data-position-mode="planned"] .idefix-probe rect { fill:#0b1730; stroke:#ffcf58; stroke-dasharray:2 1; }
+.idefix-moon-view { min-width:0; text-align:center; }
+.idefix-moon-view svg { display:block; width:100%; height:auto; }
+.idefix-moon-view svg text { fill:#e8efff; font-size:15px; }
+.idefix-moon-orbit { fill:none; stroke:#8294b4; stroke-dasharray:3 4; }
+.idefix-phobos path { fill:#c2bbad; stroke:#edf3ff; stroke-width:1; }
+.idefix-rover-target rect { fill:#0b1730; stroke:#ffcf58; stroke-width:1.5; stroke-dasharray:2 1; }
+.idefix-moon-view p { margin:0 6px 6px; font-size:.72rem; line-height:1.45; color:#b9c6de; }
+.idefix-legend { display:flex; flex-wrap:wrap; justify-content:center; gap:7px 16px; width:100%; color:var(--muted); font-size:.75rem; }
+.idefix-legend > span { display:inline-flex; align-items:center; gap:5px; }
+.idefix-legend i { width:14px; height:8px; display:inline-block; flex-shrink:0; }
+.idefix-key-pixels { background:#d69a16; }
+.idefix-key-line { border-top:1px dashed var(--muted); transform:translateY(4px); }
+.idefix-key-target { border:1px dashed #c78f15; }
+.idefix-position { width:100%; margin:0; color:var(--muted); font-size:.8rem; line-height:1.5; text-align:center; }
+.idefix-date-heading { display:flex; flex-wrap:wrap; justify-content:space-between; gap:6px 12px; width:100%; font-size:.85rem; }
+.idefix-date-heading output { font-variant-numeric:tabular-nums; }
+.idefix-controls,.idefix-jumps { display:flex; flex-wrap:wrap; justify-content:center; gap:6px; width:100%; }
+.idefix-controls button,.idefix-jumps button { min-height:36px; margin:0; padding:7px 9px; border:1px solid var(--border); border-radius:8px; background:var(--card); color:var(--accent); font-size:.76rem; }
+.idefix-jumps button { border-style:dashed; color:var(--muted); }
+.idefix-card button:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+.idefix-phase-box { display:grid; gap:7px; width:100%; padding:12px 14px; border-radius:9px; background:color-mix(in srgb,var(--accent) 8%,var(--card)); line-height:1.5; text-align:left; font-size:.86rem; }
+.idefix-eyebrow { color:var(--muted); font-size:.72rem; }
+.idefix-phase-box p,.idefix-news p { margin:0; }
+.idefix-news { display:grid; gap:7px; width:100%; text-align:left; font-size:.82rem; line-height:1.5; }
+.idefix-news h3 { margin:0; font-size:.87rem; }
+#idefixVerified,#idefixStale,.idefix-coverage { color:var(--muted); font-size:.75rem; }
+.idefix-coverage { margin:0; text-align:left; line-height:1.5; width:100%; overflow-wrap:anywhere; }
+.idefix-links { display:flex; flex-wrap:wrap; gap:8px 16px; width:100%; font-size:.78rem; line-height:1.5; }
+.idefix-links a { color:var(--accent); overflow-wrap:anywhere; }
+@media (min-width:1180px) { .idefix-card { grid-column:span 2; } }
+@media (max-width:760px) {
+ .idefix-views { grid-template-columns:1fr; }
+ .idefix-moon-view { width:180px; justify-self:center; }
+ .idefix-controls button,.idefix-jumps button { min-height:44px; }
+}

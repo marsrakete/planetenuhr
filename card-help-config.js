@@ -1588,3 +1588,183 @@ window.PLANETENUHR_CARD_HELP.fr.cards.planet_horizon.details.push("La couleur du
 window.PLANETENUHR_CARD_HELP.en.cards.planet_horizon.links.push({ label:"USNO: Rise, set and twilight definitions", url:"https://aa.usno.navy.mil/faq/RST_defs" });
 window.PLANETENUHR_CARD_HELP.de.cards.planet_horizon.links.push({ label:"USNO: Aufgang, Untergang und Dämmerung", url:"https://aa.usno.navy.mil/faq/RST_defs" });
 window.PLANETENUHR_CARD_HELP.fr.cards.planet_horizon.links.push({ label:"USNO : lever, coucher et crépuscules", url:"https://aa.usno.navy.mil/faq/RST_defs" });
+// Knowledge-card help stays concise; each entry carries its own source and caveats.
+window.PLANETENUHR_CARD_HELP.de.cards.sky_knowledge = {
+  "intro": [
+    "31 kurze Einträge: elf Eselsbrücken und Merksätze, zehn Planetenfakten und zehn Sternenfakten."
+  ],
+  "details": [
+    "Beim Laden wird die Reihenfolge zufällig gemischt. „Nächster“ zeigt jeden Eintrag einmal, bevor eine neue Runde beginnt. Es gibt keinen automatischen Wechsel.",
+    "Fremdsprachige Originale bleiben erhalten und bilden eigene Einträge. In den anderen Sprachen erscheint darunter ein übersetzter Untertitel; die Erklärung folgt der App-Sprache.",
+    "Quellen und örtliche Einschränkungen stehen direkt beim Eintrag. Eigene Formulierungen sind gekennzeichnet; ihre Quelle belegt den Sachinhalt, nicht den Wortlaut. Die französische p/d-Regel fasst eine belegte Merkmethode zusammen.",
+    "Die Inhalte hängen nicht vom gewählten Datum oder Ort ab. Mondregeln sind ausdrücklich regionale Orientierungshilfen. Quellenstand: 19. Oktober 2026."
+  ]
+};
+window.PLANETENUHR_CARD_HELP.en.cards.sky_knowledge = {
+  "intro": [
+    "31 short entries: eleven mnemonics and memory aids, ten planet facts and ten star facts."
+  ],
+  "details": [
+    "The order is shuffled on loading. “Next” shows each entry once before a new round begins. Entries never rotate automatically.",
+    "Foreign-language originals remain unchanged and are separate entries. Other languages show a translated subtitle; explanations follow the app language.",
+    "Sources and regional limitations appear with each entry. App-authored wording is marked; its source supports the facts rather than the wording. The French p/d rule summarizes a documented memory technique.",
+    "Content is independent of the selected date and place. Moon rules are explicitly regional guides. References checked: 19 October 2026."
+  ]
+};
+window.PLANETENUHR_CARD_HELP.fr.cards.sky_knowledge = {
+  "intro": [
+    "31 entrées courtes : onze astuces et aides-mémoire, dix faits sur les planètes et dix sur les étoiles."
+  ],
+  "details": [
+    "L’ordre est mélangé au chargement. « Suivant » affiche chaque entrée une fois avant de commencer une nouvelle série. Il n’y a aucun changement automatique.",
+    "Les originaux en langue étrangère restent inchangés et constituent des entrées distinctes. Les autres langues affichent un sous-titre traduit ; les explications suivent la langue de l’application.",
+    "Les sources et les limites régionales figurent dans chaque entrée. Les formulations originales sont signalées ; leur source confirme les faits, pas le texte. La règle française p/d résume une méthode mnémotechnique documentée.",
+    "Ces contenus sont indépendants de la date et du lieu sélectionnés. Les règles lunaires sont explicitement des repères régionaux. Sources vérifiées le 19 octobre 2026."
+  ]
+};
+
+// IDEFIX: source provenance, interpolation and schematic local moon geometry.
+window.PLANETENUHR_CARD_HELP.de.cards.idefix = {
+  "intro": [
+    "IDEFIX ist der deutsch-französische Rover von DLR und CNES an Bord der japanischen MMX-Mission. Die Kachel zeigt die Reise von der Erde zum Mars und den geplanten Einsatz auf Phobos."
+  ],
+  "formulas": [
+    {
+      "expr": "r(t) = (1 − u) r₀ + u r₁",
+      "note": "Lineare Interpolation zwischen zwei gespeicherten JPL-Vektoren: u = (t − t₀)/(t₁ − t₀). Zeiten sind UTC, Positionen heliozentrisch in AE, Ekliptik J2000/ICRF. Außerhalb der Datenabdeckung wird nicht extrapoliert."
+    },
+    {
+      "expr": "x = 310 + 94 X; y = 180 − 94 Y",
+      "note": "Draufsicht: X und Y sind die ekliptischen Koordinaten in AE, x und y SVG-Koordinaten. Die z-Komponente wird nicht gezeigt. Planeten- und Rovergrößen sind vergrößert."
+    },
+    {
+      "expr": "φ = 2π frac((t − t₀)/T)",
+      "note": "Phobos-Detail: T = 0,31891 Tage, rund 7 h 39 min. Nullphase und Orientierung sind frei gewählt. Das ist eine vergrößerte Umlaufskizze, keine berechnete Phobos-Ephemeride."
+    }
+  ],
+  "details": [
+    "Die eingebundene JAXA-Vorstartplanung vom 7. Oktober 2026 stammt aus JPL Horizons, Objekt −239. 825 Positionen decken den 19. Oktober 2026, 21:00 UTC, bis 30. Dezember 2028, 21:00 UTC, ab. In der ersten Woche liegen sie sechs Stunden, danach einen Tag auseinander. Auch die aktuelle Markierung ist eine Vorhersage, keine Live-Telemetrie.",
+    "Die bestätigte Startmeldung und ihr Prüfdatum stehen getrennt von den zeitabhängigen Planungsphasen. Der Status wird nicht automatisch aus Webseiten ausgelesen. Nach zwei Wochen weist die Kachel auf den älteren Meldungsstand hin; aktuelle Nachrichten führen direkt zum JAXA-Blog und den Partnern.",
+    "August 2027 für Mars und Ende 2028/Anfang 2029 für die Roverlandung sind Planungszeiträume. Die intern verwendeten Tagesgrenzen und Sprungtage dienen nur der Zeitleiste. Eine hohle Markierung ab Ende der Bahnabdeckung zeigt ausschließlich den geplanten Zielbereich bei Phobos, keine bestätigte Landung oder Oberflächenposition.",
+    "IDEFIX soll etwa 100 Tage auf Phobos arbeiten und dort bleiben. Die geplante Probenrückkehr 2031 ist keine Rückreise des Rovers.",
+    "Tage, Monate und Jahre lassen sich lokal erkunden. „Heute“ stellt die aktuelle Uhrzeit her, „Dashboardzeit“ übernimmt das gemeinsame Datum. Ein deutlicher Datumswechsel im Dashboard setzt den lokalen Versatz zurück. Positionen werden im Hintergrund einmal pro Minute aktualisiert; Controls und SVG-Knoten bleiben bestehen."
+  ],
+  "links": [
+    {
+      "label": "JAXA · MMX Mission News",
+      "url": "https://mmx-news.isas.jaxa.jp/"
+    },
+    {
+      "label": "CNES · MMX chronology",
+      "url": "https://cnes.fr/en/projects/mmx"
+    },
+    {
+      "label": "ESA · Mission timeline",
+      "url": "https://www.esa.int/Science_Exploration/Space_Science/Mars_moon_lander_set_to_launch_on_19_October"
+    },
+    {
+      "label": "NASA/JPL Horizons · MMX (-239)",
+      "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=%27-239%27&MAKE_EPHEM=%27NO%27"
+    },
+    {
+      "label": "NASA · Mars / Phobos facts",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/marsfact.html?level=1"
+    }
+  ]
+};
+window.PLANETENUHR_CARD_HELP.en.cards.idefix = {
+  "intro": [
+    "IDEFIX is the French-German rover built by CNES and DLR aboard Japan’s MMX mission. This card follows the journey from Earth to Mars and the planned exploration of Phobos."
+  ],
+  "formulas": [
+    {
+      "expr": "r(t) = (1 − u) r₀ + u r₁",
+      "note": "Linear interpolation between cached JPL vectors: u = (t − t₀)/(t₁ − t₀). Times are UTC; heliocentric positions are in AU, ecliptic J2000/ICRF. There is no extrapolation beyond coverage."
+    },
+    {
+      "expr": "x = 310 + 94 X; y = 180 − 94 Y",
+      "note": "Top view: X and Y are ecliptic coordinates in AU; x and y are SVG coordinates. The z component is omitted. Planet and rover sizes are enlarged."
+    },
+    {
+      "expr": "φ = 2π frac((t − t₀)/T)",
+      "note": "Phobos detail: T = 0.31891 days, about 7 h 39 min. Zero phase and orientation are arbitrary. This is an enlarged orbital sketch, not a Phobos ephemeris."
+    }
+  ],
+  "details": [
+    "The JAXA pre-launch planning solution revised 7 October 2026 is supplied by JPL Horizons, object −239. Its 825 cached positions cover 19 October 2026, 21:00 UTC, to 30 December 2028, 21:00 UTC: six-hour intervals in the first week, then daily. The current marker is also a prediction, not live telemetry.",
+    "The confirmed launch report and review date are separate from the displayed planning phases. Status is not scraped automatically. After two weeks the card flags the older report; links lead directly to the JAXA mission blog and partners.",
+    "August 2027 for Mars arrival and late 2028/early 2029 for rover landing are planning periods. Internal day boundaries and preset days only organize the timeline. A hollow marker after trajectory coverage ends shows only the planned destination near Phobos, not a confirmed landing or surface location.",
+    "IDEFIX is planned to operate on Phobos for about 100 days and remain there. The planned sample return in 2031 does not bring the rover home.",
+    "Explore days, months and years locally. “Today” restores the current time; “Dashboard time” follows the shared date. A substantial dashboard date change resets local exploration. Positions refresh once a minute; controls and SVG nodes are retained."
+  ],
+  "links": [
+    {
+      "label": "JAXA · MMX Mission News",
+      "url": "https://mmx-news.isas.jaxa.jp/"
+    },
+    {
+      "label": "CNES · MMX chronology",
+      "url": "https://cnes.fr/en/projects/mmx"
+    },
+    {
+      "label": "ESA · Mission timeline",
+      "url": "https://www.esa.int/Science_Exploration/Space_Science/Mars_moon_lander_set_to_launch_on_19_October"
+    },
+    {
+      "label": "NASA/JPL Horizons · MMX (-239)",
+      "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=%27-239%27&MAKE_EPHEM=%27NO%27"
+    },
+    {
+      "label": "NASA · Mars / Phobos facts",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/marsfact.html?level=1"
+    }
+  ]
+};
+window.PLANETENUHR_CARD_HELP.fr.cards.idefix = {
+  "intro": [
+    "IDEFIX est le rover franco-allemand du CNES et du DLR embarqué sur la mission japonaise MMX. Cette carte suit le voyage de la Terre à Mars et l’exploration prévue de Phobos."
+  ],
+  "formulas": [
+    {
+      "expr": "r(t) = (1 − u) r₀ + u r₁",
+      "note": "Interpolation linéaire entre deux vecteurs JPL enregistrés : u = (t − t₀)/(t₁ − t₀). Temps UTC ; positions héliocentriques en UA, écliptique J2000/ICRF. Aucune extrapolation hors des données."
+    },
+    {
+      "expr": "x = 310 + 94 X; y = 180 − 94 Y",
+      "note": "Vue de dessus : X et Y sont les coordonnées écliptiques en UA ; x et y les coordonnées SVG. La composante z est omise. Les planètes et le rover sont agrandis."
+    },
+    {
+      "expr": "φ = 2π frac((t − t₀)/T)",
+      "note": "Détail de Phobos : T = 0,31891 jour, environ 7 h 39 min. Phase initiale et orientation arbitraires. C’est un schéma orbital agrandi, pas une éphéméride de Phobos."
+    }
+  ],
+  "details": [
+    "La prévision JAXA avant lancement, révisée le 7 octobre 2026, provient de JPL Horizons, objet −239. Les 825 positions vont du 19 octobre 2026 à 21 h UTC au 30 décembre 2028 à 21 h UTC, toutes les six heures la première semaine puis chaque jour. Même le marqueur actuel est une prévision, sans télémétrie en direct.",
+    "La confirmation du lancement et sa date de vérification sont séparées des phases prévues. L’état n’est pas extrait automatiquement des sites. Après deux semaines, la carte signale l’ancienneté de l’information ; les liens mènent au blog JAXA et aux partenaires.",
+    "Août 2027 pour Mars et fin 2028/début 2029 pour le rover sont des périodes prévues. Les limites journalières et dates des boutons servent seulement à la frise. Après la fin des données, un marqueur creux indique uniquement la destination prévue près de Phobos, pas un atterrissage ou un emplacement confirmé.",
+    "IDEFIX doit travailler environ 100 jours sur Phobos et y rester. Le retour prévu des échantillons en 2031 ne ramène pas le rover.",
+    "Explorer localement les jours, mois et années. « Aujourd’hui » rétablit l’heure actuelle ; « Date du tableau » reprend la date commune. Un changement important de date du tableau réinitialise l’exploration. Les positions s’actualisent chaque minute sans remplacer les contrôles ni les nœuds SVG."
+  ],
+  "links": [
+    {
+      "label": "JAXA · MMX Mission News",
+      "url": "https://mmx-news.isas.jaxa.jp/"
+    },
+    {
+      "label": "CNES · MMX chronology",
+      "url": "https://cnes.fr/en/projects/mmx"
+    },
+    {
+      "label": "ESA · Mission timeline",
+      "url": "https://www.esa.int/Science_Exploration/Space_Science/Mars_moon_lander_set_to_launch_on_19_October"
+    },
+    {
+      "label": "NASA/JPL Horizons · MMX (-239)",
+      "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=%27-239%27&MAKE_EPHEM=%27NO%27"
+    },
+    {
+      "label": "NASA · Mars / Phobos facts",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/marsfact.html?level=1"
+    }
+  ]
+};

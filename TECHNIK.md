@@ -4,6 +4,10 @@ Diese Datei beschreibt Aufbau, Entwicklung und Pflege der App. [Zur Übersicht i
 
 ## Projektstruktur
 
+- `mnemonics-config.js`: 31 geprüfte Inhalte mit stabilen IDs, Kategorien, Originalsprache, deutschen/englischen/französischen Texten und Quellen; Stand 19. Oktober 2026.
+- `sky-knowledge.js`, `sky-knowledge.css`: Controller und Darstellung der Kachel „Himmelswissen“.
+
+
 - `index.html`, `styles.css`
   Seitenstruktur, Vorlagen, Darstellung, Interaktion und bestehende astronomische Berechnungen
 - `astronomy-explorer.js`, `astronomy-explorer.css`
@@ -328,3 +332,37 @@ Das Vorschaubild liegt in:
 ```text
 image_og.jpg
 ```
+
+## Himmelswissen pflegen
+
+Die Einträge in `mnemonics-config.js` haben `id`, `kind` (`mnemonic`, `planet`, `star`), `texts.de/en/fr` und `sources`. Jeder Sprachtext enthält `title` und `explanation`, bei Bedarf `subtitle` und `note`. Sprüche führen zusätzlich `original.language` und `original.text`; `ownWording` kennzeichnet eigene Formulierungen. Fremdsprachige Originale bilden eigenständige Einträge und erhalten in den anderen Sprachen Untertitel.
+
+Beim Laden mischt Fisher–Yates alle IDs. Erst nach einer vollständigen Runde wird erneut gemischt; ein unmittelbarer Wiederholer über die Rundengrenze wird vermieden. Erneute Textaktualisierungen behalten Eintrag und Reihenfolge bei. Der Controller verwendet HTML-Templates und behält Artikel und Button im DOM. Änderungen aktualisieren nur diese Kachel im Masonry-Layout. Es gibt keine Timer und keine Kopplung an Datum oder Ort.
+
+Quellen belegen bei eigenen Formulierungen den Sachinhalt. Die französische p/d-Formulierung fasst eine belegte Methode zusammen; sie ist kein historisch belegtes wörtliches Zitat. Einschränkungen gehören in die sichtbaren `note`-Texte und nicht nur in die ?-Hilfe.
+
+Prüfung: `npm run test:knowledge` kontrolliert den Inhaltsvertrag, Quellen, Sprachabdeckung und Mischrunden. Browserprüfungen sind zusätzlich für Layout, Fokus und Scrollposition nötig.
+
+## IDEFIX-Kachel und Bahndaten
+
+- `idefix-config.js`: kuratierte Meilensteine, Zeitregler-Schritte, Status-Prüfdatum und Quellen. Landefenster und Sprungtage sind zeitliche Einordnungen des Missionsplans, keine bestätigten Tagesdaten.
+- `idefix-ephemeris.js`: lokal gespeicherte JAXA-Vorstartplanung aus JPL Horizons für MMX (−239), einschließlich Abfrage-URLs, Referenzrahmen, UTC-Zeitskala, Abruf- und Revisionsdatum.
+- `idefix-model.js`: Interpolation ohne Extrapolation, Klassifikation der Planungsphasen, UTC-Kalenderschritte und schematischer Phobos-Umlauf.
+- `idefix.js`, `idefix.css`: Darstellung und Interaktion; wiederholte Strukturen stammen aus HTML-Templates.
+- `scripts/update-idefix-ephemeris.js`: bewusster Abruf der öffentlichen Horizons-Vektoren über Node.js.
+
+Die eingebundene Lösung `20261019_20281231_MMX_V0.2` wurde am 7. Oktober 2026 revidiert. 825 Positionen reichen von 19. Oktober 2026, 21:00 UTC, bis 30. Dezember 2028, 21:00 UTC. Die erste Woche verwendet Sechs-Stunden-Schritte, danach Tageswerte. Die Daten werden im Browser nicht aus fremden APIs nachgeladen und funktionieren daher auch ohne CORS-Zugriff oder Netzverbindung nach vollständigem Laden der statischen Dateien.
+
+Bewusst aktualisieren:
+
+```text
+node scripts/update-idefix-ephemeris.js
+npm run test:idefix
+npm run validate:repo
+```
+
+Das Skript prüft API-Version, Ziel, Referenzrahmen und die erwartete Planungs-Lösung vor dem Schreiben. Bei geänderter Bahn-Lösung ist eine inhaltliche Prüfung und Anpassung erforderlich. Startmeldung, Status-Prüfdatum, Planungsfenster, Quellen und Hilfetexte werden separat redaktionell gepflegt; ein Bahndatenabruf bestätigt keine Missionsereignisse.
+
+Die Kachel trennt belegte Meldung und Datumsansicht: „Zuletzt bestätigt“ ist ein datierter Stand, während die Phasen der Zeitleiste Planungsangaben bleiben. Nach 14 Tagen erscheint ein Hinweis auf den älteren Meldungsstand. Neue Nachrichten werden direkt im JAXA-Blog verlinkt. Nach Ende der Bahnabdeckung wird nur ein hohler Zielbereich am Mars/Phobos gezeigt; keine erfundene Flugbahn wird fortgesetzt. Die Skizze des Phobos-Umlaufs besitzt keine beobachtete Nullphase.
+
+Ein Minutentakt aktualisiert das gemeinsame Basisdatum. Lokale Erkundungszeit bleibt fest; ein Dashboard-Datumssprung von mehr als zwölf Stunden setzt sie zurück. Alle Bedienelemente, Pixel und SVG-Gruppen bleiben im DOM, das Masonry-Layout wird nur für die Kachel aktualisiert.

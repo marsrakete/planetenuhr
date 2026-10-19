@@ -40,6 +40,8 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.18.0/dist/contrib/auto-render.min.js" integrity="sha384-bjyGPfbij8/NDKJhSGZNP/khQVgtHUE5exjm4Ydllo42FwIgYsdLO2lXGmRBf5Mz" crossorigin="anonymous" onload="window.renderPlanetenuhrHelpMath && window.renderPlanetenuhrHelpMath()"></script>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="astronomy-explorer.css" />
+  <link rel="stylesheet" href="sky-knowledge.css" />
+  <link rel="stylesheet" href="idefix.css" />
 </head>
 <body>
   <div class="overlay-controls">
@@ -306,6 +308,70 @@
       <div class="legend-small" id="visibilityLegend">Approximate for Berlin; based on solar elongation</div>
     </div>
 
+    <section class="display-container idefix-card wide-card" data-help-key="idefix">
+      <h2 class="group-title" data-idefix-text="idefix_title"></h2>
+      <p class="idefix-intro" data-idefix-text="idefix_intro"></p>
+      <div class="idefix-views">
+        <svg id="idefixPlot" class="idefix-overview" viewBox="0 0 620 360" role="img">
+          <path id="idefixMarsOrbit" class="idefix-orbit idefix-orbit-mars"></path>
+          <path id="idefixEarthOrbit" class="idefix-orbit idefix-orbit-earth"></path>
+          <path id="idefixPrediction" class="idefix-prediction"></path>
+          <g id="idefixTrail" aria-hidden="true"></g>
+          <g transform="translate(310 180)" class="idefix-sun"><circle r="13"></circle><text y="31" text-anchor="middle" data-idefix-text="eclipse_sun"></text></g>
+          <g id="idefixEarth" class="idefix-earth"><circle r="6"></circle><text y="22" text-anchor="middle" data-idefix-text="planet_earth"></text></g>
+          <g id="idefixMars" class="idefix-mars"><circle r="5"></circle><text y="-15" text-anchor="middle" data-idefix-text="planet_mars"></text></g>
+          <g id="idefixProbe" class="idefix-probe"><rect x="-4" y="-4" width="8" height="8"></rect><path d="M -7 -7 L -3 -7 M 3 -7 L 7 -7 M -7 7 L -3 7 M 3 7 L 7 7"></path></g>
+        </svg>
+        <div class="idefix-moon-view">
+          <svg id="idefixMoonPlot" viewBox="0 0 200 190" role="img">
+            <circle class="idefix-moon-orbit" cx="100" cy="92" r="60"></circle>
+            <g class="idefix-mars" transform="translate(100 92)"><circle r="17"></circle><text y="34" text-anchor="middle" data-idefix-text="planet_mars"></text></g>
+            <g id="idefixPhobos" class="idefix-phobos"><path d="M -6 -3 L -2 -6 L 5 -3 L 6 3 L 0 5 L -5 2 Z"></path></g>
+            <g id="idefixRoverOnPhobos" class="idefix-rover-target"><rect x="-4" y="-4" width="8" height="8"></rect></g>
+            <text class="idefix-phobos-caption" x="100" y="176" text-anchor="middle" data-idefix-text="idefix_phobos"></text>
+          </svg>
+          <p data-idefix-text="idefix_moon_note"></p>
+        </div>
+      </div>
+      <div class="idefix-legend">
+        <span><i class="idefix-key-pixels"></i><span data-idefix-text="idefix_pixels"></span></span>
+        <span><i class="idefix-key-line"></i><span data-idefix-text="idefix_forecast"></span></span>
+        <span><i class="idefix-key-target"></i><span data-idefix-text="idefix_target"></span></span>
+      </div>
+      <p id="idefixPosition" class="idefix-position"></p>
+      <div class="idefix-date-heading"><label for="idefixTime" data-idefix-text="idefix_explore"></label><output id="idefixDate" for="idefixTime"></output></div>
+      <input id="idefixTime" class="explorer-slider" type="range" min="0" max="1900" step="any" value="0" />
+      <div id="idefixControls" class="idefix-controls" role="group"></div>
+      <div id="idefixJumps" class="idefix-jumps"></div>
+      <div class="idefix-phase-box"><span class="idefix-eyebrow" data-idefix-text="idefix_plan_heading"></span><strong id="idefixPhase"></strong><p id="idefixPhaseDetail"></p></div>
+      <div class="idefix-news"><h3 data-idefix-text="idefix_news_heading"></h3><p id="idefixLatest"></p><p id="idefixVerified"></p><p id="idefixStale" data-idefix-text="idefix_stale" hidden></p></div>
+      <p id="idefixCoverage" class="idefix-coverage"></p>
+      <nav id="idefixLinks" class="idefix-links"></nav>
+    </section>
+    <template id="idefixTrailPixelTemplate"><svg xmlns="http://www.w3.org/2000/svg"><rect width="2" height="2" class="idefix-trail-pixel"></rect></svg></template>
+    <template id="idefixControlTemplate"><button type="button"></button></template>
+    <template id="idefixLinkTemplate"><a target="_blank" rel="noopener noreferrer"></a></template>
+    <section class="display-container knowledge-card" data-help-key="sky_knowledge">
+      <h2 id="knowledgeHeading" class="group-title"></h2>
+      <div class="knowledge-controls">
+        <div class="knowledge-meta"><span id="knowledgeCategory"></span><small id="knowledgeCounter"></small></div>
+        <button id="knowledgeNext" class="knowledge-next" type="button" aria-controls="knowledgeContent"></button>
+      </div>
+      <div id="knowledgeContent" class="knowledge-content" aria-live="polite" aria-atomic="true"></div>
+    </section>
+    <template id="knowledgeEntryTemplate">
+      <article class="knowledge-entry">
+        <h3 class="knowledge-title" data-knowledge-title></h3>
+        <blockquote class="knowledge-original" data-knowledge-original hidden></blockquote>
+        <p class="knowledge-subtitle" data-knowledge-subtitle hidden></p>
+        <p class="knowledge-explanation" data-knowledge-explanation></p>
+        <p class="knowledge-note" data-knowledge-note hidden></p>
+        <p class="knowledge-own" data-knowledge-own hidden></p>
+        <div class="knowledge-source-label"><span id="knowledgeSourceLabel"></span></div>
+        <div class="knowledge-sources" data-knowledge-sources></div>
+      </article>
+    </template>
+    <template id="knowledgeSourceTemplate"><a target="_blank" rel="noopener noreferrer"></a></template>
     <section class="display-container horizon-card wide-card" data-help-key="planet_horizon">
       <h2 class="group-title" data-explorer-text="title_planet_horizon"></h2>
       <div class="explorer-context" id="horizonContext"></div>
@@ -944,6 +1010,12 @@
   <script src="astronomy-explorer-config.js"></script>
   <script src="astronomy-explorer-model.js"></script>
   <script src="astronomy-explorer.js"></script>
+  <script src="mnemonics-config.js"></script>
+  <script src="sky-knowledge.js"></script>
+  <script src="idefix-config.js"></script>
+  <script src="idefix-ephemeris.js"></script>
+  <script src="idefix-model.js"></script>
+  <script src="idefix.js"></script>
   <script>
 
   window.onerror = function(msg, url, line, col, error) {
@@ -1014,6 +1086,8 @@
     let storedCardSizes = {};
     let dateSettingsPanelOpen = false;
     let astronomyExplorer = null;
+    let skyKnowledge = null;
+    let idefixMission = null;
 
     function currentCardHelpPack(){
       return cardHelp[lang] || cardHelp.en || { sections:{}, cards:{} };
@@ -1628,6 +1702,9 @@
         if (key && t['moon_' + key]) el.textContent = t['moon_' + key];
       });
       renderCalendar();
+      if (skyKnowledge) {
+        skyKnowledge.render();
+      }
     }
 
     /**
@@ -6788,6 +6865,9 @@
       const date = selectedSolarDate();
       updateControlDateReadout();
       renderAstronomyExplorer(date);
+      if (idefixMission) {
+        idefixMission.render(date);
+      }
       renderSolarSystem(date);
       renderBarycenter(date);
       renderLagrangePoints(date);
@@ -10661,6 +10741,18 @@ function computeMoon(date){
       solarDateSlider.value = String(solarDayOffset);
       solarDateSlider.setAttribute('aria-valuenow', String(solarDayOffset));
     }
+    idefixMission = window.PLANETENUHR_IDEFIX.create({
+      getDate: selectedSolarDate,
+      getLanguage: () => lang,
+      getTranslations: () => t,
+      getHeliocentricPosition: heliocentricPosition,
+      updateCardLayout: updateSingleCardMasonryLayout
+    });
+    skyKnowledge = window.PLANETENUHR_KNOWLEDGE.create({
+      getLanguage: () => lang,
+      getTranslations: () => t,
+      updateCardLayout: updateSingleCardMasonryLayout
+    });
     astronomyExplorer = window.PLANETENUHR_EXPLORER.create({
       getDate: selectedSolarDate,
       getLocation: selectedLocation,
