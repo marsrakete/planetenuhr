@@ -149,7 +149,11 @@ Nach vielen Render-Vorgängen wird das Kartenlayout erneut organisiert:
 
 Diese Funktion wird nach zahlreichen Kachel-Updates erneut aufgerufen, damit unterschiedlich hohe Karten im Grid sinnvoll neu einsortiert werden.
 
+Die Kachel-Größenbeobachtung ist nur oberhalb von 760 Pixeln aktiv. In der mobilen Ansicht fließen die Karten über CSS untereinander; beim Wechsel dorthin wird der `ResizeObserver` getrennt und beim Wechsel zurück wieder verbunden. Unveränderte Größenmeldungen lösen keinen neuen Layoutdurchlauf aus; tatsächliche Änderungen werden über `requestAnimationFrame` gebündelt. Im Observer-Callback werden keine Layout-Attribute verändert. Die beiden exakten Browsermeldungen `ResizeObserver loop completed with undelivered notifications.` und `ResizeObserver loop limit exceeded` bleiben Konsolenwarnungen ohne blockierenden Dialog. Andere JavaScript-Fehler behalten ihre bisherige Anzeige. Regressionen deckt `npm run test:explorer` ab; WebKit- und Chromium-Browserprüfungen ergänzen die Tests.
+
 ### Lokale Aktualisierung der Astronomie-Kacheln
+
+Auch die eigenen SVG-Größenbeobachter in `astronomy-explorer.js` und `idefix.js` führen Zeichenänderungen erst im nächsten `requestAnimationFrame` aus. Mehrere Meldungen werden gebündelt. Insbesondere IDEFIX ändert `viewBox`, Schriftgröße und Beschriftungsposition nur bei tatsächlich veränderter Breite. Dadurch ändern die SVGs während einer ResizeObserver-Auslieferung nicht ihre eigenen Abmessungen.
 
 Lokale Auswahlen behalten ihre Buttons, Regler und SVG-Markierungen im DOM. Die Planetenauswahl ändert nur Hervorhebung, Beschriftung und Detailtext; der Lichtreise-Regler verwendet bereits berechnete Reisedaten. Nur bei Zeit-, Datums- oder Ortsänderungen werden die betreffenden Positionen neu berechnet. Höhenänderungen einer Kachel werden lokal übernommen. Auch bei einer vollständigen Rasterberechnung bleiben die bisherigen Höhenbelegungen während der Messung bestehen, damit die Seite nicht vorübergehend zusammenfällt und die Scrollposition verliert.
 

@@ -219,3 +219,115 @@ test('polar day and polar night avoid invented sunrise or sunset and retain wint
   const antarctic = model.solarLightDay(new Date('2026-12-21T12:00:00Z'), 'Antarctica/McMurdo', date => solarAltitudeForObserver(date, { latitude:-78, longitude:166 }));
   assert.equal(antarctic.polarDay, true);
 });
+
+
+test('mobile stops observing cards and desktop resumes after a viewport change', () => {
+  const cards = [{}, {}];
+  const observed = [];
+  let disconnects = 0;
+  const realm = vm.createContext({
+    window:{innerWidth:390},
+    masonryObserver:{observe(card){observed.push(card);},disconnect(){disconnects += 1;}},
+    masonryObserverActive:false,
+    masonryObservedSizes:new WeakMap(),
+    visibleGridCards(){return cards;}
+  });
+  loadDashboardFunction('syncMasonryObservation', realm);
+  realm.syncMasonryObservation();
+  assert.equal(observed.length, 0);
+  realm.window.innerWidth = 1280;
+  realm.syncMasonryObservation();
+  realm.syncMasonryObservation();
+  assert.equal(observed.length, 2, 'desktop observes each card only once');
+  const previousSizes = realm.masonryObservedSizes;
+  realm.window.innerWidth = 760;
+  realm.syncMasonryObservation();
+  assert.equal(disconnects, 1);
+  assert.equal(realm.masonryObserverActive, false);
+  assert.notEqual(realm.masonryObservedSizes, previousSizes);
+  realm.window.innerWidth = 761;
+  realm.syncMasonryObservation();
+  assert.equal(observed.length, 4, 'crossing back to desktop reconnects');
+});
+
+test('resize delivery defers changed dimensions and ignores duplicate, mobile and suppressed batches', () => {
+  let scheduled = 0;
+  const card = {};
+  const entry = {target:card,contentRect:{width:360,height:200}};
+  const realm = vm.createContext({
+    window:{innerWidth:1280},masonryObserverActive:true,suppressMasonryObserver:false,
+    masonryObservedSizes:new WeakMap(),scheduleMasonryLayout(){scheduled += 1;}
+  });
+  loadDashboardFunction('handleMasonryResize', realm);
+  realm.handleMasonryResize([entry]);
+  realm.handleMasonryResize([entry]);
+  assert.equal(scheduled, 1);
+  entry.contentRect.height = 250;
+  realm.handleMasonryResize([entry]);
+  assert.equal(scheduled, 2);
+  realm.suppressMasonryObserver = true;
+  entry.contentRect.height = 300;
+  realm.handleMasonryResize([entry]);
+  assert.equal(scheduled, 2);
+  realm.suppressMasonryObserver = false;
+  realm.handleMasonryResize([entry]);
+  assert.equal(scheduled, 3, 'suppressed sizes are processed on a later delivery');
+  realm.window.innerWidth = 390;
+  entry.contentRect.height = 350;
+  realm.handleMasonryResize([entry]);
+  assert.equal(scheduled, 3);
+});
+
+test('only the two exact ResizeObserver delivery warnings bypass the error dialog', () => {
+  const alerts = [], warnings = [];
+  const realm = vm.createContext({alert(message){alerts.push(message);},console:{warn(message){warnings.push(message);}}});
+  loadDashboardFunction('handleDashboardError', realm);
+  for (const warning of ['ResizeObserver loop completed with undelivered notifications.','ResizeObserver loop limit exceeded']) {
+    assert.equal(realm.handleDashboardError(warning, '', 0, 0, null), true);
+  }
+  assert.equal(alerts.length, 0);
+  assert.equal(warnings.length, 2);
+  assert.equal(realm.handleDashboardError('TypeError: example', 'index.html', 42, 7, null), false);
+  assert.equal(realm.handleDashboardError('ResizeObserver unexpected application failure', '', 3, 0, null), false);
+  assert.equal(alerts.length, 2, 'other application errors remain visible');
+});
+
+
+test('both responsive SVG observers batch drawing into the next animation frame', () => {
+  for (const file of ['astronomy-explorer.js','idefix.js']) {
+    const source = fs.readFileSync(path.join(root,file),'utf8');
+    const start = source.indexOf('    function schedulePlotResize(');
+    assert.ok(start >= 0);
+    const end = source.indexOf('\n    }',start) + '\n    }'.length;
+    const frames = [];
+    let draws = 0;
+    const realm = vm.createContext({
+      plotResizeFrame:0,
+      requestAnimationFrame(callback){frames.push(callback);return frames.length;},
+      resizePlot(){draws += 1;},adaptPlot(){draws += 1;}
+    });
+    vm.runInContext(source.slice(start,end),realm);
+    realm.schedulePlotResize();realm.schedulePlotResize();
+    assert.equal(draws,0,'delivery must not synchronously change SVG dimensions');
+    assert.equal(frames.length,1,'deliveries share one queued frame');
+    frames[0]();assert.equal(draws,1);
+    realm.schedulePlotResize();assert.equal(frames.length,2);
+  }
+});
+
+test('IDEFIX adapts its SVG only when its rendered width changes', () => {
+  const source=fs.readFileSync(path.join(root,'idefix.js'),'utf8');
+  const start=source.indexOf('    function adaptPlot(');
+  const end=source.indexOf('\n    }',start)+'\n    }'.length;
+  const attrs=[];let width=300;
+  const realm=vm.createContext({
+    lastPlotWidth:0,
+    plot:{getBoundingClientRect(){return {width};},setAttribute(...args){attrs.push(args);},style:{setProperty(...args){attrs.push(args);}}},
+    document:{querySelector(){return {setAttribute(...args){attrs.push(args);}};}}
+  });
+  vm.runInContext(source.slice(start,end),realm);
+  realm.adaptPlot();const writes=attrs.length;assert.ok(writes>0);
+  realm.adaptPlot();assert.equal(attrs.length,writes,'identical size does not retrigger layout');
+  width=600;realm.adaptPlot();assert.ok(attrs.length>writes);
+  assert.ok(attrs.some(([name,value])=>name==='viewBox'&&value==='0 -25 620 410'));
+});

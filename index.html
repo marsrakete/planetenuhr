@@ -338,9 +338,9 @@
         <span><i class="idefix-key-line"></i><span data-idefix-text="idefix_forecast"></span></span>
         <span><i class="idefix-key-target"></i><span data-idefix-text="idefix_target"></span></span>
       </div>
+      <input id="idefixTime" class="explorer-slider" type="range" min="0" max="1900" step="any" value="0" />
       <p id="idefixPosition" class="idefix-position"></p>
       <div class="idefix-date-heading"><label for="idefixTime" data-idefix-text="idefix_explore"></label><output id="idefixDate" for="idefixTime"></output></div>
-      <input id="idefixTime" class="explorer-slider" type="range" min="0" max="1900" step="any" value="0" />
       <div id="idefixControls" class="idefix-controls" role="group"></div>
       <div id="idefixJumps" class="idefix-jumps"></div>
       <div class="idefix-phase-box"><span class="idefix-eyebrow" data-idefix-text="idefix_plan_heading"></span><strong id="idefixPhase"></strong><p id="idefixPhaseDetail"></p></div>
@@ -1031,9 +1031,25 @@
   <script src="idefix.js"></script>
   <script>
 
-  window.onerror = function(msg, url, line, col, error) {
-  alert("JS Error: " + msg + " @ " + line);
-};
+    /**
+     * Keeps browser resize-delivery warnings out of blocking dialogs; reports other errors as before.
+     * @param {string|Event} message Browser error message or event.
+     * @param {string} source Source URL supplied by the browser.
+     * @param {number} line Source line number.
+     * @param {number} column Source column number.
+     * @param {Error|null} error Original error, when available.
+     * @returns {boolean} True only for the two known browser ResizeObserver delivery warnings.
+     */
+    function handleDashboardError(message, source, line, column, error){
+      if (message === 'ResizeObserver loop completed with undelivered notifications.' ||
+          message === 'ResizeObserver loop limit exceeded') {
+        console.warn(message);
+        return true;
+      }
+      alert('JS Error: ' + message + ' @ ' + line);
+      return false;
+    }
+    window.onerror = handleDashboardError;
 
     // --- i18n ---
     let lang = 'en';
@@ -5216,6 +5232,8 @@
 
     let masonryFrame = 0;
     let masonryObserver = null;
+    let masonryObserverActive = false;
+    let masonryObservedSizes = new WeakMap();
     let masonryAfterLayoutCallbacks = [];
     let persistentViewportAnchor = null;
     let persistentScrollPosition = null;
@@ -5565,18 +5583,63 @@
       });
     }
 
+    /**
+     * Observes card sizes only where row spans are used. Mobile uses normal CSS flow.
+     * Disconnecting on mobile avoids unnecessary delivery cycles in iOS WebKit.
+     * No parameters.
+     * @returns {void}
+     */
+    function syncMasonryObservation(){
+      if (!masonryObserver) {
+        return;
+      }
+      if (window.innerWidth <= 760) {
+        if (masonryObserverActive) {
+          masonryObserver.disconnect();
+          masonryObserverActive = false;
+          masonryObservedSizes = new WeakMap();
+        }
+        return;
+      }
+      if (masonryObserverActive) {
+        return;
+      }
+      visibleGridCards().forEach(card => masonryObserver.observe(card));
+      masonryObserverActive = true;
+    }
+
+    /**
+     * Queues one deferred layout for actual size changes, without DOM writes during delivery.
+     * Repeated deliveries with unchanged dimensions do not create more layout passes.
+     * @param {ResizeObserverEntry[]} entries Delivered content-box measurements.
+     * @returns {void}
+     */
+    function handleMasonryResize(entries){
+      if (!masonryObserverActive || suppressMasonryObserver || window.innerWidth <= 760) {
+        return;
+      }
+      let changed = false;
+      entries.forEach(entry => {
+        const size = { width:entry.contentRect.width, height:entry.contentRect.height };
+        const previous = masonryObservedSizes.get(entry.target);
+        if (!previous || previous.width !== size.width || previous.height !== size.height) {
+          masonryObservedSizes.set(entry.target, size);
+          changed = true;
+        }
+      });
+      if (changed) {
+        scheduleMasonryLayout();
+      }
+    }
+
+    /** Initializes desktop observation and deferred grid updates. No parameters. @returns {void} */
     function initMasonryLayout(){
-      const cards = visibleGridCards();
       if ('ResizeObserver' in window) {
-        masonryObserver = new ResizeObserver(() => {
-          if (suppressMasonryObserver) {
-            return;
-          }
-          scheduleMasonryLayout();
-        });
-        cards.forEach(card => masonryObserver.observe(card));
+        masonryObserver = new ResizeObserver(handleMasonryResize);
+        syncMasonryObservation();
       }
       window.addEventListener('resize', () => {
+        syncMasonryObservation();
         syncDateMobilePanelForViewport();
         scheduleDeferredMasonryPasses();
       });

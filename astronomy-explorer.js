@@ -21,6 +21,7 @@ window.PLANETENUHR_EXPLORER = (() => {
     let baseDate = dependencies.getDate();
     let rows = [];
     let lastWidth = 0;
+    let plotResizeFrame = 0;
     let currentLightTravel = null;
     let lightTimer = null;
     let lightStartedAt = 0;
@@ -598,6 +599,21 @@ window.PLANETENUHR_EXPLORER = (() => {
       }
     }
 
+    /**
+     * Defers responsive SVG drawing until after observer delivery and batches notifications.
+     * No parameters.
+     * @returns {void}
+     */
+    function schedulePlotResize(){
+      if (plotResizeFrame) {
+        return;
+      }
+      plotResizeFrame = requestAnimationFrame(() => {
+        plotResizeFrame = 0;
+        resizePlot();
+      });
+    }
+
     buildControls();
     planetList.addEventListener('click', selectHorizonPlanet);
     lightTargets.addEventListener('click', selectLightPlanet);
@@ -607,10 +623,10 @@ window.PLANETENUHR_EXPLORER = (() => {
     document.getElementById('lightTravelReset').addEventListener('click', resetLight);
     document.getElementById('horizonReset').addEventListener('click', resetTime);
     if ('ResizeObserver' in window) {
-      const observer = new ResizeObserver(resizePlot);
+      const observer = new ResizeObserver(schedulePlotResize);
       observer.observe(plot);
     } else {
-      window.addEventListener('resize', resizePlot);
+      window.addEventListener('resize', schedulePlotResize);
     }
     return { render };
   }

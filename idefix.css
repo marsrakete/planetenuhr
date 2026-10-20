@@ -46,7 +46,8 @@
 .idefix-links a { color:var(--accent); overflow-wrap:anywhere; }
 @media (min-width:1180px) { .idefix-card { grid-column:span 2; } }
 @media (max-width:760px) {
- .idefix-views { grid-template-columns:1fr; }
- .idefix-moon-view { width:180px; justify-self:center; }
+ .idefix-views { grid-template-columns:1fr; row-gap:0; }
+ /* Both SVGs have empty edges; overlap only that space to keep the combined graphic compact. */
+ .idefix-moon-view { width:180px; justify-self:center; margin-top:-32px; }
  .idefix-controls button,.idefix-jumps button { min-height:44px; }
 }

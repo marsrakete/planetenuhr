@@ -17,6 +17,8 @@ window.PLANETENUHR_IDEFIX = (() => {
     let localDate = null;
     let followNow = false;
     let orbitYear = null;
+    let plotResizeFrame = 0;
+    let lastPlotWidth = 0;
     let currentDate = baseDate;
     const start = Date.parse(config.launch);
     const end = Date.parse(config.timelineEnd);
@@ -110,9 +112,10 @@ window.PLANETENUHR_IDEFIX = (() => {
     /** Adapts SVG labels and framing to the rendered width without replacing nodes. No parameters. @returns {void} */
     function adaptPlot(){
       const width = plot.getBoundingClientRect().width;
-      if (!width) {
+      if (!width || width === lastPlotWidth) {
         return;
       }
+      lastPlotWidth = width;
       let viewWidth = 620;
       let viewBox = '0 -25 620 410';
       if (width < 400) {
@@ -271,15 +274,30 @@ window.PLANETENUHR_IDEFIX = (() => {
       render(dependencies.getDate());
     }
 
+    /**
+     * Defers SVG size mutations until after observer delivery, coalescing repeated notifications.
+     * No parameters.
+     * @returns {void}
+     */
+    function schedulePlotResize(){
+      if (plotResizeFrame) {
+        return;
+      }
+      plotResizeFrame = requestAnimationFrame(() => {
+        plotResizeFrame = 0;
+        adaptPlot();
+      });
+    }
+
     buildTrail();
     buildLinks();
     buildControls();
     slider.addEventListener('input', seek);
     card.addEventListener('click', control);
     if ('ResizeObserver' in window) {
-      new ResizeObserver(adaptPlot).observe(plot);
+      new ResizeObserver(schedulePlotResize).observe(plot);
     } else {
-      window.addEventListener('resize', adaptPlot);
+      window.addEventListener('resize', schedulePlotResize);
     }
     setInterval(refreshCurrent, 60000);
     render();
