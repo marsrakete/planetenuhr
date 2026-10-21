@@ -1,5 +1,8 @@
 window.PLANETENUHR_TRANSLATIONS = {
   en: {
+    diagram_open: "Enlarge graphic",
+    diagram_close: "Close",
+    diagram_hint: "Enlarged snapshot of the current graphic. Scroll sideways or vertically to read the labels.",
     idefix_title: "IDEFIX on the way to Phobos",
     idefix_intro: "The French-German rover travels to the Martian moons aboard JAXA’s MMX.",
     idefix_phobos: "Phobos · moon of Mars",
@@ -534,6 +537,9 @@ window.PLANETENUHR_TRANSLATIONS = {
     aurora_germany_extreme: "Strong event; aurora may be visible across large parts of Germany."
   },
   de: {
+    diagram_open: "Grafik vergrößern",
+    diagram_close: "Schließen",
+    diagram_hint: "Vergrößertes Standbild der aktuellen Grafik. Zum Lesen der Beschriftungen seitlich oder nach oben und unten verschieben.",
     idefix_title: "IDEFIX auf dem Weg zu Phobos",
     idefix_intro: "Der deutsch-französische Rover reist mit JAXAs MMX zu den Marsmonden.",
     idefix_phobos: "Phobos · Marsmond",
@@ -1068,6 +1074,9 @@ window.PLANETENUHR_TRANSLATIONS = {
     aurora_germany_extreme: "Starkes Ereignis; Polarlicht kann in grossen Teilen Deutschlands sichtbar sein."
   },
   fr: {
+    diagram_open: "Agrandir le graphique",
+    diagram_close: "Fermer",
+    diagram_hint: "Vue agrandie figée du graphique actuel. Faites défiler horizontalement ou verticalement pour lire les libellés.",
     idefix_title: "IDEFIX en route vers Phobos",
     idefix_intro: "Le rover franco-allemand voyage vers les lunes de Mars à bord de MMX, mission de la JAXA.",
     idefix_phobos: "Phobos · lune de Mars",

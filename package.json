@@ -20,6 +20,7 @@
     "build": "node scripts/build.js",
     "validate:repo": "npm run build",
     "test:knowledge": "node --test scripts/sky-knowledge.test.js",
-    "test:idefix": "node --test scripts/idefix.test.js"
+    "test:idefix": "node --test scripts/idefix.test.js",
+    "test:typography": "node --test scripts/typography.test.js"
   }
 }

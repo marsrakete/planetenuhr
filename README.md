@@ -129,6 +129,8 @@ Unterstützt werden aktuell:
 
 Die Sprache wird aus `navigator.language` abgeleitet. Nicht unterstützte Sprachen fallen auf Englisch zurück.
 
+Bei Grafiken mit kleinen Beschriftungen öffnet **„Grafik vergrößern“** eine lesbare Detailansicht. Darin kannst du seitlich sowie nach oben und unten verschieben. Die Ansicht zeigt ein Standbild der aktuellen Grafik.
+
 ## Grenzen und Genauigkeit
 
 Planetenuhr ist ein anschauliches Astronomie-Dashboard mit vereinfachten numerischen Modellen. Die Stärke der App liegt in der Verbindung aus Übersicht, Anschaulichkeit und sofort nutzbarer Himmelsmechanik auf einer Seite.

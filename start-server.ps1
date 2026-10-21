@@ -1,13 +1,22 @@
 param(
-  [int]$Port = 5020
+  [ValidateRange(1, 65535)]
+  [int]$Port = 5020,
+  [ValidateNotNullOrEmpty()]
+  [string]$ListenAddress = "localhost"
 )
+
+$ErrorActionPreference = "Stop"
 
 $root = Split-Path -Parent $MyInvocation.MyCommand.Path
 $listener = [System.Net.HttpListener]::new()
-$listener.Prefixes.Add("http://localhost:$Port/")
+$listener.Prefixes.Add("http://${ListenAddress}:$Port/")
 $listener.Start()
 
-Write-Host "Zeiterfassung laeuft auf http://localhost:$Port/"
+Write-Host "Planetenuhr laeuft auf http://localhost:$Port/"
+Write-Host "Netzwerkbindung: http://${ListenAddress}:$Port/"
+if ($ListenAddress -eq "+" -or $ListenAddress -eq "*") {
+  Write-Host "Im Heimnetz: http://<IP-Adresse dieses Rechners>:$Port/"
+}
 Write-Host "Zum Beenden Strg+C druecken."
 
 $contentTypes = @{
@@ -29,8 +38,24 @@ try {
       $requestPath = "index.html"
     }
 
-    $safePath = $requestPath.Replace("/", "\")
-    $filePath = Join-Path $root $safePath
+    try {
+      $safePath = [System.Uri]::UnescapeDataString($requestPath).Replace("/", "\")
+      $filePath = [System.IO.Path]::GetFullPath((Join-Path $root $safePath))
+    }
+    catch {
+      $context.Response.StatusCode = 400
+      $context.Response.Close()
+      continue
+    }
+    $rootPrefix = $root.TrimEnd("\") + "\"
+
+    # Network clients may read project files, but not parent folders or hidden metadata.
+    if (-not $filePath.StartsWith($rootPrefix, [System.StringComparison]::OrdinalIgnoreCase) -or
+        ($safePath.Split("\") | Where-Object { $_.StartsWith(".") })) {
+      $context.Response.StatusCode = 403
+      $context.Response.Close()
+      continue
+    }
 
     if (-not (Test-Path $filePath -PathType Leaf)) {
       $context.Response.StatusCode = 404

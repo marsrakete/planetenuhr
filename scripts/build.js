@@ -29,6 +29,8 @@ function getRequiredFiles() {
     "sky-knowledge-graphics-config.js",
     "sky-knowledge-graphics.js",
     "sky-knowledge.css",
+    "diagram-details.js",
+    "diagram-details.css",
     "idefix-config.js",
     "idefix-ephemeris.js",
     "idefix-model.js",

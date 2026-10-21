@@ -9,6 +9,8 @@ Diese Datei beschreibt Aufbau, Entwicklung und Pflege der App. [Zur Übersicht i
 - `sky-knowledge-graphics-config.js`, `sky-knowledge-graphics.js`: lokalisierte Bildunterschriften und deklarative SVG-Szenen sowie deren Template-Renderer.
 
 
+- `diagram-details.js`, `diagram-details.css`: lesbare, statische SVG-Detailansichten für Kacheln mit kleinen Diagrammbeschriftungen.
+
 - `index.html`, `styles.css`
   Seitenstruktur, Vorlagen, Darstellung, Interaktion und bestehende astronomische Berechnungen
 - `astronomy-explorer.js`, `astronomy-explorer.css`
@@ -159,6 +161,26 @@ Lokale Auswahlen behalten ihre Buttons, Regler und SVG-Markierungen im DOM. Die 
 
 Die Tagessegmente werden pro Ort, Zeitzone und lokalem Datum zwischengespeichert. Beim Erkunden innerhalb desselben Tages bleiben Zeitband, SVG-Markierungen und Bedienelemente bestehen; nur Lichtzustand, Zeiger und Positionen werden aktualisiert.
 
+## Einheitliche Typografie und SVG-Details
+
+Die Schriftstufen stehen zentral in `styles.css` als CSS-Variablen. Komponenten verwenden diese Variablen statt eigener Zwischenwerte:
+
+| Rolle | Variable | Größe bei 16px Wurzelschrift |
+| --- | --- | --- |
+| Kacheltitel | `--font-card-title` | 20px, bis 768px Viewport 18px |
+| Zwischenüberschriften und Formulareingaben | `--font-subheading` | 16px |
+| Lesetext | `--font-body` | 15px |
+| Buttons | `--font-control` | 14px |
+| Hinweise und Quellen | `--font-note` | 13px |
+| Kompakte Beschriftungen | `--font-small` | 12px |
+| Minimum in SVG-Detailansichten | `--font-diagram` | 12 CSS-Pixel |
+
+Arial mit Sans-Serif-Fallback gilt auch für Formularelemente. Dekorative Uhrschriften, mathematische Formeln, große Messwerte und reine Werkzeug-Icons behalten ihre jeweiligen Aufgaben. Formulareingaben bleiben bei 16px; die globale Button-Stufe ist davon getrennt. Mobile und Desktop-Kacheln teilen dieselben Rollen. Zeilenhöhen folgen ebenfalls zentralen Rollen: `--line-heading` (1,25), `--line-body` (1,5), `--line-control` (1,35) und `--line-note` (1,45). Das gilt auch für dynamisch nachgeladene Bluesky-Beiträge, Finsternishinweise und Formel-Erläuterungen; mathematische Ausdrücke behalten ihre eigene Darstellung. Die erste Mondphasenbeschriftung wird linksbündig innerhalb der Zeitleiste gehalten, damit längere Übersetzungen nicht aus der Kachel ragen.
+
+`diagram-details.js` misst Textgrößen einschließlich der SVG-Transformationsmatrix. Enthält eine Kachel Beschriftungen unter 11,5 CSS-Pixeln, erhält sie einen lokalisierten „Grafik vergrößern“-Button aus einem HTML-Template. So bleibt die bestehende Übersicht kompakt. Ein natives `dialog` zeigt statische Kopien der aktuellen Grafiken; die Ansicht lässt sich per Tastatur oder Touch in beide Richtungen verschieben. SVG-Geometrie und astronomische Daten werden dafür nicht verändert. Die Vergrößerung berücksichtigt auch verschachtelte Transformationen und hält sichtbare Beschriftungen bei mindestens `--font-diagram`. Farben, Schriften und SVG-Paint-Referenzen werden aus dem aktuellen Zustand übernommen; IDs werden pro Kopie umbenannt, damit Farbverläufe und Filter nicht auf die Originalgrafik zurückgreifen. Beim Schließen werden die Kopien entfernt; die Kacheln behalten ihre Steuerelemente und ihren Zustand.
+
+Neue Inhalte und Größenänderungen werden über einen gebündelten Mutation-/Resize-Durchlauf berücksichtigt. Die Detailansicht selbst wird nicht beobachtet. Die zusätzlichen Texte stehen in `translations.js`. Prüfung: `npm run test:typography` ergänzt die bestehenden Tests; Browserprüfungen kontrollieren tatsächliche Schriftgrößen, SVG-Skalierung, überlaufende Texte sowie Fokus und Scrollposition.
+
 ## Code-Stil
 
 - Lesbarkeit geht vor Verdichtung.
@@ -179,6 +201,16 @@ Alternativ kann lokal ein einfacher Server genutzt werden:
 ```text
 start-server.ps1
 ```
+
+Das Script lauscht standardmäßig auf `http://localhost:5020/` für lokalen Zugriff am Rechner. Für Zugriff im Heimnetz kann es ausdrücklich mit `./start-server.ps1 -ListenAddress "+"` gestartet werden; dann bedient es auch `http://<LAN-IP>:5020/`. Mit `-Port` kann ein anderer Port gewählt werden. Nach einer Scriptänderung muss der laufende Server neu gestartet werden.
+
+Für die optionale Bindung an alle Rechneradressen (`+`) benötigt Windows eine zusätzliche HTTP-URL-Berechtigung. Diese wird für den lokalen Standardstart nicht benötigt. Eine dauerhafte URL-Reservierung ist eine eigene Systemeinstellung und wird vom Script nicht automatisch angelegt. Falls gewünscht, kann sie einmalig in einer PowerShell mit Administratorrechten für das eigene Benutzerkonto eingerichtet werden:
+
+```powershell
+netsh http add urlacl url=http://+:5020/ user="$env:USERDOMAIN\$env:USERNAME" listen=yes delegate=no
+```
+
+Anschließend kann das Script ohne Administratorrechte laufen. Andere Geräte müssen den Rechner über das Netzwerk erreichen können; ein Test vom selben Rechner prüft die HTTP-Bindung, nicht eine mögliche eingehende Firewall-Sperre. Der Server lehnt versteckte Metadaten und Pfade außerhalb des Projektordners ab. Startfehler brechen das Script ab.
 
 ## Build und Encoding-Schutz
 

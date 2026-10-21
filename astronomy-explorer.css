@@ -8,11 +8,13 @@
 .horizon-card,
 .light-travel-card { gap:12px; }
 .horizon-card .group-title,
-.light-travel-card .group-title { font-size:1.15rem; margin-top:0; margin-bottom:0; }
+.light-travel-card .group-title { margin-top:0; margin-bottom:0; }
 .explorer-context,
-.explorer-note { width:100%; text-align:center; color:var(--muted); line-height:1.5; font-size:.86rem; overflow-wrap:anywhere; }
+.explorer-note { width:100%; text-align:center; color:var(--muted); overflow-wrap:anywhere; }
+.explorer-context { font-size:var(--font-body); line-height:var(--line-body); }
+.explorer-note { font-size:var(--font-note); line-height:var(--line-note); }
 .horizon-plot { display:block; width:100%; height:300px; flex-shrink:0; }
-.horizon-plot text { font-family:Arial,sans-serif; font-size:12px; fill:var(--fg); }
+.horizon-plot text { font-family:var(--font-family); font-size:var(--font-diagram); fill:var(--fg); }
 .horizon-grid-line { stroke:var(--border); stroke-width:1; }
 .horizon-grid-line.is-sky { stroke:var(--horizon-sky-grid); opacity:.5; }
 .horizon-sky-top { stop-color:var(--horizon-sky-top); }
@@ -21,9 +23,9 @@
 .horizon-marker.is-selected:not(.is-below) circle { fill:var(--horizon-selected-color); }
 .horizon-marker:not(.is-below) text { fill:var(--horizon-sky-label); stroke:var(--horizon-sky-top); }
 .horizon-card[data-sky-phase="day"] .horizon-marker:not(.is-selected):not(.is-below) { opacity:.7; }
-.horizon-light-state { min-height:1.6em; text-align:center; color:var(--fg); font-size:.88rem; font-weight:600; }
+.horizon-light-state { min-height:1.6em; text-align:center; color:var(--fg); font-size:var(--font-note); font-weight:600; line-height:var(--line-note); }
 .horizon-daylight-panel { width:100%; display:grid; gap:8px; }
-.horizon-band-heading { display:flex; flex-wrap:wrap; justify-content:space-between; gap:4px 12px; color:var(--muted); font-size:.78rem; }
+.horizon-band-heading { display:flex; flex-wrap:wrap; justify-content:space-between; gap:4px 12px; color:var(--muted); font-size:var(--font-note); line-height:var(--line-note); }
 .horizon-light-band { position:relative; height:22px; margin-top:4px; }
 .horizon-light-segments { position:absolute; inset:0; overflow:hidden; border-radius:5px; }
 .horizon-light-segment { position:absolute; top:0; bottom:0; }
@@ -37,14 +39,14 @@
 .horizon-light-swatch[data-phase="evening"] { background:linear-gradient(90deg,#d59a83,#30456b); }
 .horizon-light-cursor { position:absolute; top:-3px; bottom:-3px; width:2px; background:#fff; box-shadow:0 0 0 1px #142748; transform:translateX(-50%); pointer-events:none; }
 .horizon-light-cursor::before { content:""; position:absolute; top:-5px; left:-3px; border-left:4px solid transparent; border-right:4px solid transparent; border-top:5px solid #142748; }
-.horizon-light-ticks { position:relative; height:19px; color:var(--muted); font-size:.75rem; }
+.horizon-light-ticks { position:relative; height:19px; color:var(--muted); font-size:var(--font-note); line-height:var(--line-note); }
 .horizon-light-tick { position:absolute; transform:translateX(-50%); font-variant-numeric:tabular-nums; }
 .horizon-light-tick[data-edge="start"] { transform:none; }
 .horizon-light-tick[data-edge="end"] { transform:translateX(-100%); }
-.horizon-light-legend { display:flex; flex-wrap:wrap; justify-content:center; gap:5px 14px; color:var(--muted); font-size:.75rem; }
+.horizon-light-legend { display:flex; flex-wrap:wrap; justify-content:center; gap:5px 14px; color:var(--muted); font-size:var(--font-note); line-height:var(--line-note); }
 .horizon-light-legend-item { display:inline-flex; align-items:center; gap:5px; }
 .horizon-light-swatch { display:inline-block; width:13px; height:9px; border-radius:2px; flex-shrink:0; }
-.horizon-solar-events { display:flex; flex-wrap:wrap; justify-content:space-between; gap:5px 12px; color:var(--fg); font-size:.8rem; font-variant-numeric:tabular-nums; }
+.horizon-solar-events { display:flex; flex-wrap:wrap; justify-content:space-between; gap:5px 12px; color:var(--fg); font-size:var(--font-note); font-variant-numeric:tabular-nums; line-height:var(--line-note); }
 .horizon-ground { fill:var(--fg); opacity:.04; }
 .horizon-line { stroke:var(--muted); stroke-width:1.5; }
 .horizon-marker circle { fill:var(--accent); stroke:var(--card); stroke-width:2; }
@@ -52,23 +54,23 @@
 .horizon-marker text { paint-order:stroke; stroke:var(--card); stroke-width:4px; stroke-linejoin:round; }
 .horizon-marker.is-below { opacity:.55; }
 .horizon-marker.is-below circle { fill:var(--muted); }
-.explorer-slider-heading { width:100%; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px 12px; font-size:.86rem; }
+.explorer-slider-heading { width:100%; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px 12px; font-size:var(--font-note); line-height:var(--line-note); }
 .explorer-slider-heading output { font-variant-numeric:tabular-nums; }
 input.explorer-slider { width:100%; min-height:32px; margin:0; padding:0; border:0; background:transparent; accent-color:var(--accent); }
 input.explorer-slider::-webkit-slider-runnable-track { height:6px; background:var(--border); border-radius:3px; }
 input.explorer-slider::-webkit-slider-thumb { margin-top:-9px; }
 input.explorer-slider::-moz-range-track { height:6px; background:var(--border); border-radius:3px; }
 input.explorer-slider:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
-.explorer-range-ends { width:100%; display:flex; align-items:center; justify-content:space-between; gap:8px; font-size:.78rem; color:var(--muted); }
-.explorer-reset { background:transparent; color:var(--accent); border:1px solid var(--border); padding:7px 10px; margin:0; font-size:.78rem; border-radius:8px; }
+.explorer-range-ends { width:100%; display:flex; align-items:center; justify-content:space-between; gap:8px; font-size:var(--font-note); color:var(--muted); line-height:var(--line-note); }
+.explorer-reset { background:transparent; color:var(--accent); border:1px solid var(--border); padding:7px 10px; margin:0; font-size:var(--font-control); border-radius:8px; line-height:var(--line-control); }
 .horizon-planet-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,145px),1fr)); gap:6px; width:100%; }
 .horizon-planet { display:flex; flex-direction:column; align-items:flex-start; gap:5px; margin:0; padding:9px 10px; border:1px solid var(--border); border-radius:9px; background:var(--card); color:var(--fg); text-align:left; min-width:0; }
-.horizon-planet [data-horizon-position] { font-size:.75rem; line-height:1.4; }
+.horizon-planet [data-horizon-position] { font-size:var(--font-note); line-height:var(--line-note); }
 .horizon-planet[aria-pressed="true"] { border-color:var(--accent); box-shadow:inset 0 0 0 1px var(--accent); }
 .horizon-planet.is-below { color:var(--muted); }
-.explorer-detail { width:100%; padding:12px 14px; border-radius:9px; background:color-mix(in srgb,var(--accent) 8%,var(--card)); font-size:.88rem; line-height:1.5; overflow-wrap:anywhere; }
+.explorer-detail { width:100%; padding:12px 14px; border-radius:9px; background:color-mix(in srgb,var(--accent) 8%,var(--card)); font-size:var(--font-body); line-height:var(--line-body); overflow-wrap:anywhere; }
 .light-travel-targets { display:flex; flex-wrap:wrap; justify-content:center; gap:6px; width:100%; }
-.light-travel-target { margin:0; min-height:36px; padding:8px 12px; border:1px solid var(--border); border-radius:18px; font-size:.82rem; background:var(--card); color:var(--fg); }
+.light-travel-target { margin:0; min-height:36px; padding:8px 12px; border:1px solid var(--border); border-radius:18px; font-size:var(--font-control); background:var(--card); color:var(--fg); line-height:var(--line-control); }
 .light-travel-target[aria-pressed="true"] { background:var(--accent); color:#fff; border-color:var(--accent); }
 .light-travel-duration { margin-top:8px; font-size:clamp(1.4rem,4vw,2rem); font-variant-numeric:tabular-nums; text-align:center; width:100%; }
 .light-travel-track { position:relative; width:calc(100% - 64px); height:92px; margin:4px 32px 0; flex-shrink:0; }
@@ -77,7 +79,7 @@ input.explorer-slider:focus-visible { outline:2px solid var(--accent); outline-o
 .light-travel-beam { width:100%; background:var(--border); }
 .light-travel-progress { background:#d69a16; }
 .light-travel-photon { position:absolute; top:22px; width:15px; height:15px; background:#e4af32; border-radius:50%; transform:translateX(-50%); box-shadow:0 0 12px #e4af3280; }
-.light-travel-end { position:absolute; top:16px; transform:translateX(-50%); display:grid; justify-items:center; gap:12px; font-size:.8rem; }
+.light-travel-end { position:absolute; top:16px; transform:translateX(-50%); display:grid; justify-items:center; gap:12px; font-size:var(--font-note); line-height:var(--line-note); }
 .light-travel-origin { left:0; }
 .light-travel-destination { left:100%; }
 .light-travel-orb { width:26px; height:26px; border-radius:50%; background:var(--accent); border:4px solid var(--card); }

@@ -1,4 +1,17 @@
-﻿    :root {
+    /* Shared typography: titles, section headings, reading text, controls and supporting notes. */
+    :root {
+      --font-family:Arial, sans-serif;
+      --font-card-title:1.25rem;
+      --font-subheading:1rem;
+      --font-body:.9375rem;
+      --font-control:.875rem;
+      --font-note:.8125rem;
+      --font-small:.75rem;
+      --font-diagram:12px;
+      --line-heading:1.25;
+      --line-body:1.5;
+      --line-note:1.45;
+      --line-control:1.35;
       --bg:#f0f0f0; --fg:#333; --muted:#666; --card:#fff;
       --accent:#007bff; --accent-hover:#0056b3;
       --border:#ccc; --shadow:0 4px 8px rgba(0,0,0,.1);
@@ -11,7 +24,9 @@
     }
     body{
       margin:0;
-      font-family:Arial, sans-serif;
+      font-family:var(--font-family);
+      font-size:var(--font-body);
+      line-height:var(--line-body);
       background:var(--bg);
       color:var(--fg);
       transition: background-color .5s, color .5s;
@@ -291,8 +306,9 @@
       display:grid;
       gap:8px;
       width:100%;
-      font-size:.98rem;
+      font-size:var(--font-body);
       color:var(--fg);
+      line-height:var(--line-body);
     }
     .about-line{
       line-height:1.45;
@@ -352,10 +368,11 @@
       background:rgba(255,255,255,.35);
     }
     .time-tool-title{
-      font-size:1rem;
+      font-size:var(--font-subheading);
       font-weight:600;
       color:var(--fg);
       margin-bottom:4px;
+      line-height:var(--line-heading);
     }
     .time-tool #stopwatch,
     .time-tool #countdown{
@@ -388,7 +405,8 @@
       min-width:0;
     }
     .group-title{
-      font-size:1.2rem;
+      font-size:var(--font-card-title);
+      line-height:var(--line-heading);
       margin-bottom:6px;
       color:var(--fg);
       font-weight:600;
@@ -400,13 +418,16 @@
       transition: transform .5s, text-shadow .5s, color .5s;
     }
     #date{
-      font-size:1.1rem;
+      font-size:var(--font-body);
       color:var(--muted);
       margin-top:4px;
+      line-height:var(--line-body);
     }
     select,input,button{
+      font-family:inherit;
+      line-height:var(--line-control);
       margin:8px;
-      font-size:1rem;
+      font-size:var(--font-control);
       padding:10px 16px;
       border:1px solid var(--border);
       border-radius:6px;
@@ -414,6 +435,10 @@
       color:var(--fg);
       cursor:pointer;
       transition: background-color .3s, border-color .3s;
+    }
+    input,select,textarea{
+      font-size:var(--font-subheading);
+      line-height:var(--line-heading);
     }
     button{
       background:var(--accent);
@@ -459,10 +484,11 @@
 
     .moon-label-line{
       width:100%;
-      font-size:.85rem;
+      font-size:var(--font-note);
       color:var(--muted);
       margin-top:6px;
       text-align:left;
+      line-height:var(--line-note);
     }
 
 
@@ -519,16 +545,18 @@
       left:50%;
       top:0;
       transform: translate(-50%,-170%);
-      font-size:.8rem;
+      font-size:var(--font-note);
       color:var(--fg);
       white-space:nowrap;
       text-shadow:0 1px 2px rgba(0,0,0,.08);
+      line-height:var(--line-note);
     }
     .legend-small{
       margin-top:10px;
-      font-size:.9rem;
+      font-size:var(--font-note);
       color:var(--muted);
       text-align:center;
+      line-height:var(--line-note);
     }
     @keyframes spin{
       to{ transform: translate(-50%,-50%) rotate(360deg); }
@@ -582,16 +610,17 @@
       flex:1 1 auto;
     }
     .mobile-readout{
-      font-size:1rem;
-      line-height:1.1;
+      font-size:var(--font-body);
+      line-height:var(--line-body);
     }
     .mobile-location-readout{
       color:var(--muted);
-      font-size:.84rem;
+      font-size:var(--font-note);
       font-weight:600;
       white-space:nowrap;
       overflow:hidden;
       text-overflow:ellipsis;
+      line-height:var(--line-note);
     }
     .date-mobile-actions{
       display:flex;
@@ -604,7 +633,7 @@
       min-height:34px;
       padding:7px 10px;
       border-radius:999px;
-      font-size:.9rem;
+      font-size:var(--font-control);
       font-weight:700;
       line-height:1;
       white-space:nowrap;
@@ -659,9 +688,9 @@
     }
     .date-settings-label{
       color:#0f172a;
-      font-size:.8rem;
+      font-size:var(--font-note);
       font-weight:700;
-      line-height:1.2;
+      line-height:var(--line-note);
       text-align:left;
     }
     .date-settings-panel select{
@@ -674,8 +703,9 @@
       border-radius:999px;
       background:#fff;
       color:var(--fg);
-      font-size:.9rem;
+      font-size:var(--font-subheading);
       box-shadow:none;
+      line-height:var(--line-heading);
     }
     .global-card-size-control{
       display:flex;
@@ -722,13 +752,14 @@
       flex:0 0 auto;
       color:#2563eb;
       font-family:inherit;
-      font-size:1.12rem;
+      font-size:var(--font-body);
       font-weight:700;
       letter-spacing:0;
       text-align:left;
       padding:0;
       border-bottom:0;
       text-shadow:none;
+      line-height:var(--line-body);
     }
     .date-toolbar-slider{
       flex:1 1 260px;
@@ -749,7 +780,7 @@
       margin:0;
       padding:7px 10px;
       border-radius:999px;
-      font-size:.9rem;
+      font-size:var(--font-control);
       font-weight:700;
       line-height:1;
       white-space:nowrap;
@@ -809,7 +840,8 @@
       gap:8px;
       align-items:center;
       color:var(--muted);
-      font-size:.74rem;
+      font-size:var(--font-note);
+      line-height:var(--line-note);
     }
     #solarDateSlider{
       width:100%;
@@ -827,7 +859,7 @@
       width:auto;
       height:auto;
       padding:0;
-      font-size:1rem;
+      font-size:var(--font-control);
       line-height:1;
       user-select:none;
       touch-action:manipulation;
@@ -869,10 +901,11 @@
       top:50%;
       transform:translate(8px, -18px);
       color:#1f2937;
-      font-size:.78rem;
+      font-size:var(--font-note);
       white-space:nowrap;
       text-shadow:0 1px 2px rgba(255,255,255,.9);
       z-index:5;
+      line-height:var(--line-note);
     }
     .solar-planet.mercury{ width:7px; height:7px; margin:-3.5px 0 0 -3.5px; background:#b8b1a3; }
     .solar-planet.venus{ width:11px; height:11px; margin:-5.5px 0 0 -5.5px; background:#e8c07d; }
@@ -917,7 +950,7 @@
       border:1px solid #bfdbfe;
       background:#f8fbff;
       color:#0f172a;
-      font-size:.88rem;
+      font-size:var(--font-control);
       font-weight:700;
       line-height:1;
       box-shadow:none;
@@ -1067,15 +1100,17 @@
       text-align:center;
     }
     .exoplanet-system-title{
-      font-size:.92rem;
+      font-size:var(--font-subheading);
       font-weight:700;
       color:var(--fg);
+      line-height:var(--line-heading);
     }
     .exoplanet-system-meta,
     .exoplanet-system-caption{
-      font-size:.77rem;
+      font-size:var(--font-note);
       color:var(--muted);
       text-align:center;
+      line-height:var(--line-note);
     }
     .exoplanet-system-map{
       width:100%;
@@ -1338,12 +1373,13 @@
     .small-bodies-tools button{
       padding:8px 12px;
       border-radius:999px;
-      font-size:.82rem;
+      font-size:var(--font-control);
+      line-height:var(--line-control);
     }
     .small-bodies-hint{
       color:var(--muted);
-      font-size:.78rem;
-      line-height:1.35;
+      font-size:var(--font-note);
+      line-height:var(--line-note);
       text-align:right;
       flex:1;
       min-width:220px;
@@ -1390,14 +1426,16 @@
       display:grid;
       grid-template-columns:repeat(2, minmax(0,1fr));
       gap:8px;
-      font-size:.78rem;
+      font-size:var(--font-body);
       color:var(--muted);
       text-align:left;
+      line-height:var(--line-body);
     }
     .small-bodies-summary strong{
       color:var(--fg);
       display:block;
-      font-size:.82rem;
+      font-size:var(--font-body);
+      line-height:var(--line-body);
     }
     .small-bodies-detail{
       width:min(100%, 680px);
@@ -1407,8 +1445,8 @@
       border-radius:8px;
       background:#f8fafc;
       color:var(--muted);
-      font-size:.82rem;
-      line-height:1.35;
+      font-size:var(--font-body);
+      line-height:var(--line-body);
       text-align:left;
     }
     .small-bodies-detail strong{
@@ -1440,11 +1478,15 @@
       display:grid;
       gap:6px;
       color:var(--muted);
-      font-size:.82rem;
+      font-size:var(--font-body);
       text-align:left;
+      line-height:var(--line-body);
     }
     .astro-summary strong{
       color:var(--fg);
+    }
+    .moon-nodes-card .astro-summary [data-summary-label]{
+      font-weight:400;
     }
     .eclipse-preview-card{
       display:grid;
@@ -1462,19 +1504,22 @@
     }
     .eclipse-preview-kicker{
       color:#2563eb;
-      font-size:.74rem;
+      font-size:var(--font-note);
       font-weight:700;
       text-transform:uppercase;
       letter-spacing:.03em;
+      line-height:var(--line-note);
     }
     .eclipse-preview-title{
       color:var(--fg);
-      font-size:.95rem;
+      font-size:var(--font-subheading);
       font-weight:700;
+      line-height:var(--line-heading);
     }
     .eclipse-preview-meta{
       color:var(--muted);
-      font-size:.78rem;
+      font-size:var(--font-note);
+      line-height:var(--line-note);
     }
     .eclipse-preview-warning{
       display:grid;
@@ -1495,7 +1540,7 @@
       border-radius:50%;
       background:rgba(251,191,36,.18);
       color:#b45309;
-      font-size:1rem;
+      font-size:var(--font-body);
       line-height:1;
     }
     .eclipse-preview-warning-copy{
@@ -1504,14 +1549,14 @@
     }
     .eclipse-preview-warning-title{
       color:#92400e;
-      font-size:.84rem;
+      font-size:var(--font-subheading);
       font-weight:700;
-      line-height:1.25;
+      line-height:var(--line-heading);
     }
     .eclipse-preview-warning-text{
       color:#9a3412;
-      font-size:.77rem;
-      line-height:1.42;
+      font-size:var(--font-note);
+      line-height:var(--line-note);
     }
     .eclipse-preview-timeline{
       display:grid;
@@ -1588,9 +1633,9 @@
     }
     .eclipse-preview-time{
       color:var(--fg);
-      font-size:.88rem;
+      font-size:var(--font-note);
       font-weight:700;
-      line-height:1.25;
+      line-height:var(--line-note);
       padding-top:1px;
     }
     .eclipse-preview-direction{
@@ -1614,7 +1659,7 @@
       top:2px;
       transform:translateX(-50%);
       color:#64748b;
-      font-size:.56rem;
+      font-size:var(--font-small);
       font-weight:700;
       line-height:1;
     }
@@ -1661,14 +1706,14 @@
     }
     .eclipse-preview-direction-main{
       color:var(--fg);
-      font-size:.73rem;
+      font-size:var(--font-note);
       font-weight:700;
-      line-height:1.2;
+      line-height:var(--line-note);
     }
     .eclipse-preview-direction-sub{
       color:var(--muted);
-      font-size:.68rem;
-      line-height:1.25;
+      font-size:var(--font-small);
+      line-height:var(--line-note);
     }
     .eclipse-preview-copy{
       display:grid;
@@ -1676,15 +1721,15 @@
     }
     .eclipse-preview-label{
       color:var(--fg);
-      font-size:.84rem;
+      font-size:var(--font-note);
       font-weight:700;
-      line-height:1.25;
+      line-height:var(--line-note);
     }
     .eclipse-preview-text,
     .eclipse-preview-note{
       color:var(--muted);
-      font-size:.77rem;
-      line-height:1.42;
+      font-size:var(--font-note);
+      line-height:var(--line-note);
     }
     @media (max-width: 640px){
       .eclipse-preview-row{
@@ -1766,16 +1811,18 @@
       justify-content:space-between;
       gap:8px;
       align-items:center;
-      font-size:.9rem;
+      font-size:var(--font-body);
       font-weight:600;
       color:var(--fg);
+      line-height:var(--line-body);
     }
     .retro-badge{
       padding:3px 8px;
       border-radius:999px;
-      font-size:.73rem;
+      font-size:var(--font-note);
       background:#e2e8f0;
       color:#475569;
+      line-height:var(--line-note);
     }
     .retro-badge.retro{
       background:#dbeafe;
@@ -1796,12 +1843,13 @@
       background:linear-gradient(90deg,#60a5fa,#2563eb);
     }
     .retro-copy{
-      font-size:.78rem;
+      font-size:var(--font-note);
       color:var(--muted);
       display:flex;
       justify-content:space-between;
       gap:8px;
       flex-wrap:wrap;
+      line-height:var(--line-note);
     }
     .planet-phases-panel{
       display:grid;
@@ -1832,9 +1880,10 @@
       display:grid;
       gap:4px;
       width:100%;
-      font-size:.8rem;
+      font-size:var(--font-note);
       color:var(--muted);
       text-align:left;
+      line-height:var(--line-note);
     }
     .planet-phase-meta strong{
       color:var(--fg);
@@ -1849,8 +1898,9 @@
       grid-template-columns:72px 1fr;
       gap:12px;
       align-items:end;
-      font-size:.76rem;
+      font-size:var(--font-note);
       color:#64748b;
+      line-height:var(--line-note);
     }
     .night-visibility-place{
       font-weight:600;
@@ -1866,9 +1916,10 @@
     .night-visibility-scale span{
       position:absolute;
       top:-1px;
-      font-size:.72rem;
+      font-size:var(--font-note);
       color:#475569;
       transform:translateX(-50%);
+      line-height:var(--line-note);
     }
     .night-visibility-scale .left{
       left:0;
@@ -1884,7 +1935,8 @@
       grid-template-columns:72px 1fr;
       gap:12px;
       align-items:center;
-      font-size:.82rem;
+      font-size:var(--font-note);
+      line-height:var(--line-note);
     }
     .night-name{
       color:var(--fg);
@@ -1912,16 +1964,18 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      font-size:.68rem;
+      font-size:var(--font-small);
       color:#cbd5e1;
       text-align:center;
       padding:0 8px;
+      line-height:var(--line-note);
     }
     .night-best{
       margin-top:2px;
-      font-size:.76rem;
+      font-size:var(--font-note);
       color:var(--muted);
       text-align:right;
+      line-height:var(--line-note);
     }
     .night-best.empty{
       color:#94a3b8;
@@ -1950,8 +2004,9 @@
       display:grid;
       gap:4px;
       color:var(--muted);
-      font-size:.82rem;
+      font-size:var(--font-body);
       text-align:left;
+      line-height:var(--line-body);
     }
     .constellation-year-card{
       width:100%;
@@ -2045,9 +2100,10 @@
       border-radius:999px;
       background:#e2e8f0;
       color:#475569;
-      font-size:.78rem;
+      font-size:var(--font-note);
       font-weight:600;
       width:max-content;
+      line-height:var(--line-note);
     }
     .moon-nodes-status.active{
       background:#dbeafe;
@@ -2089,9 +2145,10 @@
       padding:8px 12px;
       border-radius:999px;
       font-weight:700;
-      font-size:.92rem;
+      font-size:var(--font-body);
       color:#0f172a;
       background:#e2e8f0;
+      line-height:var(--line-body);
     }
     .aurora-badge.low{ background:#dbeafe; color:#1d4ed8; }
     .aurora-badge.medium{ background:#fef3c7; color:#92400e; }
@@ -2101,8 +2158,9 @@
       display:grid;
       gap:5px;
       color:var(--muted);
-      font-size:.82rem;
+      font-size:var(--font-note);
       text-align:left;
+      line-height:var(--line-note);
     }
     .meteor-arc{
       fill:none;
@@ -2142,9 +2200,10 @@
       align-items:center;
       gap:12px;
       margin-top:4px;
-      font-size:.78rem;
+      font-size:var(--font-note);
       color:var(--muted);
       text-align:left;
+      line-height:var(--line-note);
     }
     .meteor-radiant-map{
       width:140px;
@@ -2229,15 +2288,17 @@
     .constellation-name{
       font-weight:700;
       color:var(--fg);
-      font-size:1.02rem;
+      font-size:var(--font-body);
+      line-height:var(--line-body);
     }
     .constellation-summary{
       width:min(100%, 460px);
       color:var(--muted);
-      font-size:.82rem;
+      font-size:var(--font-body);
       text-align:left;
       display:grid;
       gap:4px;
+      line-height:var(--line-body);
     }
     .constellation-skyhint{
       width:min(100%, 460px);
@@ -2276,13 +2337,15 @@
       display:grid;
       gap:3px;
       color:var(--muted);
-      font-size:.78rem;
+      font-size:var(--font-note);
       text-align:left;
+      line-height:var(--line-note);
     }
     .constellation-skyhint-title{
       color:var(--fg);
-      font-size:.82rem;
+      font-size:var(--font-subheading);
       font-weight:700;
+      line-height:var(--line-heading);
     }
     .constellation-skyhint-line{
       line-height:1.35;
@@ -2482,15 +2545,17 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      font-size:12px;
+      font-size:var(--font-note);
       /* neu: Mittelpunkt-Position über translate(-50%, -50%) */
       transform: translate(-50%, -50%);
+      line-height:var(--line-note);
     }
     .em-info{
       margin-top:10px;
-      font-size:.95rem;
+      font-size:var(--font-body);
       text-align:center;
       color:var(--fg);
+      line-height:var(--line-body);
     }
     .moon-details{
       width:100%;
@@ -2522,17 +2587,19 @@
       padding-top:14px;
       border-top:1px solid var(--border);
       text-align:left;
-      font-size:.84rem;
+      font-size:var(--font-note);
+      line-height:var(--line-note);
     }
     .eclipse-geometry{
       position:relative;
       border-top:1px solid var(--border);
       margin-top:10px;
       padding-top:10px;
-      font-size:.8rem;
+      font-size:var(--font-note);
       color:var(--muted);
       display:grid;
       gap:6px;
+      line-height:var(--line-note);
     }
     .eclipse-head{
       width:100%;
@@ -2560,7 +2627,7 @@
       border:1px solid #bfdbfe;
       background:#eff6ff;
       color:#1d4ed8;
-      font-size:.82rem;
+      font-size:var(--font-control);
       font-weight:700;
       line-height:1;
       display:flex;
@@ -2664,8 +2731,9 @@
     .light-hours-title{
       margin-bottom:5px;
       color:var(--muted);
-      font-size:.78rem;
+      font-size:var(--font-subheading);
       text-align:left;
+      line-height:var(--line-heading);
     }
     .light-hour-arc{
       position:relative;
@@ -2699,8 +2767,9 @@
       grid-template-columns:repeat(2, minmax(0,1fr));
       gap:4px 8px;
       margin-top:6px;
-      font-size:.72rem;
+      font-size:var(--font-note);
       color:var(--muted);
+      line-height:var(--line-note);
     }
     .light-hour-legend-item{
       display:flex;
@@ -2744,7 +2813,7 @@
       align-items:center;
       justify-content:center;
       transform:translateX(-50%);
-      font-size:1rem;
+      font-size:var(--font-body);
       line-height:1;
       text-shadow:0 1px 2px rgba(0,0,0,.22);
     }
@@ -2752,9 +2821,13 @@
       position:absolute;
       top:30px;
       transform:translateX(-50%);
-      font-size:.64rem;
+      font-size:var(--font-small);
       color:var(--muted);
       white-space:nowrap;
+      line-height:var(--line-note);
+    }
+    #moonTimelineNew{
+      transform:none;
     }
     .moon-timeline-today{
       position:absolute;
@@ -2767,22 +2840,23 @@
     }
     .moon-local-position{
       margin-top:8px;
-      font-size:.83rem;
+      font-size:var(--font-note);
       color:var(--muted);
-      line-height:1.45;
+      line-height:var(--line-note);
     }
     .em-next-full{
       margin-top:8px;
-      font-size:.95rem;
+      font-size:var(--font-body);
       color:var(--muted);
-      line-height:1.4;
+      line-height:var(--line-body);
     }
     .moon-local-position-label{
       color:var(--muted);
-      font-size:.77rem;
+      font-size:var(--font-note);
       font-weight:600;
       letter-spacing:.01em;
       margin-bottom:6px;
+      line-height:var(--line-note);
     }
     .moon-local-position-body{
       display:grid;
@@ -2801,14 +2875,14 @@
     }
     .moon-local-position-main{
       color:var(--fg);
-      font-size:.82rem;
+      font-size:var(--font-note);
       font-weight:700;
-      line-height:1.25;
+      line-height:var(--line-note);
     }
     .moon-local-position-sub{
       color:var(--muted);
-      font-size:.76rem;
-      line-height:1.32;
+      font-size:var(--font-note);
+      line-height:var(--line-note);
     }
     .visibility-card{
       gap:10px;
@@ -2827,8 +2901,9 @@
       gap:6px 10px;
       justify-content:center;
       justify-items:start;
-      font-size:.75rem;
+      font-size:var(--font-note);
       color:var(--muted);
+      line-height:var(--line-note);
     }
     .visibility-legend-item{
       display:flex;
@@ -2855,7 +2930,8 @@
         ". night night";
       gap:10px;
       align-items:center;
-      font-size:.84rem;
+      font-size:var(--font-note);
+      line-height:var(--line-note);
     }
     .visibility-name{
       grid-area:name;
@@ -2883,8 +2959,8 @@
     .visibility-night-detail{
       grid-area:night;
       color:#64748b;
-      font-size:.76rem;
-      line-height:1.3;
+      font-size:var(--font-body);
+      line-height:var(--line-body);
       text-align:right;
     }
     .eclipse-panel{
@@ -2898,8 +2974,9 @@
       gap:4px;
       margin-bottom:10px;
       color:var(--muted);
-      font-size:.85rem;
+      font-size:var(--font-body);
       text-align:left;
+      line-height:var(--line-body);
     }
     .eclipse-toggle{
       margin:0 auto;
@@ -2916,8 +2993,9 @@
       width:100%;
       min-width:520px;
       border-collapse:collapse;
-      font-size:.8rem;
+      font-size:var(--font-note);
       text-align:left;
+      line-height:var(--line-note);
     }
     .eclipse-table th,
     .eclipse-table td{
@@ -2956,7 +3034,7 @@
       border-radius:999px;
       background:#f8fbff;
       color:#0f172a;
-      font-size:.78rem;
+      font-size:var(--font-control);
       font-weight:700;
       line-height:1;
       box-shadow:none;
@@ -2977,7 +3055,7 @@
       margin:0;
       min-height:34px;
       padding:7px 11px;
-      font-size:.78rem;
+      font-size:var(--font-note);
       font-weight:700;
       line-height:1;
       background:#f8fbff;
@@ -3006,7 +3084,8 @@
       gap:12px;
       margin-bottom:10px;
       color:var(--muted);
-      font-size:.82rem;
+      font-size:var(--font-note);
+      line-height:var(--line-note);
     }
     .calendar-options label{
       display:flex;
@@ -3020,9 +3099,10 @@
     .calendar-next{
       width:100%;
       color:var(--muted);
-      font-size:.86rem;
+      font-size:var(--font-note);
       text-align:left;
       margin-bottom:10px;
+      line-height:var(--line-note);
     }
     .calendar-downloads{
       width:100%;
@@ -3042,9 +3122,10 @@
       border:1px solid rgba(37,99,235,.18);
       background:rgba(37,99,235,.06);
       color:#1d4ed8;
-      font-size:.8rem;
+      font-size:var(--font-note);
       font-weight:600;
       text-decoration:none;
+      line-height:var(--line-note);
     }
     .calendar-download-link:hover{
       background:rgba(37,99,235,.12);
@@ -3144,14 +3225,14 @@
     }
     .calendar-date{
       color:var(--muted);
-      font-size:.75rem;
-      line-height:1.2;
+      font-size:var(--font-note);
+      line-height:var(--line-note);
     }
     .calendar-title{
       font-weight:700;
       color:var(--fg);
-      line-height:1.2;
-      font-size:.95rem;
+      line-height:var(--line-heading);
+      font-size:var(--font-subheading);
     }
     .calendar-meta{
       display:inline-block;
@@ -3160,15 +3241,15 @@
       border-radius:999px;
       background:rgba(0,0,0,.06);
       color:var(--muted);
-      font-size:.69rem;
-      line-height:1.2;
+      font-size:var(--font-note);
+      line-height:var(--line-note);
       max-width:100%;
       overflow-wrap:anywhere;
     }
     .calendar-note{
       color:var(--muted);
-      font-size:.78rem;
-      line-height:1.22;
+      font-size:var(--font-note);
+      line-height:var(--line-note);
       overflow-wrap:anywhere;
     }
     .calendar-event-trigger{
@@ -3201,13 +3282,15 @@
       text-align:left;
     }
     .calendar-month-title{
-      font-size:1.08rem;
+      font-size:var(--font-subheading);
       font-weight:700;
       color:var(--fg);
+      line-height:var(--line-heading);
     }
     .calendar-month-subtitle{
       color:var(--muted);
-      font-size:.82rem;
+      font-size:var(--font-subheading);
+      line-height:var(--line-heading);
     }
     .calendar-month-weekdays{
       width:100%;
@@ -3217,10 +3300,11 @@
     }
     .calendar-month-weekday{
       color:var(--muted);
-      font-size:.76rem;
+      font-size:var(--font-note);
       font-weight:700;
       text-transform:uppercase;
       text-align:center;
+      line-height:var(--line-note);
     }
     .calendar-month-grid{
       width:100%;
@@ -3248,9 +3332,10 @@
       box-shadow:0 0 0 2px rgba(37,99,235,.08);
     }
     .calendar-month-day{
-      font-size:.82rem;
+      font-size:var(--font-note);
       font-weight:700;
       color:var(--fg);
+      line-height:var(--line-note);
     }
     .calendar-month-events{
       display:grid;
@@ -3280,8 +3365,8 @@
     .calendar-month-event-label{
       display:-webkit-box;
       min-width:0;
-      font-size:.72rem;
-      line-height:1.2;
+      font-size:var(--font-note);
+      line-height:var(--line-note);
       overflow:visible;
       text-overflow:clip;
       white-space:normal;
@@ -3331,21 +3416,23 @@
     }
     .calendar-detail-date{
       color:var(--muted);
-      font-size:.8rem;
+      font-size:var(--font-body);
       font-weight:600;
+      line-height:var(--line-body);
     }
     .calendar-detail-title{
       color:var(--fg);
-      font-size:1rem;
+      font-size:var(--font-subheading);
       font-weight:700;
-      line-height:1.3;
+      line-height:var(--line-heading);
     }
     .calendar-detail-download{
       color:#1d4ed8;
-      font-size:.8rem;
+      font-size:var(--font-body);
       font-weight:600;
       text-decoration:none;
       white-space:nowrap;
+      line-height:var(--line-body);
     }
     .calendar-detail-download:hover{
       text-decoration:underline;
@@ -3359,7 +3446,7 @@
       border-radius:999px;
       background:#fff;
       color:var(--fg);
-      font-size:1.2rem;
+      font-size:var(--font-body);
       line-height:1;
       box-shadow:none;
     }
@@ -3384,10 +3471,11 @@
       border:1px solid var(--accent);
       background:var(--accent);
       color:#fff;
-      font-size:.86rem;
+      font-size:var(--font-note);
       font-weight:700;
       opacity:1;
       visibility:visible;
+      line-height:var(--line-note);
     }
     .calendar-show-more:hover{
       background:#1d4ed8;
@@ -3455,14 +3543,15 @@
     .bsky-status{
       width:100%;
       color:var(--muted);
-      font-size:.86rem;
+      font-size:var(--font-note);
       text-align:center;
+      line-height:var(--line-note);
     }
     .bsky-account-note{
       color:var(--muted);
-      font-size:.82rem;
+      font-size:var(--font-note);
       text-align:left;
-      line-height:1.3;
+      line-height:var(--line-note);
     }
     .bsky-post{
       width:100%;
@@ -3515,13 +3604,14 @@
     }
     .bsky-date{
       color:var(--muted);
-      font-size:.78rem;
+      font-size:var(--font-note);
+      line-height:var(--line-note);
     }
     .bsky-text{
       margin:0;
       color:var(--fg);
-      font-size:.9rem;
-      line-height:1.35;
+      font-size:var(--font-body);
+      line-height:var(--line-body);
       text-align:left;
       overflow-wrap:anywhere;
       white-space:pre-line;
@@ -3550,8 +3640,9 @@
       align-self:center;
       margin-top:2px;
       color:var(--accent);
-      font-size:.88rem;
+      font-size:var(--font-note);
       text-decoration:none;
+      line-height:var(--line-note);
     }
     .bsky-link:hover{
       text-decoration:underline;
@@ -3621,17 +3712,19 @@
       bottom:0;
       width:100%;
       text-align:center;
-      font-size:.8rem;
+      font-size:var(--font-note);
       color:var(--fg);
+      line-height:var(--line-note);
     }
     .planet-moon-label{
       position:absolute;
       left:50%;
       top:0;
       transform: translate(-50%,-160%);
-      font-size:.65rem;
+      font-size:var(--font-small);
       color:var(--fg);
       white-space:nowrap;
+      line-height:var(--line-note);
     }
 
     @media (min-width:1180px){
@@ -3673,8 +3766,9 @@
       .visibility-row{
         grid-template-columns:56px minmax(90px,1fr) 62px;
         gap:7px;
-        font-size:.78rem;
-      }
+        font-size:var(--font-note);
+      line-height:var(--line-note);
+    }
     }
     @media (max-width:760px){
       .card-size-control,
@@ -3742,8 +3836,9 @@
         width:100%;
         min-height:42px;
         padding:8px 10px;
-        font-size:.95rem;
-      }
+        font-size:var(--font-control);
+      line-height:var(--line-control);
+    }
       #btnSolarPrevYear{ order:1; }
       #btnSolarNextYear{ order:2; }
       #btnSolarPrevMonth{ order:3; }
@@ -3885,24 +3980,26 @@
       display:block;
     }
     .card-help-title{
-      font-size:1rem;
+      font-size:var(--font-subheading);
       font-weight:700;
       color:#0f172a;
       margin-bottom:10px;
+      line-height:var(--line-heading);
     }
     .card-help-section + .card-help-section{
       margin-top:12px;
     }
     .card-help-section h4{
       margin:0 0 8px;
-      font-size:.86rem;
+      font-size:var(--font-subheading);
       letter-spacing:.02em;
       text-transform:uppercase;
       color:#475569;
+      line-height:var(--line-heading);
     }
     .card-help-section p{
       margin:0 0 8px;
-      line-height:1.45;
+      line-height:var(--line-body);
       color:#334155;
     }
     .card-help-list{
@@ -3942,8 +4039,9 @@
     }
     .card-help-formula-note{
       margin-top:5px;
-      font-size:.85rem;
+      font-size:var(--font-note);
       color:#64748b;
+      line-height:var(--line-note);
     }
     .card-help-links{
       display:grid;
@@ -3985,9 +4083,10 @@ button {
   border: 1px solid var(--border);
   background: var(--card);
   cursor: pointer;
-  font-size: 16px;
+  font-size:var(--font-control);
   transition: all 0.2s ease;
-}
+      line-height:var(--line-control);
+    }
 
 button:active {
   transform: scale(0.96);
@@ -4047,12 +4146,13 @@ input[type="range"]::-moz-range-thumb {
 select {
   min-height: 48px;
   padding: 12px 16px;
-  font-size: 16px;
+  font-size:var(--font-subheading);
   border-radius: 8px;
   border: 1px solid var(--border);
   background: var(--card);
   cursor: pointer;
-}
+      line-height:var(--line-heading);
+    }
 
 #locationSelector {
   min-width: 0;
@@ -4062,10 +4162,12 @@ select {
 
 /* --- Mobile Layout (max-width: 768px) --- */
 @media (max-width: 768px) {
+  :root { --font-card-title:1.125rem; }
   body {
     padding: 16px 12px;
-    font-size: 15px;
-  }
+    font-size:var(--font-body);
+      line-height:var(--line-body);
+    }
 
   .grid {
     grid-template-columns: 1fr;
@@ -4105,8 +4207,9 @@ select {
   .date-mobile-actions button {
     min-height: 32px;
     padding: 6px 9px;
-    font-size: 0.84rem;
-  }
+    font-size:var(--font-control);
+      line-height:var(--line-control);
+    }
 
   .date-settings-toggle-button {
     min-width: 32px;
@@ -4141,10 +4244,11 @@ select {
   }
 
   .group-title {
-    font-size: 1.1rem;
+    font-size:var(--font-card-title);
     margin-bottom: 12px;
     padding-right: 0;
-  }
+      line-height:var(--line-heading);
+    }
 
   .display-container[data-help-key] .group-title {
     width: calc(100% - 42px);
@@ -4152,7 +4256,7 @@ select {
     align-self: center;
     margin-left: auto;
     margin-right: auto;
-    line-height: 1.2;
+    line-height:var(--line-heading);
     text-align: center;
   }
 
@@ -4185,8 +4289,8 @@ select {
   }
 
   .legend-small {
-    font-size: 0.85rem;
-    line-height: 1.4;
+    font-size:var(--font-note);
+    line-height:var(--line-note);
   }
 
   #time, #date {
@@ -4202,12 +4306,14 @@ select {
   }
 
   .mobile-readout {
-    font-size: 0.95rem;
-  }
+    font-size:var(--font-body);
+      line-height:var(--line-body);
+    }
 
   .mobile-location-readout {
-    font-size: 0.78rem;
-  }
+    font-size:var(--font-note);
+      line-height:var(--line-note);
+    }
 
   .date-mobile-actions {
     gap: 4px;

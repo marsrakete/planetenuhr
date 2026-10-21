@@ -42,6 +42,7 @@
   <link rel="stylesheet" href="astronomy-explorer.css" />
   <link rel="stylesheet" href="sky-knowledge.css" />
   <link rel="stylesheet" href="idefix.css" />
+  <link rel="stylesheet" href="diagram-details.css" />
 </head>
 <body>
   <div class="overlay-controls">
@@ -375,6 +376,13 @@
         <div class="knowledge-sources" data-knowledge-sources></div>
       </article>
     </template>
+    <dialog id="diagramDetailDialog" class="diagram-dialog" aria-labelledby="diagramDetailTitle" aria-describedby="diagramDetailHint">
+      <div class="diagram-dialog-heading"><h2 id="diagramDetailTitle"></h2><button id="diagramDetailClose" type="button" autofocus></button></div>
+      <p id="diagramDetailHint"></p>
+      <div id="diagramDetailContent" class="diagram-detail-content" tabindex="0"></div>
+    </dialog>
+    <template id="diagramOpenTemplate"><button class="diagram-open" type="button" aria-haspopup="dialog" aria-controls="diagramDetailDialog"></button></template>
+    <template id="diagramFigureTemplate"><figure class="diagram-detail-figure"></figure></template>
     <template id="knowledgeGraphicTemplate"><svg class="knowledge-drawing" viewBox="0 0 360 158" role="img" focusable="false"></svg></template>
     <template id="knowledgeGraphic-circle"><svg><circle /></svg></template>
     <template id="knowledgeGraphic-line"><svg><line /></svg></template>
@@ -1025,6 +1033,7 @@
   <script src="sky-knowledge-graphics-config.js"></script>
   <script src="sky-knowledge-graphics.js"></script>
   <script src="sky-knowledge.js"></script>
+  <script src="diagram-details.js"></script>
   <script src="idefix-config.js"></script>
   <script src="idefix-ephemeris.js"></script>
   <script src="idefix-model.js"></script>
@@ -10854,6 +10863,7 @@ function computeMoon(date){
     // Half-hourly refresh for time-dependent cards.
     initMasonryLayout();
     refreshDynamicTiles();
+    window.PLANETENUHR_DIAGRAM_DETAILS.create();
     scheduleMasonryLayout(scrollToRequestedCard);
     setInterval(refreshDynamicTiles, 1800000);
 
