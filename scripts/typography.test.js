@@ -45,3 +45,53 @@ test('diagram controls and reading instructions are translated in all app langua
     }
   }
 });
+
+/** Extracts a dashboard function for isolated date/URL contract tests.
+ * @param {string} name Top-level function name in the inline dashboard script.
+ * @returns {string} Original function source, without executing the dashboard.
+ */
+function dashboardFunction(name){
+  const source = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+  const start = source.indexOf('    function ' + name + '(');
+  assert.ok(start >= 0, 'Function exists: ' + name);
+  const end = source.indexOf('\n    }', start);
+  return source.slice(start, end + 6);
+}
+
+const dates = vm.createContext({Intl, Date, URL, lang:'de', requestedCardKey:'planet_horizon',
+  window:{location:{href:'http://localhost:5020/?date=20200101#test'}},
+  history:{replaceState(state, title, url){this.url = url;}},
+  selectedSolarDate(){return new Date(2026, 9, 21, 12);},
+  selectedLocation(){return {name:'Berlin'};}
+});
+for (const name of ['datePartsInZone', 'formatDateStamp', 'formatDateKey', 'syncUrlState']) {
+  vm.runInContext(dashboardFunction(name), dates);
+}
+
+test('visible dates follow all three app languages', () => {
+  for (const [language, expected] of [['de','21.10.2026'], ['en','10/21/2026'], ['fr','21/10/2026']]) {
+    dates.lang = language;
+    assert.equal(dates.formatDateStamp(new Date('2026-10-21T12:00:00Z'), 'UTC'), expected);
+  }
+});
+
+test('localized dates and stable keys respect timezone day boundaries', () => {
+  dates.lang = 'de';
+  const instant = new Date('2027-01-01T00:30:00Z');
+  assert.equal(dates.formatDateStamp(instant, 'America/Los_Angeles'), '31.12.2026');
+  assert.equal(dates.formatDateKey(instant, 'America/Los_Angeles'), '2026-12-31');
+  assert.equal(dates.formatDateKey(instant, 'UTC'), '2027-01-01');
+});
+
+test('shared URLs retain YYYYMMDD across language changes and preserve place/card/hash', () => {
+  for (const language of ['de', 'en', 'fr']) {
+    dates.lang = language;
+    dates.syncUrlState();
+    const url = new URL(dates.history.url, dates.window.location.href);
+    assert.equal(url.searchParams.get('date'), '20261021');
+    assert.equal(url.searchParams.get('lang'), language);
+    assert.equal(url.searchParams.get('place'), 'Berlin');
+    assert.equal(url.searchParams.get('card'), 'planet_horizon');
+    assert.equal(url.hash, '#test');
+  }
+});

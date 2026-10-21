@@ -1572,6 +1572,8 @@
       document.getElementById('btnSolarToday').textContent    = t.solar_today;
       document.getElementById('btnSolarPrev').setAttribute('aria-label', t.solar_prev_day);
       document.getElementById('btnSolarNext').setAttribute('aria-label', t.solar_next_day);
+      document.getElementById('btnSolarPrevMobile').setAttribute('aria-label', t.solar_prev_day);
+      document.getElementById('btnSolarNextMobile').setAttribute('aria-label', t.solar_next_day);
       document.getElementById('btnSolarPrevWeek').setAttribute('aria-label', t.solar_prev_week);
       document.getElementById('btnSolarNextWeek').setAttribute('aria-label', t.solar_next_week);
       document.getElementById('btnSolarPrevMonth').setAttribute('aria-label', t.solar_prev_month);
@@ -1778,9 +1780,16 @@
       return Object.fromEntries(parts.filter(part => part.type !== 'literal').map(part => [part.type, part.value]));
     }
 
+    /**
+     * Formats a visible calendar date in the active app language.
+     * @param {Date} d Date to display.
+     * @param {string} [timeZone] Optional IANA timezone; defaults to browser time.
+     * @returns {string} Localized numeric date, including a four-digit year.
+     */
     function formatDateStamp(d, timeZone){
-      const parts = datePartsInZone(d, timeZone);
-      return parts.year + '.' + parts.month + '.' + parts.day;
+      return new Intl.DateTimeFormat(lang, {
+        year:'numeric', month:'2-digit', day:'2-digit', timeZone
+      }).format(d);
     }
 
     /**
@@ -2439,7 +2448,7 @@
     function syncUrlState(){
       const url = new URL(window.location.href);
       const selectedDate = selectedSolarDate();
-      const dateParameter = formatDateStamp(selectedDate).replace(/\./g, '');
+      const dateParameter = formatDateKey(selectedDate).replace(/-/g, '');
       url.searchParams.set('date', dateParameter);
       const location = selectedLocation();
       if (location && location.name) {
@@ -3541,7 +3550,7 @@
         return date;
       }
 
-      if (formatDateStamp(preview.eventDate) !== formatDateStamp(date)) {
+      if (formatDateKey(preview.eventDate) !== formatDateKey(date)) {
         return date;
       }
 
@@ -3594,7 +3603,7 @@
         return t.moon_here_current_time || t.moon_here || 'Moon here at this time';
       }
 
-      if (formatDateStamp(preview.eventDate) !== formatDateStamp(date)) {
+      if (formatDateKey(preview.eventDate) !== formatDateKey(date)) {
         return t.moon_here_current_time || t.moon_here || 'Moon here at this time';
       }
 
@@ -6399,16 +6408,20 @@
       document.querySelectorAll('[data-calendar-filter]').forEach(button => {
         if (button.dataset.calendarFilter === activeCalendarFilter) {
           button.classList.add('active');
+          button.setAttribute('aria-pressed', 'true');
         } else {
           button.classList.remove('active');
+          button.setAttribute('aria-pressed', 'false');
         }
       });
 
       document.querySelectorAll('[data-calendar-view]').forEach(button => {
         if (button.dataset.calendarView === activeCalendarView) {
           button.classList.add('active');
+          button.setAttribute('aria-pressed', 'true');
         } else {
           button.classList.remove('active');
+          button.setAttribute('aria-pressed', 'false');
         }
       });
     }

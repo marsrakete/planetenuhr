@@ -163,6 +163,10 @@ Die Tagessegmente werden pro Ort, Zeitzone und lokalem Datum zwischengespeichert
 
 ## Einheitliche Typografie und SVG-Details
 
+Bedienflächen verwenden `--control-height`: mindestens 36px am Desktop und 44px bis 760px Breite. Wiederkehrende Auswahlgruppen nutzen `--control-gap` (8px). Die ?-Hilfe behält ihr kleines Symbol innerhalb einer 44px großen Trefferfläche. Kalenderfilter und Ansichtswechsel melden ihre Auswahl zusätzlich zur Farbmarkierung über `aria-pressed`; Tastaturfokus bleibt sichtbar. Bis 360px Breite stehen Datum/Ort und Datumsbuttons in zwei Zeilen, damit weder Text noch Trefferflächen eingeengt werden.
+
+Sichtbare numerische Datumsangaben folgen mit `Intl.DateTimeFormat` der gewählten App-Sprache (Deutsch, Englisch oder Französisch). Die Zeitzone bleibt vom jeweiligen Inhalt abhängig: Ortszeit bei Horizontdaten, Browserzeit bei IDEFIX und die gewählte Zone in der Uhr. URL-Parameter (`YYYYMMDD`) und interne Datumsschlüssel (`YYYY-MM-DD`) bleiben sprachunabhängig; dafür wird ausschließlich `formatDateKey` verwendet.
+
 Die Schriftstufen stehen zentral in `styles.css` als CSS-Variablen. Komponenten verwenden diese Variablen statt eigener Zwischenwerte:
 
 | Rolle | Variable | Größe bei 16px Wurzelschrift |

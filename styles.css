@@ -12,6 +12,8 @@
       --line-body:1.5;
       --line-note:1.45;
       --line-control:1.35;
+      --control-height:36px;
+      --control-gap:8px;
       --bg:#f0f0f0; --fg:#333; --muted:#666; --card:#fff;
       --accent:#007bff; --accent-hover:#0056b3;
       --border:#ccc; --shadow:0 4px 8px rgba(0,0,0,.1);
@@ -630,7 +632,7 @@
     }
     .date-mobile-actions button{
       margin:0;
-      min-height:34px;
+      min-height:var(--control-height);
       padding:7px 10px;
       border-radius:999px;
       font-size:var(--font-control);
@@ -3027,7 +3029,7 @@
     }
     .calendar-view-button{
       min-width:78px;
-      min-height:34px;
+      min-height:var(--control-height);
       margin:0;
       padding:7px 12px;
       border:1px solid #bfdbfe;
@@ -3053,9 +3055,9 @@
     }
     .calendar-filter{
       margin:0;
-      min-height:34px;
+      min-height:var(--control-height);
       padding:7px 11px;
-      font-size:var(--font-note);
+      font-size:var(--font-control);
       font-weight:700;
       line-height:1;
       background:#f8fbff;
@@ -4077,8 +4079,8 @@
 /* --- Base Touch Targets --- */
 button {
   min-width: 48px;
-  min-height: 48px;
-  padding: 10px 16px;
+  min-height: var(--control-height);
+  padding: 7px 12px;
   border-radius: 8px;
   border: 1px solid var(--border);
   background: var(--card);
@@ -4391,4 +4393,68 @@ select {
     order:10;
     grid-column:1 / -1;
   }
+}
+
+/* Shared control geometry; compact icons retain a full, contained hit area. */
+.display-container button:not(.card-help-button):not(.card-size-button),
+.diagram-dialog-heading button {
+  min-height:var(--control-height);
+}
+.display-container .barycenter-controls,
+.display-container .calendar-view-toggle,
+.display-container .calendar-toolbar,
+.display-container .light-travel-targets,
+.display-container .idefix-controls,
+.display-container .idefix-jumps {
+  gap:var(--control-gap);
+}
+.card-help {
+  top:0;
+  right:0;
+}
+.card-help-button {
+  position:relative;
+  display:grid;
+  place-items:center;
+  width:44px;
+  height:44px;
+  min-width:44px;
+  min-height:44px;
+  border:0;
+  border-radius:8px;
+  background:radial-gradient(circle,#fff 7px,transparent 7px);
+  box-shadow:none;
+}
+.card-help-button::before {
+  content:"";
+  position:absolute;
+  inset:15px;
+  border:1px solid rgba(148,163,184,.45);
+  border-radius:50%;
+  pointer-events:none;
+}
+.card-help-button:hover,
+.card-help-button:focus-visible {
+  background:radial-gradient(circle,#eff6ff 7px,transparent 7px);
+}
+.card-help-button:focus-visible,
+.calendar-view-button:focus-visible,
+.calendar-filter:focus-visible {
+  outline:2px solid var(--accent);
+  outline-offset:2px;
+}
+.card-help-popup { top:44px; }
+@media (max-width:760px) {
+  :root { --control-height:44px; }
+  .display-container.date-location-card { padding:8px 10px; }
+  .date-mobile-actions button {
+    min-width:44px;
+    padding:5px 8px;
+  }
+  .calendar-options label { min-height:var(--control-height); }
+}
+@media (max-width:360px) {
+  .date-mobile-bar { flex-wrap:wrap; gap:4px; }
+  .date-mobile-summary { flex-basis:100%; flex-direction:row; justify-content:space-between; align-items:center; }
+  .date-mobile-actions { width:100%; justify-content:space-between; }
 }
