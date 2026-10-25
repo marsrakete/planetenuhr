@@ -31,6 +31,8 @@ function getRequiredFiles() {
     "sky-knowledge.css",
     "diagram-details.js",
     "diagram-details.css",
+    "earth-moon-visuals.js",
+    "earth-moon-visuals.css",
     "idefix-config.js",
     "idefix-ephemeris.js",
     "idefix-model.js",

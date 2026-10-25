@@ -421,12 +421,14 @@ window.PLANETENUHR_CARD_HELP = {
           "It is the most date-sensitive tile in the dashboard."
         ],
         formulas: [
+          { expr: "r = R |cos(2&pi;f)|", note: "Projected terminator semi-axis; the lit side follows the existing lunar phase model." },
           { expr: "age = ((t - t<sub>0</sub>) mod 29.530588861 d)", note: "Moon age from a reference new moon and the synodic month." },
           { expr: "illum = 0.5 (1 - cos(2&pi;f))", note: "Illuminated fraction from lunar phase fraction f." },
           { expr: "cos H = (cos Z - sin &delta; sin &phi;) / (cos &delta; cos &phi;)", note: "Solar event relation behind sunrise, sunset and twilight times." },
           { expr: "H = LST - &alpha;, &nbsp; sin h = sin &phi; sin &delta; + cos &phi; cos &delta; cos H", note: "Approximate Moon altitude h from local sidereal time, latitude &phi;, right ascension &alpha; and declination &delta;." }
         ],
         details: [
+          "The accelerated orbit is a schematic overhead view: sunlight reaches both globes from the left. The larger Moon below shows the selected date, with waxing phases lit on the right and waning phases on the left (northern convention). The phase comes from viewing the sunlit half, not from Earth casting a shadow. Continents, craters, rotation and scales are illustrative; eclipse shadows and local phase rotation are not simulated.",
           "The eclipse panel checks new/full moon geometry together with node proximity, so it shows when eclipse conditions are favorable.",
           "Sunrise, sunset, dawn, dusk, blue hour and golden hour are recomputed for the currently selected German city.",
           "The Moon direction line uses the same approximate local sky conversion as the eclipse preview so azimuth and horizon height read the same way."
@@ -909,11 +911,13 @@ window.PLANETENUHR_CARD_HELP = {
           "Sie ist die datums- und ortssensibelste Kachel im ganzen Dashboard."
         ],
         formulas: [
+          { expr: "r = R |cos(2&pi;f)|", note: "Projizierte Halbachse der Lichtgrenze; die helle Seite folgt dem bestehenden Mondphasenmodell." },
           { expr: "Alter = ((t - t<sub>0</sub>) mod 29.530588861 d)", note: "Mondalter aus Referenz-Neumond und synodischem Monat." },
           { expr: "Beleuchtung = 0.5 (1 - cos(2&pi;f))", note: "Beleuchteter Anteil aus der Phasenfraktion f." },
           { expr: "cos H = (cos Z - sin &delta; sin &phi;) / (cos &delta; cos &phi;)", note: "Grundbeziehung hinter Sonnenaufgang, Sonnenuntergang und Dämmerung." }
         ],
         details: [
+          "Der beschleunigte Umlauf ist eine schematische Draufsicht: Sonnenlicht trifft beide Kugeln von links. Der größere Mond darunter zeigt das gewählte Datum, zunehmend rechts und abnehmend links beleuchtet (nördliche Darstellung). Die Phase entsteht durch den Blick auf die beleuchtete Hälfte, nicht durch Erdschatten. Kontinente, Krater, Rotation und Maßstäbe sind illustrativ; Finsternisschatten und örtliche Phasendrehung werden nicht simuliert.",
           "Die Finsternis-Grafik prüft Neu-/Vollmond-Geometrie zusammen mit Knotennahe und zeigt damit, wann Finsternisbedingungen günstig sind.",
           "Sonnenaufgang, Sonnenuntergang, Dämmerung, blaue Stunde und goldene Stunde werden für die aktuell gewählte Stadt neu berechnet."
         ],
@@ -1395,11 +1399,13 @@ window.PLANETENUHR_CARD_HELP = {
           "C'est la carte la plus sensible a la date et au lieu dans tout le tableau de bord."
         ],
         formulas: [
+          { expr: "r = R |cos(2&pi;f)|", note: "Demi-axe projeté du terminateur ; le côté éclairé suit le modèle de phase existant." },
           { expr: "age = ((t - t<sub>0</sub>) mod 29.530588861 d)", note: "Age lunaire a partir d'une nouvelle lune de reference et du mois synodique." },
           { expr: "illum = 0.5 (1 - cos(2&pi;f))", note: "Fraction eclairee selon la phase lunaire f." },
           { expr: "cos H = (cos Z - sin &delta; sin &phi;) / (cos &delta; cos &phi;)", note: "Relation de base pour lever, coucher et crepuscule du Soleil." }
         ],
         details: [
+          "L’orbite accélérée est une vue schématique du dessus : la lumière solaire éclaire les deux globes depuis la gauche. La grande Lune en dessous suit la date choisie, éclairée à droite en phase croissante et à gauche en phase décroissante (convention nord). La phase vient de la vue de la moitié éclairée, pas de l’ombre de la Terre. Continents, cratères, rotation et échelles sont illustratifs ; les ombres d’éclipse et la rotation locale de la phase ne sont pas simulées.",
           "Le panneau d'eclipse combine la proximite des noeuds avec la geometrie nouvelle lune / pleine lune pour montrer quand une eclipse devient plausible.",
           "Lever du Soleil, coucher, aube, crepuscule, heure bleue et heure doree sont recalcules pour la ville allemande choisie."
         ],

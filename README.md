@@ -9,6 +9,8 @@ Planetenuhr ist ein statisches Astronomie-Dashboard als reine HTML-App. Die Anwe
 
 ## Neue Astronomie-Kacheln
 
+**Erde & Mond** zeigt eine Erdkugel mit vereinfachten Kontinenten und einen weißgrauen Mond mit dezenten Kratern. In der beschleunigten Umlaufskizze kommt das Sonnenlicht bei beiden Körpern von links; diese Draufsicht ist von der größeren, datumsabhängigen Mondphasenansicht darunter getrennt. Kontinente, Größen und Umlauf sind schematisch.
+
 **Planeten über dem Horizont** zeigt die sieben anderen Planeten in einem Panorama von Norden über Osten, Süden und Westen zurück nach Norden. Negative Höhen liegen im schattierten Bereich unter dem Horizont. Nummern verbinden die Markierungen mit den auswählbaren Planeten. Der Zeitregler erkundet ±12 Stunden relativ zum ausgewählten Dashboard-Zeitpunkt und verändert nur diese Kachel. Datum und Uhrzeit werden in der Zeitzone des gewählten Ortes angezeigt. „Ausgewählte Zeit“ setzt den lokalen Versatz zurück.
 
 Der Himmel über der Horizontlinie wird passend zu Tag, Morgen-/Abenddämmerung oder Nacht eingefärbt. Ein Zeitband zeigt den lokalen Kalendertag, die erkundete Uhrzeit sowie Sonnenauf- und -untergang. Auch Zeitumstellungen, Polartag und Polarnacht werden berücksichtigt. Bei Polarnacht kann dennoch Dämmerung vorkommen. Ein dunkler Hintergrund bedeutet dunklen Himmel, keine garantierte Sichtbarkeit bei jedem Wetter.

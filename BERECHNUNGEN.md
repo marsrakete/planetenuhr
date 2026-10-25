@@ -24,6 +24,12 @@ Daraus werden berechnet:
 - Zyklusfortschritt
 - nächster Vollmond als Näherung
 
+Die SVG-Mondphase in `earth-moon-visuals.js` verwendet dieselbe Phasenfraktion `f`. Die Lichtgrenze auf der projizierten Kugel ist eine Halbellipse mit horizontaler Halbachse `R · |cos(2πf)|` und vertikaler Halbachse `R`. Ihr Vorzeichen und die zunehmende bzw. abnehmende Phase bestimmen die Bogenrichtung; bei den Vierteln wird die Lichtgrenze eine Gerade. So entspricht die helle Fläche dem Anteil `(1 − cos(2πf)) / 2`. Die dunkle Fläche wird als komplementäre Lichtregion für `f + 0,5` gezeichnet.
+
+Zunehmende Phasen sind rechts beleuchtet, abnehmende links (schematische Ansicht für nördliche Breiten, keine ortsabhängige Drehung oder Libration). Die Phase entsteht durch den Blick auf die sonnenbeschienene Mondhälfte, nicht durch Erdschatten. Finsternisabschattungen werden hier nicht simuliert.
+
+Die obere Umlaufgrafik ist eine andere Perspektive: eine stark beschleunigte, schräg projizierte Draufsicht mit festem Sonnenlicht von links. Erde und Mond besitzen dort eine helle linke und dunkle rechte Seite. Der Umlauf zeigt keine datumsgenaue Mondposition. Die vereinfachten Kontinente drehen sich nicht mit der tatsächlichen Erdrotation; das Erde-Mond-Größen- und Abstandsverhältnis ist nicht maßstäblich.
+
 ### Planetenpositionen
 
 Die Planetenpositionen basieren auf vereinfachten heliozentrischen Bahnelementen nahe J2000:

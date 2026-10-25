@@ -42,6 +42,7 @@
   <link rel="stylesheet" href="astronomy-explorer.css" />
   <link rel="stylesheet" href="sky-knowledge.css" />
   <link rel="stylesheet" href="idefix.css" />
+  <link rel="stylesheet" href="earth-moon-visuals.css" />
   <link rel="stylesheet" href="diagram-details.css" />
 </head>
 <body>
@@ -692,20 +693,65 @@
       </div>
     </div>
 
+    <template id="earthGlobeTemplate">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" class="earth-globe" aria-hidden="true">
+<defs>
+ <radialGradient id="em-earth-sea" cx="30%" cy="28%" r="85%"><stop stop-color="#79d3ef"/><stop offset=".45" stop-color="#2389c6"/><stop offset="1" stop-color="#0d426e"/></radialGradient>
+ <linearGradient id="em-earth-land" x2="1" y2="1"><stop stop-color="#b2ce85"/><stop offset="1" stop-color="#4c9975"/></linearGradient>
+ <linearGradient id="em-earth-night"><stop offset="0" stop-color="#061529" stop-opacity="0"/><stop offset=".45" stop-color="#061529" stop-opacity="0"/><stop offset=".55" stop-color="#061529" stop-opacity=".78"/><stop offset=".8" stop-color="#061529" stop-opacity=".9"/><stop offset="1" stop-color="#030e21" stop-opacity=".95"/></linearGradient>
+ <radialGradient id="em-earth-rim"><stop offset=".72" stop-color="#c0f0ff" stop-opacity="0"/><stop offset="1" stop-color="#b6e7ff" stop-opacity=".35"/></radialGradient>
+ <clipPath id="em-earth-sphere"><circle cx="64" cy="64" r="55"/></clipPath>
+</defs>
+<g clip-path="url(#em-earth-sphere)">
+ <circle cx="64" cy="64" r="55" fill="url(#em-earth-sea)"/>
+ <g fill="url(#em-earth-land)" stroke="#77ac83" stroke-width=".5" stroke-linejoin="round">
+  <path d="M51 42 55 35 63 32 66 23 72 24 72 33 79 34 81 28 92 28 106 33 120 40 123 57 113 65 106 60 102 66 96 63 93 56 88 55 85 49 78 48 75 43 68 45 64 41 58 45Z"/>
+  <path d="M54 48 64 45 72 48 78 55 86 59 80 66 77 76 72 82 69 94 63 99 59 87 55 80 55 72 49 65 47 56Z"/>
+  <path d="M88 84 91 89 88 97 85 96 85 90Z"/>
+  <path d="M18 31 27 26 34 30 37 38 30 42 31 49 24 54 24 62 18 57 11 47Z"/>
+  <path d="M24 66 33 69 36 77 32 87 28 96 24 100 23 88 18 77Z"/>
+  <path d="M39 16 47 13 53 18 47 27 40 27 37 22Z" fill="#d1e9df"/>
+ </g>
+ <g fill="none" stroke="#fff" stroke-opacity=".34" stroke-width="2.1" stroke-linecap="round">
+  <path d="M28 45Q38 39 46 42"/><path d="M32 85Q43 91 51 88"/><path d="M75 20Q90 20 98 27"/>
+ </g>
+ <circle cx="64" cy="64" r="55" fill="url(#em-earth-night)"/>
+ <circle cx="64" cy="64" r="55" fill="url(#em-earth-rim)"/>
+</g>
+<circle cx="64" cy="64" r="55" fill="none" stroke="#71badc" stroke-opacity=".55" stroke-width="1"/>
+</svg>
+    </template>
+    <template id="moonGlobeTemplate">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" class="moon-globe" aria-hidden="true">
+        <defs>
+          <radialGradient id="moonSurface" cx="35%" cy="30%" r="80%"><stop stop-color="#fffef8"/><stop offset=".65" stop-color="#e7e7e1"/><stop offset="1" stop-color="#b6b9b8"/></radialGradient>
+          <clipPath id="moonDisc"><circle cx="64" cy="64" r="55"/></clipPath>
+        </defs>
+        <g clip-path="url(#moonDisc)">
+          <circle cx="64" cy="64" r="55" fill="url(#moonSurface)"/>
+          <g class="moon-maria"><ellipse cx="45" cy="42" rx="16" ry="12"/><ellipse cx="76" cy="36" rx="13" ry="10"/><ellipse cx="84" cy="65" rx="14" ry="18"/><ellipse cx="40" cy="76" rx="10" ry="15"/></g>
+          <g class="moon-craters"><circle cx="54" cy="91" r="7"/><circle cx="32" cy="56" r="5"/><circle cx="74" cy="81" r="4"/><circle cx="59" cy="57" r="3"/><circle cx="85" cy="98" r="5"/><circle cx="57" cy="24" r="4"/></g>
+          <path class="moon-night" data-moon-shadow></path>
+        </g>
+        <circle cx="64" cy="64" r="55" class="moon-rim"/>
+      </svg>
+    </template>
+
     <div class="display-container earth-card" data-help-key="earth_moon">
       <div class="group-title" id="titleEarthMoon">Earth & Moon</div>
       <div class="earthmoon-layout">
         <div class="earthmoon-primary">
           <div class="earthmoon-wrap">
             <div class="earthmoon">
-              <div class="earth"></div>
+              <div id="earthMoonGlobe" class="earth earth-globe-host" aria-hidden="true"></div>
               <div id="emOrbit" class="em-orbit">
                 <div id="emMoon" class="em-moon">
-                  <span id="emIcon">🌑</span>
+                  <span id="emIcon" class="orbit-moon-globe" aria-hidden="true"></span>
                 </div>
               </div>
             </div>
           </div>
+          <p id="earthMoonViewNote" class="earthmoon-view-note"></p>
           <div class="em-info">
             <div id="emPhaseText">Phase: New Moon (0%)</div>
             <div id="moonNextFull" class="em-next-full">Next full moon: -</div>
@@ -714,7 +760,7 @@
         </div>
         <div class="moon-details">
           <div class="time-tool-title" id="titleMoon">Moon</div>
-          <div id="moonIcon" class="moon-graphic" aria-label="Moon phase graphic">🌑</div>
+          <div id="moonIcon" class="moon-graphic moon-phase-globe" role="img" aria-label="Moon phase graphic"></div>
           <div id="moonText" style="margin-top:6px">New Moon · 0%</div>
 
           <div id="labelIllum" class="moon-label-line">Illumination</div>
@@ -1034,6 +1080,7 @@
   <script src="sky-knowledge-graphics.js"></script>
   <script src="sky-knowledge.js"></script>
   <script src="diagram-details.js"></script>
+  <script src="earth-moon-visuals.js"></script>
   <script src="idefix-config.js"></script>
   <script src="idefix-ephemeris.js"></script>
   <script src="idefix-model.js"></script>
@@ -1610,6 +1657,7 @@
       const auroraLegend = document.getElementById('auroraLegend');
       if (auroraLegend) auroraLegend.textContent = t.legend_aurora || 'Live estimate for today; not linked to the date control';
       document.getElementById('titleEarthMoon').textContent  = t.title_earthmoon;
+      document.getElementById('earthMoonViewNote').textContent = t.earth_moon_view_note;
       document.getElementById('titleMoon').textContent       = t.title_moon;
       const titleEclipseGeometry = document.getElementById('titleEclipseGeometry');
       if (titleEclipseGeometry) titleEclipseGeometry.textContent = t.title_eclipse_geometry;
@@ -10529,6 +10577,11 @@ function computeMoon(date){
       }
     }
 
+    /**
+     * Refreshes the retained phase SVG, phase text, local direction and eclipse sketch.
+     * @param {Date} [date=selectedSolarDate()] Dashboard instant used for the Moon model.
+     * @returns {void}
+     */
     function renderMoon(date = selectedSolarDate()){
       const tz  = document.getElementById('timezone').value;
       const m   = computeMoon(date);
@@ -10538,7 +10591,7 @@ function computeMoon(date){
       const moonIcon = document.getElementById('moonIcon');
       const moonText = document.getElementById('moonText');
       if (moonIcon) {
-        moonIcon.textContent = m.icon;
+        window.PLANETENUHR_EARTH_MOON_VISUALS.render(m.frac);
         moonIcon.setAttribute('aria-label', t[m.key] + ', ' + m.illum + '%');
       }
       if (moonText) moonText.textContent = t[m.key] + ' · ' + m.illum + '%';
@@ -10588,11 +10641,14 @@ function computeMoon(date){
       renderEclipseGeometry(selectedSolarDate());
     }
 
+    /**
+     * Updates the dated phase caption below the separate accelerated orbit sketch.
+     * @param {Date} [date=selectedSolarDate()] Dashboard instant for the phase caption.
+     * @returns {void}
+     */
     function renderEarthMoon(date = selectedSolarDate()){
       const m   = computeMoon(date);
-      const emIcon = document.getElementById('emIcon');
       const emPhaseText = document.getElementById('emPhaseText');
-      if (emIcon) emIcon.textContent = m.icon;
       if (emPhaseText) {
         emPhaseText.textContent = t.phase_label + ': ' + t[m.key] + ' (' + m.illum + '%)';
       }
