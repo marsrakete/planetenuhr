@@ -264,30 +264,47 @@ window.PLANETENUHR_EXPLORER = (() => {
       return text('explorer_directions')[Math.round(azimuth / 45) % 8];
     }
 
-    /** Finds an unclipped label position, omitting optional labels when crowded. @param {number} x Marker x. @param {number} y Marker y. @param {string} label Text. @param {number} width Plot width. @param {Array<object>} boxes Occupied labels. @returns {object|null} Label box or no suitable space. */
+    /** Finds space near a planet, keeping every name inside the plot without leader lines. @param {number} x Marker x. @param {number} y Marker y. @param {SVGTextElement} label Rendered name for exact glyph measurement. @param {number} width Plot width. @param {Array<object>} boxes Occupied names and planet dots. @returns {object} Unclipped label box with the least overlap. */
     function labelPosition(x, y, label, width, boxes){
-      const labelWidth = label.length * 7.5 + 8;
+      const bounds = label.getBBox();
+      const labelWidth = bounds.width + 8;
       const center = Math.min(width - 12 - labelWidth / 2, Math.max(36 + labelWidth / 2, x));
-      const offsets = [-17, 23, -36, 42, -55, 61, -74, 80];
+      const offsets = [-17, 23];
+      // Search progressively farther only when nearby names or dots occupy both sides.
+      for (let distance = 36; distance <= 252; distance += 19) {
+        offsets.push(-distance, distance + 6);
+      }
+      let bestBox = null;
+      let leastOverlap = Infinity;
       for (const offset of offsets) {
-        const baseline = Math.max(18, Math.min(253, y + offset));
-        const box = { left:center - labelWidth / 2, right:center + labelWidth / 2, top:baseline - 13, bottom:baseline + 3, x:center, y:baseline };
-        const overlaps = boxes.some(other => box.left < other.right + 4 && box.right > other.left - 4 && box.top < other.bottom + 4 && box.bottom > other.top - 4);
-        if (!overlaps) {
-          boxes.push(box);
+        const baseline = Math.max(2 - bounds.y, Math.min(238 - bounds.y - bounds.height, y + offset));
+        const box = { left:center - labelWidth / 2, right:center + labelWidth / 2, top:baseline + bounds.y - 2, bottom:baseline + bounds.y + bounds.height + 2, x:center, y:baseline };
+        let overlap = 0;
+        boxes.forEach(other => {
+          overlap += Math.max(0, Math.min(box.right, other.right + 4) - Math.max(box.left, other.left - 4)) * Math.max(0, Math.min(box.bottom, other.bottom + 4) - Math.max(box.top, other.top - 4));
+        });
+        if (overlap === 0) {
           return box;
         }
+        if (overlap < leastOverlap) {
+          leastOverlap = overlap;
+          bestBox = box;
+        }
       }
-      return null;
+      return bestBox;
     }
 
     /** Updates existing markers and their labels without replacing plot or control nodes. @returns {void} */
     function updateHorizonMarkers(){
       const left = 36;
       const right = lastWidth - 14;
-      const top = 30;
-      const bottom = 254;
-      const boxes = [];
+      const top = 12;
+      const bottom = 236;
+      const boxes = rows.map(row => {
+        const x = left + row.azimuthDeg / 360 * (right - left);
+        const y = bottom - (row.altitudeDeg + 90) / 180 * (bottom - top);
+        return { left:x - 7, right:x + 7, top:y - 7, bottom:y + 7 };
+      });
       const selected = rows.find(row => row.key === selectedHorizonPlanet);
       const ordered = rows.filter(row => row.key !== selectedHorizonPlanet);
       ordered.unshift(selected);
@@ -304,21 +321,17 @@ window.PLANETENUHR_EXPLORER = (() => {
         }
         group.classList.toggle('is-selected', row.key === selectedHorizonPlanet);
         group.classList.toggle('is-below', row.altitudeDeg < 0);
-        let label = String(row.index + 1);
-        if (row.key === selectedHorizonPlanet) {
-          label = row.name;
-        }
-        const box = labelPosition(x, y, label, lastWidth, boxes);
         const labelNode = group.querySelector('text');
-        if (box) {
-          if (labelNode.textContent !== label) {
-            labelNode.textContent = label;
-          }
-          labelNode.setAttribute('x', box.x - x);
-          labelNode.setAttribute('y', box.y - y);
-        } else {
-          labelNode.textContent = '';
+        if (labelNode.textContent !== row.name) {
+          labelNode.textContent = row.name;
         }
+        // Measure at the origin so earlier local offsets do not enter the glyph bounds.
+        labelNode.setAttribute('x', '0');
+        labelNode.setAttribute('y', '0');
+        const box = labelPosition(x, y, labelNode, lastWidth, boxes);
+        boxes.push(box);
+        labelNode.setAttribute('x', box.x - x);
+        labelNode.setAttribute('y', box.y - y);
       });
       // Keep the selected dot visible in a cluster while retaining its DOM identity.
       const selectedGroup = plot.querySelector('[data-planet="' + selectedHorizonPlanet + '"]');
@@ -337,10 +350,10 @@ window.PLANETENUHR_EXPLORER = (() => {
       lastWidth = width;
       const left = 36;
       const right = width - 14;
-      const top = 30;
-      const bottom = 254;
+      const top = 12;
+      const bottom = 236;
       const horizonY = (top + bottom) / 2;
-      plot.setAttribute('viewBox', '0 0 ' + width + ' 300');
+      plot.setAttribute('viewBox', '0 0 ' + width + ' 282');
       plot.replaceChildren();
       const skyFragment = clone('horizonSkyTemplate');
       const sky = skyFragment.querySelector('rect');
@@ -363,7 +376,7 @@ window.PLANETENUHR_EXPLORER = (() => {
       plot.appendChild(svg('line', { x1:left, y1:horizonY, x2:right, y2:horizonY, class:'horizon-line' }));
       [0, 90, 180, 270, 360].forEach(azimuth => {
         const x = left + azimuth / 360 * (right - left);
-        const label = svg('text', { x, y:282, 'text-anchor':'middle' });
+        const label = svg('text', { x, y:264, 'text-anchor':'middle' });
         label.textContent = direction(azimuth);
         plot.appendChild(label);
       });
@@ -427,7 +440,7 @@ window.PLANETENUHR_EXPLORER = (() => {
       timeSlider.setAttribute('aria-valuetext', localDateTime(date));
       rows.forEach(row => {
         const button = planetList.querySelector('[data-horizon-planet="' + row.key + '"]');
-        button.querySelector('[data-horizon-name]').textContent = String(row.index + 1) + ' · ' + row.name;
+        button.querySelector('[data-horizon-name]').textContent = row.name;
         let status = number(row.altitudeDeg, 1) + '° · ' + direction(row.azimuthDeg);
         if (row.altitudeDeg < 0) {
           status += ' · ' + text('horizon_below');

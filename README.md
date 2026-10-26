@@ -11,7 +11,9 @@ Planetenuhr ist ein statisches Astronomie-Dashboard als reine HTML-App. Die Anwe
 
 **Erde & Mond** zeigt eine Erdkugel mit vereinfachten Kontinenten und einen weißgrauen Mond mit dezenten Kratern. In der beschleunigten Umlaufskizze kommt das Sonnenlicht bei beiden Körpern von links; diese Draufsicht ist von der größeren, datumsabhängigen Mondphasenansicht darunter getrennt. Kontinente, Größen und Umlauf sind schematisch.
 
-**Planeten über dem Horizont** zeigt die sieben anderen Planeten in einem Panorama von Norden über Osten, Süden und Westen zurück nach Norden. Negative Höhen liegen im schattierten Bereich unter dem Horizont. Nummern verbinden die Markierungen mit den auswählbaren Planeten. Der Zeitregler erkundet ±12 Stunden relativ zum ausgewählten Dashboard-Zeitpunkt und verändert nur diese Kachel. Datum und Uhrzeit werden in der Zeitzone des gewählten Ortes angezeigt. „Ausgewählte Zeit“ setzt den lokalen Versatz zurück.
+**Meteorströme** beschriftet die Aktivitätsbögen im Jahreskreis mit den Namen der Ströme. Farbige Verbindungslinien führen zu den jeweiligen Maximum-Markierungen; die Namen folgen der gewählten Sprache und bleiben auch auf kleinen Bildschirmen lesbar.
+
+**Planeten über dem Horizont** zeigt die sieben anderen Planeten in einem Panorama von Norden über Osten, Süden und Westen zurück nach Norden. Negative Höhen liegen im schattierten Bereich unter dem Horizont. Alle Markierungen tragen direkt den lokalisierten Planetennamen, auch unter dem Horizont. Bei engen Gruppen werden die Namen versetzt, ohne Verbindungslinien; der ausgewählte Planet bleibt hervorgehoben. Der Zeitregler erkundet ±12 Stunden relativ zum ausgewählten Dashboard-Zeitpunkt und verändert nur diese Kachel. Datum und Uhrzeit werden in der Zeitzone des gewählten Ortes angezeigt. „Ausgewählte Zeit“ setzt den lokalen Versatz zurück.
 
 Der Himmel über der Horizontlinie wird passend zu Tag, Morgen-/Abenddämmerung oder Nacht eingefärbt. Ein Zeitband zeigt den lokalen Kalendertag, die erkundete Uhrzeit sowie Sonnenauf- und -untergang. Auch Zeitumstellungen, Polartag und Polarnacht werden berücksichtigt. Bei Polarnacht kann dennoch Dämmerung vorkommen. Ein dunkler Hintergrund bedeutet dunklen Himmel, keine garantierte Sichtbarkeit bei jedem Wetter.
 
@@ -24,6 +26,8 @@ Die Rechenmodelle, Konstanten und Näherungen stehen in [BERECHNUNGEN.md](BERECH
 **IDEFIX auf dem Weg zu Phobos** zeigt Sonne, Erde, Mars und die Reise von MMX mit dem Rover als Pixelspur. Phobos ist separat vergrößert dargestellt. Regler und Tages-, Monats- und Jahresschritte erkunden den Missionsplan bis 2031. Die Markierung basiert auf einer JAXA/JPL-Bahnvorhersage bis Ende 2028, nicht auf Live-Telemetrie; spätere Zielmarkierungen sind als Planung gekennzeichnet. Der zuletzt bestätigte Missionsstand steht mit Prüfdatum und Links zu JAXA-Missionsnews, DLR, CNES und ESA daneben. IDEFIX verbleibt nach der geplanten Landung auf Phobos; die Probenkapsel soll zur Erde zurückkehren.
 
 ## Zentrale Bedienung
+
+Die App startet mit Version **1.0**. Im Einstellungsmenü der Datumsleiste steht die laufende Version mit „Nach Updates suchen“. Die App prüft außerdem beim Start und bei Rückkehr zur Seite auf eine neue Version. Wenn eine andere Serverversion bereitsteht, erscheint im Einstellungsmenü direkt neben „Nach Updates suchen“ der Button „Jetzt aktualisieren“ mit einem Versionshinweis. Auf schmalen Displays darf er darunter umbrechen. Erst dieser Klick lädt die neue Version; Datum, Ort, Sprache und Kachel-Link bleiben erhalten. Eine fehlgeschlagene automatische Prüfung unterbricht die App nicht.
 
 - Die Datums- und Ortssteuerung sitzt als Overlay oben auf der Seite.
 - Das gewählte Datum steuert mehrere Kacheln gleichzeitig, unter anderem:

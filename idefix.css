@@ -48,6 +48,8 @@
 @media (max-width:760px) {
  .idefix-views { grid-template-columns:1fr; row-gap:0; }
  /* Both SVGs have empty edges; overlap only that space to keep the combined graphic compact. */
- .idefix-moon-view { width:180px; justify-self:center; margin-top:-32px; }
+ .idefix-moon-view { width:100%; justify-self:center; margin-top:-32px; }
+ .idefix-moon-view svg { width:180px; max-width:100%; margin:0 auto; }
+ .idefix-moon-view p { margin-left:0; margin-right:0; }
  .idefix-controls button,.idefix-jumps button { min-height:44px; }
 }

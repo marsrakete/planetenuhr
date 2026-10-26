@@ -3,6 +3,7 @@
 const fs = require("fs");
 const path = require("path");
 const { getIcsFreshnessState } = require("./check-ics-freshness");
+const { checkVersion } = require("./check-version");
 
 /**
  * Returns the repository root based on the current working directory.
@@ -19,6 +20,9 @@ function getRepositoryRoot() {
 function getRequiredFiles() {
   return [
     "index.html",
+    "version.json",
+    "app-updates.js",
+    "app-updates.css",
     "styles.css",
     "astronomy-explorer.css",
     "astronomy-explorer-config.js",
@@ -33,6 +37,8 @@ function getRequiredFiles() {
     "diagram-details.css",
     "earth-moon-visuals.js",
     "earth-moon-visuals.css",
+    "meteor-labels.js",
+    "meteor-labels.css",
     "idefix-config.js",
     "idefix-ephemeris.js",
     "idefix-model.js",
@@ -139,6 +145,12 @@ function main() {
   const requiredFiles = getRequiredFiles();
   const missingFiles = collectMissingFiles(repositoryRoot, requiredFiles);
   const icsState = getIcsFreshnessState(repositoryRoot);
+  const versionErrors = checkVersion(repositoryRoot);
+  if (versionErrors.length) {
+    versionErrors.forEach(error => console.error(error));
+    process.exitCode = 1;
+    return;
+  }
   finishBuild(missingFiles, icsState);
 }
 

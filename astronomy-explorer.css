@@ -13,7 +13,7 @@
 .explorer-note { width:100%; text-align:center; color:var(--muted); overflow-wrap:anywhere; }
 .explorer-context { font-size:var(--font-body); line-height:var(--line-body); }
 .explorer-note { font-size:var(--font-note); line-height:var(--line-note); }
-.horizon-plot { display:block; width:100%; height:300px; flex-shrink:0; }
+.horizon-plot { display:block; width:100%; height:282px; flex-shrink:0; }
 .horizon-plot text { font-family:var(--font-family); font-size:var(--font-diagram); fill:var(--fg); }
 .horizon-grid-line { stroke:var(--border); stroke-width:1; }
 .horizon-grid-line.is-sky { stroke:var(--horizon-sky-grid); opacity:.5; }

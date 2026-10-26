@@ -1,0 +1,12 @@
+/* Outer names occupy the chart corners; only the activity ring is circular. */
+#meteorMap svg { border-radius:0; }
+.meteor-stream-leader { fill:none; stroke-width:1; stroke-opacity:.65; }
+.meteor-stream-name {
+  fill:var(--fg);
+  dominant-baseline:middle;
+  font-family:var(--font-family);
+  paint-order:stroke;
+  stroke:var(--card);
+  stroke-width:5px;
+  stroke-linejoin:round;
+}

@@ -1,0 +1,9 @@
+.app-updates { gap:8px; }
+.app-update-actions { display:flex; flex-wrap:wrap; gap:8px; }
+.app-update-actions button { margin:0; min-height:var(--control-height); max-width:100%; white-space:normal; color:var(--accent); background:var(--card); }
+.app-update-status { margin:0; font-size:var(--font-note); line-height:var(--line-note); overflow-wrap:anywhere; }
+.app-update-status[data-error="true"] { color:#b91c1c; }
+.app-updates button:hover { background:#eff6ff; }
+.app-update-actions button[hidden], .app-update-status[hidden] { display:none; }
+.app-updates button:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+.app-updates button:disabled, .app-updates button[aria-disabled="true"] { opacity:.6; cursor:default; }

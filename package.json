@@ -1,7 +1,7 @@
 {
   "name": "planetenuhr",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.3.0",
   "description": "Static astronomy dashboard with build-time validation checks.",
   "scripts": {
     "check:encoding": "node scripts/check-encoding.js",
@@ -21,6 +21,7 @@
     "validate:repo": "npm run build",
     "test:knowledge": "node --test scripts/sky-knowledge.test.js",
     "test:idefix": "node --test scripts/idefix.test.js",
-    "test:typography": "node --test scripts/typography.test.js"
+    "test:typography": "node --test scripts/typography.test.js",
+    "test:updates": "node --test scripts/app-updates.test.js"
   }
 }
