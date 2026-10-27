@@ -5,7 +5,7 @@ window.PLANETENUHR_EXPLORER_CONFIG = {
   lightSpeedKmPerSecond: 299792.458,
   j2000ObliquityDegrees: 23.43928,
   horizonPlanetKeys: ['mercury', 'venus', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune'],
-  lightPlanetKeys: ['mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune'],
+  lightPlanetKeys: ['mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune', 'voyager1'],
   defaultHorizonPlanet: 'jupiter',
   solarAltitudeLimits: { sunrise:-0.8333, civil:-6, nautical:-12, astronomical:-18 },
   solarSampleMinutes: 2,

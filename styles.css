@@ -2001,6 +2001,8 @@
       border:1px solid #dbeafe;
       box-shadow:inset 0 0 14px rgba(148,163,184,.18);
     }
+    .conjunction-tick .is-start { text-anchor:start; }
+    .conjunction-tick .is-end { text-anchor:end; }
     .conjunction-summary{
       width:min(100%, 760px);
       display:grid;
@@ -2862,13 +2864,15 @@
     }
     .moon-local-position-body{
       display:grid;
-      grid-template-columns:40px minmax(0, 1fr);
+      grid-template-columns:26px minmax(0, 1fr);
       gap:10px;
       align-items:center;
     }
     .moon-local-position-compass{
-      width:40px;
-      height:40px;
+      display:flex;
+      align-items:center;
+      width:26px;
+      height:26px;
     }
     .moon-local-position-copy{
       display:grid;
@@ -4457,4 +4461,21 @@ select {
   .date-mobile-bar { flex-wrap:wrap; gap:4px; }
   .date-mobile-summary { flex-basis:100%; flex-direction:row; justify-content:space-between; align-items:center; }
   .date-mobile-actions { width:100%; justify-content:space-between; }
+}
+
+/* Shared body artwork in the solar-system card. */
+.solar-planet.body-marker { width:28px; height:28px; margin:-14px 0 0 -14px; background:none; box-shadow:none; border-radius:0; }
+.solar-planet.body-marker.mercury { width:20px; height:20px; margin:-10px 0 0 -10px; }
+.solar-planet.body-marker.jupiter { width:38px; height:38px; margin:-19px 0 0 -19px; }
+.solar-planet.body-marker.saturn { width:38px; height:38px; margin:-19px 0 0 -19px; }
+.solar-planet.body-marker.earth { width:22px; height:22px; margin:-11px 0 0 -11px; }
+.solar-label { display:flex; align-items:center; gap:4px; }
+.solar-label-guide { position:absolute; height:1px; background:#a9b9cc; transform-origin:left center; z-index:3; pointer-events:none; }
+.solar-label-guide[hidden] { display:none; }
+.solar-system [data-earth-shadow] { display:none; }
+@media (max-width:760px) {
+  .solar-planet.body-marker { width:24px; height:24px; margin:-12px 0 0 -12px; }
+  .solar-planet.body-marker.venus,.solar-planet.body-marker.mars { width:22px; height:22px; margin:-11px 0 0 -11px; }
+  .solar-planet.body-marker.earth { width:18px; height:18px; margin:-9px 0 0 -9px; }
+  .solar-planet.body-marker.jupiter,.solar-planet.body-marker.saturn { width:34px; height:34px; margin:-17px 0 0 -17px; }
 }

@@ -32,7 +32,7 @@ window.PLANETENUHR_PHENOMENA = {
     { key: "juno", name: "Juno", distanceAu: 5.2, angle: 115, region: "Jupiter", color: "#0ea5e9" },
     { key: "europa_clipper", name: "Europa Clipper", distanceAu: 5.2, angle: 82, region: "To Jupiter system", color: "#38bdf8" },
     { key: "new_horizons", name: "New Horizons", distanceAu: 60, angle: 34, region: "Kuiper belt", color: "#8b5cf6" },
-    { key: "pioneer_10", name: "Pioneer 10", distanceAu: 137, angle: 356, region: "Outer heliosphere", color: "#64748b" },
+    { key: "pioneer_10", name: "Pioneer 10", distanceAu: 137, angle: 342, region: "Outer heliosphere", color: "#64748b" },
     { key: "pioneer_11", name: "Pioneer 11", distanceAu: 113, angle: 304, region: "Outer heliosphere", color: "#94a3b8" },
     { key: "voyager_1", name: "Voyager 1", distanceAu: 165, angle: 18, region: "Interstellar space", color: "#ef4444" },
     { key: "voyager_2", name: "Voyager 2", distanceAu: 137, angle: 332, region: "Interstellar space", color: "#f43f5e" }

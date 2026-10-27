@@ -40,7 +40,7 @@ window.PLANETENUHR_CARD_HELP = {
       solar_system: {
         intro: [
           "This is a heliocentric, top-down ecliptic view of the eight planets for the selected date.",
-          "Distances are visually compressed so that the outer planets still fit in one compact disc."
+          "Orbital radii are spaced schematically to separate the inner planets; they do not represent physical distances. The calculated heliocentric directions follow the selected date."
         ],
         formulas: [
           { expr: "T = (JD - 2451545.0) / 36525", note: "Centuries since J2000.0." },
@@ -279,20 +279,35 @@ window.PLANETENUHR_CARD_HELP = {
         ]
       },
       conjunctions: {
-        intro: [
-          "This card scans a time window around the selected date and marks approximate minima in the angular separation between planets.",
-          "It is meant as a quick event view for close pairings, not as an observatory-grade ephemeris."
+        "intro": [
+          "Shows close approaches as seen from Earth for Mercury, Venus, Mars, Jupiter and Saturn within 60 days before and after the selected instant.",
+          "Events are minima of the full sky separation at or below 4.5°, including ecliptic latitude. They are not necessarily the instants of equal longitude or right ascension."
         ],
-        formulas: [
-          { expr: "&Delta; = | signed( &lambda;<sub>A</sub> - &lambda;<sub>B</sub> ) |", note: "Angular separation in ecliptic longitude between two planets." }
+        "formulas": [
+          {
+            "expr": "r_A = R_A - R_E; r_B = R_B - R_E",
+            "note": "Earth-centered vectors: subtract the Earth’s heliocentric position. The dot product includes all three coordinates; clamp to [−1,1] before arccos."
+          },
+          {
+            "expr": "&Delta; = arccos( clamp( (r_A &middot; r_B) / (|r_A| |r_B|), -1, 1 ) )",
+            "note": "Earth-centered vectors: subtract the Earth’s heliocentric position. The dot product includes all three coordinates; clamp to [−1,1] before arccos."
+          }
         ],
-        details: [
-          "The timeline searches for local minima of the separation curve within the selected date window.",
-          "Values are approximate and best used as guidance for interesting dates."
+        "details": [
+          "Daily samples locate possible minima; a golden-section search refines each candidate within its surrounding two days. The minute-sized search interval does not imply minute-level astronomical accuracy.",
+          "Geometric approximate planetary orbits are shared with the horizon card. No light-time correction, aberration or local parallax is applied. Daylight, altitude and weather are not visibility filters for this timeline.",
+          "The highlighted center is the selected instant; dated ticks and events use the same elapsed-time scale. The summary reports the next future minimum in the displayed window.",
+          "All event dots have the same size. Each separation is also expressed using the shared finger, thumb and hand estimates at arm’s length. These are rough visual comparisons; separations below 1° are labelled less than one finger width."
         ],
-        links: [
-          { label: "JPL approximate positions of the planets", url: "https://ssd.jpl.nasa.gov/planets/approx_pos.html" },
-          { label: "NASA Skywatching", url: "https://science.nasa.gov/skywatching/" }
+        "links": [
+          {
+            "label": "JPL approximate positions of the planets",
+            "url": "https://ssd.jpl.nasa.gov/planets/approx_pos.html"
+          },
+          {
+            "label": "NASA Skywatching",
+            "url": "https://science.nasa.gov/skywatching/"
+          }
         ]
       },
       retrograde: {
@@ -531,7 +546,7 @@ window.PLANETENUHR_CARD_HELP = {
       solar_system: {
         intro: [
           "Hier siehst du die acht Planeten heliozentrisch in einer Draufsicht auf die Ekliptik für das gewählte Datum.",
-          "Die Abstände sind optisch komprimiert, damit auch die äusseren Planeten noch in eine kompakte Kreisfläche passen."
+          "Die Bahnradien sind schematisch entzerrt, damit die inneren Planeten gut erkennbar bleiben. Sie stellen keine Entfernungen dar; die berechneten heliozentrischen Richtungen folgen dem Datum."
         ],
         formulas: [
           { expr: "T = (JD - 2451545.0) / 36525", note: "Jahrhunderte seit J2000.0." },
@@ -769,20 +784,35 @@ window.PLANETENUHR_CARD_HELP = {
         ]
       },
       conjunctions: {
-        intro: [
-          "Diese Kachel durchsucht ein Zeitfenster rund um das gewählte Datum und markiert angenäherte Minima im Winkelabstand zwischen Planeten.",
-          "Sie ist als schnelle Ereignisansicht für enge Begegnungen gedacht, nicht als observatoriumsgenaue Ephemeride."
+        "intro": [
+          "Zeigt enge Begegnungen von Merkur, Venus, Mars, Jupiter und Saturn aus Sicht der Erde innerhalb von 60 Tagen vor und nach dem gewählten Zeitpunkt.",
+          "Ereignisse sind Minima des vollständigen Winkelabstands am Himmel bis 4,5°, einschließlich ekliptischer Breite. Sie entsprechen nicht zwingend dem Zeitpunkt gleicher Länge oder Rektaszension."
         ],
-        formulas: [
-          { expr: "&Delta; = | signed( &lambda;<sub>A</sub> - &lambda;<sub>B</sub> ) |", note: "Winkelabstand in ekliptischer Länge zwischen zwei Planeten." }
+        "formulas": [
+          {
+            "expr": "r_A = R_A - R_E; r_B = R_B - R_E",
+            "note": "Geozentrische Vektoren: Die heliozentrische Erdposition wird abgezogen. Das Skalarprodukt berücksichtigt alle drei Koordinaten; vor arccos wird auf [−1,1] begrenzt."
+          },
+          {
+            "expr": "&Delta; = arccos( clamp( (r_A &middot; r_B) / (|r_A| |r_B|), -1, 1 ) )",
+            "note": "Geozentrische Vektoren: Die heliozentrische Erdposition wird abgezogen. Das Skalarprodukt berücksichtigt alle drei Koordinaten; vor arccos wird auf [−1,1] begrenzt."
+          }
         ],
-        details: [
-          "Die Zeitachse sucht lokale Minima der Abstandskurve innerhalb des gewählten Fensters.",
-          "Die Werte sind angenähert und vor allem als Hinweis auf interessante Daten gedacht."
+        "details": [
+          "Tägliche Stichproben suchen mögliche Minima; eine Suche mit dem Goldenen Schnitt verfeinert jeden Kandidaten zwischen den beiden benachbarten Tagen. Das minutenkleine Suchintervall bedeutet keine minutengenaue astronomische Vorhersage.",
+          "Geometrische Näherungsbahnen werden gemeinsam mit der Horizontkachel verwendet. Ohne Lichtzeitkorrektur, Aberration und lokale Parallaxe. Tageslicht, Höhe und Wetter sind keine Sichtbarkeitsfilter dieser Zeitachse.",
+          "Die markierte Mitte ist der gewählte Zeitpunkt; beschriftete Datumsmarken und Ereignisse verwenden dieselbe Skala verstrichener Zeit. Der Text nennt das nächste zukünftige Minimum im angezeigten Fenster.",
+          "Alle Ereignispunkte sind gleich groß. Zu jedem Winkelabstand steht der gemeinsame Finger-, Daumen- oder Handvergleich bei ausgestrecktem Arm. Das sind grobe Anschauungswerte; Abstände unter 1° werden als weniger als eine Fingerbreite bezeichnet."
         ],
-        links: [
-          { label: "JPL: Approximate Positions of the Planets", url: "https://ssd.jpl.nasa.gov/planets/approx_pos.html" },
-          { label: "NASA Skywatching", url: "https://science.nasa.gov/skywatching/" }
+        "links": [
+          {
+            "label": "JPL: Approximate Positions of the Planets",
+            "url": "https://ssd.jpl.nasa.gov/planets/approx_pos.html"
+          },
+          {
+            "label": "NASA Skywatching",
+            "url": "https://science.nasa.gov/skywatching/"
+          }
         ]
       },
       retrograde: {
@@ -1019,7 +1049,7 @@ window.PLANETENUHR_CARD_HELP = {
       solar_system: {
         intro: [
           "Voici une vue heliocentrique, vue du dessus, des huit planetes dans le plan de l'ecliptique pour la date choisie.",
-          "Les distances sont compressees visuellement pour que les planetes externes tiennent encore dans un seul disque lisible."
+          "Les rayons des orbites sont espacés schématiquement pour rendre les planètes intérieures lisibles. Ils ne représentent pas les distances ; les directions héliocentriques calculées suivent la date."
         ],
         formulas: [
           { expr: "T = (JD - 2451545.0) / 36525", note: "Siecles depuis J2000.0." },
@@ -1257,20 +1287,35 @@ window.PLANETENUHR_CARD_HELP = {
         ]
       },
       conjunctions: {
-        intro: [
-          "Cette carte parcourt une fenetre de temps autour de la date choisie et marque des minima approches de separation angulaire entre planetes.",
-          "Elle sert d'aperçu rapide des rapprochements, pas d'ephemeride de precision observatoire."
+        "intro": [
+          "Montre les rapprochements de Mercure, Vénus, Mars, Jupiter et Saturne vus de la Terre dans les 60 jours avant et après l’instant choisi.",
+          "Les événements sont les minima de la séparation angulaire complète jusqu’à 4,5°, latitude écliptique comprise. Ils ne coïncident pas forcément avec une égalité de longitude ou d’ascension droite."
         ],
-        formulas: [
-          { expr: "&Delta; = | signed( &lambda;<sub>A</sub> - &lambda;<sub>B</sub> ) |", note: "Separation angulaire en longitude ecliptique entre deux planetes." }
+        "formulas": [
+          {
+            "expr": "r_A = R_A - R_E; r_B = R_B - R_E",
+            "note": "Vecteurs géocentriques : soustraire la position héliocentrique de la Terre. Le produit scalaire utilise les trois coordonnées ; borner à [−1,1] avant arccos."
+          },
+          {
+            "expr": "&Delta; = arccos( clamp( (r_A &middot; r_B) / (|r_A| |r_B|), -1, 1 ) )",
+            "note": "Vecteurs géocentriques : soustraire la position héliocentrique de la Terre. Le produit scalaire utilise les trois coordonnées ; borner à [−1,1] avant arccos."
+          }
         ],
-        details: [
-          "La frise cherche des minima locaux de la courbe de separation dans la fenetre choisie.",
-          "Les valeurs sont approchees et servent surtout a reperer des dates interessantes."
+        "details": [
+          "Des échantillons quotidiens repèrent les minima possibles ; une recherche par section dorée affine chaque candidat entre les deux jours voisins. Un intervalle de recherche d’une minute ne garantit pas une précision astronomique à la minute.",
+          "Les orbites géométriques approchées sont partagées avec la carte de l’horizon. Sans correction de temps de lumière, aberration ni parallaxe locale. La lumière du jour, la hauteur et la météo ne filtrent pas les événements.",
+          "Le centre marqué correspond à l’instant choisi ; les dates et événements suivent la même échelle de temps écoulé. Le résumé donne le prochain minimum futur dans la fenêtre affichée.",
+          "Tous les points ont la même taille. Chaque séparation comprend aussi les comparaisons communes avec les doigts, le pouce ou la main à bout de bras. Ce sont des repères approximatifs ; sous 1°, le texte indique moins d’un doigt."
         ],
-        links: [
-          { label: "JPL: Approximate Positions of the Planets", url: "https://ssd.jpl.nasa.gov/planets/approx_pos.html" },
-          { label: "NASA Skywatching", url: "https://science.nasa.gov/skywatching/" }
+        "links": [
+          {
+            "label": "JPL: Approximate Positions of the Planets",
+            "url": "https://ssd.jpl.nasa.gov/planets/approx_pos.html"
+          },
+          {
+            "label": "NASA Skywatching",
+            "url": "https://science.nasa.gov/skywatching/"
+          }
         ]
       },
       retrograde: {
@@ -1488,7 +1533,7 @@ window.PLANETENUHR_CARD_HELP.en.cards.planet_horizon = {
 
 window.PLANETENUHR_CARD_HELP.en.cards.light_travel = {
   "intro": [
-    "Follow sunlight from the Sun to any of the eight planets. Travel time follows the computed solar distance on the selected date."
+    "Follow sunlight from the Sun to any of the eight planets or Voyager 1. Travel time follows the solar distance on the selected date."
   ],
   "formulas": [
     {
@@ -1498,12 +1543,22 @@ window.PLANETENUHR_CARD_HELP.en.cards.light_travel = {
   ],
   "details": [
     "The destination is held at its computed position. Motion during flight is not followed.",
-    "The route is schematic. Start at zero in real time: one real second equals one journey second. You can move the slider manually; an active journey continues from there. Changing planet or date resets the journey. Progress p = min(1, p₀ + elapsed time / travel time), where p₀ is the manually chosen starting fraction."
+    "The route is schematic. Start at zero in real time: one real second equals one journey second. You can move the slider manually; an active journey continues from there. Changing destination or date resets the journey. Progress p = min(1, p₀ + elapsed time / travel time), where p₀ is the manually chosen starting fraction.",
+    "Voyager 1 uses two locally stored solar-distance samples from NASA Eyes. Distance is estimated linearly: r(t) = r₀ + (r₁ − r₀) × (t − t₀)/(t₁ − t₀). The estimate is limited to five years either side of the latest sample; outside this interval the journey is unavailable. This is not live telemetry or a full trajectory.",
+    "NASA predicts that Voyager 1 will become the first human-made object one light-day from Earth on 18 November 2026: about 25.9 billion km. This card always starts at the Sun. The Earth and Sun light times can differ by about eight minutes. Voyager 2 is expected to reach one light-day from Earth in November 2035."
   ],
   "links": [
     {
       "label": "JPL astrodynamic parameters",
       "url": "https://ssd.jpl.nasa.gov/astro_par.html"
+    },
+    {
+      "label": "NASA: Voyager / one light-day",
+      "url": "https://science.nasa.gov/mission/voyager/voyager-1/voyager-1-what-is-a-light-day/"
+    },
+    {
+      "label": "NASA Eyes: Voyager 1 solar-distance data",
+      "url": "https://eyes.nasa.gov/assets/dynamic/dynamo/sc_voyager_1/now.json"
     }
   ]
 };
@@ -1528,7 +1583,7 @@ window.PLANETENUHR_CARD_HELP.de.cards.planet_horizon = {
 
 window.PLANETENUHR_CARD_HELP.de.cards.light_travel = {
   "intro": [
-    "Eine Lichtreise von der Sonne zu einem der acht Planeten. Die Reisezeit folgt dem berechneten Sonnenabstand am gewählten Datum."
+    "Eine Lichtreise von der Sonne zu einem der acht Planeten oder zu Voyager 1. Die Reisezeit folgt dem Sonnenabstand am gewählten Datum."
   ],
   "formulas": [
     {
@@ -1538,12 +1593,22 @@ window.PLANETENUHR_CARD_HELP.de.cards.light_travel = {
   ],
   "details": [
     "Das Ziel bleibt an der berechneten Position. Die Bewegung während des Lichtflugs wird nicht nachgeführt.",
-    "Die Strecke ist schematisch. Start bei null in Echtzeit: Eine echte Sekunde entspricht einer Reisesekunde. Der Regler lässt sich manuell verschieben; eine laufende Reise geht dort weiter. Bei Planeten- oder Datumswechsel beginnt die Reise neu. Fortschritt p = min(1, p₀ + verstrichene Zeit / Lichtlaufzeit), wobei p₀ der manuell gewählte Startanteil ist."
+    "Die Strecke ist schematisch. Start bei null in Echtzeit: Eine echte Sekunde entspricht einer Reisesekunde. Der Regler lässt sich manuell verschieben; eine laufende Reise geht dort weiter. Bei Ziel- oder Datumswechsel beginnt die Reise neu. Fortschritt p = min(1, p₀ + verstrichene Zeit / Lichtlaufzeit), wobei p₀ der manuell gewählte Startanteil ist.",
+    "Für Voyager 1 werden zwei lokal gespeicherte Sonnenabstände aus NASA Eyes verwendet. Der Abstand wird linear angenähert: r(t) = r₀ + (r₁ − r₀) × (t − t₀)/(t₁ − t₀). Die Näherung ist auf fünf Jahre vor und nach dem jüngsten Stützzeitpunkt begrenzt; außerhalb ist die Reise nicht verfügbar. Das ist keine Live-Telemetrie und keine vollständige Flugbahn.",
+    "Laut NASA erreicht Voyager 1 am 18. November 2026 als erstes menschengemachtes Objekt einen Lichttag Abstand zur Erde: rund 25,9 Milliarden Kilometer. Diese Kachel startet stets an der Sonne. Die Lichtlaufzeiten ab Erde und Sonne können sich um etwa acht Minuten unterscheiden. Voyager 2 erreicht einen Lichttag Abstand zur Erde voraussichtlich im November 2035."
   ],
   "links": [
     {
       "label": "JPL: Astronomische Konstanten",
       "url": "https://ssd.jpl.nasa.gov/astro_par.html"
+    },
+    {
+      "label": "NASA: Voyager / one light-day",
+      "url": "https://science.nasa.gov/mission/voyager/voyager-1/voyager-1-what-is-a-light-day/"
+    },
+    {
+      "label": "NASA Eyes: Voyager 1 solar-distance data",
+      "url": "https://eyes.nasa.gov/assets/dynamic/dynamo/sc_voyager_1/now.json"
     }
   ]
 };
@@ -1568,7 +1633,7 @@ window.PLANETENUHR_CARD_HELP.fr.cards.planet_horizon = {
 
 window.PLANETENUHR_CARD_HELP.fr.cards.light_travel = {
   "intro": [
-    "Un voyage de la lumière du Soleil vers l’une des huit planètes. La durée dépend de la distance au Soleil calculée pour la date choisie."
+    "Un voyage de la lumière du Soleil vers l’une des huit planètes ou Voyager 1. La durée dépend de la distance au Soleil à la date choisie."
   ],
   "formulas": [
     {
@@ -1578,12 +1643,22 @@ window.PLANETENUHR_CARD_HELP.fr.cards.light_travel = {
   ],
   "details": [
     "La destination reste à sa position calculée, sans suivre son mouvement pendant le trajet.",
-    "Trajet schématique. Départ à zéro en temps réel : une seconde réelle correspond à une seconde de voyage. Le curseur peut être déplacé à la main ; un voyage en cours continue à partir de là. Changer de planète ou de date remet le voyage à zéro. Progression p = min(1, p₀ + temps écoulé / durée du trajet), où p₀ est la fraction de départ choisie manuellement."
+    "Trajet schématique. Départ à zéro en temps réel : une seconde réelle correspond à une seconde de voyage. Le curseur peut être déplacé à la main ; un voyage en cours continue à partir de là. Changer de destination ou de date remet le voyage à zéro. Progression p = min(1, p₀ + temps écoulé / durée du trajet), où p₀ est la fraction de départ choisie manuellement.",
+    "Pour Voyager 1, deux distances au Soleil de NASA Eyes sont conservées localement. La distance est estimée linéairement : r(t) = r₀ + (r₁ − r₀) × (t − t₀)/(t₁ − t₀). Cette estimation est limitée à cinq ans avant et après la référence la plus récente ; le voyage est indisponible au-delà. Ce n’est ni une télémétrie en direct ni une trajectoire complète.",
+    "Selon la NASA, Voyager 1 sera le premier objet fabriqué par l’homme à un jour-lumière de la Terre le 18 novembre 2026, soit environ 25,9 milliards de kilomètres. Cette carte part toujours du Soleil. Les durées depuis la Terre et le Soleil peuvent différer d’environ huit minutes. Voyager 2 devrait atteindre un jour-lumière de la Terre en novembre 2035."
   ],
   "links": [
     {
       "label": "JPL : constantes astronomiques",
       "url": "https://ssd.jpl.nasa.gov/astro_par.html"
+    },
+    {
+      "label": "NASA: Voyager / one light-day",
+      "url": "https://science.nasa.gov/mission/voyager/voyager-1/voyager-1-what-is-a-light-day/"
+    },
+    {
+      "label": "NASA Eyes: Voyager 1 solar-distance data",
+      "url": "https://eyes.nasa.gov/assets/dynamic/dynamo/sc_voyager_1/now.json"
     }
   ]
 };
@@ -1777,3 +1852,74 @@ window.PLANETENUHR_CARD_HELP.fr.cards.idefix = {
     }
   ]
 };
+
+window.PLANETENUHR_CARD_HELP.en.cards.daily_highlights = {
+  "intro": [
+    "The first card summarizes the most important existing information for the selected date and place. It follows the global date control; this need not be today.",
+    "It refers to the entire civil day at the selected city, including an earlier morning. Times are local. Links open the related card without reloading the page."
+  ],
+  "details": [
+    "Selection and priorities live in daily-highlights-config.js: at most five hints, with per-topic limits. Special calendar events rank above routine observations; no minimum number is filled artificially.",
+    "Planet tips reuse the horizon model: at 20-minute samples, the planet must be at least 10° high while the Sun is at or below −6°. At least two samples are required. The highest sampled qualifying position supplies the approximate time, direction and angle with hand comparison. Weather, terrain and actual naked-eye visibility are not predicted.",
+    "Calendar entries keep their configured dates and regional text, independently of calendar UI filters. Eclipses include the existing local visibility class; broad regional estimates are labelled. A matching computed closest approach is merged with a calendar event within two days.",
+    "Meteor hints use the configured activity windows and annual peak dates. Dated calendar maxima take precedence. These are activity hints, not proof of local radiant visibility. One slot is reserved for the highest-ranked active shower, even on busy days. A bright Moon adds a warning without hiding the hint. Before, on and after the peak, wording distinguishes approaching maximum, maximum today and declining activity.",
+    "Full/New Moon hints use the existing approximate phase model near the local day’s midpoint. They say around the phase, not an exact event time. Planetary approaches come from the corrected Earth-centered model, up to 30 days ahead.",
+    "Data is cached by civil day, city and language. Daylight saving changes and polar day/night are handled by the horizon solar model. Outside 1800–2050, planetary tips and forecasts are omitted."
+  ],
+  "links": [
+    {
+      "label": "JPL approximate planetary positions",
+      "url": "https://ssd.jpl.nasa.gov/planets/approx_pos.html"
+    }
+  ]
+};
+
+window.PLANETENUHR_CARD_HELP.de.cards.daily_highlights = {
+  "intro": [
+    "Die erste Kachel bündelt die wichtigsten vorhandenen Informationen für das gewählte Datum und den Ort. Sie folgt dem globalen Datumsregler; das muss nicht heute sein.",
+    "Gemeint ist der gesamte lokale Kalendertag, auch ein bereits vergangener Morgen. Alle Zeiten sind Ortszeiten. Links öffnen die passende Kachel ohne Neuladen."
+  ],
+  "details": [
+    "Auswahl und Prioritäten stehen in daily-highlights-config.js: höchstens fünf Hinweise mit Grenzen je Thema. Besondere Kalenderereignisse haben Vorrang vor gewöhnlichen Beobachtungstipps. Eine Mindestanzahl wird nicht künstlich aufgefüllt.",
+    "Planetentipps verwenden das Horizontmodell: Bei Stichproben alle 20 Minuten muss der Planet mindestens 10° hoch stehen und die Sonne höchstens −6°. Mindestens zwei geeignete Stichproben sind nötig. Die höchste gefundene geeignete Position liefert ungefähre Uhrzeit, Richtung und Winkel mit Handvergleich. Wetter, Gelände und tatsächliche Erkennbarkeit werden nicht vorhergesagt.",
+    "Kalendereinträge behalten ihr konfiguriertes Datum und ihre regionalen Texte, unabhängig von Filtern der Kalenderkachel. Finsternisse erhalten die vorhandene örtliche Sichtbarkeitsklasse; grobe Regionsschätzungen sind gekennzeichnet. Eine passende berechnete engste Begegnung wird innerhalb von zwei Tagen mit dem Kalendereintrag zusammengeführt.",
+    "Meteorhinweise nutzen konfigurierte Aktivitätsfenster und jährliche Richtdaten der Maxima. Datierte Kalender-Maxima haben Vorrang. Das sind Aktivitätshinweise, kein Nachweis der örtlichen Radiantensichtbarkeit. Ein Platz bleibt für den wichtigsten aktiven Strom reserviert, auch an ereignisreichen Tagen. Helles Mondlicht wird als Einschränkung genannt und blendet den Hinweis nicht aus. Texte unterscheiden bevorstehendes Maximum, Maximum am gewählten Tag und abklingende Aktivität.",
+    "Hinweise rund um Voll- und Neumond nutzen das vorhandene Näherungsmodell etwa zur Mitte des lokalen Tages. Sie behaupten keinen exakten Ereigniszeitpunkt. Planetenbegegnungen stammen aus dem korrigierten geozentrischen Modell und reichen bis 30 Tage voraus.",
+    "Die Daten werden je Kalendertag, Ort und Sprache zwischengespeichert. Zeitumstellungen und Polartag/-nacht behandelt das Sonnenmodell der Horizontkachel. Außerhalb 1800–2050 werden Planeten-Beobachtungstipps und Begegnungsprognosen weggelassen."
+  ],
+  "links": [
+    {
+      "label": "JPL: Genäherte Planetenpositionen",
+      "url": "https://ssd.jpl.nasa.gov/planets/approx_pos.html"
+    }
+  ]
+};
+
+window.PLANETENUHR_CARD_HELP.fr.cards.daily_highlights = {
+  "intro": [
+    "La première carte rassemble les informations existantes importantes pour la date et le lieu choisis. Elle suit le curseur global ; il ne s’agit pas forcément d’aujourd’hui.",
+    "Elle couvre toute la journée civile locale, y compris un matin déjà passé. Les heures sont locales. Les liens ouvrent la carte correspondante sans recharger la page."
+  ],
+  "details": [
+    "Les priorités se trouvent dans daily-highlights-config.js : cinq indications au maximum, avec des limites par thème. Les événements particuliers passent avant les observations ordinaires. Aucun nombre minimum n’est rempli artificiellement.",
+    "Les conseils planétaires reprennent le modèle de l’horizon : toutes les 20 minutes, la planète doit être à au moins 10° et le Soleil à −6° ou plus bas. Deux échantillons favorables sont nécessaires. La position favorable la plus haute donne une heure approximative, une direction et un angle avec comparaison à la main. La météo, le relief et la détection réelle ne sont pas prédits.",
+    "Les entrées du calendrier gardent leur date et leurs précisions régionales, indépendamment des filtres de la carte calendrier. Les éclipses reprennent la visibilité locale existante ; les estimations régionales sont signalées. Un rapprochement calculé correspondant est fusionné avec une entrée située à deux jours au plus.",
+    "Les météores utilisent les périodes d’activité et dates annuelles approximatives configurées. Les maxima datés du calendrier ont priorité. Ces indications ne prouvent pas la visibilité locale du radiant. Une place est réservée à l’essaim actif le mieux classé, même les jours chargés. Une Lune brillante ajoute un avertissement sans masquer l’indication. Les textes distinguent le maximum à venir, le maximum au jour choisi et l’activité en déclin.",
+    "Les indications autour des nouvelles et pleines lunes utilisent le modèle approché existant vers le milieu de la journée locale, sans annoncer un instant exact. Les rapprochements proviennent du modèle géocentrique corrigé, jusqu’à 30 jours à l’avance.",
+    "Les données sont mémorisées par journée civile, ville et langue. Le modèle solaire de l’horizon gère les changements d’heure et les jours/nuits polaires. Hors de 1800–2050, les conseils planétaires et prévisions de rapprochements sont omis."
+  ],
+  "links": [
+    {
+      "label": "JPL : positions planétaires approchées",
+      "url": "https://ssd.jpl.nasa.gov/planets/approx_pos.html"
+    }
+  ]
+};
+
+/* Shared body artwork and its schematic limits. */
+window.PLANETENUHR_CARD_HELP.de.cards.solar_system.details.push("Alle acht Planeten verwenden gemeinsame SVG-Grafiken. Größen und Abstände sind nicht maßstäblich. Die Bahnradien sind feste Layoutwerte aus solar-system-config.js, keine Entfernungsangaben. Die inneren Planeten erhalten mehr Platz; nur die berechneten heliozentrischen Richtungen folgen dem Datum. Die Erde erscheint in dieser Übersicht ohne Nachtseite; Kontinente sind schematisch. Verschobene Beschriftungen erhalten gerade Verbindungslinien.");
+window.PLANETENUHR_CARD_HELP.de.cards.daily_highlights.details.push("Die Miniaturen sind schematisch und teilen ihre Planeten-, Erd- und Mondgrafiken mit den anderen Kacheln. Die Mondphase verwendet dasselbe Näherungsmodell und dieselbe Lichtgrenze wie „Erde & Mond“; Farben und Oberflächen sind Illustrationen.");
+window.PLANETENUHR_CARD_HELP.en.cards.solar_system.details.push("All eight planets use shared SVG artwork. Sizes and distances are schematic. Fixed layout radii in solar-system-config.js spread out the inner planets and do not encode distance. Only the calculated heliocentric directions follow the date. Earth is shown without a night-side shadow in this overview; continents are schematic. Displaced labels use straight guides.");
+window.PLANETENUHR_CARD_HELP.en.cards.daily_highlights.details.push("The schematic miniatures share their planet, Earth and Moon artwork with the other cards. The lunar phase uses the same approximate model and terminator as Earth & Moon; colors and surface features are illustrations.");
+window.PLANETENUHR_CARD_HELP.fr.cards.solar_system.details.push("Les huit planètes utilisent des illustrations SVG communes. Tailles et distances sont schématiques. Les rayons fixes de solar-system-config.js espacent les planètes intérieures sans représenter leurs distances. Seules les directions héliocentriques calculées suivent la date. La Terre est représentée sans ombre nocturne dans cette vue ; les continents sont schématiques. Les libellés déplacés ont des lignes de liaison droites.");
+window.PLANETENUHR_CARD_HELP.fr.cards.daily_highlights.details.push("Les miniatures schématiques partagent leurs illustrations des planètes, de la Terre et de la Lune avec les autres cartes. La phase lunaire utilise le même modèle approché et le même terminateur que Terre et Lune ; couleurs et reliefs sont illustratifs.");

@@ -24,7 +24,7 @@ Daraus werden berechnet:
 - Zyklusfortschritt
 - nächster Vollmond als Näherung
 
-Die SVG-Mondphase in `earth-moon-visuals.js` verwendet dieselbe Phasenfraktion `f`. Die Lichtgrenze auf der projizierten Kugel ist eine Halbellipse mit horizontaler Halbachse `R · |cos(2πf)|` und vertikaler Halbachse `R`. Ihr Vorzeichen und die zunehmende bzw. abnehmende Phase bestimmen die Bogenrichtung; bei den Vierteln wird die Lichtgrenze eine Gerade. So entspricht die helle Fläche dem Anteil `(1 − cos(2πf)) / 2`. Die dunkle Fläche wird als komplementäre Lichtregion für `f + 0,5` gezeichnet.
+Die SVG-Mondphase in `celestial-bodies.js` verwendet dieselbe Phasenfraktion `f`. Die Lichtgrenze auf der projizierten Kugel ist eine Halbellipse mit horizontaler Halbachse `R · |cos(2πf)|` und vertikaler Halbachse `R`. Ihr Vorzeichen und die zunehmende bzw. abnehmende Phase bestimmen die Bogenrichtung; bei den Vierteln wird die Lichtgrenze eine Gerade. So entspricht die helle Fläche dem Anteil `(1 − cos(2πf)) / 2`. Die dunkle Fläche wird als komplementäre Lichtregion für `f + 0,5` gezeichnet.
 
 Zunehmende Phasen sind rechts beleuchtet, abnehmende links (schematische Ansicht für nördliche Breiten, keine ortsabhängige Drehung oder Libration). Die Phase entsteht durch den Blick auf die sonnenbeschienene Mondhälfte, nicht durch Erdschatten. Finsternisabschattungen werden hier nicht simuliert.
 
@@ -45,13 +45,14 @@ Für das gewählte Datum wird `T` als Anzahl julianischer Jahrhunderte seit J200
 
 ### Sonnensystem-Darstellung
 
-Die Planetenabstände werden für die Anzeige komprimiert:
+Die Bahnradien werden als feste Layoutwerte aus `solar-system-config.js` gewählt. Damit sind die inneren Planeten stärker voneinander getrennt; die äußeren Ringe nutzen die verfügbare Kreisfläche.
 
 ```text
-Bildschirmradius = sqrt(Distanz / Neptun-Distanz) * Maximalradius
+Bildschirmradius = Scheibenbreite * radiusFractions[Planet]
+Richtung = atan2(y_heliozentrisch, x_heliozentrisch)
 ```
 
-Das ist bewusst nicht maßstabsgetreu, sondern auf gemeinsame Sichtbarkeit aller Planeten optimiert.
+Nur die Richtungen werden aus den datumsabhängigen Kepler-Positionen übernommen. Die Radien stellen weder Entfernungen noch Exzentrizitäten dar. Ring und Planetenmarker verwenden jeweils denselben Radius.
 
 ### Kleinkörper und Raumsonden
 
@@ -604,6 +605,20 @@ Die sichtbare Phase kann klein sein, während Venus gleichzeitig relativ erdnah 
 - Die Satellitenkarte ist schematisch und kein TLE-Live-Tracker.
 - Die Polarlicht-Kachel verwendet Live-Space-Weather-Daten für heute und ist bewusst nicht an das gewählte Datum gekoppelt.
 
+## Planetenkonjunktionen: engste Begegnungen aus Erdperspektive
+
+Die Kachel sucht für Merkur, Venus, Mars, Jupiter und Saturn den kleinsten räumlichen Winkelabstand am Himmel aus Sicht der Erde. Die vorhandenen [JPL-Näherungsbahnen](https://ssd.jpl.nasa.gov/planets/approx_pos.html) liefern heliozentrische Positionen. Zunächst wird die Erdposition abgezogen: **r_A = R_A − R_E**, **r_B = R_B − R_E**. Erst diese geozentrischen Richtungsvektoren entsprechen derselben Beobachtungsperspektive wie die Horizontkachel.
+
+Der vollständige Winkelabstand ist **Δ = arccos(clamp((r_A · r_B) / (|r_A| |r_B|), −1, 1))**. Das Skalarprodukt enthält x, y und z und damit auch den Breitenunterschied. Die Begrenzung schützt vor Gleitkommawerten knapp außerhalb des Definitionsbereichs. Ein gemeinsamer Wechsel des Koordinatensystems, etwa die Präzession zur Epoche des Datums, verändert diesen Winkel nicht.
+
+In conjunction-model.js lokalisieren tägliche Stichproben lokale Minima. Eine Suche mit dem Goldenen Schnitt verfeinert die Kandidaten zwischen den Nachbartagen auf ein Suchintervall unter einer Minute. Das ist numerische Verfeinerung, keine Zusage minutengenauer Ephemeriden. Die Kachel zeigt nur Minima bis 4,5° innerhalb von ±60 verstrichenen Tagen. Stützvektoren werden zwischen Planetenpaaren geteilt, um wiederholte Bahnberechnungen zu vermeiden.
+
+Gemeint sind **engste Begegnungen**, nicht zwingend Konjunktionen im strengen Sinn gleicher ekliptischer Länge oder Rektaszension. Die Entfernungen sind geometrisch, ohne Lichtzeitkorrektur, Aberration und lokale Parallaxe. Auch ungünstig zur Sonne stehende oder unter dem Horizont liegende Begegnungen können erscheinen; die Zeitachse ist kein Sichtbarkeitsfilter. Datumsmarken und Ereignisse werden auf derselben echten Zeitachse platziert. Die Zusammenfassung nennt das nächste zukünftige Minimum.
+
+Alle Ereignispunkte haben denselben Radius; die Größe codiert keinen Winkelabstand. Der Abstand steht als lokalisierte Gradzahl mit dem gemeinsamen Finger-/Daumen-/Handvergleich aus altitudeThumbEstimate direkt am Ereignis und in der Zusammenfassung. Unter 1° lautet die Ergänzung „weniger als 1 Fingerbreit“. Die Vergleiche gelten bei ausgestrecktem Arm und sind grobe Anschauungswerte.
+
+Kontrollfall: Am 26. Oktober 2026 beträgt der Mars-Jupiter-Abstand im Modell rund 7,9°. Die engste Begegnung um den 16. November wird mit rund 1,2° gefunden. Ein bloßer Längenvergleich würde den verbleibenden Breitenabstand unterschlagen.
+
 ## Planeten über dem Horizont und Lichtreise
 
 Der Himmel über der Horizontlinie wird passend zu Tag, Morgen-/Abenddämmerung oder Nacht eingefärbt. Ein kompaktes Zeitband zeigt den tatsächlichen lokalen Kalendertag, einen Zeiger für die erkundete Uhrzeit sowie Sonnenauf- und -untergang. Bürgerliche, nautische und astronomische Dämmerung werden anhand der Sonnenhöhe bei −6°, −12° und −18° unterschieden; Auf- und Untergang verwenden konventionell −0,8333° für das Sonnenzentrum. Die Sonnenhöhe folgt demselben Koordinatenmodell wie die Planeten. Ein dunkler Hintergrund bedeutet dunklen Himmel, keine garantierte Sichtbarkeit bei jedem Wetter.
@@ -618,7 +633,13 @@ Die Horizontrechnung wandelt geozentrische J2000-Vektoren zunächst in Äquatork
 
 Die Lichtreise verwendet 149.597.870,7 km pro AE und 299.792,458 km/s. Sie misst den Abstand zur Planetenposition am ausgewählten Zeitpunkt; die Planetenbewegung während des Lichtflugs wird nicht nachgeführt.
 
-Sonnenabstand und Lichtlaufzeit verwenden die vorhandenen Kepler-Bahnen, nicht bloß mittlere Bahnradien.
+Sonnenabstand und Lichtlaufzeit der Planeten verwenden die vorhandenen Kepler-Bahnen, nicht bloß mittlere Bahnradien.
+
+Für Voyager 1 nutzt `voyagerLightTravel(date)` zwei Sonnenabstände aus [NASA Eyes](https://eyes.nasa.gov/assets/dynamic/dynamo/sc_voyager_1/now.json), lokal in `voyager-data.js` mit UTC-Stützzeiten und Abrufdatum gespeichert. Das ist die Datenquelle des [offiziellen NASA-Entfernungszählers](https://science.nasa.gov/mission/voyager/where-are-voyager-1-and-voyager-2-now/). Näherung: **r(t) = r₀ + (r₁ − r₀) × (t − t₀)/(t₁ − t₀)**, danach **t_Licht = r(t) / c**. Die Differenz der Sonnenabstände bestimmt die radiale Entfernungsänderung; die Raumgeschwindigkeit wird nicht mit der Radialgeschwindigkeit gleichgesetzt.
+
+Zwischen den Stützzeitpunkten wird interpoliert, außerhalb linear fortgeschrieben. Die App begrenzt dies auf ±5 Julianische Jahre um den jüngsten Stützzeitpunkt. Das ist eine bewusst begrenzte Näherung ohne zugesicherte Ephemeridengenauigkeit, keine vollständige Flugbahn und keine Live-Telemetrie. Außerhalb dieses Bereichs zeigt die Kachel keine erfundene Entfernung und deaktiviert die Lichtreise. Daten können mit `node scripts/update-voyager-data.js` bewusst erneuert werden; der Browser fragt NASA nicht automatisch ab.
+
+Die Reise startet auch für Voyager 1 an der Sonne. Der [NASA-Meilenstein am 18. November 2026](https://science.nasa.gov/mission/voyager/voyager-1/voyager-1-what-is-a-light-day/) gilt dagegen für einen Lichttag Abstand zur Erde (25.902.068.356,2 km). Voyager 1 ist das erste menschengemachte Objekt an dieser Marke; für Voyager 2 nennt NASA November 2035. Der Unterschied zwischen Sonnen- und Erdabstand beträgt höchstens ungefähr eine AE, entsprechend etwa acht Minuten Lichtlaufzeit. Es wird deshalb weder eine konstante 24-Stunden-Reise noch das Datum der Erd-Marke als Sonnen-Marke verwendet.
 
 Fortschritt: p = min(1, p₀ + Δt / t), mit gewähltem Startanteil p₀, tatsächlich verstrichener Zeit Δt und Lichtlaufzeit t = r / c.
 
@@ -679,3 +700,15 @@ Die SVG-Szenen in `sky-knowledge-graphics-config.js` verwenden feste Zeichenkoor
 - Mondbilder und p/d-Hilfslinien beziehen sich auf die im Eintrag erläuterten nördlichen Breiten. Sie stellen keine aktuelle Mondphase oder tatsächliche Orientierung am gewählten Ort dar.
 - Sternbildlinien und der Bogen zu Arktur/Spica sind vereinfachte Merkskizzen, keine maßstäblichen Sternkarten oder Helligkeitsskalen. IAU-Karten sind bei Sirius, Regulus und Beteigeuze verlinkt. Polaris steht im Bild leicht neben dem Zentrum der symbolischen Sternspuren, da der Stern nur nahe am Himmelsnordpol liegt.
 - Lichtjahr, Proxima-Lichtweg und Sonnenlicht zeigen die jeweils im Eintrag genannten gerundeten Größen, keine räumlichen Maßstäbe. Die Sonnen-Zeitleiste endet beim heutigen Alter von rund 4,6 Milliarden Jahren und behauptet keine gesamte Lebensdauer. Die Fusion zeigt lediglich den stark vereinfachten Nettoschritt von vier Wasserstoffkernen zu einem Heliumkern mit Energiefreisetzung; Zwischenreaktionen und weitere Teilchen sind ausgelassen.
+
+## Tagesübersicht: Auswahl und Beobachtungstipps
+
+Die Übersicht verwendet bestehende astronomische Modelle. Der lokale Kalendertag kommt aus localDayBounds mit der IANA-Zone des gewählten Ortes und kann bei Zeitumstellungen 23 oder 25 Stunden dauern. Die Tagesmitte liefert das Referenzdatum für Mondphase und Begegnungssuche; sie ist kein neuer astronomischer Ereigniszeitpunkt. Kalendereinträge ohne Uhrzeit bleiben ihrem konfigurierten Datum zugeordnet. Relative Tagesabstände werden aus YYYY-MM-DD-Schlüsseln in UTC berechnet, nicht durch Division lokaler Mitternachtsabstände durch 24 Stunden.
+
+Für Planetentipps werden die geozentrischen J2000-Vektoren wie in der Horizontkachel präzediert und in Höhen/Azimute umgerechnet. Die Sonne muss höchstens −6°, der Planet mindestens 10° hoch stehen. Stichproben alle 20 Minuten suchen die höchste geeignete Position des lokalen Tages; mindestens zwei geeignete Stichproben sind erforderlich. Ausgewählte Zeit und Winkel sind Näherungen. Der Winkel erhält den vorhandenen Finger-/Handvergleich. Wetter, Gelände und tatsächliche Helligkeitserkennbarkeit werden nicht modelliert.
+
+Das korrigierte Konjunktionsmodell liefert engste Begegnungen bis 30 Tage voraus. Meteoraktivität folgt den konfigurierten MM-DD-Fenstern, einschließlich Jahreswechsel. Jährliche Maxima sind Richtdaten; datierte Kalendereinträge haben im Umkreis von zwei Tagen Vorrang. Bei mindestens 70 % Mondbeleuchtung ergänzt die Übersicht einen Hinweis auf störendes Mondlicht, ohne einen aktiven Strom auszublenden oder eine aktuelle Mondhöhe/Radiantensichtbarkeit zu behaupten. Aktivitätsanfang und -ende sind inklusive. Mindestens ein Platz ist für den bestbewerteten aktiven Strom reserviert; bei mehreren aktiven Strömen entscheidet die Nähe zum Maximum. Am Maximum gilt die höchste Meteorpriorität. Datierte Kalender-Maxima werden in den Stream-Hinweis integriert, sodass keine doppelten Einträge entstehen. Hinweise rund um Neu-/Vollmond gelten bei höchstens 0,035 Phasenzyklen Abstand und heißen deshalb ausdrücklich „rund um“ die Phase.
+
+Die Auswahl nutzt die Gewichte und Themengrenzen in daily-highlights-config.js. Sie ist deterministisch und zeigt höchstens fünf Hinweise ohne künstliche Mindestzahl. Kalenderereignisse enthalten die vorhandenen Regionalangaben; bei Finsternissen wird die vorhandene örtliche Einordnung ergänzt. Datierte Planetenereignisse und passende berechnete Minima im Abstand von höchstens zwei Tagen werden zu einem Hinweis zusammengeführt, wobei das Datum des engsten Abstands ausdrücklich erhalten bleibt. Außerhalb des Planetenmodells 1800–2050 werden Planetenempfehlungen und Begegnungsprognosen nicht ausgewählt.
+
+Im Sonnensystem wird die schematische Nachtseite der gemeinsamen Erdgrafik ausgeblendet. Für die Richtung gilt `β = atan2(y, x) · 180 / π`; `x` und `y` sind die bereits berechneten heliozentrischen Ekliptik-Koordinaten der Erde. Die Kontinente dienen der Illustration, nicht der Bestimmung des Subsolarpunkts. Der Mond wird im Sonnensystem nicht angezeigt. Die schematische Position ist `x_Bild = Mitte + Breite · r_Konfiguration · cos(β)` und `y_Bild = Mitte + Breite · r_Konfiguration · sin(β)`. Die festen Radien aus `solar-system-config.js` entzerren die inneren Planeten; sie kodieren keine Entfernungen.

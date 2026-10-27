@@ -1,0 +1,10 @@
+.direction-compass {
+  width:var(--direction-compass-size,26px);
+  height:var(--direction-compass-size,26px);
+  flex:none;
+  vertical-align:middle;
+}
+.direction-compass[hidden] { display:none; }
+.direction-compass-ring { fill:#fff; stroke:#94a3b8; stroke-width:1; }
+.direction-compass-marks { fill:#64748b; }
+.direction-compass-arrow { fill:var(--accent,#2563eb); }

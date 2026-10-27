@@ -7,7 +7,7 @@ X-WR-CALNAME:Planetenuhr eclipse (de)
 X-WR-TIMEZONE:Europe/Berlin
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2026-08-12-totale-sonnenfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20260812
 DTEND;VALUE=DATE:20260813
 SUMMARY:Totale Sonnenfinsternis
@@ -17,7 +17,7 @@ X-PLANETENUHR-VISIBILITY:Total in Island und Nordspanien\; partiell in weiten Te
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2026-08-28-partielle-mondfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20260828
 DTEND;VALUE=DATE:20260829
 SUMMARY:Partielle Mondfinsternis
@@ -27,7 +27,7 @@ X-PLANETENUHR-VISIBILITY:Teilweise in Europa sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2027-02-20-halbschatten-mondfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20270220
 DTEND;VALUE=DATE:20270221
 SUMMARY:Halbschatten-Mondfinsternis
@@ -37,7 +37,7 @@ X-PLANETENUHR-VISIBILITY:In Europa sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2027-08-02-totale-sonnenfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20270802
 DTEND;VALUE=DATE:20270803
 SUMMARY:Totale Sonnenfinsternis
@@ -47,7 +47,7 @@ X-PLANETENUHR-VISIBILITY:Total im äußersten Süden Spaniens/Gibraltar\; partie
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2028-01-12-partielle-mondfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20280112
 DTEND;VALUE=DATE:20280113
 SUMMARY:Partielle Mondfinsternis
@@ -57,7 +57,7 @@ X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2028-01-26-ringf-rmige-sonnenfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20280126
 DTEND;VALUE=DATE:20280127
 SUMMARY:Ringförmige Sonnenfinsternis
@@ -67,7 +67,7 @@ X-PLANETENUHR-VISIBILITY:Ringförmig in Teilen Portugals und Spaniens\; partiell
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2028-07-06-partielle-mondfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20280706
 DTEND;VALUE=DATE:20280707
 SUMMARY:Partielle Mondfinsternis
@@ -77,7 +77,7 @@ X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2028-07-22-totale-sonnenfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20280722
 DTEND;VALUE=DATE:20280723
 SUMMARY:Totale Sonnenfinsternis
@@ -87,7 +87,7 @@ X-PLANETENUHR-VISIBILITY:Entlang der Totalitätszone total\, sonst regional part
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2028-12-31-totale-mondfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20281231
 DTEND;VALUE=DATE:20290101
 SUMMARY:Totale Mondfinsternis
@@ -97,7 +97,7 @@ X-PLANETENUHR-VISIBILITY:Regional total sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2029-01-14-partielle-sonnenfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20290114
 DTEND;VALUE=DATE:20290115
 SUMMARY:Partielle Sonnenfinsternis
@@ -107,7 +107,7 @@ X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2029-06-12-partielle-sonnenfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20290612
 DTEND;VALUE=DATE:20290613
 SUMMARY:Partielle Sonnenfinsternis
@@ -117,7 +117,7 @@ X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2029-06-26-totale-mondfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20290626
 DTEND;VALUE=DATE:20290627
 SUMMARY:Totale Mondfinsternis
@@ -127,7 +127,7 @@ X-PLANETENUHR-VISIBILITY:Regional total sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2029-07-11-partielle-sonnenfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20290711
 DTEND;VALUE=DATE:20290712
 SUMMARY:Partielle Sonnenfinsternis
@@ -137,7 +137,7 @@ X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2029-12-05-partielle-sonnenfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20291205
 DTEND;VALUE=DATE:20291206
 SUMMARY:Partielle Sonnenfinsternis
@@ -147,7 +147,7 @@ X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2029-12-20-totale-mondfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20291220
 DTEND;VALUE=DATE:20291221
 SUMMARY:Totale Mondfinsternis
@@ -157,7 +157,7 @@ X-PLANETENUHR-VISIBILITY:Regional total sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2030-06-01-ringf-rmige-sonnenfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20300601
 DTEND;VALUE=DATE:20300602
 SUMMARY:Ringförmige Sonnenfinsternis
@@ -167,7 +167,7 @@ X-PLANETENUHR-VISIBILITY:Entlang der Ringzone ringförmig\, sonst regional parti
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2030-06-15-partielle-mondfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20300615
 DTEND;VALUE=DATE:20300616
 SUMMARY:Partielle Mondfinsternis
@@ -177,7 +177,7 @@ X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2030-11-25-totale-sonnenfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20301125
 DTEND;VALUE=DATE:20301126
 SUMMARY:Totale Sonnenfinsternis
@@ -187,7 +187,7 @@ X-PLANETENUHR-VISIBILITY:Entlang der Totalitätszone total\, sonst regional part
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2030-12-09-halbschatten-mondfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20301209
 DTEND;VALUE=DATE:20301210
 SUMMARY:Halbschatten-Mondfinsternis
@@ -197,7 +197,7 @@ X-PLANETENUHR-VISIBILITY:Regional im Halbschatten sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2031-05-07-halbschatten-mondfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20310507
 DTEND;VALUE=DATE:20310508
 SUMMARY:Halbschatten-Mondfinsternis
@@ -207,7 +207,7 @@ X-PLANETENUHR-VISIBILITY:Regional im Halbschatten sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2031-05-21-ringf-rmige-sonnenfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20310521
 DTEND;VALUE=DATE:20310522
 SUMMARY:Ringförmige Sonnenfinsternis
@@ -217,7 +217,7 @@ X-PLANETENUHR-VISIBILITY:Entlang der Ringzone ringförmig\, sonst regional parti
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2031-06-05-halbschatten-mondfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20310605
 DTEND;VALUE=DATE:20310606
 SUMMARY:Halbschatten-Mondfinsternis
@@ -227,7 +227,7 @@ X-PLANETENUHR-VISIBILITY:Regional im Halbschatten sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2031-10-30-halbschatten-mondfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20311030
 DTEND;VALUE=DATE:20311031
 SUMMARY:Halbschatten-Mondfinsternis
@@ -237,7 +237,7 @@ X-PLANETENUHR-VISIBILITY:Regional im Halbschatten sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2031-11-14-hybride-sonnenfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20311114
 DTEND;VALUE=DATE:20311115
 SUMMARY:Hybride Sonnenfinsternis
@@ -247,7 +247,7 @@ X-PLANETENUHR-VISIBILITY:Entlang der Zentralzone hybrid\, sonst regional partiel
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2032-04-25-totale-mondfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20320425
 DTEND;VALUE=DATE:20320426
 SUMMARY:Totale Mondfinsternis
@@ -257,7 +257,7 @@ X-PLANETENUHR-VISIBILITY:Regional total sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2032-05-09-ringf-rmige-sonnenfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20320509
 DTEND;VALUE=DATE:20320510
 SUMMARY:Ringförmige Sonnenfinsternis
@@ -267,7 +267,7 @@ X-PLANETENUHR-VISIBILITY:Entlang der Ringzone ringförmig\, sonst regional parti
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2032-10-18-totale-mondfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20321018
 DTEND;VALUE=DATE:20321019
 SUMMARY:Totale Mondfinsternis
@@ -277,7 +277,7 @@ X-PLANETENUHR-VISIBILITY:Regional total sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2032-11-03-partielle-sonnenfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20321103
 DTEND;VALUE=DATE:20321104
 SUMMARY:Partielle Sonnenfinsternis
@@ -287,7 +287,7 @@ X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2033-03-30-totale-sonnenfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20330330
 DTEND;VALUE=DATE:20330331
 SUMMARY:Totale Sonnenfinsternis
@@ -297,7 +297,7 @@ X-PLANETENUHR-VISIBILITY:Entlang der Totalitätszone total\, sonst regional part
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2033-04-14-totale-mondfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20330414
 DTEND;VALUE=DATE:20330415
 SUMMARY:Totale Mondfinsternis
@@ -307,7 +307,7 @@ X-PLANETENUHR-VISIBILITY:Regional total sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2033-09-23-partielle-sonnenfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20330923
 DTEND;VALUE=DATE:20330924
 SUMMARY:Partielle Sonnenfinsternis
@@ -317,7 +317,7 @@ X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2033-10-08-totale-mondfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20331008
 DTEND;VALUE=DATE:20331009
 SUMMARY:Totale Mondfinsternis
@@ -327,7 +327,7 @@ X-PLANETENUHR-VISIBILITY:Regional total sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2034-03-20-totale-sonnenfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20340320
 DTEND;VALUE=DATE:20340321
 SUMMARY:Totale Sonnenfinsternis
@@ -337,7 +337,7 @@ X-PLANETENUHR-VISIBILITY:Entlang der Totalitätszone total\, sonst regional part
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2034-04-03-halbschatten-mondfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20340403
 DTEND;VALUE=DATE:20340404
 SUMMARY:Halbschatten-Mondfinsternis
@@ -347,7 +347,7 @@ X-PLANETENUHR-VISIBILITY:Regional im Halbschatten sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2034-09-12-ringf-rmige-sonnenfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20340912
 DTEND;VALUE=DATE:20340913
 SUMMARY:Ringförmige Sonnenfinsternis
@@ -357,7 +357,7 @@ X-PLANETENUHR-VISIBILITY:Entlang der Ringzone ringförmig\, sonst regional parti
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2034-09-28-partielle-mondfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20340928
 DTEND;VALUE=DATE:20340929
 SUMMARY:Partielle Mondfinsternis
@@ -367,7 +367,7 @@ X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2035-02-22-halbschatten-mondfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20350222
 DTEND;VALUE=DATE:20350223
 SUMMARY:Halbschatten-Mondfinsternis
@@ -377,7 +377,7 @@ X-PLANETENUHR-VISIBILITY:Regional im Halbschatten sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2035-03-09-ringf-rmige-sonnenfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20350309
 DTEND;VALUE=DATE:20350310
 SUMMARY:Ringförmige Sonnenfinsternis
@@ -387,7 +387,7 @@ X-PLANETENUHR-VISIBILITY:Entlang der Ringzone ringförmig\, sonst regional parti
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2035-08-19-partielle-mondfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20350819
 DTEND;VALUE=DATE:20350820
 SUMMARY:Partielle Mondfinsternis
@@ -397,7 +397,7 @@ X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2035-09-02-totale-sonnenfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20350902
 DTEND;VALUE=DATE:20350903
 SUMMARY:Totale Sonnenfinsternis
@@ -407,7 +407,7 @@ X-PLANETENUHR-VISIBILITY:Entlang der Totalitätszone total\, sonst regional part
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2036-02-11-totale-mondfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20360211
 DTEND;VALUE=DATE:20360212
 SUMMARY:Totale Mondfinsternis
@@ -417,7 +417,7 @@ X-PLANETENUHR-VISIBILITY:Regional total sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2036-02-27-partielle-sonnenfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20360227
 DTEND;VALUE=DATE:20360228
 SUMMARY:Partielle Sonnenfinsternis
@@ -427,7 +427,7 @@ X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2036-07-23-partielle-sonnenfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20360723
 DTEND;VALUE=DATE:20360724
 SUMMARY:Partielle Sonnenfinsternis
@@ -437,7 +437,7 @@ X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2036-08-07-totale-mondfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20360807
 DTEND;VALUE=DATE:20360808
 SUMMARY:Totale Mondfinsternis
@@ -447,7 +447,7 @@ X-PLANETENUHR-VISIBILITY:Regional total sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2036-08-21-partielle-sonnenfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20360821
 DTEND;VALUE=DATE:20360822
 SUMMARY:Partielle Sonnenfinsternis
@@ -457,7 +457,7 @@ X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2037-01-16-partielle-sonnenfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20370116
 DTEND;VALUE=DATE:20370117
 SUMMARY:Partielle Sonnenfinsternis
@@ -467,7 +467,7 @@ X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2037-01-31-totale-mondfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20370131
 DTEND;VALUE=DATE:20370201
 SUMMARY:Totale Mondfinsternis
@@ -477,7 +477,7 @@ X-PLANETENUHR-VISIBILITY:Regional total sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2037-07-13-totale-sonnenfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20370713
 DTEND;VALUE=DATE:20370714
 SUMMARY:Totale Sonnenfinsternis
@@ -487,7 +487,7 @@ X-PLANETENUHR-VISIBILITY:Entlang der Totalitätszone total\, sonst regional part
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2037-07-27-partielle-mondfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20370727
 DTEND;VALUE=DATE:20370728
 SUMMARY:Partielle Mondfinsternis
@@ -497,7 +497,7 @@ X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2038-01-05-ringf-rmige-sonnenfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20380105
 DTEND;VALUE=DATE:20380106
 SUMMARY:Ringförmige Sonnenfinsternis
@@ -507,7 +507,7 @@ X-PLANETENUHR-VISIBILITY:Entlang der Ringzone ringförmig\, sonst regional parti
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2038-01-21-halbschatten-mondfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20380121
 DTEND;VALUE=DATE:20380122
 SUMMARY:Halbschatten-Mondfinsternis
@@ -517,7 +517,7 @@ X-PLANETENUHR-VISIBILITY:Regional im Halbschatten sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2038-06-17-halbschatten-mondfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20380617
 DTEND;VALUE=DATE:20380618
 SUMMARY:Halbschatten-Mondfinsternis
@@ -527,7 +527,7 @@ X-PLANETENUHR-VISIBILITY:Regional im Halbschatten sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2038-07-02-ringf-rmige-sonnenfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20380702
 DTEND;VALUE=DATE:20380703
 SUMMARY:Ringförmige Sonnenfinsternis
@@ -537,7 +537,7 @@ X-PLANETENUHR-VISIBILITY:Entlang der Ringzone ringförmig\, sonst regional parti
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2038-07-16-halbschatten-mondfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20380716
 DTEND;VALUE=DATE:20380717
 SUMMARY:Halbschatten-Mondfinsternis
@@ -547,7 +547,7 @@ X-PLANETENUHR-VISIBILITY:Regional im Halbschatten sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2038-12-11-halbschatten-mondfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20381211
 DTEND;VALUE=DATE:20381212
 SUMMARY:Halbschatten-Mondfinsternis
@@ -557,7 +557,7 @@ X-PLANETENUHR-VISIBILITY:Regional im Halbschatten sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2038-12-26-totale-sonnenfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20381226
 DTEND;VALUE=DATE:20381227
 SUMMARY:Totale Sonnenfinsternis
@@ -567,7 +567,7 @@ X-PLANETENUHR-VISIBILITY:Entlang der Totalitätszone total\, sonst regional part
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2039-06-06-partielle-mondfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20390606
 DTEND;VALUE=DATE:20390607
 SUMMARY:Partielle Mondfinsternis
@@ -577,7 +577,7 @@ X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2039-06-21-ringf-rmige-sonnenfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20390621
 DTEND;VALUE=DATE:20390622
 SUMMARY:Ringförmige Sonnenfinsternis
@@ -587,7 +587,7 @@ X-PLANETENUHR-VISIBILITY:Entlang der Ringzone ringförmig\, sonst regional parti
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2039-11-30-partielle-mondfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20391130
 DTEND;VALUE=DATE:20391201
 SUMMARY:Partielle Mondfinsternis
@@ -597,7 +597,7 @@ X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2039-12-15-totale-sonnenfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20391215
 DTEND;VALUE=DATE:20391216
 SUMMARY:Totale Sonnenfinsternis
@@ -607,7 +607,7 @@ X-PLANETENUHR-VISIBILITY:Entlang der Totalitätszone total\, sonst regional part
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2040-05-11-partielle-sonnenfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20400511
 DTEND;VALUE=DATE:20400512
 SUMMARY:Partielle Sonnenfinsternis
@@ -617,7 +617,7 @@ X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2040-05-26-totale-mondfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20400526
 DTEND;VALUE=DATE:20400527
 SUMMARY:Totale Mondfinsternis
@@ -627,7 +627,7 @@ X-PLANETENUHR-VISIBILITY:Regional total sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2040-11-04-partielle-sonnenfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20401104
 DTEND;VALUE=DATE:20401105
 SUMMARY:Partielle Sonnenfinsternis
@@ -637,7 +637,7 @@ X-PLANETENUHR-VISIBILITY:Regional partiell sichtbar
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-eclipse-2040-11-18-totale-mondfinsternis@marsrakete.github.io
-DTSTAMP:20260805T224557Z
+DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20401118
 DTEND;VALUE=DATE:20401119
 SUMMARY:Totale Mondfinsternis

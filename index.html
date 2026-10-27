@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="planetenuhr-version" content="1.3" />
+  <meta name="planetenuhr-version" content="1.21" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Planetenuhr – Astronomie-Dashboard für Sonne, Mond und Planeten</title>
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
@@ -39,14 +39,18 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.18.0/dist/katex.min.css" integrity="sha384-KfwFj/Q/jGrY4ijtfzWyW5NXzT5irvfnTq6aRnH2xPvLzLdi1XyVr7w4l2uwTq0V" crossorigin="anonymous" />
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.18.0/dist/katex.min.js" integrity="sha384-OE4SMRr5gMJQzKSD08J46vKsKgY8NxVtO1LW+/q3NJ0WHsGsdN4oebgEjwwWuyvG" crossorigin="anonymous"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.18.0/dist/contrib/auto-render.min.js" integrity="sha384-bjyGPfbij8/NDKJhSGZNP/khQVgtHUE5exjm4Ydllo42FwIgYsdLO2lXGmRBf5Mz" crossorigin="anonymous" onload="window.renderPlanetenuhrHelpMath && window.renderPlanetenuhrHelpMath()"></script>
-  <link rel="stylesheet" href="styles.css?v=1.3" />
-  <link rel="stylesheet" href="astronomy-explorer.css?v=1.3" />
-  <link rel="stylesheet" href="sky-knowledge.css?v=1.3" />
-  <link rel="stylesheet" href="idefix.css?v=1.3" />
-  <link rel="stylesheet" href="earth-moon-visuals.css?v=1.3" />
-  <link rel="stylesheet" href="meteor-labels.css?v=1.3" />
-  <link rel="stylesheet" href="diagram-details.css?v=1.3" />
-  <link rel="stylesheet" href="app-updates.css?v=1.3" />
+  <link rel="stylesheet" href="styles.css?v=1.21" />
+  <link rel="stylesheet" href="astronomy-explorer.css?v=1.21" />
+  <link rel="stylesheet" href="sky-knowledge.css?v=1.21" />
+  <link rel="stylesheet" href="idefix.css?v=1.21" />
+  <link rel="stylesheet" href="earth-moon-visuals.css?v=1.21" />
+  <link rel="stylesheet" href="meteor-labels.css?v=1.21" />
+  <link rel="stylesheet" href="diagram-details.css?v=1.21" />
+  <link rel="stylesheet" href="app-updates.css?v=1.21" />
+  <link rel="stylesheet" href="direction-compass.css?v=1.21" />
+  <link rel="stylesheet" href="celestial-bodies.css?v=1.21" />
+  <link rel="stylesheet" href="daily-highlight-graphics.css?v=1.21" />
+  <link rel="stylesheet" href="daily-highlights.css?v=1.21" />
 </head>
 <body>
   <div class="overlay-controls">
@@ -108,6 +112,15 @@
     </div>
   </div>
   <div class="grid">
+    <section class="display-container daily-highlights-card" data-help-key="daily_highlights" aria-labelledby="dailyHighlightsTitle">
+      <h2 class="group-title" id="dailyHighlightsTitle"></h2>
+      <time class="daily-highlights-date" id="dailyHighlightsDate"></time>
+      <ul class="daily-highlights-list" id="dailyHighlightsList"></ul>
+      <p class="daily-highlights-empty" id="dailyHighlightsEmpty" hidden></p>
+      <p class="daily-highlights-solar" id="dailyHighlightsSolar"></p>
+      <p class="daily-highlights-note" id="dailyHighlightsNote"></p>
+      <p class="daily-highlights-note" id="dailyHighlightsRange" hidden></p>
+    </section>
     <div class="display-container time-card wide-card" style="display: none;" data-help-key="time">
       <div class="group-title" id="titleTime">Current Time</div>
       <div id="time" class="time-plain" aria-live="polite">00:00:00</div>
@@ -279,6 +292,9 @@
       <div id="constellationYearSummary" class="astro-summary"></div>
       <div class="legend-small" id="constellationYearLegend">Annual wheel of the monthly constellations</div>
     </div>
+    <template id="constellationYearMiniTemplate"><svg xmlns="http://www.w3.org/2000/svg"><g class="constellation-year-mini"><g data-constellation-figure transform="scale(2)"><circle r="32" class="constellation-mini-ring"></circle></g></g></svg></template>
+    <template id="constellationYearLineTemplate"><svg xmlns="http://www.w3.org/2000/svg"><line class="constellation-mini-line"></line></svg></template>
+    <template id="constellationYearStarTemplate"><svg xmlns="http://www.w3.org/2000/svg"><circle class="constellation-mini-star"></circle></svg></template>
 
     <div class="display-container season-card astro-visual-card" data-help-key="season_axis">
       <div class="group-title" id="titleSeasonAxis">Seasons</div>
@@ -392,6 +408,7 @@
     </dialog>
     <template id="diagramOpenTemplate"><button class="diagram-open" type="button" aria-haspopup="dialog" aria-controls="diagramDetailDialog"></button></template>
     <template id="diagramFigureTemplate"><figure class="diagram-detail-figure"></figure></template>
+    <template id="diagramSolarStageTemplate"><div class="diagram-solar-stage"></div></template>
     <template id="knowledgeGraphicTemplate"><svg class="knowledge-drawing" viewBox="0 0 360 158" role="img" focusable="false"></svg></template>
     <template id="knowledgeGraphic-circle"><svg><circle /></svg></template>
     <template id="knowledgeGraphic-line"><svg><line /></svg></template>
@@ -446,6 +463,7 @@
       <div id="lightTravelRemaining" class="explorer-detail"></div>
       <div id="lightTravelDistance" class="explorer-note"></div>
       <div id="lightTravelDate" class="explorer-note"></div>
+      <div id="lightTravelVoyagerNote" class="explorer-note" hidden></div>
       <div id="lightTravelAccuracy" class="explorer-note" hidden></div>
       <div class="legend-small" data-explorer-text="light_legend"></div>
     </section>
@@ -723,7 +741,7 @@
  <g fill="none" stroke="#fff" stroke-opacity=".34" stroke-width="2.1" stroke-linecap="round">
   <path d="M28 45Q38 39 46 42"/><path d="M32 85Q43 91 51 88"/><path d="M75 20Q90 20 98 27"/>
  </g>
- <circle cx="64" cy="64" r="55" fill="url(#em-earth-night)"/>
+ <circle cx="64" cy="64" r="55" fill="url(#em-earth-night)" data-earth-shadow/>
  <circle cx="64" cy="64" r="55" fill="url(#em-earth-rim)"/>
 </g>
 <circle cx="64" cy="64" r="55" fill="none" stroke="#71badc" stroke-opacity=".55" stroke-width="1"/>
@@ -802,11 +820,7 @@
           <div id="moonLocalPosition" class="moon-local-position">
             <div id="moonLocalPositionLabel" class="moon-local-position-label">Moon here</div>
             <div class="moon-local-position-body">
-              <div class="eclipse-preview-compass moon-local-position-compass" aria-hidden="true">
-                <span class="eclipse-preview-compass-north">N</span>
-                <span id="moonLocalCompassArrow" class="eclipse-preview-compass-arrow"></span>
-                <span class="eclipse-preview-compass-dot"></span>
-              </div>
+              <div id="moonLocalCompass" class="moon-local-position-compass" aria-hidden="true"></div>
               <div class="moon-local-position-copy">
                 <div id="moonLocalPositionMain" class="moon-local-position-main">-</div>
                 <div id="moonLocalPositionSub" class="moon-local-position-sub">-</div>
@@ -1069,6 +1083,45 @@
 
   </div>
 
+  <template id="conjunctionTickTemplate"><svg xmlns="http://www.w3.org/2000/svg"><g class="conjunction-tick"><line y1="78" y2="106" stroke="#94a3b8" stroke-width="1"></line><text y="126" class="meteor-month-label"></text></g></svg></template>
+  <template id="conjunctionEventTemplate"><svg xmlns="http://www.w3.org/2000/svg"><g class="conjunction-event"><title></title><line y2="92" stroke="#bfdbfe" stroke-width="1.5"></line><circle r="6" fill="#2563eb" stroke="#fff" stroke-width="2"></circle><text class="meteor-month-label"><tspan data-conjunction-pair></tspan><tspan data-conjunction-angle></tspan></text></g></svg></template>
+  <template id="directionCompassTemplate">
+    <svg class="direction-compass" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+      <circle class="direction-compass-ring" cx="16" cy="16" r="12"></circle>
+      <path class="direction-compass-marks" d="M14 4 L16 0 L18 4 Z M28 14 L32 16 L28 18 Z M18 28 L16 32 L14 28 Z M4 18 L0 16 L4 14 Z"></path>
+      <g data-compass-arrow><path class="direction-compass-arrow" d="M16 7 L20 14 L17 13 L17 23 L15 23 L15 13 L12 14 Z"></path></g>
+    </svg>
+  </template>
+  <template id="solarPlanetMarkerTemplate"><div class="solar-planet body-marker"></div></template>
+  <template id="solarLabelGuideTemplate"><div class="solar-label-guide" aria-hidden="true" hidden></div></template>
+  <template id="solarPlanetLabelTemplate"><div class="solar-label"><span data-solar-name></span></div></template>
+  <template id="solarOrbitTemplate"><div class="solar-orbit"></div></template>
+  <template id="planetGlobeTemplate"><svg class="planet-globe" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><g data-graphic-planet>
+  <ellipse class="body-ring" cx="24" cy="24" rx="21" ry="7" transform="rotate(-24 24 24)"></ellipse>
+  <circle class="body-disc" cx="24" cy="24" r="14"></circle>
+  <path class="body-bands" d="M12 18 Q24 21 36 18 M11 27 Q24 30 37 27"></path>
+  <path class="body-cloud" d="M15 17 Q24 22 33 18 M14 25 Q23 30 34 27"></path>
+  <g class="body-craters"><circle cx="19" cy="20" r="3"></circle><circle cx="28" cy="29" r="4"></circle><circle cx="30" cy="17" r="1.5"></circle></g>
+  <ellipse class="body-spot" cx="29" cy="30" rx="4" ry="2"></ellipse>
+  <path class="body-sheen" d="M24 10 A14 14 0 0 0 24 38 Q8 24 24 10Z"></path>
+  <path class="body-ring" d="M4.8 29 Q17 34 43.2 19" ></path>
+</g></svg></template>
+  <template id="dailyGraphic-planet"><svg xmlns="http://www.w3.org/2000/svg"><g data-graphic-body></g></svg></template>
+  <template id="dailyGraphic-pair"><svg xmlns="http://www.w3.org/2000/svg"><g><g data-graphic-body transform="translate(-1 5) scale(.72)"></g><g data-graphic-body transform="translate(18 -1) scale(.64)"></g><path class="daily-graphic-orbit" d="M17 37 Q24 41 33 35" stroke-dasharray="2 3"></path></g></svg></template>
+  <template id="dailyGraphic-moon"><svg xmlns="http://www.w3.org/2000/svg"><g data-graphic-body></g></svg></template>
+  <template id="dailyGraphic-meteor"><svg xmlns="http://www.w3.org/2000/svg"><g><path class="daily-graphic-trails" d="M6 9 L23 26 M22 5 L36 19 M6 27 L17 38"></path><path class="daily-graphic-stars" d="M26 24 L28 28 L32 30 L28 32 L26 36 L24 32 L20 30 L24 28Z M38 17 L39.5 20 L43 22 L39.5 23.5 L38 27 L36.5 23.5 L33 22 L36.5 20Z M19 35 L20.5 38 L24 40 L20.5 41.5 L19 45 L17.5 41.5 L14 40 L17.5 38Z"></path></g></svg></template>
+  <template id="dailyGraphic-solarEclipse"><svg xmlns="http://www.w3.org/2000/svg"><g><circle class="daily-graphic-sun" cx="24" cy="24" r="17"></circle><path class="daily-graphic-trails" d="M24 3 V5 M24 43 V45 M3 24 H5 M43 24 H45"></path><circle class="daily-graphic-night" cx="25" cy="23" r="15"></circle></g></svg></template>
+  <template id="dailyGraphic-lunarEclipse"><svg xmlns="http://www.w3.org/2000/svg"><g><circle cx="24" cy="24" r="16" fill="#c9836a"></circle><path class="daily-graphic-shadow" d="M24 8 A16 16 0 0 1 24 40 Q10 24 24 8Z"></path><circle cx="20" cy="18" r="3" fill="#9d6053"></circle><circle cx="28" cy="29" r="4" fill="#9d6053"></circle></g></svg></template>
+  <template id="dailyGraphic-season"><svg xmlns="http://www.w3.org/2000/svg"><g><path class="daily-graphic-axis" d="M15 3 L33 45"></path><g data-daily-earth></g><path class="daily-graphic-trails" d="M1 18 H6 M1 25 H6 M2 32 H7"></path></g></svg></template>
+  <template id="dailyGraphic-polar"><svg xmlns="http://www.w3.org/2000/svg"><g><g class="daily-graphic-polar-sun"><circle class="daily-graphic-sun" cx="24" cy="24" r="6"></circle><path class="daily-graphic-trails" d="M24 14 V12 M14 24 H12 M34 24 H36 M17 17 L15 15 M31 17 L33 15"></path></g><path class="daily-graphic-horizon" d="M5 24 H43"></path></g></svg></template>
+  <template id="dailyGraphic-orbit"><svg xmlns="http://www.w3.org/2000/svg"><g><ellipse class="daily-graphic-orbit" cx="24" cy="24" rx="21" ry="13" transform="rotate(-24 24 24)"></ellipse><circle class="daily-graphic-sun" cx="21" cy="24" r="8"></circle><g data-daily-earth transform="translate(37 11) scale(.166667)"></g></g></svg></template>
+  <template id="dailyHighlightItemTemplate">
+    <li class="daily-highlight">
+      <span class="daily-highlight-when" data-daily-when></span>
+      <a class="daily-highlight-link"><svg class="daily-highlight-graphic" data-daily-graphic viewBox="0 0 48 48" aria-hidden="true" focusable="false"></svg><strong data-daily-title></strong><span aria-hidden="true">→</span></a>
+      <p class="daily-highlight-detail" data-daily-detail><span data-daily-before></span><span class="daily-highlight-direction" data-daily-direction hidden><span data-daily-direction-label></span></span><span data-daily-after></span></p>
+    </li>
+  </template>
   <template id="appUpdateControlsTemplate">
     <div class="date-settings-group app-updates">
       <div id="appVersionLabel" class="date-settings-label"></div>
@@ -1080,32 +1133,43 @@
     </div>
   </template>
 
-  <script src="translations.js?v=1.3"></script>
-  <script src="app-updates.js?v=1.3"></script>
-  <script src="card-help-config.js?v=1.3"></script>
-  <script src="calendar-events.js?v=1.3"></script>
-  <script src="eclipse-calendar-config.js?v=1.3"></script>
-  <script src="small-bodies-config.js?v=1.3"></script>
-  <script src="phenomena-config.js?v=1.3"></script>
-  <script src="bsky-feed-config.js?v=1.3"></script>
-  <script src="extended-calendar-config.js?v=1.3"></script>
-  <script src="locations-config.js?v=1.3"></script>
-  <script src="eclipse-visibility-config.js?v=1.3"></script>
-  <script src="eclipse-phase-config.js?v=1.3"></script>
-  <script src="astronomy-explorer-config.js?v=1.3"></script>
-  <script src="astronomy-explorer-model.js?v=1.3"></script>
-  <script src="astronomy-explorer.js?v=1.3"></script>
-  <script src="mnemonics-config.js?v=1.3"></script>
-  <script src="sky-knowledge-graphics-config.js?v=1.3"></script>
-  <script src="sky-knowledge-graphics.js?v=1.3"></script>
-  <script src="sky-knowledge.js?v=1.3"></script>
-  <script src="diagram-details.js?v=1.3"></script>
-  <script src="earth-moon-visuals.js?v=1.3"></script>
-  <script src="meteor-labels.js?v=1.3"></script>
-  <script src="idefix-config.js?v=1.3"></script>
-  <script src="idefix-ephemeris.js?v=1.3"></script>
-  <script src="idefix-model.js?v=1.3"></script>
-  <script src="idefix.js?v=1.3"></script>
+  <script src="translations.js?v=1.21"></script>
+  <script src="app-updates.js?v=1.21"></script>
+  <script src="card-help-config.js?v=1.21"></script>
+  <script src="calendar-events.js?v=1.21"></script>
+  <script src="eclipse-calendar-config.js?v=1.21"></script>
+  <script src="small-bodies-config.js?v=1.21"></script>
+  <script src="phenomena-config.js?v=1.21"></script>
+  <script src="bsky-feed-config.js?v=1.21"></script>
+  <script src="extended-calendar-config.js?v=1.21"></script>
+  <script src="locations-config.js?v=1.21"></script>
+  <script src="eclipse-visibility-config.js?v=1.21"></script>
+  <script src="eclipse-phase-config.js?v=1.21"></script>
+  <script src="astronomy-explorer-config.js?v=1.21"></script>
+  <script src="voyager-data.js?v=1.21"></script>
+  <script src="conjunction-model.js?v=1.21"></script>
+  <script src="astronomy-explorer-model.js?v=1.21"></script>
+  <script src="astronomy-explorer.js?v=1.21"></script>
+  <script src="daily-highlights-config.js?v=1.21"></script>
+  <script src="daily-highlights-model.js?v=1.21"></script>
+  <script src="direction-compass.js?v=1.21"></script>
+  <script src="celestial-bodies-config.js?v=1.21"></script>
+  <script src="celestial-bodies.js?v=1.21"></script>
+  <script src="solar-system-labels.js?v=1.21"></script>
+  <script src="solar-system-config.js?v=1.21"></script>
+  <script src="daily-highlight-graphics.js?v=1.21"></script>
+  <script src="daily-highlights.js?v=1.21"></script>
+  <script src="mnemonics-config.js?v=1.21"></script>
+  <script src="sky-knowledge-graphics-config.js?v=1.21"></script>
+  <script src="sky-knowledge-graphics.js?v=1.21"></script>
+  <script src="sky-knowledge.js?v=1.21"></script>
+  <script src="diagram-details.js?v=1.21"></script>
+  <script src="earth-moon-visuals.js?v=1.21"></script>
+  <script src="meteor-labels.js?v=1.21"></script>
+  <script src="idefix-config.js?v=1.21"></script>
+  <script src="idefix-ephemeris.js?v=1.21"></script>
+  <script src="idefix-model.js?v=1.21"></script>
+  <script src="idefix.js?v=1.21"></script>
   <script>
 
     /**
@@ -1191,9 +1255,39 @@
     };
     let storedCardSizes = {};
     let dateSettingsPanelOpen = false;
+    let dailyHighlights = null;
     let astronomyExplorer = null;
     let skyKnowledge = null;
     let idefixMission = null;
+
+    /** Builds a native deep link with the currently selected date, city and language.
+     * @param {string} key Destination card help key. @returns {string} Absolute dashboard URL.
+     */
+    function dailyHighlightCardUrl(key){
+      const url = new URL(window.location.href);
+      url.searchParams.set('date', formatDateKey(selectedSolarDate()).replaceAll('-', ''));
+      url.searchParams.set('place', selectedLocation().name);
+      url.searchParams.set('lang', lang);
+      url.searchParams.set('card', key);
+      const card = cardElementFromParameter(key);
+      if (card) url.hash = card.id;
+      return url.href;
+    }
+
+    /** Opens and focuses a linked card without a page reload or changing global date/place.
+     * @param {string} key Destination card help key. @returns {void}
+     */
+    function openDailyHighlightCard(key){
+      const card = cardElementFromParameter(key);
+      if (!card) return;
+      requestedCardKey = key;
+      syncUrlState();
+      card.setAttribute('tabindex', '-1');
+      card.focus({preventScroll:true});
+      let behavior = 'smooth';
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) behavior = 'auto';
+      card.scrollIntoView({behavior, block:'start', inline:'nearest'});
+    }
 
     function currentCardHelpPack(){
       return cardHelp[lang] || cardHelp.en || { sections:{}, cards:{} };
@@ -1815,6 +1909,7 @@
       if (skyKnowledge) {
         skyKnowledge.render();
       }
+      if (dailyHighlights) dailyHighlights.render(selectedSolarDate());
     }
 
     /**
@@ -2019,7 +2114,7 @@
      */
     function resizableDashboardCards(){
       return Array.from(document.querySelectorAll('.grid .display-container[data-help-key]'))
-        .filter(card => !card.classList.contains('time-card'));
+        .filter(card => !card.classList.contains('time-card') && !card.classList.contains('daily-highlights-card'));
     }
 
     /**
@@ -2274,8 +2369,6 @@
      */
     function rerenderCardsAfterSizeChange(){
       runWithDeferredMasonryLayout(() => {
-        renderMoon();
-        renderEarthMoon();
         renderSmallBodies();
         renderSpacecraft();
         refreshDateDrivenTiles();
@@ -4424,6 +4517,10 @@
       }
     }
 
+    /** Renders geocentric close-approach minima on a correctly dated timeline.
+     * @param {Date} [date=selectedSolarDate()] Selected dashboard instant.
+     * @returns {void}
+     */
     function renderConjunctionTimeline(date = selectedSolarDate()){
       const target = document.getElementById('conjunctionTimeline');
       const summary = document.getElementById('conjunctionSummary');
@@ -4446,68 +4543,74 @@
       axis.setAttribute('stroke-width', '2');
       svg.appendChild(axis);
 
-      for (let monthOffset = -2; monthOffset <= 2; monthOffset++) {
-        const x = 30 + ((monthOffset + 2) / 4) * (width - 60);
-        const tick = document.createElementNS(svgNS, 'line');
-        tick.setAttribute('x1', x);
-        tick.setAttribute('y1', 78);
-        tick.setAttribute('x2', x);
-        tick.setAttribute('y2', 106);
-        let tickStroke = '#94a3b8';
-        let tickStrokeWidth = '1';
-        if (monthOffset === 0) {
-          tickStroke = '#2563eb';
-          tickStrokeWidth = '2';
+      for (let index = 0; index <= 4; index++) {
+        const offset = -windowDays + index * windowDays / 2;
+        const x = 30 + index / 4 * (width - 60);
+        const tick = document.getElementById('conjunctionTickTemplate').content.querySelector('g').cloneNode(true);
+        const line = tick.querySelector('line');
+        line.setAttribute('x1', x);
+        line.setAttribute('x2', x);
+        if (index === 2) {
+          line.setAttribute('stroke', '#2563eb');
+          line.setAttribute('stroke-width', '2');
         }
-        tick.setAttribute('stroke', tickStroke);
-        tick.setAttribute('stroke-width', tickStrokeWidth);
-        svg.appendChild(tick);
-        const monthDate = new Date(date.getFullYear(), date.getMonth() + monthOffset, 1);
-        const label = document.createElementNS(svgNS, 'text');
+        const tickDate = new Date(date.getTime() + offset * 86400000);
+        const label = tick.querySelector('text');
         label.setAttribute('x', x);
-        label.setAttribute('y', 126);
-        label.setAttribute('class', 'meteor-month-label');
-        label.textContent = monthShortLabel(monthDate.getMonth());
-        svg.appendChild(label);
+        label.textContent = formatDateStamp(tickDate);
+        if (index === 0) label.classList.add('is-start');
+        else if (index === 4) label.classList.add('is-end');
+        svg.appendChild(tick);
       }
 
       events.forEach((event, index) => {
         const x = 30 + ((event.offsetDays + windowDays) / (windowDays * 2)) * (width - 60);
-        let y = 42;
-        if (index % 2 === 0) {
-          y = 66;
-        }
-        const stem = document.createElementNS(svgNS, 'line');
+        let y = 50;
+        if (index % 2 === 0) y = 74;
+        const group = document.getElementById('conjunctionEventTemplate').content.querySelector('g').cloneNode(true);
+        group.dataset.pair = event.a + '-' + event.b;
+        group.dataset.date = event.date.toISOString();
+        group.dataset.separation = event.separation;
+        group.querySelector('title').textContent = conjunctionPairLabel(event.a, event.b) + ' · ' + fmtDateOnly(event.date) + ' · ' + conjunctionSeparationLabel(event.separation);
+        const stem = group.querySelector('line');
         stem.setAttribute('x1', x);
-        stem.setAttribute('y1', y + 6);
         stem.setAttribute('x2', x);
-        stem.setAttribute('y2', 92);
-        stem.setAttribute('stroke', '#bfdbfe');
-        stem.setAttribute('stroke-width', '1.5');
-        svg.appendChild(stem);
-        const dot = document.createElementNS(svgNS, 'circle');
+        stem.setAttribute('y1', y + 6);
+        const dot = group.querySelector('circle');
         dot.setAttribute('cx', x);
         dot.setAttribute('cy', y);
-        dot.setAttribute('r', Math.max(4, 8 - event.separation));
-        dot.setAttribute('fill', '#2563eb');
-        dot.setAttribute('stroke', '#fff');
-        dot.setAttribute('stroke-width', '2');
-        svg.appendChild(dot);
-        const label = document.createElementNS(svgNS, 'text');
+        const label = group.querySelector('text');
         label.setAttribute('x', x);
-        label.setAttribute('y', y - 14);
-        label.setAttribute('class', 'meteor-month-label');
-        label.textContent = conjunctionPairLabel(event.a, event.b);
-        svg.appendChild(label);
+        const pairLine = label.querySelector('[data-conjunction-pair]');
+        const angleLine = label.querySelector('[data-conjunction-angle]');
+        pairLine.setAttribute('x', x);
+        pairLine.setAttribute('y', y - 36);
+        pairLine.textContent = conjunctionPairLabel(event.a, event.b);
+        angleLine.setAttribute('x', x);
+        angleLine.setAttribute('y', y - 22);
+        angleLine.textContent = conjunctionSeparationLabel(event.separation);
+        svg.appendChild(group);
       });
       target.appendChild(svg);
+      // Keep both label lines inside the chart, including events near its edges.
+      svg.querySelectorAll('.conjunction-event text').forEach(label => {
+        const bounds = label.getBBox();
+        let shift = 0;
+        if (bounds.x < 8) shift = 8 - bounds.x;
+        else if (bounds.x + bounds.width > width - 8) shift = width - 8 - bounds.x - bounds.width;
+        if (shift !== 0) {
+          label.querySelectorAll('tspan').forEach(line => {
+            line.setAttribute('x', Number(line.getAttribute('x')) + shift);
+          });
+        }
+      });
 
       if (summary) {
         summary.innerHTML = '';
         const next = events.find(event => event.date >= date);
         if (next) {
           appendSummaryLine(summary, (t.conjunction_next || 'Next conjunction') + ': ', fmtDateOnly(next.date) + ' · ' + conjunctionPairLabel(next.a, next.b));
-          appendSummaryLine(summary, (t.conjunction_separation || 'Separation') + ': ', next.separation.toFixed(1) + '°');
+          appendSummaryLine(summary, (t.conjunction_separation || 'Separation') + ': ', conjunctionSeparationLabel(next.separation));
           appendSummaryLine(summary, (t.conjunction_window || 'Window') + ': ', fmtDateOnly(new Date(date.getTime() - windowDays * 86400000)) + ' - ' + fmtDateOnly(new Date(date.getTime() + windowDays * 86400000)));
         } else {
           appendSummaryText(summary, t.conjunction_none || 'No close conjunction found in the current window.');
@@ -4525,7 +4628,8 @@
      * Renders the yearly constellation wheel.
      * This is a visual month-by-month orientation aid, not a literal sky
      * projection. The card emphasizes the annual cycle of constellations with
-     * month ticks, an outer instrument ring and a current-date marker.
+     * month ticks, an outer instrument ring and a current-date marker. Miniatures
+     * use twice their original diameter, spaced outside the compact month rings.
      * @param {Date} [date=selectedSolarDate()] Selected dashboard date.
      * @returns {void}
      */
@@ -4536,8 +4640,8 @@
       const items = phenomenaConfig.constellations || [];
       const size = 760;
       const center = size / 2;
-      const radius = 224;
-      const iconRadius = 64;
+      const radius = 176;
+      const miniatureOrbit = 270;
       const svgNS = 'http://www.w3.org/2000/svg';
       target.innerHTML = '';
       const svg = document.createElementNS(svgNS, 'svg');
@@ -4572,7 +4676,7 @@
       const outerRing = document.createElementNS(svgNS, 'circle');
       outerRing.setAttribute('cx', center);
       outerRing.setAttribute('cy', center);
-      outerRing.setAttribute('r', radius + 34);
+      outerRing.setAttribute('r', radius + 18);
       outerRing.setAttribute('class', 'constellation-year-outer-ring');
       svg.appendChild(outerRing);
 
@@ -4592,8 +4696,8 @@
 
       for (let tickIndex = 0; tickIndex < 12; tickIndex++) {
         const tickFraction = tickIndex / 12;
-        const tickStart = polarPoint(center, radius + 18, tickFraction);
-        const tickEnd = polarPoint(center, radius + 46, tickFraction);
+        const tickStart = polarPoint(center, radius + 6, tickFraction);
+        const tickEnd = polarPoint(center, radius + 24, tickFraction);
         const tick = document.createElementNS(svgNS, 'line');
         tick.setAttribute('x1', tickStart.x);
         tick.setAttribute('y1', tickStart.y);
@@ -4628,32 +4732,25 @@
         monthLabel.textContent = monthShortLabel(item.month - 1).replace('.', '');
         svg.appendChild(monthLabel);
 
-        const miniPoint = polarPoint(center, radius + 72, fraction);
-        const mini = document.createElementNS(svgNS, 'g');
+        const miniPoint = polarPoint(center, miniatureOrbit, fraction);
+        const mini = document.getElementById('constellationYearMiniTemplate').content.querySelector('g').cloneNode(true);
         mini.setAttribute('transform', `translate(${miniPoint.x} ${miniPoint.y})`);
-
-        const miniBg = document.createElementNS(svgNS, 'circle');
-        miniBg.setAttribute('cx', 0);
-        miniBg.setAttribute('cy', 0);
-        miniBg.setAttribute('r', iconRadius / 2);
-        miniBg.setAttribute('class', 'constellation-mini-ring');
-        mini.appendChild(miniBg);
+        const figure = mini.querySelector('[data-constellation-figure]');
 
         (item.lines || []).forEach(([fromIndex, toIndex]) => {
           const from = item.stars && item.stars[fromIndex];
           const to = item.stars && item.stars[toIndex];
           if (!from || !to) return;
-          const line = document.createElementNS(svgNS, 'line');
+          const line = document.getElementById('constellationYearLineTemplate').content.querySelector('line').cloneNode(true);
           line.setAttribute('x1', ((from[0] - 50) * 0.34).toFixed(1));
           line.setAttribute('y1', ((from[1] - 50) * 0.34).toFixed(1));
           line.setAttribute('x2', ((to[0] - 50) * 0.34).toFixed(1));
           line.setAttribute('y2', ((to[1] - 50) * 0.34).toFixed(1));
-          line.setAttribute('class', 'constellation-mini-line');
-          mini.appendChild(line);
+          figure.appendChild(line);
         });
 
         (item.stars || []).forEach((star, starIndex) => {
-          const starNode = document.createElementNS(svgNS, 'circle');
+          const starNode = document.getElementById('constellationYearStarTemplate').content.querySelector('circle').cloneNode(true);
           starNode.setAttribute('cx', ((star[0] - 50) * 0.34).toFixed(1));
           starNode.setAttribute('cy', ((star[1] - 50) * 0.34).toFixed(1));
           const isCurrentLeadStar = isCurrentMonth && starIndex === 0;
@@ -4665,10 +4762,10 @@
           }
           starNode.setAttribute('r', starRadius);
           starNode.setAttribute('class', starClass);
-          mini.appendChild(starNode);
+          figure.appendChild(starNode);
         });
 
-        const namePoint = polarPoint(center, radius + 138, fraction);
+        const namePoint = polarPoint(center, 362, fraction);
         const angle = fraction * Math.PI * 2 - Math.PI / 2;
         const topBottomBias = Math.sin(angle);
         const horizontalBias = Math.cos(angle);
@@ -4682,7 +4779,7 @@
 
         let rawLabelY = namePoint.y;
         if (isSideLabel) {
-          rawLabelY = 280;
+          rawLabelY = 310;
         } else if (topBottomBias < -0.82) {
           rawLabelY += 10;
         } else if (topBottomBias > 0.82) {
@@ -4737,6 +4834,18 @@
       svg.appendChild(sunCore);
 
       target.appendChild(svg);
+
+      // Clamp using rendered glyph bounds; long names must stay inside the wheel.
+      svg.querySelectorAll('.constellation-name-label').forEach(label => {
+        const bounds = label.getBBox();
+        let shift = 0;
+        if (bounds.x < 8) {
+          shift = 8 - bounds.x;
+        } else if (bounds.x + bounds.width > size - 8) {
+          shift = size - 8 - bounds.x - bounds.width;
+        }
+        label.setAttribute('x', Number(label.getAttribute('x')) + shift);
+      });
 
       const current = items.find(item => item.month === date.getMonth() + 1);
       if (summary) {
@@ -5669,6 +5778,14 @@
           }
         });
       });
+    }
+
+    /** Releases a date update's saved scroll position when a detail-view interaction starts.
+     * No parameters. @returns {void}
+     */
+    function releasePendingViewportRestoration(){
+      persistentViewportAnchor = null;
+      persistentScrollPosition = null;
     }
 
     /**
@@ -7029,10 +7146,17 @@
       selector.value = selectedLocationKey;
     }
 
+    /** Updates all date/location-dependent cards from one shared selected instant.
+     * Includes the observed Moon phase, phase caption, next full Moon and local direction.
+     * No parameters. @returns {void}
+     */
     function refreshDateDrivenTiles(){
       const date = selectedSolarDate();
       updateControlDateReadout();
+      renderMoon(date);
+      renderEarthMoon(date);
       renderAstronomyExplorer(date);
+      if (dailyHighlights) dailyHighlights.render(date);
       if (idefixMission) {
         idefixMission.render(date);
       }
@@ -7061,8 +7185,6 @@
     // Rebuilds the time-sensitive astronomy panels.
     function updateInfrequent() {
       runWithDeferredMasonryLayout(() => {
-        renderMoon();
-        renderEarthMoon();
         renderSmallBodies();
         renderSpacecraft();
         refreshDateDrivenTiles();
@@ -8755,8 +8877,10 @@
 
     /**
      * Renders the schematic heliocentric solar-system card for the selected date.
-     * Planet markers use compressed orbital radii so the outer planets stay visible
-     * inside one disc, and labels are shifted inward near the card edges to avoid clipping.
+     * Retained template markers use shared body artwork and configured schematic radii.
+     * Only the heliocentric directions are date-dependent; radii deliberately spread
+     * the inner planets apart and do not represent physical orbital distances.
+     * Labels are shifted inward near the card edges to avoid clipping.
      * @param {Date} [date=selectedSolarDate()] Calendar date used for approximate planet positions.
      * @returns {void}
      */
@@ -8764,51 +8888,60 @@
       const system = document.getElementById('solarSystem');
       if(!system) return;
 
-      system.querySelectorAll('.solar-orbit,.solar-planet,.solar-label').forEach(el => el.remove());
-
       const size = system.clientWidth || 760;
       const center = size / 2;
-      const maxRadius = size * 0.39;
-      const neptuneA = 30.06992276;
+      const radiusFractions = window.PLANETENUHR_SOLAR_SYSTEM_CONFIG.radiusFractions;
+      const maxRadius = size * radiusFractions.neptune;
+      const artwork = window.PLANETENUHR_BODY_VISUALS;
 
       solarPlanets.forEach(planet => {
-        const orbitRadius = Math.sqrt(planet.a[0] / neptuneA) * maxRadius;
-        const orbit = document.createElement('div');
-        orbit.className = 'solar-orbit';
+        const orbitRadius = size * radiusFractions[planet.key];
+        let orbit = system.querySelector('[data-solar-orbit="' + planet.key + '"]');
+        if (!orbit) {
+          orbit = document.getElementById('solarOrbitTemplate').content.firstElementChild.cloneNode(true);
+          orbit.dataset.solarOrbit = planet.key;
+          system.appendChild(orbit);
+        }
         orbit.style.width = (orbitRadius * 2) + 'px';
         orbit.style.height = (orbitRadius * 2) + 'px';
-        system.appendChild(orbit);
       });
 
       solarPlanets.forEach(planet => {
         const pos = planetPosition(planet, date);
         const theta = Math.atan2(pos.y, pos.x);
-        const distance = Math.sqrt(pos.x*pos.x + pos.y*pos.y);
-        const screenRadius = Math.sqrt(distance / neptuneA) * maxRadius;
+        const screenRadius = size * radiusFractions[planet.key];
         const x = center + screenRadius * Math.cos(theta);
         const y = center + screenRadius * Math.sin(theta);
 
-        const marker = document.createElement('div');
-        marker.className = 'solar-planet ' + planet.key;
+        let marker = system.querySelector('[data-solar-marker="' + planet.key + '"]');
+        if (!marker) {
+          marker = document.getElementById('solarPlanetMarkerTemplate').content.firstElementChild.cloneNode(true);
+          marker.classList.add(planet.key);
+          marker.dataset.solarMarker = planet.key;
+          system.appendChild(marker);
+        }
         marker.style.left = x + 'px';
         marker.style.top = y + 'px';
         marker.title = t['planet_' + planet.key] || planet.key;
-        system.appendChild(marker);
+        artwork.mount(marker, planet.key);
 
-        const label = document.createElement('div');
-        label.className = 'solar-label';
-        label.dataset.solarPlanet = planet.key;
-        label.textContent = t['planet_' + planet.key] || planet.key;
+        let label = system.querySelector('[data-solar-planet="' + planet.key + '"]');
+        if (!label) {
+          label = document.getElementById('solarPlanetLabelTemplate').content.firstElementChild.cloneNode(true);
+          label.dataset.solarPlanet = planet.key;
+          system.appendChild(label);
+        }
+        label.querySelector('[data-solar-name]').textContent = t['planet_' + planet.key] || planet.key;
         label.style.left = x + 'px';
         label.style.top = y + 'px';
-        let labelTransform = 'translate(8px, -18px)';
+        let labelTransform = 'translate(14px, -22px)';
         let labelTextAlign = 'left';
 
         if (x > center + maxRadius * 0.72) {
-          labelTransform = 'translate(calc(-100% - 8px), -18px)';
+          labelTransform = 'translate(calc(-100% - 14px), -22px)';
           labelTextAlign = 'right';
         } else if (x < center - maxRadius * 0.72) {
-          labelTransform = 'translate(8px, -18px)';
+          labelTransform = 'translate(14px, -22px)';
           labelTextAlign = 'left';
         } else if (y < center - maxRadius * 0.72) {
           labelTransform = 'translate(-50%, 12px)';
@@ -8820,12 +8953,12 @@
 
         label.style.transform = labelTransform;
         label.style.textAlign = labelTextAlign;
-        system.appendChild(label);
       });
 
       const tz = document.getElementById('timezone').value;
       const solarDate = document.getElementById('solarDate');
       if(solarDate) solarDate.textContent = t.solar_date + ': ' + fmtTZ(date, tz);
+      window.PLANETENUHR_SOLAR_LABELS.layout(system);
     }
 
     function smallBodyRadius(au, maxRadius){
@@ -9261,33 +9394,30 @@
       return `M ${start.x.toFixed(2)} ${start.y.toFixed(2)} A ${radius} ${radius} 0 ${largeArc} 1 ${end.x.toFixed(2)} ${end.y.toFixed(2)}`;
     }
 
+    /** Formats a sky separation with the shared arm’s-length finger/hand estimate.
+     * @param {number} degrees Nonnegative angular separation in degrees.
+     * @returns {string} Localized degrees and a practical estimate, or empty for invalid input.
+     */
+    function conjunctionSeparationLabel(degrees){
+      if (!Number.isFinite(degrees) || degrees < 0) return '';
+      const value = new Intl.NumberFormat(lang, {minimumFractionDigits:1, maximumFractionDigits:1}).format(degrees);
+      let estimate = altitudeThumbEstimate(degrees);
+      if (degrees < 1) estimate = t.angle_estimate_under_finger;
+      return value + '° · ' + estimate;
+    }
+
     function conjunctionPairLabel(a, b){
       return bodyDisplayName(a) + ' - ' + bodyDisplayName(b);
     }
 
+    /** Finds close approaches as seen from Earth using the full three-dimensional sky angle.
+     * @param {Date} [date=selectedSolarDate()] Center of the displayed time window.
+     * @param {number} [windowDays=180] Half-window in elapsed days.
+     * @returns {object[]} Chronological minima at or below 4.5 degrees for the five naked-eye planets.
+     */
     function computeConjunctionEvents(date = selectedSolarDate(), windowDays = 180){
-      const bodies = ['mercury','venus','mars','jupiter','saturn'];
-      const base = new Date(date);
-      base.setHours(12, 0, 0, 0);
-      const events = [];
-      for (let i = 0; i < bodies.length; i++) {
-        for (let j = i + 1; j < bodies.length; j++) {
-          const a = bodies[i];
-          const b = bodies[j];
-          for (let day = -windowDays + 1; day < windowDays; day++) {
-            const prevDate = new Date(base.getTime() + (day - 1) * 86400000);
-            const currentDate = new Date(base.getTime() + day * 86400000);
-            const nextDate = new Date(base.getTime() + (day + 1) * 86400000);
-            const prev = Math.abs(signedDeg(bodyEclipticLongitude(a, prevDate) - bodyEclipticLongitude(b, prevDate)));
-            const current = Math.abs(signedDeg(bodyEclipticLongitude(a, currentDate) - bodyEclipticLongitude(b, currentDate)));
-            const next = Math.abs(signedDeg(bodyEclipticLongitude(a, nextDate) - bodyEclipticLongitude(b, nextDate)));
-            if (current <= prev && current < next && current <= 4.5) {
-              events.push({ a, b, date:currentDate, offsetDays:day, separation:current });
-            }
-          }
-        }
-      }
-      return events.sort((left, right) => left.date - right.date);
+      return window.PLANETENUHR_CONJUNCTIONS.events(date, windowDays,
+        ['mercury', 'venus', 'mars', 'jupiter', 'saturn'], geocentricVector, 4.5);
     }
 
     /** Returns the active language's meteor shower name.
@@ -10614,7 +10744,7 @@ function computeMoon(date){
     }
 
     /**
-     * Refreshes the retained phase SVG, phase text, local direction and eclipse sketch.
+     * Refreshes the retained phase SVG, phase text, shared local-direction compass and eclipse sketch.
      * @param {Date} [date=selectedSolarDate()] Dashboard instant used for the Moon model.
      * @returns {void}
      */
@@ -10657,19 +10787,23 @@ function computeMoon(date){
       const moonLocalPositionLabel = document.getElementById('moonLocalPositionLabel');
       const moonLocalPositionMain = document.getElementById('moonLocalPositionMain');
       const moonLocalPositionSub = document.getElementById('moonLocalPositionSub');
-      const moonLocalCompassArrow = document.getElementById('moonLocalCompassArrow');
-      if (moonLocalPositionLabel && moonLocalPositionMain && moonLocalPositionSub && moonLocalCompassArrow) {
+      const moonLocalCompass = document.getElementById('moonLocalCompass');
+      if (moonLocalPositionLabel && moonLocalPositionMain && moonLocalPositionSub && moonLocalCompass) {
+        let compass = moonLocalCompass.querySelector('.direction-compass');
+        if (!compass) {
+          compass = window.PLANETENUHR_COMPASS.create(NaN);
+          moonLocalCompass.appendChild(compass);
+        }
         moonLocalPositionLabel.textContent = moonDirectionLabel(date, location);
         const moonDirectionDate = moonDirectionReferenceDate(date, location);
         const moonDirection = moonLookDirectionForDate(moonDirectionDate, location);
         if (moonDirection) {
-          moonLocalCompassArrow.style.transform =
-            'translate(-50%, -100%) rotate(' + moonDirection.azimuthDeg.toFixed(1) + 'deg)';
+          window.PLANETENUHR_COMPASS.setAzimuth(compass, moonDirection.azimuthDeg);
           moonLocalPositionMain.textContent =
             moonDirection.directionLabel + ' · ' + moonDirection.azimuthDeg.toFixed(0) + '°';
           moonLocalPositionSub.textContent = moonDirection.altitudeText;
         } else {
-          moonLocalCompassArrow.style.transform = 'translate(-50%, -100%) rotate(0deg)';
+          window.PLANETENUHR_COMPASS.setAzimuth(compass, NaN);
           moonLocalPositionMain.textContent = '-';
           moonLocalPositionSub.textContent = '-';
         }
@@ -10957,6 +11091,18 @@ function computeMoon(date){
       requestLayout: requestMasonryLayout,
       updateCardLayout: updateSingleCardMasonryLayout
     });
+    dailyHighlights = window.PLANETENUHR_DAILY.create({
+      getLocation:selectedLocation, getTimeZone:locationTimeZoneId,
+      getLanguage:() => lang, getTranslations:() => t,
+      getDateKey:formatDateKey, getDateLabel:formatDateStamp,
+      getVector:geocentricVector, getHorizontal:horizontalCoordinates,
+      getConjunctions:computeConjunctionEvents, getMoon:computeMoon,
+      getCalendar:calendarEvents, getShowers:() => phenomenaConfig.meteorStreams || [],
+      getEclipseVisibility:eclipseVisibilityForLocation, getEclipseLabel:eclipseVisibilityStatusLabel,
+      getAngleLabel:conjunctionSeparationLabel, getDirection:compassLabelForAzimuth,
+      getCardUrl:dailyHighlightCardUrl, openCard:openDailyHighlightCard,
+      updateLayout:updateSingleCardMasonryLayout
+    });
     applyI18n();
     syncDateMobilePanelForViewport();
     initCardHelp();
@@ -10968,7 +11114,7 @@ function computeMoon(date){
     // Half-hourly refresh for time-dependent cards.
     initMasonryLayout();
     refreshDynamicTiles();
-    window.PLANETENUHR_DIAGRAM_DETAILS.create();
+    window.PLANETENUHR_DIAGRAM_DETAILS.create({beforeOpen:releasePendingViewportRestoration});
     scheduleMasonryLayout(scrollToRequestedCard);
     setInterval(refreshDynamicTiles, 1800000);
 

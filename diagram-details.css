@@ -32,3 +32,4 @@
 .diagram-detail-figure { width:max-content; min-width:100%; margin:0; padding:16px; }
 .diagram-detail-figure + .diagram-detail-figure { border-top:1px solid var(--border); }
 .diagram-detail-figure svg { display:block; max-width:none; max-height:none; }
+.diagram-solar-stage { position:relative; }

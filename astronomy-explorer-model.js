@@ -43,6 +43,24 @@ window.PLANETENUHR_EXPLORER_MODEL = (() => {
     return { distanceAu, distanceKm, seconds: distanceKm / config.lightSpeedKmPerSecond };
   }
 
+  /** Estimates Voyager 1's solar distance from NASA's two dated distance samples.
+   * r(t) = r0 + (r1-r0) * (t-t0)/(t1-t0); no Earth distance or full trajectory.
+   * @param {Date} date Selected instant, at most five years from the latest baseline.
+   * @returns {object|null} Distance and one-way vacuum light time, or null outside the supported interval.
+   */
+  function voyagerLightTravel(date){
+    const data = window.PLANETENUHR_VOYAGER_DATA;
+    const time = date.getTime() / 1000;
+    if (!data || !Number.isFinite(time)) return null;
+    const [first, last] = data.samples;
+    if (Math.abs(time - last.timeUnix) > data.maximumOffsetSeconds) return null;
+    const radialSpeed = (last.distanceKm - first.distanceKm) / (last.timeUnix - first.timeUnix);
+    const distanceKm = first.distanceKm + radialSpeed * (time - first.timeUnix);
+    if (!Number.isFinite(distanceKm) || distanceKm <= 0) return null;
+    const config = window.PLANETENUHR_EXPLORER_CONFIG;
+    return {distanceKm, distanceAu:distanceKm / config.astronomicalUnitKm, seconds:distanceKm / config.lightSpeedKmPerSecond};
+  }
+
   /**
    * Classifies geometric solar altitude using conventional sunrise and twilight limits.
    * @param {number} altitude Solar center altitude in degrees.
@@ -207,5 +225,5 @@ window.PLANETENUHR_EXPLORER_MODEL = (() => {
     };
   }
 
-  return { equatorialOfDate, lightTravel, lightState, solarLightAt, localDayBounds, solarLightDay };
+  return { equatorialOfDate, lightTravel, voyagerLightTravel, lightState, solarLightAt, localDayBounds, solarLightDay };
 })();

@@ -11,6 +11,27 @@ for (const file of ['astronomy-explorer-config.js', 'astronomy-explorer-model.js
 const model = context.window.PLANETENUHR_EXPLORER_MODEL;
 const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 
+test('the global date refresh updates both Moon displays immediately with the same selected instant', () => {
+  const selected = new Date('2026-12-01T12:00:00Z');
+  const calls = [];
+  const adapters = {dailyHighlights:null,idefixMission:null,selectedSolarDate:() => selected};
+  for (const name of ['updateControlDateReadout','renderMoon','renderEarthMoon','renderAstronomyExplorer',
+    'renderSolarSystem','renderBarycenter','renderLagrangePoints','renderAnalemma','renderExoplanetComparison',
+    'renderPolarisNorth','renderMoonNodes','renderConjunctionTimeline','renderMeteorStreams','renderConstellationOfMonth',
+    'renderConstellationYear','renderSeasonAxis','renderRetrogradePhases','renderInnerPlanetPhases','renderSunlight',
+    'renderVisibility','renderNightVisibility','renderSatellites','renderEclipseGeometry','renderCalendar']) {
+    adapters[name] = date => calls.push({name,date});
+  }
+  const realm = vm.createContext(adapters);
+  loadDashboardFunction('refreshDateDrivenTiles', realm);
+  vm.runInContext('refreshDateDrivenTiles()', realm);
+  for (const name of ['renderMoon','renderEarthMoon']) {
+    const renders = calls.filter(call => call.name === name);
+    assert.equal(renders.length,1);
+    assert.equal(renders[0].date,selected);
+  }
+});
+
 /**
  * Loads an existing pure dashboard function without bootstrapping the browser UI.
  * @param {string} name Top-level function name in index.html.

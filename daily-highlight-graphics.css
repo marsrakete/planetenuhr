@@ -1,0 +1,13 @@
+.daily-highlight-graphic { width:36px; height:36px; flex:none; pointer-events:none; }
+.daily-graphic-trails { fill:none; stroke:#86b6d2; stroke-width:2; stroke-linecap:round; }
+.daily-graphic-stars { fill:#e8bb50; }
+.daily-graphic-sun { fill:#f5c653; }
+.daily-graphic-night { fill:#41536f; }
+.daily-graphic-earth { fill:#6caed1; }
+.daily-graphic-land { fill:#77a794; }
+.daily-graphic-shadow { fill:#253654; opacity:.32; }
+.daily-graphic-axis { stroke:#74879d; stroke-width:1.4; }
+.daily-graphic-orbit { fill:none; stroke:#a9b9cc; stroke-width:1.5; }
+.daily-graphic-horizon { fill:none; stroke:#8096ac; stroke-width:1.5; stroke-linecap:round; }
+.daily-graphic-polar-sun { transform:translateY(-9px); }
+[data-state="polar_night"] .daily-graphic-polar-sun { transform:translateY(9px); }

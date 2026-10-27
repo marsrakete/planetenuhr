@@ -36,6 +36,14 @@ window.PLANETENUHR_EXPLORER = (() => {
       return dependencies.getTranslations()[key];
     }
 
+    /** Returns the localized name of a planet or the Voyager destination.
+     * @param {string} key Light destination key. @returns {string} Visible destination name.
+     */
+    function lightTargetName(key){
+      if (key === 'voyager1') return text('light_voyager1');
+      return text('planet_' + key);
+    }
+
     /** Formats a number in the active language. @param {number} value Number. @param {number} digits Decimal places. @returns {string} Localized number. */
     function number(value, digits){
       return new Intl.NumberFormat(dependencies.getLanguage(), { minimumFractionDigits:digits, maximumFractionDigits:digits }).format(value);
@@ -252,7 +260,7 @@ window.PLANETENUHR_EXPLORER = (() => {
       progressSlider.setAttribute('aria-label', text('light_follow'));
       lightTargets.setAttribute('aria-label', text('light_targets'));
       lightTargets.querySelectorAll('button').forEach(button => {
-        button.textContent = text('planet_' + button.dataset.lightPlanet);
+        button.textContent = lightTargetName(button.dataset.lightPlanet);
       });
       document.querySelectorAll('[data-light-phase-name]').forEach(node => {
         node.textContent = text('horizon_phase_' + node.dataset.lightPhaseName);
@@ -453,30 +461,59 @@ window.PLANETENUHR_EXPLORER = (() => {
       drawHorizon();
     }
 
-    /** Updates route labels and caches the one-way duration, retaining an active or completed journey. @returns {void} */
+    /** Updates the Sun-to-destination route, handles unavailable Voyager dates and retains active progress. No parameters. @returns {void} */
     function renderLight(){
-      const planetName = text('planet_' + selectedLightPlanet);
-      const position = dependencies.getHeliocentricPosition(selectedLightPlanet, baseDate);
+      const planetName = lightTargetName(selectedLightPlanet);
       let travel = currentLightTravel;
       if (!travel || lightElapsedSeconds === 0) {
-        travel = model.lightTravel(position);
+        if (selectedLightPlanet === 'voyager1') {
+          travel = model.voyagerLightTravel(baseDate);
+        } else {
+          travel = model.lightTravel(dependencies.getHeliocentricPosition(selectedLightPlanet, baseDate));
+        }
       }
       currentLightTravel = travel;
-      setText('lightTravelDuration', duration(travel.seconds));
       setText('lightTravelRoute', text('eclipse_sun') + ' → ' + planetName);
       setText('lightTravelTargetName', planetName);
-      setText('lightTravelDistance', message('light_distance', { au:number(travel.distanceAu, 3), km:number(travel.distanceKm / 1000000, 1) }));
+      setText('lightTravelDuration', '—');
+      setText('lightTravelDistance', '');
+      if (travel) {
+        setText('lightTravelDuration', duration(travel.seconds));
+        setText('lightTravelDistance', message('light_distance', { au:number(travel.distanceAu, 3), km:number(travel.distanceKm / 1000000, 1) }));
+      }
       setText('lightTravelDate', message('light_date', { date:localDateTime(baseDate) }));
       updateAccuracyNote('lightTravelAccuracy', baseDate);
+      const voyagerNote = document.getElementById('lightTravelVoyagerNote');
+      voyagerNote.hidden = selectedLightPlanet !== 'voyager1';
+      if (selectedLightPlanet === 'voyager1') {
+        document.getElementById('lightTravelAccuracy').hidden = true;
+        const data = window.PLANETENUHR_VOYAGER_DATA;
+        const baseline = new Date(data.samples[1].timeUnix * 1000);
+        const dateFormat = new Intl.DateTimeFormat(dependencies.getLanguage(), {dateStyle:'medium', timeZone:'UTC'});
+        setText('lightTravelVoyagerNote', message('light_voyager_estimate', {date:dateFormat.format(baseline)}));
+      }
+      progressSlider.disabled = !travel;
+      document.getElementById('lightTravelReset').disabled = !travel;
       lightTargets.querySelectorAll('button').forEach(button => {
         button.setAttribute('aria-pressed', String(button.dataset.lightPlanet === selectedLightPlanet));
       });
       renderLightProgress();
     }
 
-    /** Displays elapsed time, remaining time and fractional progress from the cached journey. @returns {void} */
+    /** Displays cached progress, or an unavailable state without a running timer. No parameters. @returns {void} */
     function renderLightProgress(){
-      const planetName = text('planet_' + selectedLightPlanet);
+      const planetName = lightTargetName(selectedLightPlanet);
+      if (!currentLightTravel) {
+        progressSlider.value = '0';
+        progressSlider.setAttribute('aria-valuetext', text('light_voyager_unavailable'));
+        setText('lightTravelElapsed', duration(0));
+        setText('lightTravelRemaining', '');
+        setText('lightTravelState', text('light_voyager_unavailable'));
+        document.getElementById('lightTravelBeam').style.width = '0%';
+        document.getElementById('lightTravelPhoton').style.left = '0%';
+        document.getElementById('lightTravelStart').disabled = true;
+        return;
+      }
       // Keep displayed whole-second counters consistent, including the final fractional second.
       const totalSeconds = Math.round(currentLightTravel.seconds);
       let elapsed = Math.min(totalSeconds, Math.floor(lightElapsedSeconds));
@@ -560,9 +597,9 @@ window.PLANETENUHR_EXPLORER = (() => {
       renderLightProgress();
     }
 
-    /** Starts at the chosen progress, or restarts at zero after arrival. No parameters. @returns {void} */
+    /** Starts an available journey at the chosen progress, or restarts after arrival. No parameters. @returns {void} */
     function startLight(){
-      if (lightTimer !== null) {
+      if (!currentLightTravel || lightTimer !== null) {
         return;
       }
       if (lightElapsedSeconds >= currentLightTravel.seconds) {
@@ -579,7 +616,12 @@ window.PLANETENUHR_EXPLORER = (() => {
      * No parameters. @returns {void}
      */
     function seekLight(){
-      lightElapsedSeconds = currentLightTravel.seconds * Number(progressSlider.value) / 100;
+      if (!currentLightTravel) return;
+      if (Number(progressSlider.value) >= 100) {
+        lightElapsedSeconds = currentLightTravel.seconds;
+      } else {
+        lightElapsedSeconds = currentLightTravel.seconds * Number(progressSlider.value) / 100;
+      }
       lightStartedAt = performance.now() - lightElapsedSeconds * 1000;
       if (lightElapsedSeconds >= currentLightTravel.seconds && lightTimer !== null) {
         clearInterval(lightTimer);

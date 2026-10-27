@@ -17,7 +17,9 @@ Planetenuhr ist ein statisches Astronomie-Dashboard als reine HTML-App. Die Anwe
 
 Der Himmel über der Horizontlinie wird passend zu Tag, Morgen-/Abenddämmerung oder Nacht eingefärbt. Ein Zeitband zeigt den lokalen Kalendertag, die erkundete Uhrzeit sowie Sonnenauf- und -untergang. Auch Zeitumstellungen, Polartag und Polarnacht werden berücksichtigt. Bei Polarnacht kann dennoch Dämmerung vorkommen. Ein dunkler Hintergrund bedeutet dunklen Himmel, keine garantierte Sichtbarkeit bei jedem Wetter.
 
-**Mit dem Licht durchs Sonnensystem** berechnet die einfache Lichtlaufzeit von der Sonne zur Position eines der acht Planeten am ausgewählten Datum. Der Regler beginnt bei 0 und lässt sich jederzeit manuell verschieben. Eine laufende Reise geht ab der gewählten Stelle in Echtzeit weiter; vor dem Start bestimmt der Regler die Startposition. „Lichtreise starten“ bewegt ihn in Echtzeit: Eine echte Sekunde entspricht einer Reisesekunde. Verzögerte Updates im Hintergrund werden nachgeholt. „Zurücksetzen“, ein anderer Planet oder ein anderes Datum setzen die Reise auf 0 zurück.
+**Heute faszinierend** steht als erste Kachel über die gesamte Breite. Sie folgt Datum und Ort der globalen Steuerung und nennt das ausgewählte Datum ausdrücklich. Bis zu fünf Hinweise bündeln Kalenderereignisse, beobachtbare Planeten, enge Begegnungen, Meteorströme und die Mondphase. Seltene Ereignisse haben Vorrang; an ruhigen Tagen gibt es weniger Hinweise. Kleine SVG-Miniaturen machen die Themen erkennbar; die Mondminiatur folgt der Phase am ausgewählten Datum. Planeten-, Erd- und Mondgrafiken sind zentrale SVG-Komponenten. „Sonnensystem“ zeigt ausschließlich die acht Planeten, mit entzerrten schematischen Bahnabständen und datumsabhängigen Richtungen; „Erde & Mond“ und die Tagesübersicht verwenden zusätzlich den detaillierten Mond. Jeder Eintrag führt ohne Neuladen zur passenden Detailkachel. Alle Zeiten beziehen sich auf den gewählten Ort und den gesamten lokalen Kalendertag. Sonnenauf- und -untergang stehen darunter.
+
+**Mit dem Licht durchs Sonnensystem** berechnet die einfache Lichtlaufzeit von der Sonne zur Position eines der acht Planeten oder zu Voyager 1 am ausgewählten Datum. Für Voyager 1 wird der Sonnenabstand anhand lokal gespeicherter NASA-Stützwerte linear angenähert; die Kachel kennzeichnet die Näherung. Sie gilt für fünf Jahre vor und nach dem Stützzeitpunkt. Der Regler beginnt bei 0 und lässt sich jederzeit manuell verschieben. Eine laufende Reise geht ab der gewählten Stelle in Echtzeit weiter; vor dem Start bestimmt der Regler die Startposition. „Lichtreise starten“ bewegt ihn in Echtzeit: Eine echte Sekunde entspricht einer Reisesekunde. Verzögerte Updates im Hintergrund werden nachgeholt. „Zurücksetzen“, ein anderes Ziel oder ein anderes Datum setzen die Reise auf 0 zurück.
 
 Die Rechenmodelle, Konstanten und Näherungen stehen in [BERECHNUNGEN.md](BERECHNUNGEN.md).
 
@@ -82,7 +84,7 @@ Die Seite unterstützt Deep-Links für Datum, Ort, Sprache und eine direkte Ziel
 - `Raumsonden`\
   stilisierte heliozentrische Positionen wichtiger Missionen
 - `Planetenkonjunktionen`\
-  Zeitachse enger planetarer Begegnungen im Datumsfenster
+  Zeitachse enger planetarer Begegnungen aus Erdperspektive (vollständiger Winkelabstand bis 4,5°; ±60 Tage)
 - `Retrograd-Phasen`\
   scheinbare Bewegungsbahnen mit Schleife/S-Kurve, Stationen und Bewegungsrichtung
 - `Merkur- & Venus-Phasen`\
@@ -101,7 +103,7 @@ Die Seite unterstützt Deep-Links für Datum, Ort, Sprache und eine direkte Ziel
 - `Sternbild des Monats`\
   saisonal passendes Sternbild mit Linienfigur und Sternnamen
 - `Jahresuhr der Sternbilder`\
-  Monatskreis mit Sternbild-Minis und Jahresmarker
+  Monatskreis mit vergrößerten Sternbild-Minis und Jahresmarker
 - `Jahreszeiten`\
   Draufsicht auf die Erdbahn plus Seitenansicht für Achsneigung und Sonnenstand
 
