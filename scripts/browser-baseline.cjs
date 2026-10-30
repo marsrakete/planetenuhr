@@ -390,12 +390,26 @@ async function checkCardTools(page, width){
     const after = dashboardContext.snapshot();
     return {link,dateBefore:before.date.toISOString(),dateAfter:after.date.toISOString(),
       placeBefore:before.location.key,placeAfter:after.location.key,
-      focused:document.activeElement.id,sameDocument:document.querySelector('.solar-card') === sentinel};
+      focused:document.activeElement.id,sameDocument:document.querySelector('.solar-card') === sentinel,
+    };
   });
+  await page.waitForFunction(() => document.getElementById('card-moon_nodes').classList.contains('is-navigation-highlight'), null, {timeout:6500});
+  const highlight = await page.evaluate(() => ({
+    active:document.getElementById('card-moon_nodes').classList.contains('is-navigation-highlight'),
+    animation:getComputedStyle(document.getElementById('card-moon_nodes'),'::after').animationName,
+    opacity:getComputedStyle(document.getElementById('card-moon_nodes'),'::after').opacity
+  }));
   assert.equal(navigation.dateBefore, navigation.dateAfter);
   assert.equal(navigation.placeBefore, navigation.placeAfter);
   assert.equal(navigation.focused, 'card-moon_nodes');
   assert.equal(navigation.sameDocument, true);
+  assert.equal(highlight.active, true);
+  if (process.env.PLANETENUHR_REDUCED_MOTION_BASELINE === '1') {
+    assert.equal(highlight.animation, 'none');
+    assert.equal(highlight.opacity, '0.95');
+  } else {
+    assert.equal(highlight.animation, 'navigation-card-highlight');
+  }
   assert.equal(new URL(navigation.link).searchParams.get('card'), 'moon_nodes');
   const help = page.locator('[data-help-key="moon_nodes"] .card-help-button');
   await help.click();
@@ -667,6 +681,9 @@ async function checkStaticOrbitCards(page){
  */
 async function runCase(browser,url,language,width){
   const page = await browser.newPage({viewport:{width,height:900}});
+  if (process.env.PLANETENUHR_REDUCED_MOTION_BASELINE === '1') {
+    await page.emulateMedia({reducedMotion:'reduce'});
+  }
   const errors = [];
   let externalRequests = 0;
   page.on('pageerror',error => errors.push(error.message));

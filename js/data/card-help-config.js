@@ -1887,3 +1887,28 @@ window.PLANETENUHR_CARD_HELP.en.cards.solar_system.details.push("All eight plane
 window.PLANETENUHR_CARD_HELP.en.cards.daily_highlights.details.push("The schematic miniatures share their planet, Earth and Moon artwork with the other cards. The lunar phase uses the same approximate model and terminator as Earth & Moon; colors and surface features are illustrations.");
 window.PLANETENUHR_CARD_HELP.fr.cards.solar_system.details.push("Les huit planètes utilisent des illustrations SVG communes. Tailles et distances sont schématiques. Les rayons fixes de js/data/solar-system-config.js espacent les planètes intérieures sans représenter leurs distances. Seules les directions héliocentriques calculées suivent la date. La Terre est représentée sans ombre nocturne dans cette vue ; les continents sont schématiques. Les libellés déplacés ont des lignes de liaison droites.");
 window.PLANETENUHR_CARD_HELP.fr.cards.daily_highlights.details.push("Les miniatures schématiques partagent leurs illustrations des planètes, de la Terre et de la Lune avec les autres cartes. La phase lunaire utilise le même modèle approché et le même terminateur que Terre et Lune ; couleurs et reliefs sont illustratifs.");
+
+window.PLANETENUHR_CARD_HELP.de.cards.about = {
+  intro: ["Hier findest du die Projektseite, offene Fehler und Vorschläge sowie das Formular für eine neue Rückmeldung. Zum Melden eines Fehlers oder Einreichen eines Vorschlags musst du bei GitHub angemeldet sein."],
+  links: [
+    { label: "Projekt auf GitHub", url: "https://github.com/marsrakete/planetenuhr" },
+    { label: "Offene Issues ansehen", url: "https://github.com/marsrakete/planetenuhr/issues" },
+    { label: "Fehler melden oder Vorschlag machen", url: "https://github.com/marsrakete/planetenuhr/issues/new" }
+  ]
+};
+window.PLANETENUHR_CARD_HELP.en.cards.about = {
+  intro: ["Find the project, open issues and suggestions here, or submit new feedback. You must be signed in to GitHub to report a bug or submit a suggestion."],
+  links: [
+    { label: "Project on GitHub", url: "https://github.com/marsrakete/planetenuhr" },
+    { label: "Browse open issues", url: "https://github.com/marsrakete/planetenuhr/issues" },
+    { label: "Report a bug or suggest an improvement", url: "https://github.com/marsrakete/planetenuhr/issues/new" }
+  ]
+};
+window.PLANETENUHR_CARD_HELP.fr.cards.about = {
+  intro: ["Retrouvez ici le projet, les problèmes ouverts et les suggestions, ou envoyez un nouveau retour. Vous devez être connecté à GitHub pour signaler un problème ou envoyer une suggestion."],
+  links: [
+    { label: "Projet sur GitHub", url: "https://github.com/marsrakete/planetenuhr" },
+    { label: "Voir les problèmes ouverts", url: "https://github.com/marsrakete/planetenuhr/issues" },
+    { label: "Signaler un problème ou proposer une amélioration", url: "https://github.com/marsrakete/planetenuhr/issues/new" }
+  ]
+};

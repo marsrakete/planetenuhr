@@ -4344,6 +4344,32 @@ select {
   outline-offset:2px;
 }
 .card-help-popup { top:44px; }
+
+/* Hebt die Zielkachel kurz hervor, ohne ihr Layout zu verändern. */
+.display-container.is-navigation-highlight::after {
+  content:"";
+  position:absolute;
+  z-index:20;
+  inset:-4px;
+  border:4px solid var(--accent);
+  border-radius:14px;
+  box-shadow:0 0 18px 5px rgba(0,123,255,.35);
+  opacity:0;
+  pointer-events:none;
+  animation:navigation-card-highlight 2.6s ease-in-out;
+}
+
+@keyframes navigation-card-highlight {
+  0%, 100% { opacity:0; }
+  18%, 62% { opacity:1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .display-container.is-navigation-highlight::after {
+    animation:none;
+    opacity:.95;
+  }
+}
 @media (max-width:760px) {
   :root { --control-height:44px; }
   .display-container.date-location-card { padding:8px 10px; }

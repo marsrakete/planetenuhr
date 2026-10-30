@@ -18,6 +18,20 @@ window.PLANETENUHR_CARD_NAVIGATION = (() => {
     const document = options.document;
     const window = options.window;
     let requestedCardKey = '';
+    let pendingDestinationHighlight = null;
+    let pendingStaticHighlight = null;
+
+    /** Entfernt eine vorherige statische Zielmarkierung samt Ablauf-Timer.
+     * @returns {void}
+     */
+    function clearPendingStaticHighlight(){
+      if (!pendingStaticHighlight) {
+        return;
+      }
+      window.clearTimeout(pendingStaticHighlight.timeoutId);
+      pendingStaticHighlight.card.classList.remove('is-navigation-highlight');
+      pendingStaticHighlight = null;
+    }
 
     /** Sets the requested destination without navigating.
      * @param {string} key Normalized card key. @returns {void}
@@ -82,6 +96,72 @@ window.PLANETENUHR_CARD_NAVIGATION = (() => {
       return url.href;
     }
 
+    /** Markiert die angesprungene Kachel kurz mit einem wiederholbaren CSS-Effekt.
+     * @param {HTMLElement} card Zielkachel. @returns {void}
+     */
+    function highlightDestinationCard(card){
+      clearPendingStaticHighlight();
+      card.classList.remove('is-navigation-highlight');
+      void card.offsetWidth;
+      card.classList.add('is-navigation-highlight');
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reducedMotion) {
+        const timeoutId = window.setTimeout(() => {
+          if (!pendingStaticHighlight || pendingStaticHighlight.timeoutId !== timeoutId) {
+            return;
+          }
+          pendingStaticHighlight.card.classList.remove('is-navigation-highlight');
+          pendingStaticHighlight = null;
+        }, 2600);
+        pendingStaticHighlight = {card,timeoutId};
+      }
+    }
+
+    /** Scrollt zur Zielkachel und startet die Markierung erst nach dem Scrollen.
+     * @param {HTMLElement} card Zielkachel.
+     * @param {ScrollBehavior} behavior Sofortiges oder weiches Scrollen.
+     * @returns {void}
+     */
+    function scrollToDestinationCard(card, behavior){
+      clearPendingStaticHighlight();
+      if (pendingDestinationHighlight) {
+        document.removeEventListener('scrollend', pendingDestinationHighlight.onScrollEnd);
+        window.clearTimeout(pendingDestinationHighlight.timeoutId);
+        pendingDestinationHighlight = null;
+      }
+
+      card.classList.remove('is-navigation-highlight');
+      if (behavior === 'auto') {
+        card.scrollIntoView({behavior,block:'start',inline:'nearest'});
+        highlightDestinationCard(card);
+        return;
+      }
+
+      const distance = Math.abs(card.getBoundingClientRect().top - 140);
+      let fallbackDelay = distance * 0.7;
+      if (fallbackDelay < 1400) {
+        fallbackDelay = 1400;
+      }
+      if (fallbackDelay > 5000) {
+        fallbackDelay = 5000;
+      }
+
+      const finish = () => {
+        if (!pendingDestinationHighlight || pendingDestinationHighlight.finish !== finish) {
+          return;
+        }
+        document.removeEventListener('scrollend', pendingDestinationHighlight.onScrollEnd);
+        window.clearTimeout(pendingDestinationHighlight.timeoutId);
+        pendingDestinationHighlight = null;
+        highlightDestinationCard(card);
+      };
+      const onScrollEnd = () => finish();
+      const timeoutId = window.setTimeout(finish, fallbackDelay);
+      pendingDestinationHighlight = {finish,onScrollEnd,timeoutId};
+      document.addEventListener('scrollend', onScrollEnd, {once:true});
+      card.scrollIntoView({behavior,block:'start',inline:'nearest'});
+    }
+
     /** Opens and focuses a destination while retaining the selected day and place.
      * @param {string} key Destination help key. @returns {void}
      */
@@ -98,7 +178,7 @@ window.PLANETENUHR_CARD_NAVIGATION = (() => {
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         behavior = 'auto';
       }
-      card.scrollIntoView({behavior,block:'start',inline:'nearest'});
+      scrollToDestinationCard(card, behavior);
     }
 
     /** Scrolls to the initial deep-link card after layout has settled.

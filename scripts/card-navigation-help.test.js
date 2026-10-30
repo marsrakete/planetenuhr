@@ -11,11 +11,20 @@ for (const file of ['js/core/date-time.js','js/core/dashboard-context.js','js/co
 test('card links retain selection, stable anchors and existing query/hash data without navigation', () => {
   let focused = false;
   const scrolled = [];
+  const classOperations = [];
+  const cardClasses = new Set();
   const card = {id:'',getAttribute:() => 'moon_nodes',setAttribute(){},
+    offsetWidth:800,
+    classList:{
+      add:value => {classOperations.push(['add',value]);cardClasses.add(value);},
+      remove:value => {classOperations.push(['remove',value]);cardClasses.delete(value);},
+      contains:value => cardClasses.has(value)
+    },
     focus:options => {assert.equal(options.preventScroll, true);focused = true;},scrollIntoView:options => scrolled.push(options)};
   const updates = [];
   const browser = {location:{href:'https://example.test/planetenuhr/?extra=yes#old'},
     history:{replaceState:(state,title,url) => updates.push(url)},matchMedia:() => ({matches:true}),
+    setTimeout:() => 1,clearTimeout(){},
     PLANETENUHR_DASHBOARD_CONTEXT:realm.window.PLANETENUHR_DASHBOARD_CONTEXT};
   const selection = {date:new Date(2026,9,27,12),location:{key:'berlin',name:'Berlin'},language:'fr'};
   const controller = realm.window.PLANETENUHR_CARD_NAVIGATION.create({window:browser,
@@ -33,9 +42,62 @@ test('card links retain selection, stable anchors and existing query/hash data w
   controller.openDailyHighlightCard('moon_nodes');
   assert.equal(focused, true);
   assert.equal(scrolled[0].behavior, 'auto');
+  assert.equal(cardClasses.has('is-navigation-highlight'), true);
+  assert.deepEqual(classOperations.slice(-2), [['remove','is-navigation-highlight'],['add','is-navigation-highlight']]);
   assert.equal(new URL(updates[0], browser.location.href).hash, '#old');
+  controller.openDailyHighlightCard('moon_nodes');
+  assert.deepEqual(classOperations.slice(-2), [['remove','is-navigation-highlight'],['add','is-navigation-highlight']]);
   controller.applyCardAnchorIds();
   assert.equal(card.id, 'card-moon_nodes');
+});
+
+test('destination highlight begins after smooth scrolling ends', () => {
+  const classNames = new Set();
+  const listeners = new Map();
+  const clearedTimeouts = [];
+  let pendingTimeout = null;
+  const card = {id:'',offsetWidth:800,getAttribute:() => 'moon_nodes',setAttribute(){},
+    getBoundingClientRect:() => ({top:900}),
+    classList:{add:value => classNames.add(value),remove:value => classNames.delete(value),contains:value => classNames.has(value)},
+    focus(){},scrollIntoView:options => assert.equal(options.behavior,'smooth')};
+  const document = {querySelectorAll:() => [card],
+    addEventListener:(name,callback) => listeners.set(name,callback),
+    removeEventListener:(name,callback) => {if (listeners.get(name) === callback) listeners.delete(name);}};
+  const browser = {location:{href:'https://example.test/'},history:{replaceState(){}},
+    matchMedia:() => ({matches:false}),setTimeout:(callback,delay) => {pendingTimeout = {callback,delay};return 7;},
+    clearTimeout:id => clearedTimeouts.push(id),PLANETENUHR_DASHBOARD_CONTEXT:realm.window.PLANETENUHR_DASHBOARD_CONTEXT};
+  const selection = {date:new Date(2026,9,27,12),location:{key:'berlin',name:'Berlin'},language:'de'};
+  const controller = realm.window.PLANETENUHR_CARD_NAVIGATION.create({window:browser,document,
+    getContext:() => selection,formatDateKey:realm.window.PLANETENUHR_DATE_TIME.formatDateKey});
+  controller.applyCardAnchorIds();
+  controller.openDailyHighlightCard('moon_nodes');
+  assert.equal(classNames.has('is-navigation-highlight'),false);
+  assert.equal(pendingTimeout.delay,1400);
+  listeners.get('scrollend')();
+  assert.equal(classNames.has('is-navigation-highlight'),true);
+  assert.deepEqual(clearedTimeouts,[7]);
+  assert.equal(listeners.has('scrollend'),false);
+});
+
+test('reduced motion keeps a static destination ring visible before removing it', () => {
+  const classes = new Set();
+  const timeouts = [];
+  const card = {id:'',offsetWidth:700,getAttribute:() => 'moon_nodes',setAttribute(){},classList:{
+    add:value => classes.add(value),remove:value => classes.delete(value),contains:value => classes.has(value)
+  },focus(){},scrollIntoView:options => assert.equal(options.behavior,'auto')};
+  const document = {querySelectorAll:() => [card]};
+  const browser = {location:{href:'https://example.test/'},history:{replaceState(){}},
+    matchMedia:() => ({matches:true}),setTimeout:(callback,delay) => {timeouts.push({callback,delay});return timeouts.length;},
+    clearTimeout(){},PLANETENUHR_DASHBOARD_CONTEXT:realm.window.PLANETENUHR_DASHBOARD_CONTEXT};
+  const selection = {date:new Date(2026,9,27,12),location:{key:'berlin',name:'Berlin'},language:'de'};
+  const controller = realm.window.PLANETENUHR_CARD_NAVIGATION.create({window:browser,document,
+    getContext:() => selection,formatDateKey:realm.window.PLANETENUHR_DATE_TIME.formatDateKey});
+  controller.applyCardAnchorIds();
+  controller.openDailyHighlightCard('moon_nodes');
+  assert.equal(classes.has('is-navigation-highlight'),true);
+  assert.equal(timeouts[0].delay,2600);
+  timeouts[0].callback();
+  assert.equal(classes.has('is-navigation-highlight'),false);
 });
 
 test('help retains localized Moon-node explanation and formula conversion without KaTeX', () => {
