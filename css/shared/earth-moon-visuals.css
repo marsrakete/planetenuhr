@@ -1,8 +1,8 @@
 /* Scoped globe artwork; other blue Earth markers keep their own styling. */
 .earth-card .earth-globe-host {
-  width:44px;
-  height:44px;
-  margin:-22px 0 0 -22px;
+  width:66px;
+  height:66px;
+  margin:-33px 0 0 -33px;
   background:none;
   box-shadow:none;
   border-radius:0;

@@ -1,7 +1,7 @@
 {
   "name": "planetenuhr",
   "private": true,
-  "version": "1.53.0",
+  "version": "1.69.0",
   "description": "Static astronomy dashboard with build-time validation checks.",
   "scripts": {
     "check:encoding": "node scripts/check-encoding.js",
@@ -26,6 +26,7 @@
     "test:voyager": "node --test scripts/voyager.test.js",
     "test:conjunctions": "node --test scripts/conjunctions.test.js",
     "test:daily": "node --test scripts/daily-highlights.test.js",
-    "test:bodies": "node --test scripts/celestial-bodies.test.js"
+    "test:bodies": "node --test scripts/celestial-bodies.test.js",
+    "test:milky-way": "node --test scripts/milky-way.test.js"
   }
 }

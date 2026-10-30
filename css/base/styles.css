@@ -755,6 +755,50 @@
     .date-toolbar-actions .date-today-button:hover{
       background:linear-gradient(135deg, #1e40af, #2563eb);
     }
+    .time-toolbar{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) auto;
+      align-items:end;
+      gap:10px;
+      margin-top:8px;
+      padding-top:6px;
+      border-top:1px solid #e5edf7;
+    }
+    .time-toolbar-slider{min-width:0;}
+    .time-toolbar-label-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:baseline;
+      gap:8px;
+      color:var(--muted);
+      font-size:var(--font-note);
+      line-height:var(--line-note);
+    }
+    .time-toolbar-label-row label{font-weight:700;}
+    #timeOfDayReadout{color:#2563eb;font-variant-numeric:tabular-nums;}
+    #timeOfDaySlider{display:block;width:100%;margin:3px 0 0;padding:0;accent-color:#2563eb;}
+    .time-toolbar-actions{display:flex;align-items:center;gap:6px;}
+    .time-toolbar-actions button{
+      min-height:34px;
+      margin:0;
+      padding:7px 10px;
+      border:1px solid #bfdbfe;
+      border-radius:999px;
+      background:#f8fbff;
+      color:#1d4ed8;
+      font-size:var(--font-control);
+      font-weight:700;
+      line-height:1;
+      white-space:nowrap;
+      box-shadow:none;
+    }
+    .time-toolbar-actions .time-auto-button.active{
+      border-color:#2563eb;
+      background:linear-gradient(135deg, #2563eb, #60a5fa);
+      color:#fff;
+      box-shadow:0 6px 14px rgba(37,99,235,.16);
+    }
+    .time-toolbar-actions button:disabled{opacity:.55;cursor:not-allowed;}
     html[lang="en"] .overlay-controls,
     html[lang="fr"] .overlay-controls{
       width:min(100%, 1280px);
@@ -2452,7 +2496,7 @@
     }
     .earthmoon{
       position:relative;
-      width:210px;
+      width:240px;
       height:210px;
     }
     .earth{
@@ -2470,8 +2514,8 @@
       position:absolute;
       left:50%;
       top:50%;
-      width:180px;
-      height:120px;
+      width:220px;
+      height:145px;
       transform: translate(-50%,-50%);
       border:1px dashed var(--border);
       border-radius:50%;    /* aus Kreis wird bei ungleicher width/height eine Ellipse */
@@ -3799,6 +3843,9 @@
         order:10;
         grid-column:1 / -1;
       }
+      .time-toolbar{grid-template-columns:minmax(0,1fr) auto;gap:6px;margin-top:4px;padding-top:4px;}
+      .time-toolbar-actions{gap:4px;}
+      .time-toolbar-actions button{min-height:36px;padding:6px 9px;}
       .date-toolbar-settings{
         justify-content:flex-end;
       }

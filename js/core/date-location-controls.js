@@ -14,6 +14,8 @@ window.PLANETENUHR_DATE_CONTROLS = (() => {
     const clearTimeout = dependencies.window.clearTimeout.bind(dependencies.window);
     let solarAutoplayInterval = null;
     let solarAutoplayActive = false;
+    let timeAutoplayInterval = null;
+    let timeAutoplayActive = false;
     let solarHoldDelay = null;
     let solarHoldInterval = null;
     let solarHoldTriggered = false;
@@ -189,11 +191,13 @@ window.PLANETENUHR_DATE_CONTROLS = (() => {
      * @returns {void}
      */
     function updateControlDateReadout(){
+      const selection = context.snapshot();
+      const formattedDate = dependencies.formatDate(selection.date, selection.timeZone);
       const readout = document.getElementById('controlDateReadout');
-      if (readout) readout.textContent = dependencies.formatDate(context.getDate());
+      if (readout) readout.textContent = formattedDate;
       const mobileReadout = document.getElementById('controlDateReadoutMobile');
       if (mobileReadout) {
-        mobileReadout.textContent = dependencies.formatDate(context.getDate());
+        mobileReadout.textContent = formattedDate;
       }
       const mobileLocationReadout = document.getElementById('controlLocationReadoutMobile');
       if (mobileLocationReadout) {
@@ -202,6 +206,7 @@ window.PLANETENUHR_DATE_CONTROLS = (() => {
           mobileLocationReadout.textContent = location.name;
         }
       }
+      updateTimeControlReadout();
       dependencies.syncUrl();
     }
 
@@ -225,6 +230,49 @@ window.PLANETENUHR_DATE_CONTROLS = (() => {
       button.setAttribute('aria-label', ariaLabel);
     }
 
+    /** Updates the translated hour time-lapse button and its pressed state.
+     * No parameters. @returns {void}
+     */
+    function updateTimeAutoplayButton(){
+      const t = dependencies.getTranslations();
+      const button = document.getElementById('btnTimeAutoplay');
+      if (!button) {
+        return;
+      }
+      button.textContent = t.time_timelapse || 'Time-lapse';
+      button.classList.toggle('active', timeAutoplayActive);
+      button.setAttribute('aria-pressed', String(timeAutoplayActive));
+      if (timeAutoplayActive) {
+        button.setAttribute('aria-label', t.time_timelapse_stop || 'Stop hour time-lapse');
+      } else {
+        button.setAttribute('aria-label', t.time_timelapse_start || 'Start hour time-lapse');
+      }
+    }
+
+    /** Displays the selected local clock time in the slider and its accessible value.
+     * No parameters. @returns {void}
+     */
+    function updateTimeControlReadout(){
+      const slider = document.getElementById('timeOfDaySlider');
+      const readout = document.getElementById('timeOfDayReadout');
+      if (!slider || !readout) {
+        return;
+      }
+      const selectedDate = context.getDate();
+      const selection = context.snapshot(selectedDate);
+      const language = dependencies.getLanguage || (() => document.documentElement.lang || 'en');
+      const formattedTime = new Intl.DateTimeFormat(language(), {
+        timeZone:selection.timeZone,
+        hour:'2-digit',
+        minute:'2-digit',
+        hourCycle:'h23'
+      }).format(selectedDate);
+      slider.value = String(context.getTimeOfDayMinutes());
+      slider.setAttribute('aria-valuenow', slider.value);
+      slider.setAttribute('aria-valuetext', formattedTime);
+      readout.textContent = formattedTime;
+    }
+
     /** Stops the owned time-lapse interval and resets its button state.
      * No parameters.
      * @returns {void}
@@ -236,12 +284,90 @@ window.PLANETENUHR_DATE_CONTROLS = (() => {
       updateSolarAutoplayButton();
     }
 
+    /** Stops the owned hour time-lapse interval and resets its button state.
+     * No parameters. @returns {void}
+     */
+    function stopTimeAutoplay(){
+      clearInterval(timeAutoplayInterval);
+      timeAutoplayInterval = null;
+      timeAutoplayActive = false;
+      updateTimeAutoplayButton();
+    }
+
+    /** Advances the shared clock by one local hour and carries across midnight.
+     * No parameters. @returns {void}
+     */
+    function stepTimeAutoplay(){
+      const dateSlider = document.getElementById('solarDateSlider');
+      const nextLocalHour = context.getTimeOfDayMinutes() + 60;
+      if (nextLocalHour >= 1440 && context.getDayOffset() >= Number(dateSlider.max)) {
+        stopTimeAutoplay();
+        return;
+      }
+      context.advanceTimeByMinutes(60);
+      dateSlider.value = String(context.getDayOffset());
+      dateSlider.setAttribute('aria-valuenow', String(context.getDayOffset()));
+      updateTimeControlReadout();
+      dependencies.refresh();
+    }
+
+    /** Starts one hourly-step-per-second interval and stops the day time-lapse first.
+     * No parameters. @returns {void}
+     */
+    function startTimeAutoplay(){
+      stopSolarDateHold();
+      stopSolarAutoplay();
+      clearInterval(timeAutoplayInterval);
+      timeAutoplayActive = true;
+      updateTimeAutoplayButton();
+      timeAutoplayInterval = setInterval(stepTimeAutoplay, 1000);
+    }
+
+    /** Toggles the hour time-lapse without allowing both global time-lapses to run together.
+     * No parameters. @returns {void}
+     */
+    function toggleTimeAutoplay(){
+      if (timeAutoplayActive) {
+        stopTimeAutoplay();
+        return;
+      }
+      startTimeAutoplay();
+    }
+
+    /** Applies the hour slider and refreshes every date-dependent tile.
+     * No parameters. @returns {void}
+     */
+    function updateTimeFromSlider(){
+      stopSolarDateHold();
+      stopSolarAutoplay();
+      stopTimeAutoplay();
+      context.setTimeOfDayMinutes(Number(document.getElementById('timeOfDaySlider').value));
+      updateTimeControlReadout();
+      dependencies.refresh();
+    }
+
+    /** Sets the selected day's local clock to the current whole hour.
+     * No parameters. @returns {void}
+     */
+    function setSelectedTimeToNow(){
+      stopSolarDateHold();
+      stopSolarAutoplay();
+      stopTimeAutoplay();
+      const selectedLocation = context.getLocation();
+      const timeZone = window.PLANETENUHR_DATE_TIME.locationTimeZoneId(selectedLocation);
+      const nowParts = window.PLANETENUHR_DATE_TIME.timePartsInZone(dependencies.getNow(), timeZone);
+      context.setTimeOfDayMinutes(nowParts.hour * 60);
+      updateTimeControlReadout();
+      dependencies.refresh();
+    }
+
     /** Starts one 500 ms time-lapse interval after clearing the previous timer.
      * No parameters.
      * @returns {void}
      */
     function startSolarAutoplay(){
       stopSolarDateHold();
+      stopTimeAutoplay();
       clearInterval(solarAutoplayInterval);
       solarAutoplayActive = true;
       updateSolarAutoplayButton();
@@ -266,6 +392,7 @@ window.PLANETENUHR_DATE_CONTROLS = (() => {
      */
     function updateSolarDateFromSlider(){
       stopSolarAutoplay();
+      stopTimeAutoplay();
       const slider = document.getElementById('solarDateSlider');
       context.setDayOffset(Number(slider.value) || 0);
       slider.setAttribute('aria-valuenow', String(context.getDayOffset()));
@@ -278,6 +405,7 @@ window.PLANETENUHR_DATE_CONTROLS = (() => {
      */
     function resetSolarDate(){
       stopSolarAutoplay();
+      stopTimeAutoplay();
       const slider = document.getElementById('solarDateSlider');
       slider.value = '0';
       context.setDayOffset(0);
@@ -296,6 +424,7 @@ window.PLANETENUHR_DATE_CONTROLS = (() => {
       const maximum = Number(slider.max);
       if (!options.fromAutoplay) {
         stopSolarAutoplay();
+        stopTimeAutoplay();
       }
       const nextOffset = Math.max(minimum, Math.min(maximum, context.getDayOffset() + days));
       if (nextOffset === context.getDayOffset()) {
@@ -314,10 +443,14 @@ window.PLANETENUHR_DATE_CONTROLS = (() => {
      */
     function stepSolarDateByMonths(months){
       stopSolarAutoplay();
+      stopTimeAutoplay();
       const current = context.getDate();
       const shifted = new Date(current);
       shifted.setMonth(shifted.getMonth() + months);
-      const nextOffset = Math.round((shifted - dependencies.getNow()) / 86400000);
+      const timeZone = window.PLANETENUHR_DATE_TIME.locationTimeZoneId(context.getLocation());
+      const nextOffset = window.PLANETENUHR_DATE_TIME.calendarDayDifferenceInZone(
+        dependencies.getNow(), shifted, timeZone
+      );
       const slider = document.getElementById('solarDateSlider');
       const minimum = Number(slider.min);
       const maximum = Number(slider.max);
@@ -333,6 +466,7 @@ window.PLANETENUHR_DATE_CONTROLS = (() => {
      */
     function startSolarDateHold(days){
       stopSolarAutoplay();
+      stopTimeAutoplay();
       stopSolarDateHold();
       solarHoldTriggered=false;
       solarHoldDelay=setTimeout(()=>{
@@ -391,6 +525,9 @@ window.PLANETENUHR_DATE_CONTROLS = (() => {
       wired = true;
       wireDatePanelControls();
       document.getElementById('solarDateSlider').addEventListener('input', updateSolarDateFromSlider);
+      document.getElementById('timeOfDaySlider').addEventListener('input', updateTimeFromSlider);
+      document.getElementById('btnTimeNow').addEventListener('click', setSelectedTimeToNow);
+      document.getElementById('btnTimeAutoplay').addEventListener('click', toggleTimeAutoplay);
       document.getElementById('btnSolarToday').addEventListener('click', resetSolarDate);
       document.getElementById('btnSolarTodayMobile').addEventListener('click', resetSolarDate);
       wireSolarStepButton(document.getElementById('btnSolarPrev'), -1);
@@ -405,6 +542,8 @@ window.PLANETENUHR_DATE_CONTROLS = (() => {
       document.getElementById('btnSolarNextYear').addEventListener('click', () => stepSolarDateByMonths(12));
       document.getElementById('btnSolarAutoplay').addEventListener('click', toggleSolarAutoplay);
       document.getElementById('locationSelector').addEventListener('change', event => {
+        stopSolarAutoplay();
+        stopTimeAutoplay();
         context.setLocationKey(event.target.value);
         setDateSettingsPanelOpen(false);
         dependencies.refresh('location');
@@ -412,7 +551,8 @@ window.PLANETENUHR_DATE_CONTROLS = (() => {
       dependencies.window.addEventListener('pointerup', stopSolarDateHold);
     }
 
-    return {wire, updateControlDateReadout, updateSolarAutoplayButton, updateDateSettingsToggleState,
+    return {wire, updateControlDateReadout, updateSolarAutoplayButton, updateTimeControlReadout,
+      updateTimeAutoplayButton, updateDateSettingsToggleState,
       syncDateMobilePanelForViewport, populateLocationSelector};
   }
   return {create};

@@ -118,6 +118,9 @@ window.PLANETENUHR_EARTH_MOON = (() => {
       moon.style.left = x + 'px';
       moon.style.top  = y + 'px';
       moon.style.transform = 'translate(-50%, -50%)';
+      if (options.visuals && typeof options.visuals.updateOrbitMoon === 'function') {
+        options.visuals.updateOrbitMoon(angle);
+        }
 
 
     }

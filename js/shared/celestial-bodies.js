@@ -61,7 +61,7 @@ window.PLANETENUHR_BODY_VISUALS = (() => {
 
   /** Updates lighting in place without replacing geometry, gradients or clip paths.
    * @param {SVGSVGElement} svg Body returned by create.
-   * @param {object} [options={}] Moon phase (0 new, .5 full), Earth shadowAngle (default 0).
+   * @param {object} [options={}] Moon phase (0 new, .5 full) and surface rotationAngle in degrees; Earth shadowAngle (default 0).
    * @returns {void}
    */
   function update(svg, options = {}){
@@ -69,6 +69,9 @@ window.PLANETENUHR_BODY_VISUALS = (() => {
       let phase = .5;
       if (Number.isFinite(options.phase)) phase = options.phase;
       svg.querySelector('[data-moon-shadow]').setAttribute('d', illuminatedPath(phase + .5));
+      let rotationAngle = 0;
+      if (Number.isFinite(options.rotationAngle)) rotationAngle = options.rotationAngle;
+      svg.querySelector('[data-moon-surface]').setAttribute('transform', 'rotate(' + rotationAngle + ' 64 64)');
     }
     if (svg.dataset.body === 'earth') {
       let angle = 0;

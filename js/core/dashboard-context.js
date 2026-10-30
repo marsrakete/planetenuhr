@@ -54,12 +54,17 @@ window.PLANETENUHR_DASHBOARD_CONTEXT = (() => {
   }
 
   /** Builds the current selection URL without navigation or localized date keys.
-   * @param {string} href Current URL. @param {object} selection Date, location and language.
+   * @param {string} href Current URL. @param {object} selection Date, local time, location and language.
    * @param {string} card Requested card key. @returns {string} Relative URL preserving other parameters and hash.
    */
   function selectionUrl(href, selection, card){
     const url = new URL(href);
-    url.searchParams.set('date', window.PLANETENUHR_DATE_TIME.formatDateKey(selection.date).replace(/-/g, ''));
+    const timeZone = window.PLANETENUHR_DATE_TIME.locationTimeZoneId(selection.location);
+    url.searchParams.set('date', window.PLANETENUHR_DATE_TIME.formatDateKey(selection.date, timeZone).replace(/-/g, ''));
+    const time = window.PLANETENUHR_DATE_TIME.timePartsInZone(selection.date, timeZone);
+    const hour = String(time.hour).padStart(2, '0');
+    const minute = String(time.minute).padStart(2, '0');
+    url.searchParams.set('time', hour + minute);
     for (const [key, value] of [['place',selection.location && selection.location.name],['lang',selection.language],['card',card]]) {
       if (value) {
         url.searchParams.set(key, value);
@@ -70,13 +75,14 @@ window.PLANETENUHR_DASHBOARD_CONTEXT = (() => {
     return url.pathname + url.search + url.hash;
   }
 
-  /** Creates the owner of the global day offset and selected city.
+  /** Creates the owner of the global day offset, local clock time and selected city.
    * @param {object} options Locations, getLanguage and optional now clock.
    * @returns {object} Selection accessors, snapshot scope and initial URL reader.
    */
   function create(options){
     let dayOffset = 0;
     let locationKey = 'berlin';
+    let timeOfDayMinutes = null;
     let activeSnapshot = null;
     let now = Date.now;
     if (options.now) {
@@ -90,7 +96,39 @@ window.PLANETENUHR_DASHBOARD_CONTEXT = (() => {
       if (activeSnapshot) {
         return activeSnapshot.date;
       }
-      return new Date(now() + dayOffset * 86400000);
+      const currentDate = new Date(now());
+      if (dayOffset === 0 && timeOfDayMinutes === null) {
+        return currentDate;
+      }
+      const timeZone = window.PLANETENUHR_DATE_TIME.locationTimeZoneId(getLocation());
+      const currentDateParts = window.PLANETENUHR_DATE_TIME.datePartsInZone(currentDate, timeZone);
+      const shiftedLocalDate = new Date(Date.UTC(
+        Number(currentDateParts.year),
+        Number(currentDateParts.month) - 1,
+        Number(currentDateParts.day) + dayOffset
+      ));
+      const targetDateParts = {
+        year:shiftedLocalDate.getUTCFullYear(),
+        month:shiftedLocalDate.getUTCMonth() + 1,
+        day:shiftedLocalDate.getUTCDate()
+      };
+      const currentTimeParts = window.PLANETENUHR_DATE_TIME.timePartsInZone(currentDate, timeZone);
+      let selectedMinutes = timeOfDayMinutes;
+      if (selectedMinutes === null) {
+        selectedMinutes = currentTimeParts.hour * 60 + currentTimeParts.minute;
+      }
+      let selectedDate = window.PLANETENUHR_DATE_TIME.dateAtCalendarTimeInZone(
+        targetDateParts.year,
+        targetDateParts.month,
+        targetDateParts.day,
+        selectedMinutes,
+        timeZone
+      );
+      if (timeOfDayMinutes === null) {
+        const subMinutePart = currentTimeParts.second * 1000 + currentDate.getUTCMilliseconds();
+        selectedDate = new Date(selectedDate.getTime() + subMinutePart);
+      }
+      return selectedDate;
     }
 
     /** Resolves the selected city with the existing first-city fallback.
@@ -116,6 +154,42 @@ window.PLANETENUHR_DASHBOARD_CONTEXT = (() => {
      * @param {number} value New offset. @returns {void}
      */
     function setDayOffset(value){ dayOffset = value; }
+
+    /** Reads the selected local clock time in minutes after midnight.
+     * @returns {number} Selected time from 0 through 1439.
+     */
+    function getTimeOfDayMinutes(){
+      const timeZone = window.PLANETENUHR_DATE_TIME.locationTimeZoneId(getLocation());
+      const parts = window.PLANETENUHR_DATE_TIME.timePartsInZone(getDate(), timeZone);
+      return parts.hour * 60 + parts.minute;
+    }
+
+    /** Selects a local clock time while keeping the selected calendar date.
+     * @param {number} value Minutes after local midnight; clamped to one day.
+     * @returns {void} No value.
+     */
+    function setTimeOfDayMinutes(value){
+      timeOfDayMinutes = Math.round(Number(value));
+      if (!Number.isFinite(timeOfDayMinutes)) {
+        timeOfDayMinutes = 0;
+      }
+      timeOfDayMinutes = Math.max(0, Math.min(1439, timeOfDayMinutes));
+    }
+
+    /** Advances the shared instant by elapsed minutes and records any local date rollover.
+     * @param {number} minutes Elapsed minutes to add to the selected instant.
+     * @returns {{dayOffset:number, timeOfDayMinutes:number, dateChanged:boolean}} Updated selection state.
+     */
+    function advanceTimeByMinutes(minutes){
+      const timeZone = window.PLANETENUHR_DATE_TIME.locationTimeZoneId(getLocation());
+      const currentDate = getDate();
+      const nextDate = new Date(currentDate.getTime() + Number(minutes) * 60000);
+      const daysChanged = window.PLANETENUHR_DATE_TIME.calendarDayDifferenceInZone(currentDate, nextDate, timeZone);
+      dayOffset += daysChanged;
+      const nextTime = window.PLANETENUHR_DATE_TIME.timePartsInZone(nextDate, timeZone);
+      timeOfDayMinutes = nextTime.hour * 60 + nextTime.minute;
+      return {dayOffset, timeOfDayMinutes, dateChanged:daysChanged !== 0};
+    }
 
     /** Reads the configured city key.
      * @returns {string} City key. No parameters.
@@ -154,19 +228,32 @@ window.PLANETENUHR_DASHBOARD_CONTEXT = (() => {
      * @param {URLSearchParams} params Initial URL parameters. @returns {void}
      */
     function applyUrl(params){
-      const requestedDate = parseDateParameter(params.get('date'));
-      if (requestedDate) {
-        const today = new Date(now());
-        today.setHours(0, 0, 0, 0);
-        dayOffset = Math.round((requestedDate.getTime() - today.getTime()) / 86400000);
-      }
       const requestedLocation = locationFromParameter(params.get('place'), options.locations);
       if (requestedLocation) {
         locationKey = requestedLocation.key;
       }
+      const requestedDate = parseDateParameter(params.get('date'));
+      if (requestedDate) {
+        const timeZone = window.PLANETENUHR_DATE_TIME.locationTimeZoneId(getLocation());
+        const requestedLocalDate = window.PLANETENUHR_DATE_TIME.dateAtCalendarTimeInZone(
+          requestedDate.getFullYear(), requestedDate.getMonth() + 1, requestedDate.getDate(), 720, timeZone
+        );
+        dayOffset = window.PLANETENUHR_DATE_TIME.calendarDayDifferenceInZone(
+          new Date(now()), requestedLocalDate, timeZone
+        );
+      }
+      const requestedTime = String(params.get('time') || '').match(/^(\d{2}):?(\d{2})$/);
+      if (requestedTime) {
+        const hour = Number(requestedTime[1]);
+        const minute = Number(requestedTime[2]);
+        if (hour < 24 && minute < 60) {
+          timeOfDayMinutes = hour * 60 + minute;
+        }
+      }
     }
 
-    return {getDate, getLocation, getDayOffset, setDayOffset, getLocationKey, setLocationKey, snapshot, withSnapshot, applyUrl};
+    return {getDate, getLocation, getDayOffset, setDayOffset, getTimeOfDayMinutes, setTimeOfDayMinutes,
+      advanceTimeByMinutes, getLocationKey, setLocationKey, snapshot, withSnapshot, applyUrl};
   }
 
   return {create, normalizeLocationToken, parseDateParameter, locationFromParameter, selectionUrl};

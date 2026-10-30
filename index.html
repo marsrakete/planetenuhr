@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="planetenuhr-version" content="1.53" />
+  <meta name="planetenuhr-version" content="1.69" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Planetenuhr – Astronomie-Dashboard für Sonne, Mond und Planeten</title>
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
@@ -39,18 +39,19 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.18.0/dist/katex.min.css" integrity="sha384-KfwFj/Q/jGrY4ijtfzWyW5NXzT5irvfnTq6aRnH2xPvLzLdi1XyVr7w4l2uwTq0V" crossorigin="anonymous" />
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.18.0/dist/katex.min.js" integrity="sha384-OE4SMRr5gMJQzKSD08J46vKsKgY8NxVtO1LW+/q3NJ0WHsGsdN4oebgEjwwWuyvG" crossorigin="anonymous"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.18.0/dist/contrib/auto-render.min.js" integrity="sha384-bjyGPfbij8/NDKJhSGZNP/khQVgtHUE5exjm4Ydllo42FwIgYsdLO2lXGmRBf5Mz" crossorigin="anonymous" onload="window.renderPlanetenuhrHelpMath && window.renderPlanetenuhrHelpMath()"></script>
-  <link rel="stylesheet" href="css/base/styles.css?v=1.53" />
-  <link rel="stylesheet" href="css/cards/astronomy-explorer.css?v=1.53" />
-  <link rel="stylesheet" href="css/cards/sky-knowledge.css?v=1.53" />
-  <link rel="stylesheet" href="css/cards/idefix.css?v=1.53" />
-  <link rel="stylesheet" href="css/shared/earth-moon-visuals.css?v=1.53" />
-  <link rel="stylesheet" href="css/shared/meteor-labels.css?v=1.53" />
-  <link rel="stylesheet" href="css/shared/diagram-details.css?v=1.53" />
-  <link rel="stylesheet" href="css/shared/app-updates.css?v=1.53" />
-  <link rel="stylesheet" href="css/shared/direction-compass.css?v=1.53" />
-  <link rel="stylesheet" href="css/shared/celestial-bodies.css?v=1.53" />
-  <link rel="stylesheet" href="css/shared/daily-highlight-graphics.css?v=1.53" />
-  <link rel="stylesheet" href="css/cards/daily-highlights.css?v=1.53" />
+  <link rel="stylesheet" href="css/base/styles.css?v=1.69" />
+  <link rel="stylesheet" href="css/cards/astronomy-explorer.css?v=1.69" />
+  <link rel="stylesheet" href="css/cards/sky-knowledge.css?v=1.69" />
+  <link rel="stylesheet" href="css/cards/idefix.css?v=1.69" />
+  <link rel="stylesheet" href="css/shared/earth-moon-visuals.css?v=1.69" />
+  <link rel="stylesheet" href="css/shared/meteor-labels.css?v=1.69" />
+  <link rel="stylesheet" href="css/shared/diagram-details.css?v=1.69" />
+  <link rel="stylesheet" href="css/shared/app-updates.css?v=1.69" />
+  <link rel="stylesheet" href="css/shared/direction-compass.css?v=1.69" />
+  <link rel="stylesheet" href="css/shared/celestial-bodies.css?v=1.69" />
+  <link rel="stylesheet" href="css/shared/daily-highlight-graphics.css?v=1.69" />
+  <link rel="stylesheet" href="css/cards/daily-highlights.css?v=1.69" />
+  <link rel="stylesheet" href="css/cards/milky-way.css?v=1.69" />
 </head>
 <body>
   <div class="overlay-controls">
@@ -87,10 +88,23 @@
           <button id="btnSolarNextWeek" type="button" aria-label="Next week">+7T</button>
           <button id="btnSolarNextMonth" type="button" aria-label="Next month">+1M</button>
           <button id="btnSolarNextYear" type="button" aria-label="Next year">+1J</button>
-          <button id="btnSolarAutoplay" class="date-auto-button" type="button" aria-pressed="false" aria-label="Start time-lapse">Zeitraffer</button>
+          <button id="btnSolarAutoplay" class="date-auto-button" type="button" aria-pressed="false" aria-label="Start day time-lapse">Tag-Zeitraffer</button>
         </div>
         <div class="date-toolbar-settings">
           <button id="btnDateSettingsDesktop" class="date-settings-toggle-button" type="button" aria-expanded="false" aria-label="Open settings" data-date-settings-toggle>☰</button>
+        </div>
+      </div>
+      <div class="time-toolbar">
+        <div class="time-toolbar-slider">
+          <div class="time-toolbar-label-row">
+            <label id="timeControlLabel" for="timeOfDaySlider">Uhrzeit</label>
+            <output id="timeOfDayReadout" for="timeOfDaySlider">--:--</output>
+          </div>
+          <input type="range" id="timeOfDaySlider" min="0" max="1439" step="1" value="0" aria-label="Uhrzeit am ausgewählten Tag" aria-valuetext="--:--" />
+        </div>
+        <div class="time-toolbar-actions">
+          <button id="btnTimeNow" type="button">Jetzt</button>
+          <button id="btnTimeAutoplay" class="time-auto-button" type="button" aria-pressed="false" aria-label="Stunden-Zeitraffer starten">Zeitraffer</button>
         </div>
       </div>
       </div>
@@ -120,6 +134,69 @@
       <p class="daily-highlights-solar" id="dailyHighlightsSolar"></p>
       <p class="daily-highlights-note" id="dailyHighlightsNote"></p>
       <p class="daily-highlights-note" id="dailyHighlightsRange" hidden></p>
+    </section>
+    <section class="display-container milky-way-card wide-card" data-help-key="milky_way" aria-labelledby="milkyWayTitle">
+      <h2 class="group-title" id="milkyWayTitle"></h2>
+      <div class="milky-way-views" role="group" aria-label="Milky Way view">
+        <button type="button" data-milky-view="map" aria-pressed="true"></button>
+        <button type="button" data-milky-view="sky" aria-pressed="false"></button>
+      </div>
+      <div class="milky-way-map-panel" data-milky-panel="map">
+        <header class="milky-way-map-heading">
+          <div><h3 data-milky-map-heading></h3><p data-milky-map-intro></p></div>
+          <span class="milky-way-map-tag" data-milky-map-tag></span>
+        </header>
+        <div class="milky-way-map-grid">
+        <div class="milky-way-map" role="group" aria-label="Milky Way map regions">
+            <img class="milky-way-artwork" src="assets/images/milky-way-arms-updated.jpg" alt="Artist concept of the Milky Way with dashed outlines marking updated arm positions" width="864" height="576" loading="lazy" />
+            <button type="button" class="milky-way-hotspot milky-way-hotspot-center" data-topic-id="center" data-topic-hotspot aria-pressed="false"></button>
+            <button type="button" class="milky-way-hotspot milky-way-hotspot-old" data-topic-id="old" data-topic-hotspot aria-pressed="false"></button>
+            <button type="button" class="milky-way-hotspot milky-way-hotspot-new" data-topic-id="new" data-topic-hotspot aria-pressed="false"></button>
+          </div>
+        <aside class="milky-way-detail" aria-live="polite" aria-atomic="true">
+          <span class="milky-way-detail-kicker" data-milky-selected-label></span>
+          <h3 id="milkyWayTopicTitle"></h3>
+          <p class="milky-way-topic-text" id="milkyWayTopicText"></p>
+        </aside>
+        <div class="milky-way-map-footer">
+          <div class="milky-way-topic-legend" id="milkyWayTopics" role="group" aria-label="Milky Way map regions"></div>
+          <p class="milky-way-credit" data-milky-credit></p>
+        </div>
+        </div>
+      </div>
+      <div class="milky-way-sky-panel" data-milky-panel="sky" hidden>
+        <header class="milky-way-sky-header">
+          <div><h3 data-milky-sky-heading></h3><p data-milky-sky-intro></p></div>
+          <span class="milky-way-sky-tag" data-milky-sky-tag></span>
+        </header>
+        <div class="milky-way-sky-visual" data-milky-sky-light="night">
+          <div class="milky-way-sky-stars" aria-hidden="true"></div>
+          <svg class="milky-way-sky-chart" viewBox="0 0 520 380" role="img" aria-labelledby="milkySkyChartTitle" aria-describedby="milkySkyChartDescription">
+            <title id="milkySkyChartTitle" data-milky-sky-chart-title></title>
+            <desc id="milkySkyChartDescription" data-milky-sky-chart-description></desc>
+            <circle class="milky-way-sky-horizon" cx="260" cy="180" r="128" />
+            <circle class="milky-way-sky-altitude-ring" cx="260" cy="180" r="85" />
+            <circle class="milky-way-sky-altitude-ring" cx="260" cy="180" r="43" />
+            <path class="milky-way-sky-zenith" d="M252 180h16M260 172v16" />
+            <path class="milky-way-sky-track-halo" data-milky-sky-track-halo d="" />
+            <path class="milky-way-sky-track-glow" data-milky-sky-track-glow d="" />
+            <path class="milky-way-sky-track" data-milky-sky-track d="" />
+            <g class="milky-way-sky-compass-labels" aria-hidden="true">
+              <text x="260" y="31" data-milky-north></text>
+              <text x="409" y="185" data-milky-east></text>
+              <text x="260" y="329" data-milky-south></text>
+              <text x="111" y="185" data-milky-west></text>
+            </g>
+            <g class="milky-way-sky-altitude-labels" aria-hidden="true">
+              <text x="269" y="99" text-anchor="start">30°</text>
+              <text x="269" y="142" text-anchor="start">60°</text>
+              <text x="280" y="166" text-anchor="start" data-milky-sky-zenith-label></text>
+            </g>
+          </svg>
+          <div class="milky-way-sky-legend"><span class="milky-way-sky-legend-mark" aria-hidden="true"></span><span data-milky-sky-label></span><span data-milky-sky-subtitle></span></div>
+        </div>
+        <div class="milky-way-sky-footer"><strong data-milky-sky-footer-title></strong><small data-milky-sky-moment></small><span data-milky-sky-footer-text></span></div>
+      </div>
     </section>
     <div class="dashboard-stack solar-stack">
     <div class="display-container solar-card wide-card" data-help-key="solar_system">
@@ -691,8 +768,11 @@
         </defs>
         <g clip-path="url(#moonDisc)">
           <circle cx="64" cy="64" r="55" fill="url(#moonSurface)"/>
-          <g class="moon-maria"><ellipse cx="45" cy="42" rx="16" ry="12"/><ellipse cx="76" cy="36" rx="13" ry="10"/><ellipse cx="84" cy="65" rx="14" ry="18"/><ellipse cx="40" cy="76" rx="10" ry="15"/></g>
-          <g class="moon-craters"><circle cx="54" cy="91" r="7"/><circle cx="32" cy="56" r="5"/><circle cx="74" cy="81" r="4"/><circle cx="59" cy="57" r="3"/><circle cx="85" cy="98" r="5"/><circle cx="57" cy="24" r="4"/></g>
+          <g data-moon-surface>
+            <g class="moon-maria"><ellipse cx="45" cy="42" rx="16" ry="12"/><ellipse cx="76" cy="36" rx="13" ry="10"/><ellipse cx="84" cy="65" rx="14" ry="18"/><ellipse cx="40" cy="76" rx="10" ry="15"/></g>
+            <g class="moon-craters"><circle cx="54" cy="91" r="7"/><circle cx="32" cy="56" r="5"/><circle cx="74" cy="81" r="4"/><circle cx="59" cy="57" r="3"/><circle cx="85" cy="98" r="5"/><circle cx="57" cy="24" r="4"/></g>
+            <circle class="moon-near-side-marker" cx="21" cy="64" r="6"/>
+          </g>
           <path class="moon-night" data-moon-shadow></path>
         </g>
         <circle cx="64" cy="64" r="55" class="moon-rim"/>
@@ -975,6 +1055,7 @@
   <template id="astroChart-title"><svg xmlns="http://www.w3.org/2000/svg"><title></title></svg></template>
   <template id="conjunctionTickTemplate"><svg xmlns="http://www.w3.org/2000/svg"><g class="conjunction-tick"><line y1="78" y2="106" stroke="#94a3b8" stroke-width="1"></line><text y="126" class="meteor-month-label"></text></g></svg></template>
   <template id="conjunctionEventTemplate"><svg xmlns="http://www.w3.org/2000/svg"><g class="conjunction-event"><title></title><line y2="92" stroke="#bfdbfe" stroke-width="1.5"></line><circle r="6" fill="#2563eb" stroke="#fff" stroke-width="2"></circle><text class="meteor-month-label"><tspan data-conjunction-pair></tspan><tspan data-conjunction-angle></tspan></text></g></svg></template>
+  <template id="milkyWayTopicTemplate"><button type="button" class="milky-way-topic" aria-pressed="false"><span class="milky-way-topic-dot" aria-hidden="true"></span><span data-topic-label></span></button></template>
   <template id="directionCompassTemplate">
     <svg class="direction-compass" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
       <circle class="direction-compass-ring" cx="16" cy="16" r="12"></circle>
@@ -1023,105 +1104,107 @@
     </div>
   </template>
 
-  <script src="js/data/translations.js?v=1.53"></script>
-  <script src="js/core/app-updates.js?v=1.53"></script>
-  <script src="js/data/card-help-config.js?v=1.53"></script>
-  <script src="js/data/calendar-events.js?v=1.53"></script>
-  <script src="js/data/eclipse-calendar-config.js?v=1.53"></script>
-  <script src="js/data/small-bodies-config.js?v=1.53"></script>
-  <script src="js/data/phenomena-config.js?v=1.53"></script>
-  <script src="js/data/bsky-feed-config.js?v=1.53"></script>
-  <script src="js/data/extended-calendar-config.js?v=1.53"></script>
-  <script src="js/data/locations-config.js?v=1.53"></script>
-  <script src="js/data/eclipse-visibility-config.js?v=1.53"></script>
-  <script src="js/data/eclipse-phase-config.js?v=1.53"></script>
-  <script src="js/data/astronomy-explorer-config.js?v=1.53"></script>
-  <script src="js/data/voyager-data.js?v=1.53"></script>
-  <script src="js/models/conjunction-model.js?v=1.53"></script>
-  <script src="js/models/astronomy-explorer-model.js?v=1.53"></script>
-  <script src="js/cards/astronomy-explorer.js?v=1.53"></script>
-  <script src="js/data/daily-highlights-config.js?v=1.53"></script>
-  <script src="js/models/daily-highlights-model.js?v=1.53"></script>
-  <script src="js/shared/direction-compass.js?v=1.53"></script>
-  <script src="js/data/celestial-bodies-config.js?v=1.53"></script>
-  <script src="js/shared/celestial-bodies.js?v=1.53"></script>
-  <script src="js/shared/solar-system-labels.js?v=1.53"></script>
-  <script src="js/data/solar-system-config.js?v=1.53"></script>
-  <script src="js/shared/daily-highlight-graphics.js?v=1.53"></script>
-  <script src="js/cards/daily-highlights.js?v=1.53"></script>
-  <script src="js/data/mnemonics-config.js?v=1.53"></script>
-  <script src="js/data/sky-knowledge-graphics-config.js?v=1.53"></script>
-  <script src="js/shared/sky-knowledge-graphics.js?v=1.53"></script>
-  <script src="js/cards/sky-knowledge.js?v=1.53"></script>
-  <script src="js/shared/diagram-details.js?v=1.53"></script>
-  <script src="js/shared/earth-moon-visuals.js?v=1.53"></script>
-  <script src="js/shared/meteor-labels.js?v=1.53"></script>
-  <script src="js/data/idefix-config.js?v=1.53"></script>
-  <script src="js/data/idefix-ephemeris.js?v=1.53"></script>
-  <script src="js/models/idefix-model.js?v=1.53"></script>
-  <script src="js/cards/idefix.js?v=1.53"></script>
-  <script src="js/core/date-time.js?v=1.53"></script>
-  <script src="js/core/observation-format.js?v=1.53"></script>
-  <script src="js/models/astronomy-coordinates.js?v=1.53"></script>
-  <script src="js/data/planet-elements-config.js?v=1.53"></script>
-  <script src="js/models/planet-model.js?v=1.53"></script>
-  <script src="js/models/moon-model.js?v=1.53"></script>
-  <script src="js/models/solar-visibility-model.js?v=1.53"></script>
-  <script src="js/models/eclipse-model.js?v=1.53"></script>
-  <script src="js/models/eclipse-location-model.js?v=1.53"></script>
-  <script src="js/core/dashboard-context.js?v=1.53"></script>
-  <script src="js/core/dashboard-errors.js?v=1.53"></script>
-  <script src="js/core/dashboard-refresh.js?v=1.53"></script>
-  <script src="js/core/date-location-controls.js?v=1.53"></script>
-  <script src="js/cards/solar-system.js?v=1.53"></script>
-  <script src="js/cards/earth-moon.js?v=1.53"></script>
-  <script src="js/core/dashboard-layout.js?v=1.53"></script>
-  <script src="js/data/card-sizes-config.js?v=1.53"></script>
-  <script src="js/core/card-sizes.js?v=1.53"></script>
-  <script src="js/core/card-help.js?v=1.53"></script>
-  <script src="js/core/card-navigation.js?v=1.53"></script>
-  <script src="js/cards/conjunctions.js?v=1.53"></script>
-  <script src="js/cards/meteor-streams.js?v=1.53"></script>
-  <script src="js/cards/constellation-month.js?v=1.53"></script>
-  <script src="js/cards/constellation-year.js?v=1.53"></script>
-  <script src="js/cards/seasons.js?v=1.53"></script>
-  <script src="js/models/retrograde-model.js?v=1.53"></script>
-  <script src="js/cards/retrograde.js?v=1.53"></script>
-  <script src="js/models/inner-planets-model.js?v=1.53"></script>
-  <script src="js/cards/inner-planets.js?v=1.53"></script>
-  <script src="js/data/barycenter-config.js?v=1.53"></script>
-  <script src="js/models/barycenter-model.js?v=1.53"></script>
-  <script src="js/cards/barycenter.js?v=1.53"></script>
-  <script src="js/models/lagrange-model.js?v=1.53"></script>
-  <script src="js/cards/lagrange.js?v=1.53"></script>
-  <script src="js/models/analemma-model.js?v=1.53"></script>
-  <script src="js/cards/analemma.js?v=1.53"></script>
-  <script src="js/models/exoplanets-model.js?v=1.53"></script>
-  <script src="js/cards/exoplanets.js?v=1.53"></script>
-  <script src="js/models/satellites-model.js?v=1.53"></script>
-  <script src="js/cards/satellites.js?v=1.53"></script>
-  <script src="js/models/small-bodies-model.js?v=1.53"></script>
-  <script src="js/cards/small-bodies.js?v=1.53"></script>
-  <script src="js/models/spacecraft-model.js?v=1.53"></script>
-  <script src="js/cards/spacecraft.js?v=1.53"></script>
-  <script src="js/data/aurora-data-config.js?v=1.53"></script>
-  <script src="js/services/aurora-data.js?v=1.53"></script>
-  <script src="js/cards/aurora-card.js?v=1.53"></script>
-  <script src="js/services/bsky-feed-data.js?v=1.53"></script>
-  <script src="js/cards/bsky-feed-card.js?v=1.53"></script>
-  <script src="js/models/calendar-model.js?v=1.53"></script>
-  <script src="js/cards/calendar.js?v=1.53"></script>
-  <script src="js/cards/sunlight-card.js?v=1.53"></script>
-  <script src="js/cards/planet-visibility.js?v=1.53"></script>
-  <script src="js/cards/polaris-card.js?v=1.53"></script>
-  <script src="js/cards/eclipse-geometry.js?v=1.53"></script>
-  <script src="js/cards/moon-nodes-card.js?v=1.53"></script>
-  <script src="js/data/jupiter-moons-config.js?v=1.53"></script>
-  <script src="js/cards/jupiter-card.js?v=1.53"></script>
-  <script src="js/data/planetary-systems-config.js?v=1.53"></script>
-  <script src="js/cards/planetary-systems-card.js?v=1.53"></script>
-  <script src="js/core/dashboard-i18n.js?v=1.53"></script>
-  <script src="js/core/app.js?v=1.53"></script>
+  <script src="js/data/translations.js?v=1.69"></script>
+  <script src="js/data/milky-way-config.js?v=1.69"></script>
+  <script src="js/core/app-updates.js?v=1.69"></script>
+  <script src="js/data/card-help-config.js?v=1.69"></script>
+  <script src="js/data/calendar-events.js?v=1.69"></script>
+  <script src="js/data/eclipse-calendar-config.js?v=1.69"></script>
+  <script src="js/data/small-bodies-config.js?v=1.69"></script>
+  <script src="js/data/phenomena-config.js?v=1.69"></script>
+  <script src="js/data/bsky-feed-config.js?v=1.69"></script>
+  <script src="js/data/extended-calendar-config.js?v=1.69"></script>
+  <script src="js/data/locations-config.js?v=1.69"></script>
+  <script src="js/data/eclipse-visibility-config.js?v=1.69"></script>
+  <script src="js/data/eclipse-phase-config.js?v=1.69"></script>
+  <script src="js/data/astronomy-explorer-config.js?v=1.69"></script>
+  <script src="js/data/voyager-data.js?v=1.69"></script>
+  <script src="js/models/conjunction-model.js?v=1.69"></script>
+  <script src="js/models/astronomy-explorer-model.js?v=1.69"></script>
+  <script src="js/cards/astronomy-explorer.js?v=1.69"></script>
+  <script src="js/data/daily-highlights-config.js?v=1.69"></script>
+  <script src="js/models/daily-highlights-model.js?v=1.69"></script>
+  <script src="js/shared/direction-compass.js?v=1.69"></script>
+  <script src="js/data/celestial-bodies-config.js?v=1.69"></script>
+  <script src="js/shared/celestial-bodies.js?v=1.69"></script>
+  <script src="js/shared/solar-system-labels.js?v=1.69"></script>
+  <script src="js/data/solar-system-config.js?v=1.69"></script>
+  <script src="js/shared/daily-highlight-graphics.js?v=1.69"></script>
+  <script src="js/cards/daily-highlights.js?v=1.69"></script>
+  <script src="js/models/milky-way-sky-model.js?v=1.69"></script>
+  <script src="js/cards/milky-way.js?v=1.69"></script>
+  <script src="js/data/mnemonics-config.js?v=1.69"></script>
+  <script src="js/data/sky-knowledge-graphics-config.js?v=1.69"></script>
+  <script src="js/shared/sky-knowledge-graphics.js?v=1.69"></script>
+  <script src="js/cards/sky-knowledge.js?v=1.69"></script>
+  <script src="js/shared/diagram-details.js?v=1.69"></script>
+  <script src="js/shared/earth-moon-visuals.js?v=1.69"></script>
+  <script src="js/shared/meteor-labels.js?v=1.69"></script>
+  <script src="js/data/idefix-config.js?v=1.69"></script>
+  <script src="js/data/idefix-ephemeris.js?v=1.69"></script>
+  <script src="js/models/idefix-model.js?v=1.69"></script>
+  <script src="js/cards/idefix.js?v=1.69"></script>
+  <script src="js/core/date-time.js?v=1.69"></script>
+  <script src="js/core/observation-format.js?v=1.69"></script>
+  <script src="js/models/astronomy-coordinates.js?v=1.69"></script>
+  <script src="js/data/planet-elements-config.js?v=1.69"></script>
+  <script src="js/models/planet-model.js?v=1.69"></script>
+  <script src="js/models/moon-model.js?v=1.69"></script>
+  <script src="js/models/solar-visibility-model.js?v=1.69"></script>
+  <script src="js/models/eclipse-model.js?v=1.69"></script>
+  <script src="js/models/eclipse-location-model.js?v=1.69"></script>
+  <script src="js/core/dashboard-context.js?v=1.69"></script>
+  <script src="js/core/dashboard-errors.js?v=1.69"></script>
+  <script src="js/core/dashboard-refresh.js?v=1.69"></script>
+  <script src="js/core/date-location-controls.js?v=1.69"></script>
+  <script src="js/cards/solar-system.js?v=1.69"></script>
+  <script src="js/cards/earth-moon.js?v=1.69"></script>
+  <script src="js/core/dashboard-layout.js?v=1.69"></script>
+  <script src="js/data/card-sizes-config.js?v=1.69"></script>
+  <script src="js/core/card-sizes.js?v=1.69"></script>
+  <script src="js/core/card-help.js?v=1.69"></script>
+  <script src="js/core/card-navigation.js?v=1.69"></script>
+  <script src="js/cards/conjunctions.js?v=1.69"></script>
+  <script src="js/cards/meteor-streams.js?v=1.69"></script>
+  <script src="js/cards/constellation-month.js?v=1.69"></script>
+  <script src="js/cards/constellation-year.js?v=1.69"></script>
+  <script src="js/cards/seasons.js?v=1.69"></script>
+  <script src="js/models/retrograde-model.js?v=1.69"></script>
+  <script src="js/cards/retrograde.js?v=1.69"></script>
+  <script src="js/models/inner-planets-model.js?v=1.69"></script>
+  <script src="js/cards/inner-planets.js?v=1.69"></script>
+  <script src="js/data/barycenter-config.js?v=1.69"></script>
+  <script src="js/models/barycenter-model.js?v=1.69"></script>
+  <script src="js/cards/barycenter.js?v=1.69"></script>
+  <script src="js/models/lagrange-model.js?v=1.69"></script>
+  <script src="js/cards/lagrange.js?v=1.69"></script>
+  <script src="js/models/analemma-model.js?v=1.69"></script>
+  <script src="js/cards/analemma.js?v=1.69"></script>
+  <script src="js/models/exoplanets-model.js?v=1.69"></script>
+  <script src="js/cards/exoplanets.js?v=1.69"></script>
+  <script src="js/models/satellites-model.js?v=1.69"></script>
+  <script src="js/cards/satellites.js?v=1.69"></script>
+  <script src="js/models/small-bodies-model.js?v=1.69"></script>
+  <script src="js/cards/small-bodies.js?v=1.69"></script>
+  <script src="js/models/spacecraft-model.js?v=1.69"></script>
+  <script src="js/cards/spacecraft.js?v=1.69"></script>
+  <script src="js/data/aurora-data-config.js?v=1.69"></script>
+  <script src="js/services/aurora-data.js?v=1.69"></script>
+  <script src="js/cards/aurora-card.js?v=1.69"></script>
+  <script src="js/services/bsky-feed-data.js?v=1.69"></script>
+  <script src="js/cards/bsky-feed-card.js?v=1.69"></script>
+  <script src="js/models/calendar-model.js?v=1.69"></script>
+  <script src="js/cards/calendar.js?v=1.69"></script>
+  <script src="js/cards/sunlight-card.js?v=1.69"></script>
+  <script src="js/cards/planet-visibility.js?v=1.69"></script>
+  <script src="js/cards/polaris-card.js?v=1.69"></script>
+  <script src="js/cards/eclipse-geometry.js?v=1.69"></script>
+  <script src="js/cards/moon-nodes-card.js?v=1.69"></script>
+  <script src="js/data/jupiter-moons-config.js?v=1.69"></script>
+  <script src="js/cards/jupiter-card.js?v=1.69"></script>
+  <script src="js/data/planetary-systems-config.js?v=1.69"></script>
+  <script src="js/cards/planetary-systems-card.js?v=1.69"></script>
+  <script src="js/core/dashboard-i18n.js?v=1.69"></script>
+  <script src="js/core/app.js?v=1.69"></script>
 </body>
 </html>
-

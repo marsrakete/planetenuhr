@@ -40,7 +40,7 @@ Der [Modularisierungsplan](MODULARISIERUNGSPLAN.md) hält die abgeschlossene Tre
 - `js/core/dashboard-context.js`, `js/core/dashboard-refresh.js`
   Ein Eigentümer für Tagesoffset und Stadt, ein Snapshot je globalem Renderlauf und eine geordnete Liste der datumsabhängigen Verbraucher
 - `js/core/date-location-controls.js`
-  Globale Datums-/Ortsbedienung mit einmaliger Verdrahtung, Slider, Monats-/Tagesschritten, Heute, Gedrückthalten und Zeitraffer
+  Globale Datums-/Orts-/Uhrzeitbedienung mit einmaliger Verdrahtung, Tages- und Uhrzeitregler sowie gegenseitig ausschließenden Zeitraffern
 - `js/cards/exoplanets.js`, `js/models/exoplanets-model.js`
   Exoplaneten-Vergleich mit getrennten Kepler-/Phasenberechnungen und je System normierten Mini-Karten
 - `js/cards/satellites.js`, `js/models/satellites-model.js`
@@ -65,6 +65,8 @@ Der [Modularisierungsplan](MODULARISIERUNGSPLAN.md) hält die abgeschlossene Tre
   Jahreszeiten- und Retrograd-Controller mit gemeinsamem Datumskontext; Retrograd-Berechnung als eigenständiges DOM-freies Modell
 - `js/cards/constellation-month.js`, `js/cards/constellation-year.js`
   Eigenständige Controller für Monatssternkarte mit Richtungshinweis und Jahresuhr mit Monatsminiaturen; verwenden den gemeinsamen Kontext und die bestehenden Sternbilddaten
+- `js/cards/milky-way.js`, `js/models/milky-way-sky-model.js`
+  Galaxienkarte und zeit-/ortsabhängige Himmelskuppel; das Rechenmodell bleibt DOM-frei und wird bei globalen Änderungen sowie minütlich aktualisiert
 - `js/cards/conjunctions.js`, `js/cards/meteor-streams.js`
   Eigenständige Controller für Begegnungszeitachse und Meteor-Jahreskreis/Radianten; verwenden den gemeinsamen Datumskontext und die bisherigen Modelle, Daten und Beschriftungshelfer
 - `js/data/card-sizes-config.js`, `js/core/card-sizes.js`
@@ -132,6 +134,8 @@ Die wichtigsten globalen Zustände sind:
 
 - `dashboardContext.getDayOffset()`\
   liest den zentral verwalteten Tagesoffset relativ zu `Date.now()`
+- `dashboardContext.getTimeOfDayMinutes()`\
+  liest die ausgewählte Uhrzeit in der Ortszeitzone; `setTimeOfDayMinutes()` setzt sie, `advanceTimeByMinutes()` führt den gemeinsamen Zeitpunkt fort
 - `dashboardContext.getLocationKey()`\
   liest den zentral verwalteten Schlüssel der gewählten Stadt
 - Sprachzustand über `lang` und `js/data/translations.js`
@@ -149,7 +153,7 @@ Wichtige Stellen:
 - `js/core/app.js`\
   Verbindet die Steuerung mit der geordneten Refresh-Registrierung.
 
-`js/core/dashboard-context.js` bildet pro globalem Aktualisierungslauf einen Snapshot aus Zeitpunkt, Ort, Ortszeitzone und Sprache. Alle registrierten Renderer erhalten denselben Snapshot. `js/core/dashboard-refresh.js` startet keine Timer. Die halbstündliche Aktualisierung bleibt in der Initialisierung; Zeitraffer und Gedrückthalten gehören dem Datumscontroller. Seine `wire()`-Methode verdrahtet die Elemente einmal.
+`js/core/dashboard-context.js` bildet pro globalem Aktualisierungslauf einen Snapshot aus Zeitpunkt, Ort, Ortszeitzone und Sprache. Alle registrierten Renderer erhalten denselben Snapshot. Tagesoffset und ausgewählte Ortsuhrzeit werden gemeinsam in den globalen Zeitpunkt aufgelöst. Der Uhrzeit-Zeitraffer schreitet mit einer Stunde pro Sekunde fort und erhöht beim Ortsmitternacht-Wechsel den Tagesoffset. Tag- und Uhrzeit-Zeitraffer laufen nie parallel; Start des einen stoppt den anderen. `js/core/dashboard-refresh.js` startet keine Timer. Die halbstündliche Aktualisierung bleibt in der Initialisierung; Zeitraffer und Gedrückthalten gehören dem Datumscontroller. Seine `wire()`-Methode verdrahtet die Elemente einmal.
 
 Die Registrierung vermerkt globale Trigger `date`, `location`, `refresh` und `size`. Sprache wird beim URL-Start festgelegt; lokale Viewport-Beobachter bleiben bei ihren Kachel-Controllern. Die Controller erzeugen keine globalen Timer. Lokale Kachelregler und Speicherformate bleiben erhalten.
 
@@ -253,7 +257,7 @@ Die Tagessegmente werden pro Ort, Zeitzone und lokalem Datum zwischengespeichert
 
 Bedienflächen verwenden `--control-height`: mindestens 36px am Desktop und 44px bis 760px Breite. Wiederkehrende Auswahlgruppen nutzen `--control-gap` (8px). Die ?-Hilfe behält ihr kleines Symbol innerhalb einer 44px großen Trefferfläche. Kalenderfilter und Ansichtswechsel melden ihre Auswahl zusätzlich zur Farbmarkierung über `aria-pressed`; Tastaturfokus bleibt sichtbar. Bis 360px Breite stehen Datum/Ort und Datumsbuttons in zwei Zeilen, damit weder Text noch Trefferflächen eingeengt werden.
 
-Sichtbare numerische Datumsangaben folgen mit `Intl.DateTimeFormat` der gewählten App-Sprache (Deutsch, Englisch oder Französisch). Die Zeitzone bleibt vom jeweiligen Inhalt abhängig: Ortszeit bei Horizontdaten, Browserzeit bei IDEFIX und die gewählte Zone in der Uhr. URL-Parameter (`YYYYMMDD`) und interne Datumsschlüssel (`YYYY-MM-DD`) bleiben sprachunabhängig; dafür wird ausschließlich `formatDateKey` verwendet.
+Sichtbare numerische Datumsangaben folgen mit `Intl.DateTimeFormat` der gewählten App-Sprache (Deutsch, Englisch oder Französisch). Die globale Datums- und Uhrzeitsteuerung sowie ortsabhängige Himmelsansichten verwenden die Zeitzone des ausgewählten Standorts; IDEFIX verwendet weiterhin Browserzeit. URL-Parameter (`YYYYMMDD` und `HHmm`) und interne Datumsschlüssel (`YYYY-MM-DD`) bleiben sprachunabhängig; dafür wird ausschließlich `formatDateKey` verwendet.
 
 Die Schriftstufen stehen zentral in `css/base/styles.css` als CSS-Variablen. Komponenten verwenden diese Variablen statt eigener Zwischenwerte:
 

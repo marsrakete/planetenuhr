@@ -20,8 +20,13 @@ function getRepositoryRoot() {
 function getRequiredFiles() {
   return [
     "index.html",
+    "scripts/milky-way.test.js",
     "js/core/app.js",
     "js/data/card-sizes-config.js",
+    "js/data/milky-way-config.js",
+    "js/cards/milky-way.js",
+    "css/cards/milky-way.css",
+    "assets/images/milky-way-arms-updated.jpg",
     "js/core/card-sizes.js",
     "js/core/card-help.js",
     "js/core/card-navigation.js",

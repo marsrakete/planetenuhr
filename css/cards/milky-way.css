@@ -1,0 +1,310 @@
+.milky-way-card .milky-way-views,
+.milky-way-topic-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0.6rem 0;
+}
+
+.milky-way-map-panel { display: block; width: 100%; }
+
+.milky-way-map-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  column-gap: 1rem;
+  row-gap: 0.25rem;
+  margin-bottom: 0.8rem;
+}
+
+.milky-way-map-heading h3,
+.milky-way-map-heading p { margin: 0.25rem 0; }
+.milky-way-map-heading p { color: #536174; }
+
+.milky-way-map-tag {
+  flex: 0 0 auto;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  background: #e8f0fc;
+  color: #174ea6;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.milky-way-map-grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: minmax(0, 1.7fr) minmax(220px, 0.8fr);
+  grid-template-rows: auto auto;
+  grid-template-areas: "image detail" "footer .";
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.milky-way-map { grid-area: image; }
+.milky-way-detail { grid-area: detail; min-height: 0; overflow-y: auto; }
+.milky-way-map-footer { grid-area: footer; margin-top: 0; }
+.milky-way-map { position: relative; width: 100%; overflow: hidden; border-radius: 9px; background: #05070c; }
+.milky-way-artwork { display: block; width: 100%; height: auto; }
+
+.milky-way-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0.8rem;
+  border-radius: 10px;
+  background: #f1f6ff;
+}
+
+.milky-way-card[data-card-size="normal"] .milky-way-map-grid {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto auto auto;
+  grid-template-areas: "image" "footer" "detail";
+}
+
+.milky-way-card [data-milky-view] {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid #b8c9e2;
+  border-radius: 999px;
+  background: #fff;
+  color: #174ea6;
+  padding: 0.45rem 0.85rem;
+  cursor: pointer;
+}
+
+.milky-way-card [data-milky-view][aria-pressed="true"] {
+  background: #1d5fd0;
+  border-color: #1d5fd0;
+  color: #fff;
+}
+
+.milky-way-detail h3,
+.milky-way-detail p { margin: 0.35rem 0; }
+
+
+.milky-way-hotspot {
+  position: absolute;
+  z-index: 2;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  transform: translate(-50%, -50%);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: #73b8ff44;
+  box-shadow: 0 0 0 5px #17223888, 0 0 12px #fff9;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: none;
+}
+
+.milky-way-hotspot[aria-pressed="true"] {
+  background: #ffd16699;
+  box-shadow: 0 0 0 6px #ffd16655, 0 0 16px #fff;
+}
+
+.milky-way-card[data-card-size="normal"] .milky-way-hotspot { width: 44px; height: 44px; }
+.milky-way-card[data-card-size="wide"] .milky-way-hotspot { width: 48px; height: 48px; }
+.milky-way-card[data-card-size="large"] .milky-way-hotspot { width: 56px; height: 56px; }
+
+.milky-way-hotspot-center { left: 46.3%; top: 51%; }
+.milky-way-hotspot-old { left: 69%; top: 46%; }
+.milky-way-hotspot-new { left: 80%; top: 46%; }
+
+.milky-way-topic-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 12px;
+  margin: 0;
+}
+
+.milky-way-topic-legend .milky-way-topic {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 4px 8px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: none;
+}
+
+.milky-way-topic-legend .milky-way-topic[aria-pressed="true"] {
+  border-color: #b8c9e2;
+  background: #e8f0fc;
+  color: #174ea6;
+  font-weight: 600;
+}
+.milky-way-topic-dot { width: 9px; height: 9px; border-radius: 50%; background: #f5c977; }
+.milky-way-topic[data-topic-id="old"] .milky-way-topic-dot { background: #6aaeff; }
+.milky-way-topic[data-topic-id="new"] .milky-way-topic-dot { background: #e99a76; }
+.milky-way-detail-kicker { color: #536174; font-size: 0.82rem; }
+.milky-way-detail h3 { margin: 0.6rem 0; font-weight: 600; }
+.milky-way-detail p { line-height: 1.5; }
+.milky-way-topic-text { line-height: 1.55; }
+.milky-way-credit { color: #58677a; }
+.milky-way-map-footer .milky-way-credit { margin: 0; }
+
+.milky-way-sky-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.8rem;
+}
+
+.milky-way-sky-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.milky-way-sky-header h3,
+.milky-way-sky-header p { margin: 0.25rem 0; }
+.milky-way-sky-header p,
+.milky-way-sky-footer span { color: #536174; }
+
+.milky-way-sky-tag {
+  flex: 0 0 auto;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  background: #e8f0fc;
+  color: #174ea6;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.milky-way-sky-visual {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 520 / 380;
+  overflow: hidden;
+  border-radius: 10px;
+  color: #f2f4fa;
+  background: radial-gradient(ellipse at 50% 50%, #1e3657, #0a1529 78%);
+}
+
+.milky-way-sky-visual[data-milky-sky-light="day"] {
+  background: radial-gradient(ellipse at 50% 50%, #7699c3, #304c70 78%);
+}
+
+.milky-way-sky-visual[data-milky-sky-light="twilight"] {
+  background: radial-gradient(ellipse at 50% 50%, #334c70, #111f39 78%);
+}
+
+.milky-way-sky-stars {
+  position: absolute;
+  inset: 0;
+  opacity: 0.8;
+  background-image:
+    radial-gradient(1px 1px at 8% 22%, #fff 70%, transparent),
+    radial-gradient(1px 1px at 19% 68%, #d8e5ff 70%, transparent),
+    radial-gradient(1.5px 1.5px at 32% 16%, #fff 70%, transparent),
+    radial-gradient(1px 1px at 57% 19%, #fff 70%, transparent),
+    radial-gradient(1px 1px at 74% 31%, #d8e5ff 70%, transparent),
+    radial-gradient(1.5px 1.5px at 87% 16%, #fff 70%, transparent),
+    radial-gradient(1px 1px at 93% 73%, #fff 70%, transparent),
+    radial-gradient(1px 1px at 24% 88%, #fff 70%, transparent);
+}
+
+.milky-way-sky-visual[data-milky-sky-light="day"] .milky-way-sky-stars { opacity: 0.18; }
+.milky-way-sky-visual[data-milky-sky-light="twilight"] .milky-way-sky-stars { opacity: 0.48; }
+
+.milky-way-sky-chart {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.milky-way-sky-horizon,
+.milky-way-sky-altitude-ring {
+  fill: none;
+  stroke: #d4e1f277;
+  stroke-width: 0.8;
+}
+
+.milky-way-sky-altitude-ring { stroke-dasharray: 2 3; opacity: 0.72; }
+.milky-way-sky-zenith { fill: none; stroke: #e1e7f1aa; stroke-width: 1; }
+.milky-way-sky-compass-labels,
+.milky-way-sky-altitude-labels { fill: #e1e7f1; font-size: 11px; text-anchor: middle; }
+.milky-way-sky-altitude-labels { fill: #e1e7f1bb; font-size: 8px; text-anchor: start; }
+
+.milky-way-sky-track-halo,
+.milky-way-sky-track,
+.milky-way-sky-track-glow {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.milky-way-sky-track-halo { stroke: #aabced; stroke-width: 48; opacity: 0.17; filter: blur(10px); }
+.milky-way-sky-track-glow { stroke: #9bb6ef; stroke-width: 11; opacity: 0.42; filter: blur(3px); }
+.milky-way-sky-track { stroke: #eef1ff; stroke-width: 2.1; }
+.milky-way-sky-visual[data-milky-sky-light="day"] .milky-way-sky-track-halo { opacity: 0.025; }
+.milky-way-sky-visual[data-milky-sky-light="day"] .milky-way-sky-track-glow { opacity: 0.1; }
+.milky-way-sky-visual[data-milky-sky-light="day"] .milky-way-sky-track { opacity: 0.3; }
+.milky-way-sky-visual[data-milky-sky-light="twilight"] .milky-way-sky-track-halo { opacity: 0.08; }
+.milky-way-sky-visual[data-milky-sky-light="twilight"] .milky-way-sky-track-glow { opacity: 0.25; }
+.milky-way-sky-visual[data-milky-sky-light="twilight"] .milky-way-sky-track { opacity: 0.68; }
+
+.milky-way-sky-legend {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.6rem;
+  left: 0.75rem;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem 0.55rem;
+  color: #f2f4fa;
+  text-shadow: 0 1px 8px #071426;
+  font-size: 0.82rem;
+}
+
+.milky-way-sky-legend-mark { width: 1.2rem; height: 3px; border-radius: 4px; background: #eef1ff; box-shadow: 0 0 7px #9bb6ef; }
+.milky-way-sky-legend [data-milky-sky-subtitle] { color: #d1d9e9; }
+.milky-way-sky-footer { display: grid; gap: 6px; }
+.milky-way-sky-moment { color: #536174; font-size: 0.85rem; }
+.milky-way-sky-footer span { line-height: 1.5; }
+
+@media (max-width: 680px) {
+  .milky-way-map-grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "image" "footer" "detail";
+  }
+  .milky-way-sky-panel { grid-template-columns: minmax(0, 1fr); }
+  .milky-way-detail { padding: 0.65rem; }
+  .milky-way-hotspot { width: 44px; height: 44px; }
+  .milky-way-sky-panel { min-height: 0; }
+  .milky-way-sky-visual { aspect-ratio: 520 / 380; }
+  .milky-way-map-heading,
+  .milky-way-sky-header { display: block; }
+  .milky-way-map-tag { display: inline-block; margin-top: 0.4rem; }
+  .milky-way-sky-tag { display: inline-block; margin-top: 0.4rem; }
+  .milky-way-card .milky-way-views,
+  .milky-way-topic-legend { gap: 0.35rem; }
+}
+.milky-way-card [hidden] { display: none !important; }
+.milky-way-card button:focus-visible,
+.milky-way-card a:focus-visible { outline: 3px solid #f0a629; outline-offset: 2px; }
+.milky-way-card .milky-way-hotspot:active { transform: translate(-50%, -50%); }
+.milky-way-card .milky-way-topic:active { transform: none; }
+.milky-way-card button:focus:not(:focus-visible) { outline: none; }

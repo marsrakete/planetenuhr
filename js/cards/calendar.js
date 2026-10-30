@@ -22,6 +22,16 @@
     const requestMasonryLayout = options.requestLayout;
     const compactCalendarListLimit = options.compactListLimit;
 
+    /** Resolves the selected location's time zone for calendar date labels.
+     * @returns {string|undefined} IANA time zone or browser default.
+     */
+    function calendarTimeZone(){
+      if (typeof options.getTimeZone === 'function') {
+        return options.getTimeZone();
+      }
+      return undefined;
+    }
+
     let activeFilter = "all";
     let showAllEvents = false;
     let activeView = "list";
@@ -226,9 +236,8 @@
      * @returns {Date} Local start-of-day reference.
      */
     function calendarReferenceDay(){
-      const today = new Date();
-      today.setHours(0, 0, 0, 0);
-      return today;
+      const parts = window.PLANETENUHR_DATE_TIME.datePartsInZone(new Date(), calendarTimeZone());
+      return new Date(Number(parts.year), Number(parts.month) - 1, Number(parts.day));
     }
 
     /**
@@ -255,7 +264,9 @@
     function calendarCurrentMonthDate(){
       let referenceDate = new Date();
       if (typeof selectedSolarDate === 'function') {
-        referenceDate = selectedSolarDate();
+        const selectedDate = selectedSolarDate();
+        const parts = window.PLANETENUHR_DATE_TIME.datePartsInZone(selectedDate, calendarTimeZone());
+        referenceDate = new Date(Number(parts.year), Number(parts.month) - 1, Number(parts.day));
       }
       return new Date(referenceDate.getFullYear(), referenceDate.getMonth(), 1);
     }
@@ -654,7 +665,7 @@
               dayNumberLabel.textContent = String(dayNumber);
             }
 
-            const todayKey = formatDateKey(selectedSolarDate());
+            const todayKey = formatDateKey(selectedSolarDate(), calendarTimeZone());
             if (dayKey === todayKey && cell) {
               cell.classList.add('is-selected-month-day');
             }

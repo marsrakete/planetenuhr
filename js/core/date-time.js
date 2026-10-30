@@ -237,8 +237,86 @@
       return 0;
     }
 
+    /** Reads hour, minute and second fields as shown by a selected location's clock.
+     * @param {Date} date Absolute instant to read.
+     * @param {string} timeZoneId IANA time zone for the observation location.
+     * @returns {{hour:number, minute:number, second:number}} Local clock fields.
+     */
+    function timePartsInZone(date, timeZoneId){
+      const parts = new Intl.DateTimeFormat('en-GB', {
+        timeZone:timeZoneId,
+        hour:'2-digit',
+        minute:'2-digit',
+        second:'2-digit',
+        hourCycle:'h23'
+      }).formatToParts(date);
+      const values = {};
+      for (const part of parts) {
+        if (part.type !== 'literal') {
+          values[part.type] = part.value;
+        }
+      }
+      return {
+        hour:Number(values.hour),
+        minute:Number(values.minute),
+        second:Number(values.second)
+      };
+    }
+
+    /** Places a local clock time on the local calendar date containing an instant.
+     * @param {Date} date Instant whose local calendar date should be retained.
+     * @param {number} minuteOfDay Minutes after local midnight, from 0 to 1439.
+     * @param {string} timeZoneId IANA time zone for the observation location.
+     * @returns {Date} Instant matching the requested local date and clock time.
+     */
+    function dateAtTimeInZone(date, minuteOfDay, timeZoneId){
+      const dateParts = datePartsInZone(date, timeZoneId);
+      return dateAtCalendarTimeInZone(
+        Number(dateParts.year), Number(dateParts.month), Number(dateParts.day), minuteOfDay, timeZoneId
+      );
+    }
+
+    /** Builds an instant from explicit local calendar and clock fields in a time zone.
+     * @param {number} year Local calendar year.
+     * @param {number} month Local calendar month from 1 through 12.
+     * @param {number} day Local calendar day of month.
+     * @param {number} minuteOfDay Minutes after local midnight, from 0 to 1439.
+     * @param {string} timeZoneId IANA time zone for the observation location.
+     * @returns {Date} Instant matching the requested local date and clock time.
+     */
+    function dateAtCalendarTimeInZone(year, month, day, minuteOfDay, timeZoneId){
+      const hour = Math.floor(minuteOfDay / 60);
+      const minute = minuteOfDay % 60;
+      const wallClockAsUtc = Date.UTC(
+        year, month - 1, day, hour, minute
+      );
+      const firstGuess = new Date(wallClockAsUtc);
+      const firstOffset = timeZoneOffsetMinutesAt(firstGuess, timeZoneId);
+      let instant = new Date(wallClockAsUtc - firstOffset * 60000);
+      const correctedOffset = timeZoneOffsetMinutesAt(instant, timeZoneId);
+      if (correctedOffset !== firstOffset) {
+        instant = new Date(wallClockAsUtc - correctedOffset * 60000);
+      }
+      return instant;
+    }
+
+    /** Counts calendar-day boundaries between two instants in one IANA time zone.
+     * @param {Date} fromDate Starting instant.
+     * @param {Date} toDate Ending instant.
+     * @param {string} timeZoneId IANA time zone used for both calendar dates.
+     * @returns {number} Signed number of local midnight boundaries crossed.
+     */
+    function calendarDayDifferenceInZone(fromDate, toDate, timeZoneId){
+      const fromParts = datePartsInZone(fromDate, timeZoneId);
+      const toParts = datePartsInZone(toDate, timeZoneId);
+      const fromDay = Date.UTC(Number(fromParts.year), Number(fromParts.month) - 1, Number(fromParts.day));
+      const toDay = Date.UTC(Number(toParts.year), Number(toParts.month) - 1, Number(toParts.day));
+      return Math.round((toDay - fromDay) / 86400000);
+    }
+
     window.PLANETENUHR_DATE_TIME = {
       datePartsInZone, formatDateStamp, formatDateKey, parseLocalDateKey, calendarDayDifference,
-      locationTimeZoneId, parseTimeZoneOffsetMinutes, timeZoneOffsetMinutesAt
+      locationTimeZoneId, parseTimeZoneOffsetMinutes, timeZoneOffsetMinutesAt,
+      timePartsInZone, dateAtTimeInZone, dateAtCalendarTimeInZone, calendarDayDifferenceInZone
     };
 })();

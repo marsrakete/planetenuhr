@@ -70,6 +70,7 @@
     let dailyHighlights = null;
     let astronomyExplorer = null;
     let skyKnowledge = null;
+    let milkyWayCard = null;
     let idefixMission = null;
     const cardNavigation = window.PLANETENUHR_CARD_NAVIGATION.create({
       document, window, getContext:() => dashboardContext.snapshot(), formatDateKey:window.PLANETENUHR_DATE_TIME.formatDateKey
@@ -648,6 +649,7 @@
           {key:'renderEarthMoon', changes, render:context => earthMoonController.renderCaption(context)},
           {key:'renderAstronomyExplorer', changes, render:context => { if (astronomyExplorer) { astronomyExplorer.render(context.date); } }},
           {key:'daily-highlights', changes, render:context => { if (dailyHighlights) { dailyHighlights.render(context.date); } }},
+          {key:'milky-way-sky', changes, render:renderMilkyWaySky},
           {key:'idefix', changes, render:context => { if (idefixMission) { idefixMission.render(context.date); } }},
           {key:'renderSolarSystem', changes, render:context => solarSystemController.render(context)},
           {key:'renderBarycenter', changes, render:context => barycenterController.render(context)},
@@ -671,6 +673,25 @@
           {key:'calendar', changes, render:() => calendarController.render()}
         ]
       });
+    }
+
+    /** Aktualisiert die Milchstraßenansicht mit dem globalen Auswahlkontext.
+     * @param {object} context Ausgewählter Zeitpunkt, Ort, Zeitzone und Sprache.
+     * @returns {void} Kein Rückgabewert.
+     */
+    function renderMilkyWaySky(context){
+      if (milkyWayCard) {
+        milkyWayCard.updateSky(context);
+      }
+    }
+
+    /** Aktualisiert nur die zeitabhängige Milchstraßenansicht.
+     * @returns {void} Kein Rückgabewert.
+     */
+    function refreshMilkyWaySky(){
+      if (milkyWayCard) {
+        milkyWayCard.updateSky(dashboardContext.snapshot());
+      }
     }
 
     /** Refreshes registered consumers from one selected context.
@@ -971,6 +992,7 @@
       window,
       getEvents:calendarEvents,
       getDate:dashboardContext.getDate,
+      getTimeZone:() => window.PLANETENUHR_DATE_TIME.locationTimeZoneId(dashboardContext.getLocation()),
       getLanguage:() => lang,
       getTranslations:() => t,
       formatDateOnly:formatDateStamp,
@@ -1050,12 +1072,18 @@
       getCardUrl:cardNavigation.dailyHighlightCardUrl, openCard:cardNavigation.openDailyHighlightCard,
       updateLayout:dashboardLayout.updateSingleCardMasonryLayout
     });
+    const milkyWaySkyModel = window.PLANETENUHR_MILKY_WAY_SKY_MODEL.create({
+      horizontalCoordinates:window.PLANETENUHR_COORDINATES.horizontalCoordinates,
+      sunEquatorialCoordinates:window.PLANETENUHR_SOLAR_VISIBILITY.solarEquatorialCoordinates
+    });
+    milkyWayCard = window.PLANETENUHR_MILKY_WAY.create(document, milkyWaySkyModel, dashboardContext.snapshot);
     const dashboardI18n = window.PLANETENUHR_DASHBOARD_I18N.create({
       document, window, getLanguage:() => lang, getTranslations:() => t,
       dateLocationControls, cardSizes, dashboardContext,
       getCalendarController:() => calendarController,
       getSkyKnowledge:() => skyKnowledge,
-      getDailyHighlights:() => dailyHighlights
+      getDailyHighlights:() => dailyHighlights,
+      getMilkyWayCard:() => milkyWayCard
     });
     planetarySystemsController.render();
     jupiterController.render();
@@ -1068,6 +1096,7 @@
     window.PLANETENUHR_DIAGRAM_DETAILS.create({beforeOpen:dashboardLayout.releasePendingViewportRestoration});
     dashboardLayout.scheduleMasonryLayout(cardNavigation.scrollToRequestedCard);
     setInterval(refreshDynamicTiles, 1800000);
+    setInterval(refreshMilkyWaySky, 60000);
 
 	    // --- Erde-Mond elliptische Bahn ---
     // iOS/Safari kann bei Layout-Start kurz 0px als Elementgröße liefern.

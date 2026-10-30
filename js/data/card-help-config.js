@@ -12,19 +12,43 @@ window.PLANETENUHR_CARD_HELP = {
       date_location: {
         intro: [
           "This card controls the shared date for the astronomy tiles and the observing location for location-dependent views.",
-          "Changing the date updates the solar system, season, moon, visibility and daylight panels together."
+          "Changing the date or time updates the solar system, season, moon, visibility and daylight panels together."
         ],
         formulas: [
-          { expr: "t<sub>selected</sub> = t<sub>now</sub> + &Delta;d &middot; 86400 s", note: "Date offset in whole days." }
+          { expr: "t<sub>base</sub> = t<sub>now</sub> + &Delta;d &middot; 86400 s", note: "Date offset in whole days; the optional clock selection is resolved in the selected location's time zone." }
         ],
         details: [
           "The slider keeps the original range of -100 to +100 years.",
-          "The city selector currently offers ten major German cities, but keeps the page time zone unchanged."
+          "The time slider uses the selected location's local clock. Now sets the selected date to the current full local hour without changing its date.",
+          "The hour time-lapse advances one hour per second and continues across midnight, moving to the next date. Only one time-lapse runs at a time; starting one stops the other.",
+          "The location selector determines the time zone used by the observing views."
         ],
         links: [
           { label: "JPL approximate planetary positions", url: "https://ssd.jpl.nasa.gov/planets/approx_pos.html" },
           { label: "NOAA solar calculation details", url: "https://gml.noaa.gov/grad/solcalc/calcdetails.html" },
           { label: "timeanddate: Astronomy overview", url: "https://www.timeanddate.com/astronomy/" }
+        ]
+      },
+      milky_way: {
+        intro: [
+          "This card presents the Milky Way as an artist concept and offers a separate schematic view of its band in the night sky.",
+          "Select a marked area on the map—center, earlier estimate or updated measurement—to read its explanation."
+        ],
+        formulas: [
+          { expr: "H = &theta;<sub>GMST</sub> + &lambda; - &alpha;", note: "Local hour angle from sidereal angle, east longitude and right ascension." },
+          { expr: "sin h = sin &phi; sin &delta; + cos &phi; cos &delta; cos H", note: "Altitude from observer latitude, declination and hour angle." }
+        ],
+        details: [
+          "Our Solar System lies in the Orion Spur, between the larger Sagittarius and Perseus arms.",
+          "Chandra’s updated arm distances refer to a measured line of sight and do not constitute a complete remapping of the Milky Way.",
+          "The circular sky dome samples the galactic plane and converts its points to altitude and azimuth for the selected instant and place. The outer circle is the horizon and the center is the zenith; altitude is shown as radial distance. Local sidereal time accounts for Earth's rotation.",
+          "Solar altitude dims the band during daylight and twilight. Moonlight, clouds, terrain and the Milky Way's detailed brightness are not modeled."
+        ],
+        links: [
+          { label: "NASA/Chandra: Milky Way arm measurements", url: "https://science.nasa.gov/missions/chandra/nasas-chandra-examines-milky-way-at-arms-length/" },
+          { label: "ESA Gaia DR3: Galactic coordinate transformation", url: "https://gea.esac.esa.int/archive/documentation/GDR3/Data_processing/chap_cu3ast/sec_cu3ast_intro/ssec_cu3ast_intro_tansforms.html" },
+          { label: "US Naval Observatory: Altitude and azimuth", url: "https://aa.usno.navy.mil/faq/alt_az" },
+          { label: "Chandra image-use policy", url: "https://www.chandra.cfa.harvard.edu/photo/image_use.html" }
         ]
       },
       solar_system: {
@@ -434,7 +458,7 @@ window.PLANETENUHR_CARD_HELP = {
           { expr: "H = LST - &alpha;, &nbsp; sin h = sin &phi; sin &delta; + cos &phi; cos &delta; cos H", note: "Approximate Moon altitude h from local sidereal time, latitude &phi;, right ascension &alpha; and declination &delta;." }
         ],
         details: [
-          "The accelerated orbit is a schematic overhead view: sunlight reaches both globes from the left. The larger Moon below shows the selected date, with waxing phases lit on the right and waning phases on the left (northern convention). The phase comes from viewing the sunlit half, not from Earth casting a shadow. Continents, craters, rotation and scales are illustrative; eclipse shadows and local phase rotation are not simulated.",
+          "The accelerated orbit is a schematic side view: sunlight comes from the left, so the Moon's left hemisphere stays lit in this view. Its surface markings rotate once per orbit, keeping the same hemisphere toward Earth. The larger Moon below shows the selected date, with waxing phases lit on the right and waning phases on the left (northern convention). The phase comes from viewing the sunlit half, not from Earth casting a shadow. Continents, crater shapes and scales are illustrative; eclipses and lunar libration are not simulated.",
           "The eclipse panel checks new/full moon geometry together with node proximity, so it shows when eclipse conditions are favorable.",
           "Sunrise, sunset, dawn, dusk, blue hour and golden hour are recomputed for the currently selected German city.",
           "The Moon direction line uses the same approximate local sky conversion as the eclipse preview so azimuth and horizon height read the same way."
@@ -509,19 +533,43 @@ window.PLANETENUHR_CARD_HELP = {
       date_location: {
         intro: [
           "Diese Kachel steuert das gemeinsame Datum für die Astronomie-Karten und den Beobachtungsort für ortsabhängige Ansichten.",
-          "Wenn hier das Datum geändert wird, aktualisieren sich Sonnensystem, Jahreszeiten, Mond, Sichtbarkeit und Tageslicht gemeinsam."
+          "Wenn hier Datum oder Uhrzeit geändert werden, aktualisieren sich Sonnensystem, Jahreszeiten, Mond, Sichtbarkeit und Tageslicht gemeinsam."
         ],
         formulas: [
-          { expr: "t<sub>ausgewahlt</sub> = t<sub>jetzt</sub> + &Delta;d &middot; 86400 s", note: "Datumsverschiebung in ganzen Tagen." }
+          { expr: "t<sub>basis</sub> = t<sub>jetzt</sub> + &Delta;d &middot; 86400 s", note: "Datumsverschiebung in ganzen Tagen; eine gewählte Uhrzeit wird in der Zeitzone des Ortes aufgelöst." }
         ],
         details: [
-          "Der Slider behält bewusst die urspruengliche Spanne von -100 bis +100 Jahren.",
-          "Die Ortswahl bietet aktuell zehn grosse deutsche Städte; die Seiten-Zeitzone selbst bleibt dabei unverändert."
+          "Der Datumsregler behält bewusst die Spanne von -100 bis +100 Jahren.",
+          "Der Uhrzeitregler verwendet die Ortszeit des ausgewählten Standorts. „Jetzt“ setzt die Uhrzeit am gewählten Datum auf die aktuelle volle Ortsstunde, ohne das Datum zu ändern.",
+          "Der Stunden-Zeitraffer springt pro Sekunde eine Stunde weiter und läuft über Mitternacht hinaus zum nächsten Datum. Es läuft immer nur ein Zeitraffer; beim Start des einen stoppt der andere.",
+          "Der ausgewählte Ort bestimmt die Zeitzone der ortsabhängigen Beobachtungsansichten."
         ],
         links: [
           { label: "JPL: Approximate Positions of the Planets", url: "https://ssd.jpl.nasa.gov/planets/approx_pos.html" },
           { label: "NOAA: Solar Calculation Details", url: "https://gml.noaa.gov/grad/solcalc/calcdetails.html" },
           { label: "timeanddate: Astronomie-Überblick", url: "https://www.timeanddate.com/astronomy/" }
+        ]
+      },
+      milky_way: {
+        intro: [
+          "Diese Kachel zeigt die Milchstraße als künstlerische Darstellung und zusätzlich ein schematisches Bild ihres Bandes am Nachthimmel.",
+          "Wähle einen markierten Bereich auf der Karte – Zentrum, frühere Schätzung oder neue Messung – und lies die Erläuterung dazu."
+        ],
+        formulas: [
+          { expr: "H = &theta;<sub>GMST</sub> + &lambda; - &alpha;", note: "Ortsstundenwinkel aus Sternzeitwinkel, östlicher Länge und Rektaszension." },
+          { expr: "sin h = sin &phi; sin &delta; + cos &phi; cos &delta; cos H", note: "Höhe aus geografischer Breite, Deklination und Stundenwinkel." }
+        ],
+        details: [
+          "Unser Sonnensystem liegt in der Orion-Spur zwischen den größeren Armen von Sagittarius und Perseus.",
+          "Die aktualisierten Chandra-Abstände der Arme beziehen sich auf eine untersuchte Blickrichtung. Sie sind keine vollständige Neuvermessung der Milchstraße.",
+          "Die runde Himmelskuppel tastet die galaktische Ebene ab und rechnet ihre Punkte für den gewählten Zeitpunkt und Ort in Höhe und Richtung am Himmel um. Der Außenkreis ist der Horizont, die Mitte der Zenit; die Höhe wird als radialer Abstand dargestellt. Der Ortssternwinkel berücksichtigt die Erdrotation.",
+          "Die Sonnenhöhe blendet das Band bei Tageslicht und Dämmerung ab. Mondlicht, Wolken, Gelände und die tatsächliche Helligkeitsverteilung der Milchstraße werden nicht berechnet."
+        ],
+        links: [
+          { label: "NASA/Chandra: Messungen der Milchstraßenarme", url: "https://science.nasa.gov/missions/chandra/nasas-chandra-examines-milky-way-at-arms-length/" },
+          { label: "ESA Gaia DR3: Umrechnung galaktischer Koordinaten", url: "https://gea.esac.esa.int/archive/documentation/GDR3/Data_processing/chap_cu3ast/sec_cu3ast_intro/ssec_cu3ast_intro_tansforms.html" },
+          { label: "US Naval Observatory: Höhe und Azimut", url: "https://aa.usno.navy.mil/faq/alt_az" },
+          { label: "Chandra-Bildnutzungsregeln", url: "https://www.chandra.cfa.harvard.edu/photo/image_use.html" }
         ]
       },
       solar_system: {
@@ -929,7 +977,7 @@ window.PLANETENUHR_CARD_HELP = {
           { expr: "cos H = (cos Z - sin &delta; sin &phi;) / (cos &delta; cos &phi;)", note: "Grundbeziehung hinter Sonnenaufgang, Sonnenuntergang und Dämmerung." }
         ],
         details: [
-          "Der beschleunigte Umlauf ist eine schematische Draufsicht: Sonnenlicht trifft beide Kugeln von links. Der größere Mond darunter zeigt das gewählte Datum, zunehmend rechts und abnehmend links beleuchtet (nördliche Darstellung). Die Phase entsteht durch den Blick auf die beleuchtete Hälfte, nicht durch Erdschatten. Kontinente, Krater, Rotation und Maßstäbe sind illustrativ; Finsternisschatten und örtliche Phasendrehung werden nicht simuliert.",
+          "Der beschleunigte Umlauf ist eine schematische Seitenansicht: Das Sonnenlicht kommt von links, daher bleibt in dieser Ansicht die linke Mondhälfte beleuchtet. Die Oberflächenmerkmale des kleinen Mondes drehen sich einmal pro Umlauf; dadurch bleibt dieselbe Mondhälfte zur Erde gerichtet. Der größere Mond darunter zeigt das gewählte Datum, zunehmend rechts und abnehmend links beleuchtet (nördliche Darstellung). Die Phase entsteht durch den Blick auf die beleuchtete Hälfte, nicht durch Erdschatten. Kontinente, Kraterformen und Maßstäbe sind illustrativ; Finsternisse und die Mondlibration werden nicht simuliert.",
           "Die Finsternis-Grafik prüft Neu-/Vollmond-Geometrie zusammen mit Knotennahe und zeigt damit, wann Finsternisbedingungen günstig sind.",
           "Sonnenaufgang, Sonnenuntergang, Dämmerung, blaue Stunde und goldene Stunde werden für die aktuell gewählte Stadt neu berechnet."
         ],
@@ -1003,19 +1051,43 @@ window.PLANETENUHR_CARD_HELP = {
       date_location: {
         intro: [
           "Cette carte pilote la date partagee des vues astronomiques et le lieu d'observation des panneaux dependants du lieu.",
-          "Quand la date change ici, le systeme solaire, les saisons, la Lune, la visibilite et la lumiere du jour sont mis a jour ensemble."
+          "Quand la date ou l’heure change ici, le système solaire, les saisons, la Lune, la visibilité et la lumière du jour sont mis à jour ensemble."
         ],
         formulas: [
-          { expr: "t<sub>selectionne</sub> = t<sub>actuel</sub> + &Delta;d &middot; 86400 s", note: "Decalage en jours entiers." }
+          { expr: "t<sub>base</sub> = t<sub>actuel</sub> + &Delta;d &middot; 86400 s", note: "Décalage en jours entiers ; l’heure choisie est résolue dans le fuseau du lieu sélectionné." }
         ],
         details: [
-          "Le curseur conserve volontairement la plage d'origine de -100 a +100 ans.",
-          "Le selecteur de ville propose pour l'instant dix grandes villes allemandes sans changer le fuseau de la page."
+          "Le curseur de date conserve la plage de -100 a +100 ans.",
+          "Le curseur horaire utilise l’heure locale du lieu choisi. « Maintenant » règle l’heure à l’heure locale entière actuelle sans modifier la date sélectionnée.",
+          "L’accéléré horaire avance d’une heure par seconde et continue après minuit en passant à la date suivante. Un seul accéléré fonctionne à la fois ; démarrer l’un arrête l’autre.",
+          "Le lieu choisi détermine le fuseau horaire des vues d’observation dépendantes du lieu."
         ],
         links: [
           { label: "JPL: Approximate Positions of the Planets", url: "https://ssd.jpl.nasa.gov/planets/approx_pos.html" },
           { label: "NOAA: Solar Calculation Details", url: "https://gml.noaa.gov/grad/solcalc/calcdetails.html" },
           { label: "timeanddate: Vue d’ensemble astronomie", url: "https://www.timeanddate.com/astronomy/" }
+        ]
+      },
+      milky_way: {
+        intro: [
+          "Cette carte présente une vue d’artiste de la Voie lactée ainsi qu’un schéma de sa bande dans le ciel nocturne.",
+          "Choisissez une zone marquée sur la carte — centre, estimation précédente ou mesure actualisée — pour lire son explication."
+        ],
+        formulas: [
+          { expr: "H = &theta;<sub>GMST</sub> + &lambda; - &alpha;", note: "Angle horaire local à partir du temps sidéral, de la longitude est et de l’ascension droite." },
+          { expr: "sin h = sin &phi; sin &delta; + cos &phi; cos &delta; cos H", note: "Hauteur calculée à partir de la latitude, de la déclinaison et de l’angle horaire." }
+        ],
+        details: [
+          "Notre système solaire se trouve dans le bras d’Orion, entre les grands bras du Sagittaire et de Persée.",
+          "Les nouvelles distances mesurées par Chandra concernent une ligne de visée étudiée. Elles ne constituent pas une nouvelle cartographie complète de la Voie lactée.",
+          "Le dôme céleste circulaire échantillonne le plan galactique et convertit ses points en hauteur et en azimut pour l’heure et le lieu choisis. Le cercle extérieur représente l’horizon et le centre le zénith ; la hauteur est représentée par une distance radiale. Le temps sidéral local tient compte de la rotation terrestre.",
+          "La hauteur du Soleil atténue la bande pendant le jour et le crépuscule. La lumière lunaire, les nuages, le relief et la répartition réelle de la luminosité de la Voie lactée ne sont pas modélisés."
+        ],
+        links: [
+          { label: "NASA/Chandra : mesures des bras galactiques", url: "https://science.nasa.gov/missions/chandra/nasas-chandra-examines-milky-way-at-arms-length/" },
+          { label: "ESA Gaia DR3 : transformation des coordonnées galactiques", url: "https://gea.esac.esa.int/archive/documentation/GDR3/Data_processing/chap_cu3ast/sec_cu3ast_intro/ssec_cu3ast_intro_tansforms.html" },
+          { label: "US Naval Observatory : hauteur et azimut", url: "https://aa.usno.navy.mil/faq/alt_az" },
+          { label: "Conditions d’utilisation des images Chandra", url: "https://www.chandra.cfa.harvard.edu/photo/image_use.html" }
         ]
       },
       solar_system: {
@@ -1423,7 +1495,7 @@ window.PLANETENUHR_CARD_HELP = {
           { expr: "cos H = (cos Z - sin &delta; sin &phi;) / (cos &delta; cos &phi;)", note: "Relation de base pour lever, coucher et crepuscule du Soleil." }
         ],
         details: [
-          "L’orbite accélérée est une vue schématique du dessus : la lumière solaire éclaire les deux globes depuis la gauche. La grande Lune en dessous suit la date choisie, éclairée à droite en phase croissante et à gauche en phase décroissante (convention nord). La phase vient de la vue de la moitié éclairée, pas de l’ombre de la Terre. Continents, cratères, rotation et échelles sont illustratifs ; les ombres d’éclipse et la rotation locale de la phase ne sont pas simulées.",
+          "L’orbite accélérée est une vue schématique de côté : la lumière du Soleil vient de la gauche, donc la moitié gauche de la Lune reste éclairée dans cette vue. Les détails de surface tournent une fois par orbite et gardent le même hémisphère face à la Terre. La grande Lune en dessous suit la date choisie, éclairée à droite en phase croissante et à gauche en phase décroissante (convention nord). La phase vient de la vue de la moitié éclairée, pas de l’ombre de la Terre. Continents, cratères et échelles sont schématiques ; les éclipses et la libration lunaire ne sont pas simulées.",
           "Le panneau d'eclipse combine la proximite des noeuds avec la geometrie nouvelle lune / pleine lune pour montrer quand une eclipse devient plausible.",
           "Lever du Soleil, coucher, aube, crepuscule, heure bleue et heure doree sont recalcules pour la ville allemande choisie."
         ],

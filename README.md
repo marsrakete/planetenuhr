@@ -6,11 +6,11 @@ Planetenuhr ist ein statisches Astronomie-Dashboard als reine HTML-App. Die Anwe
 
 - [TECHNIK.md](TECHNIK.md): Projektstruktur, Architektur, Code-Stil, Start, Build, Kalenderpflege und Konfiguration.
 - [BERECHNUNGEN.md](BERECHNUNGEN.md): Formeln, Rechenmodelle, mathematische Erläuterungen und fachliche Quellen.
-- [MODULARISIERUNGSPLAN.md](MODULARISIERUNGSPLAN.md): geplanter schrittweiser Umbau mit Zuständigkeiten und Prüfungen.
+- [Archivierter Modularisierungsplan](Archiv/MODULARISIERUNGSPLAN.md): abgeschlossener schrittweiser Umbau mit Zuständigkeiten und Prüfungen.
 
 ## Neue Astronomie-Kacheln
 
-**Erde & Mond** zeigt eine Erdkugel mit vereinfachten Kontinenten und einen weißgrauen Mond mit dezenten Kratern. In der beschleunigten Umlaufskizze kommt das Sonnenlicht bei beiden Körpern von links; diese Draufsicht ist von der größeren, datumsabhängigen Mondphasenansicht darunter getrennt. Kontinente, Größen und Umlauf sind schematisch.
+**Erde & Mond** zeigt eine Erdkugel mit vereinfachten Kontinenten und einen weißgrauen Mond mit dezenten Kratern. Die beschleunigte Umlaufskizze ist eine Seitenansicht: Das Sonnenlicht kommt von links, daher bleibt in dieser Ansicht die linke Mondhälfte beleuchtet. Eine Oberflächenmarkierung dreht sich einmal pro Umlauf und bleibt zur Erde gerichtet; so wird die gebundene Rotation des Mondes sichtbar. Die größere Mondphasenansicht darunter folgt weiterhin dem gewählten Datum. Größen und Umlauf sind schematisch.
 
 **Meteorströme** beschriftet die Aktivitätsbögen im Jahreskreis mit den Namen der Ströme. Farbige Verbindungslinien führen zu den jeweiligen Maximum-Markierungen; die Namen folgen der gewählten Sprache und bleiben auch auf kleinen Bildschirmen lesbar.
 
@@ -36,11 +36,15 @@ Die Tagesdaten werden nach lokalem Kalendertag, Ort und Sprache zwischengespeich
 
 Die Rechenmodelle, Konstanten und Näherungen stehen in [BERECHNUNGEN.md](BERECHNUNGEN.md).
 
+**Milchstraße** zeigt eine Chandra-Künstlerdarstellung mit gestrichelten Umrissen der aktualisierten Positionen zweier äußerer Spiralarme sowie eine schematische Himmelskuppel. Ihr Außenkreis ist der Horizont, die Mitte der Zenit. Der sichtbare Abschnitt des Milchstraßenbands richtet sich nach dem ausgewählten Zeitpunkt und Ort; die Sonnenhöhe dimmt es bei Tageslicht und Dämmerung. Interaktive Markierungen führen zu Erläuterungen über galaktisches Zentrum, frühere Schätzung und neue Messung. Die ?-Hilfe ordnet die Lage unseres Sonnensystems in der Orion-Spur ein. Die Messungen betreffen eine bestimmte Blickrichtung und sind keine vollständige Neuvermessung der Galaxis. Bildnachweis: NASA/CXC/SAO/M. Weiss; Quellen und Näherungen stehen in der Kachelhilfe und in [BERECHNUNGEN.md](BERECHNUNGEN.md).
+
 **Himmelswissen** zeigt 31 kurze Eselsbrücken, Merksätze und Fakten über Planeten und Sterne. Beim Laden wird zufällig gemischt; „Nächster“ führt ohne automatische Wechsel durch alle Einträge. Fremdsprachige Originale bleiben als eigene Einträge erhalten und erhalten in den anderen App-Sprachen einen übersetzten Untertitel. Kleine Grafiken veranschaulichen jeden Eintrag, etwa durch Sternbildskizzen, Farbreihen und Größenvergleiche. Erklärungen, Quellen und regionale Hinweise stehen direkt dabei; Bildunterschriften erläutern die schematische Darstellung.
 
 **IDEFIX auf dem Weg zu Phobos** zeigt Sonne, Erde, Mars und die Reise von MMX mit dem Rover als Pixelspur. Phobos ist separat vergrößert dargestellt. Regler und Tages-, Monats- und Jahresschritte erkunden den Missionsplan bis 2031. Die Markierung basiert auf einer JAXA/JPL-Bahnvorhersage bis Ende 2028, nicht auf Live-Telemetrie; spätere Zielmarkierungen sind als Planung gekennzeichnet. Der zuletzt bestätigte Missionsstand steht mit Prüfdatum und Links zu JAXA-Missionsnews, DLR, CNES und ESA daneben. IDEFIX verbleibt nach der geplanten Landung auf Phobos; die Probenkapsel soll zur Erde zurückkehren.
 
 ## Zentrale Bedienung
+
+Der Datumsbereich bleibt bestehen; sein bisheriger „Zeitraffer“ heißt jetzt **„Tag-Zeitraffer“**. Direkt darunter steuert ein kompakter 24-Stunden-Regler die Ortszeit des gewählten Standorts. **„Jetzt“** setzt nur die Uhrzeit auf die aktuelle volle Ortsstunde und behält das Datum bei. Der Stunden-Zeitraffer läuft mit einer Stunde pro Sekunde und schiebt das Datum bei Mitternacht weiter. Tag- und Stunden-Zeitraffer können nicht gleichzeitig laufen: Beim Start des einen stoppt der andere.
 
 Die App startet mit Version **1.0**. Im Einstellungsmenü der Datumsleiste steht die laufende Version mit „Nach Updates suchen“. Die App prüft außerdem beim Start und bei Rückkehr zur Seite auf eine neue Version. Wenn eine andere Serverversion bereitsteht, erscheint im Einstellungsmenü direkt neben „Nach Updates suchen“ der Button „Jetzt aktualisieren“ mit einem Versionshinweis. Auf schmalen Displays darf er darunter umbrechen. Erst dieser Klick lädt die neue Version; Datum, Ort, Sprache und Kachel-Link bleiben erhalten. Eine fehlgeschlagene automatische Prüfung unterbricht die App nicht.
 

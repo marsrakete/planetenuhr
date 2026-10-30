@@ -19,9 +19,11 @@ window.PLANETENUHR_DASHBOARD_I18N = (() => {
       const calendarController = dependencies.getCalendarController();
       const skyKnowledge = dependencies.getSkyKnowledge();
       const dailyHighlights = dependencies.getDailyHighlights();
+      const milkyWayCard = dependencies.getMilkyWayCard();
       const dashboardContext = dependencies.dashboardContext;
       document.documentElement.lang = lang;
       window.PLANETENUHR_APP_UPDATES.render();
+      milkyWayCard.render(t);
       document.getElementById('titleSolarSystem').textContent = t.title_solar_system;
       document.getElementById('solarLegend').textContent      = t.legend_solar;
       const titleDateLocation = document.getElementById('titleDateLocation');
@@ -104,6 +106,10 @@ window.PLANETENUHR_DASHBOARD_I18N = (() => {
       document.getElementById('solarPastLabel').textContent   = t.solar_past_control;
       document.getElementById('solarFutureLabel').textContent = t.solar_future_control;
       document.getElementById('solarDateSlider').setAttribute('aria-label', t.solar_slider);
+      document.getElementById('timeControlLabel').textContent = t.time_control_label;
+      document.getElementById('timeOfDaySlider').setAttribute('aria-label', t.time_control_slider);
+      document.getElementById('btnTimeNow').textContent = t.time_now;
+      document.getElementById('btnTimeNow').setAttribute('aria-label', t.time_now_aria);
       document.getElementById('btnSolarToday').textContent    = t.solar_today;
       document.getElementById('btnSolarPrev').setAttribute('aria-label', t.solar_prev_day);
       document.getElementById('btnSolarNext').setAttribute('aria-label', t.solar_next_day);
@@ -116,6 +122,8 @@ window.PLANETENUHR_DASHBOARD_I18N = (() => {
       document.getElementById('btnSolarPrevYear').setAttribute('aria-label', t.solar_prev_year);
       document.getElementById('btnSolarNextYear').setAttribute('aria-label', t.solar_next_year);
       dateLocationControls.updateSolarAutoplayButton();
+      dateLocationControls.updateTimeControlReadout();
+      dateLocationControls.updateTimeAutoplayButton();
       cardSizes.updateGlobalCardSizeControlState();
       dateLocationControls.updateDateSettingsToggleState();
       const labelStepYear = document.getElementById('labelStepYear');

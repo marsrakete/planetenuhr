@@ -8,7 +8,7 @@ Eine allgemein verständliche Einordnung steht im README unter [Grenzen und Gena
 
 ### Datumsgekoppelte Aktualisierung
 
-`js/core/dashboard-context.js` hält das zentrale Datum als Tagesoffset relativ zu `Date.now()`. `js/core/dashboard-refresh.js` verteilt je globalem Aktualisierungslauf denselben Kontext mit Zeitpunkt, Ort, Ortszeitzone und Sprache. Auch die bisherigen Zugriffsfunktionen lesen während des Laufs denselben Snapshot; außerhalb davon läuft das Datum wie bisher mit der Uhr weiter. Die Monatssteuerung behält das native `setMonth`-Überlaufverhalten und die bestehenden Reglergrenzen.
+`js/core/dashboard-context.js` hält das zentrale Datum als Tagesoffset relativ zu `Date.now()`. Ohne manuelle Uhrzeitauswahl läuft die Uhrzeit weiter; nach einer Auswahl wird die gewählte Ortsuhrzeit auf das lokale Datum im Zeitzonenmodell des Beobachtungsorts gesetzt. Der Uhrzeit-Zeitraffer addiert je Schritt eine reale Stunde und trägt beim Wechsel des lokalen Kalendertags den Tagesoffset weiter. `js/core/dashboard-refresh.js` verteilt je globalem Aktualisierungslauf denselben Zeitpunkt, Ort, Ortszeitzone und Sprache. Auch die bisherigen Zugriffsfunktionen lesen während des Laufs denselben Snapshot. Die Monatssteuerung behält das native `setMonth`-Überlaufverhalten und die bestehenden Reglergrenzen.
 
 ### Mondphase
 
@@ -648,6 +648,20 @@ Die Horizontrechnung wandelt geozentrische J2000-Vektoren zunächst in Äquatork
 Die in `js/models/astronomy-coordinates.js` ausgelagerten Formeln bleiben gegenüber dem bisherigen Hauptskript unverändert. Das Julianische Datum ist `JD = Unixzeit in Millisekunden / 86400000 + 2440587,5`; für J2000, 1. Januar 2000 um 12 Uhr UTC, ergibt sich 2451545,0. Mit `T = (JD − 2451545,0) / 36525` wird die mittlere Ekliptikschiefe als `ε = 23,439291° − 0,0130042° · T` angenähert. Die mittlere Sternzeit verwendet den bisherigen Polynomansatz in `localSiderealAngleDegrees`; die östliche geografische Länge wird addiert.
 
 Aus Rektaszension und lokaler Sternzeit ergibt sich der Stundenwinkel. Breite, Stundenwinkel und Deklination liefern über sphärische Trigonometrie Höhe und Azimut; der Azimut zählt von Norden über Osten. Die Ekliptik-Umrechnung in diesem Modul ist die bestehende vereinfachte Umrechnung mit mittlerer Schiefe. Das separate Modell `js/models/astronomy-explorer-model.js` präzediert hingegen J2000-Vektoren auf das Datum; die beiden Berechnungswege bleiben bewusst getrennt.
+
+### Milchstraßenband am Himmel
+
+`js/models/milky-way-sky-model.js` tastet die galaktische Ebene bei `b = 0°` in 0,5°-Schritten der galaktischen Länge `l` ab. Die ICRS-Richtungen werden aus der Gaia-DR3-Transformation gewonnen. Für einen Punkt der Ebene gilt `r_Gal = (cos l, sin l, 0)` und `r_ICRS = A_G · r_Gal`; verwendet werden die ersten beiden Spalten der in der [ESA-Gaia-Dokumentation zur Koordinatentransformation](https://gea.esac.esa.int/archive/documentation/GDR3/Data_processing/chap_cu3ast/sec_cu3ast_intro/ssec_cu3ast_intro_tansforms.html) angegebenen inversen Rotationsmatrix. Die festen Sternkoordinaten werden mit den IAU-1976-Winkeln auf das mittlere Äquatorsystem des gewählten Datums präzediert.
+
+Aus Rektaszension `α` und Deklination `δ` folgen für den Ort und Zeitpunkt der Kachel der lokale Stundenwinkel und die geometrische Höhe:
+
+`H = GMST + λ − α`
+
+`sin h = sin φ · sin δ + cos φ · cos δ · cos H`
+
+Hier sind `λ` die östliche geografische Länge und `φ` die geografische Breite. Die Höhe und der Azimut werden mit `js/models/astronomy-coordinates.js` berechnet; das Modell entspricht der üblichen [USNO-Horizonttransformation](https://aa.usno.navy.mil/faq/alt_az). Die Grafik bildet den Himmel als runde Kuppel ab: der Außenkreis ist der Horizont (`h = 0°`), die Mitte der Zenit (`h = 90°`), und die Himmelsrichtungen liegen am Rand. Gezeichnet werden nur Punkte mit `h ≥ 0°`. Für die Polardarstellung mit Azimut `A` gilt `r = R · (90° − h) / 90°`, `x = cx + r · sin A` und `y = cy − r · cos A`. Im SVG sind `R = 128`, `cx = 260` und `cy = 180`.
+
+Die Sonnenhöhe wird mit derselben Horizonttransformation aus der vorhandenen Sonnenkoordinate der App bestimmt. Oberhalb von `−0,8333°` wird Tageslicht angenommen, zwischen `−0,8333°` und `−18°` Dämmerung, darunter astronomische Nacht. Das steuert Hintergrund und Helligkeit des Bands, nicht seine geometrische Position. Mondlicht, Wolken, Gelände, atmosphärische Refraktion und die ungleichmäßige Helligkeit der Milchstraße werden nicht simuliert. Daher ist die Grafik eine zeit- und ortsabhängige Orientierungshilfe, keine fotografische Vorhersage der Sichtbarkeit.
 
 ### Lichtlaufzeit und Fortschritt
 
