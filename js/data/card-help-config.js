@@ -42,12 +42,16 @@ window.PLANETENUHR_CARD_HELP = {
           "Our Solar System lies in the Orion Spur, between the larger Sagittarius and Perseus arms.",
           "Chandra’s updated arm distances refer to a measured line of sight and do not constitute a complete remapping of the Milky Way.",
           "The circular sky dome samples the galactic plane and converts its points to altitude and azimuth for the selected instant and place. The outer circle is the horizon and the center is the zenith; altitude is shown as radial distance. Local sidereal time accounts for Earth's rotation.",
+          "Galactic-center visibility: It lies toward Sagittarius. In the Northern Hemisphere the central Milky Way is mainly a summer-night sight; from mid-northern latitudes it stays low in the south, while farther south it climbs higher. In the Southern Hemisphere, winter nights are favorable. The gold marker appears only while the center is above the horizon.",
+          "For observing, choose a dark night near new Moon with a clear southern horizon. The marker and added star cluster are schematic: dust obscures Sagittarius A* in visible light, so the eye sees surrounding star clouds, not the black hole itself.",
           "Solar altitude dims the band during daylight and twilight. Moonlight, clouds, terrain and the Milky Way's detailed brightness are not modeled."
         ],
         links: [
           { label: "NASA/Chandra: Milky Way arm measurements", url: "https://science.nasa.gov/missions/chandra/nasas-chandra-examines-milky-way-at-arms-length/" },
           { label: "ESA Gaia DR3: Galactic coordinate transformation", url: "https://gea.esac.esa.int/archive/documentation/GDR3/Data_processing/chap_cu3ast/sec_cu3ast_intro/ssec_cu3ast_intro_tansforms.html" },
           { label: "US Naval Observatory: Altitude and azimuth", url: "https://aa.usno.navy.mil/faq/alt_az" },
+          { label: "NASA Night Sky Notes: The Milky Way in summer", url: "https://science.nasa.gov/solar-system/skywatching/night-sky-network/augusts-night-sky-notes-the-great-rift/" },
+          { label: "NASA: Milky Way bulge and obscuring dust", url: "https://science.nasa.gov/image-detail/image1hubble-2/" },
           { label: "Chandra image-use policy", url: "https://www.chandra.cfa.harvard.edu/photo/image_use.html" }
         ]
       },
@@ -563,12 +567,16 @@ window.PLANETENUHR_CARD_HELP = {
           "Unser Sonnensystem liegt in der Orion-Spur zwischen den größeren Armen von Sagittarius und Perseus.",
           "Die aktualisierten Chandra-Abstände der Arme beziehen sich auf eine untersuchte Blickrichtung. Sie sind keine vollständige Neuvermessung der Milchstraße.",
           "Die runde Himmelskuppel tastet die galaktische Ebene ab und rechnet ihre Punkte für den gewählten Zeitpunkt und Ort in Höhe und Richtung am Himmel um. Der Außenkreis ist der Horizont, die Mitte der Zenit; die Höhe wird als radialer Abstand dargestellt. Der Ortssternwinkel berücksichtigt die Erdrotation.",
+          "Sichtbarkeit des Galaxienzentrums: Es liegt in Richtung des Sternbilds Schütze (Sagittarius). Auf der Nordhalbkugel ist die zentrale Milchstraßenregion vor allem in Sommernächten zu sehen. In Mitteleuropa steht sie tief im Süden; weiter südlich steigt sie höher. Auf der Südhalbkugel sind Winternächte günstig. Die goldene Markierung erscheint nur, wenn das Zentrum über dem Horizont steht.",
+          "Für die Beobachtung helfen eine dunkle, mondarme Nacht und freie Sicht nach Süden. Markierung und zusätzlicher Sternhaufen sind schematisch: Staub verdeckt Sagittarius A* im sichtbaren Licht. Mit bloßem Auge sieht man die Sternwolken in seiner Umgebung, nicht das Schwarze Loch selbst.",
           "Die Sonnenhöhe blendet das Band bei Tageslicht und Dämmerung ab. Mondlicht, Wolken, Gelände und die tatsächliche Helligkeitsverteilung der Milchstraße werden nicht berechnet."
         ],
         links: [
           { label: "NASA/Chandra: Messungen der Milchstraßenarme", url: "https://science.nasa.gov/missions/chandra/nasas-chandra-examines-milky-way-at-arms-length/" },
           { label: "ESA Gaia DR3: Umrechnung galaktischer Koordinaten", url: "https://gea.esac.esa.int/archive/documentation/GDR3/Data_processing/chap_cu3ast/sec_cu3ast_intro/ssec_cu3ast_intro_tansforms.html" },
           { label: "US Naval Observatory: Höhe und Azimut", url: "https://aa.usno.navy.mil/faq/alt_az" },
+          { label: "NASA Night Sky Notes: Milchstraße im Sommer", url: "https://science.nasa.gov/solar-system/skywatching/night-sky-network/augusts-night-sky-notes-the-great-rift/" },
+          { label: "NASA: Milchstraßenzentrum und Staub", url: "https://science.nasa.gov/image-detail/image1hubble-2/" },
           { label: "Chandra-Bildnutzungsregeln", url: "https://www.chandra.cfa.harvard.edu/photo/image_use.html" }
         ]
       },
@@ -1081,12 +1089,16 @@ window.PLANETENUHR_CARD_HELP = {
           "Notre système solaire se trouve dans le bras d’Orion, entre les grands bras du Sagittaire et de Persée.",
           "Les nouvelles distances mesurées par Chandra concernent une ligne de visée étudiée. Elles ne constituent pas une nouvelle cartographie complète de la Voie lactée.",
           "Le dôme céleste circulaire échantillonne le plan galactique et convertit ses points en hauteur et en azimut pour l’heure et le lieu choisis. Le cercle extérieur représente l’horizon et le centre le zénith ; la hauteur est représentée par une distance radiale. Le temps sidéral local tient compte de la rotation terrestre.",
+          "Visibilité du centre galactique : il se trouve dans la direction de la constellation du Sagittaire. Dans l’hémisphère nord, la région centrale de la Voie lactée s’observe surtout les nuits d’été. Aux latitudes moyennes du nord, elle reste basse au sud ; plus au sud, elle monte davantage. Dans l’hémisphère sud, les nuits d’hiver sont favorables. Le repère doré apparaît seulement lorsque le centre est au-dessus de l’horizon.",
+          "Pour l’observer, privilégiez une nuit sombre, de préférence près de la nouvelle lune, et un horizon sud dégagé. Le repère et l’amas ajouté sont schématiques : la poussière masque Sagittarius A* en lumière visible. À l’œil nu, on voit les nuages d’étoiles autour du centre, pas le trou noir lui-même.",
           "La hauteur du Soleil atténue la bande pendant le jour et le crépuscule. La lumière lunaire, les nuages, le relief et la répartition réelle de la luminosité de la Voie lactée ne sont pas modélisés."
         ],
         links: [
           { label: "NASA/Chandra : mesures des bras galactiques", url: "https://science.nasa.gov/missions/chandra/nasas-chandra-examines-milky-way-at-arms-length/" },
           { label: "ESA Gaia DR3 : transformation des coordonnées galactiques", url: "https://gea.esac.esa.int/archive/documentation/GDR3/Data_processing/chap_cu3ast/sec_cu3ast_intro/ssec_cu3ast_intro_tansforms.html" },
           { label: "US Naval Observatory : hauteur et azimut", url: "https://aa.usno.navy.mil/faq/alt_az" },
+          { label: "NASA Night Sky Notes : la Voie lactée en été", url: "https://science.nasa.gov/solar-system/skywatching/night-sky-network/augusts-night-sky-notes-the-great-rift/" },
+          { label: "NASA : bulbe galactique et poussière interstellaire", url: "https://science.nasa.gov/image-detail/image1hubble-2/" },
           { label: "Conditions d’utilisation des images Chandra", url: "https://www.chandra.cfa.harvard.edu/photo/image_use.html" }
         ]
       },
