@@ -5,7 +5,7 @@ const path=require('node:path');
 const vm=require('node:vm');
 const {validateSamples}=require('./update-voyager-data');
 const realm={window:{}};
-for(const file of ['astronomy-explorer-config.js','voyager-data.js','astronomy-explorer-model.js','translations.js','card-help-config.js'])vm.runInNewContext(fs.readFileSync(path.join(__dirname,'..',file),'utf8'),realm);
+for(const file of ['js/data/astronomy-explorer-config.js','js/data/voyager-data.js','js/models/astronomy-explorer-model.js','js/data/translations.js','js/data/card-help-config.js'])vm.runInNewContext(fs.readFileSync(path.join(__dirname,'..',file),'utf8'),realm);
 const model=realm.window.PLANETENUHR_EXPLORER_MODEL;
 const data=realm.window.PLANETENUHR_VOYAGER_DATA;
 

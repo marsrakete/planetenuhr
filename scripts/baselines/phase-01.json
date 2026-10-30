@@ -1,0 +1,5402 @@
+{
+  "chromium-de-320": {
+    "initial": {
+      "date": "2026-10-27",
+      "location": "berlin",
+      "moon": "Vollmond · 98%",
+      "caption": "Phase: Vollmond (98%)",
+      "nextFull": "Nächster Vollmond: 24.11.2026 17:19:56",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 52.746421570469295 55 0 0 0 64 9 Z",
+      "direction": "N · 0°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Jupiter beobachten",
+          "detail": "Gegen 06:00 MEZ · \n      \n      \n      \n    SSO · 47,8° · deutlich über 1 Elle über dem Horizont"
+        },
+        {
+          "id": "meteor-orionids",
+          "title": "Orioniden klingen ab",
+          "detail": "Maximum war laut Kalender am 21.10.2026. Ein heller Mond kann schwache Meteore überstrahlen."
+        },
+        {
+          "id": "planet-mars",
+          "title": "Mars beobachten",
+          "detail": "Gegen 06:00 MEZ · \n      \n      \n      \n    SSO · 52,9° · deutlich über 1 Elle über dem Horizont"
+        },
+        {
+          "id": "conjunction-mars-jupiter-2026-11-16",
+          "title": "Mars und Jupiter nahe beieinander",
+          "detail": "16.11.2026 · 1,2° · ca. 1 Daumenbreit"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "141.443px",
+          "top": "114.397px"
+        },
+        {
+          "key": "venus",
+          "left": "148.609px",
+          "top": "139.175px"
+        },
+        {
+          "key": "earth",
+          "left": "161.876px",
+          "top": "146.273px"
+        },
+        {
+          "key": "mars",
+          "left": "104.75px",
+          "top": "185.559px"
+        },
+        {
+          "key": "jupiter",
+          "left": "59.8303px",
+          "top": "173.622px"
+        },
+        {
+          "key": "saturn",
+          "left": "202.81px",
+          "top": "133.317px"
+        },
+        {
+          "key": "uranus",
+          "left": "159.443px",
+          "top": "202.062px"
+        },
+        {
+          "key": "neptune",
+          "left": "220.674px",
+          "top": "120.168px"
+        }
+      ],
+      "calendar": "5a5e1dff5c267495afb50df50864e1e5daf4327c2bf2a7368e65deea35c79ed1"
+    },
+    "december": {
+      "date": "2026-12-01",
+      "location": "berlin",
+      "moon": "Abnehmender Mond · 56%",
+      "caption": "Phase: Abnehmender Mond (56%)",
+      "nextFull": "Nächster Vollmond: 24.12.2026 06:03:59",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 6.574563310710119 55 0 0 0 64 9 Z",
+      "direction": "WNW · 292°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Jupiter beobachten",
+          "detail": "Gegen 05:20 MEZ · \n      \n      \n      \n    S · 50,8° · deutlich über 1 Elle über dem Horizont"
+        },
+        {
+          "id": "planet-venus",
+          "title": "Venus beobachten",
+          "detail": "Gegen 07:00 MEZ · \n      \n      \n      \n    SO · 21,9° · ca. 1 Handspanne hoch über dem Horizont"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "88.7753px",
+          "top": "111.555px"
+        },
+        {
+          "key": "venus",
+          "left": "113.551px",
+          "top": "156.375px"
+        },
+        {
+          "key": "earth",
+          "left": "135.262px",
+          "top": "167.581px"
+        },
+        {
+          "key": "mars",
+          "left": "85.2291px",
+          "top": "179.787px"
+        },
+        {
+          "key": "jupiter",
+          "left": "57.0529px",
+          "top": "170.878px"
+        },
+        {
+          "key": "saturn",
+          "left": "202.407px",
+          "top": "135.151px"
+        },
+        {
+          "key": "uranus",
+          "left": "158.835px",
+          "top": "202.37px"
+        },
+        {
+          "key": "neptune",
+          "left": "220.654px",
+          "top": "120.559px"
+        }
+      ],
+      "calendar": "ff64c5bb33bd2f214605a24007c176af2f3543a0061429fe35e331a54811185a"
+    },
+    "tokyo": {
+      "date": "2026-12-01",
+      "location": "tokyo",
+      "moon": "Abnehmender Mond · 56%",
+      "caption": "Phase: Abnehmender Mond (56%)",
+      "nextFull": "Nächster Vollmond: 24.12.2026 06:03:59",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 6.574563310710119 55 0 0 0 64 9 Z",
+      "direction": "ONO · 60°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Jupiter beobachten",
+          "detail": "Gegen 05:00 GMT+9 · \n      \n      \n      \n    S · 67,7° · deutlich über 1 Elle über dem Horizont"
+        },
+        {
+          "id": "planet-mars",
+          "title": "Mars beobachten",
+          "detail": "Gegen 05:20 GMT+9 · \n      \n      \n      \n    S · 67,3° · deutlich über 1 Elle über dem Horizont"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "88.7753px",
+          "top": "111.555px"
+        },
+        {
+          "key": "venus",
+          "left": "113.551px",
+          "top": "156.375px"
+        },
+        {
+          "key": "earth",
+          "left": "135.262px",
+          "top": "167.581px"
+        },
+        {
+          "key": "mars",
+          "left": "85.2291px",
+          "top": "179.787px"
+        },
+        {
+          "key": "jupiter",
+          "left": "57.0529px",
+          "top": "170.878px"
+        },
+        {
+          "key": "saturn",
+          "left": "202.407px",
+          "top": "135.151px"
+        },
+        {
+          "key": "uranus",
+          "left": "158.835px",
+          "top": "202.37px"
+        },
+        {
+          "key": "neptune",
+          "left": "220.654px",
+          "top": "120.559px"
+        }
+      ],
+      "calendar": "ff64c5bb33bd2f214605a24007c176af2f3543a0061429fe35e331a54811185a"
+    },
+    "reset": {
+      "date": "2026-10-27",
+      "location": "berlin",
+      "moon": "Vollmond · 98%",
+      "caption": "Phase: Vollmond (98%)",
+      "nextFull": "Nächster Vollmond: 24.11.2026 17:19:56",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 52.746421570469295 55 0 0 0 64 9 Z",
+      "direction": "N · 0°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Jupiter beobachten",
+          "detail": "Gegen 06:00 MEZ · \n      \n      \n      \n    SSO · 47,8° · deutlich über 1 Elle über dem Horizont"
+        },
+        {
+          "id": "meteor-orionids",
+          "title": "Orioniden klingen ab",
+          "detail": "Maximum war laut Kalender am 21.10.2026. Ein heller Mond kann schwache Meteore überstrahlen."
+        },
+        {
+          "id": "planet-mars",
+          "title": "Mars beobachten",
+          "detail": "Gegen 06:00 MEZ · \n      \n      \n      \n    SSO · 52,9° · deutlich über 1 Elle über dem Horizont"
+        },
+        {
+          "id": "conjunction-mars-jupiter-2026-11-16",
+          "title": "Mars und Jupiter nahe beieinander",
+          "detail": "16.11.2026 · 1,2° · ca. 1 Daumenbreit"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "141.443px",
+          "top": "114.397px"
+        },
+        {
+          "key": "venus",
+          "left": "148.609px",
+          "top": "139.175px"
+        },
+        {
+          "key": "earth",
+          "left": "161.876px",
+          "top": "146.273px"
+        },
+        {
+          "key": "mars",
+          "left": "104.75px",
+          "top": "185.559px"
+        },
+        {
+          "key": "jupiter",
+          "left": "59.8303px",
+          "top": "173.622px"
+        },
+        {
+          "key": "saturn",
+          "left": "202.81px",
+          "top": "133.317px"
+        },
+        {
+          "key": "uranus",
+          "left": "159.443px",
+          "top": "202.062px"
+        },
+        {
+          "key": "neptune",
+          "left": "220.674px",
+          "top": "120.168px"
+        }
+      ],
+      "calendar": "5a5e1dff5c267495afb50df50864e1e5daf4327c2bf2a7368e65deea35c79ed1"
+    },
+    "dst": {
+      "spring": 23,
+      "autumn": 25
+    },
+    "calendar": {
+      "view": "month",
+      "filter": "meteor",
+      "heading": "Oktober 2026",
+      "month": "0698f2a41991a2bbcde02a127ab14701b480dec8ab7b20bda0b57213a3efbb5e",
+      "hintsBefore": [
+        "planet-jupiter",
+        "meteor-orionids",
+        "planet-mars",
+        "conjunction-mars-jupiter-2026-11-16"
+      ],
+      "hintsAfter": [
+        "planet-jupiter",
+        "meteor-orionids",
+        "planet-mars",
+        "conjunction-mars-jupiter-2026-11-16"
+      ]
+    }
+  },
+  "chromium-de-390": {
+    "initial": {
+      "date": "2026-10-27",
+      "location": "berlin",
+      "moon": "Vollmond · 98%",
+      "caption": "Phase: Vollmond (98%)",
+      "nextFull": "Nächster Vollmond: 24.11.2026 17:19:56",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 52.746421570469295 55 0 0 0 64 9 Z",
+      "direction": "N · 0°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Jupiter beobachten",
+          "detail": "Gegen 06:00 MEZ · \n      \n      \n      \n    SSO · 47,8° · deutlich über 1 Elle über dem Horizont"
+        },
+        {
+          "id": "meteor-orionids",
+          "title": "Orioniden klingen ab",
+          "detail": "Maximum war laut Kalender am 21.10.2026. Ein heller Mond kann schwache Meteore überstrahlen."
+        },
+        {
+          "id": "planet-mars",
+          "title": "Mars beobachten",
+          "detail": "Gegen 06:00 MEZ · \n      \n      \n      \n    SSO · 52,9° · deutlich über 1 Elle über dem Horizont"
+        },
+        {
+          "id": "conjunction-mars-jupiter-2026-11-16",
+          "title": "Mars und Jupiter nahe beieinander",
+          "detail": "16.11.2026 · 1,2° · ca. 1 Daumenbreit"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "184.491px",
+          "top": "149.213px"
+        },
+        {
+          "key": "venus",
+          "left": "193.837px",
+          "top": "181.532px"
+        },
+        {
+          "key": "earth",
+          "left": "211.142px",
+          "top": "190.791px"
+        },
+        {
+          "key": "mars",
+          "left": "136.631px",
+          "top": "242.034px"
+        },
+        {
+          "key": "jupiter",
+          "left": "78.0396px",
+          "top": "226.464px"
+        },
+        {
+          "key": "saturn",
+          "left": "264.535px",
+          "top": "173.892px"
+        },
+        {
+          "key": "uranus",
+          "left": "207.97px",
+          "top": "263.559px"
+        },
+        {
+          "key": "neptune",
+          "left": "287.835px",
+          "top": "156.741px"
+        }
+      ],
+      "calendar": "5a5e1dff5c267495afb50df50864e1e5daf4327c2bf2a7368e65deea35c79ed1"
+    },
+    "december": {
+      "date": "2026-12-01",
+      "location": "berlin",
+      "moon": "Abnehmender Mond · 56%",
+      "caption": "Phase: Abnehmender Mond (56%)",
+      "nextFull": "Nächster Vollmond: 24.12.2026 06:03:59",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 6.574563310710119 55 0 0 0 64 9 Z",
+      "direction": "WNW · 292°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Jupiter beobachten",
+          "detail": "Gegen 05:20 MEZ · \n      \n      \n      \n    S · 50,8° · deutlich über 1 Elle über dem Horizont"
+        },
+        {
+          "id": "planet-venus",
+          "title": "Venus beobachten",
+          "detail": "Gegen 07:00 MEZ · \n      \n      \n      \n    SO · 21,9° · ca. 1 Handspanne hoch über dem Horizont"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "115.794px",
+          "top": "145.507px"
+        },
+        {
+          "key": "venus",
+          "left": "148.11px",
+          "top": "203.967px"
+        },
+        {
+          "key": "earth",
+          "left": "176.429px",
+          "top": "218.584px"
+        },
+        {
+          "key": "mars",
+          "left": "111.168px",
+          "top": "234.505px"
+        },
+        {
+          "key": "jupiter",
+          "left": "74.4168px",
+          "top": "222.885px"
+        },
+        {
+          "key": "saturn",
+          "left": "264.009px",
+          "top": "176.284px"
+        },
+        {
+          "key": "uranus",
+          "left": "207.175px",
+          "top": "263.961px"
+        },
+        {
+          "key": "neptune",
+          "left": "287.809px",
+          "top": "157.251px"
+        }
+      ],
+      "calendar": "ff64c5bb33bd2f214605a24007c176af2f3543a0061429fe35e331a54811185a"
+    },
+    "tokyo": {
+      "date": "2026-12-01",
+      "location": "tokyo",
+      "moon": "Abnehmender Mond · 56%",
+      "caption": "Phase: Abnehmender Mond (56%)",
+      "nextFull": "Nächster Vollmond: 24.12.2026 06:03:59",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 6.574563310710119 55 0 0 0 64 9 Z",
+      "direction": "ONO · 60°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Jupiter beobachten",
+          "detail": "Gegen 05:00 GMT+9 · \n      \n      \n      \n    S · 67,7° · deutlich über 1 Elle über dem Horizont"
+        },
+        {
+          "id": "planet-mars",
+          "title": "Mars beobachten",
+          "detail": "Gegen 05:20 GMT+9 · \n      \n      \n      \n    S · 67,3° · deutlich über 1 Elle über dem Horizont"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "115.794px",
+          "top": "145.507px"
+        },
+        {
+          "key": "venus",
+          "left": "148.11px",
+          "top": "203.967px"
+        },
+        {
+          "key": "earth",
+          "left": "176.429px",
+          "top": "218.584px"
+        },
+        {
+          "key": "mars",
+          "left": "111.168px",
+          "top": "234.505px"
+        },
+        {
+          "key": "jupiter",
+          "left": "74.4168px",
+          "top": "222.885px"
+        },
+        {
+          "key": "saturn",
+          "left": "264.009px",
+          "top": "176.284px"
+        },
+        {
+          "key": "uranus",
+          "left": "207.175px",
+          "top": "263.961px"
+        },
+        {
+          "key": "neptune",
+          "left": "287.809px",
+          "top": "157.251px"
+        }
+      ],
+      "calendar": "ff64c5bb33bd2f214605a24007c176af2f3543a0061429fe35e331a54811185a"
+    },
+    "reset": {
+      "date": "2026-10-27",
+      "location": "berlin",
+      "moon": "Vollmond · 98%",
+      "caption": "Phase: Vollmond (98%)",
+      "nextFull": "Nächster Vollmond: 24.11.2026 17:19:56",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 52.746421570469295 55 0 0 0 64 9 Z",
+      "direction": "N · 0°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Jupiter beobachten",
+          "detail": "Gegen 06:00 MEZ · \n      \n      \n      \n    SSO · 47,8° · deutlich über 1 Elle über dem Horizont"
+        },
+        {
+          "id": "meteor-orionids",
+          "title": "Orioniden klingen ab",
+          "detail": "Maximum war laut Kalender am 21.10.2026. Ein heller Mond kann schwache Meteore überstrahlen."
+        },
+        {
+          "id": "planet-mars",
+          "title": "Mars beobachten",
+          "detail": "Gegen 06:00 MEZ · \n      \n      \n      \n    SSO · 52,9° · deutlich über 1 Elle über dem Horizont"
+        },
+        {
+          "id": "conjunction-mars-jupiter-2026-11-16",
+          "title": "Mars und Jupiter nahe beieinander",
+          "detail": "16.11.2026 · 1,2° · ca. 1 Daumenbreit"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "184.491px",
+          "top": "149.213px"
+        },
+        {
+          "key": "venus",
+          "left": "193.837px",
+          "top": "181.532px"
+        },
+        {
+          "key": "earth",
+          "left": "211.142px",
+          "top": "190.791px"
+        },
+        {
+          "key": "mars",
+          "left": "136.631px",
+          "top": "242.034px"
+        },
+        {
+          "key": "jupiter",
+          "left": "78.0396px",
+          "top": "226.464px"
+        },
+        {
+          "key": "saturn",
+          "left": "264.535px",
+          "top": "173.892px"
+        },
+        {
+          "key": "uranus",
+          "left": "207.97px",
+          "top": "263.559px"
+        },
+        {
+          "key": "neptune",
+          "left": "287.835px",
+          "top": "156.741px"
+        }
+      ],
+      "calendar": "5a5e1dff5c267495afb50df50864e1e5daf4327c2bf2a7368e65deea35c79ed1"
+    },
+    "dst": {
+      "spring": 23,
+      "autumn": 25
+    },
+    "calendar": {
+      "view": "month",
+      "filter": "meteor",
+      "heading": "Oktober 2026",
+      "month": "0698f2a41991a2bbcde02a127ab14701b480dec8ab7b20bda0b57213a3efbb5e",
+      "hintsBefore": [
+        "planet-jupiter",
+        "meteor-orionids",
+        "planet-mars",
+        "conjunction-mars-jupiter-2026-11-16"
+      ],
+      "hintsAfter": [
+        "planet-jupiter",
+        "meteor-orionids",
+        "planet-mars",
+        "conjunction-mars-jupiter-2026-11-16"
+      ]
+    }
+  },
+  "chromium-de-1280": {
+    "initial": {
+      "date": "2026-10-27",
+      "location": "berlin",
+      "moon": "Vollmond · 98%",
+      "caption": "Phase: Vollmond (98%)",
+      "nextFull": "Nächster Vollmond: 24.11.2026 17:19:56",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 52.746421570469295 55 0 0 0 64 9 Z",
+      "direction": "N · 0°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Jupiter beobachten",
+          "detail": "Gegen 06:00 MEZ · \n      \n      \n      \n    SSO · 47,8° · deutlich über 1 Elle über dem Horizont"
+        },
+        {
+          "id": "meteor-orionids",
+          "title": "Orioniden klingen ab",
+          "detail": "Maximum war laut Kalender am 21.10.2026. Ein heller Mond kann schwache Meteore überstrahlen."
+        },
+        {
+          "id": "planet-mars",
+          "title": "Mars beobachten",
+          "detail": "Gegen 06:00 MEZ · \n      \n      \n      \n    SSO · 52,9° · deutlich über 1 Elle über dem Horizont"
+        },
+        {
+          "id": "conjunction-mars-jupiter-2026-11-16",
+          "title": "Mars und Jupiter nahe beieinander",
+          "detail": "16.11.2026 · 1,2° · ca. 1 Daumenbreit"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "442.778px",
+          "top": "358.112px"
+        },
+        {
+          "key": "venus",
+          "left": "465.21px",
+          "top": "435.677px"
+        },
+        {
+          "key": "earth",
+          "left": "506.741px",
+          "top": "457.898px"
+        },
+        {
+          "key": "mars",
+          "left": "327.913px",
+          "top": "580.882px"
+        },
+        {
+          "key": "jupiter",
+          "left": "187.295px",
+          "top": "543.513px"
+        },
+        {
+          "key": "saturn",
+          "left": "634.883px",
+          "top": "417.34px"
+        },
+        {
+          "key": "uranus",
+          "left": "499.127px",
+          "top": "632.543px"
+        },
+        {
+          "key": "neptune",
+          "left": "690.805px",
+          "top": "376.179px"
+        }
+      ],
+      "calendar": "5a5e1dff5c267495afb50df50864e1e5daf4327c2bf2a7368e65deea35c79ed1"
+    },
+    "december": {
+      "date": "2026-12-01",
+      "location": "berlin",
+      "moon": "Abnehmender Mond · 56%",
+      "caption": "Phase: Abnehmender Mond (56%)",
+      "nextFull": "Nächster Vollmond: 24.12.2026 06:03:59",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 6.574563310710119 55 0 0 0 64 9 Z",
+      "direction": "WNW · 292°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Jupiter beobachten",
+          "detail": "Gegen 05:20 MEZ · \n      \n      \n      \n    S · 50,8° · deutlich über 1 Elle über dem Horizont"
+        },
+        {
+          "id": "planet-venus",
+          "title": "Venus beobachten",
+          "detail": "Gegen 07:00 MEZ · \n      \n      \n      \n    SO · 21,9° · ca. 1 Handspanne hoch über dem Horizont"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "277.905px",
+          "top": "349.216px"
+        },
+        {
+          "key": "venus",
+          "left": "355.463px",
+          "top": "489.521px"
+        },
+        {
+          "key": "earth",
+          "left": "423.429px",
+          "top": "524.602px"
+        },
+        {
+          "key": "mars",
+          "left": "266.804px",
+          "top": "562.812px"
+        },
+        {
+          "key": "jupiter",
+          "left": "178.6px",
+          "top": "534.923px"
+        },
+        {
+          "key": "saturn",
+          "left": "633.623px",
+          "top": "423.082px"
+        },
+        {
+          "key": "uranus",
+          "left": "497.221px",
+          "top": "633.508px"
+        },
+        {
+          "key": "neptune",
+          "left": "690.742px",
+          "top": "377.403px"
+        }
+      ],
+      "calendar": "ff64c5bb33bd2f214605a24007c176af2f3543a0061429fe35e331a54811185a"
+    },
+    "tokyo": {
+      "date": "2026-12-01",
+      "location": "tokyo",
+      "moon": "Abnehmender Mond · 56%",
+      "caption": "Phase: Abnehmender Mond (56%)",
+      "nextFull": "Nächster Vollmond: 24.12.2026 06:03:59",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 6.574563310710119 55 0 0 0 64 9 Z",
+      "direction": "ONO · 60°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Jupiter beobachten",
+          "detail": "Gegen 05:00 GMT+9 · \n      \n      \n      \n    S · 67,7° · deutlich über 1 Elle über dem Horizont"
+        },
+        {
+          "id": "planet-mars",
+          "title": "Mars beobachten",
+          "detail": "Gegen 05:20 GMT+9 · \n      \n      \n      \n    S · 67,3° · deutlich über 1 Elle über dem Horizont"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "277.905px",
+          "top": "349.216px"
+        },
+        {
+          "key": "venus",
+          "left": "355.463px",
+          "top": "489.521px"
+        },
+        {
+          "key": "earth",
+          "left": "423.429px",
+          "top": "524.602px"
+        },
+        {
+          "key": "mars",
+          "left": "266.804px",
+          "top": "562.812px"
+        },
+        {
+          "key": "jupiter",
+          "left": "178.6px",
+          "top": "534.923px"
+        },
+        {
+          "key": "saturn",
+          "left": "633.623px",
+          "top": "423.082px"
+        },
+        {
+          "key": "uranus",
+          "left": "497.221px",
+          "top": "633.508px"
+        },
+        {
+          "key": "neptune",
+          "left": "690.742px",
+          "top": "377.403px"
+        }
+      ],
+      "calendar": "ff64c5bb33bd2f214605a24007c176af2f3543a0061429fe35e331a54811185a"
+    },
+    "reset": {
+      "date": "2026-10-27",
+      "location": "berlin",
+      "moon": "Vollmond · 98%",
+      "caption": "Phase: Vollmond (98%)",
+      "nextFull": "Nächster Vollmond: 24.11.2026 17:19:56",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 52.746421570469295 55 0 0 0 64 9 Z",
+      "direction": "N · 0°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Jupiter beobachten",
+          "detail": "Gegen 06:00 MEZ · \n      \n      \n      \n    SSO · 47,8° · deutlich über 1 Elle über dem Horizont"
+        },
+        {
+          "id": "meteor-orionids",
+          "title": "Orioniden klingen ab",
+          "detail": "Maximum war laut Kalender am 21.10.2026. Ein heller Mond kann schwache Meteore überstrahlen."
+        },
+        {
+          "id": "planet-mars",
+          "title": "Mars beobachten",
+          "detail": "Gegen 06:00 MEZ · \n      \n      \n      \n    SSO · 52,9° · deutlich über 1 Elle über dem Horizont"
+        },
+        {
+          "id": "conjunction-mars-jupiter-2026-11-16",
+          "title": "Mars und Jupiter nahe beieinander",
+          "detail": "16.11.2026 · 1,2° · ca. 1 Daumenbreit"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "442.778px",
+          "top": "358.112px"
+        },
+        {
+          "key": "venus",
+          "left": "465.21px",
+          "top": "435.677px"
+        },
+        {
+          "key": "earth",
+          "left": "506.741px",
+          "top": "457.898px"
+        },
+        {
+          "key": "mars",
+          "left": "327.913px",
+          "top": "580.882px"
+        },
+        {
+          "key": "jupiter",
+          "left": "187.295px",
+          "top": "543.513px"
+        },
+        {
+          "key": "saturn",
+          "left": "634.883px",
+          "top": "417.34px"
+        },
+        {
+          "key": "uranus",
+          "left": "499.127px",
+          "top": "632.543px"
+        },
+        {
+          "key": "neptune",
+          "left": "690.805px",
+          "top": "376.179px"
+        }
+      ],
+      "calendar": "5a5e1dff5c267495afb50df50864e1e5daf4327c2bf2a7368e65deea35c79ed1"
+    },
+    "dst": {
+      "spring": 23,
+      "autumn": 25
+    },
+    "calendar": {
+      "view": "month",
+      "filter": "meteor",
+      "heading": "Oktober 2026",
+      "month": "0698f2a41991a2bbcde02a127ab14701b480dec8ab7b20bda0b57213a3efbb5e",
+      "hintsBefore": [
+        "planet-jupiter",
+        "meteor-orionids",
+        "planet-mars",
+        "conjunction-mars-jupiter-2026-11-16"
+      ],
+      "hintsAfter": [
+        "planet-jupiter",
+        "meteor-orionids",
+        "planet-mars",
+        "conjunction-mars-jupiter-2026-11-16"
+      ]
+    }
+  },
+  "chromium-en-320": {
+    "initial": {
+      "date": "2026-10-27",
+      "location": "berlin",
+      "moon": "Full Moon · 98%",
+      "caption": "Phase: Full Moon (98%)",
+      "nextFull": "Next full moon: 11/24/2026 17:19:56",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 52.746421570469295 55 0 0 0 64 9 Z",
+      "direction": "N · 0°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observe Jupiter",
+          "detail": "Around 06:00 GMT+1 · \n      \n      \n      \n    SSE · 47.8° · well above 1 cubit above the horizon"
+        },
+        {
+          "id": "meteor-orionids",
+          "title": "Orionids winding down",
+          "detail": "Peak was on Oct 21, 2026, according to the calendar. A bright Moon may obscure faint meteors."
+        },
+        {
+          "id": "planet-mars",
+          "title": "Observe Mars",
+          "detail": "Around 06:00 GMT+1 · \n      \n      \n      \n    SSE · 52.9° · well above 1 cubit above the horizon"
+        },
+        {
+          "id": "conjunction-mars-jupiter-2026-11-16",
+          "title": "Mars and Jupiter close together",
+          "detail": "Nov 16, 2026 · 1.2° · about 1 thumb width"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "141.443px",
+          "top": "114.397px"
+        },
+        {
+          "key": "venus",
+          "left": "148.609px",
+          "top": "139.175px"
+        },
+        {
+          "key": "earth",
+          "left": "161.876px",
+          "top": "146.273px"
+        },
+        {
+          "key": "mars",
+          "left": "104.75px",
+          "top": "185.559px"
+        },
+        {
+          "key": "jupiter",
+          "left": "59.8303px",
+          "top": "173.622px"
+        },
+        {
+          "key": "saturn",
+          "left": "202.81px",
+          "top": "133.317px"
+        },
+        {
+          "key": "uranus",
+          "left": "159.443px",
+          "top": "202.062px"
+        },
+        {
+          "key": "neptune",
+          "left": "220.674px",
+          "top": "120.168px"
+        }
+      ],
+      "calendar": "a92ca90d554c3443e96cdcca2d565395fec96b72eb74f5a1b6021ae4ddd0c2ed"
+    },
+    "december": {
+      "date": "2026-12-01",
+      "location": "berlin",
+      "moon": "Waning Gibbous · 56%",
+      "caption": "Phase: Waning Gibbous (56%)",
+      "nextFull": "Next full moon: 12/24/2026 06:03:59",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 6.574563310710119 55 0 0 0 64 9 Z",
+      "direction": "WNW · 292°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observe Jupiter",
+          "detail": "Around 05:20 GMT+1 · \n      \n      \n      \n    S · 50.8° · well above 1 cubit above the horizon"
+        },
+        {
+          "id": "planet-venus",
+          "title": "Observe Venus",
+          "detail": "Around 07:00 GMT+1 · \n      \n      \n      \n    SE · 21.9° · about 1 hand span high above the horizon"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "88.7753px",
+          "top": "111.555px"
+        },
+        {
+          "key": "venus",
+          "left": "113.551px",
+          "top": "156.375px"
+        },
+        {
+          "key": "earth",
+          "left": "135.262px",
+          "top": "167.581px"
+        },
+        {
+          "key": "mars",
+          "left": "85.2291px",
+          "top": "179.787px"
+        },
+        {
+          "key": "jupiter",
+          "left": "57.0529px",
+          "top": "170.878px"
+        },
+        {
+          "key": "saturn",
+          "left": "202.407px",
+          "top": "135.151px"
+        },
+        {
+          "key": "uranus",
+          "left": "158.835px",
+          "top": "202.37px"
+        },
+        {
+          "key": "neptune",
+          "left": "220.654px",
+          "top": "120.559px"
+        }
+      ],
+      "calendar": "b198271eed4a2fedd2c84ceb11d5c0c804771fa612550ae62c2cceb850345fa7"
+    },
+    "tokyo": {
+      "date": "2026-12-01",
+      "location": "tokyo",
+      "moon": "Waning Gibbous · 56%",
+      "caption": "Phase: Waning Gibbous (56%)",
+      "nextFull": "Next full moon: 12/24/2026 06:03:59",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 6.574563310710119 55 0 0 0 64 9 Z",
+      "direction": "ENE · 60°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observe Jupiter",
+          "detail": "Around 05:00 GMT+9 · \n      \n      \n      \n    S · 67.7° · well above 1 cubit above the horizon"
+        },
+        {
+          "id": "planet-mars",
+          "title": "Observe Mars",
+          "detail": "Around 05:20 GMT+9 · \n      \n      \n      \n    S · 67.3° · well above 1 cubit above the horizon"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "88.7753px",
+          "top": "111.555px"
+        },
+        {
+          "key": "venus",
+          "left": "113.551px",
+          "top": "156.375px"
+        },
+        {
+          "key": "earth",
+          "left": "135.262px",
+          "top": "167.581px"
+        },
+        {
+          "key": "mars",
+          "left": "85.2291px",
+          "top": "179.787px"
+        },
+        {
+          "key": "jupiter",
+          "left": "57.0529px",
+          "top": "170.878px"
+        },
+        {
+          "key": "saturn",
+          "left": "202.407px",
+          "top": "135.151px"
+        },
+        {
+          "key": "uranus",
+          "left": "158.835px",
+          "top": "202.37px"
+        },
+        {
+          "key": "neptune",
+          "left": "220.654px",
+          "top": "120.559px"
+        }
+      ],
+      "calendar": "b198271eed4a2fedd2c84ceb11d5c0c804771fa612550ae62c2cceb850345fa7"
+    },
+    "reset": {
+      "date": "2026-10-27",
+      "location": "berlin",
+      "moon": "Full Moon · 98%",
+      "caption": "Phase: Full Moon (98%)",
+      "nextFull": "Next full moon: 11/24/2026 17:19:56",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 52.746421570469295 55 0 0 0 64 9 Z",
+      "direction": "N · 0°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observe Jupiter",
+          "detail": "Around 06:00 GMT+1 · \n      \n      \n      \n    SSE · 47.8° · well above 1 cubit above the horizon"
+        },
+        {
+          "id": "meteor-orionids",
+          "title": "Orionids winding down",
+          "detail": "Peak was on Oct 21, 2026, according to the calendar. A bright Moon may obscure faint meteors."
+        },
+        {
+          "id": "planet-mars",
+          "title": "Observe Mars",
+          "detail": "Around 06:00 GMT+1 · \n      \n      \n      \n    SSE · 52.9° · well above 1 cubit above the horizon"
+        },
+        {
+          "id": "conjunction-mars-jupiter-2026-11-16",
+          "title": "Mars and Jupiter close together",
+          "detail": "Nov 16, 2026 · 1.2° · about 1 thumb width"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "141.443px",
+          "top": "114.397px"
+        },
+        {
+          "key": "venus",
+          "left": "148.609px",
+          "top": "139.175px"
+        },
+        {
+          "key": "earth",
+          "left": "161.876px",
+          "top": "146.273px"
+        },
+        {
+          "key": "mars",
+          "left": "104.75px",
+          "top": "185.559px"
+        },
+        {
+          "key": "jupiter",
+          "left": "59.8303px",
+          "top": "173.622px"
+        },
+        {
+          "key": "saturn",
+          "left": "202.81px",
+          "top": "133.317px"
+        },
+        {
+          "key": "uranus",
+          "left": "159.443px",
+          "top": "202.062px"
+        },
+        {
+          "key": "neptune",
+          "left": "220.674px",
+          "top": "120.168px"
+        }
+      ],
+      "calendar": "a92ca90d554c3443e96cdcca2d565395fec96b72eb74f5a1b6021ae4ddd0c2ed"
+    },
+    "dst": {
+      "spring": 23,
+      "autumn": 25
+    },
+    "calendar": {
+      "view": "month",
+      "filter": "meteor",
+      "heading": "October 2026",
+      "month": "fa296a38310b070891d13d955c91d3a4cdbfcffccdbe66b67a6db8281ecd3072",
+      "hintsBefore": [
+        "planet-jupiter",
+        "meteor-orionids",
+        "planet-mars",
+        "conjunction-mars-jupiter-2026-11-16"
+      ],
+      "hintsAfter": [
+        "planet-jupiter",
+        "meteor-orionids",
+        "planet-mars",
+        "conjunction-mars-jupiter-2026-11-16"
+      ]
+    }
+  },
+  "chromium-en-390": {
+    "initial": {
+      "date": "2026-10-27",
+      "location": "berlin",
+      "moon": "Full Moon · 98%",
+      "caption": "Phase: Full Moon (98%)",
+      "nextFull": "Next full moon: 11/24/2026 17:19:56",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 52.746421570469295 55 0 0 0 64 9 Z",
+      "direction": "N · 0°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observe Jupiter",
+          "detail": "Around 06:00 GMT+1 · \n      \n      \n      \n    SSE · 47.8° · well above 1 cubit above the horizon"
+        },
+        {
+          "id": "meteor-orionids",
+          "title": "Orionids winding down",
+          "detail": "Peak was on Oct 21, 2026, according to the calendar. A bright Moon may obscure faint meteors."
+        },
+        {
+          "id": "planet-mars",
+          "title": "Observe Mars",
+          "detail": "Around 06:00 GMT+1 · \n      \n      \n      \n    SSE · 52.9° · well above 1 cubit above the horizon"
+        },
+        {
+          "id": "conjunction-mars-jupiter-2026-11-16",
+          "title": "Mars and Jupiter close together",
+          "detail": "Nov 16, 2026 · 1.2° · about 1 thumb width"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "184.491px",
+          "top": "149.213px"
+        },
+        {
+          "key": "venus",
+          "left": "193.837px",
+          "top": "181.532px"
+        },
+        {
+          "key": "earth",
+          "left": "211.142px",
+          "top": "190.791px"
+        },
+        {
+          "key": "mars",
+          "left": "136.631px",
+          "top": "242.034px"
+        },
+        {
+          "key": "jupiter",
+          "left": "78.0396px",
+          "top": "226.464px"
+        },
+        {
+          "key": "saturn",
+          "left": "264.535px",
+          "top": "173.892px"
+        },
+        {
+          "key": "uranus",
+          "left": "207.97px",
+          "top": "263.559px"
+        },
+        {
+          "key": "neptune",
+          "left": "287.835px",
+          "top": "156.741px"
+        }
+      ],
+      "calendar": "a92ca90d554c3443e96cdcca2d565395fec96b72eb74f5a1b6021ae4ddd0c2ed"
+    },
+    "december": {
+      "date": "2026-12-01",
+      "location": "berlin",
+      "moon": "Waning Gibbous · 56%",
+      "caption": "Phase: Waning Gibbous (56%)",
+      "nextFull": "Next full moon: 12/24/2026 06:03:59",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 6.574563310710119 55 0 0 0 64 9 Z",
+      "direction": "WNW · 292°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observe Jupiter",
+          "detail": "Around 05:20 GMT+1 · \n      \n      \n      \n    S · 50.8° · well above 1 cubit above the horizon"
+        },
+        {
+          "id": "planet-venus",
+          "title": "Observe Venus",
+          "detail": "Around 07:00 GMT+1 · \n      \n      \n      \n    SE · 21.9° · about 1 hand span high above the horizon"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "115.794px",
+          "top": "145.507px"
+        },
+        {
+          "key": "venus",
+          "left": "148.11px",
+          "top": "203.967px"
+        },
+        {
+          "key": "earth",
+          "left": "176.429px",
+          "top": "218.584px"
+        },
+        {
+          "key": "mars",
+          "left": "111.168px",
+          "top": "234.505px"
+        },
+        {
+          "key": "jupiter",
+          "left": "74.4168px",
+          "top": "222.885px"
+        },
+        {
+          "key": "saturn",
+          "left": "264.009px",
+          "top": "176.284px"
+        },
+        {
+          "key": "uranus",
+          "left": "207.175px",
+          "top": "263.961px"
+        },
+        {
+          "key": "neptune",
+          "left": "287.809px",
+          "top": "157.251px"
+        }
+      ],
+      "calendar": "b198271eed4a2fedd2c84ceb11d5c0c804771fa612550ae62c2cceb850345fa7"
+    },
+    "tokyo": {
+      "date": "2026-12-01",
+      "location": "tokyo",
+      "moon": "Waning Gibbous · 56%",
+      "caption": "Phase: Waning Gibbous (56%)",
+      "nextFull": "Next full moon: 12/24/2026 06:03:59",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 6.574563310710119 55 0 0 0 64 9 Z",
+      "direction": "ENE · 60°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observe Jupiter",
+          "detail": "Around 05:00 GMT+9 · \n      \n      \n      \n    S · 67.7° · well above 1 cubit above the horizon"
+        },
+        {
+          "id": "planet-mars",
+          "title": "Observe Mars",
+          "detail": "Around 05:20 GMT+9 · \n      \n      \n      \n    S · 67.3° · well above 1 cubit above the horizon"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "115.794px",
+          "top": "145.507px"
+        },
+        {
+          "key": "venus",
+          "left": "148.11px",
+          "top": "203.967px"
+        },
+        {
+          "key": "earth",
+          "left": "176.429px",
+          "top": "218.584px"
+        },
+        {
+          "key": "mars",
+          "left": "111.168px",
+          "top": "234.505px"
+        },
+        {
+          "key": "jupiter",
+          "left": "74.4168px",
+          "top": "222.885px"
+        },
+        {
+          "key": "saturn",
+          "left": "264.009px",
+          "top": "176.284px"
+        },
+        {
+          "key": "uranus",
+          "left": "207.175px",
+          "top": "263.961px"
+        },
+        {
+          "key": "neptune",
+          "left": "287.809px",
+          "top": "157.251px"
+        }
+      ],
+      "calendar": "b198271eed4a2fedd2c84ceb11d5c0c804771fa612550ae62c2cceb850345fa7"
+    },
+    "reset": {
+      "date": "2026-10-27",
+      "location": "berlin",
+      "moon": "Full Moon · 98%",
+      "caption": "Phase: Full Moon (98%)",
+      "nextFull": "Next full moon: 11/24/2026 17:19:56",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 52.746421570469295 55 0 0 0 64 9 Z",
+      "direction": "N · 0°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observe Jupiter",
+          "detail": "Around 06:00 GMT+1 · \n      \n      \n      \n    SSE · 47.8° · well above 1 cubit above the horizon"
+        },
+        {
+          "id": "meteor-orionids",
+          "title": "Orionids winding down",
+          "detail": "Peak was on Oct 21, 2026, according to the calendar. A bright Moon may obscure faint meteors."
+        },
+        {
+          "id": "planet-mars",
+          "title": "Observe Mars",
+          "detail": "Around 06:00 GMT+1 · \n      \n      \n      \n    SSE · 52.9° · well above 1 cubit above the horizon"
+        },
+        {
+          "id": "conjunction-mars-jupiter-2026-11-16",
+          "title": "Mars and Jupiter close together",
+          "detail": "Nov 16, 2026 · 1.2° · about 1 thumb width"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "184.491px",
+          "top": "149.213px"
+        },
+        {
+          "key": "venus",
+          "left": "193.837px",
+          "top": "181.532px"
+        },
+        {
+          "key": "earth",
+          "left": "211.142px",
+          "top": "190.791px"
+        },
+        {
+          "key": "mars",
+          "left": "136.631px",
+          "top": "242.034px"
+        },
+        {
+          "key": "jupiter",
+          "left": "78.0396px",
+          "top": "226.464px"
+        },
+        {
+          "key": "saturn",
+          "left": "264.535px",
+          "top": "173.892px"
+        },
+        {
+          "key": "uranus",
+          "left": "207.97px",
+          "top": "263.559px"
+        },
+        {
+          "key": "neptune",
+          "left": "287.835px",
+          "top": "156.741px"
+        }
+      ],
+      "calendar": "a92ca90d554c3443e96cdcca2d565395fec96b72eb74f5a1b6021ae4ddd0c2ed"
+    },
+    "dst": {
+      "spring": 23,
+      "autumn": 25
+    },
+    "calendar": {
+      "view": "month",
+      "filter": "meteor",
+      "heading": "October 2026",
+      "month": "fa296a38310b070891d13d955c91d3a4cdbfcffccdbe66b67a6db8281ecd3072",
+      "hintsBefore": [
+        "planet-jupiter",
+        "meteor-orionids",
+        "planet-mars",
+        "conjunction-mars-jupiter-2026-11-16"
+      ],
+      "hintsAfter": [
+        "planet-jupiter",
+        "meteor-orionids",
+        "planet-mars",
+        "conjunction-mars-jupiter-2026-11-16"
+      ]
+    }
+  },
+  "chromium-en-1280": {
+    "initial": {
+      "date": "2026-10-27",
+      "location": "berlin",
+      "moon": "Full Moon · 98%",
+      "caption": "Phase: Full Moon (98%)",
+      "nextFull": "Next full moon: 11/24/2026 17:19:56",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 52.746421570469295 55 0 0 0 64 9 Z",
+      "direction": "N · 0°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observe Jupiter",
+          "detail": "Around 06:00 GMT+1 · \n      \n      \n      \n    SSE · 47.8° · well above 1 cubit above the horizon"
+        },
+        {
+          "id": "meteor-orionids",
+          "title": "Orionids winding down",
+          "detail": "Peak was on Oct 21, 2026, according to the calendar. A bright Moon may obscure faint meteors."
+        },
+        {
+          "id": "planet-mars",
+          "title": "Observe Mars",
+          "detail": "Around 06:00 GMT+1 · \n      \n      \n      \n    SSE · 52.9° · well above 1 cubit above the horizon"
+        },
+        {
+          "id": "conjunction-mars-jupiter-2026-11-16",
+          "title": "Mars and Jupiter close together",
+          "detail": "Nov 16, 2026 · 1.2° · about 1 thumb width"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "442.778px",
+          "top": "358.112px"
+        },
+        {
+          "key": "venus",
+          "left": "465.21px",
+          "top": "435.677px"
+        },
+        {
+          "key": "earth",
+          "left": "506.741px",
+          "top": "457.898px"
+        },
+        {
+          "key": "mars",
+          "left": "327.913px",
+          "top": "580.882px"
+        },
+        {
+          "key": "jupiter",
+          "left": "187.295px",
+          "top": "543.513px"
+        },
+        {
+          "key": "saturn",
+          "left": "634.883px",
+          "top": "417.34px"
+        },
+        {
+          "key": "uranus",
+          "left": "499.127px",
+          "top": "632.543px"
+        },
+        {
+          "key": "neptune",
+          "left": "690.805px",
+          "top": "376.179px"
+        }
+      ],
+      "calendar": "a92ca90d554c3443e96cdcca2d565395fec96b72eb74f5a1b6021ae4ddd0c2ed"
+    },
+    "december": {
+      "date": "2026-12-01",
+      "location": "berlin",
+      "moon": "Waning Gibbous · 56%",
+      "caption": "Phase: Waning Gibbous (56%)",
+      "nextFull": "Next full moon: 12/24/2026 06:03:59",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 6.574563310710119 55 0 0 0 64 9 Z",
+      "direction": "WNW · 292°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observe Jupiter",
+          "detail": "Around 05:20 GMT+1 · \n      \n      \n      \n    S · 50.8° · well above 1 cubit above the horizon"
+        },
+        {
+          "id": "planet-venus",
+          "title": "Observe Venus",
+          "detail": "Around 07:00 GMT+1 · \n      \n      \n      \n    SE · 21.9° · about 1 hand span high above the horizon"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "277.905px",
+          "top": "349.216px"
+        },
+        {
+          "key": "venus",
+          "left": "355.463px",
+          "top": "489.521px"
+        },
+        {
+          "key": "earth",
+          "left": "423.429px",
+          "top": "524.602px"
+        },
+        {
+          "key": "mars",
+          "left": "266.804px",
+          "top": "562.812px"
+        },
+        {
+          "key": "jupiter",
+          "left": "178.6px",
+          "top": "534.923px"
+        },
+        {
+          "key": "saturn",
+          "left": "633.623px",
+          "top": "423.082px"
+        },
+        {
+          "key": "uranus",
+          "left": "497.221px",
+          "top": "633.508px"
+        },
+        {
+          "key": "neptune",
+          "left": "690.742px",
+          "top": "377.403px"
+        }
+      ],
+      "calendar": "b198271eed4a2fedd2c84ceb11d5c0c804771fa612550ae62c2cceb850345fa7"
+    },
+    "tokyo": {
+      "date": "2026-12-01",
+      "location": "tokyo",
+      "moon": "Waning Gibbous · 56%",
+      "caption": "Phase: Waning Gibbous (56%)",
+      "nextFull": "Next full moon: 12/24/2026 06:03:59",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 6.574563310710119 55 0 0 0 64 9 Z",
+      "direction": "ENE · 60°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observe Jupiter",
+          "detail": "Around 05:00 GMT+9 · \n      \n      \n      \n    S · 67.7° · well above 1 cubit above the horizon"
+        },
+        {
+          "id": "planet-mars",
+          "title": "Observe Mars",
+          "detail": "Around 05:20 GMT+9 · \n      \n      \n      \n    S · 67.3° · well above 1 cubit above the horizon"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "277.905px",
+          "top": "349.216px"
+        },
+        {
+          "key": "venus",
+          "left": "355.463px",
+          "top": "489.521px"
+        },
+        {
+          "key": "earth",
+          "left": "423.429px",
+          "top": "524.602px"
+        },
+        {
+          "key": "mars",
+          "left": "266.804px",
+          "top": "562.812px"
+        },
+        {
+          "key": "jupiter",
+          "left": "178.6px",
+          "top": "534.923px"
+        },
+        {
+          "key": "saturn",
+          "left": "633.623px",
+          "top": "423.082px"
+        },
+        {
+          "key": "uranus",
+          "left": "497.221px",
+          "top": "633.508px"
+        },
+        {
+          "key": "neptune",
+          "left": "690.742px",
+          "top": "377.403px"
+        }
+      ],
+      "calendar": "b198271eed4a2fedd2c84ceb11d5c0c804771fa612550ae62c2cceb850345fa7"
+    },
+    "reset": {
+      "date": "2026-10-27",
+      "location": "berlin",
+      "moon": "Full Moon · 98%",
+      "caption": "Phase: Full Moon (98%)",
+      "nextFull": "Next full moon: 11/24/2026 17:19:56",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 52.746421570469295 55 0 0 0 64 9 Z",
+      "direction": "N · 0°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observe Jupiter",
+          "detail": "Around 06:00 GMT+1 · \n      \n      \n      \n    SSE · 47.8° · well above 1 cubit above the horizon"
+        },
+        {
+          "id": "meteor-orionids",
+          "title": "Orionids winding down",
+          "detail": "Peak was on Oct 21, 2026, according to the calendar. A bright Moon may obscure faint meteors."
+        },
+        {
+          "id": "planet-mars",
+          "title": "Observe Mars",
+          "detail": "Around 06:00 GMT+1 · \n      \n      \n      \n    SSE · 52.9° · well above 1 cubit above the horizon"
+        },
+        {
+          "id": "conjunction-mars-jupiter-2026-11-16",
+          "title": "Mars and Jupiter close together",
+          "detail": "Nov 16, 2026 · 1.2° · about 1 thumb width"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "442.778px",
+          "top": "358.112px"
+        },
+        {
+          "key": "venus",
+          "left": "465.21px",
+          "top": "435.677px"
+        },
+        {
+          "key": "earth",
+          "left": "506.741px",
+          "top": "457.898px"
+        },
+        {
+          "key": "mars",
+          "left": "327.913px",
+          "top": "580.882px"
+        },
+        {
+          "key": "jupiter",
+          "left": "187.295px",
+          "top": "543.513px"
+        },
+        {
+          "key": "saturn",
+          "left": "634.883px",
+          "top": "417.34px"
+        },
+        {
+          "key": "uranus",
+          "left": "499.127px",
+          "top": "632.543px"
+        },
+        {
+          "key": "neptune",
+          "left": "690.805px",
+          "top": "376.179px"
+        }
+      ],
+      "calendar": "a92ca90d554c3443e96cdcca2d565395fec96b72eb74f5a1b6021ae4ddd0c2ed"
+    },
+    "dst": {
+      "spring": 23,
+      "autumn": 25
+    },
+    "calendar": {
+      "view": "month",
+      "filter": "meteor",
+      "heading": "October 2026",
+      "month": "fa296a38310b070891d13d955c91d3a4cdbfcffccdbe66b67a6db8281ecd3072",
+      "hintsBefore": [
+        "planet-jupiter",
+        "meteor-orionids",
+        "planet-mars",
+        "conjunction-mars-jupiter-2026-11-16"
+      ],
+      "hintsAfter": [
+        "planet-jupiter",
+        "meteor-orionids",
+        "planet-mars",
+        "conjunction-mars-jupiter-2026-11-16"
+      ]
+    }
+  },
+  "chromium-fr-320": {
+    "initial": {
+      "date": "2026-10-27",
+      "location": "berlin",
+      "moon": "Pleine lune · 98%",
+      "caption": "Phase: Pleine lune (98%)",
+      "nextFull": "Prochaine pleine lune: 24/11/2026 17:19:56",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 52.746421570469295 55 0 0 0 64 9 Z",
+      "direction": "N · 0°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observer Jupiter",
+          "detail": "Vers 06:00 UTC+1 · \n      \n      \n      \n    SSE · 47,8° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        },
+        {
+          "id": "meteor-orionids",
+          "title": "Orionides en déclin",
+          "detail": "Le maximum était le 21 oct. 2026, selon le calendrier. Une Lune brillante peut masquer les météores faibles."
+        },
+        {
+          "id": "planet-mars",
+          "title": "Observer Mars",
+          "detail": "Vers 06:00 UTC+1 · \n      \n      \n      \n    SSE · 52,9° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        },
+        {
+          "id": "conjunction-mars-jupiter-2026-11-16",
+          "title": "Mars et Jupiter proches dans le ciel",
+          "detail": "16 nov. 2026 · 1,2° · env. 1 pouce"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "141.443px",
+          "top": "114.397px"
+        },
+        {
+          "key": "venus",
+          "left": "148.609px",
+          "top": "139.175px"
+        },
+        {
+          "key": "earth",
+          "left": "161.876px",
+          "top": "146.273px"
+        },
+        {
+          "key": "mars",
+          "left": "104.75px",
+          "top": "185.559px"
+        },
+        {
+          "key": "jupiter",
+          "left": "59.8303px",
+          "top": "173.622px"
+        },
+        {
+          "key": "saturn",
+          "left": "202.81px",
+          "top": "133.317px"
+        },
+        {
+          "key": "uranus",
+          "left": "159.443px",
+          "top": "202.062px"
+        },
+        {
+          "key": "neptune",
+          "left": "220.674px",
+          "top": "120.168px"
+        }
+      ],
+      "calendar": "3e3443f5276252563be8bb64755bef8f3863965df8c35603f34cde63ccf68ad2"
+    },
+    "december": {
+      "date": "2026-12-01",
+      "location": "berlin",
+      "moon": "Gibbeuse décroissante · 56%",
+      "caption": "Phase: Gibbeuse décroissante (56%)",
+      "nextFull": "Prochaine pleine lune: 24/12/2026 06:03:59",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 6.574563310710119 55 0 0 0 64 9 Z",
+      "direction": "ONO · 292°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observer Jupiter",
+          "detail": "Vers 05:20 UTC+1 · \n      \n      \n      \n    S · 50,8° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        },
+        {
+          "id": "planet-venus",
+          "title": "Observer Vénus",
+          "detail": "Vers 07:00 UTC+1 · \n      \n      \n      \n    SE · 21,9° · env. 1 empan au-dessus de l’horizon"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "88.7753px",
+          "top": "111.555px"
+        },
+        {
+          "key": "venus",
+          "left": "113.551px",
+          "top": "156.375px"
+        },
+        {
+          "key": "earth",
+          "left": "135.262px",
+          "top": "167.581px"
+        },
+        {
+          "key": "mars",
+          "left": "85.2291px",
+          "top": "179.787px"
+        },
+        {
+          "key": "jupiter",
+          "left": "57.0529px",
+          "top": "170.878px"
+        },
+        {
+          "key": "saturn",
+          "left": "202.407px",
+          "top": "135.151px"
+        },
+        {
+          "key": "uranus",
+          "left": "158.835px",
+          "top": "202.37px"
+        },
+        {
+          "key": "neptune",
+          "left": "220.654px",
+          "top": "120.559px"
+        }
+      ],
+      "calendar": "55a9d328cf11f3b39424b2fd4a2039d55b3bbebe866e35a400d2e80994ab96e6"
+    },
+    "tokyo": {
+      "date": "2026-12-01",
+      "location": "tokyo",
+      "moon": "Gibbeuse décroissante · 56%",
+      "caption": "Phase: Gibbeuse décroissante (56%)",
+      "nextFull": "Prochaine pleine lune: 24/12/2026 06:03:59",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 6.574563310710119 55 0 0 0 64 9 Z",
+      "direction": "ENE · 60°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observer Jupiter",
+          "detail": "Vers 05:00 UTC+9 · \n      \n      \n      \n    S · 67,7° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        },
+        {
+          "id": "planet-mars",
+          "title": "Observer Mars",
+          "detail": "Vers 05:20 UTC+9 · \n      \n      \n      \n    S · 67,3° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "88.7753px",
+          "top": "111.555px"
+        },
+        {
+          "key": "venus",
+          "left": "113.551px",
+          "top": "156.375px"
+        },
+        {
+          "key": "earth",
+          "left": "135.262px",
+          "top": "167.581px"
+        },
+        {
+          "key": "mars",
+          "left": "85.2291px",
+          "top": "179.787px"
+        },
+        {
+          "key": "jupiter",
+          "left": "57.0529px",
+          "top": "170.878px"
+        },
+        {
+          "key": "saturn",
+          "left": "202.407px",
+          "top": "135.151px"
+        },
+        {
+          "key": "uranus",
+          "left": "158.835px",
+          "top": "202.37px"
+        },
+        {
+          "key": "neptune",
+          "left": "220.654px",
+          "top": "120.559px"
+        }
+      ],
+      "calendar": "55a9d328cf11f3b39424b2fd4a2039d55b3bbebe866e35a400d2e80994ab96e6"
+    },
+    "reset": {
+      "date": "2026-10-27",
+      "location": "berlin",
+      "moon": "Pleine lune · 98%",
+      "caption": "Phase: Pleine lune (98%)",
+      "nextFull": "Prochaine pleine lune: 24/11/2026 17:19:56",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 52.746421570469295 55 0 0 0 64 9 Z",
+      "direction": "N · 0°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observer Jupiter",
+          "detail": "Vers 06:00 UTC+1 · \n      \n      \n      \n    SSE · 47,8° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        },
+        {
+          "id": "meteor-orionids",
+          "title": "Orionides en déclin",
+          "detail": "Le maximum était le 21 oct. 2026, selon le calendrier. Une Lune brillante peut masquer les météores faibles."
+        },
+        {
+          "id": "planet-mars",
+          "title": "Observer Mars",
+          "detail": "Vers 06:00 UTC+1 · \n      \n      \n      \n    SSE · 52,9° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        },
+        {
+          "id": "conjunction-mars-jupiter-2026-11-16",
+          "title": "Mars et Jupiter proches dans le ciel",
+          "detail": "16 nov. 2026 · 1,2° · env. 1 pouce"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "141.443px",
+          "top": "114.397px"
+        },
+        {
+          "key": "venus",
+          "left": "148.609px",
+          "top": "139.175px"
+        },
+        {
+          "key": "earth",
+          "left": "161.876px",
+          "top": "146.273px"
+        },
+        {
+          "key": "mars",
+          "left": "104.75px",
+          "top": "185.559px"
+        },
+        {
+          "key": "jupiter",
+          "left": "59.8303px",
+          "top": "173.622px"
+        },
+        {
+          "key": "saturn",
+          "left": "202.81px",
+          "top": "133.317px"
+        },
+        {
+          "key": "uranus",
+          "left": "159.443px",
+          "top": "202.062px"
+        },
+        {
+          "key": "neptune",
+          "left": "220.674px",
+          "top": "120.168px"
+        }
+      ],
+      "calendar": "3e3443f5276252563be8bb64755bef8f3863965df8c35603f34cde63ccf68ad2"
+    },
+    "dst": {
+      "spring": 23,
+      "autumn": 25
+    },
+    "calendar": {
+      "view": "month",
+      "filter": "meteor",
+      "heading": "octobre 2026",
+      "month": "86794e5ef41e50c750dc15033423a156ca4f2e0b0938d2a4f11d86d7f7d96e8d",
+      "hintsBefore": [
+        "planet-jupiter",
+        "meteor-orionids",
+        "planet-mars",
+        "conjunction-mars-jupiter-2026-11-16"
+      ],
+      "hintsAfter": [
+        "planet-jupiter",
+        "meteor-orionids",
+        "planet-mars",
+        "conjunction-mars-jupiter-2026-11-16"
+      ]
+    }
+  },
+  "chromium-fr-390": {
+    "initial": {
+      "date": "2026-10-27",
+      "location": "berlin",
+      "moon": "Pleine lune · 98%",
+      "caption": "Phase: Pleine lune (98%)",
+      "nextFull": "Prochaine pleine lune: 24/11/2026 17:19:56",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 52.746421570469295 55 0 0 0 64 9 Z",
+      "direction": "N · 0°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observer Jupiter",
+          "detail": "Vers 06:00 UTC+1 · \n      \n      \n      \n    SSE · 47,8° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        },
+        {
+          "id": "meteor-orionids",
+          "title": "Orionides en déclin",
+          "detail": "Le maximum était le 21 oct. 2026, selon le calendrier. Une Lune brillante peut masquer les météores faibles."
+        },
+        {
+          "id": "planet-mars",
+          "title": "Observer Mars",
+          "detail": "Vers 06:00 UTC+1 · \n      \n      \n      \n    SSE · 52,9° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        },
+        {
+          "id": "conjunction-mars-jupiter-2026-11-16",
+          "title": "Mars et Jupiter proches dans le ciel",
+          "detail": "16 nov. 2026 · 1,2° · env. 1 pouce"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "184.491px",
+          "top": "149.213px"
+        },
+        {
+          "key": "venus",
+          "left": "193.837px",
+          "top": "181.532px"
+        },
+        {
+          "key": "earth",
+          "left": "211.142px",
+          "top": "190.791px"
+        },
+        {
+          "key": "mars",
+          "left": "136.631px",
+          "top": "242.034px"
+        },
+        {
+          "key": "jupiter",
+          "left": "78.0396px",
+          "top": "226.464px"
+        },
+        {
+          "key": "saturn",
+          "left": "264.535px",
+          "top": "173.892px"
+        },
+        {
+          "key": "uranus",
+          "left": "207.97px",
+          "top": "263.559px"
+        },
+        {
+          "key": "neptune",
+          "left": "287.835px",
+          "top": "156.741px"
+        }
+      ],
+      "calendar": "3e3443f5276252563be8bb64755bef8f3863965df8c35603f34cde63ccf68ad2"
+    },
+    "december": {
+      "date": "2026-12-01",
+      "location": "berlin",
+      "moon": "Gibbeuse décroissante · 56%",
+      "caption": "Phase: Gibbeuse décroissante (56%)",
+      "nextFull": "Prochaine pleine lune: 24/12/2026 06:03:59",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 6.574563310710119 55 0 0 0 64 9 Z",
+      "direction": "ONO · 292°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observer Jupiter",
+          "detail": "Vers 05:20 UTC+1 · \n      \n      \n      \n    S · 50,8° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        },
+        {
+          "id": "planet-venus",
+          "title": "Observer Vénus",
+          "detail": "Vers 07:00 UTC+1 · \n      \n      \n      \n    SE · 21,9° · env. 1 empan au-dessus de l’horizon"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "115.794px",
+          "top": "145.507px"
+        },
+        {
+          "key": "venus",
+          "left": "148.11px",
+          "top": "203.967px"
+        },
+        {
+          "key": "earth",
+          "left": "176.429px",
+          "top": "218.584px"
+        },
+        {
+          "key": "mars",
+          "left": "111.168px",
+          "top": "234.505px"
+        },
+        {
+          "key": "jupiter",
+          "left": "74.4168px",
+          "top": "222.885px"
+        },
+        {
+          "key": "saturn",
+          "left": "264.009px",
+          "top": "176.284px"
+        },
+        {
+          "key": "uranus",
+          "left": "207.175px",
+          "top": "263.961px"
+        },
+        {
+          "key": "neptune",
+          "left": "287.809px",
+          "top": "157.251px"
+        }
+      ],
+      "calendar": "55a9d328cf11f3b39424b2fd4a2039d55b3bbebe866e35a400d2e80994ab96e6"
+    },
+    "tokyo": {
+      "date": "2026-12-01",
+      "location": "tokyo",
+      "moon": "Gibbeuse décroissante · 56%",
+      "caption": "Phase: Gibbeuse décroissante (56%)",
+      "nextFull": "Prochaine pleine lune: 24/12/2026 06:03:59",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 6.574563310710119 55 0 0 0 64 9 Z",
+      "direction": "ENE · 60°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observer Jupiter",
+          "detail": "Vers 05:00 UTC+9 · \n      \n      \n      \n    S · 67,7° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        },
+        {
+          "id": "planet-mars",
+          "title": "Observer Mars",
+          "detail": "Vers 05:20 UTC+9 · \n      \n      \n      \n    S · 67,3° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "115.794px",
+          "top": "145.507px"
+        },
+        {
+          "key": "venus",
+          "left": "148.11px",
+          "top": "203.967px"
+        },
+        {
+          "key": "earth",
+          "left": "176.429px",
+          "top": "218.584px"
+        },
+        {
+          "key": "mars",
+          "left": "111.168px",
+          "top": "234.505px"
+        },
+        {
+          "key": "jupiter",
+          "left": "74.4168px",
+          "top": "222.885px"
+        },
+        {
+          "key": "saturn",
+          "left": "264.009px",
+          "top": "176.284px"
+        },
+        {
+          "key": "uranus",
+          "left": "207.175px",
+          "top": "263.961px"
+        },
+        {
+          "key": "neptune",
+          "left": "287.809px",
+          "top": "157.251px"
+        }
+      ],
+      "calendar": "55a9d328cf11f3b39424b2fd4a2039d55b3bbebe866e35a400d2e80994ab96e6"
+    },
+    "reset": {
+      "date": "2026-10-27",
+      "location": "berlin",
+      "moon": "Pleine lune · 98%",
+      "caption": "Phase: Pleine lune (98%)",
+      "nextFull": "Prochaine pleine lune: 24/11/2026 17:19:56",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 52.746421570469295 55 0 0 0 64 9 Z",
+      "direction": "N · 0°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observer Jupiter",
+          "detail": "Vers 06:00 UTC+1 · \n      \n      \n      \n    SSE · 47,8° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        },
+        {
+          "id": "meteor-orionids",
+          "title": "Orionides en déclin",
+          "detail": "Le maximum était le 21 oct. 2026, selon le calendrier. Une Lune brillante peut masquer les météores faibles."
+        },
+        {
+          "id": "planet-mars",
+          "title": "Observer Mars",
+          "detail": "Vers 06:00 UTC+1 · \n      \n      \n      \n    SSE · 52,9° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        },
+        {
+          "id": "conjunction-mars-jupiter-2026-11-16",
+          "title": "Mars et Jupiter proches dans le ciel",
+          "detail": "16 nov. 2026 · 1,2° · env. 1 pouce"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "184.491px",
+          "top": "149.213px"
+        },
+        {
+          "key": "venus",
+          "left": "193.837px",
+          "top": "181.532px"
+        },
+        {
+          "key": "earth",
+          "left": "211.142px",
+          "top": "190.791px"
+        },
+        {
+          "key": "mars",
+          "left": "136.631px",
+          "top": "242.034px"
+        },
+        {
+          "key": "jupiter",
+          "left": "78.0396px",
+          "top": "226.464px"
+        },
+        {
+          "key": "saturn",
+          "left": "264.535px",
+          "top": "173.892px"
+        },
+        {
+          "key": "uranus",
+          "left": "207.97px",
+          "top": "263.559px"
+        },
+        {
+          "key": "neptune",
+          "left": "287.835px",
+          "top": "156.741px"
+        }
+      ],
+      "calendar": "3e3443f5276252563be8bb64755bef8f3863965df8c35603f34cde63ccf68ad2"
+    },
+    "dst": {
+      "spring": 23,
+      "autumn": 25
+    },
+    "calendar": {
+      "view": "month",
+      "filter": "meteor",
+      "heading": "octobre 2026",
+      "month": "86794e5ef41e50c750dc15033423a156ca4f2e0b0938d2a4f11d86d7f7d96e8d",
+      "hintsBefore": [
+        "planet-jupiter",
+        "meteor-orionids",
+        "planet-mars",
+        "conjunction-mars-jupiter-2026-11-16"
+      ],
+      "hintsAfter": [
+        "planet-jupiter",
+        "meteor-orionids",
+        "planet-mars",
+        "conjunction-mars-jupiter-2026-11-16"
+      ]
+    }
+  },
+  "chromium-fr-1280": {
+    "initial": {
+      "date": "2026-10-27",
+      "location": "berlin",
+      "moon": "Pleine lune · 98%",
+      "caption": "Phase: Pleine lune (98%)",
+      "nextFull": "Prochaine pleine lune: 24/11/2026 17:19:56",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 52.746421570469295 55 0 0 0 64 9 Z",
+      "direction": "N · 0°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observer Jupiter",
+          "detail": "Vers 06:00 UTC+1 · \n      \n      \n      \n    SSE · 47,8° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        },
+        {
+          "id": "meteor-orionids",
+          "title": "Orionides en déclin",
+          "detail": "Le maximum était le 21 oct. 2026, selon le calendrier. Une Lune brillante peut masquer les météores faibles."
+        },
+        {
+          "id": "planet-mars",
+          "title": "Observer Mars",
+          "detail": "Vers 06:00 UTC+1 · \n      \n      \n      \n    SSE · 52,9° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        },
+        {
+          "id": "conjunction-mars-jupiter-2026-11-16",
+          "title": "Mars et Jupiter proches dans le ciel",
+          "detail": "16 nov. 2026 · 1,2° · env. 1 pouce"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "442.778px",
+          "top": "358.112px"
+        },
+        {
+          "key": "venus",
+          "left": "465.21px",
+          "top": "435.677px"
+        },
+        {
+          "key": "earth",
+          "left": "506.741px",
+          "top": "457.898px"
+        },
+        {
+          "key": "mars",
+          "left": "327.913px",
+          "top": "580.882px"
+        },
+        {
+          "key": "jupiter",
+          "left": "187.295px",
+          "top": "543.513px"
+        },
+        {
+          "key": "saturn",
+          "left": "634.883px",
+          "top": "417.34px"
+        },
+        {
+          "key": "uranus",
+          "left": "499.127px",
+          "top": "632.543px"
+        },
+        {
+          "key": "neptune",
+          "left": "690.805px",
+          "top": "376.179px"
+        }
+      ],
+      "calendar": "3e3443f5276252563be8bb64755bef8f3863965df8c35603f34cde63ccf68ad2"
+    },
+    "december": {
+      "date": "2026-12-01",
+      "location": "berlin",
+      "moon": "Gibbeuse décroissante · 56%",
+      "caption": "Phase: Gibbeuse décroissante (56%)",
+      "nextFull": "Prochaine pleine lune: 24/12/2026 06:03:59",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 6.574563310710119 55 0 0 0 64 9 Z",
+      "direction": "ONO · 292°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observer Jupiter",
+          "detail": "Vers 05:20 UTC+1 · \n      \n      \n      \n    S · 50,8° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        },
+        {
+          "id": "planet-venus",
+          "title": "Observer Vénus",
+          "detail": "Vers 07:00 UTC+1 · \n      \n      \n      \n    SE · 21,9° · env. 1 empan au-dessus de l’horizon"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "277.905px",
+          "top": "349.216px"
+        },
+        {
+          "key": "venus",
+          "left": "355.463px",
+          "top": "489.521px"
+        },
+        {
+          "key": "earth",
+          "left": "423.429px",
+          "top": "524.602px"
+        },
+        {
+          "key": "mars",
+          "left": "266.804px",
+          "top": "562.812px"
+        },
+        {
+          "key": "jupiter",
+          "left": "178.6px",
+          "top": "534.923px"
+        },
+        {
+          "key": "saturn",
+          "left": "633.623px",
+          "top": "423.082px"
+        },
+        {
+          "key": "uranus",
+          "left": "497.221px",
+          "top": "633.508px"
+        },
+        {
+          "key": "neptune",
+          "left": "690.742px",
+          "top": "377.403px"
+        }
+      ],
+      "calendar": "55a9d328cf11f3b39424b2fd4a2039d55b3bbebe866e35a400d2e80994ab96e6"
+    },
+    "tokyo": {
+      "date": "2026-12-01",
+      "location": "tokyo",
+      "moon": "Gibbeuse décroissante · 56%",
+      "caption": "Phase: Gibbeuse décroissante (56%)",
+      "nextFull": "Prochaine pleine lune: 24/12/2026 06:03:59",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 6.574563310710119 55 0 0 0 64 9 Z",
+      "direction": "ENE · 60°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observer Jupiter",
+          "detail": "Vers 05:00 UTC+9 · \n      \n      \n      \n    S · 67,7° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        },
+        {
+          "id": "planet-mars",
+          "title": "Observer Mars",
+          "detail": "Vers 05:20 UTC+9 · \n      \n      \n      \n    S · 67,3° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "277.905px",
+          "top": "349.216px"
+        },
+        {
+          "key": "venus",
+          "left": "355.463px",
+          "top": "489.521px"
+        },
+        {
+          "key": "earth",
+          "left": "423.429px",
+          "top": "524.602px"
+        },
+        {
+          "key": "mars",
+          "left": "266.804px",
+          "top": "562.812px"
+        },
+        {
+          "key": "jupiter",
+          "left": "178.6px",
+          "top": "534.923px"
+        },
+        {
+          "key": "saturn",
+          "left": "633.623px",
+          "top": "423.082px"
+        },
+        {
+          "key": "uranus",
+          "left": "497.221px",
+          "top": "633.508px"
+        },
+        {
+          "key": "neptune",
+          "left": "690.742px",
+          "top": "377.403px"
+        }
+      ],
+      "calendar": "55a9d328cf11f3b39424b2fd4a2039d55b3bbebe866e35a400d2e80994ab96e6"
+    },
+    "reset": {
+      "date": "2026-10-27",
+      "location": "berlin",
+      "moon": "Pleine lune · 98%",
+      "caption": "Phase: Pleine lune (98%)",
+      "nextFull": "Prochaine pleine lune: 24/11/2026 17:19:56",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 52.746421570469295 55 0 0 0 64 9 Z",
+      "direction": "N · 0°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observer Jupiter",
+          "detail": "Vers 06:00 UTC+1 · \n      \n      \n      \n    SSE · 47,8° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        },
+        {
+          "id": "meteor-orionids",
+          "title": "Orionides en déclin",
+          "detail": "Le maximum était le 21 oct. 2026, selon le calendrier. Une Lune brillante peut masquer les météores faibles."
+        },
+        {
+          "id": "planet-mars",
+          "title": "Observer Mars",
+          "detail": "Vers 06:00 UTC+1 · \n      \n      \n      \n    SSE · 52,9° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        },
+        {
+          "id": "conjunction-mars-jupiter-2026-11-16",
+          "title": "Mars et Jupiter proches dans le ciel",
+          "detail": "16 nov. 2026 · 1,2° · env. 1 pouce"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "442.778px",
+          "top": "358.112px"
+        },
+        {
+          "key": "venus",
+          "left": "465.21px",
+          "top": "435.677px"
+        },
+        {
+          "key": "earth",
+          "left": "506.741px",
+          "top": "457.898px"
+        },
+        {
+          "key": "mars",
+          "left": "327.913px",
+          "top": "580.882px"
+        },
+        {
+          "key": "jupiter",
+          "left": "187.295px",
+          "top": "543.513px"
+        },
+        {
+          "key": "saturn",
+          "left": "634.883px",
+          "top": "417.34px"
+        },
+        {
+          "key": "uranus",
+          "left": "499.127px",
+          "top": "632.543px"
+        },
+        {
+          "key": "neptune",
+          "left": "690.805px",
+          "top": "376.179px"
+        }
+      ],
+      "calendar": "3e3443f5276252563be8bb64755bef8f3863965df8c35603f34cde63ccf68ad2"
+    },
+    "dst": {
+      "spring": 23,
+      "autumn": 25
+    },
+    "calendar": {
+      "view": "month",
+      "filter": "meteor",
+      "heading": "octobre 2026",
+      "month": "86794e5ef41e50c750dc15033423a156ca4f2e0b0938d2a4f11d86d7f7d96e8d",
+      "hintsBefore": [
+        "planet-jupiter",
+        "meteor-orionids",
+        "planet-mars",
+        "conjunction-mars-jupiter-2026-11-16"
+      ],
+      "hintsAfter": [
+        "planet-jupiter",
+        "meteor-orionids",
+        "planet-mars",
+        "conjunction-mars-jupiter-2026-11-16"
+      ]
+    }
+  },
+  "webkit-de-320": {
+    "initial": {
+      "date": "2026-10-27",
+      "location": "berlin",
+      "moon": "Vollmond · 98%",
+      "caption": "Phase: Vollmond (98%)",
+      "nextFull": "Nächster Vollmond: 24.11.2026 17:19:56",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 52.746421570469295 55 0 0 0 64 9 Z",
+      "direction": "N · 0°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Jupiter beobachten",
+          "detail": "Gegen 06:00 MEZ · \n      \n      \n      \n    SSO · 47,8° · deutlich über 1 Elle über dem Horizont"
+        },
+        {
+          "id": "meteor-orionids",
+          "title": "Orioniden klingen ab",
+          "detail": "Maximum war laut Kalender am 21.10.2026. Ein heller Mond kann schwache Meteore überstrahlen."
+        },
+        {
+          "id": "planet-mars",
+          "title": "Mars beobachten",
+          "detail": "Gegen 06:00 MEZ · \n      \n      \n      \n    SSO · 52,9° · deutlich über 1 Elle über dem Horizont"
+        },
+        {
+          "id": "conjunction-mars-jupiter-2026-11-16",
+          "title": "Mars und Jupiter nahe beieinander",
+          "detail": "16.11.2026 · 1,2° · ca. 1 Daumenbreit"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "141.443122px",
+          "top": "114.39686px"
+        },
+        {
+          "key": "venus",
+          "left": "148.608693px",
+          "top": "139.174692px"
+        },
+        {
+          "key": "earth",
+          "left": "161.875684px",
+          "top": "146.272875px"
+        },
+        {
+          "key": "mars",
+          "left": "104.75014px",
+          "top": "185.55941px"
+        },
+        {
+          "key": "jupiter",
+          "left": "59.830341px",
+          "top": "173.622169px"
+        },
+        {
+          "key": "saturn",
+          "left": "202.809888px",
+          "top": "133.317028px"
+        },
+        {
+          "key": "uranus",
+          "left": "159.4435px",
+          "top": "202.062264px"
+        },
+        {
+          "key": "neptune",
+          "left": "220.673691px",
+          "top": "120.168265px"
+        }
+      ],
+      "calendar": "5a5e1dff5c267495afb50df50864e1e5daf4327c2bf2a7368e65deea35c79ed1"
+    },
+    "december": {
+      "date": "2026-12-01",
+      "location": "berlin",
+      "moon": "Abnehmender Mond · 56%",
+      "caption": "Phase: Abnehmender Mond (56%)",
+      "nextFull": "Nächster Vollmond: 24.12.2026 06:03:59",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 6.574563310710119 55 0 0 0 64 9 Z",
+      "direction": "WNW · 292°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Jupiter beobachten",
+          "detail": "Gegen 05:20 MEZ · \n      \n      \n      \n    S · 50,8° · deutlich über 1 Elle über dem Horizont"
+        },
+        {
+          "id": "planet-venus",
+          "title": "Venus beobachten",
+          "detail": "Gegen 07:00 MEZ · \n      \n      \n      \n    SO · 21,9° · ca. 1 Handspanne hoch über dem Horizont"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "88.775309px",
+          "top": "111.554993px"
+        },
+        {
+          "key": "venus",
+          "left": "113.550828px",
+          "top": "156.374629px"
+        },
+        {
+          "key": "earth",
+          "left": "135.26207px",
+          "top": "167.58109px"
+        },
+        {
+          "key": "mars",
+          "left": "85.229066px",
+          "top": "179.787202px"
+        },
+        {
+          "key": "jupiter",
+          "left": "57.052865px",
+          "top": "170.878257px"
+        },
+        {
+          "key": "saturn",
+          "left": "202.407203px",
+          "top": "135.1512px"
+        },
+        {
+          "key": "uranus",
+          "left": "158.834508px",
+          "top": "202.370466px"
+        },
+        {
+          "key": "neptune",
+          "left": "220.653838px",
+          "top": "120.559362px"
+        }
+      ],
+      "calendar": "ff64c5bb33bd2f214605a24007c176af2f3543a0061429fe35e331a54811185a"
+    },
+    "tokyo": {
+      "date": "2026-12-01",
+      "location": "tokyo",
+      "moon": "Abnehmender Mond · 56%",
+      "caption": "Phase: Abnehmender Mond (56%)",
+      "nextFull": "Nächster Vollmond: 24.12.2026 06:03:59",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 6.574563310710119 55 0 0 0 64 9 Z",
+      "direction": "ONO · 60°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Jupiter beobachten",
+          "detail": "Gegen 05:00 GMT+9 · \n      \n      \n      \n    S · 67,7° · deutlich über 1 Elle über dem Horizont"
+        },
+        {
+          "id": "planet-mars",
+          "title": "Mars beobachten",
+          "detail": "Gegen 05:20 GMT+9 · \n      \n      \n      \n    S · 67,3° · deutlich über 1 Elle über dem Horizont"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "88.775309px",
+          "top": "111.554993px"
+        },
+        {
+          "key": "venus",
+          "left": "113.550828px",
+          "top": "156.374629px"
+        },
+        {
+          "key": "earth",
+          "left": "135.26207px",
+          "top": "167.58109px"
+        },
+        {
+          "key": "mars",
+          "left": "85.229066px",
+          "top": "179.787202px"
+        },
+        {
+          "key": "jupiter",
+          "left": "57.052865px",
+          "top": "170.878257px"
+        },
+        {
+          "key": "saturn",
+          "left": "202.407203px",
+          "top": "135.1512px"
+        },
+        {
+          "key": "uranus",
+          "left": "158.834508px",
+          "top": "202.370466px"
+        },
+        {
+          "key": "neptune",
+          "left": "220.653838px",
+          "top": "120.559362px"
+        }
+      ],
+      "calendar": "ff64c5bb33bd2f214605a24007c176af2f3543a0061429fe35e331a54811185a"
+    },
+    "reset": {
+      "date": "2026-10-27",
+      "location": "berlin",
+      "moon": "Vollmond · 98%",
+      "caption": "Phase: Vollmond (98%)",
+      "nextFull": "Nächster Vollmond: 24.11.2026 17:19:56",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 52.746421570469295 55 0 0 0 64 9 Z",
+      "direction": "N · 0°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Jupiter beobachten",
+          "detail": "Gegen 06:00 MEZ · \n      \n      \n      \n    SSO · 47,8° · deutlich über 1 Elle über dem Horizont"
+        },
+        {
+          "id": "meteor-orionids",
+          "title": "Orioniden klingen ab",
+          "detail": "Maximum war laut Kalender am 21.10.2026. Ein heller Mond kann schwache Meteore überstrahlen."
+        },
+        {
+          "id": "planet-mars",
+          "title": "Mars beobachten",
+          "detail": "Gegen 06:00 MEZ · \n      \n      \n      \n    SSO · 52,9° · deutlich über 1 Elle über dem Horizont"
+        },
+        {
+          "id": "conjunction-mars-jupiter-2026-11-16",
+          "title": "Mars und Jupiter nahe beieinander",
+          "detail": "16.11.2026 · 1,2° · ca. 1 Daumenbreit"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "141.443122px",
+          "top": "114.39686px"
+        },
+        {
+          "key": "venus",
+          "left": "148.608693px",
+          "top": "139.174692px"
+        },
+        {
+          "key": "earth",
+          "left": "161.875684px",
+          "top": "146.272875px"
+        },
+        {
+          "key": "mars",
+          "left": "104.75014px",
+          "top": "185.55941px"
+        },
+        {
+          "key": "jupiter",
+          "left": "59.830341px",
+          "top": "173.622169px"
+        },
+        {
+          "key": "saturn",
+          "left": "202.809888px",
+          "top": "133.317028px"
+        },
+        {
+          "key": "uranus",
+          "left": "159.4435px",
+          "top": "202.062264px"
+        },
+        {
+          "key": "neptune",
+          "left": "220.673691px",
+          "top": "120.168265px"
+        }
+      ],
+      "calendar": "5a5e1dff5c267495afb50df50864e1e5daf4327c2bf2a7368e65deea35c79ed1"
+    },
+    "dst": {
+      "spring": 23,
+      "autumn": 25
+    },
+    "calendar": {
+      "view": "month",
+      "filter": "meteor",
+      "heading": "Oktober 2026",
+      "month": "0698f2a41991a2bbcde02a127ab14701b480dec8ab7b20bda0b57213a3efbb5e",
+      "hintsBefore": [
+        "planet-jupiter",
+        "meteor-orionids",
+        "planet-mars",
+        "conjunction-mars-jupiter-2026-11-16"
+      ],
+      "hintsAfter": [
+        "planet-jupiter",
+        "meteor-orionids",
+        "planet-mars",
+        "conjunction-mars-jupiter-2026-11-16"
+      ]
+    }
+  },
+  "webkit-de-390": {
+    "initial": {
+      "date": "2026-10-27",
+      "location": "berlin",
+      "moon": "Vollmond · 98%",
+      "caption": "Phase: Vollmond (98%)",
+      "nextFull": "Nächster Vollmond: 24.11.2026 17:19:56",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 52.746421570469295 55 0 0 0 64 9 Z",
+      "direction": "N · 0°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Jupiter beobachten",
+          "detail": "Gegen 06:00 MEZ · \n      \n      \n      \n    SSO · 47,8° · deutlich über 1 Elle über dem Horizont"
+        },
+        {
+          "id": "meteor-orionids",
+          "title": "Orioniden klingen ab",
+          "detail": "Maximum war laut Kalender am 21.10.2026. Ein heller Mond kann schwache Meteore überstrahlen."
+        },
+        {
+          "id": "planet-mars",
+          "title": "Mars beobachten",
+          "detail": "Gegen 06:00 MEZ · \n      \n      \n      \n    SSO · 52,9° · deutlich über 1 Elle über dem Horizont"
+        },
+        {
+          "id": "conjunction-mars-jupiter-2026-11-16",
+          "title": "Mars und Jupiter nahe beieinander",
+          "detail": "16.11.2026 · 1,2° · ca. 1 Daumenbreit"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "184.491029px",
+          "top": "149.213295px"
+        },
+        {
+          "key": "venus",
+          "left": "193.837426px",
+          "top": "181.532207px"
+        },
+        {
+          "key": "earth",
+          "left": "211.142197px",
+          "top": "190.790707px"
+        },
+        {
+          "key": "mars",
+          "left": "136.630617px",
+          "top": "242.034013px"
+        },
+        {
+          "key": "jupiter",
+          "left": "78.039575px",
+          "top": "226.463699px"
+        },
+        {
+          "key": "saturn",
+          "left": "264.534637px",
+          "top": "173.891775px"
+        },
+        {
+          "key": "uranus",
+          "left": "207.969782px",
+          "top": "263.559475px"
+        },
+        {
+          "key": "neptune",
+          "left": "287.83525px",
+          "top": "156.741215px"
+        }
+      ],
+      "calendar": "5a5e1dff5c267495afb50df50864e1e5daf4327c2bf2a7368e65deea35c79ed1"
+    },
+    "december": {
+      "date": "2026-12-01",
+      "location": "berlin",
+      "moon": "Abnehmender Mond · 56%",
+      "caption": "Phase: Abnehmender Mond (56%)",
+      "nextFull": "Nächster Vollmond: 24.12.2026 06:03:59",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 6.574563310710119 55 0 0 0 64 9 Z",
+      "direction": "WNW · 292°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Jupiter beobachten",
+          "detail": "Gegen 05:20 MEZ · \n      \n      \n      \n    S · 50,8° · deutlich über 1 Elle über dem Horizont"
+        },
+        {
+          "id": "planet-venus",
+          "title": "Venus beobachten",
+          "detail": "Gegen 07:00 MEZ · \n      \n      \n      \n    SO · 21,9° · ca. 1 Handspanne hoch über dem Horizont"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "115.793881px",
+          "top": "145.506512px"
+        },
+        {
+          "key": "venus",
+          "left": "148.109775px",
+          "top": "203.966907px"
+        },
+        {
+          "key": "earth",
+          "left": "176.428788px",
+          "top": "218.58403px"
+        },
+        {
+          "key": "mars",
+          "left": "111.168347px",
+          "top": "234.505046px"
+        },
+        {
+          "key": "jupiter",
+          "left": "74.416781px",
+          "top": "222.884683px"
+        },
+        {
+          "key": "saturn",
+          "left": "264.009395px",
+          "top": "176.284173px"
+        },
+        {
+          "key": "uranus",
+          "left": "207.175445px",
+          "top": "263.961478px"
+        },
+        {
+          "key": "neptune",
+          "left": "287.809354px",
+          "top": "157.251342px"
+        }
+      ],
+      "calendar": "ff64c5bb33bd2f214605a24007c176af2f3543a0061429fe35e331a54811185a"
+    },
+    "tokyo": {
+      "date": "2026-12-01",
+      "location": "tokyo",
+      "moon": "Abnehmender Mond · 56%",
+      "caption": "Phase: Abnehmender Mond (56%)",
+      "nextFull": "Nächster Vollmond: 24.12.2026 06:03:59",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 6.574563310710119 55 0 0 0 64 9 Z",
+      "direction": "ONO · 60°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Jupiter beobachten",
+          "detail": "Gegen 05:00 GMT+9 · \n      \n      \n      \n    S · 67,7° · deutlich über 1 Elle über dem Horizont"
+        },
+        {
+          "id": "planet-mars",
+          "title": "Mars beobachten",
+          "detail": "Gegen 05:20 GMT+9 · \n      \n      \n      \n    S · 67,3° · deutlich über 1 Elle über dem Horizont"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "115.793881px",
+          "top": "145.506512px"
+        },
+        {
+          "key": "venus",
+          "left": "148.109775px",
+          "top": "203.966907px"
+        },
+        {
+          "key": "earth",
+          "left": "176.428788px",
+          "top": "218.58403px"
+        },
+        {
+          "key": "mars",
+          "left": "111.168347px",
+          "top": "234.505046px"
+        },
+        {
+          "key": "jupiter",
+          "left": "74.416781px",
+          "top": "222.884683px"
+        },
+        {
+          "key": "saturn",
+          "left": "264.009395px",
+          "top": "176.284173px"
+        },
+        {
+          "key": "uranus",
+          "left": "207.175445px",
+          "top": "263.961478px"
+        },
+        {
+          "key": "neptune",
+          "left": "287.809354px",
+          "top": "157.251342px"
+        }
+      ],
+      "calendar": "ff64c5bb33bd2f214605a24007c176af2f3543a0061429fe35e331a54811185a"
+    },
+    "reset": {
+      "date": "2026-10-27",
+      "location": "berlin",
+      "moon": "Vollmond · 98%",
+      "caption": "Phase: Vollmond (98%)",
+      "nextFull": "Nächster Vollmond: 24.11.2026 17:19:56",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 52.746421570469295 55 0 0 0 64 9 Z",
+      "direction": "N · 0°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Jupiter beobachten",
+          "detail": "Gegen 06:00 MEZ · \n      \n      \n      \n    SSO · 47,8° · deutlich über 1 Elle über dem Horizont"
+        },
+        {
+          "id": "meteor-orionids",
+          "title": "Orioniden klingen ab",
+          "detail": "Maximum war laut Kalender am 21.10.2026. Ein heller Mond kann schwache Meteore überstrahlen."
+        },
+        {
+          "id": "planet-mars",
+          "title": "Mars beobachten",
+          "detail": "Gegen 06:00 MEZ · \n      \n      \n      \n    SSO · 52,9° · deutlich über 1 Elle über dem Horizont"
+        },
+        {
+          "id": "conjunction-mars-jupiter-2026-11-16",
+          "title": "Mars und Jupiter nahe beieinander",
+          "detail": "16.11.2026 · 1,2° · ca. 1 Daumenbreit"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "184.491029px",
+          "top": "149.213295px"
+        },
+        {
+          "key": "venus",
+          "left": "193.837426px",
+          "top": "181.532207px"
+        },
+        {
+          "key": "earth",
+          "left": "211.142197px",
+          "top": "190.790707px"
+        },
+        {
+          "key": "mars",
+          "left": "136.630617px",
+          "top": "242.034013px"
+        },
+        {
+          "key": "jupiter",
+          "left": "78.039575px",
+          "top": "226.463699px"
+        },
+        {
+          "key": "saturn",
+          "left": "264.534637px",
+          "top": "173.891775px"
+        },
+        {
+          "key": "uranus",
+          "left": "207.969782px",
+          "top": "263.559475px"
+        },
+        {
+          "key": "neptune",
+          "left": "287.83525px",
+          "top": "156.741215px"
+        }
+      ],
+      "calendar": "5a5e1dff5c267495afb50df50864e1e5daf4327c2bf2a7368e65deea35c79ed1"
+    },
+    "dst": {
+      "spring": 23,
+      "autumn": 25
+    },
+    "calendar": {
+      "view": "month",
+      "filter": "meteor",
+      "heading": "Oktober 2026",
+      "month": "0698f2a41991a2bbcde02a127ab14701b480dec8ab7b20bda0b57213a3efbb5e",
+      "hintsBefore": [
+        "planet-jupiter",
+        "meteor-orionids",
+        "planet-mars",
+        "conjunction-mars-jupiter-2026-11-16"
+      ],
+      "hintsAfter": [
+        "planet-jupiter",
+        "meteor-orionids",
+        "planet-mars",
+        "conjunction-mars-jupiter-2026-11-16"
+      ]
+    }
+  },
+  "webkit-de-1280": {
+    "initial": {
+      "date": "2026-10-27",
+      "location": "berlin",
+      "moon": "Vollmond · 98%",
+      "caption": "Phase: Vollmond (98%)",
+      "nextFull": "Nächster Vollmond: 24.11.2026 17:19:56",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 52.746421570469295 55 0 0 0 64 9 Z",
+      "direction": "N · 0°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Jupiter beobachten",
+          "detail": "Gegen 06:00 MEZ · \n      \n      \n      \n    SSO · 47,8° · deutlich über 1 Elle über dem Horizont"
+        },
+        {
+          "id": "meteor-orionids",
+          "title": "Orioniden klingen ab",
+          "detail": "Maximum war laut Kalender am 21.10.2026. Ein heller Mond kann schwache Meteore überstrahlen."
+        },
+        {
+          "id": "planet-mars",
+          "title": "Mars beobachten",
+          "detail": "Gegen 06:00 MEZ · \n      \n      \n      \n    SSO · 52,9° · deutlich über 1 Elle über dem Horizont"
+        },
+        {
+          "id": "conjunction-mars-jupiter-2026-11-16",
+          "title": "Mars und Jupiter nahe beieinander",
+          "detail": "16.11.2026 · 1,2° · ca. 1 Daumenbreit"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "442.77847px",
+          "top": "358.111908px"
+        },
+        {
+          "key": "venus",
+          "left": "465.209822px",
+          "top": "435.677298px"
+        },
+        {
+          "key": "earth",
+          "left": "506.741273px",
+          "top": "457.897696px"
+        },
+        {
+          "key": "mars",
+          "left": "327.913481px",
+          "top": "580.881632px"
+        },
+        {
+          "key": "jupiter",
+          "left": "187.29498px",
+          "top": "543.512877px"
+        },
+        {
+          "key": "saturn",
+          "left": "634.883129px",
+          "top": "417.34026px"
+        },
+        {
+          "key": "uranus",
+          "left": "499.127478px",
+          "top": "632.54274px"
+        },
+        {
+          "key": "neptune",
+          "left": "690.804599px",
+          "top": "376.178916px"
+        }
+      ],
+      "calendar": "5a5e1dff5c267495afb50df50864e1e5daf4327c2bf2a7368e65deea35c79ed1"
+    },
+    "december": {
+      "date": "2026-12-01",
+      "location": "berlin",
+      "moon": "Abnehmender Mond · 56%",
+      "caption": "Phase: Abnehmender Mond (56%)",
+      "nextFull": "Nächster Vollmond: 24.12.2026 06:03:59",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 6.574563310710119 55 0 0 0 64 9 Z",
+      "direction": "WNW · 292°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Jupiter beobachten",
+          "detail": "Gegen 05:20 MEZ · \n      \n      \n      \n    S · 50,8° · deutlich über 1 Elle über dem Horizont"
+        },
+        {
+          "id": "planet-venus",
+          "title": "Venus beobachten",
+          "detail": "Gegen 07:00 MEZ · \n      \n      \n      \n    SO · 21,9° · ca. 1 Handspanne hoch über dem Horizont"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "277.905315px",
+          "top": "349.21563px"
+        },
+        {
+          "key": "venus",
+          "left": "355.463461px",
+          "top": "489.520577px"
+        },
+        {
+          "key": "earth",
+          "left": "423.42909px",
+          "top": "524.601672px"
+        },
+        {
+          "key": "mars",
+          "left": "266.804034px",
+          "top": "562.81211px"
+        },
+        {
+          "key": "jupiter",
+          "left": "178.600274px",
+          "top": "534.923239px"
+        },
+        {
+          "key": "saturn",
+          "left": "633.622549px",
+          "top": "423.082016px"
+        },
+        {
+          "key": "uranus",
+          "left": "497.221069px",
+          "top": "633.507547px"
+        },
+        {
+          "key": "neptune",
+          "left": "690.742449px",
+          "top": "377.403222px"
+        }
+      ],
+      "calendar": "ff64c5bb33bd2f214605a24007c176af2f3543a0061429fe35e331a54811185a"
+    },
+    "tokyo": {
+      "date": "2026-12-01",
+      "location": "tokyo",
+      "moon": "Abnehmender Mond · 56%",
+      "caption": "Phase: Abnehmender Mond (56%)",
+      "nextFull": "Nächster Vollmond: 24.12.2026 06:03:59",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 6.574563310710119 55 0 0 0 64 9 Z",
+      "direction": "ONO · 60°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Jupiter beobachten",
+          "detail": "Gegen 05:00 GMT+9 · \n      \n      \n      \n    S · 67,7° · deutlich über 1 Elle über dem Horizont"
+        },
+        {
+          "id": "planet-mars",
+          "title": "Mars beobachten",
+          "detail": "Gegen 05:20 GMT+9 · \n      \n      \n      \n    S · 67,3° · deutlich über 1 Elle über dem Horizont"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "277.905315px",
+          "top": "349.21563px"
+        },
+        {
+          "key": "venus",
+          "left": "355.463461px",
+          "top": "489.520577px"
+        },
+        {
+          "key": "earth",
+          "left": "423.42909px",
+          "top": "524.601672px"
+        },
+        {
+          "key": "mars",
+          "left": "266.804034px",
+          "top": "562.81211px"
+        },
+        {
+          "key": "jupiter",
+          "left": "178.600274px",
+          "top": "534.923239px"
+        },
+        {
+          "key": "saturn",
+          "left": "633.622549px",
+          "top": "423.082016px"
+        },
+        {
+          "key": "uranus",
+          "left": "497.221069px",
+          "top": "633.507547px"
+        },
+        {
+          "key": "neptune",
+          "left": "690.742449px",
+          "top": "377.403222px"
+        }
+      ],
+      "calendar": "ff64c5bb33bd2f214605a24007c176af2f3543a0061429fe35e331a54811185a"
+    },
+    "reset": {
+      "date": "2026-10-27",
+      "location": "berlin",
+      "moon": "Vollmond · 98%",
+      "caption": "Phase: Vollmond (98%)",
+      "nextFull": "Nächster Vollmond: 24.11.2026 17:19:56",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 52.746421570469295 55 0 0 0 64 9 Z",
+      "direction": "N · 0°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Jupiter beobachten",
+          "detail": "Gegen 06:00 MEZ · \n      \n      \n      \n    SSO · 47,8° · deutlich über 1 Elle über dem Horizont"
+        },
+        {
+          "id": "meteor-orionids",
+          "title": "Orioniden klingen ab",
+          "detail": "Maximum war laut Kalender am 21.10.2026. Ein heller Mond kann schwache Meteore überstrahlen."
+        },
+        {
+          "id": "planet-mars",
+          "title": "Mars beobachten",
+          "detail": "Gegen 06:00 MEZ · \n      \n      \n      \n    SSO · 52,9° · deutlich über 1 Elle über dem Horizont"
+        },
+        {
+          "id": "conjunction-mars-jupiter-2026-11-16",
+          "title": "Mars und Jupiter nahe beieinander",
+          "detail": "16.11.2026 · 1,2° · ca. 1 Daumenbreit"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "442.77847px",
+          "top": "358.111908px"
+        },
+        {
+          "key": "venus",
+          "left": "465.209822px",
+          "top": "435.677298px"
+        },
+        {
+          "key": "earth",
+          "left": "506.741273px",
+          "top": "457.897696px"
+        },
+        {
+          "key": "mars",
+          "left": "327.913481px",
+          "top": "580.881632px"
+        },
+        {
+          "key": "jupiter",
+          "left": "187.29498px",
+          "top": "543.512877px"
+        },
+        {
+          "key": "saturn",
+          "left": "634.883129px",
+          "top": "417.34026px"
+        },
+        {
+          "key": "uranus",
+          "left": "499.127478px",
+          "top": "632.54274px"
+        },
+        {
+          "key": "neptune",
+          "left": "690.804599px",
+          "top": "376.178916px"
+        }
+      ],
+      "calendar": "5a5e1dff5c267495afb50df50864e1e5daf4327c2bf2a7368e65deea35c79ed1"
+    },
+    "dst": {
+      "spring": 23,
+      "autumn": 25
+    },
+    "calendar": {
+      "view": "month",
+      "filter": "meteor",
+      "heading": "Oktober 2026",
+      "month": "0698f2a41991a2bbcde02a127ab14701b480dec8ab7b20bda0b57213a3efbb5e",
+      "hintsBefore": [
+        "planet-jupiter",
+        "meteor-orionids",
+        "planet-mars",
+        "conjunction-mars-jupiter-2026-11-16"
+      ],
+      "hintsAfter": [
+        "planet-jupiter",
+        "meteor-orionids",
+        "planet-mars",
+        "conjunction-mars-jupiter-2026-11-16"
+      ]
+    }
+  },
+  "webkit-en-320": {
+    "initial": {
+      "date": "2026-10-27",
+      "location": "berlin",
+      "moon": "Full Moon · 98%",
+      "caption": "Phase: Full Moon (98%)",
+      "nextFull": "Next full moon: 11/24/2026 17:19:56",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 52.746421570469295 55 0 0 0 64 9 Z",
+      "direction": "N · 0°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observe Jupiter",
+          "detail": "Around 06:00 GMT+1 · \n      \n      \n      \n    SSE · 47.8° · well above 1 cubit above the horizon"
+        },
+        {
+          "id": "meteor-orionids",
+          "title": "Orionids winding down",
+          "detail": "Peak was on Oct 21, 2026, according to the calendar. A bright Moon may obscure faint meteors."
+        },
+        {
+          "id": "planet-mars",
+          "title": "Observe Mars",
+          "detail": "Around 06:00 GMT+1 · \n      \n      \n      \n    SSE · 52.9° · well above 1 cubit above the horizon"
+        },
+        {
+          "id": "conjunction-mars-jupiter-2026-11-16",
+          "title": "Mars and Jupiter close together",
+          "detail": "Nov 16, 2026 · 1.2° · about 1 thumb width"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "141.443122px",
+          "top": "114.39686px"
+        },
+        {
+          "key": "venus",
+          "left": "148.608693px",
+          "top": "139.174692px"
+        },
+        {
+          "key": "earth",
+          "left": "161.875684px",
+          "top": "146.272875px"
+        },
+        {
+          "key": "mars",
+          "left": "104.75014px",
+          "top": "185.55941px"
+        },
+        {
+          "key": "jupiter",
+          "left": "59.830341px",
+          "top": "173.622169px"
+        },
+        {
+          "key": "saturn",
+          "left": "202.809888px",
+          "top": "133.317028px"
+        },
+        {
+          "key": "uranus",
+          "left": "159.4435px",
+          "top": "202.062264px"
+        },
+        {
+          "key": "neptune",
+          "left": "220.673691px",
+          "top": "120.168265px"
+        }
+      ],
+      "calendar": "a92ca90d554c3443e96cdcca2d565395fec96b72eb74f5a1b6021ae4ddd0c2ed"
+    },
+    "december": {
+      "date": "2026-12-01",
+      "location": "berlin",
+      "moon": "Waning Gibbous · 56%",
+      "caption": "Phase: Waning Gibbous (56%)",
+      "nextFull": "Next full moon: 12/24/2026 06:03:59",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 6.574563310710119 55 0 0 0 64 9 Z",
+      "direction": "WNW · 292°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observe Jupiter",
+          "detail": "Around 05:20 GMT+1 · \n      \n      \n      \n    S · 50.8° · well above 1 cubit above the horizon"
+        },
+        {
+          "id": "planet-venus",
+          "title": "Observe Venus",
+          "detail": "Around 07:00 GMT+1 · \n      \n      \n      \n    SE · 21.9° · about 1 hand span high above the horizon"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "88.775309px",
+          "top": "111.554993px"
+        },
+        {
+          "key": "venus",
+          "left": "113.550828px",
+          "top": "156.374629px"
+        },
+        {
+          "key": "earth",
+          "left": "135.26207px",
+          "top": "167.58109px"
+        },
+        {
+          "key": "mars",
+          "left": "85.229066px",
+          "top": "179.787202px"
+        },
+        {
+          "key": "jupiter",
+          "left": "57.052865px",
+          "top": "170.878257px"
+        },
+        {
+          "key": "saturn",
+          "left": "202.407203px",
+          "top": "135.1512px"
+        },
+        {
+          "key": "uranus",
+          "left": "158.834508px",
+          "top": "202.370466px"
+        },
+        {
+          "key": "neptune",
+          "left": "220.653838px",
+          "top": "120.559362px"
+        }
+      ],
+      "calendar": "b198271eed4a2fedd2c84ceb11d5c0c804771fa612550ae62c2cceb850345fa7"
+    },
+    "tokyo": {
+      "date": "2026-12-01",
+      "location": "tokyo",
+      "moon": "Waning Gibbous · 56%",
+      "caption": "Phase: Waning Gibbous (56%)",
+      "nextFull": "Next full moon: 12/24/2026 06:03:59",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 6.574563310710119 55 0 0 0 64 9 Z",
+      "direction": "ENE · 60°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observe Jupiter",
+          "detail": "Around 05:00 GMT+9 · \n      \n      \n      \n    S · 67.7° · well above 1 cubit above the horizon"
+        },
+        {
+          "id": "planet-mars",
+          "title": "Observe Mars",
+          "detail": "Around 05:20 GMT+9 · \n      \n      \n      \n    S · 67.3° · well above 1 cubit above the horizon"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "88.775309px",
+          "top": "111.554993px"
+        },
+        {
+          "key": "venus",
+          "left": "113.550828px",
+          "top": "156.374629px"
+        },
+        {
+          "key": "earth",
+          "left": "135.26207px",
+          "top": "167.58109px"
+        },
+        {
+          "key": "mars",
+          "left": "85.229066px",
+          "top": "179.787202px"
+        },
+        {
+          "key": "jupiter",
+          "left": "57.052865px",
+          "top": "170.878257px"
+        },
+        {
+          "key": "saturn",
+          "left": "202.407203px",
+          "top": "135.1512px"
+        },
+        {
+          "key": "uranus",
+          "left": "158.834508px",
+          "top": "202.370466px"
+        },
+        {
+          "key": "neptune",
+          "left": "220.653838px",
+          "top": "120.559362px"
+        }
+      ],
+      "calendar": "b198271eed4a2fedd2c84ceb11d5c0c804771fa612550ae62c2cceb850345fa7"
+    },
+    "reset": {
+      "date": "2026-10-27",
+      "location": "berlin",
+      "moon": "Full Moon · 98%",
+      "caption": "Phase: Full Moon (98%)",
+      "nextFull": "Next full moon: 11/24/2026 17:19:56",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 52.746421570469295 55 0 0 0 64 9 Z",
+      "direction": "N · 0°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observe Jupiter",
+          "detail": "Around 06:00 GMT+1 · \n      \n      \n      \n    SSE · 47.8° · well above 1 cubit above the horizon"
+        },
+        {
+          "id": "meteor-orionids",
+          "title": "Orionids winding down",
+          "detail": "Peak was on Oct 21, 2026, according to the calendar. A bright Moon may obscure faint meteors."
+        },
+        {
+          "id": "planet-mars",
+          "title": "Observe Mars",
+          "detail": "Around 06:00 GMT+1 · \n      \n      \n      \n    SSE · 52.9° · well above 1 cubit above the horizon"
+        },
+        {
+          "id": "conjunction-mars-jupiter-2026-11-16",
+          "title": "Mars and Jupiter close together",
+          "detail": "Nov 16, 2026 · 1.2° · about 1 thumb width"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "141.443122px",
+          "top": "114.39686px"
+        },
+        {
+          "key": "venus",
+          "left": "148.608693px",
+          "top": "139.174692px"
+        },
+        {
+          "key": "earth",
+          "left": "161.875684px",
+          "top": "146.272875px"
+        },
+        {
+          "key": "mars",
+          "left": "104.75014px",
+          "top": "185.55941px"
+        },
+        {
+          "key": "jupiter",
+          "left": "59.830341px",
+          "top": "173.622169px"
+        },
+        {
+          "key": "saturn",
+          "left": "202.809888px",
+          "top": "133.317028px"
+        },
+        {
+          "key": "uranus",
+          "left": "159.4435px",
+          "top": "202.062264px"
+        },
+        {
+          "key": "neptune",
+          "left": "220.673691px",
+          "top": "120.168265px"
+        }
+      ],
+      "calendar": "a92ca90d554c3443e96cdcca2d565395fec96b72eb74f5a1b6021ae4ddd0c2ed"
+    },
+    "dst": {
+      "spring": 23,
+      "autumn": 25
+    },
+    "calendar": {
+      "view": "month",
+      "filter": "meteor",
+      "heading": "October 2026",
+      "month": "fa296a38310b070891d13d955c91d3a4cdbfcffccdbe66b67a6db8281ecd3072",
+      "hintsBefore": [
+        "planet-jupiter",
+        "meteor-orionids",
+        "planet-mars",
+        "conjunction-mars-jupiter-2026-11-16"
+      ],
+      "hintsAfter": [
+        "planet-jupiter",
+        "meteor-orionids",
+        "planet-mars",
+        "conjunction-mars-jupiter-2026-11-16"
+      ]
+    }
+  },
+  "webkit-en-390": {
+    "initial": {
+      "date": "2026-10-27",
+      "location": "berlin",
+      "moon": "Full Moon · 98%",
+      "caption": "Phase: Full Moon (98%)",
+      "nextFull": "Next full moon: 11/24/2026 17:19:56",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 52.746421570469295 55 0 0 0 64 9 Z",
+      "direction": "N · 0°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observe Jupiter",
+          "detail": "Around 06:00 GMT+1 · \n      \n      \n      \n    SSE · 47.8° · well above 1 cubit above the horizon"
+        },
+        {
+          "id": "meteor-orionids",
+          "title": "Orionids winding down",
+          "detail": "Peak was on Oct 21, 2026, according to the calendar. A bright Moon may obscure faint meteors."
+        },
+        {
+          "id": "planet-mars",
+          "title": "Observe Mars",
+          "detail": "Around 06:00 GMT+1 · \n      \n      \n      \n    SSE · 52.9° · well above 1 cubit above the horizon"
+        },
+        {
+          "id": "conjunction-mars-jupiter-2026-11-16",
+          "title": "Mars and Jupiter close together",
+          "detail": "Nov 16, 2026 · 1.2° · about 1 thumb width"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "184.491029px",
+          "top": "149.213295px"
+        },
+        {
+          "key": "venus",
+          "left": "193.837426px",
+          "top": "181.532207px"
+        },
+        {
+          "key": "earth",
+          "left": "211.142197px",
+          "top": "190.790707px"
+        },
+        {
+          "key": "mars",
+          "left": "136.630617px",
+          "top": "242.034013px"
+        },
+        {
+          "key": "jupiter",
+          "left": "78.039575px",
+          "top": "226.463699px"
+        },
+        {
+          "key": "saturn",
+          "left": "264.534637px",
+          "top": "173.891775px"
+        },
+        {
+          "key": "uranus",
+          "left": "207.969782px",
+          "top": "263.559475px"
+        },
+        {
+          "key": "neptune",
+          "left": "287.83525px",
+          "top": "156.741215px"
+        }
+      ],
+      "calendar": "a92ca90d554c3443e96cdcca2d565395fec96b72eb74f5a1b6021ae4ddd0c2ed"
+    },
+    "december": {
+      "date": "2026-12-01",
+      "location": "berlin",
+      "moon": "Waning Gibbous · 56%",
+      "caption": "Phase: Waning Gibbous (56%)",
+      "nextFull": "Next full moon: 12/24/2026 06:03:59",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 6.574563310710119 55 0 0 0 64 9 Z",
+      "direction": "WNW · 292°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observe Jupiter",
+          "detail": "Around 05:20 GMT+1 · \n      \n      \n      \n    S · 50.8° · well above 1 cubit above the horizon"
+        },
+        {
+          "id": "planet-venus",
+          "title": "Observe Venus",
+          "detail": "Around 07:00 GMT+1 · \n      \n      \n      \n    SE · 21.9° · about 1 hand span high above the horizon"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "115.793881px",
+          "top": "145.506512px"
+        },
+        {
+          "key": "venus",
+          "left": "148.109775px",
+          "top": "203.966907px"
+        },
+        {
+          "key": "earth",
+          "left": "176.428788px",
+          "top": "218.58403px"
+        },
+        {
+          "key": "mars",
+          "left": "111.168347px",
+          "top": "234.505046px"
+        },
+        {
+          "key": "jupiter",
+          "left": "74.416781px",
+          "top": "222.884683px"
+        },
+        {
+          "key": "saturn",
+          "left": "264.009395px",
+          "top": "176.284173px"
+        },
+        {
+          "key": "uranus",
+          "left": "207.175445px",
+          "top": "263.961478px"
+        },
+        {
+          "key": "neptune",
+          "left": "287.809354px",
+          "top": "157.251342px"
+        }
+      ],
+      "calendar": "b198271eed4a2fedd2c84ceb11d5c0c804771fa612550ae62c2cceb850345fa7"
+    },
+    "tokyo": {
+      "date": "2026-12-01",
+      "location": "tokyo",
+      "moon": "Waning Gibbous · 56%",
+      "caption": "Phase: Waning Gibbous (56%)",
+      "nextFull": "Next full moon: 12/24/2026 06:03:59",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 6.574563310710119 55 0 0 0 64 9 Z",
+      "direction": "ENE · 60°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observe Jupiter",
+          "detail": "Around 05:00 GMT+9 · \n      \n      \n      \n    S · 67.7° · well above 1 cubit above the horizon"
+        },
+        {
+          "id": "planet-mars",
+          "title": "Observe Mars",
+          "detail": "Around 05:20 GMT+9 · \n      \n      \n      \n    S · 67.3° · well above 1 cubit above the horizon"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "115.793881px",
+          "top": "145.506512px"
+        },
+        {
+          "key": "venus",
+          "left": "148.109775px",
+          "top": "203.966907px"
+        },
+        {
+          "key": "earth",
+          "left": "176.428788px",
+          "top": "218.58403px"
+        },
+        {
+          "key": "mars",
+          "left": "111.168347px",
+          "top": "234.505046px"
+        },
+        {
+          "key": "jupiter",
+          "left": "74.416781px",
+          "top": "222.884683px"
+        },
+        {
+          "key": "saturn",
+          "left": "264.009395px",
+          "top": "176.284173px"
+        },
+        {
+          "key": "uranus",
+          "left": "207.175445px",
+          "top": "263.961478px"
+        },
+        {
+          "key": "neptune",
+          "left": "287.809354px",
+          "top": "157.251342px"
+        }
+      ],
+      "calendar": "b198271eed4a2fedd2c84ceb11d5c0c804771fa612550ae62c2cceb850345fa7"
+    },
+    "reset": {
+      "date": "2026-10-27",
+      "location": "berlin",
+      "moon": "Full Moon · 98%",
+      "caption": "Phase: Full Moon (98%)",
+      "nextFull": "Next full moon: 11/24/2026 17:19:56",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 52.746421570469295 55 0 0 0 64 9 Z",
+      "direction": "N · 0°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observe Jupiter",
+          "detail": "Around 06:00 GMT+1 · \n      \n      \n      \n    SSE · 47.8° · well above 1 cubit above the horizon"
+        },
+        {
+          "id": "meteor-orionids",
+          "title": "Orionids winding down",
+          "detail": "Peak was on Oct 21, 2026, according to the calendar. A bright Moon may obscure faint meteors."
+        },
+        {
+          "id": "planet-mars",
+          "title": "Observe Mars",
+          "detail": "Around 06:00 GMT+1 · \n      \n      \n      \n    SSE · 52.9° · well above 1 cubit above the horizon"
+        },
+        {
+          "id": "conjunction-mars-jupiter-2026-11-16",
+          "title": "Mars and Jupiter close together",
+          "detail": "Nov 16, 2026 · 1.2° · about 1 thumb width"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "184.491029px",
+          "top": "149.213295px"
+        },
+        {
+          "key": "venus",
+          "left": "193.837426px",
+          "top": "181.532207px"
+        },
+        {
+          "key": "earth",
+          "left": "211.142197px",
+          "top": "190.790707px"
+        },
+        {
+          "key": "mars",
+          "left": "136.630617px",
+          "top": "242.034013px"
+        },
+        {
+          "key": "jupiter",
+          "left": "78.039575px",
+          "top": "226.463699px"
+        },
+        {
+          "key": "saturn",
+          "left": "264.534637px",
+          "top": "173.891775px"
+        },
+        {
+          "key": "uranus",
+          "left": "207.969782px",
+          "top": "263.559475px"
+        },
+        {
+          "key": "neptune",
+          "left": "287.83525px",
+          "top": "156.741215px"
+        }
+      ],
+      "calendar": "a92ca90d554c3443e96cdcca2d565395fec96b72eb74f5a1b6021ae4ddd0c2ed"
+    },
+    "dst": {
+      "spring": 23,
+      "autumn": 25
+    },
+    "calendar": {
+      "view": "month",
+      "filter": "meteor",
+      "heading": "October 2026",
+      "month": "fa296a38310b070891d13d955c91d3a4cdbfcffccdbe66b67a6db8281ecd3072",
+      "hintsBefore": [
+        "planet-jupiter",
+        "meteor-orionids",
+        "planet-mars",
+        "conjunction-mars-jupiter-2026-11-16"
+      ],
+      "hintsAfter": [
+        "planet-jupiter",
+        "meteor-orionids",
+        "planet-mars",
+        "conjunction-mars-jupiter-2026-11-16"
+      ]
+    }
+  },
+  "webkit-en-1280": {
+    "initial": {
+      "date": "2026-10-27",
+      "location": "berlin",
+      "moon": "Full Moon · 98%",
+      "caption": "Phase: Full Moon (98%)",
+      "nextFull": "Next full moon: 11/24/2026 17:19:56",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 52.746421570469295 55 0 0 0 64 9 Z",
+      "direction": "N · 0°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observe Jupiter",
+          "detail": "Around 06:00 GMT+1 · \n      \n      \n      \n    SSE · 47.8° · well above 1 cubit above the horizon"
+        },
+        {
+          "id": "meteor-orionids",
+          "title": "Orionids winding down",
+          "detail": "Peak was on Oct 21, 2026, according to the calendar. A bright Moon may obscure faint meteors."
+        },
+        {
+          "id": "planet-mars",
+          "title": "Observe Mars",
+          "detail": "Around 06:00 GMT+1 · \n      \n      \n      \n    SSE · 52.9° · well above 1 cubit above the horizon"
+        },
+        {
+          "id": "conjunction-mars-jupiter-2026-11-16",
+          "title": "Mars and Jupiter close together",
+          "detail": "Nov 16, 2026 · 1.2° · about 1 thumb width"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "442.77847px",
+          "top": "358.111908px"
+        },
+        {
+          "key": "venus",
+          "left": "465.209822px",
+          "top": "435.677298px"
+        },
+        {
+          "key": "earth",
+          "left": "506.741273px",
+          "top": "457.897696px"
+        },
+        {
+          "key": "mars",
+          "left": "327.913481px",
+          "top": "580.881632px"
+        },
+        {
+          "key": "jupiter",
+          "left": "187.29498px",
+          "top": "543.512877px"
+        },
+        {
+          "key": "saturn",
+          "left": "634.883129px",
+          "top": "417.34026px"
+        },
+        {
+          "key": "uranus",
+          "left": "499.127478px",
+          "top": "632.54274px"
+        },
+        {
+          "key": "neptune",
+          "left": "690.804599px",
+          "top": "376.178916px"
+        }
+      ],
+      "calendar": "a92ca90d554c3443e96cdcca2d565395fec96b72eb74f5a1b6021ae4ddd0c2ed"
+    },
+    "december": {
+      "date": "2026-12-01",
+      "location": "berlin",
+      "moon": "Waning Gibbous · 56%",
+      "caption": "Phase: Waning Gibbous (56%)",
+      "nextFull": "Next full moon: 12/24/2026 06:03:59",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 6.574563310710119 55 0 0 0 64 9 Z",
+      "direction": "WNW · 292°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observe Jupiter",
+          "detail": "Around 05:20 GMT+1 · \n      \n      \n      \n    S · 50.8° · well above 1 cubit above the horizon"
+        },
+        {
+          "id": "planet-venus",
+          "title": "Observe Venus",
+          "detail": "Around 07:00 GMT+1 · \n      \n      \n      \n    SE · 21.9° · about 1 hand span high above the horizon"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "277.905315px",
+          "top": "349.21563px"
+        },
+        {
+          "key": "venus",
+          "left": "355.463461px",
+          "top": "489.520577px"
+        },
+        {
+          "key": "earth",
+          "left": "423.42909px",
+          "top": "524.601672px"
+        },
+        {
+          "key": "mars",
+          "left": "266.804034px",
+          "top": "562.81211px"
+        },
+        {
+          "key": "jupiter",
+          "left": "178.600274px",
+          "top": "534.923239px"
+        },
+        {
+          "key": "saturn",
+          "left": "633.622549px",
+          "top": "423.082016px"
+        },
+        {
+          "key": "uranus",
+          "left": "497.221069px",
+          "top": "633.507547px"
+        },
+        {
+          "key": "neptune",
+          "left": "690.742449px",
+          "top": "377.403222px"
+        }
+      ],
+      "calendar": "b198271eed4a2fedd2c84ceb11d5c0c804771fa612550ae62c2cceb850345fa7"
+    },
+    "tokyo": {
+      "date": "2026-12-01",
+      "location": "tokyo",
+      "moon": "Waning Gibbous · 56%",
+      "caption": "Phase: Waning Gibbous (56%)",
+      "nextFull": "Next full moon: 12/24/2026 06:03:59",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 6.574563310710119 55 0 0 0 64 9 Z",
+      "direction": "ENE · 60°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observe Jupiter",
+          "detail": "Around 05:00 GMT+9 · \n      \n      \n      \n    S · 67.7° · well above 1 cubit above the horizon"
+        },
+        {
+          "id": "planet-mars",
+          "title": "Observe Mars",
+          "detail": "Around 05:20 GMT+9 · \n      \n      \n      \n    S · 67.3° · well above 1 cubit above the horizon"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "277.905315px",
+          "top": "349.21563px"
+        },
+        {
+          "key": "venus",
+          "left": "355.463461px",
+          "top": "489.520577px"
+        },
+        {
+          "key": "earth",
+          "left": "423.42909px",
+          "top": "524.601672px"
+        },
+        {
+          "key": "mars",
+          "left": "266.804034px",
+          "top": "562.81211px"
+        },
+        {
+          "key": "jupiter",
+          "left": "178.600274px",
+          "top": "534.923239px"
+        },
+        {
+          "key": "saturn",
+          "left": "633.622549px",
+          "top": "423.082016px"
+        },
+        {
+          "key": "uranus",
+          "left": "497.221069px",
+          "top": "633.507547px"
+        },
+        {
+          "key": "neptune",
+          "left": "690.742449px",
+          "top": "377.403222px"
+        }
+      ],
+      "calendar": "b198271eed4a2fedd2c84ceb11d5c0c804771fa612550ae62c2cceb850345fa7"
+    },
+    "reset": {
+      "date": "2026-10-27",
+      "location": "berlin",
+      "moon": "Full Moon · 98%",
+      "caption": "Phase: Full Moon (98%)",
+      "nextFull": "Next full moon: 11/24/2026 17:19:56",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 52.746421570469295 55 0 0 0 64 9 Z",
+      "direction": "N · 0°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observe Jupiter",
+          "detail": "Around 06:00 GMT+1 · \n      \n      \n      \n    SSE · 47.8° · well above 1 cubit above the horizon"
+        },
+        {
+          "id": "meteor-orionids",
+          "title": "Orionids winding down",
+          "detail": "Peak was on Oct 21, 2026, according to the calendar. A bright Moon may obscure faint meteors."
+        },
+        {
+          "id": "planet-mars",
+          "title": "Observe Mars",
+          "detail": "Around 06:00 GMT+1 · \n      \n      \n      \n    SSE · 52.9° · well above 1 cubit above the horizon"
+        },
+        {
+          "id": "conjunction-mars-jupiter-2026-11-16",
+          "title": "Mars and Jupiter close together",
+          "detail": "Nov 16, 2026 · 1.2° · about 1 thumb width"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "442.77847px",
+          "top": "358.111908px"
+        },
+        {
+          "key": "venus",
+          "left": "465.209822px",
+          "top": "435.677298px"
+        },
+        {
+          "key": "earth",
+          "left": "506.741273px",
+          "top": "457.897696px"
+        },
+        {
+          "key": "mars",
+          "left": "327.913481px",
+          "top": "580.881632px"
+        },
+        {
+          "key": "jupiter",
+          "left": "187.29498px",
+          "top": "543.512877px"
+        },
+        {
+          "key": "saturn",
+          "left": "634.883129px",
+          "top": "417.34026px"
+        },
+        {
+          "key": "uranus",
+          "left": "499.127478px",
+          "top": "632.54274px"
+        },
+        {
+          "key": "neptune",
+          "left": "690.804599px",
+          "top": "376.178916px"
+        }
+      ],
+      "calendar": "a92ca90d554c3443e96cdcca2d565395fec96b72eb74f5a1b6021ae4ddd0c2ed"
+    },
+    "dst": {
+      "spring": 23,
+      "autumn": 25
+    },
+    "calendar": {
+      "view": "month",
+      "filter": "meteor",
+      "heading": "October 2026",
+      "month": "fa296a38310b070891d13d955c91d3a4cdbfcffccdbe66b67a6db8281ecd3072",
+      "hintsBefore": [
+        "planet-jupiter",
+        "meteor-orionids",
+        "planet-mars",
+        "conjunction-mars-jupiter-2026-11-16"
+      ],
+      "hintsAfter": [
+        "planet-jupiter",
+        "meteor-orionids",
+        "planet-mars",
+        "conjunction-mars-jupiter-2026-11-16"
+      ]
+    }
+  },
+  "webkit-fr-320": {
+    "initial": {
+      "date": "2026-10-27",
+      "location": "berlin",
+      "moon": "Pleine lune · 98%",
+      "caption": "Phase: Pleine lune (98%)",
+      "nextFull": "Prochaine pleine lune: 24/11/2026 17:19:56",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 52.746421570469295 55 0 0 0 64 9 Z",
+      "direction": "N · 0°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observer Jupiter",
+          "detail": "Vers 06:00 UTC+1 · \n      \n      \n      \n    SSE · 47,8° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        },
+        {
+          "id": "meteor-orionids",
+          "title": "Orionides en déclin",
+          "detail": "Le maximum était le 21 oct. 2026, selon le calendrier. Une Lune brillante peut masquer les météores faibles."
+        },
+        {
+          "id": "planet-mars",
+          "title": "Observer Mars",
+          "detail": "Vers 06:00 UTC+1 · \n      \n      \n      \n    SSE · 52,9° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        },
+        {
+          "id": "conjunction-mars-jupiter-2026-11-16",
+          "title": "Mars et Jupiter proches dans le ciel",
+          "detail": "16 nov. 2026 · 1,2° · env. 1 pouce"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "141.443122px",
+          "top": "114.39686px"
+        },
+        {
+          "key": "venus",
+          "left": "148.608693px",
+          "top": "139.174692px"
+        },
+        {
+          "key": "earth",
+          "left": "161.875684px",
+          "top": "146.272875px"
+        },
+        {
+          "key": "mars",
+          "left": "104.75014px",
+          "top": "185.55941px"
+        },
+        {
+          "key": "jupiter",
+          "left": "59.830341px",
+          "top": "173.622169px"
+        },
+        {
+          "key": "saturn",
+          "left": "202.809888px",
+          "top": "133.317028px"
+        },
+        {
+          "key": "uranus",
+          "left": "159.4435px",
+          "top": "202.062264px"
+        },
+        {
+          "key": "neptune",
+          "left": "220.673691px",
+          "top": "120.168265px"
+        }
+      ],
+      "calendar": "3e3443f5276252563be8bb64755bef8f3863965df8c35603f34cde63ccf68ad2"
+    },
+    "december": {
+      "date": "2026-12-01",
+      "location": "berlin",
+      "moon": "Gibbeuse décroissante · 56%",
+      "caption": "Phase: Gibbeuse décroissante (56%)",
+      "nextFull": "Prochaine pleine lune: 24/12/2026 06:03:59",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 6.574563310710119 55 0 0 0 64 9 Z",
+      "direction": "ONO · 292°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observer Jupiter",
+          "detail": "Vers 05:20 UTC+1 · \n      \n      \n      \n    S · 50,8° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        },
+        {
+          "id": "planet-venus",
+          "title": "Observer Vénus",
+          "detail": "Vers 07:00 UTC+1 · \n      \n      \n      \n    SE · 21,9° · env. 1 empan au-dessus de l’horizon"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "88.775309px",
+          "top": "111.554993px"
+        },
+        {
+          "key": "venus",
+          "left": "113.550828px",
+          "top": "156.374629px"
+        },
+        {
+          "key": "earth",
+          "left": "135.26207px",
+          "top": "167.58109px"
+        },
+        {
+          "key": "mars",
+          "left": "85.229066px",
+          "top": "179.787202px"
+        },
+        {
+          "key": "jupiter",
+          "left": "57.052865px",
+          "top": "170.878257px"
+        },
+        {
+          "key": "saturn",
+          "left": "202.407203px",
+          "top": "135.1512px"
+        },
+        {
+          "key": "uranus",
+          "left": "158.834508px",
+          "top": "202.370466px"
+        },
+        {
+          "key": "neptune",
+          "left": "220.653838px",
+          "top": "120.559362px"
+        }
+      ],
+      "calendar": "55a9d328cf11f3b39424b2fd4a2039d55b3bbebe866e35a400d2e80994ab96e6"
+    },
+    "tokyo": {
+      "date": "2026-12-01",
+      "location": "tokyo",
+      "moon": "Gibbeuse décroissante · 56%",
+      "caption": "Phase: Gibbeuse décroissante (56%)",
+      "nextFull": "Prochaine pleine lune: 24/12/2026 06:03:59",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 6.574563310710119 55 0 0 0 64 9 Z",
+      "direction": "ENE · 60°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observer Jupiter",
+          "detail": "Vers 05:00 UTC+9 · \n      \n      \n      \n    S · 67,7° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        },
+        {
+          "id": "planet-mars",
+          "title": "Observer Mars",
+          "detail": "Vers 05:20 UTC+9 · \n      \n      \n      \n    S · 67,3° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "88.775309px",
+          "top": "111.554993px"
+        },
+        {
+          "key": "venus",
+          "left": "113.550828px",
+          "top": "156.374629px"
+        },
+        {
+          "key": "earth",
+          "left": "135.26207px",
+          "top": "167.58109px"
+        },
+        {
+          "key": "mars",
+          "left": "85.229066px",
+          "top": "179.787202px"
+        },
+        {
+          "key": "jupiter",
+          "left": "57.052865px",
+          "top": "170.878257px"
+        },
+        {
+          "key": "saturn",
+          "left": "202.407203px",
+          "top": "135.1512px"
+        },
+        {
+          "key": "uranus",
+          "left": "158.834508px",
+          "top": "202.370466px"
+        },
+        {
+          "key": "neptune",
+          "left": "220.653838px",
+          "top": "120.559362px"
+        }
+      ],
+      "calendar": "55a9d328cf11f3b39424b2fd4a2039d55b3bbebe866e35a400d2e80994ab96e6"
+    },
+    "reset": {
+      "date": "2026-10-27",
+      "location": "berlin",
+      "moon": "Pleine lune · 98%",
+      "caption": "Phase: Pleine lune (98%)",
+      "nextFull": "Prochaine pleine lune: 24/11/2026 17:19:56",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 52.746421570469295 55 0 0 0 64 9 Z",
+      "direction": "N · 0°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observer Jupiter",
+          "detail": "Vers 06:00 UTC+1 · \n      \n      \n      \n    SSE · 47,8° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        },
+        {
+          "id": "meteor-orionids",
+          "title": "Orionides en déclin",
+          "detail": "Le maximum était le 21 oct. 2026, selon le calendrier. Une Lune brillante peut masquer les météores faibles."
+        },
+        {
+          "id": "planet-mars",
+          "title": "Observer Mars",
+          "detail": "Vers 06:00 UTC+1 · \n      \n      \n      \n    SSE · 52,9° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        },
+        {
+          "id": "conjunction-mars-jupiter-2026-11-16",
+          "title": "Mars et Jupiter proches dans le ciel",
+          "detail": "16 nov. 2026 · 1,2° · env. 1 pouce"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "141.443122px",
+          "top": "114.39686px"
+        },
+        {
+          "key": "venus",
+          "left": "148.608693px",
+          "top": "139.174692px"
+        },
+        {
+          "key": "earth",
+          "left": "161.875684px",
+          "top": "146.272875px"
+        },
+        {
+          "key": "mars",
+          "left": "104.75014px",
+          "top": "185.55941px"
+        },
+        {
+          "key": "jupiter",
+          "left": "59.830341px",
+          "top": "173.622169px"
+        },
+        {
+          "key": "saturn",
+          "left": "202.809888px",
+          "top": "133.317028px"
+        },
+        {
+          "key": "uranus",
+          "left": "159.4435px",
+          "top": "202.062264px"
+        },
+        {
+          "key": "neptune",
+          "left": "220.673691px",
+          "top": "120.168265px"
+        }
+      ],
+      "calendar": "3e3443f5276252563be8bb64755bef8f3863965df8c35603f34cde63ccf68ad2"
+    },
+    "dst": {
+      "spring": 23,
+      "autumn": 25
+    },
+    "calendar": {
+      "view": "month",
+      "filter": "meteor",
+      "heading": "octobre 2026",
+      "month": "86794e5ef41e50c750dc15033423a156ca4f2e0b0938d2a4f11d86d7f7d96e8d",
+      "hintsBefore": [
+        "planet-jupiter",
+        "meteor-orionids",
+        "planet-mars",
+        "conjunction-mars-jupiter-2026-11-16"
+      ],
+      "hintsAfter": [
+        "planet-jupiter",
+        "meteor-orionids",
+        "planet-mars",
+        "conjunction-mars-jupiter-2026-11-16"
+      ]
+    }
+  },
+  "webkit-fr-390": {
+    "initial": {
+      "date": "2026-10-27",
+      "location": "berlin",
+      "moon": "Pleine lune · 98%",
+      "caption": "Phase: Pleine lune (98%)",
+      "nextFull": "Prochaine pleine lune: 24/11/2026 17:19:56",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 52.746421570469295 55 0 0 0 64 9 Z",
+      "direction": "N · 0°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observer Jupiter",
+          "detail": "Vers 06:00 UTC+1 · \n      \n      \n      \n    SSE · 47,8° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        },
+        {
+          "id": "meteor-orionids",
+          "title": "Orionides en déclin",
+          "detail": "Le maximum était le 21 oct. 2026, selon le calendrier. Une Lune brillante peut masquer les météores faibles."
+        },
+        {
+          "id": "planet-mars",
+          "title": "Observer Mars",
+          "detail": "Vers 06:00 UTC+1 · \n      \n      \n      \n    SSE · 52,9° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        },
+        {
+          "id": "conjunction-mars-jupiter-2026-11-16",
+          "title": "Mars et Jupiter proches dans le ciel",
+          "detail": "16 nov. 2026 · 1,2° · env. 1 pouce"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "184.491029px",
+          "top": "149.213295px"
+        },
+        {
+          "key": "venus",
+          "left": "193.837426px",
+          "top": "181.532207px"
+        },
+        {
+          "key": "earth",
+          "left": "211.142197px",
+          "top": "190.790707px"
+        },
+        {
+          "key": "mars",
+          "left": "136.630617px",
+          "top": "242.034013px"
+        },
+        {
+          "key": "jupiter",
+          "left": "78.039575px",
+          "top": "226.463699px"
+        },
+        {
+          "key": "saturn",
+          "left": "264.534637px",
+          "top": "173.891775px"
+        },
+        {
+          "key": "uranus",
+          "left": "207.969782px",
+          "top": "263.559475px"
+        },
+        {
+          "key": "neptune",
+          "left": "287.83525px",
+          "top": "156.741215px"
+        }
+      ],
+      "calendar": "3e3443f5276252563be8bb64755bef8f3863965df8c35603f34cde63ccf68ad2"
+    },
+    "december": {
+      "date": "2026-12-01",
+      "location": "berlin",
+      "moon": "Gibbeuse décroissante · 56%",
+      "caption": "Phase: Gibbeuse décroissante (56%)",
+      "nextFull": "Prochaine pleine lune: 24/12/2026 06:03:59",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 6.574563310710119 55 0 0 0 64 9 Z",
+      "direction": "ONO · 292°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observer Jupiter",
+          "detail": "Vers 05:20 UTC+1 · \n      \n      \n      \n    S · 50,8° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        },
+        {
+          "id": "planet-venus",
+          "title": "Observer Vénus",
+          "detail": "Vers 07:00 UTC+1 · \n      \n      \n      \n    SE · 21,9° · env. 1 empan au-dessus de l’horizon"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "115.793881px",
+          "top": "145.506512px"
+        },
+        {
+          "key": "venus",
+          "left": "148.109775px",
+          "top": "203.966907px"
+        },
+        {
+          "key": "earth",
+          "left": "176.428788px",
+          "top": "218.58403px"
+        },
+        {
+          "key": "mars",
+          "left": "111.168347px",
+          "top": "234.505046px"
+        },
+        {
+          "key": "jupiter",
+          "left": "74.416781px",
+          "top": "222.884683px"
+        },
+        {
+          "key": "saturn",
+          "left": "264.009395px",
+          "top": "176.284173px"
+        },
+        {
+          "key": "uranus",
+          "left": "207.175445px",
+          "top": "263.961478px"
+        },
+        {
+          "key": "neptune",
+          "left": "287.809354px",
+          "top": "157.251342px"
+        }
+      ],
+      "calendar": "55a9d328cf11f3b39424b2fd4a2039d55b3bbebe866e35a400d2e80994ab96e6"
+    },
+    "tokyo": {
+      "date": "2026-12-01",
+      "location": "tokyo",
+      "moon": "Gibbeuse décroissante · 56%",
+      "caption": "Phase: Gibbeuse décroissante (56%)",
+      "nextFull": "Prochaine pleine lune: 24/12/2026 06:03:59",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 6.574563310710119 55 0 0 0 64 9 Z",
+      "direction": "ENE · 60°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observer Jupiter",
+          "detail": "Vers 05:00 UTC+9 · \n      \n      \n      \n    S · 67,7° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        },
+        {
+          "id": "planet-mars",
+          "title": "Observer Mars",
+          "detail": "Vers 05:20 UTC+9 · \n      \n      \n      \n    S · 67,3° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "115.793881px",
+          "top": "145.506512px"
+        },
+        {
+          "key": "venus",
+          "left": "148.109775px",
+          "top": "203.966907px"
+        },
+        {
+          "key": "earth",
+          "left": "176.428788px",
+          "top": "218.58403px"
+        },
+        {
+          "key": "mars",
+          "left": "111.168347px",
+          "top": "234.505046px"
+        },
+        {
+          "key": "jupiter",
+          "left": "74.416781px",
+          "top": "222.884683px"
+        },
+        {
+          "key": "saturn",
+          "left": "264.009395px",
+          "top": "176.284173px"
+        },
+        {
+          "key": "uranus",
+          "left": "207.175445px",
+          "top": "263.961478px"
+        },
+        {
+          "key": "neptune",
+          "left": "287.809354px",
+          "top": "157.251342px"
+        }
+      ],
+      "calendar": "55a9d328cf11f3b39424b2fd4a2039d55b3bbebe866e35a400d2e80994ab96e6"
+    },
+    "reset": {
+      "date": "2026-10-27",
+      "location": "berlin",
+      "moon": "Pleine lune · 98%",
+      "caption": "Phase: Pleine lune (98%)",
+      "nextFull": "Prochaine pleine lune: 24/11/2026 17:19:56",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 52.746421570469295 55 0 0 0 64 9 Z",
+      "direction": "N · 0°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observer Jupiter",
+          "detail": "Vers 06:00 UTC+1 · \n      \n      \n      \n    SSE · 47,8° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        },
+        {
+          "id": "meteor-orionids",
+          "title": "Orionides en déclin",
+          "detail": "Le maximum était le 21 oct. 2026, selon le calendrier. Une Lune brillante peut masquer les météores faibles."
+        },
+        {
+          "id": "planet-mars",
+          "title": "Observer Mars",
+          "detail": "Vers 06:00 UTC+1 · \n      \n      \n      \n    SSE · 52,9° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        },
+        {
+          "id": "conjunction-mars-jupiter-2026-11-16",
+          "title": "Mars et Jupiter proches dans le ciel",
+          "detail": "16 nov. 2026 · 1,2° · env. 1 pouce"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "184.491029px",
+          "top": "149.213295px"
+        },
+        {
+          "key": "venus",
+          "left": "193.837426px",
+          "top": "181.532207px"
+        },
+        {
+          "key": "earth",
+          "left": "211.142197px",
+          "top": "190.790707px"
+        },
+        {
+          "key": "mars",
+          "left": "136.630617px",
+          "top": "242.034013px"
+        },
+        {
+          "key": "jupiter",
+          "left": "78.039575px",
+          "top": "226.463699px"
+        },
+        {
+          "key": "saturn",
+          "left": "264.534637px",
+          "top": "173.891775px"
+        },
+        {
+          "key": "uranus",
+          "left": "207.969782px",
+          "top": "263.559475px"
+        },
+        {
+          "key": "neptune",
+          "left": "287.83525px",
+          "top": "156.741215px"
+        }
+      ],
+      "calendar": "3e3443f5276252563be8bb64755bef8f3863965df8c35603f34cde63ccf68ad2"
+    },
+    "dst": {
+      "spring": 23,
+      "autumn": 25
+    },
+    "calendar": {
+      "view": "month",
+      "filter": "meteor",
+      "heading": "octobre 2026",
+      "month": "86794e5ef41e50c750dc15033423a156ca4f2e0b0938d2a4f11d86d7f7d96e8d",
+      "hintsBefore": [
+        "planet-jupiter",
+        "meteor-orionids",
+        "planet-mars",
+        "conjunction-mars-jupiter-2026-11-16"
+      ],
+      "hintsAfter": [
+        "planet-jupiter",
+        "meteor-orionids",
+        "planet-mars",
+        "conjunction-mars-jupiter-2026-11-16"
+      ]
+    }
+  },
+  "webkit-fr-1280": {
+    "initial": {
+      "date": "2026-10-27",
+      "location": "berlin",
+      "moon": "Pleine lune · 98%",
+      "caption": "Phase: Pleine lune (98%)",
+      "nextFull": "Prochaine pleine lune: 24/11/2026 17:19:56",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 52.746421570469295 55 0 0 0 64 9 Z",
+      "direction": "N · 0°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observer Jupiter",
+          "detail": "Vers 06:00 UTC+1 · \n      \n      \n      \n    SSE · 47,8° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        },
+        {
+          "id": "meteor-orionids",
+          "title": "Orionides en déclin",
+          "detail": "Le maximum était le 21 oct. 2026, selon le calendrier. Une Lune brillante peut masquer les météores faibles."
+        },
+        {
+          "id": "planet-mars",
+          "title": "Observer Mars",
+          "detail": "Vers 06:00 UTC+1 · \n      \n      \n      \n    SSE · 52,9° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        },
+        {
+          "id": "conjunction-mars-jupiter-2026-11-16",
+          "title": "Mars et Jupiter proches dans le ciel",
+          "detail": "16 nov. 2026 · 1,2° · env. 1 pouce"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "442.77847px",
+          "top": "358.111908px"
+        },
+        {
+          "key": "venus",
+          "left": "465.209822px",
+          "top": "435.677298px"
+        },
+        {
+          "key": "earth",
+          "left": "506.741273px",
+          "top": "457.897696px"
+        },
+        {
+          "key": "mars",
+          "left": "327.913481px",
+          "top": "580.881632px"
+        },
+        {
+          "key": "jupiter",
+          "left": "187.29498px",
+          "top": "543.512877px"
+        },
+        {
+          "key": "saturn",
+          "left": "634.883129px",
+          "top": "417.34026px"
+        },
+        {
+          "key": "uranus",
+          "left": "499.127478px",
+          "top": "632.54274px"
+        },
+        {
+          "key": "neptune",
+          "left": "690.804599px",
+          "top": "376.178916px"
+        }
+      ],
+      "calendar": "3e3443f5276252563be8bb64755bef8f3863965df8c35603f34cde63ccf68ad2"
+    },
+    "december": {
+      "date": "2026-12-01",
+      "location": "berlin",
+      "moon": "Gibbeuse décroissante · 56%",
+      "caption": "Phase: Gibbeuse décroissante (56%)",
+      "nextFull": "Prochaine pleine lune: 24/12/2026 06:03:59",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 6.574563310710119 55 0 0 0 64 9 Z",
+      "direction": "ONO · 292°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observer Jupiter",
+          "detail": "Vers 05:20 UTC+1 · \n      \n      \n      \n    S · 50,8° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        },
+        {
+          "id": "planet-venus",
+          "title": "Observer Vénus",
+          "detail": "Vers 07:00 UTC+1 · \n      \n      \n      \n    SE · 21,9° · env. 1 empan au-dessus de l’horizon"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "277.905315px",
+          "top": "349.21563px"
+        },
+        {
+          "key": "venus",
+          "left": "355.463461px",
+          "top": "489.520577px"
+        },
+        {
+          "key": "earth",
+          "left": "423.42909px",
+          "top": "524.601672px"
+        },
+        {
+          "key": "mars",
+          "left": "266.804034px",
+          "top": "562.81211px"
+        },
+        {
+          "key": "jupiter",
+          "left": "178.600274px",
+          "top": "534.923239px"
+        },
+        {
+          "key": "saturn",
+          "left": "633.622549px",
+          "top": "423.082016px"
+        },
+        {
+          "key": "uranus",
+          "left": "497.221069px",
+          "top": "633.507547px"
+        },
+        {
+          "key": "neptune",
+          "left": "690.742449px",
+          "top": "377.403222px"
+        }
+      ],
+      "calendar": "55a9d328cf11f3b39424b2fd4a2039d55b3bbebe866e35a400d2e80994ab96e6"
+    },
+    "tokyo": {
+      "date": "2026-12-01",
+      "location": "tokyo",
+      "moon": "Gibbeuse décroissante · 56%",
+      "caption": "Phase: Gibbeuse décroissante (56%)",
+      "nextFull": "Prochaine pleine lune: 24/12/2026 06:03:59",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 6.574563310710119 55 0 0 0 64 9 Z",
+      "direction": "ENE · 60°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observer Jupiter",
+          "detail": "Vers 05:00 UTC+9 · \n      \n      \n      \n    S · 67,7° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        },
+        {
+          "id": "planet-mars",
+          "title": "Observer Mars",
+          "detail": "Vers 05:20 UTC+9 · \n      \n      \n      \n    S · 67,3° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "277.905315px",
+          "top": "349.21563px"
+        },
+        {
+          "key": "venus",
+          "left": "355.463461px",
+          "top": "489.520577px"
+        },
+        {
+          "key": "earth",
+          "left": "423.42909px",
+          "top": "524.601672px"
+        },
+        {
+          "key": "mars",
+          "left": "266.804034px",
+          "top": "562.81211px"
+        },
+        {
+          "key": "jupiter",
+          "left": "178.600274px",
+          "top": "534.923239px"
+        },
+        {
+          "key": "saturn",
+          "left": "633.622549px",
+          "top": "423.082016px"
+        },
+        {
+          "key": "uranus",
+          "left": "497.221069px",
+          "top": "633.507547px"
+        },
+        {
+          "key": "neptune",
+          "left": "690.742449px",
+          "top": "377.403222px"
+        }
+      ],
+      "calendar": "55a9d328cf11f3b39424b2fd4a2039d55b3bbebe866e35a400d2e80994ab96e6"
+    },
+    "reset": {
+      "date": "2026-10-27",
+      "location": "berlin",
+      "moon": "Pleine lune · 98%",
+      "caption": "Phase: Pleine lune (98%)",
+      "nextFull": "Prochaine pleine lune: 24/11/2026 17:19:56",
+      "shadow": "M 64 9 A 55 55 0 0 1 64 119 A 52.746421570469295 55 0 0 0 64 9 Z",
+      "direction": "N · 0°",
+      "hints": [
+        {
+          "id": "planet-jupiter",
+          "title": "Observer Jupiter",
+          "detail": "Vers 06:00 UTC+1 · \n      \n      \n      \n    SSE · 47,8° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        },
+        {
+          "id": "meteor-orionids",
+          "title": "Orionides en déclin",
+          "detail": "Le maximum était le 21 oct. 2026, selon le calendrier. Une Lune brillante peut masquer les météores faibles."
+        },
+        {
+          "id": "planet-mars",
+          "title": "Observer Mars",
+          "detail": "Vers 06:00 UTC+1 · \n      \n      \n      \n    SSE · 52,9° · nettement plus haut qu’une coudée au-dessus de l’horizon"
+        },
+        {
+          "id": "conjunction-mars-jupiter-2026-11-16",
+          "title": "Mars et Jupiter proches dans le ciel",
+          "detail": "16 nov. 2026 · 1,2° · env. 1 pouce"
+        }
+      ],
+      "planets": [
+        {
+          "key": "mercury",
+          "left": "442.77847px",
+          "top": "358.111908px"
+        },
+        {
+          "key": "venus",
+          "left": "465.209822px",
+          "top": "435.677298px"
+        },
+        {
+          "key": "earth",
+          "left": "506.741273px",
+          "top": "457.897696px"
+        },
+        {
+          "key": "mars",
+          "left": "327.913481px",
+          "top": "580.881632px"
+        },
+        {
+          "key": "jupiter",
+          "left": "187.29498px",
+          "top": "543.512877px"
+        },
+        {
+          "key": "saturn",
+          "left": "634.883129px",
+          "top": "417.34026px"
+        },
+        {
+          "key": "uranus",
+          "left": "499.127478px",
+          "top": "632.54274px"
+        },
+        {
+          "key": "neptune",
+          "left": "690.804599px",
+          "top": "376.178916px"
+        }
+      ],
+      "calendar": "3e3443f5276252563be8bb64755bef8f3863965df8c35603f34cde63ccf68ad2"
+    },
+    "dst": {
+      "spring": 23,
+      "autumn": 25
+    },
+    "calendar": {
+      "view": "month",
+      "filter": "meteor",
+      "heading": "octobre 2026",
+      "month": "86794e5ef41e50c750dc15033423a156ca4f2e0b0938d2a4f11d86d7f7d96e8d",
+      "hintsBefore": [
+        "planet-jupiter",
+        "meteor-orionids",
+        "planet-mars",
+        "conjunction-mars-jupiter-2026-11-16"
+      ],
+      "hintsAfter": [
+        "planet-jupiter",
+        "meteor-orionids",
+        "planet-mars",
+        "conjunction-mars-jupiter-2026-11-16"
+      ]
+    }
+  }
+}

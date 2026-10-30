@@ -18,10 +18,10 @@ function getRepositoryRoot() {
  */
 function getCalendarSourceFiles(repositoryRoot) {
   return [
-    path.join(repositoryRoot, "phenomena-config.js"),
-    path.join(repositoryRoot, "calendar-events.js"),
-    path.join(repositoryRoot, "eclipse-calendar-config.js"),
-    path.join(repositoryRoot, "extended-calendar-config.js")
+    path.join(repositoryRoot, "js/data/phenomena-config.js"),
+    path.join(repositoryRoot, "js/data/calendar-events.js"),
+    path.join(repositoryRoot, "js/data/eclipse-calendar-config.js"),
+    path.join(repositoryRoot, "js/data/extended-calendar-config.js")
   ];
 }
 

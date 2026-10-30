@@ -1,17 +1,22 @@
 const assert=require('node:assert/strict');
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
 const {test}=require('node:test');
+const {readDashboardSource}=require('./dashboard-source');
 const root=path.resolve(__dirname,'..');
 const context=vm.createContext({window:{},Date,Math});
-vm.runInContext(fs.readFileSync(path.join(root,'conjunction-model.js'),'utf8'),context);
+vm.runInContext(fs.readFileSync(path.join(root,'js/models/conjunction-model.js'),'utf8'),context);
+vm.runInContext(fs.readFileSync(path.join(root,'js/models/astronomy-coordinates.js'),'utf8'),context);
+for(const file of ['js/data/planet-elements-config.js','js/models/planet-model.js']){
+  vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),context);
+}
 const model=context.window.PLANETENUHR_CONJUNCTIONS;
-const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
-for(const name of ['normalizeDeg','julianDate','solveKepler','planetPosition','planetByKey','heliocentricPosition','geocentricVector','computeConjunctionEvents']){
+const html=readDashboardSource(root);
+vm.runInContext('var normalizeDeg = window.PLANETENUHR_COORDINATES.normalizeDeg; var julianDate = window.PLANETENUHR_COORDINATES.julianDate; var solveKepler = window.PLANETENUHR_PLANET_MODEL.solveKepler; var planetPosition = window.PLANETENUHR_PLANET_MODEL.planetPosition; var planetByKey = window.PLANETENUHR_PLANET_MODEL.planetByKey;',context);
+for(const name of ['computeConjunctionEvents']){
   const start=html.indexOf('    function '+name+'('),end=html.indexOf('\n    }',start)+6;
   assert.ok(start>=0);vm.runInContext(html.slice(start,end),context);
 }
-const start=html.indexOf('    const solarPlanets = [');
-vm.runInContext(html.slice(start,html.indexOf('\n    ];',start)+7),context);
+
 
 test('full angular separation includes latitude and remains valid at zero and 180 degrees',()=>{
   assert.equal(model.angularSeparation({x:1,y:0,z:0},{x:2,y:0,z:0}),0);
@@ -22,7 +27,7 @@ test('full angular separation includes latitude and remains valid at zero and 18
 });
 test('Mars and Jupiter approach from about eight degrees to 1.2 degrees in November 2026',()=>{
   const date=new Date('2026-10-26T12:00:00Z');
-  const current=model.angularSeparation(context.geocentricVector('mars',date),context.geocentricVector('jupiter',date));
+  const current=model.angularSeparation(context.window.PLANETENUHR_PLANET_MODEL.geocentricVector('mars',date),context.window.PLANETENUHR_PLANET_MODEL.geocentricVector('jupiter',date));
   assert.ok(current>7.7&&current<8.1);
   const events=context.computeConjunctionEvents(date,60);
   const pair=events.filter(event=>event.a==='mars'&&event.b==='jupiter');
@@ -33,7 +38,7 @@ test('Mars and Jupiter approach from about eight degrees to 1.2 degrees in Novem
   assert.ok(event.separation>1,'Longitude crossing must not be reported as zero sky separation');
   for(const offset of [-3600000,3600000]){
     const d=new Date(event.date.getTime()+offset);
-    assert.ok(model.angularSeparation(context.geocentricVector('mars',d),context.geocentricVector('jupiter',d))>=event.separation-1e-8);
+    assert.ok(model.angularSeparation(context.window.PLANETENUHR_PLANET_MODEL.geocentricVector('mars',d),context.window.PLANETENUHR_PLANET_MODEL.geocentricVector('jupiter',d))>=event.separation-1e-8);
   }
   assert.ok(events.every((event,index)=>index===0||event.date>=events[index-1].date));
 });
@@ -65,11 +70,14 @@ test('daily vectors are shared between pairs, keeping orbital work bounded',()=>
 
 test('angle labels keep localized degrees and arm-length estimates, including tiny separations',()=>{
   const copy=vm.createContext({window:{},Math});
-  vm.runInContext(fs.readFileSync(path.join(root,'translations.js'),'utf8'),copy);
+  vm.runInContext(fs.readFileSync(path.join(root,'js/data/translations.js'),'utf8'),copy);
+  vm.runInContext(fs.readFileSync(path.join(root,'js/core/observation-format.js'),'utf8'),copy);
   for(const name of ['altitudeThumbEstimate','conjunctionSeparationLabel']){
     const start=html.indexOf('    function '+name+'('),end=html.indexOf('\n    }',start)+6;
     vm.runInContext(html.slice(start,end),copy);
   }
+  vm.runInContext(fs.readFileSync(path.join(root,'js/cards/conjunctions.js'),'utf8'),copy);
+  vm.runInContext('const conjunctionController=window.PLANETENUHR_CONJUNCTION_CARD.create({getLanguage:()=>lang,getTranslations:()=>t,altitudeEstimate:altitudeThumbEstimate});',copy);
   for(const language of ['en','de','fr']){
     vm.runInContext('var lang="'+language+'"; var t=window.PLANETENUHR_TRANSLATIONS[lang];',copy);
     const format=copy.conjunctionSeparationLabel;

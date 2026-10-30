@@ -1,0 +1,162 @@
+[
+  {
+    "date": "1900-01-01T00:00:00.000Z",
+    "moon": {
+      "icon": "🌑",
+      "key": "phase_new",
+      "illum": 0,
+      "frac": 0.9857333977588447
+    },
+    "nextFullMoon": "1900-01-16T04:28:41.860Z"
+  },
+  {
+    "date": "2000-01-06T18:13:59.000Z",
+    "moon": {
+      "icon": "🌑",
+      "key": "phase_new",
+      "illum": 0,
+      "frac": 0.9999996080649076
+    },
+    "nextFullMoon": "2000-01-21T12:36:01.438Z"
+  },
+  {
+    "date": "2000-01-06T18:14:00.000Z",
+    "moon": {
+      "icon": "🌑",
+      "key": "phase_new",
+      "illum": 0,
+      "frac": 0
+    },
+    "nextFullMoon": "2000-01-21T12:36:01.438Z"
+  },
+  {
+    "date": "2000-01-06T18:14:00.999Z",
+    "moon": {
+      "icon": "🌑",
+      "key": "phase_new",
+      "illum": 0,
+      "frac": 0
+    },
+    "nextFullMoon": "2000-01-21T12:36:02.437Z"
+  },
+  {
+    "date": "2000-01-10T10:49:30.359Z",
+    "moon": {
+      "icon": "🌒",
+      "key": "phase_wax_cres",
+      "illum": 15,
+      "frac": 0.12499985902141764
+    },
+    "nextFullMoon": "2000-01-21T12:36:01.797Z"
+  },
+  {
+    "date": "2000-01-14T03:25:00.719Z",
+    "moon": {
+      "icon": "🌓",
+      "key": "phase_first_q",
+      "illum": 50,
+      "frac": 0.24999971804283527
+    },
+    "nextFullMoon": "2000-01-21T12:36:02.157Z"
+  },
+  {
+    "date": "2000-01-17T20:00:31.079Z",
+    "moon": {
+      "icon": "🌔",
+      "key": "phase_wax_gibb",
+      "illum": 85,
+      "frac": 0.37499996899934523
+    },
+    "nextFullMoon": "2000-01-21T12:36:01.517Z"
+  },
+  {
+    "date": "2000-01-21T12:36:01.438Z",
+    "moon": {
+      "icon": "🌕",
+      "key": "phase_full",
+      "illum": 100,
+      "frac": 0.49999982802076265
+    },
+    "nextFullMoon": "2000-01-21T12:36:01.876Z"
+  },
+  {
+    "date": "2000-01-25T05:11:31.798Z",
+    "moon": {
+      "icon": "🌖",
+      "key": "phase_wan_gibb",
+      "illum": 85,
+      "frac": 0.6249996870421802
+    },
+    "nextFullMoon": "2000-02-20T01:20:05.114Z"
+  },
+  {
+    "date": "2000-01-28T21:47:02.158Z",
+    "moon": {
+      "icon": "🌗",
+      "key": "phase_last_q",
+      "illum": 50,
+      "frac": 0.7499999379986905
+    },
+    "nextFullMoon": "2000-02-20T01:20:04.474Z"
+  },
+  {
+    "date": "2000-02-01T14:22:32.517Z",
+    "moon": {
+      "icon": "🌘",
+      "key": "phase_wan_cres",
+      "illum": 15,
+      "frac": 0.8749997970201079
+    },
+    "nextFullMoon": "2000-02-20T01:20:04.833Z"
+  },
+  {
+    "date": "2000-02-05T06:58:02.877Z",
+    "moon": {
+      "icon": "🌑",
+      "key": "phase_new",
+      "illum": 0,
+      "frac": 0.9999996560415255
+    },
+    "nextFullMoon": "2000-02-20T01:20:05.193Z"
+  },
+  {
+    "date": "2000-01-21T12:36:02.438Z",
+    "moon": {
+      "icon": "🌕",
+      "key": "phase_full",
+      "illum": 100,
+      "frac": 0.5000002199558552
+    },
+    "nextFullMoon": "2000-02-20T01:20:04.754Z"
+  },
+  {
+    "date": "2026-10-27T12:00:00.000Z",
+    "moon": {
+      "icon": "🌕",
+      "key": "phase_full",
+      "illum": 98,
+      "frac": 0.5457176916665072
+    },
+    "nextFullMoon": "2026-11-24T16:19:56.798Z"
+  },
+  {
+    "date": "2026-12-01T12:00:00.000Z",
+    "moon": {
+      "icon": "🌖",
+      "key": "phase_wan_gibb",
+      "illum": 56,
+      "frac": 0.7309294111057786
+    },
+    "nextFullMoon": "2026-12-24T05:03:59.676Z"
+  },
+  {
+    "date": "2050-12-31T23:59:59.999Z",
+    "moon": {
+      "icon": "🌖",
+      "key": "phase_wan_gibb",
+      "illum": 89,
+      "frac": 0.6084973062435118
+    },
+    "nextFullMoon": "2051-01-27T07:50:18.197Z"
+  }
+]

@@ -33,7 +33,7 @@ async function main(){
     maximumOffsetSeconds:5 * 365.25 * 86400,
     samples
   };
-  fs.writeFileSync(path.join(__dirname, '..', 'voyager-data.js'), '/** NASA solar-distance baseline. Regenerate with node scripts/update-voyager-data.js. */\nwindow.PLANETENUHR_VOYAGER_DATA = ' + JSON.stringify(data, null, 2) + ';\n', 'utf8');
+  fs.writeFileSync(path.join(__dirname, '..', 'js/data/voyager-data.js'), '/** NASA solar-distance baseline. Regenerate with node scripts/update-voyager-data.js. */\nwindow.PLANETENUHR_VOYAGER_DATA = ' + JSON.stringify(data, null, 2) + ';\n', 'utf8');
   console.log(JSON.stringify(data, null, 2));
 }
 

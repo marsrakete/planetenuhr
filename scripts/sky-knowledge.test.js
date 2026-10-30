@@ -5,7 +5,7 @@ const vm = require('node:vm');
 const { test } = require('node:test');
 const root = path.resolve(__dirname, '..');
 const realm = vm.createContext({ window:{} });
-for (const file of ['mnemonics-config.js', 'sky-knowledge-graphics-config.js', 'sky-knowledge.js', 'translations.js', 'card-help-config.js']) {
+for (const file of ['js/data/mnemonics-config.js', 'js/data/sky-knowledge-graphics-config.js', 'js/cards/sky-knowledge.js', 'js/data/translations.js', 'js/data/card-help-config.js']) {
   vm.runInContext(fs.readFileSync(path.join(root, file), 'utf8'), realm, {filename:file});
 }
 const entries = realm.window.PLANETENUHR_MNEMONICS.entries;

@@ -1,0 +1,1762 @@
+{
+  "planets": [
+    {
+      "iso": "2025-12-01T12:00:00Z",
+      "systemIndex": 0,
+      "planetIndex": 0,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 0.07,
+        "orbitRadius": 25.74285714285714,
+        "periodDays": 1.4046172499118754,
+        "angleDegrees": 72.87894534971565,
+        "x": 117.5784791901716,
+        "y": 134.60205981298492
+      }
+    },
+    {
+      "iso": "2025-12-01T12:00:00Z",
+      "systemIndex": 0,
+      "planetIndex": 1,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 0.07,
+        "orbitRadius": 29.285714285714285,
+        "periodDays": 2.236690321378889,
+        "angleDegrees": 109.56050500669517,
+        "x": 100.19508096893787,
+        "y": 137.59559066261863
+      }
+    },
+    {
+      "iso": "2025-12-01T12:00:00Z",
+      "systemIndex": 0,
+      "planetIndex": 2,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 0.07,
+        "orbitRadius": 34.599999999999994,
+        "periodDays": 3.705082749581985,
+        "angleDegrees": 66.73707030445803,
+        "x": 123.66531103721462,
+        "y": 141.78709288777725
+      }
+    },
+    {
+      "iso": "2025-12-01T12:00:00Z",
+      "systemIndex": 0,
+      "planetIndex": 3,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 0.07,
+        "orbitRadius": 40.8,
+        "periodDays": 5.704348060909328,
+        "angleDegrees": 327.9266273647081,
+        "x": 144.5726466120234,
+        "y": 88.33500274082297
+      }
+    },
+    {
+      "iso": "2025-12-01T12:00:00Z",
+      "systemIndex": 0,
+      "planetIndex": 4,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 0.07,
+        "orbitRadius": 48.771428571428565,
+        "periodDays": 8.665059635181398,
+        "angleDegrees": 24.00079796341015,
+        "x": 154.55464075641663,
+        "y": 129.83774765351694
+      }
+    },
+    {
+      "iso": "2025-12-01T12:00:00Z",
+      "systemIndex": 0,
+      "planetIndex": 5,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 0.07,
+        "orbitRadius": 55.857142857142854,
+        "periodDays": 11.622183832277392,
+        "angleDegrees": 96.67597916425439,
+        "x": 103.50636431283512,
+        "y": 165.47840213745926
+      }
+    },
+    {
+      "iso": "2025-12-01T12:00:00Z",
+      "systemIndex": 0,
+      "planetIndex": 6,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 0.07,
+        "orbitRadius": 70.91428571428571,
+        "periodDays": 18.79561342308359,
+        "angleDegrees": 208.1336862144235,
+        "x": 47.46425210329709,
+        "y": 76.56175612614555
+      }
+    },
+    {
+      "iso": "2025-12-01T12:00:00Z",
+      "systemIndex": 1,
+      "planetIndex": 0,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 1.6,
+        "orbitRadius": 18.8675,
+        "periodDays": 6.711926332190334,
+        "angleDegrees": 148.13385118899168,
+        "x": 93.9761388737195,
+        "y": 119.96084488663872
+      }
+    },
+    {
+      "iso": "2025-12-01T12:00:00Z",
+      "systemIndex": 1,
+      "planetIndex": 1,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 1.6,
+        "orbitRadius": 19.44875,
+        "periodDays": 8.852880695384906,
+        "angleDegrees": 180.3307583371061,
+        "x": 90.55157406850596,
+        "y": 109.88772645151236
+      }
+    },
+    {
+      "iso": "2025-12-01T12:00:00Z",
+      "systemIndex": 1,
+      "planetIndex": 2,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 1.6,
+        "orbitRadius": 20.14625,
+        "periodDays": 11.670118557941313,
+        "angleDegrees": 192.31621368817287,
+        "x": 90.3174108769833,
+        "y": 105.70266658531071
+      }
+    },
+    {
+      "iso": "2025-12-01T12:00:00Z",
+      "systemIndex": 1,
+      "planetIndex": 3,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 1.6,
+        "orbitRadius": 28.4,
+        "periodDays": 60.356572467296395,
+        "angleDegrees": 142.46255934199144,
+        "x": 87.4800675484631,
+        "y": 127.30354421435723
+      }
+    },
+    {
+      "iso": "2025-12-01T12:00:00Z",
+      "systemIndex": 1,
+      "planetIndex": 4,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 1.6,
+        "orbitRadius": 32.275,
+        "periodDays": 90.75562191263965,
+        "angleDegrees": 7.748255841070204,
+        "x": 141.98032931350295,
+        "y": 114.35134025329019
+      }
+    },
+    {
+      "iso": "2025-12-01T12:00:00Z",
+      "systemIndex": 1,
+      "planetIndex": 5,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 1.6,
+        "orbitRadius": 43.5125,
+        "periodDays": 199.47438035567686,
+        "angleDegrees": 119.69763537414838,
+        "x": 88.44291458183376,
+        "y": 147.79721847601863
+      }
+    },
+    {
+      "iso": "2025-12-01T12:00:00Z",
+      "systemIndex": 1,
+      "planetIndex": 6,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 1.6,
+        "orbitRadius": 55.137499999999996,
+        "periodDays": 338.4399812021236,
+        "angleDegrees": 2.0231334246909682,
+        "x": 165.10313030039487,
+        "y": 111.9465192903502
+      }
+    },
+    {
+      "iso": "2025-12-01T12:00:00Z",
+      "systemIndex": 1,
+      "planetIndex": 7,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 1.6,
+        "orbitRadius": 74.9,
+        "periodDays": 624.8344749131566,
+        "angleDegrees": 123.86040114645039,
+        "x": 68.26786744910936,
+        "y": 172.19677735023652
+      }
+    },
+    {
+      "iso": "2025-12-01T12:00:00Z",
+      "systemIndex": 2,
+      "planetIndex": 0,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 5.8,
+        "orbitRadius": 16.160344827586208,
+        "periodDays": 0.68484375,
+        "angleDegrees": 109.14579055458307,
+        "x": 104.69984332707352,
+        "y": 125.26646927710941
+      }
+    },
+    {
+      "iso": "2025-12-01T12:00:00Z",
+      "systemIndex": 2,
+      "planetIndex": 1,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 5.8,
+        "orbitRadius": 17.175862068965518,
+        "periodDays": 13.600148041760887,
+        "angleDegrees": 126.86069799121469,
+        "x": 99.69668915516598,
+        "y": 123.74234417582583
+      }
+    },
+    {
+      "iso": "2025-12-01T12:00:00Z",
+      "systemIndex": 2,
+      "planetIndex": 2,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 5.8,
+        "orbitRadius": 18.56551724137931,
+        "periodDays": 43.83,
+        "angleDegrees": 165.48665297741536,
+        "x": 92.02692162843059,
+        "y": 114.65262122780014
+      }
+    },
+    {
+      "iso": "2025-12-01T12:00:00Z",
+      "systemIndex": 2,
+      "planetIndex": 3,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 5.8,
+        "orbitRadius": 24.337931034482757,
+        "periodDays": 256.80088265582833,
+        "angleDegrees": 183.04784702073812,
+        "x": 85.69649542116642,
+        "y": 108.70595509125285
+      }
+    },
+    {
+      "iso": "2025-12-01T12:00:00Z",
+      "systemIndex": 2,
+      "planetIndex": 4,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 5.8,
+        "orbitRadius": 77.67931034482758,
+        "periodDays": 5166.760465415317,
+        "angleDegrees": 229.55447766748273,
+        "x": 59.60750883747918,
+        "y": 50.884248375891396
+      }
+    },
+    {
+      "iso": "2025-12-01T12:00:00Z",
+      "systemIndex": 3,
+      "planetIndex": 0,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 70,
+        "orbitRadius": 29.285714285714285,
+        "periodDays": 17325.328730647507,
+        "angleDegrees": 289.692371785816,
+        "x": 119.8684045201724,
+        "y": 82.42704851760098
+      }
+    },
+    {
+      "iso": "2025-12-01T12:00:00Z",
+      "systemIndex": 3,
+      "planetIndex": 1,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 70,
+        "orbitRadius": 37.25714285714285,
+        "periodDays": 35064,
+        "angleDegrees": 247.1868583162218,
+        "x": 95.55439902632331,
+        "y": 75.65732528781629
+      }
+    },
+    {
+      "iso": "2025-12-01T12:00:00Z",
+      "systemIndex": 3,
+      "planetIndex": 2,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 70,
+        "orbitRadius": 49.65714285714285,
+        "periodDays": 69858.61802956025,
+        "angleDegrees": 255.7808103870309,
+        "x": 97.80261367547375,
+        "y": 61.86419624037682
+      }
+    },
+    {
+      "iso": "2025-12-01T12:00:00Z",
+      "systemIndex": 3,
+      "planetIndex": 3,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 70,
+        "orbitRadius": 76.22857142857143,
+        "periodDays": 167227.6027693993,
+        "angleDegrees": 284.37797554689087,
+        "x": 128.92889180642294,
+        "y": 36.15900761080232
+      }
+    },
+    {
+      "iso": "2026-01-01T00:00:00Z",
+      "systemIndex": 0,
+      "planetIndex": 0,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 0.07,
+        "orbitRadius": 25.74285714285714,
+        "periodDays": 1.4046172499118754,
+        "angleDegrees": 329.9550923849456,
+        "x": 132.28387296273257,
+        "y": 97.11110168950242
+      }
+    },
+    {
+      "iso": "2026-01-01T00:00:00Z",
+      "systemIndex": 0,
+      "planetIndex": 1,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 0.07,
+        "orbitRadius": 29.285714285714285,
+        "periodDays": 2.236690321378889,
+        "angleDegrees": 338.5994967033621,
+        "x": 137.2665407414014,
+        "y": 99.31408322969021
+      }
+    },
+    {
+      "iso": "2026-01-01T00:00:00Z",
+      "systemIndex": 0,
+      "planetIndex": 2,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 0.07,
+        "orbitRadius": 34.599999999999994,
+        "periodDays": 3.705082749581985,
+        "angleDegrees": 150.2336349192774,
+        "x": 79.96522615769162,
+        "y": 127.17767039622625
+      }
+    },
+    {
+      "iso": "2026-01-01T00:00:00Z",
+      "systemIndex": 0,
+      "planetIndex": 3,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 0.07,
+        "orbitRadius": 40.8,
+        "periodDays": 5.704348060909328,
+        "angleDegrees": 92.77410910301842,
+        "x": 108.02534434530483,
+        "y": 150.75218687439215
+      }
+    },
+    {
+      "iso": "2026-01-01T00:00:00Z",
+      "systemIndex": 0,
+      "planetIndex": 4,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 0.07,
+        "orbitRadius": 48.771428571428565,
+        "periodDays": 8.665059635181398,
+        "angleDegrees": 211.15883983299136,
+        "x": 68.26452402686282,
+        "y": 84.76505814958855
+      }
+    },
+    {
+      "iso": "2026-01-01T00:00:00Z",
+      "systemIndex": 0,
+      "planetIndex": 5,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 0.07,
+        "orbitRadius": 55.857142857142854,
+        "periodDays": 11.622183832277392,
+        "angleDegrees": 321.4209736037883,
+        "x": 153.6662542014592,
+        "y": 75.16785030784328
+      }
+    },
+    {
+      "iso": "2026-01-01T00:00:00Z",
+      "systemIndex": 0,
+      "planetIndex": 6,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 0.07,
+        "orbitRadius": 70.91428571428571,
+        "periodDays": 18.79561342308359,
+        "angleDegrees": 72.3125450174557,
+        "x": 131.54549503407762,
+        "y": 177.56202751623047
+      }
+    },
+    {
+      "iso": "2026-01-01T00:00:00Z",
+      "systemIndex": 1,
+      "planetIndex": 0,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 1.6,
+        "orbitRadius": 18.8675,
+        "periodDays": 6.711926332190334,
+        "angleDegrees": 344.02784891368356,
+        "x": 128.1391306785734,
+        "y": 104.80822819495718
+      }
+    },
+    {
+      "iso": "2026-01-01T00:00:00Z",
+      "systemIndex": 1,
+      "planetIndex": 1,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 1.6,
+        "orbitRadius": 19.44875,
+        "periodDays": 8.852880695384906,
+        "angleDegrees": 340.60501231235685,
+        "x": 128.34506673850188,
+        "y": 103.54148601283451
+      }
+    },
+    {
+      "iso": "2026-01-01T00:00:00Z",
+      "systemIndex": 1,
+      "planetIndex": 2,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 1.6,
+        "orbitRadius": 20.14625,
+        "periodDays": 11.670118557941313,
+        "angleDegrees": 53.180691241286695,
+        "x": 122.07351490350345,
+        "y": 126.12766650626742
+      }
+    },
+    {
+      "iso": "2026-01-01T00:00:00Z",
+      "systemIndex": 1,
+      "planetIndex": 3,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 1.6,
+        "orbitRadius": 28.4,
+        "periodDays": 60.356572467296395,
+        "angleDegrees": 324.38143828346074,
+        "x": 133.08670454989073,
+        "y": 93.46022754007616
+      }
+    },
+    {
+      "iso": "2026-01-01T00:00:00Z",
+      "systemIndex": 1,
+      "planetIndex": 4,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 1.6,
+        "orbitRadius": 32.275,
+        "periodDays": 90.75562191263965,
+        "angleDegrees": 128.73249647102784,
+        "x": 89.80601040286345,
+        "y": 135.17694201349204
+      }
+    },
+    {
+      "iso": "2026-01-01T00:00:00Z",
+      "systemIndex": 1,
+      "planetIndex": 5,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 1.6,
+        "orbitRadius": 43.5125,
+        "periodDays": 199.47438035567686,
+        "angleDegrees": 174.74229815450963,
+        "x": 66.67057367899667,
+        "y": 113.98728867060626
+      }
+    },
+    {
+      "iso": "2026-01-01T00:00:00Z",
+      "systemIndex": 1,
+      "planetIndex": 6,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 1.6,
+        "orbitRadius": 55.137499999999996,
+        "periodDays": 338.4399812021236,
+        "angleDegrees": 34.46610887043971,
+        "x": 155.45872282049532,
+        "y": 141.2033399779475
+      }
+    },
+    {
+      "iso": "2026-01-01T00:00:00Z",
+      "systemIndex": 1,
+      "planetIndex": 7,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 1.6,
+        "orbitRadius": 74.9,
+        "periodDays": 624.8344749131566,
+        "angleDegrees": 141.43305509056336,
+        "x": 51.43716769766325,
+        "y": 156.69480348741584
+      }
+    },
+    {
+      "iso": "2026-01-01T00:00:00Z",
+      "systemIndex": 2,
+      "planetIndex": 0,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 5.8,
+        "orbitRadius": 16.160344827586208,
+        "periodDays": 0.68484375,
+        "angleDegrees": 302,
+        "x": 118.56367804078936,
+        "y": 96.29525033573417
+      }
+    },
+    {
+      "iso": "2026-01-01T00:00:00Z",
+      "systemIndex": 2,
+      "planetIndex": 1,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 5.8,
+        "orbitRadius": 17.175862068965518,
+        "periodDays": 13.600148041760887,
+        "angleDegrees": 214.204850884591,
+        "x": 95.79499555518605,
+        "y": 100.34453074496406
+      }
+    },
+    {
+      "iso": "2026-01-01T00:00:00Z",
+      "systemIndex": 2,
+      "planetIndex": 2,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 5.8,
+        "orbitRadius": 18.56551724137931,
+        "periodDays": 43.83,
+        "angleDegrees": 56,
+        "x": 120.3817054906431,
+        "y": 125.39151134702188
+      }
+    },
+    {
+      "iso": "2026-01-01T00:00:00Z",
+      "systemIndex": 2,
+      "planetIndex": 3,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 5.8,
+        "orbitRadius": 24.337931034482757,
+        "periodDays": 256.80088265582833,
+        "angleDegrees": 225.80470940549822,
+        "x": 93.03387800626636,
+        "y": 92.55048449002132
+      }
+    },
+    {
+      "iso": "2026-01-01T00:00:00Z",
+      "systemIndex": 2,
+      "planetIndex": 4,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 5.8,
+        "orbitRadius": 77.67931034482758,
+        "periodDays": 5166.760465415317,
+        "angleDegrees": 231.67960037705996,
+        "x": 61.83429074586832,
+        "y": 49.05625784631787
+      }
+    },
+    {
+      "iso": "2026-01-01T00:00:00Z",
+      "systemIndex": 3,
+      "planetIndex": 0,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 70,
+        "orbitRadius": 29.285714285714285,
+        "periodDays": 17325.328730647507,
+        "angleDegrees": 290.3261259945069,
+        "x": 120.17278172528418,
+        "y": 82.53788840612918
+      }
+    },
+    {
+      "iso": "2026-01-01T00:00:00Z",
+      "systemIndex": 3,
+      "planetIndex": 1,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 70,
+        "orbitRadius": 37.25714285714285,
+        "periodDays": 35064,
+        "angleDegrees": 247.5,
+        "x": 95.74230869131209,
+        "y": 75.57888827443662
+      }
+    },
+    {
+      "iso": "2026-01-01T00:00:00Z",
+      "systemIndex": 3,
+      "planetIndex": 2,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 70,
+        "orbitRadius": 49.65714285714285,
+        "periodDays": 69858.61802956025,
+        "angleDegrees": 255.9379849820874,
+        "x": 97.93470622350641,
+        "y": 61.83091735540734
+      }
+    },
+    {
+      "iso": "2026-01-01T00:00:00Z",
+      "systemIndex": 3,
+      "planetIndex": 3,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 70,
+        "orbitRadius": 76.22857142857143,
+        "periodDays": 167227.6027693993,
+        "angleDegrees": 284.44363456381257,
+        "x": 129.01349862765082,
+        "y": 36.18074795842797
+      }
+    },
+    {
+      "iso": "2026-10-27T12:00:00Z",
+      "systemIndex": 0,
+      "planetIndex": 0,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 0.07,
+        "orbitRadius": 25.74285714285714,
+        "periodDays": 1.4046172499118754,
+        "angleDegrees": 51.07988048251718,
+        "x": 126.17259733388855,
+        "y": 130.02852439281168
+      }
+    },
+    {
+      "iso": "2026-10-27T12:00:00Z",
+      "systemIndex": 0,
+      "planetIndex": 1,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 0.07,
+        "orbitRadius": 29.285714285714285,
+        "periodDays": 2.236690321378889,
+        "angleDegrees": 303.7528741857968,
+        "x": 126.27149259202588,
+        "y": 85.65063470946036
+      }
+    },
+    {
+      "iso": "2026-10-27T12:00:00Z",
+      "systemIndex": 0,
+      "planetIndex": 2,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 0.07,
+        "orbitRadius": 34.599999999999994,
+        "periodDays": 3.705082749581985,
+        "angleDegrees": 90.79826121928636,
+        "x": 109.51795847985142,
+        "y": 144.59664197538328
+      }
+    },
+    {
+      "iso": "2026-10-27T12:00:00Z",
+      "systemIndex": 0,
+      "planetIndex": 3,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 0.07,
+        "orbitRadius": 40.8,
+        "periodDays": 5.704348060909328,
+        "angleDegrees": 274.14528223802336,
+        "x": 112.94925751703204,
+        "y": 69.30673421684824
+      }
+    },
+    {
+      "iso": "2026-10-27T12:00:00Z",
+      "systemIndex": 0,
+      "planetIndex": 4,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 0.07,
+        "orbitRadius": 48.771428571428565,
+        "periodDays": 8.665059635181398,
+        "angleDegrees": 54.23534933972405,
+        "x": 138.50481101416563,
+        "y": 149.57433504109275
+      }
+    },
+    {
+      "iso": "2026-10-27T12:00:00Z",
+      "systemIndex": 0,
+      "planetIndex": 5,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 0.07,
+        "orbitRadius": 55.857142857142854,
+        "periodDays": 11.622183832277392,
+        "angleDegrees": 238.50706654269015,
+        "x": 80.82059718121047,
+        "y": 62.37035734647925
+      }
+    },
+    {
+      "iso": "2026-10-27T12:00:00Z",
+      "systemIndex": 0,
+      "planetIndex": 6,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 0.07,
+        "orbitRadius": 70.91428571428571,
+        "periodDays": 18.79561342308359,
+        "angleDegrees": 48.75740441121161,
+        "x": 156.7501470035533,
+        "y": 163.32222494901637
+      }
+    },
+    {
+      "iso": "2026-10-27T12:00:00Z",
+      "systemIndex": 1,
+      "planetIndex": 0,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 1.6,
+        "orbitRadius": 18.8675,
+        "periodDays": 6.711926332190334,
+        "angleDegrees": 207.97054788167588,
+        "x": 93.33643528420261,
+        "y": 101.15080979905889
+      }
+    },
+    {
+      "iso": "2026-10-27T12:00:00Z",
+      "systemIndex": 1,
+      "planetIndex": 1,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 1.6,
+        "orbitRadius": 19.44875,
+        "periodDays": 8.852880695384906,
+        "angleDegrees": 279.6915390524664,
+        "x": 113.27407682108439,
+        "y": 90.82881595904578
+      }
+    },
+    {
+      "iso": "2026-10-27T12:00:00Z",
+      "systemIndex": 1,
+      "planetIndex": 2,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 1.6,
+        "orbitRadius": 20.14625,
+        "periodDays": 11.670118557941313,
+        "angleDegrees": 292.16138065600535,
+        "x": 117.59950057496673,
+        "y": 91.342053165646
+      }
+    },
+    {
+      "iso": "2026-10-27T12:00:00Z",
+      "systemIndex": 1,
+      "planetIndex": 3,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 1.6,
+        "orbitRadius": 28.4,
+        "periodDays": 60.356572467296395,
+        "angleDegrees": 310.76518395459425,
+        "x": 128.5440779681422,
+        "y": 88.49006805423451
+      }
+    },
+    {
+      "iso": "2026-10-27T12:00:00Z",
+      "systemIndex": 1,
+      "planetIndex": 4,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 1.6,
+        "orbitRadius": 32.275,
+        "periodDays": 90.75562191263965,
+        "angleDegrees": 236.7580724930449,
+        "x": 92.30763901668932,
+        "y": 83.00637134736743
+      }
+    },
+    {
+      "iso": "2026-10-27T12:00:00Z",
+      "systemIndex": 1,
+      "planetIndex": 5,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 1.6,
+        "orbitRadius": 43.5125,
+        "periodDays": 199.47438035567686,
+        "angleDegrees": 355.26283922724906,
+        "x": 153.36386276644566,
+        "y": 106.40652504908286
+      }
+    },
+    {
+      "iso": "2026-10-27T12:00:00Z",
+      "systemIndex": 1,
+      "planetIndex": 6,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 1.6,
+        "orbitRadius": 55.137499999999996,
+        "periodDays": 338.4399812021236,
+        "angleDegrees": 353.04549070655776,
+        "x": 164.73183127446356,
+        "y": 103.32388199672508
+      }
+    },
+    {
+      "iso": "2026-10-27T12:00:00Z",
+      "systemIndex": 1,
+      "planetIndex": 7,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 1.6,
+        "orbitRadius": 74.9,
+        "periodDays": 624.8344749131566,
+        "angleDegrees": 313.9907552958621,
+        "x": 162.02121793761484,
+        "y": 56.113054602369765
+      }
+    },
+    {
+      "iso": "2026-10-27T12:00:00Z",
+      "systemIndex": 2,
+      "planetIndex": 0,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 5.8,
+        "orbitRadius": 16.160344827586208,
+        "periodDays": 0.68484375,
+        "angleDegrees": 59.37166324444115,
+        "x": 118.23316321258955,
+        "y": 123.90581779189397
+      }
+    },
+    {
+      "iso": "2026-10-27T12:00:00Z",
+      "systemIndex": 2,
+      "planetIndex": 1,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 5.8,
+        "orbitRadius": 17.175862068965518,
+        "periodDays": 13.600148041760887,
+        "angleDegrees": 222.05972929665586,
+        "x": 97.24783494531037,
+        "y": 98.49380496297402
+      }
+    },
+    {
+      "iso": "2026-10-27T12:00:00Z",
+      "systemIndex": 2,
+      "planetIndex": 2,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 5.8,
+        "orbitRadius": 18.56551724137931,
+        "periodDays": 43.83,
+        "angleDegrees": 355.9589322381944,
+        "x": 128.51935955638308,
+        "y": 108.69166057104603
+      }
+    },
+    {
+      "iso": "2026-10-27T12:00:00Z",
+      "systemIndex": 2,
+      "planetIndex": 3,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 5.8,
+        "orbitRadius": 24.337931034482757,
+        "periodDays": 256.80088265582833,
+        "angleDegrees": 285.66307938043064,
+        "x": 116.57075570115815,
+        "y": 86.56583569753475
+      }
+    },
+    {
+      "iso": "2026-10-27T12:00:00Z",
+      "systemIndex": 2,
+      "planetIndex": 4,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 5.8,
+        "orbitRadius": 77.67931034482758,
+        "periodDays": 5166.760465415317,
+        "angleDegrees": 252.54760862356443,
+        "x": 86.70294741008502,
+        "y": 35.89654126647817
+      }
+    },
+    {
+      "iso": "2026-10-27T12:00:00Z",
+      "systemIndex": 3,
+      "planetIndex": 0,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 70,
+        "orbitRadius": 29.285714285714285,
+        "periodDays": 17325.328730647507,
+        "angleDegrees": 296.54938453558566,
+        "x": 123.08980676693115,
+        "y": 83.80248065123544
+      }
+    },
+    {
+      "iso": "2026-10-27T12:00:00Z",
+      "systemIndex": 3,
+      "planetIndex": 1,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 70,
+        "orbitRadius": 37.25714285714285,
+        "periodDays": 35064,
+        "angleDegrees": 250.5749486652977,
+        "x": 97.60926146086065,
+        "y": 74.86363290930268
+      }
+    },
+    {
+      "iso": "2026-10-27T12:00:00Z",
+      "systemIndex": 3,
+      "planetIndex": 2,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 70,
+        "orbitRadius": 49.65714285714285,
+        "periodDays": 69858.61802956025,
+        "angleDegrees": 257.48138797288766,
+        "x": 99.23647941610902,
+        "y": 61.52342358030171
+      }
+    },
+    {
+      "iso": "2026-10-27T12:00:00Z",
+      "systemIndex": 3,
+      "planetIndex": 3,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 70,
+        "orbitRadius": 76.22857142857143,
+        "periodDays": 167227.6027693993,
+        "angleDegrees": 285.08838458243645,
+        "x": 129.84296609812017,
+        "y": 36.39937637173398
+      }
+    },
+    {
+      "iso": "2028-02-29T12:00:00Z",
+      "systemIndex": 0,
+      "planetIndex": 0,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 0.07,
+        "orbitRadius": 25.74285714285714,
+        "periodDays": 1.4046172499118754,
+        "angleDegrees": 356.8933902247809,
+        "x": 135.70502608417115,
+        "y": 108.60489144163195
+      }
+    },
+    {
+      "iso": "2028-02-29T12:00:00Z",
+      "systemIndex": 0,
+      "planetIndex": 1,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 0.07,
+        "orbitRadius": 29.285714285714285,
+        "periodDays": 2.236690321378889,
+        "angleDegrees": 330.28093751263805,
+        "x": 135.43366546685746,
+        "y": 95.48167633146056
+      }
+    },
+    {
+      "iso": "2028-02-29T12:00:00Z",
+      "systemIndex": 0,
+      "planetIndex": 2,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 0.07,
+        "orbitRadius": 34.599999999999994,
+        "periodDays": 3.705082749581985,
+        "angleDegrees": 181.07093863841146,
+        "x": 75.40604390138714,
+        "y": 109.35331503245756
+      }
+    },
+    {
+      "iso": "2028-02-29T12:00:00Z",
+      "systemIndex": 0,
+      "planetIndex": 3,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 0.07,
+        "orbitRadius": 40.8,
+        "periodDays": 5.704348060909328,
+        "angleDegrees": 237.92449704988394,
+        "x": 88.33371730995559,
+        "y": 75.42815893830527
+      }
+    },
+    {
+      "iso": "2028-02-29T12:00:00Z",
+      "systemIndex": 0,
+      "planetIndex": 4,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 0.07,
+        "orbitRadius": 48.771428571428565,
+        "periodDays": 8.665059635181398,
+        "angleDegrees": 251.85634986811783,
+        "x": 94.81255378616198,
+        "y": 63.65354681963531
+      }
+    },
+    {
+      "iso": "2028-02-29T12:00:00Z",
+      "systemIndex": 0,
+      "planetIndex": 5,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 0.07,
+        "orbitRadius": 55.857142857142854,
+        "periodDays": 11.622183832277392,
+        "angleDegrees": 296.3774690136779,
+        "x": 134.81637426425038,
+        "y": 59.958337592163105
+      }
+    },
+    {
+      "iso": "2028-02-29T12:00:00Z",
+      "systemIndex": 0,
+      "planetIndex": 6,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 0.07,
+        "orbitRadius": 70.91428571428571,
+        "periodDays": 18.79561342308359,
+        "angleDegrees": 73.92595567312674,
+        "x": 129.63470349139016,
+        "y": 178.1418691934154
+      }
+    },
+    {
+      "iso": "2028-02-29T12:00:00Z",
+      "systemIndex": 1,
+      "planetIndex": 0,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 1.6,
+        "orbitRadius": 18.8675,
+        "periodDays": 6.711926332190334,
+        "angleDegrees": 209.54624903132208,
+        "x": 93.58606877110401,
+        "y": 100.69594615970689
+      }
+    },
+    {
+      "iso": "2028-02-29T12:00:00Z",
+      "systemIndex": 1,
+      "planetIndex": 1,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 1.6,
+        "orbitRadius": 19.44875,
+        "periodDays": 8.852880695384906,
+        "angleDegrees": 45.40906193276169,
+        "x": 123.65380880854816,
+        "y": 123.85017622928
+      }
+    },
+    {
+      "iso": "2028-02-29T12:00:00Z",
+      "systemIndex": 1,
+      "planetIndex": 2,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 1.6,
+        "orbitRadius": 20.14625,
+        "periodDays": 11.670118557941313,
+        "angleDegrees": 287.6890528203221,
+        "x": 116.12145892898424,
+        "y": 90.8062736905191
+      }
+    },
+    {
+      "iso": "2028-02-29T12:00:00Z",
+      "systemIndex": 1,
+      "planetIndex": 3,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 1.6,
+        "orbitRadius": 28.4,
+        "periodDays": 60.356572467296395,
+        "angleDegrees": 353.39635383390123,
+        "x": 138.2115787591015,
+        "y": 106.73398960212742
+      }
+    },
+    {
+      "iso": "2028-02-29T12:00:00Z",
+      "systemIndex": 1,
+      "planetIndex": 4,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 1.6,
+        "orbitRadius": 32.275,
+        "periodDays": 90.75562191263965,
+        "angleDegrees": 20.439315400515625,
+        "x": 140.24304941713882,
+        "y": 121.2709177511194
+      }
+    },
+    {
+      "iso": "2028-02-29T12:00:00Z",
+      "systemIndex": 1,
+      "planetIndex": 5,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 1.6,
+        "orbitRadius": 43.5125,
+        "periodDays": 199.47438035567686,
+        "angleDegrees": 159.58692979700936,
+        "x": 69.21997841523078,
+        "y": 125.17654426395407
+      }
+    },
+    {
+      "iso": "2028-02-29T12:00:00Z",
+      "systemIndex": 1,
+      "planetIndex": 6,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 1.6,
+        "orbitRadius": 55.137499999999996,
+        "periodDays": 338.4399812021236,
+        "angleDegrees": 154.26050606448007,
+        "x": 60.333359287753,
+        "y": 133.94511863847345
+      }
+    },
+    {
+      "iso": "2028-02-29T12:00:00Z",
+      "systemIndex": 1,
+      "planetIndex": 7,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 1.6,
+        "orbitRadius": 74.9,
+        "periodDays": 624.8344749131566,
+        "angleDegrees": 236.3055235783222,
+        "x": 68.44815987391662,
+        "y": 47.682630173149896
+      }
+    },
+    {
+      "iso": "2028-02-29T12:00:00Z",
+      "systemIndex": 2,
+      "planetIndex": 0,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 5.8,
+        "orbitRadius": 16.160344827586208,
+        "periodDays": 0.68484375,
+        "angleDegrees": 236.37371663283557,
+        "x": 101.05082802241147,
+        "y": 96.54380938519239
+      }
+    },
+    {
+      "iso": "2028-02-29T12:00:00Z",
+      "systemIndex": 2,
+      "planetIndex": 1,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 5.8,
+        "orbitRadius": 17.175862068965518,
+        "periodDays": 13.600148041760887,
+        "angleDegrees": 232.50677578040631,
+        "x": 99.5456092043042,
+        "y": 96.37223602702926
+      }
+    },
+    {
+      "iso": "2028-02-29T12:00:00Z",
+      "systemIndex": 2,
+      "planetIndex": 2,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 5.8,
+        "orbitRadius": 18.56551724137931,
+        "periodDays": 43.83,
+        "angleDegrees": 60.599589322388056,
+        "x": 119.11399803520013,
+        "y": 126.17446970550567
+      }
+    },
+    {
+      "iso": "2028-02-29T12:00:00Z",
+      "systemIndex": 2,
+      "planetIndex": 3,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 5.8,
+        "orbitRadius": 24.337931034482757,
+        "periodDays": 256.80088265582833,
+        "angleDegrees": 252.57660621754803,
+        "x": 102.71248400739404,
+        "y": 86.77873824063923
+      }
+    },
+    {
+      "iso": "2028-02-29T12:00:00Z",
+      "systemIndex": 2,
+      "planetIndex": 4,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 5.8,
+        "orbitRadius": 77.67931034482758,
+        "periodDays": 5166.760465415317,
+        "angleDegrees": 286.68892428562515,
+        "x": 132.30758391552925,
+        "y": 35.592695550103016
+      }
+    },
+    {
+      "iso": "2028-02-29T12:00:00Z",
+      "systemIndex": 3,
+      "planetIndex": 0,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 70,
+        "orbitRadius": 29.285714285714285,
+        "periodDays": 17325.328730647507,
+        "angleDegrees": 306.7310095276679,
+        "x": 127.51458485720455,
+        "y": 86.52890333827006
+      }
+    },
+    {
+      "iso": "2028-02-29T12:00:00Z",
+      "systemIndex": 3,
+      "planetIndex": 1,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 70,
+        "orbitRadius": 37.25714285714285,
+        "periodDays": 35064,
+        "angleDegrees": 255.60574948665294,
+        "x": 100.73814659664798,
+        "y": 73.91242921153645
+      }
+    },
+    {
+      "iso": "2028-02-29T12:00:00Z",
+      "systemIndex": 3,
+      "planetIndex": 2,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 70,
+        "orbitRadius": 49.65714285714285,
+        "periodDays": 69858.61802956025,
+        "angleDegrees": 260.00648802461444,
+        "x": 101.38266530861483,
+        "y": 61.09628460381212
+      }
+    },
+    {
+      "iso": "2028-02-29T12:00:00Z",
+      "systemIndex": 3,
+      "planetIndex": 3,
+      "result": {
+        "centerX": 110,
+        "centerY": 110,
+        "outerRadius": 78,
+        "maxOrbitAu": 70,
+        "orbitRadius": 76.22857142857143,
+        "periodDays": 167227.6027693993,
+        "angleDegrees": 286.1432343624888,
+        "x": 131.1945585291802,
+        "y": 36.77714980421773
+      }
+    }
+  ],
+  "satellites": [
+    {
+      "iso": "2025-12-01T12:00:00Z",
+      "index": 0,
+      "result": {
+        "radius": 62,
+        "ry": 38.51116237725524,
+        "phase": 0.23135088476482224,
+        "x": 205.07453428110813,
+        "y": 248.6149812559878
+      }
+    },
+    {
+      "iso": "2025-12-01T12:00:00Z",
+      "index": 1,
+      "result": {
+        "radius": 80,
+        "ry": 59.91645766312017,
+        "phase": 0.00862745098038431,
+        "x": 179.6280054105288,
+        "y": 283.95466725930174
+      }
+    },
+    {
+      "iso": "2025-12-01T12:00:00Z",
+      "index": 2,
+      "result": {
+        "radius": 98,
+        "ry": 86.1240770408726,
+        "phase": 0.37913644938169,
+        "x": 302.08068594630515,
+        "y": 200.58559395619034
+      }
+    },
+    {
+      "iso": "2025-12-01T12:00:00Z",
+      "index": 3,
+      "result": {
+        "radius": 116,
+        "ry": 23.200000000000003,
+        "phase": 0.9566467065868096,
+        "x": 263.91084305032945,
+        "y": 111.94595006312633
+      }
+    },
+    {
+      "iso": "2025-12-01T12:00:00Z",
+      "index": 4,
+      "result": {
+        "radius": 134,
+        "ry": 26.8,
+        "phase": 0.6839053254437886,
+        "x": 200.09837444189975,
+        "y": 151.46768442449425
+      }
+    },
+    {
+      "iso": "2026-01-01T00:00:00Z",
+      "index": 0,
+      "result": {
+        "radius": 62,
+        "ry": 38.51116237725524,
+        "phase": 0.1200000000000001,
+        "x": 244.83747873775891,
+        "y": 249.03877118373148
+      }
+    },
+    {
+      "iso": "2026-01-01T00:00:00Z",
+      "index": 1,
+      "result": {
+        "radius": 80,
+        "ry": 59.91645766312017,
+        "phase": 0.43999999999999995,
+        "x": 214.71364670900718,
+        "y": 132.5598295246822
+      }
+    },
+    {
+      "iso": "2026-01-01T00:00:00Z",
+      "index": 2,
+      "result": {
+        "radius": 98,
+        "ry": 86.1240770408726,
+        "phase": 0.6600000000000001,
+        "x": 212.8708036097255,
+        "y": 299.6488877825594
+      }
+    },
+    {
+      "iso": "2026-01-01T00:00:00Z",
+      "index": 3,
+      "result": {
+        "radius": 116,
+        "ry": 23.200000000000003,
+        "phase": 0.28,
+        "x": 217.8077741930004,
+        "y": 240.50973472479248
+      }
+    },
+    {
+      "iso": "2026-01-01T00:00:00Z",
+      "index": 4,
+      "result": {
+        "radius": 134,
+        "ry": 26.8,
+        "phase": 0.8199999999999998,
+        "x": 262.00806431124016,
+        "y": 243.74018923824687
+      }
+    },
+    {
+      "iso": "2026-10-27T12:00:00Z",
+      "index": 0,
+      "result": {
+        "radius": 62,
+        "ry": 38.51116237725524,
+        "phase": 0.5511609840305027,
+        "x": 157.81483530285385,
+        "y": 180.25038585002866
+      }
+    },
+    {
+      "iso": "2026-10-27T12:00:00Z",
+      "index": 1,
+      "result": {
+        "radius": 80,
+        "ry": 59.91645766312017,
+        "phase": 0.47921568627407396,
+        "x": 229.79679794632472,
+        "y": 132.7961398973899
+      }
+    },
+    {
+      "iso": "2026-10-27T12:00:00Z",
+      "index": 2,
+      "result": {
+        "radius": 98,
+        "ry": 86.1240770408726,
+        "phase": 0.467168308530745,
+        "x": 299.38760912646916,
+        "y": 249.01430654916177
+      }
+    },
+    {
+      "iso": "2026-10-27T12:00:00Z",
+      "index": 3,
+      "result": {
+        "radius": 116,
+        "ry": 23.200000000000003,
+        "phase": 0.4716167664664681,
+        "x": 152.99445022685842,
+        "y": 308.99427376276697
+      }
+    },
+    {
+      "iso": "2026-10-27T12:00:00Z",
+      "index": 4,
+      "result": {
+        "radius": 134,
+        "ry": 26.8,
+        "phase": 0.07443786982184974,
+        "x": 266.8676301564733,
+        "y": 315.91681617519265
+      }
+    },
+    {
+      "iso": "2028-02-29T12:00:00Z",
+      "index": 0,
+      "result": {
+        "radius": 62,
+        "ry": 38.51116237725524,
+        "phase": 0.8442123435470421,
+        "x": 252.77750818726253,
+        "y": 190.29602370610527
+      }
+    },
+    {
+      "iso": "2028-02-29T12:00:00Z",
+      "index": 1,
+      "result": {
+        "radius": 80,
+        "ry": 59.91645766312017,
+        "phase": 0.7537254901963024,
+        "x": 265.64720809920175,
+        "y": 232.24656258898798
+      }
+    },
+    {
+      "iso": "2028-02-29T12:00:00Z",
+      "index": 2,
+      "result": {
+        "radius": 98,
+        "ry": 86.1240770408726,
+        "phase": 0.1433368266607431,
+        "x": 197.2791345561186,
+        "y": 120.00472111053273
+      }
+    },
+    {
+      "iso": "2028-02-29T12:00:00Z",
+      "index": 3,
+      "result": {
+        "radius": 116,
+        "ry": 23.200000000000003,
+        "phase": 0.38778443113733374,
+        "x": 175.93703997910418,
+        "y": 292.8855911948289
+      }
+    },
+    {
+      "iso": "2028-02-29T12:00:00Z",
+      "index": 4,
+      "result": {
+        "radius": 134,
+        "ry": 26.8,
+        "phase": 0.6543195266258408,
+        "x": 185.94014825085335,
+        "y": 134.80649917618842
+      }
+    }
+  ]
+}

@@ -3,29 +3,63 @@ const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
 const { test } = require('node:test');
+const {readDashboardSource} = require('./dashboard-source');
 const root = path.resolve(__dirname, '..');
 const context = vm.createContext({ window:{}, Date, Math });
-for (const file of ['astronomy-explorer-config.js', 'astronomy-explorer-model.js', 'translations.js', 'card-help-config.js']) {
+for (const file of ['js/models/astronomy-coordinates.js', 'js/data/planet-elements-config.js', 'js/models/planet-model.js', 'js/data/astronomy-explorer-config.js', 'js/models/astronomy-explorer-model.js', 'js/data/translations.js', 'js/data/card-help-config.js']) {
   vm.runInContext(fs.readFileSync(path.join(root, file), 'utf8'), context, { filename:file });
 }
 const model = context.window.PLANETENUHR_EXPLORER_MODEL;
-const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+const html = readDashboardSource(root);
 
 test('the global date refresh updates both Moon displays immediately with the same selected instant', () => {
   const selected = new Date('2026-12-01T12:00:00Z');
   const calls = [];
-  const adapters = {dailyHighlights:null,idefixMission:null,selectedSolarDate:() => selected};
-  for (const name of ['updateControlDateReadout','renderMoon','renderEarthMoon','renderAstronomyExplorer',
+  const adapters = {dailyHighlights:null,idefixMission:null};
+  for (const name of ['updateControlDateReadout',
     'renderSolarSystem','renderBarycenter','renderLagrangePoints','renderAnalemma','renderExoplanetComparison',
-    'renderPolarisNorth','renderMoonNodes','renderConjunctionTimeline','renderMeteorStreams','renderConstellationOfMonth',
+    'renderPolarisNorth','renderMoonNodes','renderConstellationOfMonth',
     'renderConstellationYear','renderSeasonAxis','renderRetrogradePhases','renderInnerPlanetPhases','renderSunlight',
     'renderVisibility','renderNightVisibility','renderSatellites','renderEclipseGeometry','renderCalendar']) {
     adapters[name] = date => calls.push({name,date});
   }
+  adapters.constellationMonthController = {render:selection => adapters.renderConstellationOfMonth(selection.date)};
+  adapters.constellationYearController = {render:selection => adapters.renderConstellationYear(selection.date)};
+  adapters.seasonsController = {render:selection => adapters.renderSeasonAxis(selection.date)};
+  adapters.retrogradeController = {render:selection => adapters.renderRetrogradePhases(selection.date)};
+  adapters.barycenterController = {render:selection => adapters.renderBarycenter(selection.date)};
+  adapters.innerPlanetsController = {render:selection => adapters.renderInnerPlanetPhases(selection.date)};
+  adapters.lagrangeController = {render:selection => adapters.renderLagrangePoints(selection.date)};
+  adapters.analemmaController = {render:selection => adapters.renderAnalemma(selection.date)};
+  adapters.exoplanetsController = {render:selection => adapters.renderExoplanetComparison(selection.date)};
+  adapters.satellitesController = {render:selection => adapters.renderSatellites(selection.date)};
+  adapters.meteorController = {render:selection => calls.push({name:'renderMeteorStreams',date:selection.date})};
+  adapters.conjunctionController = {render:selection => calls.push({name:'renderConjunctionTimeline',date:selection.date})};
+  adapters.earthMoonController = {
+    renderPhase:selection => calls.push({name:'renderMoon',date:selection.date}),
+    renderCaption:selection => calls.push({name:'renderEarthMoon',date:selection.date})
+  };
+  adapters.astronomyExplorer = {render:date => calls.push({name:'renderAstronomyExplorer',date})};
+  adapters.sunlightController = {render:selection => adapters.renderSunlight(selection.date)};
+  adapters.planetVisibilityController = {
+    renderVisibility:selection => adapters.renderVisibility(selection.date),
+    renderNightVisibility:selection => adapters.renderNightVisibility(selection.date)
+  };
+  adapters.polarisController = {render:selection => adapters.renderPolarisNorth(selection.date)};
+  adapters.moonNodesController = {render:selection => adapters.renderMoonNodes(selection.date)};
+  adapters.eclipseGeometryController = {render:selection => adapters.renderEclipseGeometry(selection.date)};
+  adapters.solarSystemController = {render:selection => adapters.renderSolarSystem(selection.date)};
+  adapters.window = {};
+  adapters.calendarController = {render:() => adapters.renderCalendar()};
+  adapters.dateLocationControls = {updateControlDateReadout:() => adapters.updateControlDateReadout()};
+  adapters.dashboardContext = {snapshot:() => ({date:selected}), withSnapshot:(selection, action) => action()};
   const realm = vm.createContext(adapters);
+  vm.runInContext(fs.readFileSync(path.join(root, 'js/core/dashboard-refresh.js'), 'utf8'), realm);
+  loadDashboardFunction('createDashboardRefresh', realm);
+  vm.runInContext('const dashboardRefresh = createDashboardRefresh();', realm);
   loadDashboardFunction('refreshDateDrivenTiles', realm);
   vm.runInContext('refreshDateDrivenTiles()', realm);
-  for (const name of ['renderMoon','renderEarthMoon']) {
+  for (const name of ['renderMoon','renderEarthMoon','renderMoonNodes']) {
     const renders = calls.filter(call => call.name === name);
     assert.equal(renders.length,1);
     assert.equal(renders[0].date,selected);
@@ -34,7 +68,7 @@ test('the global date refresh updates both Moon displays immediately with the sa
 
 /**
  * Loads an existing pure dashboard function without bootstrapping the browser UI.
- * @param {string} name Top-level function name in index.html.
+ * @param {string} name Top-level function name in the dashboard script.
  * @param {object} [realm=context] VM context receiving the function.
  * @returns {void}
  */
@@ -45,12 +79,8 @@ function loadDashboardFunction(name, realm = context){
   vm.runInContext(html.slice(start, end), realm);
 }
 
-for (const name of ['normalizeDeg', 'signedDeg', 'julianDate', 'solveKepler', 'planetPosition', 'localSiderealAngleDegrees', 'horizontalCoordinates']) {
-  loadDashboardFunction(name);
-}
-const planetsStart = html.indexOf('    const solarPlanets = [');
-const planetsEnd = html.indexOf('\n    ];', planetsStart) + '\n    ];'.length;
-vm.runInContext(html.slice(planetsStart, planetsEnd) + '\nwindow.testPlanets = solarPlanets;', context);
+vm.runInContext('var normalizeDeg = window.PLANETENUHR_COORDINATES.normalizeDeg; var signedDeg = window.PLANETENUHR_COORDINATES.signedDeg; var julianDate = window.PLANETENUHR_COORDINATES.julianDate; var solveKepler = window.PLANETENUHR_PLANET_MODEL.solveKepler; var planetPosition = window.PLANETENUHR_PLANET_MODEL.planetPosition; var localSiderealAngleDegrees = window.PLANETENUHR_COORDINATES.localSiderealAngleDegrees; var horizontalCoordinates = window.PLANETENUHR_COORDINATES.horizontalCoordinates;', context);
+context.window.testPlanets = context.window.PLANETENUHR_PLANET_ELEMENTS;
 
 test('one AU takes 499.0047838 seconds; vector length uses all three coordinates', () => {
   assert.ok(Math.abs(model.lightTravel({ x:1, y:0, z:0 }).seconds - 499.004783836) < 0.000001);
@@ -114,50 +144,6 @@ test('all new labels, interpolation placeholders and help cards exist in all lan
     assert.ok(context.window.PLANETENUHR_CARD_HELP[language].cards.planet_horizon);
     assert.ok(context.window.PLANETENUHR_CARD_HELP[language].cards.light_travel);
   }
-});
-
-test('masonry keeps existing spans while measuring so local updates cannot collapse the page', () => {
-  let writes = 0;
-  const cards = [
-    { style:{ gridRowEnd:'span 8' }, height:180 },
-    { style:{ gridRowEnd:'span 12' }, height:280 }
-  ];
-  for (const card of cards) {
-    let span = card.style.gridRowEnd;
-    Object.defineProperty(card.style, 'gridRowEnd', {
-      get(){ return span; },
-      set(value){
-        assert.notEqual(value, '', 'desktop card spans must stay present throughout layout');
-        span = value;
-        writes += 1;
-      }
-    });
-  }
-  const realm = vm.createContext({
-    window:{ innerWidth:1280 },
-    document:{ querySelector(){ return {}; } },
-    getComputedStyle(){ return { gridAutoRows:'8px', rowGap:'20px' }; },
-    visibleGridCards(){ return cards; },
-    masonryCardHeight(card){
-      assert.match(card.style.gridRowEnd, /^span /);
-      return card.height;
-    },
-    persistentViewportAnchor:null,
-    persistentScrollPosition:null,
-    masonryAfterLayoutCallbacks:[]
-  });
-  loadDashboardFunction('updateMasonryLayout', realm);
-  loadDashboardFunction('updateSingleCardMasonryLayout', realm);
-  realm.updateMasonryLayout();
-  assert.equal(cards[0].style.gridRowEnd, 'span 8');
-  assert.equal(cards[1].style.gridRowEnd, 'span 11');
-  assert.equal(writes, 1, 'unchanged spans must not be rewritten');
-  realm.updateMasonryLayout();
-  assert.equal(writes, 1);
-  cards[0].height = 220;
-  realm.updateSingleCardMasonryLayout(cards[0]);
-  assert.equal(cards[0].style.gridRowEnd, 'span 9');
-  assert.equal(cards[1].style.gridRowEnd, 'span 11', 'a local update must leave other cards alone');
 });
 
 test('solar light states distinguish sunrise, both twilights and astronomical night at conventional limits', () => {
@@ -242,80 +228,25 @@ test('polar day and polar night avoid invented sunrise or sunset and retain wint
 });
 
 
-test('mobile stops observing cards and desktop resumes after a viewport change', () => {
-  const cards = [{}, {}];
-  const observed = [];
-  let disconnects = 0;
-  const realm = vm.createContext({
-    window:{innerWidth:390},
-    masonryObserver:{observe(card){observed.push(card);},disconnect(){disconnects += 1;}},
-    masonryObserverActive:false,
-    masonryObservedSizes:new WeakMap(),
-    visibleGridCards(){return cards;}
-  });
-  loadDashboardFunction('syncMasonryObservation', realm);
-  realm.syncMasonryObservation();
-  assert.equal(observed.length, 0);
-  realm.window.innerWidth = 1280;
-  realm.syncMasonryObservation();
-  realm.syncMasonryObservation();
-  assert.equal(observed.length, 2, 'desktop observes each card only once');
-  const previousSizes = realm.masonryObservedSizes;
-  realm.window.innerWidth = 760;
-  realm.syncMasonryObservation();
-  assert.equal(disconnects, 1);
-  assert.equal(realm.masonryObserverActive, false);
-  assert.notEqual(realm.masonryObservedSizes, previousSizes);
-  realm.window.innerWidth = 761;
-  realm.syncMasonryObservation();
-  assert.equal(observed.length, 4, 'crossing back to desktop reconnects');
-});
-
-test('resize delivery defers changed dimensions and ignores duplicate, mobile and suppressed batches', () => {
-  let scheduled = 0;
-  const card = {};
-  const entry = {target:card,contentRect:{width:360,height:200}};
-  const realm = vm.createContext({
-    window:{innerWidth:1280},masonryObserverActive:true,suppressMasonryObserver:false,
-    masonryObservedSizes:new WeakMap(),scheduleMasonryLayout(){scheduled += 1;}
-  });
-  loadDashboardFunction('handleMasonryResize', realm);
-  realm.handleMasonryResize([entry]);
-  realm.handleMasonryResize([entry]);
-  assert.equal(scheduled, 1);
-  entry.contentRect.height = 250;
-  realm.handleMasonryResize([entry]);
-  assert.equal(scheduled, 2);
-  realm.suppressMasonryObserver = true;
-  entry.contentRect.height = 300;
-  realm.handleMasonryResize([entry]);
-  assert.equal(scheduled, 2);
-  realm.suppressMasonryObserver = false;
-  realm.handleMasonryResize([entry]);
-  assert.equal(scheduled, 3, 'suppressed sizes are processed on a later delivery');
-  realm.window.innerWidth = 390;
-  entry.contentRect.height = 350;
-  realm.handleMasonryResize([entry]);
-  assert.equal(scheduled, 3);
-});
-
 test('only the two exact ResizeObserver delivery warnings bypass the error dialog', () => {
   const alerts = [], warnings = [];
-  const realm = vm.createContext({alert(message){alerts.push(message);},console:{warn(message){warnings.push(message);}}});
-  loadDashboardFunction('handleDashboardError', realm);
+  const realm = vm.createContext({window:{onerror:null},alert(message){alerts.push(message);},console:{warn(message){warnings.push(message);}}});
+  vm.runInContext(fs.readFileSync(path.join(root, 'js/core/dashboard-errors.js'), 'utf8'), realm);
+  const handleDashboardError = realm.window.PLANETENUHR_DASHBOARD_ERRORS.handleDashboardError;
+  realm.window.PLANETENUHR_DASHBOARD_ERRORS.install({window:realm.window,alert:realm.alert,console:realm.console});
   for (const warning of ['ResizeObserver loop completed with undelivered notifications.','ResizeObserver loop limit exceeded']) {
-    assert.equal(realm.handleDashboardError(warning, '', 0, 0, null), true);
+    assert.equal(realm.window.onerror(warning, '', 0, 0, null), true);
   }
   assert.equal(alerts.length, 0);
   assert.equal(warnings.length, 2);
-  assert.equal(realm.handleDashboardError('TypeError: example', 'index.html', 42, 7, null), false);
-  assert.equal(realm.handleDashboardError('ResizeObserver unexpected application failure', '', 3, 0, null), false);
+  assert.equal(handleDashboardError('TypeError: example', 'index.html', 42, 7, null, realm.alert, realm.console), false);
+  assert.equal(handleDashboardError('ResizeObserver unexpected application failure', '', 3, 0, null, realm.alert, realm.console), false);
   assert.equal(alerts.length, 2, 'other application errors remain visible');
 });
 
 
 test('both responsive SVG observers batch drawing into the next animation frame', () => {
-  for (const file of ['astronomy-explorer.js','idefix.js']) {
+  for (const file of ['js/cards/astronomy-explorer.js','js/cards/idefix.js']) {
     const source = fs.readFileSync(path.join(root,file),'utf8');
     const start = source.indexOf('    function schedulePlotResize(');
     assert.ok(start >= 0);
@@ -337,7 +268,7 @@ test('both responsive SVG observers batch drawing into the next animation frame'
 });
 
 test('IDEFIX adapts its SVG only when its rendered width changes', () => {
-  const source=fs.readFileSync(path.join(root,'idefix.js'),'utf8');
+  const source=fs.readFileSync(path.join(root,'js/cards/idefix.js'),'utf8');
   const start=source.indexOf('    function adaptPlot(');
   const end=source.indexOf('\n    }',start)+'\n    }'.length;
   const attrs=[];let width=300;

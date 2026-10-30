@@ -9,16 +9,6 @@ window.PLANETENUHR_CARD_HELP = {
       links: "Sources & further reading"
     },
     cards: {
-      time: {
-        intro: [
-          "This card combines the live clock, stopwatch, countdown and display settings in one place.",
-          "It is mostly browser-driven UI logic, so it reacts instantly without external data."
-        ],
-        details: [
-          "The live time follows the selected time zone setting.",
-          "Stopwatch and countdown run locally in the browser."
-        ]
-      },
       date_location: {
         intro: [
           "This card controls the shared date for the astronomy tiles and the observing location for location-dependent views.",
@@ -255,6 +245,7 @@ window.PLANETENUHR_CARD_HELP = {
         ]
       },
       moon_nodes: {
+        markerNote: "The two small blue markers are the lunar nodes, not extra bodies: they mark where the Moon's tilted orbit crosses the ecliptic plane.",
         intro: [
           "This card combines the Moon's node geometry with an approximate eclipse-season cycle tied to the selected date.",
           "It helps explain why eclipses cluster in seasons instead of being possible every month."
@@ -515,16 +506,6 @@ window.PLANETENUHR_CARD_HELP = {
       links: "Quellen & Vertiefung"
     },
     cards: {
-      time: {
-        intro: [
-          "Diese Kachel bündelt Live-Uhr, Stoppuhr, Countdown und Darstellungsoptionen an einer Stelle.",
-          "Sie arbeitet fast nur mit Browser-Logik und reagiert deshalb ohne externe Daten sofort."
-        ],
-        details: [
-          "Die Live-Zeit folgt der gewählten Zeitzone.",
-          "Stoppuhr und Countdown laufen lokal im Browser."
-        ]
-      },
       date_location: {
         intro: [
           "Diese Kachel steuert das gemeinsame Datum für die Astronomie-Karten und den Beobachtungsort für ortsabhängige Ansichten.",
@@ -761,6 +742,7 @@ window.PLANETENUHR_CARD_HELP = {
         ]
       },
       moon_nodes: {
+        markerNote: "Die zwei kleinen blauen Marker sind die Mondknoten und keine zusätzlichen Himmelskörper: Sie markieren die Schnittpunkte der geneigten Mondbahn mit der Ekliptik.",
         intro: [
           "Diese Kachel verbindet die Mondknoten-Geometrie mit einem angenäherten Finsternis-Saison-Zyklus für das gewählte Datum.",
           "So wird sichtbar, warum Finsternisse in Saisonfenstern auftreten und nicht einfach jeden Monat."
@@ -1018,16 +1000,6 @@ window.PLANETENUHR_CARD_HELP = {
       links: "Sources et approfondissement"
     },
     cards: {
-      time: {
-        intro: [
-          "Cette carte regroupe l'horloge en direct, le chronometre, le compte a rebours et les options d'affichage.",
-          "Elle repose surtout sur la logique du navigateur et reagit donc immediatement, sans donnees externes."
-        ],
-        details: [
-          "L'heure suit le fuseau horaire choisi.",
-          "Le chronometre et le compte a rebours s'executent localement dans le navigateur."
-        ]
-      },
       date_location: {
         intro: [
           "Cette carte pilote la date partagee des vues astronomiques et le lieu d'observation des panneaux dependants du lieu.",
@@ -1264,6 +1236,7 @@ window.PLANETENUHR_CARD_HELP = {
         ]
       },
       moon_nodes: {
+        markerNote: "Les deux petits marqueurs bleus sont les nœuds lunaires et non des corps supplémentaires : ils indiquent les points où l’orbite inclinée de la Lune coupe l’écliptique.",
         intro: [
           "Cette carte relie la geometrie des noeuds lunaires a un cycle approche des saisons d'eclipses pour la date choisie.",
           "Elle montre pourquoi les eclipses arrivent par saisons au lieu d'etre possibles tous les mois."
@@ -1859,12 +1832,9 @@ window.PLANETENUHR_CARD_HELP.en.cards.daily_highlights = {
     "It refers to the entire civil day at the selected city, including an earlier morning. Times are local. Links open the related card without reloading the page."
   ],
   "details": [
-    "Selection and priorities live in daily-highlights-config.js: at most five hints, with per-topic limits. Special calendar events rank above routine observations; no minimum number is filled artificially.",
-    "Planet tips reuse the horizon model: at 20-minute samples, the planet must be at least 10° high while the Sun is at or below −6°. At least two samples are required. The highest sampled qualifying position supplies the approximate time, direction and angle with hand comparison. Weather, terrain and actual naked-eye visibility are not predicted.",
-    "Calendar entries keep their configured dates and regional text, independently of calendar UI filters. Eclipses include the existing local visibility class; broad regional estimates are labelled. A matching computed closest approach is merged with a calendar event within two days.",
-    "Meteor hints use the configured activity windows and annual peak dates. Dated calendar maxima take precedence. These are activity hints, not proof of local radiant visibility. One slot is reserved for the highest-ranked active shower, even on busy days. A bright Moon adds a warning without hiding the hint. Before, on and after the peak, wording distinguishes approaching maximum, maximum today and declining activity.",
-    "Full/New Moon hints use the existing approximate phase model near the local day’s midpoint. They say around the phase, not an exact event time. Planetary approaches come from the corrected Earth-centered model, up to 30 days ahead.",
-    "Data is cached by civil day, city and language. Daylight saving changes and polar day/night are handled by the horizon solar model. Outside 1800–2050, planetary tips and forecasts are omitted."
+    "Besondere Kalenderereignisse und aktuelle Himmelsereignisse haben Vorrang. Je nach Datum gibt es unterschiedlich viele Hinweise; die Kachel füllt freie Plätze nicht künstlich auf.",
+    "Beobachtungstipps sind Näherungen. Wetter, Gebäude, Gelände und die tatsächliche Sichtbarkeit am Himmel kann die Kachel nicht beurteilen.",
+    "Meteorhinweise beschreiben die Zeit um den jährlichen Strom und sein Maximum; sie garantieren keine sichtbaren Meteore. Helles Mondlicht kann schwache Meteore überstrahlen. Mondphasen und Begegnungsdaten sind ebenfalls Näherungsangaben."
   ],
   "links": [
     {
@@ -1880,12 +1850,9 @@ window.PLANETENUHR_CARD_HELP.de.cards.daily_highlights = {
     "Gemeint ist der gesamte lokale Kalendertag, auch ein bereits vergangener Morgen. Alle Zeiten sind Ortszeiten. Links öffnen die passende Kachel ohne Neuladen."
   ],
   "details": [
-    "Auswahl und Prioritäten stehen in daily-highlights-config.js: höchstens fünf Hinweise mit Grenzen je Thema. Besondere Kalenderereignisse haben Vorrang vor gewöhnlichen Beobachtungstipps. Eine Mindestanzahl wird nicht künstlich aufgefüllt.",
-    "Planetentipps verwenden das Horizontmodell: Bei Stichproben alle 20 Minuten muss der Planet mindestens 10° hoch stehen und die Sonne höchstens −6°. Mindestens zwei geeignete Stichproben sind nötig. Die höchste gefundene geeignete Position liefert ungefähre Uhrzeit, Richtung und Winkel mit Handvergleich. Wetter, Gelände und tatsächliche Erkennbarkeit werden nicht vorhergesagt.",
-    "Kalendereinträge behalten ihr konfiguriertes Datum und ihre regionalen Texte, unabhängig von Filtern der Kalenderkachel. Finsternisse erhalten die vorhandene örtliche Sichtbarkeitsklasse; grobe Regionsschätzungen sind gekennzeichnet. Eine passende berechnete engste Begegnung wird innerhalb von zwei Tagen mit dem Kalendereintrag zusammengeführt.",
-    "Meteorhinweise nutzen konfigurierte Aktivitätsfenster und jährliche Richtdaten der Maxima. Datierte Kalender-Maxima haben Vorrang. Das sind Aktivitätshinweise, kein Nachweis der örtlichen Radiantensichtbarkeit. Ein Platz bleibt für den wichtigsten aktiven Strom reserviert, auch an ereignisreichen Tagen. Helles Mondlicht wird als Einschränkung genannt und blendet den Hinweis nicht aus. Texte unterscheiden bevorstehendes Maximum, Maximum am gewählten Tag und abklingende Aktivität.",
-    "Hinweise rund um Voll- und Neumond nutzen das vorhandene Näherungsmodell etwa zur Mitte des lokalen Tages. Sie behaupten keinen exakten Ereigniszeitpunkt. Planetenbegegnungen stammen aus dem korrigierten geozentrischen Modell und reichen bis 30 Tage voraus.",
-    "Die Daten werden je Kalendertag, Ort und Sprache zwischengespeichert. Zeitumstellungen und Polartag/-nacht behandelt das Sonnenmodell der Horizontkachel. Außerhalb 1800–2050 werden Planeten-Beobachtungstipps und Begegnungsprognosen weggelassen."
+    "Besondere Kalender- und Himmelsereignisse haben Vorrang. Je nach Datum erscheinen unterschiedlich viele Hinweise; freie Plätze werden nicht künstlich aufgefüllt.",
+    "Beobachtungstipps sind Näherungen. Wetter, Gebäude, Gelände und die tatsächliche Sichtbarkeit am Himmel kann die Kachel nicht beurteilen.",
+    "Meteorhinweise beschreiben die Aktivitätszeit eines Stroms und sein jährliches Maximum; sie garantieren keine sichtbaren Meteore. Helles Mondlicht kann schwache Meteore überstrahlen. Mondphasen und Begegnungsdaten sind ebenfalls Näherungsangaben."
   ],
   "links": [
     {
@@ -1901,12 +1868,9 @@ window.PLANETENUHR_CARD_HELP.fr.cards.daily_highlights = {
     "Elle couvre toute la journée civile locale, y compris un matin déjà passé. Les heures sont locales. Les liens ouvrent la carte correspondante sans recharger la page."
   ],
   "details": [
-    "Les priorités se trouvent dans daily-highlights-config.js : cinq indications au maximum, avec des limites par thème. Les événements particuliers passent avant les observations ordinaires. Aucun nombre minimum n’est rempli artificiellement.",
-    "Les conseils planétaires reprennent le modèle de l’horizon : toutes les 20 minutes, la planète doit être à au moins 10° et le Soleil à −6° ou plus bas. Deux échantillons favorables sont nécessaires. La position favorable la plus haute donne une heure approximative, une direction et un angle avec comparaison à la main. La météo, le relief et la détection réelle ne sont pas prédits.",
-    "Les entrées du calendrier gardent leur date et leurs précisions régionales, indépendamment des filtres de la carte calendrier. Les éclipses reprennent la visibilité locale existante ; les estimations régionales sont signalées. Un rapprochement calculé correspondant est fusionné avec une entrée située à deux jours au plus.",
-    "Les météores utilisent les périodes d’activité et dates annuelles approximatives configurées. Les maxima datés du calendrier ont priorité. Ces indications ne prouvent pas la visibilité locale du radiant. Une place est réservée à l’essaim actif le mieux classé, même les jours chargés. Une Lune brillante ajoute un avertissement sans masquer l’indication. Les textes distinguent le maximum à venir, le maximum au jour choisi et l’activité en déclin.",
-    "Les indications autour des nouvelles et pleines lunes utilisent le modèle approché existant vers le milieu de la journée locale, sans annoncer un instant exact. Les rapprochements proviennent du modèle géocentrique corrigé, jusqu’à 30 jours à l’avance.",
-    "Les données sont mémorisées par journée civile, ville et langue. Le modèle solaire de l’horizon gère les changements d’heure et les jours/nuits polaires. Hors de 1800–2050, les conseils planétaires et prévisions de rapprochements sont omis."
+    "Les événements importants du calendrier et du ciel sont prioritaires. Le nombre d’indications varie selon la date ; les places libres ne sont pas artificiellement remplies.",
+    "Les conseils d’observation sont approximatifs. La carte ne peut pas évaluer la météo, les bâtiments, le relief ni la visibilité réelle du ciel.",
+    "Les indications de météores décrivent la période d’activité et le maximum annuel d’un essaim ; elles ne garantissent pas l’observation de météores. Une Lune brillante peut masquer les météores faibles. Les phases lunaires et rapprochements sont également approximatifs."
   ],
   "links": [
     {
@@ -1917,9 +1881,9 @@ window.PLANETENUHR_CARD_HELP.fr.cards.daily_highlights = {
 };
 
 /* Shared body artwork and its schematic limits. */
-window.PLANETENUHR_CARD_HELP.de.cards.solar_system.details.push("Alle acht Planeten verwenden gemeinsame SVG-Grafiken. Größen und Abstände sind nicht maßstäblich. Die Bahnradien sind feste Layoutwerte aus solar-system-config.js, keine Entfernungsangaben. Die inneren Planeten erhalten mehr Platz; nur die berechneten heliozentrischen Richtungen folgen dem Datum. Die Erde erscheint in dieser Übersicht ohne Nachtseite; Kontinente sind schematisch. Verschobene Beschriftungen erhalten gerade Verbindungslinien.");
+window.PLANETENUHR_CARD_HELP.de.cards.solar_system.details.push("Alle acht Planeten verwenden gemeinsame SVG-Grafiken. Größen und Abstände sind nicht maßstäblich. Die Bahnradien sind feste Layoutwerte aus js/data/solar-system-config.js, keine Entfernungsangaben. Die inneren Planeten erhalten mehr Platz; nur die berechneten heliozentrischen Richtungen folgen dem Datum. Die Erde erscheint in dieser Übersicht ohne Nachtseite; Kontinente sind schematisch. Verschobene Beschriftungen erhalten gerade Verbindungslinien.");
 window.PLANETENUHR_CARD_HELP.de.cards.daily_highlights.details.push("Die Miniaturen sind schematisch und teilen ihre Planeten-, Erd- und Mondgrafiken mit den anderen Kacheln. Die Mondphase verwendet dasselbe Näherungsmodell und dieselbe Lichtgrenze wie „Erde & Mond“; Farben und Oberflächen sind Illustrationen.");
-window.PLANETENUHR_CARD_HELP.en.cards.solar_system.details.push("All eight planets use shared SVG artwork. Sizes and distances are schematic. Fixed layout radii in solar-system-config.js spread out the inner planets and do not encode distance. Only the calculated heliocentric directions follow the date. Earth is shown without a night-side shadow in this overview; continents are schematic. Displaced labels use straight guides.");
+window.PLANETENUHR_CARD_HELP.en.cards.solar_system.details.push("All eight planets use shared SVG artwork. Sizes and distances are schematic. Fixed layout radii in js/data/solar-system-config.js spread out the inner planets and do not encode distance. Only the calculated heliocentric directions follow the date. Earth is shown without a night-side shadow in this overview; continents are schematic. Displaced labels use straight guides.");
 window.PLANETENUHR_CARD_HELP.en.cards.daily_highlights.details.push("The schematic miniatures share their planet, Earth and Moon artwork with the other cards. The lunar phase uses the same approximate model and terminator as Earth & Moon; colors and surface features are illustrations.");
-window.PLANETENUHR_CARD_HELP.fr.cards.solar_system.details.push("Les huit planètes utilisent des illustrations SVG communes. Tailles et distances sont schématiques. Les rayons fixes de solar-system-config.js espacent les planètes intérieures sans représenter leurs distances. Seules les directions héliocentriques calculées suivent la date. La Terre est représentée sans ombre nocturne dans cette vue ; les continents sont schématiques. Les libellés déplacés ont des lignes de liaison droites.");
+window.PLANETENUHR_CARD_HELP.fr.cards.solar_system.details.push("Les huit planètes utilisent des illustrations SVG communes. Tailles et distances sont schématiques. Les rayons fixes de js/data/solar-system-config.js espacent les planètes intérieures sans représenter leurs distances. Seules les directions héliocentriques calculées suivent la date. La Terre est représentée sans ombre nocturne dans cette vue ; les continents sont schématiques. Les libellés déplacés ont des lignes de liaison droites.");
 window.PLANETENUHR_CARD_HELP.fr.cards.daily_highlights.details.push("Les miniatures schématiques partagent leurs illustrations des planètes, de la Terre et de la Lune avec les autres cartes. La phase lunaire utilise le même modèle approché et le même terminateur que Terre et Lune ; couleurs et reliefs sont illustratifs.");

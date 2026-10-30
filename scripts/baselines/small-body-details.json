@@ -1,0 +1,89 @@
+{
+  "de": {
+    "initial": "<strong>Körper auswählen</strong><br>Tippen oder klicken Sie eine Bahn an, um Name, Typ und Bahndaten zu sehen.",
+    "belts": [
+      "<strong>Asteroid belt</strong><br>Breiter Ring aus vielen kleinen Körpern. 2.1-3.3 AU",
+      "<strong>Kuiper belt</strong><br>Breiter Ring aus vielen kleinen Körpern. 30-50 AU"
+    ],
+    "comets": [
+      "<strong>Halley</strong><br>1P/Halley · Halley-type · Perihel 0.59 AU · Aphel 35.1 AU",
+      "<strong>Encke</strong><br>2P/Encke · Jupiter-family · Perihel 0.34 AU · Aphel 4.1 AU",
+      "<strong>Churyumov-Gerasimenko</strong><br>67P/Churyumov-Gerasimenko · Jupiter-family · Perihel 1.24 AU · Aphel 5.68 AU",
+      "<strong>Tempel 1</strong><br>9P/Tempel 1 · Jupiter-family · Perihel 1.54 AU · Aphel 4.75 AU",
+      "<strong>Wild 2</strong><br>81P/Wild 2 · Jupiter-family · Perihel 1.59 AU · Aphel 5.31 AU",
+      "<strong>Borrelly</strong><br>19P/Borrelly · Jupiter-family · Perihel 1.31 AU · Aphel 5.86 AU",
+      "<strong>Giacobini-Zinner</strong><br>21P/Giacobini-Zinner · Jupiter-family · Perihel 1.01 AU · Aphel 6 AU",
+      "<strong>Hartley 2</strong><br>103P/Hartley 2 · Jupiter-family · Perihel 1.05 AU · Aphel 5.88 AU",
+      "<strong>Wirtanen</strong><br>46P/Wirtanen · Jupiter-family · Perihel 1.06 AU · Aphel 5.13 AU",
+      "<strong>Swift-Tuttle</strong><br>109P/Swift-Tuttle · Halley-type · Perihel 0.96 AU · Aphel 51.2 AU",
+      "<strong>Tempel-Tuttle</strong><br>55P/Tempel-Tuttle · Halley-type · Perihel 0.98 AU · Aphel 19.7 AU",
+      "<strong>Schwassmann-Wachmann 3</strong><br>73P/Schwassmann-Wachmann 3 · Jupiter-family · Perihel 0.97 AU · Aphel 5.2 AU",
+      "<strong>1995 O1 Hale-Bopp</strong><br>C/1995 O1 Hale-Bopp · Long-period · Perihel 0.91 AU · Aphel 370 AU",
+      "<strong>1996 B2 Hyakutake</strong><br>C/1996 B2 Hyakutake · Long-period · Perihel 0.23 AU · Aphel 3400 AU",
+      "<strong>2020 F3 NEOWISE</strong><br>C/2020 F3 NEOWISE · Long-period · Perihel 0.29 AU · Aphel 715 AU",
+      "<strong>2006 P1 McNaught</strong><br>C/2006 P1 McNaught · Long-period · Perihel 0.17 AU · Aphel 4100 AU",
+      "<strong>2011 W3 Lovejoy</strong><br>C/2011 W3 Lovejoy · Sungrazer · Perihel 0.006 AU · Aphel 160 AU",
+      "<strong>2012 S1 ISON</strong><br>C/2012 S1 ISON · Sungrazer · Perihel 0.012 AU · Aphel 880 AU",
+      "<strong>2021 A1 Leonard</strong><br>C/2021 A1 Leonard · Long-period · Perihel 0.62 AU · Aphel 3700 AU",
+      "<strong>2013 US10 Catalina</strong><br>C/2013 US10 Catalina · Long-period · Perihel 0.82 AU · Aphel 1300 AU"
+    ]
+  },
+  "en": {
+    "initial": "<strong>Pick a body</strong><br>Tap or click an orbit to see its name, type and orbit data.",
+    "belts": [
+      "<strong>Asteroid belt</strong><br>Broad ring of many small bodies. 2.1-3.3 AU",
+      "<strong>Kuiper belt</strong><br>Broad ring of many small bodies. 30-50 AU"
+    ],
+    "comets": [
+      "<strong>Halley</strong><br>1P/Halley · Halley-type · Perihelion 0.59 AU · Aphelion 35.1 AU",
+      "<strong>Encke</strong><br>2P/Encke · Jupiter-family · Perihelion 0.34 AU · Aphelion 4.1 AU",
+      "<strong>Churyumov-Gerasimenko</strong><br>67P/Churyumov-Gerasimenko · Jupiter-family · Perihelion 1.24 AU · Aphelion 5.68 AU",
+      "<strong>Tempel 1</strong><br>9P/Tempel 1 · Jupiter-family · Perihelion 1.54 AU · Aphelion 4.75 AU",
+      "<strong>Wild 2</strong><br>81P/Wild 2 · Jupiter-family · Perihelion 1.59 AU · Aphelion 5.31 AU",
+      "<strong>Borrelly</strong><br>19P/Borrelly · Jupiter-family · Perihelion 1.31 AU · Aphelion 5.86 AU",
+      "<strong>Giacobini-Zinner</strong><br>21P/Giacobini-Zinner · Jupiter-family · Perihelion 1.01 AU · Aphelion 6 AU",
+      "<strong>Hartley 2</strong><br>103P/Hartley 2 · Jupiter-family · Perihelion 1.05 AU · Aphelion 5.88 AU",
+      "<strong>Wirtanen</strong><br>46P/Wirtanen · Jupiter-family · Perihelion 1.06 AU · Aphelion 5.13 AU",
+      "<strong>Swift-Tuttle</strong><br>109P/Swift-Tuttle · Halley-type · Perihelion 0.96 AU · Aphelion 51.2 AU",
+      "<strong>Tempel-Tuttle</strong><br>55P/Tempel-Tuttle · Halley-type · Perihelion 0.98 AU · Aphelion 19.7 AU",
+      "<strong>Schwassmann-Wachmann 3</strong><br>73P/Schwassmann-Wachmann 3 · Jupiter-family · Perihelion 0.97 AU · Aphelion 5.2 AU",
+      "<strong>1995 O1 Hale-Bopp</strong><br>C/1995 O1 Hale-Bopp · Long-period · Perihelion 0.91 AU · Aphelion 370 AU",
+      "<strong>1996 B2 Hyakutake</strong><br>C/1996 B2 Hyakutake · Long-period · Perihelion 0.23 AU · Aphelion 3400 AU",
+      "<strong>2020 F3 NEOWISE</strong><br>C/2020 F3 NEOWISE · Long-period · Perihelion 0.29 AU · Aphelion 715 AU",
+      "<strong>2006 P1 McNaught</strong><br>C/2006 P1 McNaught · Long-period · Perihelion 0.17 AU · Aphelion 4100 AU",
+      "<strong>2011 W3 Lovejoy</strong><br>C/2011 W3 Lovejoy · Sungrazer · Perihelion 0.006 AU · Aphelion 160 AU",
+      "<strong>2012 S1 ISON</strong><br>C/2012 S1 ISON · Sungrazer · Perihelion 0.012 AU · Aphelion 880 AU",
+      "<strong>2021 A1 Leonard</strong><br>C/2021 A1 Leonard · Long-period · Perihelion 0.62 AU · Aphelion 3700 AU",
+      "<strong>2013 US10 Catalina</strong><br>C/2013 US10 Catalina · Long-period · Perihelion 0.82 AU · Aphelion 1300 AU"
+    ]
+  },
+  "fr": {
+    "initial": "<strong>Choisir un corps</strong><br>Touchez ou cliquez sur une orbite pour voir son nom, son type et ses données orbitales.",
+    "belts": [
+      "<strong>Asteroid belt</strong><br>Large anneau rempli de petits corps. 2.1-3.3 AU",
+      "<strong>Kuiper belt</strong><br>Large anneau rempli de petits corps. 30-50 AU"
+    ],
+    "comets": [
+      "<strong>Halley</strong><br>1P/Halley · Halley-type · Périhélie 0.59 AU · Aphélie 35.1 AU",
+      "<strong>Encke</strong><br>2P/Encke · Jupiter-family · Périhélie 0.34 AU · Aphélie 4.1 AU",
+      "<strong>Churyumov-Gerasimenko</strong><br>67P/Churyumov-Gerasimenko · Jupiter-family · Périhélie 1.24 AU · Aphélie 5.68 AU",
+      "<strong>Tempel 1</strong><br>9P/Tempel 1 · Jupiter-family · Périhélie 1.54 AU · Aphélie 4.75 AU",
+      "<strong>Wild 2</strong><br>81P/Wild 2 · Jupiter-family · Périhélie 1.59 AU · Aphélie 5.31 AU",
+      "<strong>Borrelly</strong><br>19P/Borrelly · Jupiter-family · Périhélie 1.31 AU · Aphélie 5.86 AU",
+      "<strong>Giacobini-Zinner</strong><br>21P/Giacobini-Zinner · Jupiter-family · Périhélie 1.01 AU · Aphélie 6 AU",
+      "<strong>Hartley 2</strong><br>103P/Hartley 2 · Jupiter-family · Périhélie 1.05 AU · Aphélie 5.88 AU",
+      "<strong>Wirtanen</strong><br>46P/Wirtanen · Jupiter-family · Périhélie 1.06 AU · Aphélie 5.13 AU",
+      "<strong>Swift-Tuttle</strong><br>109P/Swift-Tuttle · Halley-type · Périhélie 0.96 AU · Aphélie 51.2 AU",
+      "<strong>Tempel-Tuttle</strong><br>55P/Tempel-Tuttle · Halley-type · Périhélie 0.98 AU · Aphélie 19.7 AU",
+      "<strong>Schwassmann-Wachmann 3</strong><br>73P/Schwassmann-Wachmann 3 · Jupiter-family · Périhélie 0.97 AU · Aphélie 5.2 AU",
+      "<strong>1995 O1 Hale-Bopp</strong><br>C/1995 O1 Hale-Bopp · Long-period · Périhélie 0.91 AU · Aphélie 370 AU",
+      "<strong>1996 B2 Hyakutake</strong><br>C/1996 B2 Hyakutake · Long-period · Périhélie 0.23 AU · Aphélie 3400 AU",
+      "<strong>2020 F3 NEOWISE</strong><br>C/2020 F3 NEOWISE · Long-period · Périhélie 0.29 AU · Aphélie 715 AU",
+      "<strong>2006 P1 McNaught</strong><br>C/2006 P1 McNaught · Long-period · Périhélie 0.17 AU · Aphélie 4100 AU",
+      "<strong>2011 W3 Lovejoy</strong><br>C/2011 W3 Lovejoy · Sungrazer · Périhélie 0.006 AU · Aphélie 160 AU",
+      "<strong>2012 S1 ISON</strong><br>C/2012 S1 ISON · Sungrazer · Périhélie 0.012 AU · Aphélie 880 AU",
+      "<strong>2021 A1 Leonard</strong><br>C/2021 A1 Leonard · Long-period · Périhélie 0.62 AU · Aphélie 3700 AU",
+      "<strong>2013 US10 Catalina</strong><br>C/2013 US10 Catalina · Long-period · Périhélie 0.82 AU · Aphélie 1300 AU"
+    ]
+  }
+}

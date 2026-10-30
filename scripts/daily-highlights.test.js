@@ -1,7 +1,7 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
 const {test}=require('node:test');
 const root=path.resolve(__dirname,'..'),realm={window:{}};
-for(const file of ['daily-highlights-config.js','daily-highlights-model.js','translations.js','card-help-config.js','eclipse-phase-config.js','daily-highlight-graphics.js'])vm.runInNewContext(fs.readFileSync(path.join(root,file),'utf8'),realm);
+for(const file of ['js/data/daily-highlights-config.js','js/models/daily-highlights-model.js','js/data/translations.js','js/data/card-help-config.js','js/data/eclipse-phase-config.js','js/shared/daily-highlight-graphics.js'])vm.runInNewContext(fs.readFileSync(path.join(root,file),'utf8'),realm);
 const model=realm.window.PLANETENUHR_DAILY_MODEL,config=realm.window.PLANETENUHR_DAILY_CONFIG;
 /** Supplies a quiet normalized day for selection tests.
  * @param {object} [extra={}] Snapshot overrides. @returns {object} Independent snapshot.

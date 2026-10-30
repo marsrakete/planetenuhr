@@ -6,6 +6,7 @@ Planetenuhr ist ein statisches Astronomie-Dashboard als reine HTML-App. Die Anwe
 
 - [TECHNIK.md](TECHNIK.md): Projektstruktur, Architektur, Code-Stil, Start, Build, Kalenderpflege und Konfiguration.
 - [BERECHNUNGEN.md](BERECHNUNGEN.md): Formeln, Rechenmodelle, mathematische Erläuterungen und fachliche Quellen.
+- [MODULARISIERUNGSPLAN.md](MODULARISIERUNGSPLAN.md): geplanter schrittweiser Umbau mit Zuständigkeiten und Prüfungen.
 
 ## Neue Astronomie-Kacheln
 
@@ -18,6 +19,18 @@ Planetenuhr ist ein statisches Astronomie-Dashboard als reine HTML-App. Die Anwe
 Der Himmel über der Horizontlinie wird passend zu Tag, Morgen-/Abenddämmerung oder Nacht eingefärbt. Ein Zeitband zeigt den lokalen Kalendertag, die erkundete Uhrzeit sowie Sonnenauf- und -untergang. Auch Zeitumstellungen, Polartag und Polarnacht werden berücksichtigt. Bei Polarnacht kann dennoch Dämmerung vorkommen. Ein dunkler Hintergrund bedeutet dunklen Himmel, keine garantierte Sichtbarkeit bei jedem Wetter.
 
 **Heute faszinierend** steht als erste Kachel über die gesamte Breite. Sie folgt Datum und Ort der globalen Steuerung und nennt das ausgewählte Datum ausdrücklich. Bis zu fünf Hinweise bündeln Kalenderereignisse, beobachtbare Planeten, enge Begegnungen, Meteorströme und die Mondphase. Seltene Ereignisse haben Vorrang; an ruhigen Tagen gibt es weniger Hinweise. Kleine SVG-Miniaturen machen die Themen erkennbar; die Mondminiatur folgt der Phase am ausgewählten Datum. Planeten-, Erd- und Mondgrafiken sind zentrale SVG-Komponenten. „Sonnensystem“ zeigt ausschließlich die acht Planeten, mit entzerrten schematischen Bahnabständen und datumsabhängigen Richtungen; „Erde & Mond“ und die Tagesübersicht verwenden zusätzlich den detaillierten Mond. Jeder Eintrag führt ohne Neuladen zur passenden Detailkachel. Alle Zeiten beziehen sich auf den gewählten Ort und den gesamten lokalen Kalendertag. Sonnenauf- und -untergang stehen darunter.
+
+#### Auswahlregeln und Genauigkeit
+
+Die Auswahl ist auf höchstens fünf Hinweise begrenzt. Kalenderereignisse haben Vorrang vor routinemäßigen Beobachtungstipps; pro Thema gelten zusätzliche Grenzen. Die Kachel zeigt keine künstlich ergänzten Hinweise, wenn an einem Datum weniger passende Ereignisse vorliegen.
+
+Planetentipps werden aus Stichproben im Abstand von 20 Minuten ermittelt. Ein Planet muss dabei mindestens 10° über dem Horizont stehen, während die Sonne höchstens 6° unter dem Horizont steht; mindestens zwei passende Stichproben sind erforderlich. Die höchste passende Position liefert die ungefähre Beobachtungszeit. Wetter, freie Sicht, Gelände und tatsächliche Erkennbarkeit werden nicht modelliert.
+
+Kalenderhinweise bleiben unabhängig von den Filtern der Kalenderkachel. Finsternisse übernehmen deren örtliche Sichtbarkeitseinstufung; regionale Näherungen sind gekennzeichnet. Ein passendes berechnetes Begegnungsminimum wird mit einem Kalendereintrag zusammengeführt, wenn beide höchstens zwei Tage auseinanderliegen. Planetenbegegnungen können bis zu 30 Tage voraus erscheinen.
+
+Meteorhinweise verwenden konfigurierte Aktivitätsperioden und jährliche Richtdaten der Maxima. Datierte Kalender-Maxima haben Vorrang; während einer aktiven Periode ist ein Platz für den höchstbewerteten Strom reserviert. Das ist kein Nachweis, dass der Radiant am gewählten Ort sichtbar ist. Helles Mondlicht ergänzt eine Warnung, blendet den Hinweis aber nicht aus. Voll- und Neumondhinweise beruhen auf einer Näherung um die Mitte des lokalen Tages, nicht auf einer exakten Ereigniszeit.
+
+Die Tagesdaten werden nach lokalem Kalendertag, Ort und Sprache zwischengespeichert. Zeitumstellungen sowie Polartag und Polarnacht folgen dem Sonnenmodell der Horizontkachel. Außerhalb des unterstützten Planetenmodellbereichs von 1800 bis 2050 entfallen Planeten-Beobachtungstipps und Begegnungsprognosen.
 
 **Mit dem Licht durchs Sonnensystem** berechnet die einfache Lichtlaufzeit von der Sonne zur Position eines der acht Planeten oder zu Voyager 1 am ausgewählten Datum. Für Voyager 1 wird der Sonnenabstand anhand lokal gespeicherter NASA-Stützwerte linear angenähert; die Kachel kennzeichnet die Näherung. Sie gilt für fünf Jahre vor und nach dem Stützzeitpunkt. Der Regler beginnt bei 0 und lässt sich jederzeit manuell verschieben. Eine laufende Reise geht ab der gewählten Stelle in Echtzeit weiter; vor dem Start bestimmt der Regler die Startposition. „Lichtreise starten“ bewegt ihn in Echtzeit: Eine echte Sekunde entspricht einer Reisesekunde. Verzögerte Updates im Hintergrund werden nachgeholt. „Zurücksetzen“, ein anderes Ziel oder ein anderes Datum setzen die Reise auf 0 zurück.
 
@@ -172,15 +185,15 @@ Dieser Abschnitt beschreibt den aktuellen Stand der Datenquellen fuer den Himmel
 
 ### Dateien und Aufgaben
 
-- `calendar-events.js`\
+- `js/data/calendar-events.js`\
   handgepflegte Basis-Eintraege, vor allem fuer 2026 und 2027
-- `eclipse-calendar-config.js`\
+- `js/data/eclipse-calendar-config.js`\
   gemeinsame Finsternis-Datenbasis und lokalisierte Kalender-Erweiterung bis Dezember 2040
-- `extended-calendar-config.js`\
+- `js/data/extended-calendar-config.js`\
   wiederkehrende Kalender-Ereignisse bis Dezember 2040 fuer Meteorstroeme, Mond, Planeten und Jahreszeiten
-- `eclipse-visibility-config.js`\
+- `js/data/eclipse-visibility-config.js`\
   kuratierte Stadt-Zuordnungen fuer wichtige Finsternisse
-- `locations-config.js`\
+- `js/data/locations-config.js`\
   Ortsliste fuer die ortsabhaengige Stufe-1-Logik
 
 ### Quellen fuer den Himmelskalender
@@ -221,8 +234,8 @@ Die App-Texte fassen diese Quellen beobachtungsorientiert zusammen und bewerten 
 
 Der Himmelskalender besteht aus zwei Schichten:
 
-1. `calendar-events.js` mit kuratierten Einzelereignissen
-2. generatorbasierten Erweiterungen aus `eclipse-calendar-config.js` und `extended-calendar-config.js`
+1. `js/data/calendar-events.js` mit kuratierten Einzelereignissen
+2. generatorbasierten Erweiterungen aus `js/data/eclipse-calendar-config.js` und `js/data/extended-calendar-config.js`
 
 Ab dem Zeitraum 2028 bis 2040 werden insbesondere diese wiederkehrenden Kategorien generatorbasiert gepflegt:
 
@@ -235,7 +248,7 @@ Ab dem Zeitraum 2028 bis 2040 werden insbesondere diese wiederkehrenden Kategori
 Dabei gilt:
 
 - Finsternisse werden aus den NASA-decade-tables uebernommen und lokalisiert.
-- Meteorstroeme werden aus `phenomena-config.js` pro Jahr zum Peak-Datum erzeugt.
+- Meteorstroeme werden aus `js/data/phenomena-config.js` pro Jahr zum Peak-Datum erzeugt.
 - Jahreszeiten werden als wiederkehrende Kalendertermine gepflegt.
 - Erde im `Perihel` und `Aphel` werden als wiederkehrende Planeten-Termine gepflegt.
 - Mondtermine fuer `Perigaeum` und `Apogaeum` werden als repraesentative Quartalstermine aus einem angenaeherten anomalistischen Zyklus erzeugt.
@@ -267,8 +280,8 @@ Die ortsabhaengige Logik ist bewusst einfach gehalten und noch keine exakte loka
 
 Quellenbasis:
 
-- kuratierte Stadt-Zuordnungen in `eclipse-visibility-config.js`
-- NASA-Sichtbarkeitsregionen aus den decade tables in `eclipse-calendar-config.js`
+- kuratierte Stadt-Zuordnungen in `js/data/eclipse-visibility-config.js`
+- NASA-Sichtbarkeitsregionen aus den decade tables in `js/data/eclipse-calendar-config.js`
 
 Vorgehen:
 

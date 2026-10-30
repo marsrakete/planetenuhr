@@ -6,7 +6,7 @@ const {test} = require('node:test');
 const {parseVectors} = require('./update-idefix-ephemeris');
 const root = path.resolve(__dirname, '..');
 const context = vm.createContext({window:{},Date,Math});
-for (const file of ['idefix-config.js','idefix-ephemeris.js','idefix-model.js','translations.js','card-help-config.js']) {
+for (const file of ['js/data/idefix-config.js','js/data/idefix-ephemeris.js','js/models/idefix-model.js','js/data/translations.js','js/data/card-help-config.js']) {
   vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),context,{filename:file});
 }
 const config = context.window.PLANETENUHR_IDEFIX_CONFIG;

@@ -8,9 +8,11 @@ Eine allgemein verständliche Einordnung steht im README unter [Grenzen und Gena
 
 ### Datumsgekoppelte Aktualisierung
 
-Die App hält ein zentrales Datum als Tagesoffset relativ zu `Date.now()`. Mehrere Kacheln lesen dieses Datum über dieselbe Funktion, damit die gesamte Darstellung konsistent springt.
+`js/core/dashboard-context.js` hält das zentrale Datum als Tagesoffset relativ zu `Date.now()`. `js/core/dashboard-refresh.js` verteilt je globalem Aktualisierungslauf denselben Kontext mit Zeitpunkt, Ort, Ortszeitzone und Sprache. Auch die bisherigen Zugriffsfunktionen lesen während des Laufs denselben Snapshot; außerhalb davon läuft das Datum wie bisher mit der Uhr weiter. Die Monatssteuerung behält das native `setMonth`-Überlaufverhalten und die bestehenden Reglergrenzen.
 
 ### Mondphase
+
+`js/models/moon-model.js` enthält die gemeinsame Berechnung für `computeMoon(date)` und `nextFullMoon(fromDate)`. Beide erhalten einen ausdrücklichen Zeitpunkt. Die bisherigen Aufrufnamen in `js/core/app.js` sind vorläufige Adapter; beide Mondanzeigen und die Tagesübersicht verwenden weiterhin dasselbe Modell.
 
 Die Mondphase basiert auf einer mittleren synodischen Periode:
 
@@ -24,9 +26,15 @@ Daraus werden berechnet:
 - Zyklusfortschritt
 - nächster Vollmond als Näherung
 
-Die SVG-Mondphase in `celestial-bodies.js` verwendet dieselbe Phasenfraktion `f`. Die Lichtgrenze auf der projizierten Kugel ist eine Halbellipse mit horizontaler Halbachse `R · |cos(2πf)|` und vertikaler Halbachse `R`. Ihr Vorzeichen und die zunehmende bzw. abnehmende Phase bestimmen die Bogenrichtung; bei den Vierteln wird die Lichtgrenze eine Gerade. So entspricht die helle Fläche dem Anteil `(1 − cos(2πf)) / 2`. Die dunkle Fläche wird als komplementäre Lichtregion für `f + 0,5` gezeichnet.
+Die seit dem Referenz-Neumond verstrichenen UTC-Tage werden mit positivem Modulo auf einen Zyklus abgebildet: `Alter = ((Tage % Periode) + Periode) % Periode`, `f = Alter / Periode`. Wie bisher wird die Phase sekundengenau ausgewertet; vorhandene Millisekunden werden dabei verworfen. Die Beleuchtung ist `rund(100 · (1 − cos(2πf)) / 2)`. Phasennamen werden anhand dieser gerundeten Beleuchtung und der zunehmenden beziehungsweise abnehmenden Zyklushälfte gewählt.
+
+Für den nächsten Vollmond gilt `Δf = 0,5 − f`; bei `Δf ≤ 0` wird ein ganzer Zyklus addiert. Das Ergebnis ist `Ausgangszeitpunkt + Δf · Periode · 86400000 ms`. Der Ausgangszeitpunkt selbst behält seine Millisekunden. Dieses Rundungsverhalten und die Wahl des folgenden Zyklus bleiben bei der Auslagerung unverändert. Die mittlere Periode liefert eine Näherung, keine genaue astronomische Vollmond-Ephemeride.
+
+Die SVG-Mondphase in `js/shared/celestial-bodies.js` verwendet dieselbe Phasenfraktion `f`. Die Lichtgrenze auf der projizierten Kugel ist eine Halbellipse mit horizontaler Halbachse `R · |cos(2πf)|` und vertikaler Halbachse `R`. Ihr Vorzeichen und die zunehmende bzw. abnehmende Phase bestimmen die Bogenrichtung; bei den Vierteln wird die Lichtgrenze eine Gerade. So entspricht die helle Fläche dem Anteil `(1 − cos(2πf)) / 2`. Die dunkle Fläche wird als komplementäre Lichtregion für `f + 0,5` gezeichnet.
 
 Zunehmende Phasen sind rechts beleuchtet, abnehmende links (schematische Ansicht für nördliche Breiten, keine ortsabhängige Drehung oder Libration). Die Phase entsteht durch den Blick auf die sonnenbeschienene Mondhälfte, nicht durch Erdschatten. Finsternisabschattungen werden hier nicht simuliert.
+
+Der Controller `js/cards/earth-moon.js` verwendet für beide datumsgebundenen Mondansichten denselben globalen Kontext. Die Animation besitzt davon unabhängig eine einzige RAF-Kette; wiederholtes `pageshow` oder Resize vervielfacht sie nicht.
 
 Die obere Umlaufgrafik ist eine andere Perspektive: eine stark beschleunigte, schräg projizierte Draufsicht mit festem Sonnenlicht von links. Erde und Mond besitzen dort eine helle linke und dunkle rechte Seite. Der Umlauf zeigt keine datumsgenaue Mondposition. Die vereinfachten Kontinente drehen sich nicht mit der tatsächlichen Erdrotation; das Erde-Mond-Größen- und Abstandsverhältnis ist nicht maßstäblich.
 
@@ -45,7 +53,7 @@ Für das gewählte Datum wird `T` als Anzahl julianischer Jahrhunderte seit J200
 
 ### Sonnensystem-Darstellung
 
-Die Bahnradien werden als feste Layoutwerte aus `solar-system-config.js` gewählt. Damit sind die inneren Planeten stärker voneinander getrennt; die äußeren Ringe nutzen die verfügbare Kreisfläche.
+Der Controller `js/cards/solar-system.js` verwendet den gemeinsamen Aktualisierungskontext und das bestehende Planetenmodell. Er aktualisiert die vorhandenen Orbit-, Marker- und Beschriftungs-Templates; Geometrie und SVG-Grafiken bleiben erhalten. Die Bahnradien werden als feste Layoutwerte aus `js/data/solar-system-config.js` gewählt. Damit sind die inneren Planeten stärker voneinander getrennt; die äußeren Ringe nutzen die verfügbare Kreisfläche.
 
 ```text
 Bildschirmradius = Scheibenbreite * radiusFractions[Planet]
@@ -60,12 +68,12 @@ Kleinkörper- und Raumsondenkarten sind schematische Übersichten. Die Bahnen we
 
 #### Code-Stellen zur Kleinkörper-Kachel
 
-- `index.html:4949`\
-  `renderSmallBodies()` rendert Gürtel, Kometenbahnen, Labels, Hit-Flächen und Detailanzeige.
-- `index.html:5007`\
-  Hier werden Asteroiden- und Kuipergürtel als breite Ringe aus `small-bodies-config.js` aufgebaut.
-- `index.html:5036`\
-  Hier werden die einzelnen Kometenellipsen aus Perihel, Aphel und Winkel parametrisiert.
+- `js/cards/small-bodies.js`\
+  `PLANETENUHR_SMALL_BODIES_CARD` rendert Gürtel, Kometenbahnen, Labels, Hit-Flächen und Detailanzeige.
+- `js/models/small-bodies-model.js`\
+  `PLANETENUHR_SMALL_BODIES_MODEL` enthält Distanzkompression sowie Ellipsen- und Labelgeometrie.
+- `js/data/small-bodies-config.js`\
+  Liefert Gürtel- und Kometendaten.
 
 #### Wie die Formel hier funktioniert
 
@@ -120,9 +128,11 @@ Die Raumsonden-Kachel zeigt keine exakten Ephemeridenbahnen, sondern eine stilis
 
 #### Code-Stellen zur Raumsonden-Kachel
 
-- `index.html:5795`\
-  `renderSpacecraft()` rendert Ringmarken, Flugpfade, Marker und Labels.
-- `phenomena-config.js:28`\
+- `js/cards/spacecraft.js`\
+  `PLANETENUHR_SPACECRAFT_CARD` rendert Ringmarken, Flugpfade, Marker und Labels.
+- `js/models/spacecraft-model.js`\
+  `PLANETENUHR_SPACECRAFT_MODEL` berechnet Distanzskalierung, Kurvenpunkte und Labelplatzierung.
+- `js/data/phenomena-config.js`\
   Die angezeigten Missionen, Farben, Winkel und Distanzen kommen aus der Konfiguration.
 
 #### Wie die Formel hier funktioniert
@@ -175,13 +185,13 @@ Für die Nachtkarte wird aus Elongation näherungsweise eine Transitzeit und dar
 
 #### Code-Stellen zur Sichtbarkeits-Berechnung
 
-- `index.html:4660`\
+- `js/core/app.js`\
   `bodyEclipticLongitude(key, date)` liefert die ekliptische Länge des gewählten Körpers.
-- `index.html:4708`\
+- `js/core/app.js`\
   `solarElongationForKey(key, date)` berechnet die Elongation relativ zur Sonne.
-- `index.html:4061`\
+- `js/core/app.js`\
   `renderNightVisibility(date)` baut die zeitliche Nachtansicht pro Planet.
-- `index.html:4788`\
+- `js/core/app.js`\
   `renderVisibility(date)` rendert die kompakte Tages-/Abend-/Morgen-Einschätzung.
 
 #### Wie die Formel hier funktioniert
@@ -249,7 +259,7 @@ Die Sichtbarkeitskarten sind daher als anschauliche Orientierung gedacht, nicht 
 
 ### Sonnenaufgang, Sonnenuntergang, Dämmerung
 
-Die Lichtzeiten verwenden eine NOAA-nahe Näherung über den gewählten Ort:
+Die Lichtzeiten verwenden in `js/models/solar-visibility-model.js` dieselbe NOAA-nahe Näherung über den gewählten Ort wie zuvor im Hauptskript:
 
 - Sonnenaufgang / Sonnenuntergang bei `90.833°`
 - bürgerliche Dämmerung bei `96°`
@@ -257,7 +267,11 @@ Die Lichtzeiten verwenden eine NOAA-nahe Näherung über den gewählten Ort:
 
 Die Formatierung erfolgt in `Europe/Berlin`, die Ortswahl beeinflusst die astronomischen Zeiten, aber nicht die Zeitzone.
 
+Das Modul trennt diese kompakte Ereignisrechnung und die bisherigen saisonalen Sinus-/Zeitgleichungsnäherungen von den geometrischen Sonnenkoordinaten. Die schematische Nachtsichtbarkeit erhält die bereits berechnete Elongation ausdrücklich; sie tastet wie bisher in 20-Minuten-Schritten ab. Der eigenständige Horizont-Explorer behält seine geometrische Sonnenhöhe und seine IANA-Tagesgrenzen. Die verschiedenen Rechenwege, ihre bisherigen lokalen Datumskonventionen und ihre Genauigkeitsgrenzen wurden bei der Auslagerung bewusst erhalten.
+
 ### Mondknoten und Finsternis-Saison
+
+`js/models/eclipse-model.js` enthält die geometrischen Zyklen. `js/models/eclipse-location-model.js` enthält getrennt davon die Zuordnung von Datumsschlüsseln, Regionen und kuratierten Ortsprofilen. Die Modelle berechnen keine exakten lokalen Finsterniskontakte. Manuelle Stadtangaben haben wie bisher Vorrang vor einer groben Regionszuordnung aus dem gemeinsamen Kalender.
 
 Die Kachel kombiniert zwei Näherungen:
 
@@ -268,13 +282,13 @@ Wichtig: Diese Kachel ist didaktisch. Sie erklärt, warum Finsternisse saisonal 
 
 #### Code-Stellen zur Mondknoten-/Finsternis-Berechnung
 
-- `index.html:4777`\
+- `js/models/eclipse-model.js`\
   `eclipseSeasonInfo(date)` berechnet Phase, Aktivität und nächstes Zentrum der angenäherten Finsternis-Saison.
-- `index.html:6000`\
+- `js/models/eclipse-model.js`\
   `moonNodeDistance(date)` berechnet die genäherte Distanz des Mondes zum nächsten Knoten im drakonitischen Monat.
-- `index.html:3265`\
+- `js/core/app.js`\
   `renderMoonNodes(date)` kombiniert Saisonfenster, Knotennähe und Mondphase zur erklärenden Mondknoten-Kachel.
-- `index.html:6019`\
+- `js/core/app.js`\
   `renderEclipseGeometry(date)` baut die kleinere Geometrie-Anzeige in `Erde & Mond` aus Knotennähe und Phase auf.
 
 #### Wie die Formel hier funktioniert
@@ -351,10 +365,10 @@ Die Kachel ist absichtlich anschaulich und verwendet eine glatte Jahresnäherung
 
 #### Code-Stellen zur Jahreszeiten-Berechnung
 
-- `index.html:5627`\
+- `js/cards/seasons.js`\
   `seasonNameForFraction(fraction)` ordnet den Jahresfortschritt grob einer Jahreszeit zu.
-- `index.html:5635`\
-  `renderSeasonAxis(date)` berechnet Jahresfortschritt, Sonnen-Deklination und rendert die Orbit- und Nebenansicht.
+- `js/cards/seasons.js`\
+  `render(context)` berechnet Jahresfortschritt, Sonnen-Deklination und rendert die Orbit- und Nebenansicht.
 
 #### Wie die Formel hier funktioniert
 
@@ -413,21 +427,21 @@ Damit entstehen sichtbare Schleifen oder S-Kurven statt einer bloßen Einachsen-
 
 #### Code-Stellen zur Retrograd-Berechnung
 
-- `index.html:3777`\
-  `retrogradePathSvg(key, date)` erzeugt die kleine Schleifen-/S-Kurven-Grafik aus geozentrischer Länge und Breite.
-- `index.html:3817`\
-  `renderRetrogradePhases(date)` rendert die Kachel mit Badge, Pfad, Stationspunkten und aktuellem Marker.
-- `index.html:4677`\
+- `js/models/retrograde-model.js`\
+  `samplePath(key, date)` liefert die Plotdaten der kleinen Schleifen-/S-Kurve aus geozentrischer Länge und Breite.
+- `js/cards/retrograde.js`\
+  `render(context)` rendert die Kachel mit Badge, Pfad, Stationspunkten und aktuellem Marker.
+- `js/core/app.js`\
   `geocentricVector(key, date)` berechnet den Vektor Planet minus Erde und damit die scheinbare Blickrichtung von der Erde aus.
-- `index.html:4686`\
+- `js/core/app.js`\
   `geocentricLongitude(key, date)` leitet daraus die scheinbare geozentrische Länge ab.
-- `index.html:4693`\
+- `js/core/app.js`\
   `geocentricLatitude(key, date)` ergänzt die geozentrische Breite für die sichtbare Schleife.
-- `index.html:4728`\
+- `js/models/retrograde-model.js`\
   `apparentDailyMotion(key, date)` bestimmt die angenäherte tägliche scheinbare Bewegung.
-- `index.html:4734`\
+- `js/models/retrograde-model.js`\
   `findNearestStationDate(key, date)` sucht den nächsten Vorzeichenwechsel der täglichen Bewegung, also eine Station.
-- `index.html:4852`\
+- `js/models/planet-model.js`\
   `planetPosition(planet, date)` liefert die heliozentrische Grundposition aus den Bahnelementen.
 
 #### Wie die Formel hier funktioniert
@@ -478,7 +492,7 @@ Dabei sind `r_planet` und `r_earth` heliozentrische Positionsvektoren, `r_geo` i
 
 ##### Kepler-Gleichung und Bahnposition
 
-Die Funktion `planetPosition(...)` berechnet zunächst aus den Bahnelementen eine heliozentrische Position.
+Die Funktion `planetPosition(...)` in `js/models/planet-model.js` berechnet aus den unverändert nach `js/data/planet-elements-config.js` ausgelagerten Bahnelementen eine heliozentrische Position. Die Elementpaare enthalten jeweils den J2000-Wert und die Änderung pro Julianischem Jahrhundert; Distanzen sind in AE und Winkel in Grad angegeben. Die Kepler-Gleichung wird wie bisher mit acht Newton-Schritten gelöst. Das Modell erhält ein ausdrückliches Datum; die globale Datumsauswahl übernehmen vorläufige Adapter in `js/core/app.js`.
 
 Verwendet werden insbesondere:
 
@@ -557,11 +571,11 @@ Die Kachel zeigt für die beiden inneren Planeten die beleuchtete Phase, Elongat
 
 #### Code-Stellen zur Phasen-Berechnung
 
-- `index.html:3842`\
-  `phaseDiscSvg(illumination, evening, color)` erzeugt die stilisierte Phasenscheibe.
-- `index.html:3858`\
-  `renderInnerPlanetPhases(date)` rendert die Karten für Merkur und Venus.
-- `index.html:4716`\
+- `js/models/inner-planets-model.js` und `js/cards/inner-planets.js`\
+  `phaseDiscPath(illumination, evening)` liefert den Terminator; `renderDisc(illumination, evening, color)` füllt das SVG-Template der stilisierten Phasenscheibe.
+- `js/cards/inner-planets.js`\
+  `render(context)` rendert die Karten für Merkur und Venus.
+- `js/models/inner-planets-model.js`\
   `planetIlluminationData(key, date)` berechnet Beleuchtung, Phasenwinkel, Elongation, Morgen-/Abendstatus und Distanz.
 
 #### Wie die Formel hier funktioniert
@@ -611,7 +625,7 @@ Die Kachel sucht für Merkur, Venus, Mars, Jupiter und Saturn den kleinsten räu
 
 Der vollständige Winkelabstand ist **Δ = arccos(clamp((r_A · r_B) / (|r_A| |r_B|), −1, 1))**. Das Skalarprodukt enthält x, y und z und damit auch den Breitenunterschied. Die Begrenzung schützt vor Gleitkommawerten knapp außerhalb des Definitionsbereichs. Ein gemeinsamer Wechsel des Koordinatensystems, etwa die Präzession zur Epoche des Datums, verändert diesen Winkel nicht.
 
-In conjunction-model.js lokalisieren tägliche Stichproben lokale Minima. Eine Suche mit dem Goldenen Schnitt verfeinert die Kandidaten zwischen den Nachbartagen auf ein Suchintervall unter einer Minute. Das ist numerische Verfeinerung, keine Zusage minutengenauer Ephemeriden. Die Kachel zeigt nur Minima bis 4,5° innerhalb von ±60 verstrichenen Tagen. Stützvektoren werden zwischen Planetenpaaren geteilt, um wiederholte Bahnberechnungen zu vermeiden.
+Der Controller `js/cards/conjunctions.js` zeichnet die Ereignisse; das unveränderte Rechenmodell bleibt in `js/models/conjunction-model.js`. Dort lokalisieren tägliche Stichproben lokale Minima. Eine Suche mit dem Goldenen Schnitt verfeinert die Kandidaten zwischen den Nachbartagen auf ein Suchintervall unter einer Minute. Das ist numerische Verfeinerung, keine Zusage minutengenauer Ephemeriden. Die Kachel zeigt nur Minima bis 4,5° innerhalb von ±60 verstrichenen Tagen. Stützvektoren werden zwischen Planetenpaaren geteilt, um wiederholte Bahnberechnungen zu vermeiden.
 
 Gemeint sind **engste Begegnungen**, nicht zwingend Konjunktionen im strengen Sinn gleicher ekliptischer Länge oder Rektaszension. Die Entfernungen sind geometrisch, ohne Lichtzeitkorrektur, Aberration und lokale Parallaxe. Auch ungünstig zur Sonne stehende oder unter dem Horizont liegende Begegnungen können erscheinen; die Zeitachse ist kein Sichtbarkeitsfilter. Datumsmarken und Ereignisse werden auf derselben echten Zeitachse platziert. Die Zusammenfassung nennt das nächste zukünftige Minimum.
 
@@ -629,13 +643,19 @@ Definitionen: [US Naval Observatory: Aufgang, Untergang und Dämmerung](https://
 
 Die Horizontrechnung wandelt geozentrische J2000-Vektoren zunächst in Äquatorkoordinaten um, präzediert sie mit IAU-1976-Winkeln auf das Datum und verwendet die vorhandene lokale Sternzeit-/Horizonttransformation. Atmosphärische Brechung, Nutation, Aberration und Lichtzeitkorrektur der beobachteten Planetenpositionen sind nicht enthalten. Die Darstellung zeigt geometrische Positionen, keine garantierte Beobachtbarkeit. Wetter, Gelände und Tageslicht bleiben entscheidend. Die verwendeten JPL-Bahnelemente gelten für 1800–2050; außerhalb dieses Bereichs erscheint ein Hinweis auf die Extrapolation.
 
+### Gemeinsame Zeit- und Koordinatenhelfer
+
+Die in `js/models/astronomy-coordinates.js` ausgelagerten Formeln bleiben gegenüber dem bisherigen Hauptskript unverändert. Das Julianische Datum ist `JD = Unixzeit in Millisekunden / 86400000 + 2440587,5`; für J2000, 1. Januar 2000 um 12 Uhr UTC, ergibt sich 2451545,0. Mit `T = (JD − 2451545,0) / 36525` wird die mittlere Ekliptikschiefe als `ε = 23,439291° − 0,0130042° · T` angenähert. Die mittlere Sternzeit verwendet den bisherigen Polynomansatz in `localSiderealAngleDegrees`; die östliche geografische Länge wird addiert.
+
+Aus Rektaszension und lokaler Sternzeit ergibt sich der Stundenwinkel. Breite, Stundenwinkel und Deklination liefern über sphärische Trigonometrie Höhe und Azimut; der Azimut zählt von Norden über Osten. Die Ekliptik-Umrechnung in diesem Modul ist die bestehende vereinfachte Umrechnung mit mittlerer Schiefe. Das separate Modell `js/models/astronomy-explorer-model.js` präzediert hingegen J2000-Vektoren auf das Datum; die beiden Berechnungswege bleiben bewusst getrennt.
+
 ### Lichtlaufzeit und Fortschritt
 
 Die Lichtreise verwendet 149.597.870,7 km pro AE und 299.792,458 km/s. Sie misst den Abstand zur Planetenposition am ausgewählten Zeitpunkt; die Planetenbewegung während des Lichtflugs wird nicht nachgeführt.
 
 Sonnenabstand und Lichtlaufzeit der Planeten verwenden die vorhandenen Kepler-Bahnen, nicht bloß mittlere Bahnradien.
 
-Für Voyager 1 nutzt `voyagerLightTravel(date)` zwei Sonnenabstände aus [NASA Eyes](https://eyes.nasa.gov/assets/dynamic/dynamo/sc_voyager_1/now.json), lokal in `voyager-data.js` mit UTC-Stützzeiten und Abrufdatum gespeichert. Das ist die Datenquelle des [offiziellen NASA-Entfernungszählers](https://science.nasa.gov/mission/voyager/where-are-voyager-1-and-voyager-2-now/). Näherung: **r(t) = r₀ + (r₁ − r₀) × (t − t₀)/(t₁ − t₀)**, danach **t_Licht = r(t) / c**. Die Differenz der Sonnenabstände bestimmt die radiale Entfernungsänderung; die Raumgeschwindigkeit wird nicht mit der Radialgeschwindigkeit gleichgesetzt.
+Für Voyager 1 nutzt `voyagerLightTravel(date)` zwei Sonnenabstände aus [NASA Eyes](https://eyes.nasa.gov/assets/dynamic/dynamo/sc_voyager_1/now.json), lokal in `js/data/voyager-data.js` mit UTC-Stützzeiten und Abrufdatum gespeichert. Das ist die Datenquelle des [offiziellen NASA-Entfernungszählers](https://science.nasa.gov/mission/voyager/where-are-voyager-1-and-voyager-2-now/). Näherung: **r(t) = r₀ + (r₁ − r₀) × (t − t₀)/(t₁ − t₀)**, danach **t_Licht = r(t) / c**. Die Differenz der Sonnenabstände bestimmt die radiale Entfernungsänderung; die Raumgeschwindigkeit wird nicht mit der Radialgeschwindigkeit gleichgesetzt.
 
 Zwischen den Stützzeitpunkten wird interpoliert, außerhalb linear fortgeschrieben. Die App begrenzt dies auf ±5 Julianische Jahre um den jüngsten Stützzeitpunkt. Das ist eine bewusst begrenzte Näherung ohne zugesicherte Ephemeridengenauigkeit, keine vollständige Flugbahn und keine Live-Telemetrie. Außerhalb dieses Bereichs zeigt die Kachel keine erfundene Entfernung und deaktiviert die Lichtreise. Daten können mit `node scripts/update-voyager-data.js` bewusst erneuert werden; der Browser fragt NASA nicht automatisch ab.
 
@@ -690,7 +710,7 @@ Die Tagesgrenzen der Zeitleistenabschnitte und Sprungdaten sind illustrative Ein
 
 ## Himmelswissen: statische Lehrgrafiken
 
-Die SVG-Szenen in `sky-knowledge-graphics-config.js` verwenden feste Zeichenkoordinaten (360 × 158). Es werden dafür keine Ephemeriden oder tagesabhängigen Himmelspositionen berechnet. Beschriftungen und sichtbare Bildunterschriften erläutern Aussage und Vereinfachung in Deutsch, Englisch und Französisch.
+Die SVG-Szenen in `js/data/sky-knowledge-graphics-config.js` verwenden feste Zeichenkoordinaten (360 × 158). Es werden dafür keine Ephemeriden oder tagesabhängigen Himmelspositionen berechnet. Beschriftungen und sichtbare Bildunterschriften erläutern Aussage und Vereinfachung in Deutsch, Englisch und Französisch.
 
 - Planeten- und Mondfolgen geben die Reihenfolge wieder, keine maßstäblichen Entfernungen. Die galileischen Monde stehen nach wachsendem Bahnradius; ihre momentane Stellung wird nicht berechnet.
 - Beim Jupiter-Erde-Vergleich gilt für die gezeichneten Kreisradien `44 / 4 = 11`, also auch für die Durchmesser ungefähr 11 : 1. Der Abstand ist frei gewählt. Der Vergleich Beteigeuze/Sonne und der Vergleich Weißer Zwerg/Erde sind ausdrücklich schematisch; daraus darf kein genauer Radius abgelesen werden.
@@ -711,4 +731,64 @@ Das korrigierte Konjunktionsmodell liefert engste Begegnungen bis 30 Tage voraus
 
 Die Auswahl nutzt die Gewichte und Themengrenzen in daily-highlights-config.js. Sie ist deterministisch und zeigt höchstens fünf Hinweise ohne künstliche Mindestzahl. Kalenderereignisse enthalten die vorhandenen Regionalangaben; bei Finsternissen wird die vorhandene örtliche Einordnung ergänzt. Datierte Planetenereignisse und passende berechnete Minima im Abstand von höchstens zwei Tagen werden zu einem Hinweis zusammengeführt, wobei das Datum des engsten Abstands ausdrücklich erhalten bleibt. Außerhalb des Planetenmodells 1800–2050 werden Planetenempfehlungen und Begegnungsprognosen nicht ausgewählt.
 
-Im Sonnensystem wird die schematische Nachtseite der gemeinsamen Erdgrafik ausgeblendet. Für die Richtung gilt `β = atan2(y, x) · 180 / π`; `x` und `y` sind die bereits berechneten heliozentrischen Ekliptik-Koordinaten der Erde. Die Kontinente dienen der Illustration, nicht der Bestimmung des Subsolarpunkts. Der Mond wird im Sonnensystem nicht angezeigt. Die schematische Position ist `x_Bild = Mitte + Breite · r_Konfiguration · cos(β)` und `y_Bild = Mitte + Breite · r_Konfiguration · sin(β)`. Die festen Radien aus `solar-system-config.js` entzerren die inneren Planeten; sie kodieren keine Entfernungen.
+Im Sonnensystem wird die schematische Nachtseite der gemeinsamen Erdgrafik ausgeblendet. Für die Richtung gilt `β = atan2(y, x) · 180 / π`; `x` und `y` sind die bereits berechneten heliozentrischen Ekliptik-Koordinaten der Erde. Die Kontinente dienen der Illustration, nicht der Bestimmung des Subsolarpunkts. Der Mond wird im Sonnensystem nicht angezeigt. Die schematische Position ist `x_Bild = Mitte + Breite · r_Konfiguration · cos(β)` und `y_Bild = Mitte + Breite · r_Konfiguration · sin(β)`. Die festen Radien aus `js/data/solar-system-config.js` entzerren die inneren Planeten; sie kodieren keine Entfernungen.
+
+### Meteor-Jahreskreis und Radianten
+
+`js/cards/meteor-streams.js` enthält die bisherige Kalenderkreis- und Radiantendarstellung als eigenen Controller. Start, Ende und Maximum werden mit denselben lokalen Jahrestag-Helfern auf den Jahreskreis abgebildet. Aktivitätsfenster schließen beide Grenzen ein und dürfen den Jahreswechsel überqueren. Der nächste jährliche Gipfel wird anhand des bisherigen Tagesabstands gewählt. Die Kreisposition ist ein Kalenderdatum, keine Himmelsrichtung; die Radianten daneben bleiben schematische Richtungsangaben aus der Konfiguration. Eine aktiv markierte Periode ist keine Vorhersage beobachtbarer Meteorenzahlen. Die separate Auswahl und Maximum-Priorität in „Heute faszinierend“ bleiben im bereits getrennten Tagesübersichtsmodell. Die Auslagerung verändert diese Regeln oder ihre Genauigkeitsgrenzen nicht.
+
+### Baryzentrum des Sonnensystems
+
+`js/models/barycenter-model.js` erhält die J2000-Positionen aus `js/models/planet-model.js` und die bisherigen ungefähren Massenverhältnisse aus `js/data/barycenter-config.js`. Die Sonnenmasse ist dabei die Einheit 1. Für die im Vergleichsmodus ausgewählten Planeten mit Massenverhältnis μᵢ und heliozentrischem Ortsvektor rᵢ gilt:
+
+`r_B = Σ(μᵢ · rᵢ) / (1 + Σ μᵢ)`
+
+`solarBarycenter(date,mode)` berechnet diesen Vektor relativ zum Sonnenmittelpunkt in drei Dimensionen. `sunOffsetFromBarycenter(date,mode)` negiert ihn: Im Bezugssystem des Baryzentrums befindet sich der Sonnenmittelpunkt bei `−r_B`. Die dreidimensionale Länge wird in der Zusammenfassung durch den bisherigen Sonnenradius `0.00465047 AU` geteilt; die Grafik zeigt die x-/y-Draufsicht.
+
+Die Modi berücksichtigen Jupiter, Jupiter und Saturn oder alle acht Planeten. Auch der Nenner enthält jeweils nur die ausgewählten Planeten plus die Sonne. Die Rangfolge der Hauptverursacher verwendet wie bisher `μᵢ · |rᵢ|`; sie ist keine Prozentaufteilung des resultierenden, teilweise gegenseitig aufgehobenen Vektors.
+
+`barycenterTrail(date,9125,30,mode)` berechnet die Sonnenversatz-Spur über jeweils 9125 Tage vor und nach dem gewählten Zeitpunkt in 30-Tage-Schritten. Das sind 609 Stützpunkte über ungefähr 50 Jahre. `js/cards/barycenter.js` zeichnet diese Punkte, den Sonnenradius und das feste Baryzentrum. Der gemeinsame Zeitpunkt wird global vorgegeben, der Einflussmodus bleibt lokal.
+
+Die Näherung nutzt dieselben vereinfachten Bahnelemente und konstanten Massenverhältnisse wie zuvor. Sie enthält keine gegenseitigen gravitativen Störungen, Monde oder relativistischen Korrekturen und ist eine didaktische Darstellung, keine präzise Ephemeride.
+
+### Lagrange-Punkte: schematische Sonne-Erde-Geometrie
+
+`js/models/lagrange-model.js` enthält `calculateScene(date)`. Die Erdposition dreht sich wie bisher mit der vorhandenen Sonnenlänge: `f = (λ_Sonne / 360° + 0.5) mod 1`. Auf einem Kreis mit Radius 128 Zeicheneinheiten werden Erde und die beiden um ±60° versetzten Punkte L4/L5 platziert. Sonne, Erde und L4 beziehungsweise L5 bilden damit gleichseitige Dreiecke. L3 liegt der Erde gegenüber.
+
+L1 und L2 liegen auf der Sonne-Erde-Richtung jeweils 18 Zeicheneinheiten vor und hinter der Erde. Dieser Abstand ist zum Erkennen vergrößert; er ist keine aus den Massen errechnete Position. `js/cards/lagrange.js` ergänzt die bisherigen Marker, JWST-Skizze und Erläuterungen. Es handelt sich weiterhin um eine didaktische Geometrie, nicht um eine integrierte Dreikörperbahn.
+
+### Analemma: Jahresabtastung vorhandener Sonnenformeln
+
+`js/models/analemma-model.js` enthält `sampleYear(date,location)`. Für jeden Kalendertag des gewählten Jahres werden Zeitversatz und Sonnenhöhe mit den bereits vorhandenen Näherungen aus `js/models/solar-visibility-model.js` berechnet. Das Jahr besitzt 365 oder 366 Stützwerte; die bisherige lokale Tageszählung bleibt unverändert. `js/cards/analemma.js` zeichnet Zeitversatz auf der horizontalen und Sonnenhöhe auf der vertikalen Achse und hebt den ausgewählten Tag hervor.
+
+Für den bisherigen lokalen Tagesindex n und die Jahreslänge N gilt:
+
+`δ ≈ 23.44° · sin(2π · (n − 80) / N)`
+
+`B = 2π · (n − 81) / 364`
+
+`E ≈ 9.87 · sin(2B) − 7.53 · cos(B) − 1.5 · sin(B)`
+
+E ist die verwendete Zeitgleichungsnäherung in Minuten. Aus geografischer Länge λ wird der bisherige vereinfachte Standardmeridian `λ₀ = round(λ / 15°) · 15°` gebildet. Der horizontale Anzeigewert ist `Δt = E + 4 · (λ − λ₀)` in Minuten. Das Modell ersetzt damit keine genaue gesetzliche Zeitzonen-/Sommerzeitumrechnung des Beobachtungsorts.
+
+Mit geografischer Breite φ und dem Stundenwinkel `H = Δt / 4` in Grad berechnet die vorhandene Höhenfunktion:
+
+`h = asin(sin φ · sin δ + cos φ · cos δ · cos H)`
+
+Die Winkelfunktionen verwenden im Code Bogenmaß; die Ausgabe erfolgt in Grad. Die Auslagerung verändert weder diese Formeln noch ihre bisherigen Näherungen.
+
+### Exoplaneten: Kepler-Näherung und eigene Systemmaßstäbe
+
+`js/models/exoplanets-model.js` enthält die unveränderte Periodennäherung `T = 365.25 · sqrt(a³ / M)` in Tagen, mit Halbachse a in AU und Sternmasse M in Sonnenmassen. Ungültige beziehungsweise nicht positive Werte verwenden wie bisher `a = 0.01` und `M = 1`. Für die schematische Phase gilt:
+
+`θ = normalizeDeg((JD − 2451545) / T · 360° + 31° · Systemindex + 57° · Planetenindex)`
+
+Die Indexanteile verteilen die Marker für eine lesbare Darstellung. Sie sind keine gemessenen Bahnphasen. Die Zeichnung verwendet je System den bisherigen Radius `r = 16 + (a / a_max) · (78 − 16)` und den Mittelpunkt `(110,110)`. Eine ungültige äußere Referenzbahn verwendet wie bisher `a_max = 1`. `js/cards/exoplanets.js` zeichnet daraus Kreise, Marker und Namen. Verschiedene Systemfelder besitzen eigene Maßstäbe; die Darstellung ist keine präzise Exoplaneten-Ephemeride.
+
+### Satelliten: mittlere Perioden und schematische Ellipsen
+
+`js/models/satellites-model.js` verwendet die konfigurierten Epochen, mittleren Umlaufzeiten P in Minuten und Startphasen p₀ aus `js/data/phenomena-config.js`. Mit der Zeitdifferenz Δt in Minuten gilt `p = ((p₀ + Δt / P) mod 1 + 1) mod 1` und `θ = 2πp`. Die doppelte Modulo-Normalisierung erhält auch vor der Epoche eine Phase von 0 bis unter 1.
+
+Die Ellipsenradien sind weiterhin Zeichnungswerte. Bei Standardlayout gilt `r = 34 + 28 + 18 · Index`, `r_x = min(165,r)` und `r_y = max(20, |r · max(0.2,cos i)|)` mit konfigurierter Inklination i. Die Höhe in Kilometern wird in den Details ausgegeben; sie bestimmt hier nicht den Zeichenradius. Der Ellipsenpunkt `(r_x cos θ, r_y sin θ)` wird mit dem konfigurierten RAAN-Winkel gedreht und auf den Mittelpunkt `(210,210)` verschoben.
+
+`js/cards/satellites.js` zeichnet diese Punkte und die bisherigen Details. Die Positionen sind schematische mittlere Umläufe, keine aus aktuellen TLE-Daten propagierten Bahnen und keine Vorhersage sichtbarer Überflüge. Die Auslagerung verändert weder Konfiguration noch Formeln.

@@ -6,7 +6,7 @@ const {test} = require('node:test');
 const {checkVersion} = require('./check-version');
 const root = path.resolve(__dirname, '..');
 const realm = vm.createContext({window:{}, document:{addEventListener(){}}, URL, AbortController});
-vm.runInContext(fs.readFileSync(path.join(root, 'app-updates.js'), 'utf8'), realm);
+vm.runInContext(fs.readFileSync(path.join(root, 'js/core/app-updates.js'), 'utf8'), realm);
 const updates = realm.window.PLANETENUHR_APP_UPDATES;
 
 /** Creates deterministic adapters for version-check and navigation contracts.

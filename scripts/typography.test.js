@@ -3,9 +3,10 @@ const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
 const { test } = require('node:test');
+const {readDashboardSource} = require('./dashboard-source');
 const root = path.resolve(__dirname, '..');
 const realm = vm.createContext({window:{},getComputedStyle(node){return node.style;}});
-for (const file of ['translations.js','diagram-details.js']) {
+for (const file of ['js/data/translations.js','js/shared/diagram-details.js']) {
   vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),realm);
 }
 const details = realm.window.PLANETENUHR_DIAGRAM_DETAILS;
@@ -47,11 +48,11 @@ test('diagram controls and reading instructions are translated in all app langua
 });
 
 /** Extracts a dashboard function for isolated date/URL contract tests.
- * @param {string} name Top-level function name in the inline dashboard script.
+ * @param {string} name Top-level function name in the dashboard script.
  * @returns {string} Original function source, without executing the dashboard.
  */
 function dashboardFunction(name){
-  const source = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+  const source = readDashboardSource(root);
   const start = source.indexOf('    function ' + name + '(');
   assert.ok(start >= 0, 'Function exists: ' + name);
   const end = source.indexOf('\n    }', start);
@@ -64,7 +65,13 @@ const dates = vm.createContext({Intl, Date, URL, lang:'de', requestedCardKey:'pl
   selectedSolarDate(){return new Date(2026, 9, 21, 12);},
   selectedLocation(){return {name:'Berlin'};}
 });
-for (const name of ['datePartsInZone', 'formatDateStamp', 'formatDateKey', 'syncUrlState']) {
+vm.runInContext(fs.readFileSync(path.join(root, 'js/core/date-time.js'), 'utf8'), dates);
+vm.runInContext('globalThis.formatDateKey=window.PLANETENUHR_DATE_TIME.formatDateKey;', dates);
+vm.runInContext(fs.readFileSync(path.join(root, 'js/core/dashboard-context.js'), 'utf8'), dates);
+vm.runInContext(fs.readFileSync(path.join(root, 'js/core/card-navigation.js'), 'utf8'), dates);
+vm.runInContext(`window.history=history; const cardNavigation=window.PLANETENUHR_CARD_NAVIGATION.create({document:{},window,getContext:() => ({date:selectedSolarDate(),location:selectedLocation(),language:lang}),formatDateKey:(date) => window.PLANETENUHR_DATE_TIME.formatDateKey(date)});cardNavigation.setRequestedCardKey(requestedCardKey);`, dates);
+vm.runInContext('globalThis.cardNavigation=cardNavigation;', dates);
+for (const name of ['formatDateStamp']) {
   vm.runInContext(dashboardFunction(name), dates);
 }
 
@@ -86,7 +93,7 @@ test('localized dates and stable keys respect timezone day boundaries', () => {
 test('shared URLs retain YYYYMMDD across language changes and preserve place/card/hash', () => {
   for (const language of ['de', 'en', 'fr']) {
     dates.lang = language;
-    dates.syncUrlState();
+    dates.cardNavigation.syncUrlState();
     const url = new URL(dates.history.url, dates.window.location.href);
     assert.equal(url.searchParams.get('date'), '20261021');
     assert.equal(url.searchParams.get('lang'), language);

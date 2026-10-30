@@ -4,7 +4,7 @@ const path = require('node:path');
 const vm = require('node:vm');
 const {test} = require('node:test');
 const realm = {window:{}};
-for (const file of ['celestial-bodies-config.js','celestial-bodies.js']) {
+for (const file of ['js/data/celestial-bodies-config.js','js/shared/celestial-bodies.js']) {
   vm.runInNewContext(fs.readFileSync(path.join(__dirname,'..',file),'utf8'), realm);
 }
 const visuals = realm.window.PLANETENUHR_BODY_VISUALS;
