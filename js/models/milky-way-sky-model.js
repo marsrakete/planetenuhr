@@ -59,7 +59,7 @@ window.PLANETENUHR_MILKY_WAY_SKY_MODEL = (() => {
     /** Calculates visible Milky Way segments and solar light state at one place and instant.
      * @param {Date} date Selected observation instant.
      * @param {object} location Selected place with latitude and longitude.
-     * @returns {{segments:object[][], sunAltitudeDeg:number, lightState:string}} Horizon chart data.
+     * @returns {{segments:object[][], galacticCenter:{azimuthDeg:number, altitudeDeg:number}, sunAltitudeDeg:number, lightState:string}} Horizon chart data.
      */
     function calculate(date, location){
       const segments = [];
@@ -98,6 +98,8 @@ window.PLANETENUHR_MILKY_WAY_SKY_MODEL = (() => {
 
       const sunEquatorial = sunEquatorialCoordinates(date);
       const sunHorizontal = horizontalCoordinates(date, location, sunEquatorial);
+      const galacticCenterEquatorial = equatorialOfDate(equatorialOnGalacticPlane(0), date);
+      const galacticCenterHorizontal = horizontalCoordinates(date, location, galacticCenterEquatorial);
       let lightState = 'night';
       if (sunHorizontal.altitudeDeg > -18) {
         lightState = 'twilight';
@@ -108,6 +110,10 @@ window.PLANETENUHR_MILKY_WAY_SKY_MODEL = (() => {
 
       return {
         segments,
+        galacticCenter: {
+          azimuthDeg:galacticCenterHorizontal.azimuthDeg,
+          altitudeDeg:galacticCenterHorizontal.altitudeDeg
+        },
         sunAltitudeDeg:sunHorizontal.altitudeDeg,
         lightState
       };

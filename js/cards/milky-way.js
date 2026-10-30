@@ -16,11 +16,38 @@ window.PLANETENUHR_MILKY_WAY = (() => {
     const skyPath = card.querySelector('[data-milky-sky-track]');
     const skyGlowPath = card.querySelector('[data-milky-sky-track-glow]');
     const skyHaloPath = card.querySelector('[data-milky-sky-track-halo]');
+    const skyStarField = card.querySelector('[data-milky-sky-star-field]');
+    const skyGalacticCenter = card.querySelector('[data-milky-sky-galactic-center]');
+    const skyCenterCluster = card.querySelector('[data-milky-sky-center-cluster]');
     const skyMoment = card.querySelector('[data-milky-sky-moment]');
     const viewButtons = card.querySelectorAll('[data-milky-view]');
     const topicButtons = [];
     const hotspots = card.querySelectorAll('[data-topic-hotspot]');
+    const starDistribution = createStarDistribution(140, 938271);
+    const centerStarDistribution = createStarDistribution(70, 612347);
     let activeTopic = 'new';
+
+    /** Erzeugt eine stabile, unregelmäßige Verteilung für die Sterne im Milchstraßenband.
+     * @param {number} count Gewünschte Anzahl der Sternpunkte.
+     * @param {number} initialSeed Fester Startwert für eine bei jedem Render gleiche Verteilung.
+     * @returns {object[]} Feste relative Positionen, Größen und Helligkeiten.
+     */
+    function createStarDistribution(count, initialSeed){
+      let seed = initialSeed;
+      const distribution = [];
+      for (let index = 0; index < count; index += 1) {
+        seed = (seed * 1664525 + 1013904223) % 4294967296;
+        const along = seed / 4294967296;
+        seed = (seed * 1664525 + 1013904223) % 4294967296;
+        const spread = (seed / 4294967296 * 2 - 1) * 19;
+        seed = (seed * 1664525 + 1013904223) % 4294967296;
+        const scale = 0.7 + seed / 4294967296 * 0.45;
+        seed = (seed * 1664525 + 1013904223) % 4294967296;
+        const opacity = 0.78 + seed / 4294967296 * 0.22;
+        distribution.push({along, spread, scale, opacity});
+      }
+      return distribution;
+    }
 
     /** Aktualisiert die Auswahlzustände aller Themenknöpfe.
      * @param {string} topicId Kennung des aktiven Themenbereichs.
@@ -153,6 +180,76 @@ window.PLANETENUHR_MILKY_WAY = (() => {
       return pathParts.join(' ');
     }
 
+    /** Fügt einen kleinen Stern an seiner berechneten Position in eine SVG-Gruppe ein.
+     * @param {SVGGElement} target SVG-Gruppe für den Stern.
+     * @param {object} starPosition Skalierung und Helligkeit des Sterns.
+     * @param {number} x Horizontale Position im Koordinatensystem der Himmelsgrafik.
+     * @param {number} y Vertikale Position im Koordinatensystem der Himmelsgrafik.
+     * @returns {void} Kein Rückgabewert.
+     */
+    function appendSkyStar(target, starPosition, x, y){
+      const star = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+      star.setAttribute('href', '#milkyWaySkyStarSymbol');
+      star.setAttribute('transform', 'translate(' + x.toFixed(2) + ' ' + y.toFixed(2) + ') scale(' + starPosition.scale.toFixed(2) + ')');
+      star.setAttribute('opacity', starPosition.opacity.toFixed(2));
+      target.appendChild(star);
+    }
+
+    /** Setzt 140 kleine Sterne entlang der diffusen, dynamischen Milchstraßenspur.
+     * @returns {void} Kein Rückgabewert.
+     */
+    function updateDiffuseStars(){
+      const pathLength = skyPath.getTotalLength();
+      skyStarField.replaceChildren();
+      if (pathLength <= 0) {
+        return;
+      }
+
+      for (const starPosition of starDistribution) {
+        const distance = pathLength * starPosition.along;
+        const point = skyPath.getPointAtLength(distance);
+        const previousPoint = skyPath.getPointAtLength(Math.max(0, distance - 1));
+        const nextPoint = skyPath.getPointAtLength(Math.min(pathLength, distance + 1));
+        const tangentX = nextPoint.x - previousPoint.x;
+        const tangentY = nextPoint.y - previousPoint.y;
+        const tangentLength = Math.hypot(tangentX, tangentY);
+        if (tangentLength === 0) {
+          continue;
+        }
+
+        const x = point.x - tangentY / tangentLength * starPosition.spread;
+        const y = point.y + tangentX / tangentLength * starPosition.spread;
+        appendSkyStar(skyStarField, starPosition, x, y);
+      }
+    }
+
+    /** Markiert das Galaxienzentrum und verdichtet die Sterne dort, solange es über dem Horizont steht.
+     * @param {{azimuthDeg:number, altitudeDeg:number}|null} center Horizontkoordinaten, falls vom Modell vorhanden.
+     * @returns {void} Kein Rückgabewert.
+     */
+    function updateGalacticCenter(center){
+      skyCenterCluster.replaceChildren();
+      skyGalacticCenter.setAttribute('hidden', '');
+      if (!center || !Number.isFinite(center.altitudeDeg) || !Number.isFinite(center.azimuthDeg) || center.altitudeDeg < 0) {
+        return;
+      }
+
+      const radius = 128 * (90 - center.altitudeDeg) / 90;
+      const angle = center.azimuthDeg * Math.PI / 180;
+      const centerX = 260 + radius * Math.sin(angle);
+      const centerY = 180 - radius * Math.cos(angle);
+      skyGalacticCenter.setAttribute('transform', 'translate(' + centerX.toFixed(2) + ' ' + centerY.toFixed(2) + ')');
+      skyGalacticCenter.removeAttribute('hidden');
+
+      for (const starPosition of centerStarDistribution) {
+        const clusterAngle = starPosition.along * Math.PI * 2;
+        const clusterRadius = 2 + (starPosition.spread + 19) / 38 * 10;
+        const x = Math.cos(clusterAngle) * clusterRadius;
+        const y = Math.sin(clusterAngle) * clusterRadius;
+        appendSkyStar(skyCenterCluster, starPosition, x, y);
+      }
+    }
+
     /** Aktualisiert die Kuppelgrafik anhand des gemeinsamen Datums- und Ortskontexts.
      * @param {object} context Ausgewählter Zeitpunkt, Ort, Zeitzone und Sprache.
      * @returns {void} Kein Rückgabewert.
@@ -163,6 +260,8 @@ window.PLANETENUHR_MILKY_WAY = (() => {
       skyPath.setAttribute('d', trackPath);
       skyGlowPath.setAttribute('d', trackPath);
       skyHaloPath.setAttribute('d', trackPath);
+      updateDiffuseStars();
+      updateGalacticCenter(result.galacticCenter);
       skyVisual.dataset.milkySkyLight = result.lightState;
       const language = context.language || document.documentElement.lang;
       const formattedDate = new Intl.DateTimeFormat(language, {
@@ -193,6 +292,7 @@ window.PLANETENUHR_MILKY_WAY = (() => {
       card.querySelector('[data-milky-sky-tag]').textContent = translations.milky_sky_tag;
       card.querySelector('[data-milky-sky-label]').textContent = translations.milky_sky_band_label;
       card.querySelector('[data-milky-sky-subtitle]').textContent = translations.milky_sky_band_subtitle;
+      card.querySelector('[data-milky-sky-center-label]').textContent = translations.milky_sky_center_label;
       card.querySelector('[data-milky-sky-footer-title]').textContent = translations.milky_sky_footer_title;
       card.querySelector('[data-milky-sky-footer-text]').textContent = translations.milky_sky_footer_text;
       card.querySelector('[data-milky-sky-chart-title]').textContent = translations.milky_sky_chart_aria;

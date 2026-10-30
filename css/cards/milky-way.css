@@ -253,6 +253,11 @@
 }
 
 .milky-way-sky-track-halo { stroke: #aabced; stroke-width: 48; opacity: 0.17; filter: blur(10px); }
+.milky-way-sky-star-field use { fill: #fff; stroke: none; filter: none; }
+.milky-way-sky-center-cluster use { fill: #fff; }
+.milky-way-sky-galactic-center-ring { fill: #ffd16633; stroke: #ffe4a1; stroke-width: 1.2; }
+.milky-way-sky-galactic-center-marker { fill: #ffd166; stroke: #fff; stroke-width: 1; }
+.milky-way-sky-center-key { width: 9px; height: 9px; border: 2px solid #ffe4a1; border-radius: 50%; background: #ffd166; }
 .milky-way-sky-track-glow { stroke: #9bb6ef; stroke-width: 11; opacity: 0.42; filter: blur(3px); }
 .milky-way-sky-track { stroke: #eef1ff; stroke-width: 2.1; }
 .milky-way-sky-visual[data-milky-sky-light="day"] .milky-way-sky-track-halo { opacity: 0.025; }
