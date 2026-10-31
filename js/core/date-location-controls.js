@@ -145,6 +145,7 @@ window.PLANETENUHR_DATE_CONTROLS = (() => {
       if (settingsPanel) {
         settingsPanel.addEventListener('pointerdown', stopSettingsPanelPointerDown);
       }
+      const dateControlsCard = document.querySelector('.date-location-card');
       document.querySelectorAll('[data-date-settings-toggle]').forEach(button => {
         button.addEventListener('pointerdown', event => {
           event.stopPropagation();
@@ -159,14 +160,14 @@ window.PLANETENUHR_DATE_CONTROLS = (() => {
       if (!settingsControlsWired) {
         document.addEventListener('pointerdown', event => {
           const target = event.target;
-          let isInsideSettingsPanel = false;
-          if (settingsPanel) {
-            isInsideSettingsPanel = settingsPanel.contains(target);
+          let isInsideDateControls = false;
+          if (dateControlsCard) {
+            isInsideDateControls = dateControlsCard.contains(target);
           }
-          if (!isInsideSettingsPanel && settingsPanel && typeof event.composedPath === 'function') {
-            isInsideSettingsPanel = event.composedPath().includes(settingsPanel);
+          if (!isInsideDateControls && dateControlsCard && typeof event.composedPath === 'function') {
+            isInsideDateControls = event.composedPath().includes(dateControlsCard);
           }
-          if (isInsideSettingsPanel) {
+          if (isInsideDateControls) {
             return;
           }
           if (target && target.closest && target.closest('[data-date-settings-toggle]')) {
