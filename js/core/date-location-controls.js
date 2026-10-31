@@ -129,10 +129,22 @@ window.PLANETENUHR_DATE_CONTROLS = (() => {
       }
     }
 
+    /** Keeps pointer interactions inside the settings panel from reaching the outside-click handler.
+     * @param {PointerEvent} event Pointer interaction within the settings panel.
+     * @returns {void} No return value.
+     */
+    function stopSettingsPanelPointerDown(event){
+      event.stopPropagation();
+    }
+
     /** Wires settings toggles, outside-click/Escape closing and the mobile date bar once.
      * No parameters. @returns {void}
      */
     function wireDatePanelControls(){
+      const settingsPanel = document.getElementById('dateSettingsPanel');
+      if (settingsPanel) {
+        settingsPanel.addEventListener('pointerdown', stopSettingsPanelPointerDown);
+      }
       document.querySelectorAll('[data-date-settings-toggle]').forEach(button => {
         button.addEventListener('pointerdown', event => {
           event.stopPropagation();
@@ -146,10 +158,18 @@ window.PLANETENUHR_DATE_CONTROLS = (() => {
       });
       if (!settingsControlsWired) {
         document.addEventListener('pointerdown', event => {
-          if (event.target.closest('#dateSettingsPanel')) {
+          const target = event.target;
+          let isInsideSettingsPanel = false;
+          if (settingsPanel) {
+            isInsideSettingsPanel = settingsPanel.contains(target);
+          }
+          if (!isInsideSettingsPanel && settingsPanel && typeof event.composedPath === 'function') {
+            isInsideSettingsPanel = event.composedPath().includes(settingsPanel);
+          }
+          if (isInsideSettingsPanel) {
             return;
           }
-          if (event.target.closest('[data-date-settings-toggle]')) {
+          if (target && target.closest && target.closest('[data-date-settings-toggle]')) {
             return;
           }
           setDateSettingsPanelOpen(false);
@@ -549,7 +569,6 @@ window.PLANETENUHR_DATE_CONTROLS = (() => {
         stopSolarAutoplay();
         stopTimeAutoplay();
         context.setLocationKey(event.target.value);
-        setDateSettingsPanelOpen(false);
         dependencies.refresh('location');
       });
       dependencies.window.addEventListener('pointerup', stopSolarDateHold);
