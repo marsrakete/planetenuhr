@@ -1,7 +1,7 @@
 {
   "name": "planetenuhr",
   "private": true,
-  "version": "1.72.0",
+  "version": "1.73.0",
   "description": "Static astronomy dashboard with build-time validation checks.",
   "scripts": {
     "check:encoding": "node scripts/check-encoding.js",

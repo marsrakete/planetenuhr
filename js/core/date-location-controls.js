@@ -20,6 +20,7 @@ window.PLANETENUHR_DATE_CONTROLS = (() => {
     let solarHoldInterval = null;
     let solarHoldTriggered = false;
     let dateSettingsPanelOpen = false;
+    let lastMobileViewportState = null;
     let settingsControlsWired = false;
     let wired = false;
 
@@ -67,7 +68,7 @@ window.PLANETENUHR_DATE_CONTROLS = (() => {
       }
     }
 
-    /** Synchronizes the mobile date-panel state with the current viewport.
+    /** Collapses the date panel only when entering the mobile layout, not on every viewport resize.
      * No parameters. @returns {void}
      */
     function syncDateMobilePanelForViewport(){
@@ -75,13 +76,16 @@ window.PLANETENUHR_DATE_CONTROLS = (() => {
       if (!card) {
         return;
       }
-      if (dependencies.window.innerWidth <= 760) {
-        if (!card.classList.contains('mobile-collapsed')) {
-          card.classList.add('mobile-collapsed');
-        }
+      const isMobileViewport = dependencies.window.innerWidth <= 760;
+      if (lastMobileViewportState === isMobileViewport) {
         return;
       }
-      card.classList.remove('mobile-collapsed');
+      lastMobileViewportState = isMobileViewport;
+      if (isMobileViewport) {
+        card.classList.add('mobile-collapsed');
+      } else {
+        card.classList.remove('mobile-collapsed');
+      }
     }
 
     /** Opens or closes the date-settings popup and updates responsive classes.
