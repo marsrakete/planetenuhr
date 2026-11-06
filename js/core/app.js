@@ -162,7 +162,8 @@
     const constellationYearController = window.PLANETENUHR_CONSTELLATION_YEAR.create({
       document, createSvgElement:createChartSvgElement,
       getItems:() => phenomenaConfig.constellations || [], getTranslations:() => t,
-      polarPoint, dayOfYearLocal:window.PLANETENUHR_SOLAR_VISIBILITY.dayOfYearLocal, daysInYear:window.PLANETENUHR_SOLAR_VISIBILITY.daysInYear, monthShortLabel, appendSummaryText, appendSummaryLine
+      polarPoint, dayOfYearLocal:window.PLANETENUHR_SOLAR_VISIBILITY.dayOfYearLocal, daysInYear:window.PLANETENUHR_SOLAR_VISIBILITY.daysInYear, monthShortLabel, appendSummaryText, appendSummaryLine,
+      renderDetail:(item, detailContext, targets) => constellationMonthController.render(detailContext, Object.assign({}, targets, {item}))
     });
     const retrogradeModel = window.PLANETENUHR_RETROGRADE_MODEL.create({
       longitude:geocentricLongitude, latitude:geocentricLatitude,

@@ -2058,6 +2058,31 @@
       stroke:#bfdbfe;
       stroke-width:1.4;
     }
+    .constellation-year-selection{
+      cursor:pointer;
+    }
+    .constellation-year-selection:focus{
+      outline:none;
+    }
+    .constellation-year-selection:hover .constellation-mini-ring,
+    .constellation-year-selection:focus .constellation-mini-ring{
+      fill:#dbeafe;
+      stroke:#2563eb;
+      stroke-width:3;
+    }
+    .constellation-year-selection:hover .constellation-name-label,
+    .constellation-year-selection:focus .constellation-name-label{
+      fill:#1d4ed8;
+    }
+    .constellation-year-detail-content{
+      display:grid;
+      justify-items:center;
+      gap:12px;
+      padding:12px;
+    }
+    .constellation-year-detail-content .constellation-map{
+      margin-top:0;
+    }
     .constellation-mini-line{
       stroke:#94a3b8;
       stroke-width:1.2;

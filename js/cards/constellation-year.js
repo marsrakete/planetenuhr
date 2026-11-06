@@ -1,11 +1,63 @@
 window.PLANETENUHR_CONSTELLATION_YEAR = (() => {
   'use strict';
-  /** Creates the annual constellation wheel with its existing enlarged miniatures and date marker.
-   * @param {object} options Document, templates, configured constellations, translations and existing formatting/layout helpers.
-   * @returns {object} Context renderer and local helpers; starts no timers or event listeners.
+  /** Creates the annual constellation wheel and its accessible seasonal detail dialog.
+   * @param {object} options DOM access, configured constellations and rendering adapters.
+   * @param {Function} options.renderDetail Renders a configured constellation into supplied detail targets.
+   * @param {Function} options.getTranslations Returns the active language pack.
+   * @returns {{render:Function}} Controller for the date-driven yearly wheel.
    */
   function create(options){
     const document = options.document;
+    const detailDialog = document.getElementById('constellationYearDetailDialog');
+    const detailTitle = document.getElementById('constellationYearDetailTitle');
+    const detailHint = document.getElementById('constellationYearDetailHint');
+    const detailClose = document.getElementById('constellationYearDetailClose');
+    const detailMap = document.getElementById('constellationYearDetailMap');
+    const detailSkyHint = document.getElementById('constellationYearDetailSkyHint');
+    const detailSummary = document.getElementById('constellationYearDetailSummary');
+    let detailOpener = null;
+
+    if (detailDialog && detailClose) {
+      detailClose.addEventListener('click', () => detailDialog.close());
+      detailDialog.addEventListener('close', () => {
+        if (detailOpener && detailOpener.isConnected) {
+          detailOpener.focus({preventScroll:true});
+        }
+        detailOpener = null;
+      });
+    }
+
+    /**
+     * Opens the selected constellation with its star chart and seasonal guide.
+     * @param {object} item Configured constellation for one month.
+     * @param {object} context Shared dashboard context.
+     * @param {SVGElement} opener Focusable constellation control in the yearly wheel.
+     * @returns {void}
+     */
+    function openDetails(item, context, opener){
+      if (!detailDialog || !detailTitle || !detailHint || !detailClose || !detailMap || typeof options.renderDetail !== 'function') {
+        return;
+      }
+
+      const translations = options.getTranslations();
+      detailOpener = opener;
+      detailTitle.textContent = item.name;
+      detailHint.textContent = translations.constellation_year_detail_hint;
+      detailClose.textContent = translations.diagram_close;
+
+      const detailContext = {
+        ...context,
+        date:new Date(context.date.getFullYear(), item.month - 1, 15)
+      };
+      options.renderDetail(item, detailContext, {
+        target:detailMap,
+        skyHint:detailSkyHint,
+        summary:detailSummary,
+        idPrefix:'constellation-year-detail-',
+        suppressLayout:true
+      });
+      detailDialog.showModal();
+    }
     // Draw the annual constellation wheel:
     // - one configured constellation per month
     // - month labels inside the ring
@@ -25,6 +77,8 @@ window.PLANETENUHR_CONSTELLATION_YEAR = (() => {
       const date = context.date;
       const lang = context.language;
       const t = options.getTranslations();
+      const legend = document.getElementById('constellationYearLegend');
+      if (legend) legend.textContent = t.constellation_year_open_hint || t.legend_constellation_year;
       const target = document.getElementById('constellationYearMap');
       const summary = document.getElementById('constellationYearSummary');
       if (!target) return;
@@ -123,6 +177,22 @@ window.PLANETENUHR_CONSTELLATION_YEAR = (() => {
         monthLabel.textContent = options.monthShortLabel(item.month - 1).replace('.', '');
         svg.appendChild(monthLabel);
 
+        const selection = options.createSvgElement('g');
+        selection.setAttribute('class', 'constellation-year-selection');
+        selection.setAttribute('role', 'button');
+        selection.setAttribute('tabindex', '0');
+        selection.setAttribute('aria-haspopup', 'dialog');
+        selection.setAttribute('aria-controls', 'constellationYearDetailDialog');
+        const openLabel = t.constellation_year_open_detail.replace('{name}', item.name);
+        selection.setAttribute('aria-label', openLabel);
+        selection.addEventListener('click', () => openDetails(item, context, selection));
+        selection.addEventListener('keydown', event => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            openDetails(item, context, selection);
+          }
+        });
+
         const miniPoint = options.polarPoint(center, miniatureOrbit, fraction);
         const mini = document.getElementById('constellationYearMiniTemplate').content.querySelector('g').cloneNode(true);
         mini.setAttribute('transform', `translate(${miniPoint.x} ${miniPoint.y})`);
@@ -200,8 +270,9 @@ window.PLANETENUHR_CONSTELLATION_YEAR = (() => {
         label.setAttribute('text-anchor', textAnchor);
         label.setAttribute('dominant-baseline', dominantBaseline);
         label.textContent = item.name;
-        svg.appendChild(label);
-        svg.appendChild(mini);
+        selection.appendChild(mini);
+        selection.appendChild(label);
+        svg.appendChild(selection);
       });
 
       const fraction = (options.dayOfYearLocal(date) - 1) / options.daysInYear(date.getFullYear());
