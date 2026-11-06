@@ -1,16 +1,15 @@
 window.PLANETENUHR_MOON_NODES_CARD = (() => {
   'use strict';
 
-  /** Creates the Moon-nodes card and its shared lunar-direction helpers.
-   * @param {object} dependencies DOM, language, astronomy and display helpers.
-   * @returns {object} Card renderer and Moon-direction functions for other cards.
+  /** Creates the Moon-nodes card with a shared lunar-direction adapter.
+   * @param {object} dependencies DOM, language, astronomy, shared Moon-direction and display helpers.
+   * @returns {object} Card renderer.
    */
   function create(dependencies){
     const document = dependencies.document;
     const window = dependencies.window;
     const t = dependencies.getTranslations();
     const lang = dependencies.getLanguage();
-    const eclipsePhaseConfig = dependencies.getEclipsePhases();
     const eclipseSeasonCycleDays = window.PLANETENUHR_ECLIPSE_MODEL.eclipseSeasonCycleDays;
     const eclipseSeasonHalfWindowDays = window.PLANETENUHR_ECLIPSE_MODEL.eclipseSeasonHalfWindowDays;
     const localizedEclipseCalendarTitle = dependencies.localizedEclipseCalendarTitle;
@@ -68,31 +67,6 @@ window.PLANETENUHR_MOON_NODES_CARD = (() => {
       return dependencies.formatTime(date);
     }
 
-    /** Gets the existing geocentric longitude estimate for one body.
-     * @param {string} key Body identifier.
-     * @param {Date} date Observation date.
-     * @returns {number} Ecliptic longitude in degrees.
-     */
-    function bodyEclipticLongitude(key, date){
-      return dependencies.getEclipticLongitude(key, date);
-    }
-
-    /** Converts azimuth to the app's localized compass abbreviation.
-     * @param {number} azimuthDeg Azimuth clockwise from north.
-     * @returns {string} Compass abbreviation.
-     */
-    function compassLabelForAzimuth(azimuthDeg){
-      return dependencies.compassLabelForAzimuth(azimuthDeg);
-    }
-
-    /** Converts altitude to the app's arm-length estimate.
-     * @param {number} altitudeDeg Altitude above the horizon.
-     * @returns {string} Localized hand-width estimate or empty text.
-     */
-    function altitudeThumbEstimate(altitudeDeg){
-      return dependencies.altitudeThumbEstimate(altitudeDeg);
-    }
-
     /** Appends plain summary text through the shared template helper.
      * @param {Element} target Destination element.
      * @param {string} text Plain text.
@@ -120,225 +94,8 @@ window.PLANETENUHR_MOON_NODES_CARD = (() => {
       return dependencies.cloneTemplate(templateId);
     }
 
-    /**
-     * Returns approximate equatorial coordinates for the Moon.
-     * The Moon longitude follows the existing phase-based dashboard model, while
-     * the latitude follows the draconic node cycle so eclipse previews can show
-     * a plausible sky direction without claiming observatory precision.
-     * @param {Date} date Instant to evaluate.
-     * @returns {{rightAscensionDeg:number, declinationDeg:number}} Approximate lunar coordinates.
-     */
-    function moonEquatorialCoordinates(date){
-      const eclipticLongitude = bodyEclipticLongitude('moon', date);
-      const nodeState = window.PLANETENUHR_ECLIPSE_MODEL.moonNodeDistance(date);
-      const eclipticLatitude = 5.145 * Math.sin(nodeState.phase * Math.PI * 2);
-      return window.PLANETENUHR_COORDINATES.eclipticToEquatorial(eclipticLongitude, eclipticLatitude, date);
-    }
-
-    /**
-     * Builds the compass and altitude guidance for one eclipse preview row.
-     * @param {object} preview Preview payload from `upcomingLocalEclipsePreview`.
-     * @param {object} location Selected location object.
-     * @param {object} row One normalized preview row.
-     * @returns {object|null} Compass payload, or null when the row has no time-based sky position.
-     */
-    function eclipsePreviewLookDirection(preview, location, row){
-      if (!preview || !location || !row || !row.time) {
-        return null;
-      }
-      const phaseDate = window.PLANETENUHR_ECLIPSE_LOCATION.eclipsePhaseLocalDate(preview.eventDate, location, row.time);
-      if (!phaseDate) {
-        return null;
-      }
-
-      let equatorial = null;
-      if (preview.phaseEntry.kind === 'solar' || row.kind === 'sunset') {
-        equatorial = window.PLANETENUHR_SOLAR_VISIBILITY.solarEquatorialCoordinates(phaseDate);
-      } else {
-        equatorial = moonEquatorialCoordinates(phaseDate);
-      }
-      const horizontal = window.PLANETENUHR_COORDINATES.horizontalCoordinates(phaseDate, location, equatorial);
-      if (!Number.isFinite(horizontal.azimuthDeg) || !Number.isFinite(horizontal.altitudeDeg)) {
-        return null;
-      }
-      const directionLabel = compassLabelForAzimuth(horizontal.azimuthDeg);
-      if (!directionLabel) {
-        return null;
-      }
-      let altitudeText = Math.abs(horizontal.altitudeDeg).toFixed(1) + '°';
-      const thumbEstimate = altitudeThumbEstimate(horizontal.altitudeDeg);
-      if (horizontal.altitudeDeg >= 0) {
-        altitudeText += ' ' + (t.eclipse_preview_above_horizon || 'above horizon');
-        if (thumbEstimate) {
-          altitudeText += ' · ' + thumbEstimate;
-        }
-      } else {
-        altitudeText += ' ' + (t.eclipse_preview_below_horizon || 'below horizon');
-      }
-      return {
-        azimuthDeg: horizontal.azimuthDeg,
-        altitudeDeg: horizontal.altitudeDeg,
-        directionLabel,
-        mainText: directionLabel + ' · ' + horizontal.azimuthDeg.toFixed(0) + '°',
-        subText: altitudeText
-      };
-    }
-
-    /**
-     * Returns the approximate Moon direction for the selected place and date.
-     * The dashboard reuses the same Moon-coordinate approximation as the eclipse
-     * preview so the wording stays consistent across cards.
-     * @param {Date} date Selected dashboard date.
-     * @param {object} location Selected location object.
-     * @returns {object|null} Local Moon direction payload, or null when unavailable.
-     */
-    function moonLookDirectionForDate(date, location){
-      if (!date || !location) {
-        return null;
-      }
-      const equatorial = moonEquatorialCoordinates(date);
-      const horizontal = window.PLANETENUHR_COORDINATES.horizontalCoordinates(date, location, equatorial);
-      if (!Number.isFinite(horizontal.azimuthDeg) || !Number.isFinite(horizontal.altitudeDeg)) {
-        return null;
-      }
-      const directionLabel = compassLabelForAzimuth(horizontal.azimuthDeg);
-      if (!directionLabel) {
-        return null;
-      }
-      let altitudeText = Math.abs(horizontal.altitudeDeg).toFixed(1) + '°';
-      const thumbEstimate = altitudeThumbEstimate(horizontal.altitudeDeg);
-      if (horizontal.altitudeDeg >= 0) {
-        altitudeText += ' ' + (t.eclipse_preview_above_horizon || 'above horizon');
-        if (thumbEstimate) {
-          altitudeText += ' · ' + thumbEstimate;
-        }
-      } else {
-        altitudeText += ' ' + (t.eclipse_preview_below_horizon || 'below horizon');
-      }
-      return {
-        directionLabel,
-        azimuthDeg: horizontal.azimuthDeg,
-        altitudeText
-      };
-    }
-
-    /**
-     * Returns the reference timestamp for the Moon direction display.
-     * On normal days the Moon card follows the currently selected date and time.
-     * On a local eclipse day the card switches to the most meaningful eclipse
-     * phase time so the Moon direction matches the eclipse preview wording.
-     * @param {Date} date Currently selected dashboard date.
-     * @param {object} location Selected location object.
-     * @returns {Date} Reference timestamp for the local Moon direction display.
-     */
-    function moonDirectionReferenceDate(date, location){
-      if (!date || !location) {
-        return date;
-      }
-
-      const preview = upcomingLocalEclipsePreview(date, location);
-      if (!preview || !preview.eventDate) {
-        return date;
-      }
-
-      if (window.PLANETENUHR_DATE_TIME.formatDateKey(preview.eventDate) !== window.PLANETENUHR_DATE_TIME.formatDateKey(date)) {
-        return date;
-      }
-
-      let bestPhaseDate = null;
-      let index = 0;
-      while (index < preview.phases.length) {
-        const phase = preview.phases[index];
-        if (phase.kind === 'maximum' && phase.time) {
-          bestPhaseDate = window.PLANETENUHR_ECLIPSE_LOCATION.eclipsePhaseLocalDate(preview.eventDate, location, phase.time);
-          break;
-        }
-        index += 1;
-      }
-
-      if (bestPhaseDate) {
-        return bestPhaseDate;
-      }
-
-      index = 0;
-      while (index < preview.phases.length) {
-        const phase = preview.phases[index];
-        if (phase.time) {
-          bestPhaseDate = window.PLANETENUHR_ECLIPSE_LOCATION.eclipsePhaseLocalDate(preview.eventDate, location, phase.time);
-          if (bestPhaseDate) {
-            return bestPhaseDate;
-          }
-        }
-        index += 1;
-      }
-
-      return date;
-    }
-
-    /**
-     * Returns the localized label for the Moon direction block.
-     * Normal days use the currently selected date at the current clock time.
-     * Local eclipse days switch to the eclipse phase time so the label should
-     * say that explicitly.
-     * @param {Date} date Currently selected dashboard date.
-     * @param {object} location Selected location object.
-     * @returns {string} Localized label for the Moon direction block.
-     */
-    function moonDirectionLabel(date, location){
-      if (!date || !location) {
-        return t.moon_here_current_time || t.moon_here || 'Moon here at this time';
-      }
-
-      const preview = upcomingLocalEclipsePreview(date, location);
-      if (!preview || !preview.eventDate) {
-        return t.moon_here_current_time || t.moon_here || 'Moon here at this time';
-      }
-
-      if (window.PLANETENUHR_DATE_TIME.formatDateKey(preview.eventDate) !== window.PLANETENUHR_DATE_TIME.formatDateKey(date)) {
-        return t.moon_here_current_time || t.moon_here || 'Moon here at this time';
-      }
-
-      return t.moon_here_eclipse_time || t.moon_here || 'Moon here at eclipse time';
-    }
-
-    /**
-     * Finds the next curated local eclipse preview within ten calendar days.
-     * @param {Date} date Currently selected dashboard date.
-     * @param {object} location Selected location object.
-     * @returns {object|null} Preview payload or null when no nearby local event applies.
-     */
-    function upcomingLocalEclipsePreview(date, location){
-      let bestPreview = null;
-      let index = 0;
-
-      while (index < eclipsePhaseConfig.length) {
-        const phaseEntry = eclipsePhaseConfig[index];
-        const eventDate = window.PLANETENUHR_DATE_TIME.parseLocalDateKey(phaseEntry.date);
-        if (eventDate) {
-          const daysUntil = window.PLANETENUHR_DATE_TIME.calendarDayDifference(date, eventDate);
-          if (daysUntil >= 0 && daysUntil <= 10) {
-            const visibility = eclipseVisibilityForLocation(eventDate, location);
-            if (visibility && window.PLANETENUHR_ECLIPSE_LOCATION.eclipseVisibilityIsPreviewable(visibility.status)) {
-              const phases = window.PLANETENUHR_ECLIPSE_LOCATION.eclipsePhasesForLocationProfile(phaseEntry, location);
-              if (phases.length) {
-                if (!bestPreview || daysUntil < bestPreview.daysUntil) {
-                  bestPreview = {
-                    phaseEntry,
-                    eventDate,
-                    daysUntil,
-                    visibility,
-                    phases
-                  };
-                }
-              }
-            }
-          }
-        }
-        index += 1;
-      }
-
-      return bestPreview;
-    }
+    const eclipsePreviewLookDirection = dependencies.moonDirection.previewLookDirection;
+    const upcomingLocalEclipsePreview = dependencies.moonDirection.upcomingPreview;
 
     /**
      * Returns the localized label for one preview phase row.
@@ -1046,15 +803,7 @@ window.PLANETENUHR_MOON_NODES_CARD = (() => {
       }
     }
 
-
-
-
-    return {
-      render,
-      moonLookDirectionForDate,
-      moonDirectionReferenceDate,
-      moonDirectionLabel
-    };
+    return {render};
   }
 
   return {create};

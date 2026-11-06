@@ -1,0 +1,545 @@
+{
+  "timeZone": "Europe/Berlin",
+  "samples": [
+    {
+      "language": "de",
+      "iso": "2026-03-29T00:30:00Z",
+      "key": "berlin",
+      "direction": {
+        "directionLabel": "W",
+        "azimuthDeg": 263.8758244472998,
+        "altitudeText": "22.0° über dem Horizont · ca. 1 Handspanne hoch"
+      },
+      "reference": "2026-03-29T00:30:00.000Z",
+      "label": "Mond am Ort um diese Uhrzeit"
+    },
+    {
+      "language": "de",
+      "iso": "2026-03-29T00:30:00Z",
+      "key": "new_york",
+      "direction": {
+        "directionLabel": "SSO",
+        "azimuthDeg": 148.3928461064262,
+        "altitudeText": "59.7° über dem Horizont · deutlich über 1 Elle"
+      },
+      "reference": "2026-03-29T00:30:00.000Z",
+      "label": "Mond am Ort um diese Uhrzeit"
+    },
+    {
+      "language": "de",
+      "iso": "2026-03-29T00:30:00Z",
+      "key": "sydney",
+      "direction": {
+        "directionLabel": "OSO",
+        "azimuthDeg": 119.93002886933999,
+        "altitudeText": "56.6° unter dem Horizont"
+      },
+      "reference": "2026-03-29T00:30:00.000Z",
+      "label": "Mond am Ort um diese Uhrzeit"
+    },
+    {
+      "language": "de",
+      "iso": "2026-08-12T12:00:00Z",
+      "key": "berlin",
+      "direction": {
+        "directionLabel": "SW",
+        "azimuthDeg": 215.0899671683153,
+        "altitudeText": "48.6° über dem Horizont · deutlich über 1 Elle"
+      },
+      "reference": "2026-08-12T18:12:00.000Z",
+      "label": "Mond am Ort zur Finsterniszeit"
+    },
+    {
+      "language": "de",
+      "iso": "2026-08-12T12:00:00Z",
+      "key": "new_york",
+      "direction": {
+        "directionLabel": "O",
+        "azimuthDeg": 94.76058339515225,
+        "altitudeText": "29.5° über dem Horizont · ca. 1 Elle hoch"
+      },
+      "reference": "2026-08-12T12:00:00.000Z",
+      "label": "Mond am Ort um diese Uhrzeit"
+    },
+    {
+      "language": "de",
+      "iso": "2026-08-12T12:00:00Z",
+      "key": "sydney",
+      "direction": {
+        "directionLabel": "SW",
+        "azimuthDeg": 227.48556160641056,
+        "altitudeText": "64.8° unter dem Horizont"
+      },
+      "reference": "2026-08-12T12:00:00.000Z",
+      "label": "Mond am Ort um diese Uhrzeit"
+    },
+    {
+      "language": "de",
+      "iso": "2026-08-28T12:00:00Z",
+      "key": "berlin",
+      "direction": {
+        "directionLabel": "NNO",
+        "azimuthDeg": 12.178439260381765,
+        "altitudeText": "44.9° unter dem Horizont"
+      },
+      "reference": "2026-08-28T04:12:00.000Z",
+      "label": "Mond am Ort zur Finsterniszeit"
+    },
+    {
+      "language": "de",
+      "iso": "2026-08-28T12:00:00Z",
+      "key": "new_york",
+      "direction": {
+        "directionLabel": "W",
+        "azimuthDeg": 271.20455256583114,
+        "altitudeText": "13.7° unter dem Horizont"
+      },
+      "reference": "2026-08-28T12:00:00.000Z",
+      "label": "Mond am Ort um diese Uhrzeit"
+    },
+    {
+      "language": "de",
+      "iso": "2026-08-28T12:00:00Z",
+      "key": "sydney",
+      "direction": {
+        "directionLabel": "ONO",
+        "azimuthDeg": 57.80994377478498,
+        "altitudeText": "49.7° über dem Horizont · deutlich über 1 Elle"
+      },
+      "reference": "2026-08-28T12:00:00.000Z",
+      "label": "Mond am Ort um diese Uhrzeit"
+    },
+    {
+      "language": "de",
+      "iso": "2027-02-20T12:00:00Z",
+      "key": "berlin",
+      "direction": {
+        "directionLabel": "NNO",
+        "azimuthDeg": 20.70546043032755,
+        "altitudeText": "21.9° unter dem Horizont"
+      },
+      "reference": "2027-02-19T23:12:00.000Z",
+      "label": "Mond am Ort zur Finsterniszeit"
+    },
+    {
+      "language": "de",
+      "iso": "2027-02-20T12:00:00Z",
+      "key": "new_york",
+      "direction": {
+        "directionLabel": "WNW",
+        "azimuthDeg": 294.8196883187643,
+        "altitudeText": "7.4° unter dem Horizont"
+      },
+      "reference": "2027-02-20T12:00:00.000Z",
+      "label": "Mond am Ort um diese Uhrzeit"
+    },
+    {
+      "language": "de",
+      "iso": "2027-02-20T12:00:00Z",
+      "key": "sydney",
+      "direction": {
+        "directionLabel": "NNO",
+        "azimuthDeg": 28.22867851517549,
+        "altitudeText": "38.1° über dem Horizont · ca. 1 Elle hoch"
+      },
+      "reference": "2027-02-20T12:00:00.000Z",
+      "label": "Mond am Ort um diese Uhrzeit"
+    },
+    {
+      "language": "de",
+      "iso": "2028-07-22T12:00:00Z",
+      "key": "berlin",
+      "direction": {
+        "directionLabel": "S",
+        "azimuthDeg": 191.18681451320924,
+        "altitudeText": "56.3° über dem Horizont · deutlich über 1 Elle"
+      },
+      "reference": "2028-07-22T12:00:00.000Z",
+      "label": "Mond am Ort um diese Uhrzeit"
+    },
+    {
+      "language": "de",
+      "iso": "2028-07-22T12:00:00Z",
+      "key": "new_york",
+      "direction": {
+        "directionLabel": "O",
+        "azimuthDeg": 80.75630798811852,
+        "altitudeText": "19.2° über dem Horizont · ca. 1 Handspanne hoch"
+      },
+      "reference": "2028-07-22T12:00:00.000Z",
+      "label": "Mond am Ort um diese Uhrzeit"
+    },
+    {
+      "language": "de",
+      "iso": "2028-07-22T12:00:00Z",
+      "key": "sydney",
+      "direction": {
+        "directionLabel": "WSW",
+        "azimuthDeg": 254.33823354748756,
+        "altitudeText": "55.1° unter dem Horizont"
+      },
+      "reference": "2028-07-22T12:00:00.000Z",
+      "label": "Mond am Ort um diese Uhrzeit"
+    },
+    {
+      "language": "en",
+      "iso": "2026-03-29T00:30:00Z",
+      "key": "berlin",
+      "direction": {
+        "directionLabel": "W",
+        "azimuthDeg": 263.8758244472998,
+        "altitudeText": "22.0° above horizon · about 1 hand span high"
+      },
+      "reference": "2026-03-29T00:30:00.000Z",
+      "label": "Moon here at this time"
+    },
+    {
+      "language": "en",
+      "iso": "2026-03-29T00:30:00Z",
+      "key": "new_york",
+      "direction": {
+        "directionLabel": "SSE",
+        "azimuthDeg": 148.3928461064262,
+        "altitudeText": "59.7° above horizon · well above 1 cubit"
+      },
+      "reference": "2026-03-29T00:30:00.000Z",
+      "label": "Moon here at this time"
+    },
+    {
+      "language": "en",
+      "iso": "2026-03-29T00:30:00Z",
+      "key": "sydney",
+      "direction": {
+        "directionLabel": "ESE",
+        "azimuthDeg": 119.93002886933999,
+        "altitudeText": "56.6° below horizon"
+      },
+      "reference": "2026-03-29T00:30:00.000Z",
+      "label": "Moon here at this time"
+    },
+    {
+      "language": "en",
+      "iso": "2026-08-12T12:00:00Z",
+      "key": "berlin",
+      "direction": {
+        "directionLabel": "SW",
+        "azimuthDeg": 215.0899671683153,
+        "altitudeText": "48.6° above horizon · well above 1 cubit"
+      },
+      "reference": "2026-08-12T18:12:00.000Z",
+      "label": "Moon here at eclipse time"
+    },
+    {
+      "language": "en",
+      "iso": "2026-08-12T12:00:00Z",
+      "key": "new_york",
+      "direction": {
+        "directionLabel": "E",
+        "azimuthDeg": 94.76058339515225,
+        "altitudeText": "29.5° above horizon · about 1 cubit high"
+      },
+      "reference": "2026-08-12T12:00:00.000Z",
+      "label": "Moon here at this time"
+    },
+    {
+      "language": "en",
+      "iso": "2026-08-12T12:00:00Z",
+      "key": "sydney",
+      "direction": {
+        "directionLabel": "SW",
+        "azimuthDeg": 227.48556160641056,
+        "altitudeText": "64.8° below horizon"
+      },
+      "reference": "2026-08-12T12:00:00.000Z",
+      "label": "Moon here at this time"
+    },
+    {
+      "language": "en",
+      "iso": "2026-08-28T12:00:00Z",
+      "key": "berlin",
+      "direction": {
+        "directionLabel": "NNE",
+        "azimuthDeg": 12.178439260381765,
+        "altitudeText": "44.9° below horizon"
+      },
+      "reference": "2026-08-28T04:12:00.000Z",
+      "label": "Moon here at eclipse time"
+    },
+    {
+      "language": "en",
+      "iso": "2026-08-28T12:00:00Z",
+      "key": "new_york",
+      "direction": {
+        "directionLabel": "W",
+        "azimuthDeg": 271.20455256583114,
+        "altitudeText": "13.7° below horizon"
+      },
+      "reference": "2026-08-28T12:00:00.000Z",
+      "label": "Moon here at this time"
+    },
+    {
+      "language": "en",
+      "iso": "2026-08-28T12:00:00Z",
+      "key": "sydney",
+      "direction": {
+        "directionLabel": "ENE",
+        "azimuthDeg": 57.80994377478498,
+        "altitudeText": "49.7° above horizon · well above 1 cubit"
+      },
+      "reference": "2026-08-28T12:00:00.000Z",
+      "label": "Moon here at this time"
+    },
+    {
+      "language": "en",
+      "iso": "2027-02-20T12:00:00Z",
+      "key": "berlin",
+      "direction": {
+        "directionLabel": "NNE",
+        "azimuthDeg": 20.70546043032755,
+        "altitudeText": "21.9° below horizon"
+      },
+      "reference": "2027-02-19T23:12:00.000Z",
+      "label": "Moon here at eclipse time"
+    },
+    {
+      "language": "en",
+      "iso": "2027-02-20T12:00:00Z",
+      "key": "new_york",
+      "direction": {
+        "directionLabel": "WNW",
+        "azimuthDeg": 294.8196883187643,
+        "altitudeText": "7.4° below horizon"
+      },
+      "reference": "2027-02-20T12:00:00.000Z",
+      "label": "Moon here at this time"
+    },
+    {
+      "language": "en",
+      "iso": "2027-02-20T12:00:00Z",
+      "key": "sydney",
+      "direction": {
+        "directionLabel": "NNE",
+        "azimuthDeg": 28.22867851517549,
+        "altitudeText": "38.1° above horizon · about 1 cubit high"
+      },
+      "reference": "2027-02-20T12:00:00.000Z",
+      "label": "Moon here at this time"
+    },
+    {
+      "language": "en",
+      "iso": "2028-07-22T12:00:00Z",
+      "key": "berlin",
+      "direction": {
+        "directionLabel": "S",
+        "azimuthDeg": 191.18681451320924,
+        "altitudeText": "56.3° above horizon · well above 1 cubit"
+      },
+      "reference": "2028-07-22T12:00:00.000Z",
+      "label": "Moon here at this time"
+    },
+    {
+      "language": "en",
+      "iso": "2028-07-22T12:00:00Z",
+      "key": "new_york",
+      "direction": {
+        "directionLabel": "E",
+        "azimuthDeg": 80.75630798811852,
+        "altitudeText": "19.2° above horizon · about 1 hand span high"
+      },
+      "reference": "2028-07-22T12:00:00.000Z",
+      "label": "Moon here at this time"
+    },
+    {
+      "language": "en",
+      "iso": "2028-07-22T12:00:00Z",
+      "key": "sydney",
+      "direction": {
+        "directionLabel": "WSW",
+        "azimuthDeg": 254.33823354748756,
+        "altitudeText": "55.1° below horizon"
+      },
+      "reference": "2028-07-22T12:00:00.000Z",
+      "label": "Moon here at this time"
+    },
+    {
+      "language": "fr",
+      "iso": "2026-03-29T00:30:00Z",
+      "key": "berlin",
+      "direction": {
+        "directionLabel": "O",
+        "azimuthDeg": 263.8758244472998,
+        "altitudeText": "22.0° au-dessus de l’horizon · env. 1 empan"
+      },
+      "reference": "2026-03-29T00:30:00.000Z",
+      "label": "Lune ici à cette heure"
+    },
+    {
+      "language": "fr",
+      "iso": "2026-03-29T00:30:00Z",
+      "key": "new_york",
+      "direction": {
+        "directionLabel": "SSE",
+        "azimuthDeg": 148.3928461064262,
+        "altitudeText": "59.7° au-dessus de l’horizon · nettement plus haut qu’une coudée"
+      },
+      "reference": "2026-03-29T00:30:00.000Z",
+      "label": "Lune ici à cette heure"
+    },
+    {
+      "language": "fr",
+      "iso": "2026-03-29T00:30:00Z",
+      "key": "sydney",
+      "direction": {
+        "directionLabel": "ESE",
+        "azimuthDeg": 119.93002886933999,
+        "altitudeText": "56.6° sous l’horizon"
+      },
+      "reference": "2026-03-29T00:30:00.000Z",
+      "label": "Lune ici à cette heure"
+    },
+    {
+      "language": "fr",
+      "iso": "2026-08-12T12:00:00Z",
+      "key": "berlin",
+      "direction": {
+        "directionLabel": "SO",
+        "azimuthDeg": 215.0899671683153,
+        "altitudeText": "48.6° au-dessus de l’horizon · nettement plus haut qu’une coudée"
+      },
+      "reference": "2026-08-12T18:12:00.000Z",
+      "label": "Lune ici à l'heure de l'éclipse"
+    },
+    {
+      "language": "fr",
+      "iso": "2026-08-12T12:00:00Z",
+      "key": "new_york",
+      "direction": {
+        "directionLabel": "E",
+        "azimuthDeg": 94.76058339515225,
+        "altitudeText": "29.5° au-dessus de l’horizon · env. 1 coudée"
+      },
+      "reference": "2026-08-12T12:00:00.000Z",
+      "label": "Lune ici à cette heure"
+    },
+    {
+      "language": "fr",
+      "iso": "2026-08-12T12:00:00Z",
+      "key": "sydney",
+      "direction": {
+        "directionLabel": "SO",
+        "azimuthDeg": 227.48556160641056,
+        "altitudeText": "64.8° sous l’horizon"
+      },
+      "reference": "2026-08-12T12:00:00.000Z",
+      "label": "Lune ici à cette heure"
+    },
+    {
+      "language": "fr",
+      "iso": "2026-08-28T12:00:00Z",
+      "key": "berlin",
+      "direction": {
+        "directionLabel": "NNE",
+        "azimuthDeg": 12.178439260381765,
+        "altitudeText": "44.9° sous l’horizon"
+      },
+      "reference": "2026-08-28T04:12:00.000Z",
+      "label": "Lune ici à l'heure de l'éclipse"
+    },
+    {
+      "language": "fr",
+      "iso": "2026-08-28T12:00:00Z",
+      "key": "new_york",
+      "direction": {
+        "directionLabel": "O",
+        "azimuthDeg": 271.20455256583114,
+        "altitudeText": "13.7° sous l’horizon"
+      },
+      "reference": "2026-08-28T12:00:00.000Z",
+      "label": "Lune ici à cette heure"
+    },
+    {
+      "language": "fr",
+      "iso": "2026-08-28T12:00:00Z",
+      "key": "sydney",
+      "direction": {
+        "directionLabel": "ENE",
+        "azimuthDeg": 57.80994377478498,
+        "altitudeText": "49.7° au-dessus de l’horizon · nettement plus haut qu’une coudée"
+      },
+      "reference": "2026-08-28T12:00:00.000Z",
+      "label": "Lune ici à cette heure"
+    },
+    {
+      "language": "fr",
+      "iso": "2027-02-20T12:00:00Z",
+      "key": "berlin",
+      "direction": {
+        "directionLabel": "NNE",
+        "azimuthDeg": 20.70546043032755,
+        "altitudeText": "21.9° sous l’horizon"
+      },
+      "reference": "2027-02-19T23:12:00.000Z",
+      "label": "Lune ici à l'heure de l'éclipse"
+    },
+    {
+      "language": "fr",
+      "iso": "2027-02-20T12:00:00Z",
+      "key": "new_york",
+      "direction": {
+        "directionLabel": "ONO",
+        "azimuthDeg": 294.8196883187643,
+        "altitudeText": "7.4° sous l’horizon"
+      },
+      "reference": "2027-02-20T12:00:00.000Z",
+      "label": "Lune ici à cette heure"
+    },
+    {
+      "language": "fr",
+      "iso": "2027-02-20T12:00:00Z",
+      "key": "sydney",
+      "direction": {
+        "directionLabel": "NNE",
+        "azimuthDeg": 28.22867851517549,
+        "altitudeText": "38.1° au-dessus de l’horizon · env. 1 coudée"
+      },
+      "reference": "2027-02-20T12:00:00.000Z",
+      "label": "Lune ici à cette heure"
+    },
+    {
+      "language": "fr",
+      "iso": "2028-07-22T12:00:00Z",
+      "key": "berlin",
+      "direction": {
+        "directionLabel": "S",
+        "azimuthDeg": 191.18681451320924,
+        "altitudeText": "56.3° au-dessus de l’horizon · nettement plus haut qu’une coudée"
+      },
+      "reference": "2028-07-22T12:00:00.000Z",
+      "label": "Lune ici à cette heure"
+    },
+    {
+      "language": "fr",
+      "iso": "2028-07-22T12:00:00Z",
+      "key": "new_york",
+      "direction": {
+        "directionLabel": "E",
+        "azimuthDeg": 80.75630798811852,
+        "altitudeText": "19.2° au-dessus de l’horizon · env. 1 empan"
+      },
+      "reference": "2028-07-22T12:00:00.000Z",
+      "label": "Lune ici à cette heure"
+    },
+    {
+      "language": "fr",
+      "iso": "2028-07-22T12:00:00Z",
+      "key": "sydney",
+      "direction": {
+        "directionLabel": "OSO",
+        "azimuthDeg": 254.33823354748756,
+        "altitudeText": "55.1° sous l’horizon"
+      },
+      "reference": "2028-07-22T12:00:00.000Z",
+      "label": "Lune ici à cette heure"
+    }
+  ]
+}

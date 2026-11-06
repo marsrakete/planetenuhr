@@ -55,6 +55,16 @@ function isExistingFile(filePath) {
   }
 }
 
+/** Removes valid generation stamps before comparing calendar content.
+ * A checkout changes source mtimes without changing events; DTSTAMP therefore
+ * cannot establish whether committed calendar data is stale.
+ * @param {string} content Calendar text with its generated DTSTAMP lines.
+ * @returns {string} Calendar text with valid UTC stamps replaced by a marker.
+ */
+function comparableCalendarContent(content) {
+  return content.replace(/\r\n/g, "\n").replace(/^DTSTAMP:\d{8}T\d{6}Z(?=\r?$)/gm, "DTSTAMP:generated");
+}
+
 /**
  * Returns the freshness state of the generated ICS files relative to the
  * calendar source files.
@@ -88,7 +98,7 @@ function getIcsFreshnessState(repositoryRoot) {
 
     const currentContent = fs.readFileSync(filePath, "utf8");
     const expectedContent = expectedFiles.get(filePath);
-    if (currentContent !== expectedContent) {
+    if (comparableCalendarContent(currentContent) !== comparableCalendarContent(expectedContent)) {
       staleFiles.push(path.join("ics", fileName));
     }
   });

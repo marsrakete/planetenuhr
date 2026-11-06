@@ -1,11 +1,19 @@
 window.PLANETENUHR_MILKY_WAY = (() => {
   'use strict';
 
-  /** Erstellt die Interaktion für Kartenansicht, Himmelsblick und Themenwahl.
-   * @param {Document} document Dokument mit der Milchstraßen-Kachel und ihren Templates.
-   * @returns {{render: Function}} Controller zum Lokalisieren der Kachel.
+  /** Creates the Milky Way views with explicit DOM, content and astronomy dependencies.
+   * @param {object} options Document/window, sky model, context getter, topic configuration
+   * and current translation getter.
+   * @param {Document} options.document Dashboard document.
+   * @param {Window} options.window Browser interfaces for viewport and resize observation.
+   * @param {object} options.skyModel Galactic sky-coordinate model.
+   * @param {Function} options.getContext Getter for the selected date/place/language.
+   * @param {object} options.config Central topic configuration.
+   * @param {Function} options.getTranslations Getter for the current central language pack.
+   * @returns {{render:Function,updateSky:Function}} Localization and sky-update API.
    */
-  function create(document, skyModel, getContext){
+  function create(options){
+    const {document,window,skyModel,getContext,config,getTranslations} = options;
     const card = document.querySelector('[data-help-key="milky_way"]');
     const heading = document.getElementById('milkyWayTitle');
     const topicLabel = document.getElementById('milkyWayTopicTitle');
@@ -110,8 +118,7 @@ window.PLANETENUHR_MILKY_WAY = (() => {
      * @returns {void} Kein Rückgabewert.
      */
     function handleTopicClick(event){
-      const language = document.documentElement.lang;
-      const translations = window.PLANETENUHR_TRANSLATIONS[language];
+      const translations = getTranslations();
       selectTopic(event.currentTarget.dataset.topicId, translations);
     }
 
@@ -140,8 +147,7 @@ window.PLANETENUHR_MILKY_WAY = (() => {
         }
       }
 
-      const language = document.documentElement.lang;
-      const translations = window.PLANETENUHR_TRANSLATIONS[language];
+      const translations = getTranslations();
       selectTopic(selectedTopicId, translations);
     }
 
@@ -267,7 +273,7 @@ window.PLANETENUHR_MILKY_WAY = (() => {
       const formattedDate = new Intl.DateTimeFormat(language, {
         dateStyle:'medium', timeStyle:'short', timeZone:context.timeZone
       }).format(context.date);
-      const momentTemplate = window.PLANETENUHR_TRANSLATIONS[language].milky_sky_moment;
+      const momentTemplate = getTranslations().milky_sky_moment;
       skyMoment.textContent = momentTemplate
         .replace('{place}', context.location.name)
         .replace('{date}', formattedDate);
@@ -310,7 +316,7 @@ window.PLANETENUHR_MILKY_WAY = (() => {
       card.querySelector('.milky-way-artwork').title = translations.milky_map_title;
       card.querySelector('.milky-way-views').setAttribute('aria-label', translations.milky_view_group);
 
-      const topics = window.PLANETENUHR_MILKY_WAY_CONFIG.topics;
+      const topics = config.topics;
       for (let index = 0; index < topics.length; index += 1) {
         const topic = topics[index];
         const label = translations[topic.labelKey];
@@ -327,7 +333,7 @@ window.PLANETENUHR_MILKY_WAY = (() => {
       topicButtons.push(hotspot);
     }
 
-    const topics = window.PLANETENUHR_MILKY_WAY_CONFIG.topics;
+    const topics = config.topics;
     for (const topic of topics) {
       const fragment = document.getElementById('milkyWayTopicTemplate').content.cloneNode(true);
       const button = fragment.querySelector('button');

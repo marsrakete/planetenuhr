@@ -26,6 +26,21 @@
       }).format(d);
     }
 
+    /** Formats a clock time in the requested language and observation time zone.
+     * @param {Date|null} date Instant to display, or null when unavailable.
+     * @param {string} timeZone IANA time zone of the selected location.
+     * @param {string} lang Language identifier.
+     * @returns {string} Localized 24-hour time, or a dash for a missing instant.
+     */
+    function formatTimeOnly(date, timeZone, lang){
+      if (!date) {
+        return '-';
+      }
+      return date.toLocaleTimeString(lang, {
+        hour:'2-digit', minute:'2-digit', hour12:false, timeZone
+      });
+    }
+
     /** Returns a stable calendar key in the requested time zone.
      * @param {Date} d Instant to format.
      * @param {string} [timeZone] IANA zone or browser default.
@@ -315,7 +330,7 @@
     }
 
     window.PLANETENUHR_DATE_TIME = {
-      datePartsInZone, formatDateStamp, formatDateKey, parseLocalDateKey, calendarDayDifference,
+      datePartsInZone, formatDateStamp, formatTimeOnly, formatDateKey, parseLocalDateKey, calendarDayDifference,
       locationTimeZoneId, parseTimeZoneOffsetMinutes, timeZoneOffsetMinutesAt,
       timePartsInZone, dateAtTimeInZone, dateAtCalendarTimeInZone, calendarDayDifferenceInZone
     };
