@@ -107,15 +107,23 @@
       getTranslations:() => t, getDisplayTimeZone,
       formatDateTime:fmtTZ
     });
+    const moonObserver = window.PLANETENUHR_MOON_MODEL.createObserver({
+      coordinates:window.PLANETENUHR_COORDINATES, eclipse:window.PLANETENUHR_ECLIPSE_MODEL,
+      dateTime:window.PLANETENUHR_DATE_TIME, eclipseLocation:window.PLANETENUHR_ECLIPSE_LOCATION,
+      phases:eclipsePhaseConfig, getVisibility:eclipseVisibilityForLocation,
+      getLongitude:date => bodyEclipticLongitude('moon', date),
+      solarCoordinates:window.PLANETENUHR_SOLAR_VISIBILITY.solarEquatorialCoordinates
+    });
+    const moonDirection = window.PLANETENUHR_OBSERVATION_FORMAT.createMoonDirection({
+      observer:moonObserver, getTranslations:() => t
+    });
     const moonNodesController = window.PLANETENUHR_MOON_NODES_CARD.create({
       document, window, getTranslations:() => t, getLanguage:() => lang,
-      getEclipsePhases:() => eclipsePhaseConfig,
+      moonDirection,
       localizedEclipseCalendarTitle,
       getEclipseVisibility:eclipseVisibilityForLocation,
       getVisibilityLabel:eclipseVisibilityStatusLabel,
       formatDate:formatDateStamp, formatTime:fmtTimeOnly,
-      getEclipticLongitude:bodyEclipticLongitude,
-      compassLabelForAzimuth, altitudeThumbEstimate,
       cloneTemplate, appendSummaryText, appendSummaryLine
     });
     const eclipseGeometryController = window.PLANETENUHR_ECLIPSE_GEOMETRY_CARD.create({
@@ -128,8 +136,8 @@
       getDisplayTimeZone,
       computeMoon:window.PLANETENUHR_MOON_MODEL.computeMoon,
       nextFullMoon:window.PLANETENUHR_MOON_MODEL.nextFullMoon, visuals:window.PLANETENUHR_EARTH_MOON_VISUALS,
-      compass:window.PLANETENUHR_COMPASS, directionLabel:moonNodesController.moonDirectionLabel,
-      directionReferenceDate:moonNodesController.moonDirectionReferenceDate, lookDirection:moonNodesController.moonLookDirectionForDate,
+      compass:window.PLANETENUHR_COMPASS, directionLabel:moonDirection.directionLabel,
+      directionReferenceDate:moonDirection.referenceDate, lookDirection:moonDirection.lookDirection,
       formatDateTime:fmtTZ
     });
     const conjunctionController = window.PLANETENUHR_CONJUNCTION_CARD.create({
@@ -524,7 +532,7 @@
      * @returns {string} Localized compass abbreviation.
      */
     function compassLabelForAzimuth(azimuthDeg){
-      return window.PLANETENUHR_OBSERVATION_FORMAT.compassLabelForAzimuth(azimuthDeg, lang);
+      return window.PLANETENUHR_OBSERVATION_FORMAT.compassLabelForAzimuth(azimuthDeg, t);
     }
 
     /** Converts altitude to an everyday arm-length estimate.
@@ -532,7 +540,7 @@
      * @returns {string} Localized estimate, or empty text below the horizon.
      */
     function altitudeThumbEstimate(altitudeDeg){
-      return window.PLANETENUHR_OBSERVATION_FORMAT.altitudeThumbEstimate(altitudeDeg, lang);
+      return window.PLANETENUHR_OBSERVATION_FORMAT.altitudeThumbEstimate(altitudeDeg, t);
     }
     function localizedCountryName(countryName){
       if (!countryName) {
@@ -1052,7 +1060,6 @@
       getGeocentricVector: window.PLANETENUHR_PLANET_MODEL.geocentricVector,
       getHorizontalCoordinates: window.PLANETENUHR_COORDINATES.horizontalCoordinates,
       getAltitudeEstimate: altitudeThumbEstimate,
-      getAltitudeEstimate: altitudeThumbEstimate,
       requestLayout: dashboardLayout.requestMasonryLayout,
       updateCardLayout: dashboardLayout.updateSingleCardMasonryLayout
     });
@@ -1072,7 +1079,10 @@
       horizontalCoordinates:window.PLANETENUHR_COORDINATES.horizontalCoordinates,
       sunEquatorialCoordinates:window.PLANETENUHR_SOLAR_VISIBILITY.solarEquatorialCoordinates
     });
-    milkyWayCard = window.PLANETENUHR_MILKY_WAY.create(document, milkyWaySkyModel, dashboardContext.snapshot);
+    milkyWayCard = window.PLANETENUHR_MILKY_WAY.create({
+      document, window, skyModel:milkyWaySkyModel, getContext:dashboardContext.snapshot,
+      config:window.PLANETENUHR_MILKY_WAY_CONFIG, getTranslations:() => t
+    });
     const dashboardI18n = window.PLANETENUHR_DASHBOARD_I18N.create({
       document, window, getLanguage:() => lang, getTranslations:() => t,
       dateLocationControls, cardSizes, dashboardContext,

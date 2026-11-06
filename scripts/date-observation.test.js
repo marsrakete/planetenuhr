@@ -4,7 +4,7 @@ const path = require('node:path');
 const vm = require('node:vm');
 const {test} = require('node:test');
 const context = vm.createContext({window:{}, Intl, Date, Math, Number});
-for (const file of ['js/core/date-time.js', 'js/core/observation-format.js']) {
+for (const file of ['js/data/translations.js', 'js/core/date-time.js', 'js/core/observation-format.js']) {
   vm.runInContext(fs.readFileSync(path.join(__dirname, '..', file), 'utf8'), context);
 }
 const dates = context.window.PLANETENUHR_DATE_TIME;
@@ -38,15 +38,15 @@ test('local date-key parsing rejects rollover and calendar-day distance ignores 
 });
 
 test('compass and angular estimates use the supplied language and preserve thresholds', () => {
-  assert.equal(observation.compassLabelForAzimuth(90, 'de'), 'O');
-  assert.equal(observation.compassLabelForAzimuth(90, 'en'), 'E');
-  assert.equal(observation.compassLabelForAzimuth(270, 'fr'), 'O');
-  assert.equal(observation.compassLabelForAzimuth(-90, 'de'), 'W');
+  assert.equal(observation.compassLabelForAzimuth(90, context.window.PLANETENUHR_TRANSLATIONS.de), 'O');
+  assert.equal(observation.compassLabelForAzimuth(90, context.window.PLANETENUHR_TRANSLATIONS.en), 'E');
+  assert.equal(observation.compassLabelForAzimuth(270, context.window.PLANETENUHR_TRANSLATIONS.fr), 'O');
+  assert.equal(observation.compassLabelForAzimuth(-90, context.window.PLANETENUHR_TRANSLATIONS.de), 'W');
   for (const language of ['de','en','fr']) {
-    assert.equal(observation.altitudeThumbEstimate(0, language), '');
-    assert.equal(observation.altitudeThumbEstimate(NaN, language), '');
+    assert.equal(observation.altitudeThumbEstimate(0, context.window.PLANETENUHR_TRANSLATIONS[language]), '');
+    assert.equal(observation.altitudeThumbEstimate(NaN, context.window.PLANETENUHR_TRANSLATIONS[language]), '');
     for (const boundary of [3, 6, 8, 15, 28, 45]) {
-      assert.notEqual(observation.altitudeThumbEstimate(boundary - 0.01, language), observation.altitudeThumbEstimate(boundary, language));
+      assert.notEqual(observation.altitudeThumbEstimate(boundary - 0.01, context.window.PLANETENUHR_TRANSLATIONS[language]), observation.altitudeThumbEstimate(boundary, context.window.PLANETENUHR_TRANSLATIONS[language]));
     }
   }
 });

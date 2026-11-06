@@ -1,5 +1,13 @@
 window.PLANETENUHR_TRANSLATIONS = {
   en: {
+    observation_compass_labels: ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"],
+    observation_altitude_0: "about 1 thumb width",
+    observation_altitude_1: "about 2 thumb widths",
+    observation_altitude_2: "about 3 finger widths",
+    observation_altitude_3: "about 1 fist high",
+    observation_altitude_4: "about 1 hand span high",
+    observation_altitude_5: "about 1 cubit high",
+    observation_altitude_6: "well above 1 cubit",
     update_version: "Version {version}",
     update_check: "Check for updates",
     update_checking: "Checking for updates…",
@@ -615,6 +623,14 @@ window.PLANETENUHR_TRANSLATIONS = {
     aurora_germany_extreme: "Strong event; aurora may be visible across large parts of Germany."
   },
   de: {
+    observation_compass_labels: ["N", "NNO", "NO", "ONO", "O", "OSO", "SO", "SSO", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"],
+    observation_altitude_0: "ca. 1 Daumenbreit",
+    observation_altitude_1: "ca. 2 Daumenbreit",
+    observation_altitude_2: "ca. 3 Fingerbreit",
+    observation_altitude_3: "ca. 1 Faust hoch",
+    observation_altitude_4: "ca. 1 Handspanne hoch",
+    observation_altitude_5: "ca. 1 Elle hoch",
+    observation_altitude_6: "deutlich über 1 Elle",
     update_version: "Version {version}",
     update_check: "Nach Updates suchen",
     update_checking: "Suche nach Updates…",
@@ -1230,6 +1246,14 @@ window.PLANETENUHR_TRANSLATIONS = {
     aurora_germany_extreme: "Starkes Ereignis; Polarlicht kann in grossen Teilen Deutschlands sichtbar sein."
   },
   fr: {
+    observation_compass_labels: ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSO", "SO", "OSO", "O", "ONO", "NO", "NNO"],
+    observation_altitude_0: "env. 1 pouce",
+    observation_altitude_1: "env. 2 pouces",
+    observation_altitude_2: "env. 3 doigts",
+    observation_altitude_3: "env. 1 poing",
+    observation_altitude_4: "env. 1 empan",
+    observation_altitude_5: "env. 1 coudée",
+    observation_altitude_6: "nettement plus haut qu’une coudée",
     update_version: "Version {version}",
     update_check: "Rechercher des mises à jour",
     update_checking: "Recherche de mises à jour…",
