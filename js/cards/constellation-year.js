@@ -35,7 +35,7 @@ window.PLANETENUHR_CONSTELLATION_YEAR = (() => {
      * @returns {void}
      */
     function openDetails(item, context, opener){
-      if (!detailDialog || !detailTitle || !detailHint || !detailClose || !detailMap || typeof options.renderDetail !== 'function') {
+      if (!detailDialog || !detailTitle || !detailHint || !detailClose || !detailMap || !detailSkyHint || !detailSummary || typeof options.renderDetail !== 'function') {
         return;
       }
 
