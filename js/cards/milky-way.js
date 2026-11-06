@@ -345,7 +345,7 @@ window.PLANETENUHR_MILKY_WAY = (() => {
     for (const button of viewButtons) {
       button.addEventListener('click', handleViewClick);
     }
-    selectView('map');
+    selectView('sky');
     mapImage.addEventListener('load', synchronizeDetailPanelHeight);
     window.addEventListener('resize', synchronizeDetailPanelHeight);
     if (typeof window.ResizeObserver === 'function') {
