@@ -110,6 +110,7 @@
     const moonNodesController = window.PLANETENUHR_MOON_NODES_CARD.create({
       document, window, getTranslations:() => t, getLanguage:() => lang,
       getEclipsePhases:() => eclipsePhaseConfig,
+      localizedEclipseCalendarTitle,
       getEclipseVisibility:eclipseVisibilityForLocation,
       getVisibilityLabel:eclipseVisibilityStatusLabel,
       formatDate:formatDateStamp, formatTime:fmtTimeOnly,
@@ -435,13 +436,8 @@
      * @returns {string} Localized time or a dash for an absent instant.
      */
     function fmtTimeOnly(d){
-      if (!d) return '-';
-      return d.toLocaleTimeString(lang, {
-        hour:'2-digit',
-        minute:'2-digit',
-        hour12:false,
-        timeZone:'Europe/Berlin'
-      });
+      const timeZone = window.PLANETENUHR_DATE_TIME.locationTimeZoneId(dashboardContext.getLocation());
+      return window.PLANETENUHR_DATE_TIME.formatTimeOnly(d, timeZone, lang);
     }
 
     /**

@@ -305,3 +305,16 @@ Die zentrale Pflege- und Prüfliste liegt in `calendar-sources.json`. Den Ablauf
 
 E-Mail: millux@marsrakete.de
 bsky: https://bsky.app/profile/marsrakete.de
+
+
+## Entwicklung und Regressionstests
+
+- `npm ci` installiert den im Lockfile festgehaltenen Stand.
+- `npm test` führt alle Unit- und Modulvertragstests in `scripts/*.test.js` aus.
+- `TZ=Europe/Berlin npm run validate:repo` prüft Encoding, Dateien, Kalenderartefakte und Versionskonsistenz. Die Kalenderartefakte verwenden die Berliner Kalenderzeitzone; GitHub Actions setzt sie ausdrücklich.
+- Für Browsertests: `npm install --no-save --package-lock=false playwright@1.57.0`, dann `npx playwright install chromium webkit` und `npm run test:browser`.
+- Mit `PLANETENUHR_TEST_BROWSERS=chromium,webkit` werden beide Engines geprüft. Für vorhandene lokale Installationen unterstützen die Tests `PLANETENUHR_PLAYWRIGHT` und `PLANETENUHR_CHROMIUM_EXECUTABLE`.
+
+GitHub Actions führt die Build-Prüfung, alle Unit-Tests und die Browserregressionen aus. Die Browsertests prüfen den tatsächlichen Dashboardstart und sammeln JavaScript-Fehler. Sie testen Deutsch, Englisch und Französisch, Ortswechsel zwischen Berlin, New York und Sydney sowie Browserzeitzonen, die von der gewählten Ortszeitzone abweichen. Externe Datenquellen bleiben für reproduzierbare Tests blockiert.
+
+Uhrzeitanzeigen wie Sonnenaufgang und Sonnenuntergang folgen der Zeitzone des gewählten Ortes. Finsternisdatensätze ohne eigenen Titel erhalten in der Mondknoten-Kachel den lokalisierten Namen aus Art und Typ.

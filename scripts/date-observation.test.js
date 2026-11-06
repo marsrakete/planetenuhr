@@ -50,3 +50,22 @@ test('compass and angular estimates use the supplied language and preserve thres
     }
   }
 });
+
+test('clock times follow observation zones across midnight and DST transitions', () => {
+  const cases = [
+    ['2026-11-05T12:00:00Z', 'Europe/Berlin', '13:00'],
+    ['2026-11-05T12:00:00Z', 'America/New_York', '07:00'],
+    ['2026-11-05T12:00:00Z', 'Australia/Sydney', '23:00'],
+    ['2026-11-05T23:30:00Z', 'Australia/Sydney', '10:30'],
+    ['2026-03-29T00:30:00Z', 'Europe/Berlin', '01:30'],
+    ['2026-03-29T01:30:00Z', 'Europe/Berlin', '03:30'],
+    ['2026-10-25T00:30:00Z', 'Europe/Berlin', '02:30'],
+    ['2026-10-25T01:30:00Z', 'Europe/Berlin', '02:30']
+  ];
+  for (const language of ['de', 'en', 'fr']) {
+    for (const [iso, zone, expected] of cases) {
+      assert.equal(dates.formatTimeOnly(new Date(iso), zone, language), expected);
+    }
+    assert.equal(dates.formatTimeOnly(null, 'Europe/Berlin', language), '-');
+  }
+});

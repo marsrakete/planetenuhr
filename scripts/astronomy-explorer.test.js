@@ -18,7 +18,7 @@ test('the global date refresh updates both Moon displays immediately with the sa
   const adapters = {dailyHighlights:null,idefixMission:null};
   for (const name of ['updateControlDateReadout',
     'renderSolarSystem','renderBarycenter','renderLagrangePoints','renderAnalemma','renderExoplanetComparison',
-    'renderPolarisNorth','renderMoonNodes','renderConstellationOfMonth',
+    'renderPolarisNorth','renderMoonNodes','renderConstellationOfMonth','renderMilkyWaySky',
     'renderConstellationYear','renderSeasonAxis','renderRetrogradePhases','renderInnerPlanetPhases','renderSunlight',
     'renderVisibility','renderNightVisibility','renderSatellites','renderEclipseGeometry','renderCalendar']) {
     adapters[name] = date => calls.push({name,date});

@@ -84,7 +84,7 @@ function controlsFixture(iso = '2026-10-27T12:00:00Z'){
   const browser = {setInterval:schedule,setTimeout:schedule,
     clearInterval:id => timers.delete(id),clearTimeout:id => timers.delete(id),
     addEventListener:(type, callback) => events.push({type,callback})};
-  const fakeDocument = {getElementById:getNode,querySelectorAll:() => [],addEventListener(){}};
+  const fakeDocument = {getElementById:getNode,querySelector:() => null,querySelectorAll:() => [],addEventListener(){}};
   const controls = realm.window.PLANETENUHR_DATE_CONTROLS.create({document:fakeDocument,window:browser,
     context:state,getTranslations:() => ({}),getNow:() => new Date(now),formatDate:date => date.toISOString(),
     syncUrl(){},refresh(){renders += 1;},requestLayout(){},locations:cities,getLocationOptionLabel:location => location.name});
