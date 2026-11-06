@@ -107,7 +107,7 @@
     {
       "key": "imo-calendar",
       "label": "International Meteor Organization Calendar",
-      "url": "https://www.imo.net/resources/calendar/",
+      "url": "https://www.imo.net/calendar/",
       "usedBy": [
         "js/data/phenomena-config.js",
         "js/data/extended-calendar-config.js",
