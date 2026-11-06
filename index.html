@@ -428,6 +428,15 @@
         <div class="knowledge-sources" data-knowledge-sources></div>
       </article>
     </template>
+    <dialog id="constellationYearDetailDialog" class="diagram-dialog" aria-labelledby="constellationYearDetailTitle" aria-describedby="constellationYearDetailHint">
+      <div class="diagram-dialog-heading"><h2 id="constellationYearDetailTitle"></h2><button id="constellationYearDetailClose" type="button" autofocus></button></div>
+      <p id="constellationYearDetailHint"></p>
+      <div class="diagram-detail-content constellation-year-detail-content" tabindex="0">
+        <div id="constellationYearDetailMap" class="constellation-map"></div>
+        <div id="constellationYearDetailSkyHint" class="constellation-skyhint"></div>
+        <div id="constellationYearDetailSummary" class="constellation-summary"></div>
+      </div>
+    </dialog>
     <dialog id="diagramDetailDialog" class="diagram-dialog" aria-labelledby="diagramDetailTitle" aria-describedby="diagramDetailHint">
       <div class="diagram-dialog-heading"><h2 id="diagramDetailTitle"></h2><button id="diagramDetailClose" type="button" autofocus></button></div>
       <p id="diagramDetailHint"></p>

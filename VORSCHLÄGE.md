@@ -16,7 +16,9 @@ Hier sammeln wir mögliche neue Inhalte und Verbesserungen für die Planetenuhr.
 
 **Mögliche Inhalte:** Name des Sternbilds, wiederverwendbare Sternbildzeichnung mit markanten Sternnamen sowie eine verständliche Richtungs- und Saisonangabe.
 
-**Status:** Idee; noch nicht umgesetzt.
+**Umsetzung:** Der Hinweis „Wohin schauen“ zeigt saisonale Richtungs- und Höhenwerte für den Abendhimmel. Er wird nicht für den ausgewählten Ort oder Zeitpunkt berechnet.
+
+**Status:** umgesetzt.
 
 ## Extreme Objekte im All
 

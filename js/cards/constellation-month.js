@@ -89,20 +89,28 @@ window.PLANETENUHR_CONSTELLATION_MONTH = (() => {
     }
 
     /**
-     * Rendert das Sternbild des gewaehlten Monats als schematische Sternkarte.
-     * @param {object} context Gemeinsamer Kontext mit ausgewaehltem Datum und Sprache.
+     * Renders the configured constellation for a month as a schematic star chart.
+     * @param {object} context Shared context containing the selected date and language.
+     * @param {object} [renderOptions={}] Optional detail targets and configured item.
+     * @param {HTMLElement} [renderOptions.target] Chart target; defaults to the monthly card.
+     * @param {HTMLElement} [renderOptions.skyHint] Direction-hint target; defaults to the monthly card.
+     * @param {HTMLElement} [renderOptions.summary] Summary target; defaults to the monthly card.
+     * @param {object} [renderOptions.item] Explicit constellation to render.
+     * @param {string} [renderOptions.idPrefix] Prefix for SVG definition ids.
+     * @param {boolean} [renderOptions.suppressLayout] Skip dashboard reflow for modal rendering.
      * @returns {void}
      */
-    function render(context){
+    function render(context, renderOptions = {}){
       const date = context.date;
       const lang = context.language;
       const t = options.getTranslations();
-      const target = document.getElementById('constellationMap');
-      const skyHint = document.getElementById('constellationSkyHint');
-      const summary = document.getElementById('constellationSummary');
+      const target = renderOptions.target || document.getElementById('constellationMap');
+      const skyHint = renderOptions.skyHint || document.getElementById('constellationSkyHint');
+      const summary = renderOptions.summary || document.getElementById('constellationSummary');
       if (!target) return;
       const month = date.getMonth() + 1;
-      const item = (options.getItems() || []).find(entry => entry.month === month);
+      const item = renderOptions.item || (options.getItems() || []).find(entry => entry.month === month);
+      const idPrefix = renderOptions.idPrefix || '';
       if (!item) return;
       const size = 460;
       target.innerHTML = '';
@@ -114,7 +122,7 @@ window.PLANETENUHR_CONSTELLATION_MONTH = (() => {
 
       const defs = options.createSvgElement('defs');
       const skyGradient = options.createSvgElement('radialGradient');
-      skyGradient.setAttribute('id', 'constellationSkyGradient');
+      skyGradient.setAttribute('id', idPrefix + 'constellationSkyGradient');
       skyGradient.setAttribute('cx', '50%');
       skyGradient.setAttribute('cy', '38%');
       skyGradient.setAttribute('r', '74%');
@@ -131,7 +139,7 @@ window.PLANETENUHR_CONSTELLATION_MONTH = (() => {
       defs.appendChild(skyGradient);
 
       const starGlow = options.createSvgElement('filter');
-      starGlow.setAttribute('id', 'constellationStarGlow');
+      starGlow.setAttribute('id', idPrefix + 'constellationStarGlow');
       starGlow.setAttribute('x', '-50%');
       starGlow.setAttribute('y', '-50%');
       starGlow.setAttribute('width', '200%');
@@ -158,6 +166,7 @@ window.PLANETENUHR_CONSTELLATION_MONTH = (() => {
       background.setAttribute('height', String(size));
       background.setAttribute('rx', '16');
       background.setAttribute('class', 'constellation-sky-panel');
+      background.style.setProperty('fill', 'url(#' + idPrefix + 'constellationSkyGradient)');
       svg.appendChild(background);
 
       const backgroundStars = [
@@ -175,6 +184,7 @@ window.PLANETENUHR_CONSTELLATION_MONTH = (() => {
         star.setAttribute('cy', String(starConfig[1]));
         star.setAttribute('r', String(starConfig[2]));
         star.setAttribute('class', 'constellation-background-star');
+        star.style.setProperty('filter', 'url(#' + idPrefix + 'constellationStarGlow)');
         svg.appendChild(star);
       });
 
@@ -202,6 +212,7 @@ window.PLANETENUHR_CONSTELLATION_MONTH = (() => {
         }
         circle.setAttribute('r', circleRadius);
         circle.setAttribute('class', circleClass);
+        circle.style.setProperty('filter', 'url(#' + idPrefix + 'constellationStarGlow)');
         svg.appendChild(circle);
       });
       const labelOverrides = new Map();
@@ -334,7 +345,9 @@ window.PLANETENUHR_CONSTELLATION_MONTH = (() => {
           summary.appendChild(fragment);
         }
       }
-      options.requestMasonryLayout();
+      if (!renderOptions.suppressLayout) {
+        options.requestMasonryLayout();
+      }
     }
 
     return {render, calculateConstellationCenter, buildConstellationLabelPlacement};
