@@ -60,3 +60,11 @@ test('malformed generation stamps are not ignored', t => {
   fs.writeFileSync(fixture.file, content);
   assert.deepEqual(getIcsFreshnessState(fixture.root).staleFiles, [path.relative(fixture.root, fixture.file)]);
 });
+
+
+test('checkout line-ending conversion preserves equivalent calendar content', t => {
+  const fixture = calendarFixture(t);
+  const content = fs.readFileSync(fixture.file, 'utf8').replace(/\r\n/g, '\n');
+  fs.writeFileSync(fixture.file, content);
+  assert.deepEqual(getIcsFreshnessState(fixture.root).staleFiles, []);
+});

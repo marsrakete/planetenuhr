@@ -62,7 +62,7 @@ function isExistingFile(filePath) {
  * @returns {string} Calendar text with valid UTC stamps replaced by a marker.
  */
 function comparableCalendarContent(content) {
-  return content.replace(/^DTSTAMP:\d{8}T\d{6}Z(?=\r?$)/gm, "DTSTAMP:generated");
+  return content.replace(/\r\n/g, "\n").replace(/^DTSTAMP:\d{8}T\d{6}Z(?=\r?$)/gm, "DTSTAMP:generated");
 }
 
 /**
