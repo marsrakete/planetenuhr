@@ -514,6 +514,22 @@ function writeGithubSummary(reviewRows, languageRows, categoryRows, linkRows) {
 
       lines.push("| " + row.label + " | " + statusText + " | " + row.url + " |");
     });
+
+    const failedLinkRows = linkRows.filter(row => !row.ok);
+    if (failedLinkRows.length > 0) {
+      lines.push("");
+      lines.push("**URLs passen nicht mehr!**");
+      lines.push("");
+
+      failedLinkRows.forEach(row => {
+        let statusText = "HTTP " + row.statusCode;
+        if (row.error) {
+          statusText = row.error;
+        }
+
+        lines.push("- " + row.label + " -> " + statusText + " | " + row.url);
+      });
+    }
   }
 
   lines.push("");
@@ -651,7 +667,18 @@ function finishRun(errors, strict) {
 
   console.log("");
   console.log("Calendar source review found issues:");
-  errors.forEach(errorMessage => {
+
+  const linkErrors = errors.filter(errorMessage => errorMessage.startsWith("Source URL failed: "));
+  const otherErrors = errors.filter(errorMessage => !errorMessage.startsWith("Source URL failed: "));
+
+  if (linkErrors.length > 0) {
+    console.log("URLs passen nicht mehr!");
+    linkErrors.forEach(errorMessage => {
+      console.log("- " + errorMessage.replace("Source URL failed: ", ""));
+    });
+  }
+
+  otherErrors.forEach(errorMessage => {
     console.log("- " + errorMessage);
   });
 
