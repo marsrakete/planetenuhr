@@ -607,7 +607,7 @@ window.PLANETENUHR_TRANSLATIONS = {
     constellation_year_current: "Current month focus",
     constellation_year_open_detail: "Open details for {name}",
     constellation_year_open_hint: "Select a constellation to see its seasonal details.",
-    constellation_year_detail_hint: "Seasonal evening-sky guide. Direction and height are approximate and do not account for your location or time."
+    constellation_year_detail_hint: "Seasonal evening-sky guide. Direction and height are approximate and do not account for your location or time.",
     retrograde_path_window: "Path ±60 days",
     title_aurora: "Aurora chance Germany",
     legend_aurora: "Live estimate for today; not linked to the date control",
@@ -1233,7 +1233,7 @@ window.PLANETENUHR_TRANSLATIONS = {
     constellation_year_current: "Aktueller Monatsfokus",
     constellation_year_open_detail: "Details zu {name} öffnen",
     constellation_year_open_hint: "Wähle ein Sternbild für die saisonalen Details aus.",
-    constellation_year_detail_hint: "Saisonale Orientierung für den Abendhimmel. Richtung und Höhe sind Richtwerte; Ort und Uhrzeit werden nicht berücksichtigt."
+    constellation_year_detail_hint: "Saisonale Orientierung für den Abendhimmel. Richtung und Höhe sind Richtwerte; Ort und Uhrzeit werden nicht berücksichtigt.",
     retrograde_path_window: "Pfad ±60 Tage",
     title_aurora: "Polarlicht-Chance Deutschland",
     legend_aurora: "Live-Einschätzung für heute; nicht an die Datumssteuerung gekoppelt",
@@ -1859,7 +1859,7 @@ window.PLANETENUHR_TRANSLATIONS = {
     constellation_year_current: "Focus mensuel actuel",
     constellation_year_open_detail: "Ouvrir les détails de {name}",
     constellation_year_open_hint: "Sélectionnez une constellation pour afficher ses repères saisonniers.",
-    constellation_year_detail_hint: "Repère saisonnier pour le ciel du soir. La direction et la hauteur sont approximatives et ne tiennent pas compte du lieu ni de l'heure sélectionnés."
+    constellation_year_detail_hint: "Repère saisonnier pour le ciel du soir. La direction et la hauteur sont approximatives et ne tiennent pas compte du lieu ni de l'heure sélectionnés.",
     retrograde_path_window: "Trajet ±60 jours",
     title_aurora: "Chance d’aurore en Allemagne",
     legend_aurora: "Estimation en direct pour aujourd’hui ; non reliée au contrôle de date",
