@@ -218,7 +218,7 @@ Dieser Abschnitt beschreibt den aktuellen Stand der Datenquellen fuer den Himmel
 
 - Meteorstroeme\
   International Meteor Organization\
-  https://www.imo.net/resources/calendar/
+  https://www.imo.net/calendar/
 
 - Jahreszeitenpunkte\
   timeanddate.com\
