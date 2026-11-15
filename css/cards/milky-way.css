@@ -188,21 +188,22 @@
 }
 
 .milky-way-sky-visual {
+  --diagram-background: radial-gradient(ellipse at 50% 50%, #1e3657, #0a1529 78%);
   position: relative;
   width: 100%;
   aspect-ratio: 520 / 380;
   overflow: hidden;
   border-radius: 10px;
   color: #f2f4fa;
-  background: radial-gradient(ellipse at 50% 50%, #1e3657, #0a1529 78%);
+  background: var(--diagram-background);
 }
 
 .milky-way-sky-visual[data-milky-sky-light="day"] {
-  background: radial-gradient(ellipse at 50% 50%, #7699c3, #304c70 78%);
+  --diagram-background: radial-gradient(ellipse at 50% 50%, #7699c3, #304c70 78%);
 }
 
 .milky-way-sky-visual[data-milky-sky-light="twilight"] {
-  background: radial-gradient(ellipse at 50% 50%, #334c70, #111f39 78%);
+  --diagram-background: radial-gradient(ellipse at 50% 50%, #334c70, #111f39 78%);
 }
 
 .milky-way-sky-stars {

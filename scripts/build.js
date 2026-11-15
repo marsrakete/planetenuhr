@@ -55,6 +55,7 @@ function getRequiredFiles() {
     "js/models/astronomy-explorer-model.js",
     "js/models/conjunction-model.js",
     "js/cards/conjunctions.js",
+    "css/cards/conjunctions.css",
     "js/cards/meteor-streams.js",
     "js/cards/constellation-month.js",
     "js/cards/constellation-year.js",

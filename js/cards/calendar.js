@@ -51,22 +51,24 @@
     }
 
     /** Returns events visible under the current filter and past-event setting.
+     * @param {Date} [referenceDay=calendarReferenceDay()] Selected local calendar day.
      * @returns {Array<object>} Events for the active calendar view.
      */
-    function getVisibleEvents(){
+    function getVisibleEvents(referenceDay = calendarReferenceDay()){
       return options.model.filterEvents(
         options.getEvents(),
         activeFilter,
         calendarShowPastEnabled(),
-        calendarReferenceDay()
+        referenceDay
       );
     }
 
     /** Returns the next upcoming event under the current category filter.
+     * @param {Date} [referenceDay=calendarReferenceDay()] Selected local calendar day.
      * @returns {object|null} Next event or null.
      */
-    function getNextEvent(){
-      return options.model.nextEvent(options.getEvents(), activeFilter, calendarReferenceDay());
+    function getNextEvent(referenceDay = calendarReferenceDay()){
+      return options.model.nextEvent(options.getEvents(), activeFilter, referenceDay);
     }
 
     /** Resolves the selected event and clears selection if it is no longer visible.
@@ -230,45 +232,12 @@
     }
 
     /**
-     * Resolves the reference day used by the calendar card.
-     * The shared date control drives the month view, while the filtering logic
-     * still compares against the real current day unless past events are enabled.
-     * @returns {Date} Local start-of-day reference.
+     * Converts the selected instant into a calendar date in the observing location.
+     * @returns {Date} Selected date as local midnight, matching the event date representation.
      */
     function calendarReferenceDay(){
-      const parts = window.PLANETENUHR_DATE_TIME.datePartsInZone(new Date(), calendarTimeZone());
+      const parts = window.PLANETENUHR_DATE_TIME.datePartsInZone(selectedSolarDate(), calendarTimeZone());
       return new Date(Number(parts.year), Number(parts.month) - 1, Number(parts.day));
-    }
-
-    /**
-     * Filters calendar events by category and, if requested, by future-only mode.
-     * @returns {Array<object>} Events that remain visible in the active card state.
-     */
-    function filteredCalendarEvents(){
-      return getVisibleEvents();
-    }
-
-    /**
-     * Finds the next upcoming event for the currently active category filter.
-     * @returns {object|null} Next matching event or null when none remains.
-     */
-    function nextCalendarEvent(){
-      return getNextEvent();
-    }
-
-    /**
-     * Resolves the month that the calendar grid should display.
-     * The month follows the shared date control so every tile stays coupled.
-     * @returns {Date} First day of the selected month.
-     */
-    function calendarCurrentMonthDate(){
-      let referenceDate = new Date();
-      if (typeof selectedSolarDate === 'function') {
-        const selectedDate = selectedSolarDate();
-        const parts = window.PLANETENUHR_DATE_TIME.datePartsInZone(selectedDate, calendarTimeZone());
-        referenceDate = new Date(Number(parts.year), Number(parts.month) - 1, Number(parts.day));
-      }
-      return new Date(referenceDate.getFullYear(), referenceDate.getMonth(), 1);
     }
 
     /**
@@ -607,23 +576,21 @@
     /**
      * Renders the monthly calendar grid.
      * @param {Array<object>} events Visible calendar events.
+     * @param {Date} referenceDay Selected local calendar day.
      * @returns {void}
      */
-    function renderCalendarMonthView(events){
+    function renderCalendarMonthView(events, referenceDay){
       const monthView = document.getElementById('calendarMonthView');
-      const title = document.getElementById('calendarMonthTitle');
-      const subtitle = document.getElementById('calendarMonthSubtitle');
       const weekdays = document.getElementById('calendarMonthWeekdays');
       const grid = document.getElementById('calendarMonthGrid');
-      if (!monthView || !title || !subtitle || !weekdays || !grid) {
+      if (!monthView || !weekdays || !grid) {
         return;
       }
 
-      const monthDate = calendarCurrentMonthDate();
+      const monthDate = new Date(referenceDay.getFullYear(), referenceDay.getMonth(), 1);
+      const selectedDay = referenceDay.getDate();
       const monthEvents = calendarEventsForMonth(monthDate, events);
       const byDay = calendarEventsByDay(monthEvents);
-      title.textContent = calendarMonthHeading(monthDate);
-      subtitle.textContent = t.calendar_month_subtitle || 'Monthly view';
       const weekdayNodes = [];
       const gridNodes = [];
 
@@ -665,8 +632,7 @@
               dayNumberLabel.textContent = String(dayNumber);
             }
 
-            const todayKey = formatDateKey(selectedSolarDate(), calendarTimeZone());
-            if (dayKey === todayKey && cell) {
+            if (dayNumber === selectedDay && cell) {
               cell.classList.add('is-selected-month-day');
             }
 
@@ -826,12 +792,15 @@
       const timeline = document.getElementById('calendarTimeline');
       const monthView = document.getElementById('calendarMonthView');
       const nextLabel = document.getElementById('calendarNext');
-      if (!timeline || !monthView || !nextLabel) {
+      const monthTitle = document.getElementById('calendarMonthTitle');
+      if (!timeline || !monthView || !nextLabel || !monthTitle) {
         return;
       }
 
-      const visibleEvents = filteredCalendarEvents();
-      const nextEvent = nextCalendarEvent();
+      const referenceDay = calendarReferenceDay();
+      monthTitle.textContent = calendarMonthHeading(referenceDay);
+      const visibleEvents = getVisibleEvents(referenceDay);
+      const nextEvent = getNextEvent(referenceDay);
       const currentSelection = getSelectedEvent(visibleEvents);
 
       if (nextEvent) {
@@ -843,7 +812,7 @@
       renderCalendarDownloads();
       updateCalendarButtonStates();
       renderCalendarTimeline(visibleEvents);
-      renderCalendarMonthView(visibleEvents);
+      renderCalendarMonthView(visibleEvents, referenceDay);
       renderCalendarDetail(currentSelection);
       updateCalendarViewVisibility(visibleEvents);
     }

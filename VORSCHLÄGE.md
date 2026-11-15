@@ -28,7 +28,7 @@ Hier sammeln wir mögliche neue Inhalte und Verbesserungen für die Planetenuhr.
 
 **Umfang:** Der Berechnungsreiter bezieht sich automatisch auf das aktuelle Zeitfenster und dessen Begegnungen. Er erhält keine zusätzliche Auswahl und kein Popup. Die Darstellung kennzeichnet die Grafik als schematisch, erklärt die Berücksichtigung des Breitenunterschieds und weist darauf hin, dass ein numerisches Minimum nicht zwingend eine Konjunktion im strengen astronomischen Sinn ist.
 
-**Status:** Idee; noch nicht umgesetzt.
+**Status:** umgesetzt.
 
 ## Extreme Objekte im All
 

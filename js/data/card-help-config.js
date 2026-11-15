@@ -300,9 +300,18 @@ window.PLANETENUHR_CARD_HELP = {
       conjunctions: {
         "intro": [
           "Shows close approaches as seen from Earth for Mercury, Venus, Mars, Jupiter and Saturn within 60 days before and after the selected instant.",
-          "Events are minima of the full sky separation at or below 4.5°, including ecliptic latitude. They are not necessarily the instants of equal longitude or right ascension."
+          "Events are minima of the full sky separation at or below 4.5°, including ecliptic latitude. They are not necessarily the instants of equal longitude or right ascension.",
+          "The Calculation tab follows the same encounters in the current time window and shows their model positions and Earth-centered vectors."
         ],
         "formulas": [
+          {
+            "expr": "T = (JD - 2451545.0) / 36525; M = L - &varpi;<br>M = E - e sin(E)",
+            "note": "Approximate JPL orbital elements are advanced by Julian centuries T; solve Kepler’s equation for eccentric anomaly E."
+          },
+          {
+            "expr": "x<sub>p</sub> = a(cos(E) - e); y<sub>p</sub> = a&radic;(1 - e<sup>2</sup>) sin(E)",
+            "note": "These are coordinates in the orbital plane. Rotating by the node, inclination and perihelion argument gives the heliocentric ecliptic position (x,y,z)."
+          },
           {
             "expr": "r_A = R_A - R_E; r_B = R_B - R_E",
             "note": "Earth-centered vectors: subtract the Earth’s heliocentric position. The dot product includes all three coordinates; clamp to [−1,1] before arccos."
@@ -824,9 +833,18 @@ window.PLANETENUHR_CARD_HELP = {
       conjunctions: {
         "intro": [
           "Zeigt enge Begegnungen von Merkur, Venus, Mars, Jupiter und Saturn aus Sicht der Erde innerhalb von 60 Tagen vor und nach dem gewählten Zeitpunkt.",
-          "Ereignisse sind Minima des vollständigen Winkelabstands am Himmel bis 4,5°, einschließlich ekliptischer Breite. Sie entsprechen nicht zwingend dem Zeitpunkt gleicher Länge oder Rektaszension."
+          "Ereignisse sind Minima des vollständigen Winkelabstands am Himmel bis 4,5°, einschließlich ekliptischer Breite. Sie entsprechen nicht zwingend dem Zeitpunkt gleicher Länge oder Rektaszension.",
+          "Der Reiter Berechnung bezieht sich auf dieselben Begegnungen im aktuellen Zeitfenster und zeigt Modellpositionen sowie erdbezogene Vektoren."
         ],
         "formulas": [
+          {
+            "expr": "T = (JD - 2451545.0) / 36525; M = L - &varpi;<br>M = E - e sin(E)",
+            "note": "JPL-Näherungsbahnelemente werden mit julianischen Jahrhunderten T fortgeschrieben; die Kepler-Gleichung liefert die exzentrische Anomalie E."
+          },
+          {
+            "expr": "x<sub>p</sub> = a(cos(E) - e); y<sub>p</sub> = a&radic;(1 - e<sup>2</sup>) sin(E)",
+            "note": "Dies sind Koordinaten in der Bahnebene. Drehungen mit Knoten, Inklination und Perihelargument ergeben die heliozentrische ekliptische Position (x,y,z)."
+          },
           {
             "expr": "r_A = R_A - R_E; r_B = R_B - R_E",
             "note": "Geozentrische Vektoren: Die heliozentrische Erdposition wird abgezogen. Das Skalarprodukt berücksichtigt alle drei Koordinaten; vor arccos wird auf [−1,1] begrenzt."
@@ -1346,9 +1364,18 @@ window.PLANETENUHR_CARD_HELP = {
       conjunctions: {
         "intro": [
           "Montre les rapprochements de Mercure, Vénus, Mars, Jupiter et Saturne vus de la Terre dans les 60 jours avant et après l’instant choisi.",
-          "Les événements sont les minima de la séparation angulaire complète jusqu’à 4,5°, latitude écliptique comprise. Ils ne coïncident pas forcément avec une égalité de longitude ou d’ascension droite."
+          "Les événements sont les minima de la séparation angulaire complète jusqu’à 4,5°, latitude écliptique comprise. Ils ne coïncident pas forcément avec une égalité de longitude ou d’ascension droite.",
+          "L’onglet Calcul reprend les mêmes rapprochements de la fenêtre actuelle et affiche les positions du modèle et les vecteurs géocentriques."
         ],
         "formulas": [
+          {
+            "expr": "T = (JD - 2451545.0) / 36525; M = L - &varpi;<br>M = E - e sin(E)",
+            "note": "Les éléments orbitaux approchés JPL évoluent avec les siècles juliens T ; l’équation de Kepler donne l’anomalie excentrique E."
+          },
+          {
+            "expr": "x<sub>p</sub> = a(cos(E) - e); y<sub>p</sub> = a&radic;(1 - e<sup>2</sup>) sin(E)",
+            "note": "Ce sont les coordonnées dans le plan orbital. Les rotations par le nœud, l’inclinaison et l’argument du périhélie donnent la position écliptique héliocentrique (x,y,z)."
+          },
           {
             "expr": "r_A = R_A - R_E; r_B = R_B - R_E",
             "note": "Vecteurs géocentriques : soustraire la position héliocentrique de la Terre. Le produit scalaire utilise les trois coordonnées ; borner à [−1,1] avant arccos."

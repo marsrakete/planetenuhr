@@ -104,6 +104,11 @@ window.PLANETENUHR_DIAGRAM_DETAILS = (() => {
       }
     });
     const viewBox = svg.viewBox.baseVal;
+    // The SVG leaves its original container, so capture any opt-in background from it.
+    const background = getComputedStyle(svg).getPropertyValue('--diagram-background').trim();
+    if (background) {
+      clone.style.background = background;
+    }
     let scale = 1;
     if (Number.isFinite(minimum) && minimum > 0) {
       scale = Math.max(1, labelPixels(svg) / minimum);

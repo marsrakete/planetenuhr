@@ -144,6 +144,9 @@
       document, createSvgElement:createChartSvgElement, getEvents:computeConjunctionEvents,
       getLanguage:() => lang, getTranslations:() => t, altitudeEstimate:altitudeThumbEstimate,
       bodyDisplayName, formatDate:formatDateStamp, appendSummaryLine, appendSummaryText,
+      getHeliocentricPosition:window.PLANETENUHR_PLANET_MODEL.heliocentricPosition,
+      getJulianDate:window.PLANETENUHR_COORDINATES.julianDate,
+      bodyVisuals:window.PLANETENUHR_BODY_VISUALS,
       requestLayout:dashboardLayout.requestMasonryLayout
     });
     const meteorController = window.PLANETENUHR_METEOR_CARD.create({

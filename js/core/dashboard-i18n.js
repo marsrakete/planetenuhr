@@ -223,10 +223,6 @@ window.PLANETENUHR_DASHBOARD_I18N = (() => {
           calendarShowAll.textContent = t.calendar_show_all;
         }
       }
-      const calendarMonthSubtitle = document.getElementById('calendarMonthSubtitle');
-      if (calendarMonthSubtitle) {
-        calendarMonthSubtitle.textContent = t.calendar_month_subtitle || 'Monthly view with event list';
-      }
       const titleBskyFeed = document.getElementById('titleBskyFeed');
       if (titleBskyFeed) titleBskyFeed.textContent = t.bsky_title;
       const bskyStatus = document.getElementById('bskyStatus');
