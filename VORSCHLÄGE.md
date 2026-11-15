@@ -20,6 +20,16 @@ Hier sammeln wir mögliche neue Inhalte und Verbesserungen für die Planetenuhr.
 
 **Status:** umgesetzt.
 
+## Rechenweg der Planetenkonjunktionen
+
+**Idee:** Die Kachel „Planetenkonjunktionen“ erhält zwei Reiter. Der bisherige Reiter „Konjunktionen“ mit Zeitachse und Zusammenfassung bleibt bestehen. Ein zweiter Reiter „Berechnung“ erklärt die Positions- und Winkelberechnung mit Formeln und Grafiken.
+
+**Inhalt:** Die Erklärung beginnt bei den JPL-Näherungsbahnelementen und zeigt, wie die Kepler-Gleichung zu heliozentrischen Positionen führt. Danach folgen das Abziehen der Erdposition, die geozentrischen Richtungsvektoren und der daraus berechnete Winkelabstand. Eine schematische Erdperspektive veranschaulicht die beiden Blickrichtungen und den eingeschlossenen Winkel.
+
+**Umfang:** Der Berechnungsreiter bezieht sich automatisch auf das aktuelle Zeitfenster und dessen Begegnungen. Er erhält keine zusätzliche Auswahl und kein Popup. Die Darstellung kennzeichnet die Grafik als schematisch, erklärt die Berücksichtigung des Breitenunterschieds und weist darauf hin, dass ein numerisches Minimum nicht zwingend eine Konjunktion im strengen astronomischen Sinn ist.
+
+**Status:** Idee; noch nicht umgesetzt.
+
 ## Extreme Objekte im All
 
 **Idee:** Eine Erklär-Kachel stellt kompakt extreme Himmelsobjekte und Phänomene vor:

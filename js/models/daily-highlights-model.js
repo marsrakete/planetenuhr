@@ -50,12 +50,14 @@ window.PLANETENUHR_DAILY_MODEL = (() => {
       if (!Number.isFinite(days) || days < 0 || days > config.lookahead.calendar) return;
       let group = 'calendar';
       let score = config.scores.calendar;
+      let target = 'sky_calendar';
       if (['eclipse','meteor','moon'].includes(event.category)) group = event.category;
       if (group === 'eclipse') score = config.scores.eclipse;
       if (event.eclipseStatus === 'not_visible') score -= 35;
+      if (event.approach) target = 'conjunctions';
       candidates.push({id:'calendar-' + event.date + '-' + event.category + '-' + index,
         kind:'calendar', group, score:score - days * config.futureDayPenalty, days, dateKey:event.date,
-        target:'sky_calendar', data:event});
+        target, data:event});
     });
     showers.forEach(({stream, state, curated}) => {
       if (!state.active && (state.days < 0 || state.days > config.lookahead.meteor)) return;
