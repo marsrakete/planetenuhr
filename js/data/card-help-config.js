@@ -300,6 +300,8 @@ window.PLANETENUHR_CARD_HELP = {
       conjunctions: {
         "intro": [
           "Shows close approaches as seen from Earth for Mercury, Venus, Mars, Jupiter and Saturn within 60 days before and after the selected instant.",
+          "A conjunction occurs when two celestial bodies have the same ecliptic longitude as seen from Earth. Ecliptic longitude measures position along the Sun’s apparent path. The bodies can lie at different distances north or south of that path, so there is usually still a visible gap between them.",
+          "Planetenuhr shows the moment of closest approach in the sky. This may differ slightly from the time of conjunction in the strict sense.",
           "Events are minima of the full sky separation at or below 4.5°, including ecliptic latitude. They are not necessarily the instants of equal longitude or right ascension.",
           "The Calculation tab follows the same encounters in the current time window and shows their model positions and Earth-centered vectors."
         ],
@@ -833,6 +835,8 @@ window.PLANETENUHR_CARD_HELP = {
       conjunctions: {
         "intro": [
           "Zeigt enge Begegnungen von Merkur, Venus, Mars, Jupiter und Saturn aus Sicht der Erde innerhalb von 60 Tagen vor und nach dem gewählten Zeitpunkt.",
+          "Eine Konjunktion liegt vor, wenn zwei Himmelskörper von der Erde aus gesehen dieselbe ekliptikale Länge haben. Die ekliptikale Länge gibt die Position entlang der scheinbaren Sonnenbahn an. Weil die Körper unterschiedlich weit nördlich oder südlich dieser Bahn stehen können, bleibt zwischen ihnen meist ein sichtbarer Abstand.",
+          "Die Planetenuhr zeigt den Zeitpunkt der engsten Annäherung am Himmel. Der kann etwas vom Zeitpunkt der Konjunktion im engeren Sinn abweichen.",
           "Ereignisse sind Minima des vollständigen Winkelabstands am Himmel bis 4,5°, einschließlich ekliptischer Breite. Sie entsprechen nicht zwingend dem Zeitpunkt gleicher Länge oder Rektaszension.",
           "Der Reiter Berechnung bezieht sich auf dieselben Begegnungen im aktuellen Zeitfenster und zeigt Modellpositionen sowie erdbezogene Vektoren."
         ],
@@ -1364,6 +1368,8 @@ window.PLANETENUHR_CARD_HELP = {
       conjunctions: {
         "intro": [
           "Montre les rapprochements de Mercure, Vénus, Mars, Jupiter et Saturne vus de la Terre dans les 60 jours avant et après l’instant choisi.",
+          "Il y a conjonction lorsque deux astres ont la même longitude écliptique vus de la Terre. La longitude écliptique indique leur position le long de la trajectoire apparente du Soleil. Comme les astres peuvent se trouver plus ou moins au nord ou au sud de cette trajectoire, un écart visible subsiste généralement entre eux.",
+          "Planetenuhr indique le moment où les deux astres sont les plus proches dans le ciel. Ce moment peut différer légèrement de celui de la conjonction au sens strict.",
           "Les événements sont les minima de la séparation angulaire complète jusqu’à 4,5°, latitude écliptique comprise. Ils ne coïncident pas forcément avec une égalité de longitude ou d’ascension droite.",
           "L’onglet Calcul reprend les mêmes rapprochements de la fenêtre actuelle et affiche les positions du modèle et les vecteurs géocentriques."
         ],

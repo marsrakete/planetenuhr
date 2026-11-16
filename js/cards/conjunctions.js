@@ -6,6 +6,9 @@ window.PLANETENUHR_CONJUNCTION_CARD = (() => {
    */
   function create(options){
     const document = options.document;
+    const timeline = document && document.getElementById('conjunctionTimeline');
+    let renderedTimelineWidth = 0;
+    let timelineData = null;
 
     /** Formats a sky separation with the shared arm’s-length finger/hand estimate.
      * @param {number} degrees Nonnegative angular separation in degrees.
@@ -218,94 +221,140 @@ window.PLANETENUHR_CONJUNCTION_CARD = (() => {
       setActiveView(buttons[index].dataset.conjunctionView, true);
     }
 
-    /** Renders geocentric close-approach minima on a correctly dated timeline.
-     * @param {object} context Shared dashboard context with its selected date.
+    /** Places event labels in rows without changing their positions on the time axis.
+     * @param {object[]} labels Rendered labels, connectors and axis positions.
+     * @param {number} width Width of the drawing in SVG units.
+     * @returns {number} Vertical position of the time axis below the labels.
+     */
+    function placeTimelineLabels(labels, width){
+      const rows = [];
+      labels.forEach(entry => {
+        const bounds = entry.label.getBBox();
+        const left = Math.max(8, Math.min(bounds.x, width - 8 - bounds.width));
+        let row = rows.findIndex(right => right + 12 <= left);
+        if (row === -1) row = rows.length;
+        rows[row] = left + bounds.width;
+        const labelX = entry.x + left - bounds.x;
+        const labelY = 24 + row * 40;
+        entry.lines.forEach(line => line.setAttribute('x', labelX));
+        entry.label.setAttribute('transform', 'translate(0 ' + labelY + ')');
+        entry.stem.setAttribute('y1', labelY + 21);
+      });
+      return Math.max(48, rows.length * 40 + 20);
+    }
+
+    /** Draws the timeline at the available width to keep SVG labels at their CSS font sizes.
+     * @param {Date} date Center date of the time window.
+     * @param {object[]} events Chronological close approaches in the window.
+     * @param {number} windowDays Half-width of the window in elapsed days.
      * @returns {void}
      */
-    function render(context){
-      const date = context.date;
-      const t = options.getTranslations();
-      const target = document.getElementById('conjunctionTimeline');
-      const summary = document.getElementById('conjunctionSummary');
-      if (!target) return;
-      const windowDays = 60;
-      const events = options.getEvents(date, windowDays);
-      const width = 760;
-      const height = 172;
-      target.innerHTML = '';
+    function renderTimeline(date, events, windowDays){
+      renderedTimelineWidth = timeline.clientWidth;
+      const width = renderedTimelineWidth || 300;
+      const axisInset = 16;
+      const axisWidth = width - axisInset * 2;
       const svg = options.createSvgElement('svg');
-      svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
-
       const axis = options.createSvgElement('line');
-      axis.setAttribute('x1', 30);
-      axis.setAttribute('y1', 92);
-      axis.setAttribute('x2', width - 30);
-      axis.setAttribute('y2', 92);
-      axis.setAttribute('stroke', '#cbd5e1');
-      axis.setAttribute('stroke-width', '2');
+      axis.setAttribute('x1', axisInset);
+      axis.setAttribute('x2', width - axisInset);
+      axis.setAttribute('stroke', '#94a3b8');
+      axis.setAttribute('stroke-width', '1.5');
       svg.appendChild(axis);
 
-      for (let index = 0; index <= 4; index++) {
-        const offset = -windowDays + index * windowDays / 2;
-        const x = 30 + index / 4 * (width - 60);
-        const tick = document.getElementById('conjunctionTickTemplate').content.querySelector('g').cloneNode(true);
-        const line = tick.querySelector('line');
-        line.setAttribute('x1', x);
-        line.setAttribute('x2', x);
-        if (index === 2) {
-          line.setAttribute('stroke', '#2563eb');
-          line.setAttribute('stroke-width', '2');
-        }
-        const tickDate = new Date(date.getTime() + offset * 86400000);
-        const label = tick.querySelector('text');
-        label.setAttribute('x', x);
-        label.textContent = options.formatDate(tickDate);
-        if (index === 0) label.classList.add('is-start');
-        else if (index === 4) label.classList.add('is-end');
-        svg.appendChild(tick);
-      }
-
-      events.forEach((event, index) => {
-        const x = 30 + ((event.offsetDays + windowDays) / (windowDays * 2)) * (width - 60);
-        let y = 50;
-        if (index % 2 === 0) y = 74;
+      const stems = options.createSvgElement('g');
+      svg.appendChild(stems);
+      const labels = [];
+      events.forEach(event => {
+        const x = axisInset + (event.offsetDays + windowDays) / (2 * windowDays) * axisWidth;
         const group = document.getElementById('conjunctionEventTemplate').content.querySelector('g').cloneNode(true);
         group.dataset.pair = event.a + '-' + event.b;
         group.dataset.date = event.date.toISOString();
         group.dataset.separation = event.separation;
-        group.querySelector('title').textContent = conjunctionPairLabel(event.a, event.b) + ' · ' + options.formatDate(event.date) + ' · ' + conjunctionSeparationLabel(event.separation);
+        const pairLabel = conjunctionPairLabel(event.a, event.b);
+        const angleLabel = conjunctionSeparationLabel(event.separation);
+        group.querySelector('title').textContent = pairLabel + ' · ' + options.formatDate(event.date) + ' · ' + angleLabel;
         const stem = group.querySelector('line');
         stem.setAttribute('x1', x);
         stem.setAttribute('x2', x);
-        stem.setAttribute('y1', y + 6);
+        stems.appendChild(stem);
         const dot = group.querySelector('circle');
         dot.setAttribute('cx', x);
-        dot.setAttribute('cy', y);
         const label = group.querySelector('text');
-        label.setAttribute('x', x);
         const pairLine = label.querySelector('[data-conjunction-pair]');
         const angleLine = label.querySelector('[data-conjunction-angle]');
         pairLine.setAttribute('x', x);
-        pairLine.setAttribute('y', y - 36);
-        pairLine.textContent = conjunctionPairLabel(event.a, event.b);
         angleLine.setAttribute('x', x);
-        angleLine.setAttribute('y', y - 22);
-        angleLine.textContent = conjunctionSeparationLabel(event.separation);
+        pairLine.textContent = pairLabel;
+        angleLine.textContent = angleLabel;
+        labels.push({label, lines:[pairLine, angleLine], stem, dot, x});
         svg.appendChild(group);
       });
-      target.appendChild(svg);
-      // Keep both label lines inside the chart, including events near its edges.
-      svg.querySelectorAll('.conjunction-event text').forEach(label => {
-        const bounds = label.getBBox();
-        let shift = 0;
-        if (bounds.x < 8) shift = 8 - bounds.x;
-        else if (bounds.x + bounds.width > width - 8) shift = width - 8 - bounds.x - bounds.width;
-        if (shift !== 0) {
-          label.querySelectorAll('tspan').forEach(line => {
-            line.setAttribute('x', Number(line.getAttribute('x')) + shift);
-          });
-        }
+      timeline.replaceChildren(svg);
+      const axisY = placeTimelineLabels(labels, width);
+      axis.setAttribute('y1', axisY);
+      axis.setAttribute('y2', axisY);
+      svg.setAttribute('viewBox', '0 0 ' + width + ' ' + (axisY + 43));
+      labels.forEach(({stem, dot}) => {
+        stem.setAttribute('y2', axisY);
+        dot.setAttribute('cy', axisY);
       });
+
+      let tickIntervals = 2;
+      if (width >= 520) tickIntervals = 4;
+      for (let index = 0; index <= tickIntervals; index++) {
+        const fraction = index / tickIntervals;
+        const offset = -windowDays + 2 * windowDays * fraction;
+        const x = axisInset + fraction * axisWidth;
+        const tick = document.getElementById('conjunctionTickTemplate').content.querySelector('g').cloneNode(true);
+        const line = tick.querySelector('line');
+        line.setAttribute('x1', x);
+        line.setAttribute('x2', x);
+        line.setAttribute('y1', axisY - 8);
+        line.setAttribute('y2', axisY + 9);
+        if (fraction === 0.5) {
+          line.setAttribute('stroke', '#2563eb');
+          line.setAttribute('stroke-width', '2');
+        }
+        const label = tick.querySelector('text');
+        label.setAttribute('x', x);
+        label.setAttribute('y', axisY + 29);
+        const tickDate = new Date(date.getTime() + offset * 86400000);
+        if (width < 280 && fraction === 0.5) {
+          label.textContent = tickDate.toLocaleDateString(options.getLanguage(), {day:'numeric',month:'numeric'});
+        } else {
+          label.textContent = options.formatDate(tickDate);
+        }
+        if (index === 0) label.classList.add('is-start');
+        else if (index === tickIntervals) label.classList.add('is-end');
+        svg.insertBefore(tick, stems);
+      }
+    }
+
+    /** Redraws only the timeline after its available width changes.
+     * @returns {void}
+     */
+    function resizeTimeline(){
+      if (timelineData && timeline.clientWidth > 0 && timeline.clientWidth !== renderedTimelineWidth) {
+        const {date, events, windowDays} = timelineData;
+        renderTimeline(date, events, windowDays);
+        if (options.requestLayout) options.requestLayout();
+      }
+    }
+
+    /** Updates the chart, the summary and the explanation for the selected date.
+     * @param {object} context Shared dashboard context with its selected date.
+     * @returns {void}
+     */
+    function render(context){
+      if (!timeline) return;
+      const date = context.date;
+      const t = options.getTranslations();
+      const summary = document.getElementById('conjunctionSummary');
+      const windowDays = 60;
+      const events = options.getEvents(date, windowDays);
+      timelineData = {date, events, windowDays};
+      renderTimeline(date, events, windowDays);
 
       if (summary) {
         summary.innerHTML = '';
@@ -327,6 +376,9 @@ window.PLANETENUHR_CONJUNCTION_CARD = (() => {
         viewToggle.addEventListener('click', handleViewNavigation);
         viewToggle.addEventListener('keydown', handleViewNavigation);
       }
+    }
+    if (timeline) {
+      new ResizeObserver(resizeTimeline).observe(timeline);
     }
     return {render, conjunctionSeparationLabel, conjunctionPairLabel};
   }

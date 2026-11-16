@@ -279,6 +279,50 @@ async function checkMobileMilkyWay(browser, url){
   }
 }
 
+/** Checks readable, collision-free conjunction labels before and after a mobile resize.
+ * @param {import('playwright').Browser} browser Browser engine.
+ * @param {string} url Dashboard origin.
+ * @returns {Promise<void>} Resolves when the timeline fits both phone widths.
+ */
+async function checkMobileConjunctionLabels(browser, url){
+  const page = await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
+  const errors = [];
+  page.on('pageerror', error => errors.push(error.message));
+  await page.route('**/*', route => serveDashboard(route, url));
+  try {
+    await page.goto(url + '/?lang=de&date=20270901&place=berlin', {waitUntil:'domcontentloaded'});
+    const timeline = page.locator('#conjunctionTimeline > svg');
+    for (const width of [390, 320]) {
+      await page.setViewportSize({width,height:844});
+      await page.waitForFunction(() => {
+        const svg = document.querySelector('#conjunctionTimeline > svg');
+        return svg && svg.viewBox.baseVal.width === svg.parentElement.clientWidth;
+      });
+      const layout = await timeline.evaluate(svg => {
+        const bounds = svg.getBoundingClientRect();
+        const labels = Array.from(svg.querySelectorAll('.conjunction-timeline-label'), label => {
+          const rect = label.getBoundingClientRect();
+          const font = parseFloat(getComputedStyle(label).fontSize) * label.getScreenCTM().a;
+          return {left:rect.left,right:rect.right,top:rect.top,bottom:rect.bottom,font};
+        });
+        return {left:bounds.left,right:bounds.right,labels};
+      });
+      assert.equal(layout.labels.length, 7, 'Four events and three dates');
+      for (const [index, label] of layout.labels.entries()) {
+        assert.ok(label.font >= 12.7, 'Timeline labels must stay readable at ' + width + 'px');
+        assert.ok(label.left >= layout.left && label.right <= layout.right, 'Labels must stay inside the timeline');
+        for (const other of layout.labels.slice(index + 1)) {
+          assert.ok(label.right <= other.left || other.right <= label.left ||
+            label.bottom <= other.top || other.bottom <= label.top, 'Timeline labels must not overlap');
+        }
+      }
+    }
+    assert.deepEqual(errors, [], 'Browser initialization/runtime errors');
+  } finally {
+    await page.close();
+  }
+}
+
 /** Runs the browser regression matrix and always releases browser resources.
  * @returns {Promise<void>} Resolves when the matrix passes.
  */
@@ -294,6 +338,8 @@ async function main(){
     try {
       await checkMobileMilkyWay(browser, url);
       console.log(engine + ': mobile Milky Way enlargement passed');
+      await checkMobileConjunctionLabels(browser, url);
+      console.log(engine + ': mobile conjunction labels passed');
       for (const language of ['de','en','fr']) {
         for (const zone of ['UTC','Asia/Tokyo']) {
           await checkDashboard(browser, url, language, zone);

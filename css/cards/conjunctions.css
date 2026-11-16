@@ -1,3 +1,31 @@
+#conjunctionEventsPanel {
+  width:min(100%,760px);
+}
+
+.conjunction-timeline-label {
+  fill:var(--fg);
+  font-family:var(--font-family);
+  font-size:13px;
+  text-anchor:middle;
+  paint-order:stroke;
+  stroke:#f7faff;
+  stroke-width:3px;
+  stroke-linejoin:round;
+}
+
+.conjunction-timeline-label [data-conjunction-pair] {
+  font-size:14px;
+  font-weight:700;
+}
+
+.conjunction-tick .is-start {
+  text-anchor:start;
+}
+
+.conjunction-tick .is-end {
+  text-anchor:end;
+}
+
 .conjunction-view-toggle {
   display:flex;
   flex-wrap:wrap;
