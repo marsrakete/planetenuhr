@@ -488,9 +488,10 @@
     /**
      * Renders the compact list view of the sky calendar.
      * @param {Array<object>} events Visible calendar events.
+     * @param {Date} referenceDay Selected local calendar day.
      * @returns {void}
      */
-    function renderCalendarTimeline(events){
+    function renderCalendarTimeline(events, referenceDay){
       const timeline = document.getElementById('calendarTimeline');
       if (!timeline) {
         return;
@@ -499,7 +500,14 @@
       const nodes = [];
       let visibleEvents = events;
       if (!getState().showAll) {
-        visibleEvents = events.slice(0, compactCalendarListLimit);
+        let firstUpcoming = events.findIndex(event => event.dateObj >= referenceDay);
+        if (firstUpcoming === -1) firstUpcoming = events.length;
+        // With past events enabled, keep both sides of the selected day in view.
+        const start = Math.max(0, Math.min(
+          firstUpcoming - Math.floor(compactCalendarListLimit / 2),
+          events.length - compactCalendarListLimit
+        ));
+        visibleEvents = events.slice(start, start + compactCalendarListLimit);
       }
 
       if (visibleEvents.length === 0) {
@@ -811,7 +819,7 @@
 
       renderCalendarDownloads();
       updateCalendarButtonStates();
-      renderCalendarTimeline(visibleEvents);
+      renderCalendarTimeline(visibleEvents, referenceDay);
       renderCalendarMonthView(visibleEvents, referenceDay);
       renderCalendarDetail(currentSelection);
       updateCalendarViewVisibility(visibleEvents);

@@ -1800,7 +1800,8 @@ window.PLANETENUHR_CARD_HELP.fr.cards.sky_knowledge = {
 // IDEFIX: source provenance, interpolation and schematic local moon geometry.
 window.PLANETENUHR_CARD_HELP.de.cards.idefix = {
   "intro": [
-    "IDEFIX ist der deutsch-französische Rover von DLR und CNES an Bord der japanischen MMX-Mission. Die Kachel zeigt die Reise von der Erde zum Mars und den geplanten Einsatz auf Phobos."
+    "IDEFIX ist der deutsch-französische Rover von DLR und CNES an Bord der japanischen MMX-Mission. Die Kachel zeigt die Reise von der Erde zum Mars und den geplanten Einsatz auf Phobos.",
+    "Vergrößerte Skizze: Phobos umläuft Mars in rund 7 h 39 min. Lage und Größen sind schematisch."
   ],
   "formulas": [
     {
@@ -1848,7 +1849,8 @@ window.PLANETENUHR_CARD_HELP.de.cards.idefix = {
 };
 window.PLANETENUHR_CARD_HELP.en.cards.idefix = {
   "intro": [
-    "IDEFIX is the French-German rover built by CNES and DLR aboard Japan’s MMX mission. This card follows the journey from Earth to Mars and the planned exploration of Phobos."
+    "IDEFIX is the French-German rover built by CNES and DLR aboard Japan’s MMX mission. This card follows the journey from Earth to Mars and the planned exploration of Phobos.",
+    "Enlarged sketch: Phobos orbits Mars in about 7 h 39 min. Orientation and sizes are schematic."
   ],
   "formulas": [
     {
@@ -1896,7 +1898,8 @@ window.PLANETENUHR_CARD_HELP.en.cards.idefix = {
 };
 window.PLANETENUHR_CARD_HELP.fr.cards.idefix = {
   "intro": [
-    "IDEFIX est le rover franco-allemand du CNES et du DLR embarqué sur la mission japonaise MMX. Cette carte suit le voyage de la Terre à Mars et l’exploration prévue de Phobos."
+    "IDEFIX est le rover franco-allemand du CNES et du DLR embarqué sur la mission japonaise MMX. Cette carte suit le voyage de la Terre à Mars et l’exploration prévue de Phobos.",
+    "Schéma agrandi : Phobos fait le tour de Mars en environ 7 h 39 min. Orientation et tailles schématiques."
   ],
   "formulas": [
     {

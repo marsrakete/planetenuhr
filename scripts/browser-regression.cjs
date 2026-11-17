@@ -279,6 +279,45 @@ async function checkMobileMilkyWay(browser, url){
   }
 }
 
+/** Checks the November 2026 Mars–Jupiter entry and the day-based summary cutoff.
+ * @param {import('playwright').Browser} browser Browser engine.
+ * @param {string} url Dashboard origin.
+ * @returns {Promise<void>} Resolves when both cards show the event on the correct dates.
+ */
+async function checkMarsJupiterDates(browser, url){
+  const page = await browser.newPage({timezoneId:'America/Los_Angeles'});
+  const errors = [];
+  page.on('pageerror', error => errors.push(error.message));
+  await page.route('**/*', route => serveDashboard(route, url));
+  try {
+    await page.clock.setFixedTime(new Date('2026-11-16T12:00:00Z'));
+    await page.goto(url + '/?lang=de&date=20261116&place=berlin', {waitUntil:'domcontentloaded'});
+    const marker = page.locator('#conjunctionTimeline [data-pair="mars-jupiter"]');
+    const minimum = await marker.getAttribute('data-date');
+    assert.ok(new Date(minimum) < new Date('2026-11-16T12:00:00Z'));
+    assert.match(await marker.locator('title').textContent(), /16\.11\.2026/);
+    const summary = page.locator('#conjunctionSummary');
+    assert.match(await summary.textContent(), /Enge Begegnung am gewählten Tag: 16\.11\.2026 · Mars - Jupiter/);
+
+    const calendar = page.locator('#skyCalendarCard');
+    const list = calendar.locator('#calendarTimeline');
+    const entry = list.locator('.calendar-item').filter({hasText:'Konjunktion Mars-Jupiter'});
+    assert.equal(await entry.count(), 0);
+    await calendar.locator('#calendarShowPast').evaluate(checkbox => checkbox.click());
+    assert.ok(await entry.isVisible(), 'The recent entry must be in the collapsed list');
+    assert.equal(await entry.locator('[data-calendar-date]').textContent(), '15.11.2026');
+    assert.equal(await list.locator('.calendar-item').count(), 4);
+    await calendar.locator('[data-calendar-filter="planet"]').evaluate(button => button.click());
+    assert.ok(await entry.isVisible(), 'The entry must also stay visible under the planet filter');
+
+    await page.locator('#btnSolarNext').evaluate(button => button.click());
+    assert.match(await summary.textContent(), /Keine bevorstehende enge Begegnung/);
+    assert.deepEqual(errors, [], 'Browser initialization/runtime errors');
+  } finally {
+    await page.close();
+  }
+}
+
 /** Checks readable, collision-free conjunction labels before and after a mobile resize.
  * @param {import('playwright').Browser} browser Browser engine.
  * @param {string} url Dashboard origin.
@@ -340,6 +379,8 @@ async function main(){
       console.log(engine + ': mobile Milky Way enlargement passed');
       await checkMobileConjunctionLabels(browser, url);
       console.log(engine + ': mobile conjunction labels passed');
+      await checkMarsJupiterDates(browser, url);
+      console.log(engine + ': Mars–Jupiter calendar and summary passed');
       for (const language of ['de','en','fr']) {
         for (const zone of ['UTC','Asia/Tokyo']) {
           await checkDashboard(browser, url, language, zone);

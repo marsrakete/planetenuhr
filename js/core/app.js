@@ -144,6 +144,7 @@
       document, createSvgElement:createChartSvgElement, getEvents:computeConjunctionEvents,
       getLanguage:() => lang, getTranslations:() => t, altitudeEstimate:altitudeThumbEstimate,
       bodyDisplayName, formatDate:formatDateStamp, appendSummaryLine, appendSummaryText,
+      formatDateKey:window.PLANETENUHR_DATE_TIME.formatDateKey,
       getHeliocentricPosition:window.PLANETENUHR_PLANET_MODEL.heliocentricPosition,
       getJulianDate:window.PLANETENUHR_COORDINATES.julianDate,
       bodyVisuals:window.PLANETENUHR_BODY_VISUALS,

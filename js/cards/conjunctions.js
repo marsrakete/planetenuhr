@@ -106,9 +106,10 @@ window.PLANETENUHR_CONJUNCTION_CARD = (() => {
     /** Writes localized copy, diagrams and coordinate substitutions to the explanation tab.
      * @param {object[]} events Close approaches already calculated for the timeline.
      * @param {number} windowDays Half-width of the displayed window in elapsed days.
+     * @param {string} timeZone Time zone of the observing location.
      * @returns {void}
      */
-    function renderCalculation(events, windowDays){
+    function renderCalculation(events, windowDays, timeZone){
       const t = options.getTranslations();
       const number = new Intl.NumberFormat(options.getLanguage(), {minimumFractionDigits:6, maximumFractionDigits:6});
       const cosineNumber = new Intl.NumberFormat(options.getLanguage(), {minimumFractionDigits:12, maximumFractionDigits:12});
@@ -144,7 +145,7 @@ window.PLANETENUHR_CONJUNCTION_CARD = (() => {
       events.forEach((event, index) => {
         const fragment = document.getElementById('conjunctionCalculationEventTemplate').content.cloneNode(true);
         const article = fragment.querySelector('.conjunction-calc-event');
-        const dateLabel = options.formatDate(event.date);
+        const dateLabel = options.formatDate(event.date, timeZone);
         const angleLabel = conjunctionSeparationLabel(event.separation);
         const eventLabel = conjunctionPairLabel(event.a, event.b) + ' · ' + dateLabel + ' · ' + angleLabel;
         article.querySelector('[data-conjunction-event-title]').textContent = eventLabel;
@@ -247,9 +248,10 @@ window.PLANETENUHR_CONJUNCTION_CARD = (() => {
      * @param {Date} date Center date of the time window.
      * @param {object[]} events Chronological close approaches in the window.
      * @param {number} windowDays Half-width of the window in elapsed days.
+     * @param {string} timeZone Time zone of the observing location.
      * @returns {void}
      */
-    function renderTimeline(date, events, windowDays){
+    function renderTimeline(date, events, windowDays, timeZone){
       renderedTimelineWidth = timeline.clientWidth;
       const width = renderedTimelineWidth || 300;
       const axisInset = 16;
@@ -273,7 +275,7 @@ window.PLANETENUHR_CONJUNCTION_CARD = (() => {
         group.dataset.separation = event.separation;
         const pairLabel = conjunctionPairLabel(event.a, event.b);
         const angleLabel = conjunctionSeparationLabel(event.separation);
-        group.querySelector('title').textContent = pairLabel + ' · ' + options.formatDate(event.date) + ' · ' + angleLabel;
+        group.querySelector('title').textContent = pairLabel + ' · ' + options.formatDate(event.date, timeZone) + ' · ' + angleLabel;
         const stem = group.querySelector('line');
         stem.setAttribute('x1', x);
         stem.setAttribute('x2', x);
@@ -321,9 +323,9 @@ window.PLANETENUHR_CONJUNCTION_CARD = (() => {
         label.setAttribute('y', axisY + 29);
         const tickDate = new Date(date.getTime() + offset * 86400000);
         if (width < 280 && fraction === 0.5) {
-          label.textContent = tickDate.toLocaleDateString(options.getLanguage(), {day:'numeric',month:'numeric'});
+          label.textContent = tickDate.toLocaleDateString(options.getLanguage(), {day:'numeric',month:'numeric',timeZone});
         } else {
-          label.textContent = options.formatDate(tickDate);
+          label.textContent = options.formatDate(tickDate, timeZone);
         }
         if (index === 0) label.classList.add('is-start');
         else if (index === tickIntervals) label.classList.add('is-end');
@@ -336,8 +338,8 @@ window.PLANETENUHR_CONJUNCTION_CARD = (() => {
      */
     function resizeTimeline(){
       if (timelineData && timeline.clientWidth > 0 && timeline.clientWidth !== renderedTimelineWidth) {
-        const {date, events, windowDays} = timelineData;
-        renderTimeline(date, events, windowDays);
+        const {date, events, windowDays, timeZone} = timelineData;
+        renderTimeline(date, events, windowDays, timeZone);
         if (options.requestLayout) options.requestLayout();
       }
     }
@@ -348,26 +350,32 @@ window.PLANETENUHR_CONJUNCTION_CARD = (() => {
      */
     function render(context){
       if (!timeline) return;
-      const date = context.date;
+      const {date, timeZone} = context;
       const t = options.getTranslations();
       const summary = document.getElementById('conjunctionSummary');
       const windowDays = 60;
       const events = options.getEvents(date, windowDays);
-      timelineData = {date, events, windowDays};
-      renderTimeline(date, events, windowDays);
+      timelineData = {date, events, windowDays, timeZone};
+      renderTimeline(date, events, windowDays, timeZone);
 
       if (summary) {
         summary.innerHTML = '';
-        const next = events.find(event => event.date >= date);
+        const selectedDay = options.formatDateKey(date, timeZone);
+        const next = events.find(event => options.formatDateKey(event.date, timeZone) >= selectedDay);
         if (next) {
-          options.appendSummaryLine(summary, (t.conjunction_next || 'Next conjunction') + ': ', options.formatDate(next.date) + ' · ' + conjunctionPairLabel(next.a, next.b));
+          const eventDay = options.formatDateKey(next.date, timeZone);
+          let heading = t.conjunction_next;
+          if (eventDay === selectedDay) heading = t.conjunction_on_selected_day;
+          options.appendSummaryLine(summary, heading + ': ', options.formatDate(next.date, timeZone) + ' · ' + conjunctionPairLabel(next.a, next.b));
           options.appendSummaryLine(summary, (t.conjunction_separation || 'Separation') + ': ', conjunctionSeparationLabel(next.separation));
-          options.appendSummaryLine(summary, (t.conjunction_window || 'Window') + ': ', options.formatDate(new Date(date.getTime() - windowDays * 86400000)) + ' - ' + options.formatDate(new Date(date.getTime() + windowDays * 86400000)));
+          const start = new Date(date.getTime() - windowDays * 86400000);
+          const end = new Date(date.getTime() + windowDays * 86400000);
+          options.appendSummaryLine(summary, t.conjunction_window + ': ', options.formatDate(start, timeZone) + ' - ' + options.formatDate(end, timeZone));
         } else {
           options.appendSummaryText(summary, t.conjunction_none || 'No close conjunction found in the current window.');
         }
       }
-      renderCalculation(events, windowDays);
+      renderCalculation(events, windowDays, timeZone);
     }
 
     if (document) {

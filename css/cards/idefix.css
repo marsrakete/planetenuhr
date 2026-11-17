@@ -21,7 +21,6 @@
 .idefix-moon-orbit { fill:none; stroke:#8294b4; stroke-dasharray:3 4; }
 .idefix-phobos path { fill:#c2bbad; stroke:#edf3ff; stroke-width:1; }
 .idefix-rover-target rect { fill:#0b1730; stroke:#ffcf58; stroke-width:1.5; stroke-dasharray:2 1; }
-.idefix-moon-view p { margin:0 6px 6px; font-size:var(--font-note); line-height:var(--line-note); color:#b9c6de; }
 .idefix-legend { display:flex; flex-wrap:wrap; justify-content:center; gap:7px 16px; width:100%; color:var(--muted); font-size:var(--font-note); line-height:var(--line-note); }
 .idefix-legend > span { display:inline-flex; align-items:center; gap:5px; }
 .idefix-legend i { width:14px; height:8px; display:inline-block; flex-shrink:0; }
@@ -50,6 +49,5 @@
  /* Both SVGs have empty edges; overlap only that space to keep the combined graphic compact. */
  .idefix-moon-view { width:100%; justify-self:center; margin-top:-32px; }
  .idefix-moon-view svg { width:180px; max-width:100%; margin:0 auto; }
- .idefix-moon-view p { margin-left:0; margin-right:0; }
  .idefix-controls button,.idefix-jumps button { min-height:44px; }
 }
