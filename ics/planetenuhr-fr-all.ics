@@ -386,6 +386,26 @@ DESCRIPTION:Sichtbarkeit: Aube orientale\, basse\n\nRapprochement serré\, mais 
 X-PLANETENUHR-VISIBILITY:Aube orientale\, basse
 END:VEVENT
 BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2027-05-10-mercure-dans-le-ciel-du-soir@marsrakete.github.io
+DTSTAMP:20261117T165625Z
+DTSTART;VALUE=DATE:20270510
+DTEND;VALUE=DATE:20270604
+SUMMARY:Mercure dans le ciel du soir
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: En Europe centrale\, bas à l’ouest-nord-ouest après le coucher du Soleil.\n\nUn horizon dégagé facilite l’observation. Le 28 mai\, Mercure atteint sa plus grande élongation est.
+X-PLANETENUHR-VISIBILITY:En Europe centrale\, bas à l’ouest-nord-ouest après le coucher du Soleil.
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2027-05-28-mercure-sa-plus-grande-longation-est@marsrakete.github.io
+DTSTAMP:20261117T164807Z
+DTSTART;VALUE=DATE:20270528
+DTEND;VALUE=DATE:20270529
+SUMMARY:Mercure à sa plus grande élongation est
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: En Europe centrale\, du 10 mai environ au début juin\, bas à l’ouest-nord-ouest après le coucher du Soleil.\n\nLe 28 mai\, Mercure atteint sa séparation angulaire maximale à l’est du Soleil\, soit 22° 55′. Un horizon dégagé facilite l’observation.
+X-PLANETENUHR-VISIBILITY:En Europe centrale\, du 10 mai environ au début juin\, bas à l’ouest-nord-ouest après le coucher du Soleil.
+END:VEVENT
+BEGIN:VEVENT
 UID:planetenuhr-fr-season-2027-06-21-solstice-de-juin@marsrakete.github.io
 DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20270621
@@ -474,6 +494,26 @@ SUMMARY:Maximum des Orionides
 CATEGORIES:METEOR
 DESCRIPTION:Sichtbarkeit: Visible depuis l'Europe après minuit\n\nMétéores rapides de la comète de Halley\; meilleurs avant l'aube.
 X-PLANETENUHR-VISIBILITY:Visible depuis l'Europe après minuit
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2027-10-29-mercure-dans-le-ciel-du-matin@marsrakete.github.io
+DTSTAMP:20261117T171211Z
+DTSTART;VALUE=DATE:20271029
+DTEND;VALUE=DATE:20271120
+SUMMARY:Mercure dans le ciel du matin
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: En Europe centrale\, bas à l’est-sud-est avant le lever du Soleil.\n\nLes meilleures chances d’observation se situent vers le 1er au 15 novembre. Mercure est plus difficile à voir en début et en fin de période. Sa plus grande élongation ouest a lieu le 4 novembre.
+X-PLANETENUHR-VISIBILITY:En Europe centrale\, bas à l’est-sud-est avant le lever du Soleil.
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-fr-planet-2027-11-04-mercure-sa-plus-grande-longation-ouest@marsrakete.github.io
+DTSTAMP:20261117T171211Z
+DTSTART;VALUE=DATE:20271104
+DTEND;VALUE=DATE:20271105
+SUMMARY:Mercure à sa plus grande élongation ouest
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: En Europe centrale\, bas à l’est-sud-est avant le lever du Soleil.\n\nMercure atteint sa séparation angulaire maximale à l’ouest du Soleil\, soit 18° 46′. Un horizon dégagé facilite l’observation.
+X-PLANETENUHR-VISIBILITY:En Europe centrale\, bas à l’est-sud-est avant le lever du Soleil.
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-fr-meteor-2027-11-17-maximum-des-l-onides@marsrakete.github.io

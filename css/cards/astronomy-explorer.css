@@ -13,6 +13,56 @@
 .explorer-note { width:100%; text-align:center; color:var(--muted); overflow-wrap:anywhere; }
 .explorer-context { font-size:var(--font-body); line-height:var(--line-body); }
 .explorer-note { font-size:var(--font-note); line-height:var(--line-note); }
+.horizon-view-tabs { display:flex; flex-wrap:wrap; justify-content:center; gap:6px; }
+.horizon-view-tabs button {
+  min-height:var(--control-height);
+  margin:0;
+  padding:7px 13px;
+  border:1px solid #bfdbfe;
+  border-radius:999px;
+  background:#f8fbff;
+  color:#0f172a;
+  box-shadow:none;
+  font-size:var(--font-control);
+  font-weight:700;
+  line-height:1.2;
+}
+.horizon-view-tabs button[aria-selected="true"] {
+  background:linear-gradient(135deg,#1d4ed8,#3b82f6);
+  border-color:#2563eb;
+  color:#fff;
+}
+.horizon-view-panel { display:grid; gap:12px; width:100%; min-width:0; }
+.horizon-view-panel[hidden] { display:none; }
+.horizon-calculation-copy { margin:0; font-size:var(--font-note); line-height:var(--line-note); }
+.horizon-calculation-equations,
+.horizon-calculation-body { display:grid; gap:7px; min-width:0; padding:12px; border-radius:9px; }
+.horizon-calculation-equations { background:#f4f7fb; }
+.horizon-calculation-equations code,
+.horizon-calculation-body code {
+  font-size:var(--font-note);
+  line-height:1.55;
+  overflow-wrap:anywhere;
+}
+.horizon-calculation-bodies { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr)); gap:12px; }
+.horizon-calculation-body {
+  align-content:start;
+  border:1px solid #dbeafe;
+  background:#fbfdff;
+  --horizon-ray:#175aa4;
+}
+.horizon-calculation-sun { --horizon-ray:#a75807; }
+.horizon-calculation-body h3 { margin:0; font-size:var(--font-subheading); }
+.horizon-calculation-figure { margin:0; text-align:center; }
+.horizon-calculation-figure svg { display:block; width:min(100%,180px); height:auto; margin:0 auto 5px; border-radius:8px; }
+.horizon-calculation-figure figcaption { color:var(--horizon-ray); font-weight:700; }
+.horizon-sketch-sky { fill:#e5f2ff; }
+.horizon-sketch-ground { fill:#edf0f3; }
+.horizon-sketch-axis { stroke:#63768c; stroke-width:1.5; }
+.horizon-sketch-ray,
+.horizon-sketch-angle { fill:none; stroke:var(--horizon-ray); stroke-width:2; }
+.horizon-sketch-marker { fill:var(--horizon-ray); }
+.horizon-sketch-observer { fill:#263a52; }
 .horizon-plot { display:block; width:100%; height:282px; flex-shrink:0; }
 .horizon-plot text { font-family:var(--font-family); font-size:var(--font-diagram); fill:var(--fg); }
 .horizon-grid-line { stroke:var(--border); stroke-width:1; }

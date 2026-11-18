@@ -1,5 +1,11 @@
 # Technik der Planetenuhr
 
+## Sternbild-Illustrationen
+
+`js/shared/constellation-illustrations.js` stellt den gemeinsamen Adapter für Monatskachel, Jahresuhr und beide Detail-Popups bereit. Die generierte Konfiguration in `js/data/constellation-illustrations-config.js` enthält nur lokale Bildpfade und die gemeinsame Anpassung des Ausschnitts für Bild und Sternpositionen. Die ursprünglichen Sternkoordinaten bleiben unverändert. Alle Bildknoten entstehen aus `constellationIllustrationTemplate`; Opazität und Interaktion werden in `css/shared/constellation-illustrations.css` festgelegt. Die Bildschicht wird vor Linien, Sternen und Beschriftungen eingefügt und ist dekorativ.
+
+`scripts/build-constellation-illustrations.cjs` erzeugt die 47 transparenten PNGs offline anhand der geprüften drei HIP-/Pixel-Anker. Es berechnet eine projektive Abbildung der originalen Bildfläche in die vorhandene gnomonische Projektion, prüft alle Anker, behandelt den schwarzen Hintergrund und berücksichtigt den gesamten sichtbaren Bildinhalt beim Ausschnitt. Die Bilddateien und Lizenznachweise liegen in `assets/constellations/`, einschließlich Originalen und Projektionsmanifest. Beide Schlangenteile bleiben ohne Bild. Zur Neuerzeugung wird Sharp benötigt; der normale Anwendungs-Build benötigt es nicht. Quelle und Bildlizenz sind zusätzlich in der About-Hilfe in DE/EN/FR genannt.
+
 Diese Datei beschreibt Aufbau, Entwicklung und Pflege der App. [Zur Übersicht im README](README.md) · [Zu den Berechnungen](BERECHNUNGEN.md)
 
 Der [Modularisierungsplan](MODULARISIERUNGSPLAN.md) hält die abgeschlossene Trennung von Rechenmodellen, Steuerung, Kacheln und Layout sowie deren Prüfungen fest.
@@ -65,6 +71,10 @@ Der [Modularisierungsplan](MODULARISIERUNGSPLAN.md) hält die abgeschlossene Tre
   Jahreszeiten- und Retrograd-Controller mit gemeinsamem Datumskontext; Retrograd-Berechnung als eigenständiges DOM-freies Modell
 - `js/cards/constellation-month.js`, `js/cards/constellation-year.js`
   Eigenständige Controller für Monatssternkarte mit Richtungshinweis und Jahresuhr mit Monatsminiaturen; verwenden den gemeinsamen Kontext und die bestehenden Sternbilddaten
+- `js/shared/constellation-details.js`, `js/data/constellation-descriptions.js`, `css/shared/constellation-details.css`
+  Gemeinsame, templatebasierte Beschreibung und responsives Detail-Layout für Jahresuhr und Sternbildsichtbarkeit. Alle 49 Einträge haben deutsche, englische und französische Angaben sowie Quellenlinks. Die bisherigen Kurztexte werden als Einleitung übernommen; Sternkarten, Monatsangaben und Orientierungshilfen bleiben bei den jeweiligen Kachel-Controllern.
+- `js/cards/constellation-visibility.js`, `js/models/constellation-visibility-model.js`, `js/data/constellation-visibility-config.js`
+  Monats-/Jahresmatrix mit 49 Stellarium-Modern-Linienfiguren; Referenzbereiche und J2000-Mittelpunkte bleiben in `constellation-visibility-config.js`, zusätzliche HIP-Linien und Sternpositionen liegen bei den Monatsfiguren in `phenomena-config.js`
 - `js/cards/milky-way.js`, `js/models/milky-way-sky-model.js`
   Galaxienkarte und zeit-/ortsabhängige Himmelskuppel; das Rechenmodell bleibt DOM-frei und wird bei globalen Änderungen sowie minütlich aktualisiert
 - `js/cards/conjunctions.js`, `js/cards/meteor-streams.js`

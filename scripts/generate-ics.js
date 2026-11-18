@@ -182,7 +182,7 @@ function buildEventLines(languageKey, event, now) {
     "UID:" + buildEventUid(languageKey, event),
     "DTSTAMP:" + formatIcsUtcStamp(now),
     "DTSTART;VALUE=DATE:" + formatIcsDateValue(event.date),
-    "DTEND;VALUE=DATE:" + getIcsExclusiveEndDate(event.date),
+    "DTEND;VALUE=DATE:" + getIcsExclusiveEndDate(event.endDate || event.date),
     "SUMMARY:" + escapeIcsText(event.title),
     "CATEGORIES:" + escapeIcsText(String(event.category).toUpperCase())
   ];

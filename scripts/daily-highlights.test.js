@@ -13,6 +13,20 @@ test('calendar day differences remain whole across DST and year boundaries',()=>
   assert.equal(model.dayDifference('2026-03-28','2026-03-30'),2);
   assert.equal(model.dayDifference('2026-12-31','2027-01-01'),1);
 });
+test('calendar observing periods stay visible on every included day and keep their peak separate', () => {
+  const range = {date:'2027-05-10', endDate:'2027-06-03', category:'planet', title:'Mercury in the evening sky'};
+  const peak = {date:'2027-05-28', category:'planet', title:'Greatest eastern elongation'};
+  const calendar = [range, peak];
+  for (let millis = Date.parse(range.date); millis <= Date.parse(range.endDate); millis += 86400000) {
+    const dateKey = new Date(millis).toISOString().slice(0, 10);
+    const items = model.select(day({dateKey,calendar}),config);
+    assert.ok(items.some(item => item.data === range && item.activeRange && item.days === 0), dateKey);
+    if (dateKey === peak.date) assert.ok(items.some(item => item.data === peak), dateKey);
+  }
+  const upcoming = model.select(day({dateKey:'2027-05-09',calendar}),config);
+  assert.ok(upcoming.some(item => item.data === range && !item.activeRange && item.days === 1));
+  assert.equal(model.select(day({dateKey:'2027-06-04',calendar}),config).length, 0);
+});
 test('rare same-day events lead, topic limits cap routine planets, stable selection never mutates data',()=>{
   const input=day({calendar:[{date:'2026-10-26',category:'eclipse',title:'Eclipse'}],moon:{frac:.5,illum:100},planets:[{key:'mars',samples:5,altitudeDeg:55},{key:'jupiter',samples:4,altitudeDeg:48},{key:'venus',samples:4,altitudeDeg:20}],conjunctions:[{a:'mars',b:'jupiter',dateKey:'2026-11-16',separation:1.2}]});
   const before=JSON.stringify(input),result=model.select(input,config);

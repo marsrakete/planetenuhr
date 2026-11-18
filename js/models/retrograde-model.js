@@ -1,5 +1,6 @@
 window.PLANETENUHR_RETROGRADE_MODEL = (() => {
   'use strict';
+  const dayMs = 86400000;
   /** Creates the DOM-free retrograde-motion and sampled-path model.
    * @param {object} options Geocentric longitude/latitude providers (key, Date) and signedDeg angle normalization.
    * @returns {object} Operations without timers, event listeners or global selection ownership.
@@ -56,6 +57,78 @@ window.PLANETENUHR_RETROGRADE_MODEL = (() => {
       });
     }
 
+    /** Projects continuous ecliptic longitude and latitude to a rectangular sky plot.
+     * @param {number[]} longitudes Continuous ecliptic longitude samples in degrees.
+     * @param {number[]} latitudes Matching ecliptic latitudes in degrees.
+     * @param {object} bounds Plot edges left, right, top and bottom in SVG units.
+     * @returns {object} Points and the displayed longitude limits.
+     */
+    function projectSkyTrack(longitudes, latitudes, bounds){
+      const minLon = Math.min(...longitudes);
+      const minLat = Math.min(...latitudes);
+      const lonSpan = Math.max(0.4, Math.max(...longitudes) - minLon);
+      const latSpan = Math.max(0.6, Math.max(...latitudes) - minLat);
+      const points = longitudes.map((longitude, index) => ({
+        x:bounds.left + ((longitude - minLon) / lonSpan) * (bounds.right - bounds.left),
+        y:bounds.bottom - ((latitudes[index] - minLat) / latSpan) * (bounds.bottom - bounds.top)
+      }));
+      return {points, longitudeStart:minLon, longitudeEnd:minLon + lonSpan};
+    }
+
+    /** Builds the closest complete retrograde phase from consecutive 24-hour samples.
+     * @param {string} key Planet key.
+     * @param {Date} date Reference instant for choosing the phase and initial day.
+     * @param {number} [searchDays=500] Search radius in days.
+     * @returns {object|null} Chart samples, two station indices and initial day index, or null.
+     */
+    function calculationWindow(key, date, searchDays = 500){
+      const instant = date.getTime();
+      if (!Number.isFinite(instant) || !Number.isInteger(searchDays) || searchDays < 2) return null;
+      const samples = [];
+      let previousLongitude;
+      let previousMotion = 0;
+      let start = null;
+      let closest = null;
+      for (let offset = -searchDays; offset <= searchDays; offset++) {
+        const sampleDate = new Date(instant + offset * dayMs);
+        const longitude = geocentricLongitude(key, sampleDate);
+        if (!Number.isFinite(longitude)) return null;
+        const index = samples.length;
+        if (index > 0) {
+          const motion = signedDeg(longitude - previousLongitude);
+          samples[index - 1].motion = motion;
+          if (motion < 0 && previousMotion > 0) start = index - 1;
+          if (motion > 0 && previousMotion < 0 && start !== null) {
+            const end = index - 1;
+            const distance = Math.max(start - searchDays, searchDays - end, 0);
+            if (!closest || distance < closest.distance) closest = {start, end, distance};
+            start = null;
+          }
+          // Preserve the previous direction across an exactly stationary sample.
+          if (motion !== 0) previousMotion = motion;
+        }
+        samples.push({date:sampleDate, longitude});
+        previousLongitude = longitude;
+      }
+      if (!closest) return null;
+
+      // Include part of the direct motion on both sides of the retrograde phase.
+      const padding = 32;
+      const first = Math.max(0, closest.start - padding);
+      const last = Math.min(samples.length - 1, closest.end + padding);
+      const windowSamples = samples.slice(first, last + 1);
+      const relative = unwrapLongitudeSeries(windowSamples.map(sample => sample.longitude));
+      windowSamples.forEach((sample, index) => {
+        sample.relativeLongitude = relative[index];
+        sample.latitude = geocentricLatitude(key, sample.date);
+      });
+      const startStation = closest.start - first;
+      const endStation = closest.end - first;
+      let selectedIndex = Math.floor((startStation + endStation) / 2);
+      if (searchDays >= first && searchDays < last) selectedIndex = searchDays - first;
+      return {samples:windowSamples, startStation, endStation, selectedIndex};
+    }
+
     /** Samples the geocentric track and station markers over the unchanged +/-90-day window.
      * @param {string} key Planet key. @param {Date} date Explicit reference instant.
      * @returns {object} Plot dimensions, path, station markers and current/arrow reference points.
@@ -74,17 +147,8 @@ window.PLANETENUHR_RETROGRADE_MODEL = (() => {
       }
       const unwrappedLongitude = unwrapLongitudeSeries(samples.map(sample => sample.lon));
       const latitudes = samples.map(sample => sample.lat);
-      const minLon = Math.min(...unwrappedLongitude);
-      const maxLon = Math.max(...unwrappedLongitude);
-      const minLat = Math.min(...latitudes);
-      const maxLat = Math.max(...latitudes);
-      const lonSpan = Math.max(0.4, maxLon - minLon);
-      const latSpan = Math.max(0.6, maxLat - minLat);
-      const points = samples.map((sample, index) => {
-        const x = 10 + ((unwrappedLongitude[index] - minLon) / lonSpan) * (width - 20);
-        const y = height - 10 - ((sample.lat - minLat) / latSpan) * (height - 20);
-        return [x, y, sample.offset];
-      });
+      const track = projectSkyTrack(unwrappedLongitude, latitudes, {left:10, right:width - 10, top:10, bottom:height - 10});
+      const points = track.points.map((point, index) => [point.x, point.y, samples[index].offset]);
       const path = points.map((point, index) => {
         let command = 'M';
         if (index) {
@@ -106,7 +170,7 @@ window.PLANETENUHR_RETROGRADE_MODEL = (() => {
       return { width, height, path, stationMarkers, currentPoint, arrowPoint };
     }
 
-    return {apparentDailyMotion, findNearestStationDate, unwrapLongitudeSeries, samplePath};
+    return {apparentDailyMotion, findNearestStationDate, unwrapLongitudeSeries, projectSkyTrack, samplePath, calculationWindow};
   }
   return {create};
 })();

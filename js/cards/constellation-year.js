@@ -4,6 +4,7 @@ window.PLANETENUHR_CONSTELLATION_YEAR = (() => {
    * @param {object} options DOM access, configured constellations and rendering adapters.
    * @param {Function} options.renderDetail Renders a configured constellation into supplied detail targets.
    * @param {Function} options.getTranslations Returns the active language pack.
+   * @param {object} options.details Shared constellation profile renderer.
    * @returns {{render:Function}} Controller for the date-driven yearly wheel.
    */
   function create(options){
@@ -15,6 +16,7 @@ window.PLANETENUHR_CONSTELLATION_YEAR = (() => {
     const detailMap = document.getElementById('constellationYearDetailMap');
     const detailSkyHint = document.getElementById('constellationYearDetailSkyHint');
     const detailSummary = document.getElementById('constellationYearDetailSummary');
+    const detailDescription = document.getElementById('constellationYearDetailDescription');
     let detailOpener = null;
 
     if (detailDialog && detailClose) {
@@ -28,7 +30,7 @@ window.PLANETENUHR_CONSTELLATION_YEAR = (() => {
     }
 
     /**
-     * Opens the selected constellation with its star chart and seasonal guide.
+     * Opens the selected constellation with its star chart, description and seasonal guide.
      * @param {object} item Configured constellation for one month.
      * @param {object} context Shared dashboard context.
      * @param {SVGElement} opener Focusable constellation control in the yearly wheel.
@@ -56,7 +58,12 @@ window.PLANETENUHR_CONSTELLATION_YEAR = (() => {
         idPrefix:'constellation-year-detail-',
         suppressLayout:true
       });
+      options.details.render(detailDescription, item.name, context.language, item.highlight);
       detailDialog.showModal();
+      const detailContent = detailDialog.querySelector('.diagram-detail-content');
+      if (detailContent) {
+        detailContent.scrollTop = 0;
+      }
     }
     // Draw the annual constellation wheel:
     // - one configured constellation per month
@@ -197,10 +204,12 @@ window.PLANETENUHR_CONSTELLATION_YEAR = (() => {
         const mini = document.getElementById('constellationYearMiniTemplate').content.querySelector('g').cloneNode(true);
         mini.setAttribute('transform', `translate(${miniPoint.x} ${miniPoint.y})`);
         const figure = mini.querySelector('[data-constellation-figure]');
+        const drawing = options.illustrations.prepare(item);
+        options.illustrations.append(figure, drawing, 34, -17);
 
-        (item.lines || []).forEach(([fromIndex, toIndex]) => {
-          const from = item.stars && item.stars[fromIndex];
-          const to = item.stars && item.stars[toIndex];
+        (drawing.lines || []).forEach(([fromIndex, toIndex]) => {
+          const from = drawing.stars && drawing.stars[fromIndex];
+          const to = drawing.stars && drawing.stars[toIndex];
           if (!from || !to) return;
           const line = document.getElementById('constellationYearLineTemplate').content.querySelector('line').cloneNode(true);
           line.setAttribute('x1', ((from[0] - 50) * 0.34).toFixed(1));
@@ -210,7 +219,7 @@ window.PLANETENUHR_CONSTELLATION_YEAR = (() => {
           figure.appendChild(line);
         });
 
-        (item.stars || []).forEach((star, starIndex) => {
+        (drawing.stars || []).forEach((star, starIndex) => {
           const starNode = document.getElementById('constellationYearStarTemplate').content.querySelector('circle').cloneNode(true);
           starNode.setAttribute('cx', ((star[0] - 50) * 0.34).toFixed(1));
           starNode.setAttribute('cy', ((star[1] - 50) * 0.34).toFixed(1));

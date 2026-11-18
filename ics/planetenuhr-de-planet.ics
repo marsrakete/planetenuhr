@@ -126,6 +126,26 @@ DESCRIPTION:Sichtbarkeit: Morgen-/Ostdämmerung\, niedrig\n\nEnge Begegnung\, ab
 X-PLANETENUHR-VISIBILITY:Morgen-/Ostdämmerung\, niedrig
 END:VEVENT
 BEGIN:VEVENT
+UID:planetenuhr-de-planet-2027-05-10-merkur-am-abendhimmel@marsrakete.github.io
+DTSTAMP:20261117T165625Z
+DTSTART;VALUE=DATE:20270510
+DTEND;VALUE=DATE:20270604
+SUMMARY:Merkur am Abendhimmel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: In Mitteleuropa nach Sonnenuntergang tief im Westnordwesten.\n\nEin freier Blick zum Horizont hilft. Am 28. Mai erreicht Merkur seine größte östliche Elongation.
+X-PLANETENUHR-VISIBILITY:In Mitteleuropa nach Sonnenuntergang tief im Westnordwesten.
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2027-05-28-merkur-in-gr-ter-stlicher-elongation@marsrakete.github.io
+DTSTAMP:20261117T164807Z
+DTSTART;VALUE=DATE:20270528
+DTEND;VALUE=DATE:20270529
+SUMMARY:Merkur in größter östlicher Elongation
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: In Mitteleuropa etwa vom 10. Mai bis Anfang Juni nach Sonnenuntergang tief im Westnordwesten.\n\nAm 28. Mai erreicht Merkur mit 22° 55′ seinen größten östlichen Winkelabstand zur Sonne. Ein freier Blick zum Horizont hilft.
+X-PLANETENUHR-VISIBILITY:In Mitteleuropa etwa vom 10. Mai bis Anfang Juni nach Sonnenuntergang tief im Westnordwesten.
+END:VEVENT
+BEGIN:VEVENT
 UID:planetenuhr-de-planet-2027-07-05-erde-im-aphel@marsrakete.github.io
 DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20270705
@@ -144,6 +164,26 @@ SUMMARY:Konjunktion Venus-Jupiter
 CATEGORIES:PLANET
 DESCRIPTION:Sichtbarkeit: Sehr sonnennah\; schwierig oder unsicher zu beobachten\n\nGeometrisch eng\, aber nur etwa 4 Grad von der Sonne entfernt. Nicht mit Optik in Sonnennähe suchen.
 X-PLANETENUHR-VISIBILITY:Sehr sonnennah\; schwierig oder unsicher zu beobachten
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2027-10-29-merkur-am-morgenhimmel@marsrakete.github.io
+DTSTAMP:20261117T171211Z
+DTSTART;VALUE=DATE:20271029
+DTEND;VALUE=DATE:20271120
+SUMMARY:Merkur am Morgenhimmel
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: In Mitteleuropa vor Sonnenaufgang tief im Ostsüdosten.\n\nDie besten Chancen liegen etwa zwischen dem 1. und 15. November. An den Randtagen ist Merkur schwieriger zu sehen. Am 4. November erreicht er seine größte westliche Elongation.
+X-PLANETENUHR-VISIBILITY:In Mitteleuropa vor Sonnenaufgang tief im Ostsüdosten.
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-de-planet-2027-11-04-merkur-in-gr-ter-westlicher-elongation@marsrakete.github.io
+DTSTAMP:20261117T171211Z
+DTSTART;VALUE=DATE:20271104
+DTEND;VALUE=DATE:20271105
+SUMMARY:Merkur in größter westlicher Elongation
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: In Mitteleuropa vor Sonnenaufgang tief im Ostsüdosten.\n\nMerkur erreicht mit 18° 46′ seinen größten westlichen Winkelabstand zur Sonne. Ein freier Blick zum Horizont hilft.
+X-PLANETENUHR-VISIBILITY:In Mitteleuropa vor Sonnenaufgang tief im Ostsüdosten.
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-de-planet-2027-11-25-konjunktion-venus-mars@marsrakete.github.io

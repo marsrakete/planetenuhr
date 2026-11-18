@@ -2072,15 +2072,6 @@
     .constellation-year-selection:focus .constellation-name-label{
       fill:#1d4ed8;
     }
-    .constellation-year-detail-content{
-      display:grid;
-      justify-items:center;
-      gap:12px;
-      padding:12px;
-    }
-    .constellation-year-detail-content .constellation-map{
-      margin-top:0;
-    }
     .constellation-mini-line{
       stroke:#94a3b8;
       stroke-width:1.2;
@@ -3338,6 +3329,24 @@
     .calendar-month-events{
       display:grid;
       gap:2px;
+    }
+    .calendar-month-ranges{
+      display:grid;
+      gap:2px;
+    }
+    .calendar-month-ranges:empty{
+      display:none;
+    }
+    .calendar-month-range{
+      height:5px;
+      border-radius:4px;
+      background:#f7e5be;
+    }
+    .calendar-month-range.is-range-start{
+      box-shadow:inset 5px 0 #b56c18;
+    }
+    .calendar-month-range.is-range-end{
+      box-shadow:inset -5px 0 #b56c18;
     }
     .calendar-month-event{
       display:flex;

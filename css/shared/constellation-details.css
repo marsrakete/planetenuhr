@@ -1,0 +1,129 @@
+/* Shared profile layout and typography for both constellation cards. */
+.constellation-detail-dialog,
+.constellation-visibility-dialog {
+  width:min(1040px, calc(100vw - 32px));
+  max-width:1040px;
+  max-height:calc(100dvh - 32px);
+  overflow:hidden;
+  box-sizing:border-box;
+}
+.constellation-detail-dialog:modal {
+  display:grid;
+  grid-template-rows:auto auto minmax(0, 1fr);
+}
+.constellation-detail-dialog > .diagram-dialog-heading {
+  padding-bottom:10px;
+}
+.constellation-detail-dialog > p {
+  margin:0 0 14px;
+  color:var(--muted);
+  line-height:1.5;
+}
+.constellation-visibility-dialog-body {
+  max-height:calc(100dvh - 34px);
+  box-sizing:border-box;
+  grid-template-rows:auto auto minmax(0, 1fr);
+}
+.constellation-detail-layout,
+.constellation-year-detail-content.constellation-detail-layout {
+  display:grid;
+  grid-template-columns:minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items:start;
+  justify-items:stretch;
+  gap:28px;
+  padding:4px 8px 16px 0;
+  border:0;
+  border-radius:0;
+  overflow:auto;
+  min-height:0;
+  max-height:calc(100dvh - 160px);
+}
+.constellation-detail-visual {
+  display:grid;
+  align-content:start;
+  justify-items:stretch;
+  gap:14px;
+  min-width:0;
+}
+.constellation-detail-visual .constellation-map,
+.constellation-detail-visual .constellation-skyhint,
+.constellation-detail-visual .constellation-summary {
+  width:100%;
+  max-width:none;
+  margin:0;
+  box-sizing:border-box;
+}
+.constellation-detail-visual .constellation-name,
+.constellation-detail-visual [data-constellation-highlight] {
+  display:none;
+}
+.constellation-detail-visual .constellation-summary {
+  padding:0 2px;
+  line-height:1.6;
+}
+.constellation-detail-visual .constellation-visibility-detail-figure .constellation-map {
+  width:100%;
+  margin:0;
+}
+.constellation-detail-layout .constellation-description {
+  width:100%;
+  min-width:0;
+  box-sizing:border-box;
+  text-align:left;
+  line-height:1.6;
+  overflow-wrap:anywhere;
+}
+.constellation-detail-layout .constellation-description-meta {
+  margin:0 0 8px;
+  color:var(--muted);
+  font-size:var(--font-note);
+  font-weight:600;
+}
+.constellation-description [data-constellation-description-intro] {
+  margin:0 0 22px;
+  font-size:var(--font-body);
+  line-height:1.65;
+}
+.constellation-description dl {
+  display:grid;
+  gap:18px;
+  margin:0 0 22px;
+}
+.constellation-description dt {
+  font-weight:700;
+}
+.constellation-description dd {
+  margin:4px 0 0;
+}
+.constellation-description-note {
+  color:var(--muted);
+  font-size:var(--font-note);
+}
+.constellation-description h4 {
+  margin:20px 0 8px;
+  font-size:var(--font-body);
+}
+.constellation-description ul {
+  padding-left:20px;
+  margin:0 0 12px;
+}
+.constellation-description li {
+  margin:6px 0;
+}
+@media (max-width:700px) {
+  .constellation-detail-dialog,
+  .constellation-visibility-dialog {
+    width:calc(100vw - 20px);
+    max-height:calc(100dvh - 20px);
+  }
+  .constellation-detail-layout,
+  .constellation-year-detail-content.constellation-detail-layout {
+    grid-template-columns:minmax(0, 1fr);
+    gap:24px;
+    max-height:calc(100dvh - 170px);
+    padding-right:4px;
+  }
+  .constellation-visibility-dialog-body {
+    max-height:calc(100dvh - 22px);
+  }
+}

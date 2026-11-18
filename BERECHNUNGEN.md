@@ -418,6 +418,8 @@ Beide Ansichten sind an dasselbe Datum gekoppelt, damit der Jahresstand und die 
 
 ### Retrograd-Phasen
 
+Der Reiter **Berechnung** zeigt die vollständige Rückläufigkeitsphase, die dem gewählten Datum am nächsten liegt. Die Himmelsbahn trägt die fortlaufende geozentrische ekliptikale Länge waagerecht und die Breite senkrecht auf. Die beiden Umkehrpunkte ergeben sich aus dem Vorzeichenwechsel zwischen aufeinanderfolgenden Tageswerten. Pfeile markieren vor, während und nach der Rückläufigkeit die jeweilige Bewegungsrichtung. In der gemeinsamen Bahngrafik entsprechen die beiden Blicklinien den farbigen Punkten auf der Himmelsbahn. Der Abstand beträgt zehn Tage. Die Formel ergibt die mittlere Längenänderung pro Tag über diesen Zeitraum.
+
 Die Retrograd-Kachel benutzt eine geozentrische Bahn aus zwei Koordinaten:
 
 - geozentrische Länge
@@ -728,6 +730,8 @@ Die Tagesgrenzen der Zeitleistenabschnitte und Sprungdaten sind illustrative Ein
 
 Die SVG-Szenen in `js/data/sky-knowledge-graphics-config.js` verwenden feste Zeichenkoordinaten (360 × 158). Es werden dafür keine Ephemeriden oder tagesabhängigen Himmelspositionen berechnet. Beschriftungen und sichtbare Bildunterschriften erläutern Aussage und Vereinfachung in Deutsch, Englisch und Französisch.
 
+Die vier Szenen zu extremen Objekten zeigen die geneigten Strahlen eines Pulsars, die Akkretionsscheibe um einen Ereignishorizont, den Auswurf einer Kernkollaps-Supernova und die abwechselnde Dehnung und Stauchung bei einer Gravitationswelle. Größen, Farben und Verformungen sind schematisch.
+
 - Planeten- und Mondfolgen geben die Reihenfolge wieder, keine maßstäblichen Entfernungen. Die galileischen Monde stehen nach wachsendem Bahnradius; ihre momentane Stellung wird nicht berechnet.
 - Beim Jupiter-Erde-Vergleich gilt für die gezeichneten Kreisradien `44 / 4 = 11`, also auch für die Durchmesser ungefähr 11 : 1. Der Abstand ist frei gewählt. Der Vergleich Beteigeuze/Sonne und der Vergleich Weißer Zwerg/Erde sind ausdrücklich schematisch; daraus darf kein genauer Radius abgelesen werden.
 - Die Venus-Balken verwenden für beide Rotations- bzw. Umlaufzeiten `Breite = Erdentage × 1 SVG-Einheit`: 243 und 225 Tage. Die Rotation ist siderisch, kein Sonnentag. Beim Temperaturvergleich gilt `Breite = Temperatur in °C × 0,6`, Ausgangspunkt 0 °C. Merkurs Tagesmaximum von etwa 430 °C wird mit etwa 467 °C an der Venusoberfläche verglichen; es sind keine zwei Mitteltemperaturen. Quellen: [NASA Merkur](https://science.nasa.gov/mercury/facts/) und [NASA Venus](https://science.nasa.gov/venus/venus-facts/).
@@ -808,3 +812,21 @@ Die Indexanteile verteilen die Marker für eine lesbare Darstellung. Sie sind ke
 Die Ellipsenradien sind weiterhin Zeichnungswerte. Bei Standardlayout gilt `r = 34 + 28 + 18 · Index`, `r_x = min(165,r)` und `r_y = max(20, |r · max(0.2,cos i)|)` mit konfigurierter Inklination i. Die Höhe in Kilometern wird in den Details ausgegeben; sie bestimmt hier nicht den Zeichenradius. Der Ellipsenpunkt `(r_x cos θ, r_y sin θ)` wird mit dem konfigurierten RAAN-Winkel gedreht und auf den Mittelpunkt `(210,210)` verschoben.
 
 `js/cards/satellites.js` zeichnet diese Punkte und die bisherigen Details. Die Positionen sind schematische mittlere Umläufe, keine aus aktuellen TLE-Daten propagierten Bahnen und keine Vorhersage sichtbarer Überflüge. Die Auslagerung verändert weder Konfiguration noch Formeln.
+
+### Sichtbarkeit der Sternbilder
+
+`js/data/constellation-visibility-config.js` enthält die Monatsbereiche aus der bereitgestellten Mitteleuropa-Übersicht. Diese Zeitfenster werden unverändert als Monatsliste und Jahresmatrix dargestellt; sie sind keine ortsgenaue Sichtbarkeitsprognose. Die geografische Blickrichtung wird separat für den gewählten Ort berechnet.
+
+Jedes Sternbild erhält einen ungefähren Mittelpunkt aus den Mittelpunkten seiner Rektaszensions- und Deklinationsausdehnung. Diese Werte sind als J2000-Koordinaten abgelegt. `js/models/constellation-visibility-model.js` präzediert sie mit der üblichen Näherung für die mittlere Äquinoktiallage des Datums. Für die ausgewählte Ortszeit wird die Sternzeit und daraus der Stundenwinkel bestimmt:
+
+`H = LST − α`
+
+Mit geografischer Breite `φ` und Deklination `δ` ergibt sich die geometrische Höhe:
+
+`sin(h) = sin(φ) · sin(δ) + cos(φ) · cos(δ) · cos(H)`
+
+Azimut und Höhe werden anschließend mit der gemeinsamen Horizonttransformation in `js/models/astronomy-coordinates.js` bestimmt. Die Referenzzeit ist 22:00 in der Standardzeit des gewählten Orts und 23:00 während dessen Sommerzeit; der globale Uhrzeitregler wird dafür nicht verwendet. Die App erkennt die Standardzeit über die kleinste der im Januar und Juli gefundenen UTC-Abweichungen.
+
+Positive Höhen werden zusätzlich mit `PLANETENUHR_OBSERVATION_FORMAT.altitudeThumbEstimate` als Daumen-, Finger-, Faust-, Handspannen- oder Ellenhöhe beschrieben. Die Gradzahl bleibt der berechnete Wert; der Vergleich ist eine leicht verständliche Schätzung.
+
+Die Tabellenmittelpunkte sind Näherungen, nicht die Lage jedes Sterns oder die genaue geometrische Mitte der IAU-Fläche. Refraktion, Dämmerungshelligkeit, Sternhelligkeit, Wetter, Gelände und Gebäude bleiben unberücksichtigt. Die Linienfiguren aller 49 Sternbilder werden aus den Stellarium-Modern-Linien und den HIP-Koordinaten des HYG-Katalogs erzeugt. Für die Darstellung wird eine gnomonische Projektion auf den Mittelpunkt der jeweiligen Figur verwendet; Norden liegt oben, Osten links. Die Projektion ändert nicht die berechnete Blickrichtung zum ungefähren Mittelpunkt.

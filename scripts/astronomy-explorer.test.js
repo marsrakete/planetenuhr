@@ -25,6 +25,7 @@ test('the global date refresh updates both Moon displays immediately with the sa
   }
   adapters.constellationMonthController = {render:selection => adapters.renderConstellationOfMonth(selection.date)};
   adapters.constellationYearController = {render:selection => adapters.renderConstellationYear(selection.date)};
+  adapters.constellationVisibilityController = {render:selection => calls.push({name:'renderConstellationVisibility',date:selection.date})};
   adapters.seasonsController = {render:selection => adapters.renderSeasonAxis(selection.date)};
   adapters.retrogradeController = {render:selection => adapters.renderRetrogradePhases(selection.date)};
   adapters.barycenterController = {render:selection => adapters.renderBarycenter(selection.date)};

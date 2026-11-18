@@ -16,6 +16,8 @@ Planetenuhr ist ein statisches Astronomie-Dashboard als reine HTML-App. Die Anwe
 
 **Planeten über dem Horizont** zeigt die sieben anderen Planeten in einem Panorama von Norden über Osten, Süden und Westen zurück nach Norden. Negative Höhen liegen im schattierten Bereich unter dem Horizont. Alle Markierungen tragen direkt den lokalisierten Planetennamen, auch unter dem Horizont. Bei engen Gruppen werden die Namen versetzt, ohne Verbindungslinien; der ausgewählte Planet bleibt hervorgehoben. Der Zeitregler erkundet ±12 Stunden relativ zum ausgewählten Dashboard-Zeitpunkt und verändert nur diese Kachel. Datum und Uhrzeit werden in der Zeitzone des gewählten Ortes angezeigt. „Ausgewählte Zeit“ setzt den lokalen Versatz zurück.
 
+Im Reiter **Berechnung** zeigen zwei Skizzen die Höhe des ausgewählten Planeten und der Sonne. Die Formel setzt die Werte für den gewählten Standort und die angezeigte Beobachtungszeit ein.
+
 Der Himmel über der Horizontlinie wird passend zu Tag, Morgen-/Abenddämmerung oder Nacht eingefärbt. Ein Zeitband zeigt den lokalen Kalendertag, die erkundete Uhrzeit sowie Sonnenauf- und -untergang. Auch Zeitumstellungen, Polartag und Polarnacht werden berücksichtigt. Bei Polarnacht kann dennoch Dämmerung vorkommen. Ein dunkler Hintergrund bedeutet dunklen Himmel, keine garantierte Sichtbarkeit bei jedem Wetter.
 
 **Heute faszinierend** steht als erste Kachel über die gesamte Breite. Sie folgt Datum und Ort der globalen Steuerung und nennt das ausgewählte Datum ausdrücklich. Bis zu fünf Hinweise bündeln Kalenderereignisse, beobachtbare Planeten, enge Begegnungen, Meteorströme und die Mondphase. Seltene Ereignisse haben Vorrang; an ruhigen Tagen gibt es weniger Hinweise. Kleine SVG-Miniaturen machen die Themen erkennbar; die Mondminiatur folgt der Phase am ausgewählten Datum. Planeten-, Erd- und Mondgrafiken sind zentrale SVG-Komponenten. „Sonnensystem“ zeigt ausschließlich die acht Planeten, mit entzerrten schematischen Bahnabständen und datumsabhängigen Richtungen; „Erde & Mond“ und die Tagesübersicht verwenden zusätzlich den detaillierten Mond. Jeder Eintrag führt ohne Neuladen zur passenden Detailkachel. Alle Zeiten beziehen sich auf den gewählten Ort und den gesamten lokalen Kalendertag. Sonnenauf- und -untergang stehen darunter.
@@ -38,7 +40,11 @@ Die Rechenmodelle, Konstanten und Näherungen stehen in [BERECHNUNGEN.md](BERECH
 
 **Milchstraße** zeigt eine Chandra-Künstlerdarstellung mit gestrichelten Umrissen der aktualisierten Positionen zweier äußerer Spiralarme sowie eine schematische Himmelskuppel. Ihr Außenkreis ist der Horizont, die Mitte der Zenit. Der sichtbare Abschnitt des Milchstraßenbands richtet sich nach dem ausgewählten Zeitpunkt und Ort; die Sonnenhöhe dimmt es bei Tageslicht und Dämmerung. Interaktive Markierungen führen zu Erläuterungen über galaktisches Zentrum, frühere Schätzung und neue Messung. Die ?-Hilfe ordnet die Lage unseres Sonnensystems in der Orion-Spur ein. Die Messungen betreffen eine bestimmte Blickrichtung und sind keine vollständige Neuvermessung der Galaxis. Bildnachweis: NASA/CXC/SAO/M. Weiss; Quellen und Näherungen stehen in der Kachelhilfe und in [BERECHNUNGEN.md](BERECHNUNGEN.md).
 
-**Himmelswissen** zeigt 31 kurze Eselsbrücken, Merksätze und Fakten über Planeten und Sterne. Beim Laden wird zufällig gemischt; „Nächster“ führt ohne automatische Wechsel durch alle Einträge. Fremdsprachige Originale bleiben als eigene Einträge erhalten und erhalten in den anderen App-Sprachen einen übersetzten Untertitel. Kleine Grafiken veranschaulichen jeden Eintrag, etwa durch Sternbildskizzen, Farbreihen und Größenvergleiche. Erklärungen, Quellen und regionale Hinweise stehen direkt dabei; Bildunterschriften erläutern die schematische Darstellung.
+**Himmelswissen** zeigt 35 kurze Eselsbrücken, Merksätze und Fakten über Planeten, Sterne und extreme Objekte im All. Beim Laden wird zufällig gemischt; „Nächster“ führt ohne automatische Wechsel durch alle Einträge. Fremdsprachige Originale bleiben als eigene Einträge erhalten und erhalten in den anderen App-Sprachen einen übersetzten Untertitel. Kleine Grafiken veranschaulichen jeden Eintrag, etwa durch Sternbildskizzen, Farbreihen und Größenvergleiche. Erklärungen, Quellen und regionale Hinweise stehen direkt dabei; Bildunterschriften erläutern die schematische Darstellung.
+
+**Sichtbarkeit der Sternbilder** zeigt die Monatsbereiche der bereitgestellten Mitteleuropa-Übersicht als Monatsliste oder Jahresmatrix. In der Monatsliste ergänzen Kompass und Höhe die Richtung des ungefähren Sternbildmittelpunkts am gewählten Ort um 22 Uhr Normalzeit beziehungsweise 23 Uhr Sommerzeit. Alle 49 Sternbilder haben eine Miniatur und eine größere Linienzeichnung nach Stellarium Modern; ein Klick öffnet die Details.
+
+**Sichtbarkeit der Sternbilder** zeigt die Monatsbereiche der bereitgestellten Mitteleuropa-Übersicht als Monatsliste oder Jahresmatrix. In der Monatsliste ergänzen Kompass und Höhe die Richtung des ungefähren Sternbildmittelpunkts am gewählten Ort um 22 Uhr Normalzeit beziehungsweise 23 Uhr Sommerzeit. Ein Klick öffnet eine größere Linienzeichnung, sofern sie bereits in der App hinterlegt ist.
 
 **IDEFIX auf dem Weg zu Phobos** zeigt Sonne, Erde, Mars und die Reise von MMX mit dem Rover als Pixelspur. Phobos ist separat vergrößert dargestellt. Regler und Tages-, Monats- und Jahresschritte erkunden den Missionsplan bis 2031. Die Markierung basiert auf einer JAXA/JPL-Bahnvorhersage bis Ende 2028, nicht auf Live-Telemetrie; spätere Zielmarkierungen sind als Planung gekennzeichnet. Der zuletzt bestätigte Missionsstand steht mit Prüfdatum und Links zu JAXA-Missionsnews, DLR, CNES und ESA daneben. IDEFIX verbleibt nach der geplanten Landung auf Phobos; die Probenkapsel soll zur Erde zurückkehren.
 
@@ -56,6 +62,7 @@ Die App startet mit Version **1.0**. Im Einstellungsmenü der Datumsleiste steht
   - Planetenkonjunktionen
   - Sternbild des Monats
   - Jahresuhr der Sternbilder
+  - Sichtbarkeit der Sternbilder
   - Jahreszeiten
   - Retrograd-Phasen
   - Merkur- und Venus-Phasen
@@ -121,6 +128,10 @@ Die Seite unterstützt Deep-Links für Datum, Ort, Sprache und eine direkte Ziel
   saisonal passendes Sternbild mit Linienfigur und Sternnamen
 - `Jahresuhr der Sternbilder`\
   Monatskreis mit vergrößerten Sternbild-Minis und Jahresmarker
+- `Sichtbarkeit der Sternbilder`\
+  Monatsliste und Jahresmatrix mit Richtungs- und Höhenangabe für den gewählten Ort
+- `Sichtbarkeit der Sternbilder`\
+  Monatsliste und Jahresmatrix mit Richtungs- und Höhenangabe für den gewählten Ort
 - `Jahreszeiten`\
   Draufsicht auf die Erdbahn plus Seitenansicht für Achsneigung und Sonnenstand
 
@@ -190,7 +201,7 @@ Dieser Abschnitt beschreibt den aktuellen Stand der Datenquellen fuer den Himmel
 ### Dateien und Aufgaben
 
 - `js/data/calendar-events.js`\
-  handgepflegte Basis-Eintraege, vor allem fuer 2026 und 2027
+  handgepflegte Basis-Eintraege, vor allem fuer 2026 und 2027. Bei Zeiträumen ist `date` der erste Tag und `endDate` der letzte eingeschlossene Tag.
 - `js/data/eclipse-calendar-config.js`\
   gemeinsame Finsternis-Datenbasis und lokalisierte Kalender-Erweiterung bis Dezember 2040
 - `js/data/extended-calendar-config.js`\

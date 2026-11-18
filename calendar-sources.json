@@ -156,6 +156,36 @@
       "reviewIntervalDays": 120,
       "lastReviewed": "2026-08-04",
       "notes": "Planetary events, conjunctions, elongations and selected Moon-planet encounters."
+    },
+    {
+      "key": "naoj-phenomena-2027",
+      "label": "National Astronomical Observatory of Japan · Celestial Phenomena 2027",
+      "url": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_en.cgi?year=2027",
+      "usedBy": ["js/data/calendar-events.js"],
+      "categories": ["planet"],
+      "reviewIntervalDays": 365,
+      "lastReviewed": "2026-11-17",
+      "notes": "Dates and angles of Mercury’s greatest elongations on 2027-05-28 and 2027-11-04."
+    },
+    {
+      "key": "vds-mercury-evening-2027",
+      "label": "Vereinigung der Sternfreunde · Himmelsereignisse",
+      "url": "https://sternfreunde.de/himmelsereignisse/",
+      "usedBy": ["js/data/calendar-events.js"],
+      "categories": ["planet"],
+      "reviewIntervalDays": 180,
+      "lastReviewed": "2026-11-17",
+      "notes": "Central European observing context for Mercury’s May evening apparition and the November 1–15 morning apparition in 2027."
+    },
+    {
+      "key": "sterngucker-elongations-2027",
+      "label": "Sterngucker · Elongationen von Merkur und Venus",
+      "url": "https://www.sterngucker.de/planeten/elongation/",
+      "usedBy": ["js/data/calendar-events.js"],
+      "categories": ["planet"],
+      "reviewIntervalDays": 365,
+      "lastReviewed": "2026-11-17",
+      "notes": "Skyfield and DE421 calculation for 50° N, 9° E, including the east-southeast viewing direction on 2027-11-04."
     }
   ]
 }

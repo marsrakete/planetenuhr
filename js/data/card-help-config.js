@@ -393,6 +393,30 @@ window.PLANETENUHR_CARD_HELP = {
           { label: "CDS VizieR star catalog service", url: "https://vizier.cds.unistra.fr/viz-bin/VizieR-2" }
         ]
       },
+      constellation_visibility: {
+        intro: [
+          "The month ranges reproduce the supplied Central Europe guide. The month view adds the bearing and altitude of each constellation's approximate center for the selected place.",
+          "Select a constellation name to open its detail view. Stellarium Modern line sketches are included for all 49 constellations in this guide."
+        ],
+        formulas: [
+          { expr: "H = LST - &alpha;", note: "Local hour angle from local sidereal time and right ascension of the approximate constellation center." },
+          { expr: "sin h = sin &phi; sin &delta; + cos &phi; cos &delta; cos H", note: "Geometric altitude h for observer latitude &phi; and center declination &delta;. Azimuth is computed from the same hour angle and coordinates." }
+        ],
+        details: [
+          "The displayed direction is calculated for the selected date at 22:00 local standard time or 23:00 local daylight time, using the selected app location. It does not follow the global hour slider.",
+          "The month ranges are a historical reference for Central Europe, not a visibility promise for every selected location. The calculated altitude shows whether the approximate center is above the geometric horizon at the selected place and reference time.",
+          "Altitudes above the horizon also include the familiar hand and finger comparison as an easy-to-read estimate.",
+          "Each direction points to an approximate geometric center of the constellation, not to every star in its figure. Coordinates are J2000 center estimates based on the midpoint of the constellation's right-ascension and declination extents, precessed to the selected date. Atmospheric refraction, star brightness, twilight, weather, terrain and buildings are not modeled.",
+          "All 49 constellations in this guide have a Stellarium Modern line sketch. Their center coordinates remain approximate and are used only for the direction calculation."
+        ],
+        links: [
+          { label: "US Naval Observatory: Altitude and azimuth", url: "https://aa.usno.navy.mil/faq/alt_az" },
+          { label: "Stellarium Modern sky culture", url: "https://github.com/Stellarium/stellarium/tree/master/skycultures/modern" },
+          { label: "HYG star catalogue", url: "https://github.com/astronexus/HYG-Database" },
+          { label: "IAU: The constellations", url: "https://www.iau.org/Iau/Science/What-we-do/The-Constellations.aspx" },
+          { label: "Approximate constellation center coordinates", url: "https://en.wikipedia.org/wiki/IAU_designated_constellations_by_solid_angle" }
+        ]
+      },
       night_visibility: {
         intro: [
           "This card stretches the selected night from dusk to dawn and estimates when each bright planet is up.",
@@ -928,6 +952,30 @@ window.PLANETENUHR_CARD_HELP = {
           { label: "CDS VizieR star catalog service", url: "https://vizier.cds.unistra.fr/viz-bin/VizieR-2" }
         ]
       },
+      constellation_visibility: {
+        intro: [
+          "Die Monatsbereiche übernehmen die bereitgestellte Übersicht für Mitteleuropa. Die Monatsansicht ergänzt für den gewählten App-Ort die Blickrichtung und Höhe des ungefähren Mittelpunktes.",
+          "Ein Klick auf einen Sternbildnamen öffnet Details. Für alle 49 Sternbilder der Übersicht ist eine Stellarium-Modern-Linienskizze hinterlegt."
+        ],
+        formulas: [
+          { expr: "H = LST - &alpha;", note: "Stundenwinkel aus lokaler Sternzeit und Rektaszension des ungefähren Sternbildmittelpunkts." },
+          { expr: "sin h = sin &phi; sin &delta; + cos &phi; cos &delta; cos H", note: "Geometrische Höhe h für geografische Breite &phi; und Deklination &delta;. Das Azimut wird aus denselben Koordinaten berechnet." }
+        ],
+        details: [
+          "Die Blickrichtung wird für das gewählte Datum um 22:00 Uhr Ortszeit (Normalzeit) beziehungsweise 23:00 Uhr Ortszeit (Sommerzeit) und am gewählten App-Ort berechnet. Sie folgt nicht dem globalen Uhrzeitregler.",
+          "Die Monatsbereiche sind eine Orientierungsvorlage für Mitteleuropa und keine Sichtbarkeitsgarantie für jeden gewählten Ort. Die berechnete Höhe zeigt, ob der ungefähre Mittelpunkt am Ort und zur Bezugszeit über dem geometrischen Horizont steht.",
+          "Höhen über dem Horizont erhalten zusätzlich den gewohnten Hand-/Fingervergleich als leicht verständliche Schätzung.",
+          "Die Richtung zeigt auf einen ungefähren geometrischen Mittelpunkt des Sternbilds, nicht auf jeden Stern seiner Figur. Die J2000-Mittelpunktkoordinaten sind Näherungen aus den Mittelpunkten der Rektaszensions- und Deklinationsausdehnung und werden auf das gewählte Datum präzediert. Refraktion, Sternhelligkeit, Dämmerung, Wetter, Gelände und Gebäude werden nicht berücksichtigt.",
+          "Für alle 49 Sternbilder der Übersicht gibt es eine Stellarium-Modern-Linienskizze. Die Mittelpunktskoordinaten bleiben Näherungen und dienen nur zur Berechnung der Blickrichtung."
+        ],
+        links: [
+          { label: "US Naval Observatory: Höhe und Azimut", url: "https://aa.usno.navy.mil/faq/alt_az" },
+          { label: "Stellarium Modern: Sternbildlinien", url: "https://github.com/Stellarium/stellarium/tree/master/skycultures/modern" },
+          { label: "HYG-Sternkatalog", url: "https://github.com/astronexus/HYG-Database" },
+          { label: "IAU: Sternbilder", url: "https://www.iau.org/Iau/Science/What-we-do/The-Constellations.aspx" },
+          { label: "Näherungskoordinaten der Sternbildmittelpunkte", url: "https://en.wikipedia.org/wiki/IAU_designated_constellations_by_solid_angle" }
+        ]
+      },
       night_visibility: {
         intro: [
           "Diese Kachel spannt die ausgewählte Nacht von der Abenddämmerung bis zur Morgendämmerung auf und schätzt, wann helle Planeten über dem Horizont stehen.",
@@ -1461,6 +1509,30 @@ window.PLANETENUHR_CARD_HELP = {
           { label: "CDS VizieR star catalog service", url: "https://vizier.cds.unistra.fr/viz-bin/VizieR-2" }
         ]
       },
+      constellation_visibility: {
+        intro: [
+          "Les périodes reprennent le guide fourni pour l'Europe centrale. La vue mensuelle ajoute la direction et la hauteur du centre approximatif de chaque constellation pour le lieu sélectionné.",
+          "Sélectionnez un nom pour ouvrir les détails. Les tracés Stellarium Modern sont inclus pour les 49 constellations du guide."
+        ],
+        formulas: [
+          { expr: "H = LST - &alpha;", note: "Angle horaire local à partir du temps sidéral local et de l'ascension droite du centre approximatif." },
+          { expr: "sin h = sin &phi; sin &delta; + cos &phi; cos &delta; cos H", note: "Hauteur géométrique h pour la latitude &phi; et la déclinaison &delta;. L'azimut est calculé à partir du même angle horaire et des mêmes coordonnées." }
+        ],
+        details: [
+          "La direction est calculée pour la date choisie à 22 h en heure standard locale ou à 23 h en heure d'été locale, au lieu sélectionné dans l'application. Elle ne suit pas le curseur horaire global.",
+          "Les périodes mensuelles sont une référence pour l'Europe centrale, pas une garantie de visibilité pour tous les lieux. La hauteur calculée indique si le centre approximatif dépasse l'horizon géométrique au lieu et à l'heure choisis.",
+          "Les hauteurs au-dessus de l'horizon incluent aussi l'estimation habituelle en doigts ou en main, pour faciliter la lecture.",
+          "La direction vise le centre géométrique approximatif de la constellation, pas toutes les étoiles de sa figure. Les coordonnées J2000 sont estimées au milieu des étendues en ascension droite et en déclinaison, puis précessées à la date choisie. Réfraction, éclat des étoiles, crépuscule, météo, relief et bâtiments ne sont pas modélisés.",
+          "Les 49 constellations du guide disposent d'un tracé Stellarium Modern. Les coordonnées de leur centre restent approximatives et servent uniquement au calcul de la direction."
+        ],
+        links: [
+          { label: "US Naval Observatory : hauteur et azimut", url: "https://aa.usno.navy.mil/faq/alt_az" },
+          { label: "Culture céleste Stellarium Modern", url: "https://github.com/Stellarium/stellarium/tree/master/skycultures/modern" },
+          { label: "Catalogue d'étoiles HYG", url: "https://github.com/astronexus/HYG-Database" },
+          { label: "IAU : les constellations", url: "https://www.iau.org/Iau/Science/What-we-do/The-Constellations.aspx" },
+          { label: "Coordonnées approximatives des centres", url: "https://en.wikipedia.org/wiki/IAU_designated_constellations_by_solid_angle" }
+        ]
+      },
       night_visibility: {
         intro: [
           "Cette carte etire la nuit choisie du crepuscule du soir a l'aube et estime quand les planetes brillantes sont au-dessus de l'horizon.",
@@ -1610,6 +1682,8 @@ window.PLANETENUHR_CARD_HELP.en.cards.planet_horizon = {
   ],
   "details": [
     "Times use the selected city's time zone. Selected time restores the shared dashboard instant.",
+    "In the Calculation tab, h is the altitude above or below the horizon. The selected location’s latitude φ enters the altitude formula directly. Its longitude is added to the Greenwich sidereal angle for the observation instant to obtain the local sidereal angle θ.",
+    "Declination δ measures how far the body lies north or south of the celestial equator. Right ascension α gives its position along that equator. The local hour angle H = θ − α measures the body’s angular displacement from the local meridian. H is given between −180° and +180°. The displayed inputs are rounded.",
     "J2000 positions are precessed to the date, then converted using local sidereal time. No refraction, nutation, aberration or observed light-time correction.",
     "Position above the horizon does not guarantee visibility. The orbital elements are fitted to 1800–2050; dates outside this interval are extrapolated."
   ],
@@ -1660,6 +1734,8 @@ window.PLANETENUHR_CARD_HELP.de.cards.planet_horizon = {
   ],
   "details": [
     "Die Uhrzeit folgt der Zeitzone des gewählten Ortes. Ausgewählte Zeit setzt den lokalen Zeitversatz zurück.",
+    "Im Reiter „Berechnung“ ist h die Höhe über oder unter dem Horizont. Die geografische Breite φ des gewählten Standorts geht direkt in die Höhenformel ein. Seine geografische Länge wird zum Sternzeitwinkel von Greenwich zum Beobachtungszeitpunkt addiert. Das ergibt den lokalen Sternzeitwinkel θ.",
+    "Die Deklination δ gibt an, wie weit der Himmelskörper nördlich oder südlich des Himmelsäquators steht. Die Rektaszension α gibt seine Position entlang des Himmelsäquators an. Der lokale Stundenwinkel H = θ − α gibt an, wie weit der Himmelskörper vom örtlichen Meridian entfernt steht. H wird im Bereich −180° bis +180° angegeben. Die eingesetzten Werte sind gerundet.",
     "J2000-Positionen werden auf das Datum präzediert und mit der lokalen Sternzeit in Horizontkoordinaten umgerechnet. Ohne Brechung, Nutation, Aberration und Lichtzeitkorrektur der beobachteten Positionen.",
     "Über dem Horizont bedeutet nicht automatisch sichtbar. Die Bahnelemente gelten für 1800–2050; außerhalb wird extrapoliert."
   ],
@@ -1710,6 +1786,8 @@ window.PLANETENUHR_CARD_HELP.fr.cards.planet_horizon = {
   ],
   "details": [
     "L’heure suit le fuseau du lieu choisi. Heure sélectionnée rétablit l’instant partagé.",
+    "Dans l’onglet Calcul, h est la hauteur au-dessus ou au-dessous de l’horizon. La latitude géographique φ du lieu choisi entre directement dans la formule de la hauteur. Sa longitude s’ajoute à l’angle sidéral de Greenwich à l’instant de l’observation pour obtenir l’angle sidéral local θ.",
+    "La déclinaison δ mesure l’écart de l’astre au nord ou au sud de l’équateur céleste. L’ascension droite α indique sa position le long de cet équateur. L’angle horaire local H = θ − α indique l’écart angulaire de l’astre par rapport au méridien local. H est exprimé entre −180° et +180°. Les valeurs affichées sont arrondies.",
     "Les positions J2000 sont précessées à la date, puis converties avec le temps sidéral local. Sans réfraction, nutation, aberration ni correction du temps de lumière observé.",
     "Au-dessus de l’horizon ne signifie pas forcément visible. Les éléments orbitaux sont valables pour 1800–2050 ; au-delà, ils sont extrapolés."
   ],
@@ -1762,38 +1840,38 @@ window.PLANETENUHR_CARD_HELP.fr.cards.planet_horizon.links.push({ label:"USNO : 
 // Knowledge-card help stays concise; each entry carries its own source and caveats.
 window.PLANETENUHR_CARD_HELP.de.cards.sky_knowledge = {
   "intro": [
-    "31 kurze Einträge: elf Eselsbrücken und Merksätze, zehn Planetenfakten und zehn Sternenfakten."
+    "35 kurze Einträge über Eselsbrücken, Planeten, Sterne und extreme Objekte im All."
   ],
   "details": [
     "Jeder Eintrag hat eine kleine statische Grafik mit sichtbarer Bildunterschrift. Größen, Abstände, Sternbildlinien und Farben sind überwiegend schematisch; Ausnahmen und verwendete Zahlen werden erläutert. Die Bilder zeigen keine aktuellen Positionen oder Mondphasen. Die Fusion ist stark vereinfacht.",
     "Beim Laden wird die Reihenfolge zufällig gemischt. „Nächster“ zeigt jeden Eintrag einmal, bevor eine neue Runde beginnt. Es gibt keinen automatischen Wechsel.",
     "Fremdsprachige Originale bleiben erhalten und bilden eigene Einträge. In den anderen Sprachen erscheint darunter ein übersetzter Untertitel; die Erklärung folgt der App-Sprache.",
     "Quellen und örtliche Einschränkungen stehen direkt beim Eintrag. Eigene Formulierungen sind gekennzeichnet; ihre Quelle belegt den Sachinhalt, nicht den Wortlaut. Die französische p/d-Regel fasst eine belegte Merkmethode zusammen.",
-    "Die Inhalte hängen nicht vom gewählten Datum oder Ort ab. Mondregeln sind ausdrücklich regionale Orientierungshilfen. Quellenstand: 19. Oktober 2026."
+    "Die Inhalte hängen nicht vom gewählten Datum oder Ort ab. Mondregeln sind ausdrücklich regionale Orientierungshilfen."
   ]
 };
 window.PLANETENUHR_CARD_HELP.en.cards.sky_knowledge = {
   "intro": [
-    "31 short entries: eleven mnemonics and memory aids, ten planet facts and ten star facts."
+    "35 short entries on mnemonics, planets, stars and extreme objects in space."
   ],
   "details": [
     "Each entry has a small static graphic with a visible caption. Sizes, distances, constellation lines and colours are mostly schematic; exceptions and numerical values are explained. Images do not show current positions or Moon phases. Fusion is highly simplified.",
     "The order is shuffled on loading. “Next” shows each entry once before a new round begins. Entries never rotate automatically.",
     "Foreign-language originals remain unchanged and are separate entries. Other languages show a translated subtitle; explanations follow the app language.",
     "Sources and regional limitations appear with each entry. App-authored wording is marked; its source supports the facts rather than the wording. The French p/d rule summarizes a documented memory technique.",
-    "Content is independent of the selected date and place. Moon rules are explicitly regional guides. References checked: 19 October 2026."
+    "Content is independent of the selected date and place. Moon rules are explicitly regional guides."
   ]
 };
 window.PLANETENUHR_CARD_HELP.fr.cards.sky_knowledge = {
   "intro": [
-    "31 entrées courtes : onze astuces et aides-mémoire, dix faits sur les planètes et dix sur les étoiles."
+    "35 courtes entrées sur les moyens mnémotechniques, les planètes, les étoiles et les objets extrêmes dans l’espace."
   ],
   "details": [
     "Chaque entrée comporte un petit schéma statique avec une légende visible. Tailles, distances, lignes des constellations et couleurs sont généralement schématiques ; les exceptions et valeurs sont expliquées. Les images ne montrent ni positions ni phases lunaires actuelles. La fusion est très simplifiée.",
     "L’ordre est mélangé au chargement. « Suivant » affiche chaque entrée une fois avant de commencer une nouvelle série. Il n’y a aucun changement automatique.",
     "Les originaux en langue étrangère restent inchangés et constituent des entrées distinctes. Les autres langues affichent un sous-titre traduit ; les explications suivent la langue de l’application.",
     "Les sources et les limites régionales figurent dans chaque entrée. Les formulations originales sont signalées ; leur source confirme les faits, pas le texte. La règle française p/d résume une méthode mnémotechnique documentée.",
-    "Ces contenus sont indépendants de la date et du lieu sélectionnés. Les règles lunaires sont explicitement des repères régionaux. Sources vérifiées le 19 octobre 2026."
+    "Ces contenus sont indépendants de la date et du lieu sélectionnés. Les règles lunaires sont explicitement des repères régionaux."
   ]
 };
 
@@ -2008,27 +2086,55 @@ window.PLANETENUHR_CARD_HELP.en.cards.daily_highlights.details.push("The schemat
 window.PLANETENUHR_CARD_HELP.fr.cards.solar_system.details.push("Les huit planètes utilisent des illustrations SVG communes. Tailles et distances sont schématiques. Les rayons fixes de js/data/solar-system-config.js espacent les planètes intérieures sans représenter leurs distances. Seules les directions héliocentriques calculées suivent la date. La Terre est représentée sans ombre nocturne dans cette vue ; les continents sont schématiques. Les libellés déplacés ont des lignes de liaison droites.");
 window.PLANETENUHR_CARD_HELP.fr.cards.daily_highlights.details.push("Les miniatures schématiques partagent leurs illustrations des planètes, de la Terre et de la Lune avec les autres cartes. La phase lunaire utilise le même modèle approché et le même terminateur que Terre et Lune ; couleurs et reliefs sont illustratifs.");
 
+const aboutConstellationSources = [
+  { label: "Stellarium · Illustrationen / Illustrations", url: "https://github.com/Stellarium/stellarium/tree/daace2add6a1bf886e8ee1934f51e9c69f818d18/skycultures/modern/illustrations" },
+  { label: "Free Art License 1.3", url: "assets/constellations/LICENSE-Free-Art-1.3.html" },
+  { label: "Illustrationen · Quellen / Sources", url: "assets/constellations/README.md" },
+  { label: "Stellarium · Modern", url: "https://github.com/Stellarium/stellarium/tree/master/skycultures/modern" },
+  { label: "HYG v4.1 · David Nash", url: "https://github.com/astronexus/HYG-Database/blob/main/hyg/CURRENT/hygdata_v41.csv" },
+  { label: "Association Sterenn · Virgo", url: "https://www.asso-sterenn.fr/comprendre/les-chemins-du-ciel-etoile/vierge/" },
+  { label: "CC BY-SA 4.0", url: "https://creativecommons.org/licenses/by-sa/4.0/" }
+];
+
 window.PLANETENUHR_CARD_HELP.de.cards.about = {
   intro: ["Hier findest du die Projektseite, offene Fehler und Vorschläge sowie das Formular für eine neue Rückmeldung. Zum Melden eines Fehlers oder Einreichen eines Vorschlags musst du bei GitHub angemeldet sein."],
+  details: [
+    "„Sternbild des Monats“ und „Jahresuhr der Sternbilder“ verwenden die Linienfiguren „Modern“ des Stellarium-Teams. Die Planetenuhr hat die Sternverbindungen in einzelne Liniensegmente für die Anzeige übertragen. Die bearbeiteten Figuren stehen unter CC BY-SA 4.0.",
+    "Sternpositionen und Sternnamen wie Bayer- und Flamsteed-Bezeichnungen stammen aus dem HYG-Sternkatalog v4.1 von David Nash (CC BY-SA 4.0). Für die Jungfrau stammen die Sternpositionen aus der Sterntabelle der Association Sterenn.",
+    "Die 47 figürlichen Illustrationen stammen aus Stellarium Modern (Stellarium-Team) und stehen unter der Free Art License 1.3. Planetenuhr hat die Bilder anhand ihrer Referenzsterne umprojiziert, den schwarzen Hintergrund transparent aufbereitet und die Deckkraft reduziert. Schlangenkopf und Schlangenschwanz bleiben ohne Illustration. Originale, Bearbeitungsnachweis und Lizenz liegen unter assets/constellations/."
+  ],
   links: [
     { label: "Projekt auf GitHub", url: "https://github.com/marsrakete/planetenuhr" },
     { label: "Offene Issues ansehen", url: "https://github.com/marsrakete/planetenuhr/issues" },
-    { label: "Fehler melden oder Vorschlag machen", url: "https://github.com/marsrakete/planetenuhr/issues/new" }
+    { label: "Fehler melden oder Vorschlag machen", url: "https://github.com/marsrakete/planetenuhr/issues/new" },
+    ...aboutConstellationSources
   ]
 };
 window.PLANETENUHR_CARD_HELP.en.cards.about = {
   intro: ["Find the project, open issues and suggestions here, or submit new feedback. You must be signed in to GitHub to report a bug or submit a suggestion."],
+  details: [
+    "“Constellation of the month” and “Constellation year clock” use the Stellarium team’s “Modern” line figures. Planetenuhr converted the star connections into individual line segments for display. The adapted figures are licensed under CC BY-SA 4.0.",
+    "Star positions and names, including Bayer and Flamsteed designations, come from David Nash’s HYG v4.1 star catalogue (CC BY-SA 4.0). Virgo’s star positions come from the Association Sterenn star table.",
+    "The 47 artistic illustrations are from Stellarium Modern (Stellarium’s team), under the Free Art License 1.3. Planetenuhr reprojected them using their anchor stars, converted the black background to transparency and reduced display opacity. Both Serpens parts have no illustration. Originals, modification notes and licence are provided under assets/constellations/."
+  ],
   links: [
     { label: "Project on GitHub", url: "https://github.com/marsrakete/planetenuhr" },
     { label: "Browse open issues", url: "https://github.com/marsrakete/planetenuhr/issues" },
-    { label: "Report a bug or suggest an improvement", url: "https://github.com/marsrakete/planetenuhr/issues/new" }
+    { label: "Report a bug or suggest an improvement", url: "https://github.com/marsrakete/planetenuhr/issues/new" },
+    ...aboutConstellationSources
   ]
 };
 window.PLANETENUHR_CARD_HELP.fr.cards.about = {
   intro: ["Retrouvez ici le projet, les problèmes ouverts et les suggestions, ou envoyez un nouveau retour. Vous devez être connecté à GitHub pour signaler un problème ou envoyer une suggestion."],
+  details: [
+    "« Constellation du mois » et « Horloge annuelle des constellations » utilisent les figures de la culture céleste « Modern » de l’équipe Stellarium. Planetenuhr a converti les liaisons entre les étoiles en segments pour l’affichage. Les figures adaptées sont sous licence CC BY-SA 4.0.",
+    "Les positions et les noms des étoiles, y compris les désignations de Bayer et de Flamsteed, proviennent du catalogue HYG v4.1 de David Nash (CC BY-SA 4.0). Les positions de la Vierge proviennent du tableau d’étoiles de l’Association Sterenn.",
+    "Les 47 illustrations artistiques proviennent de Stellarium Modern (équipe Stellarium), sous Licence Art Libre 1.3. Planetenuhr les a reprojetées à partir des étoiles de référence, a rendu le fond noir transparent et a réduit leur opacité. Les deux parties du Serpent restent sans illustration. Originaux, modifications et licence sont fournis dans assets/constellations/."
+  ],
   links: [
     { label: "Projet sur GitHub", url: "https://github.com/marsrakete/planetenuhr" },
     { label: "Voir les problèmes ouverts", url: "https://github.com/marsrakete/planetenuhr/issues" },
-    { label: "Signaler un problème ou proposer une amélioration", url: "https://github.com/marsrakete/planetenuhr/issues/new" }
+    { label: "Signaler un problème ou proposer une amélioration", url: "https://github.com/marsrakete/planetenuhr/issues/new" },
+    ...aboutConstellationSources
   ]
 };

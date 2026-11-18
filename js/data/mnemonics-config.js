@@ -2,7 +2,8 @@
  * Reviewed astronomy sayings and facts. Texts are UTF-8; original sayings retain their language.
  * Each entry provides a stable id, kind, de/en/fr texts and supporting sources.
  * ownWording marks app-authored wording; moon-quarters-fr summarizes a documented method.
- * References checked 2026-10-19. Regional limitations belong to the visible localized notes.
+ * Original references checked 2026-10-19. Extreme-object references checked 2026-11-17.
+ * Regional limitations belong to the visible localized notes.
  */
 window.PLANETENUHR_MNEMONICS = {
   "reviewedOn": "2026-10-19",
@@ -843,6 +844,94 @@ window.PLANETENUHR_MNEMONICS = {
           "label": "NASA · Star Types",
           "url": "https://science.nasa.gov/universe/stars/types/"
         }
+      ]
+    },
+    {
+      "id": "neutron-stars-pulsars",
+      "kind": "extreme",
+      "texts": {
+        "de": {
+          "title": "Neutronensterne und Pulsare",
+          "explanation": "Ein Neutronenstern kann mehr Masse als die Sonne in eine Kugel von rund 20 Kilometern Durchmesser packen. Das ist ungefähr die Breite einer Großstadt. Bei einem Pulsar dreht sich ein gebündelter Strahl mit dem Stern. Streicht er wie ein Leuchtturm über unsere Blickrichtung, messen wir einen Puls."
+        },
+        "en": {
+          "title": "Neutron stars and pulsars",
+          "explanation": "A neutron star can hold more mass than the Sun in a sphere about 20 kilometres across, roughly the width of a large city. A pulsar’s beam turns with the star. When it sweeps across our line of sight like a lighthouse beam, we detect a pulse."
+        },
+        "fr": {
+          "title": "Étoiles à neutrons et pulsars",
+          "explanation": "Une étoile à neutrons peut concentrer davantage de masse que le Soleil dans une sphère d’environ 20 kilomètres de diamètre, soit la largeur d’une grande ville. Le faisceau d’un pulsar tourne avec l’étoile. Lorsqu’il balaie notre ligne de visée comme un phare, nous détectons une impulsion."
+        }
+      },
+      "sources": [
+        {"label": "NASA · Neutron Stars", "url": "https://imagine.gsfc.nasa.gov/science/objects/neutron_stars1.html"},
+        {"label": "NASA · Pulsars", "url": "https://science.nasa.gov/mission/hubble/science/science-behind-the-discoveries/hubble-pulsars/"}
+      ]
+    },
+    {
+      "id": "black-holes",
+      "kind": "extreme",
+      "texts": {
+        "de": {
+          "title": "Schwarze Löcher",
+          "explanation": "Hinter dem Ereignishorizont kann selbst Licht nicht mehr entkommen. Das Leuchten um manche Schwarze Löcher stammt von heißem Gas in der Akkretionsscheibe. Bei gleicher Masse wie die Sonne hätte der Ereignishorizont eines nicht rotierenden Schwarzen Lochs nur rund sechs Kilometer Durchmesser."
+        },
+        "en": {
+          "title": "Black holes",
+          "explanation": "Even light cannot escape from inside the event horizon. The glow around some black holes comes from hot gas in an accretion disk. A non-spinning black hole with the Sun’s mass would have an event horizon only about six kilometres across."
+        },
+        "fr": {
+          "title": "Trous noirs",
+          "explanation": "Même la lumière ne peut plus s’échapper depuis l’intérieur de l’horizon des événements. La lueur autour de certains trous noirs provient du gaz chaud de leur disque d’accrétion. Pour un trou noir sans rotation de même masse que le Soleil, l’horizon ne ferait qu’environ six kilomètres de diamètre."
+        }
+      },
+      "sources": [
+        {"label": "NASA · Anatomy of a Black Hole", "url": "https://science.nasa.gov/universe/black-holes/anatomy/"},
+        {"label": "NASA · Schwarzschild Radius", "url": "https://imagine.gsfc.nasa.gov/science/objects/black_holes2.html"}
+      ]
+    },
+    {
+      "id": "supernovae",
+      "kind": "extreme",
+      "texts": {
+        "de": {
+          "title": "Supernovae",
+          "explanation": "Am Ende des Lebens eines massereichen Sterns kann sein Kern kollabieren. Eine Explosion schleudert die äußeren Schichten ins All und kann kurzzeitig heller leuchten als eine ganze Galaxie. Der Auswurf verteilt unter anderem Sauerstoff und Schwefel. Das Material kann später in neue Sterne und Planeten eingehen."
+        },
+        "en": {
+          "title": "Supernovae",
+          "explanation": "At the end of a massive star’s life, its core can collapse. An explosion throws the outer layers into space and can briefly outshine an entire galaxy. The debris spreads elements including oxygen and sulfur. This material can later become part of new stars and planets."
+        },
+        "fr": {
+          "title": "Supernovas",
+          "explanation": "À la fin de la vie d’une étoile massive, son cœur peut s’effondrer. Une explosion projette ses couches externes dans l’espace et peut brièvement briller davantage qu’une galaxie entière. Les débris dispersent notamment de l’oxygène et du soufre. Cette matière pourra entrer dans la composition de nouvelles étoiles et planètes."
+        }
+      },
+      "sources": [
+        {"label": "NASA · Stellar Explosions", "url": "https://science.nasa.gov/mission/hubble/science/science-behind-the-discoveries/hubble-stellar-explosions/"},
+        {"label": "NASA · Stars in an Exoplanet World", "url": "https://science.nasa.gov/exoplanets/stars/"}
+      ]
+    },
+    {
+      "id": "gravitational-waves",
+      "kind": "extreme",
+      "texts": {
+        "de": {
+          "title": "Gravitationswellen",
+          "explanation": "Wenn etwa zwei Schwarze Löcher umeinander kreisen und verschmelzen, senden sie Wellen in der Raumzeit aus. Eine vorbeiziehende Welle kann Abstände in einer Richtung strecken und quer dazu stauchen. LIGO misst mit Laserlicht Längenänderungen in zwei je vier Kilometer langen Armen, die bei typischen Signalen rund zehntausendmal kleiner als der Durchmesser eines Protons sind."
+        },
+        "en": {
+          "title": "Gravitational waves",
+          "explanation": "When two black holes spiral together and merge, they send waves through spacetime. A passing wave can stretch distances in one direction and squeeze them at right angles. LIGO uses laser light to measure length changes in two four-kilometre arms. For a typical signal these changes are about ten thousand times smaller than the width of a proton."
+        },
+        "fr": {
+          "title": "Ondes gravitationnelles",
+          "explanation": "Lorsque deux trous noirs tournent l’un autour de l’autre et fusionnent, ils émettent des ondes dans l’espace-temps. Au passage d’une onde, les distances peuvent s’allonger dans une direction et se raccourcir dans la direction perpendiculaire. LIGO mesure au laser des variations de longueur dans deux bras de quatre kilomètres. Pour un signal typique, elles sont environ dix mille fois plus petites que le diamètre d’un proton."
+        }
+      },
+      "sources": [
+        {"label": "LIGO Lab · What are Gravitational Waves?", "url": "https://www.ligo.caltech.edu/LA/page/what-are-gw"},
+        {"label": "LIGO Scientific Collaboration · FAQ", "url": "https://ligo.org/faq/"}
       ]
     }
   ]

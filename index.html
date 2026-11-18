@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="planetenuhr-version" content="1.75.7" />
+  <meta name="planetenuhr-version" content="1.75.17" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Planetenuhr – Astronomie-Dashboard für Sonne, Mond und Planeten</title>
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
@@ -39,20 +39,25 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.18.0/dist/katex.min.css" integrity="sha384-KfwFj/Q/jGrY4ijtfzWyW5NXzT5irvfnTq6aRnH2xPvLzLdi1XyVr7w4l2uwTq0V" crossorigin="anonymous" />
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.18.0/dist/katex.min.js" integrity="sha384-OE4SMRr5gMJQzKSD08J46vKsKgY8NxVtO1LW+/q3NJ0WHsGsdN4oebgEjwwWuyvG" crossorigin="anonymous"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.18.0/dist/contrib/auto-render.min.js" integrity="sha384-bjyGPfbij8/NDKJhSGZNP/khQVgtHUE5exjm4Ydllo42FwIgYsdLO2lXGmRBf5Mz" crossorigin="anonymous" onload="window.renderPlanetenuhrHelpMath && window.renderPlanetenuhrHelpMath()"></script>
-  <link rel="stylesheet" href="css/base/styles.css?v=1.75.7" />
-  <link rel="stylesheet" href="css/cards/astronomy-explorer.css?v=1.75.7" />
-  <link rel="stylesheet" href="css/cards/sky-knowledge.css?v=1.75.7" />
-  <link rel="stylesheet" href="css/cards/idefix.css?v=1.75.7" />
-  <link rel="stylesheet" href="css/shared/earth-moon-visuals.css?v=1.75.7" />
-  <link rel="stylesheet" href="css/shared/meteor-labels.css?v=1.75.7" />
-  <link rel="stylesheet" href="css/shared/diagram-details.css?v=1.75.7" />
-  <link rel="stylesheet" href="css/shared/app-updates.css?v=1.75.7" />
-  <link rel="stylesheet" href="css/shared/direction-compass.css?v=1.75.7" />
-  <link rel="stylesheet" href="css/shared/celestial-bodies.css?v=1.75.7" />
-  <link rel="stylesheet" href="css/shared/daily-highlight-graphics.css?v=1.75.7" />
-  <link rel="stylesheet" href="css/cards/daily-highlights.css?v=1.75.7" />
-  <link rel="stylesheet" href="css/cards/milky-way.css?v=1.75.7" />
-  <link rel="stylesheet" href="css/cards/conjunctions.css?v=1.75.7" />
+  <link rel="stylesheet" href="css/base/styles.css?v=1.75.17" />
+  <link rel="stylesheet" href="css/cards/astronomy-explorer.css?v=1.75.17" />
+  <link rel="stylesheet" href="css/cards/sky-knowledge.css?v=1.75.17" />
+  <link rel="stylesheet" href="css/cards/idefix.css?v=1.75.17" />
+  <link rel="stylesheet" href="css/shared/earth-moon-visuals.css?v=1.75.17" />
+  <link rel="stylesheet" href="css/shared/meteor-labels.css?v=1.75.17" />
+  <link rel="stylesheet" href="css/shared/diagram-details.css?v=1.75.17" />
+  <link rel="stylesheet" href="css/shared/app-updates.css?v=1.75.17" />
+  <link rel="stylesheet" href="css/shared/direction-compass.css?v=1.75.17" />
+  <link rel="stylesheet" href="css/shared/celestial-bodies.css?v=1.75.17" />
+  <link rel="stylesheet" href="css/shared/daily-highlight-graphics.css?v=1.75.17" />
+  <link rel="stylesheet" href="css/cards/daily-highlights.css?v=1.75.17" />
+  <link rel="stylesheet" href="css/cards/milky-way.css?v=1.75.17" />
+  <link rel="stylesheet" href="css/cards/conjunctions.css?v=1.75.17" />
+  <link rel="stylesheet" href="css/cards/constellation-visibility.css?v=1.75.17" />
+  <link rel="stylesheet" href="css/shared/constellation-details.css?v=1.75.17" />
+  <link rel="stylesheet" href="css/shared/constellation-illustrations.css?v=1.75.17" />
+  <link rel="stylesheet" href="css/shared/constellation-illustrations.css?v=1.75.17" />
+  <link rel="stylesheet" href="css/cards/retrograde.css?v=1.75.17" />
 </head>
 <body>
   <div class="overlay-controls">
@@ -344,6 +349,57 @@
       <div id="constellationYearSummary" class="astro-summary"></div>
       <div class="legend-small" id="constellationYearLegend">Annual wheel of the monthly constellations</div>
     </div>
+    <section class="display-container constellation-visibility-card" data-help-key="constellation_visibility">
+      <h2 class="group-title" id="constellationVisibilityTitle">Constellation visibility</h2>
+      <div id="constellationVisibilityContext" class="constellation-visibility-context"></div>
+      <div class="constellation-visibility-tabs" role="tablist" aria-label="Constellation visibility views">
+        <button id="constellationVisibilityMonthTab" type="button" role="tab" aria-controls="constellationVisibilityMonthPanel" aria-selected="true">Selected month</button>
+        <button id="constellationVisibilityYearTab" type="button" role="tab" aria-controls="constellationVisibilityYearPanel" aria-selected="false" tabindex="-1">Full year</button>
+      </div>
+      <section id="constellationVisibilityMonthPanel" role="tabpanel" aria-labelledby="constellationVisibilityMonthTab">
+        <div class="constellation-visibility-heading"><strong id="constellationVisibilityMonthHeading"></strong><span id="constellationVisibilityMonthHint"></span></div>
+        <div class="constellation-visibility-table-wrap">
+          <table class="constellation-visibility-table">
+            <thead><tr><th scope="col" id="constellationVisibilityNameHeading">Constellation</th><th scope="col" id="constellationVisibilityRangeHeading">Months</th><th scope="col" id="constellationVisibilityDirectionHeading">Direction</th><th scope="col" id="constellationVisibilityAltitudeHeading">Height</th></tr></thead>
+            <tbody id="constellationVisibilityMonthRows"></tbody>
+          </table>
+        </div>
+      </section>
+      <section id="constellationVisibilityYearPanel" role="tabpanel" aria-labelledby="constellationVisibilityYearTab" hidden>
+        <div class="constellation-visibility-heading"><strong id="constellationVisibilityYearHeading"></strong><span id="constellationVisibilityYearHint"></span></div>
+        <div class="constellation-visibility-table-wrap">
+          <table id="constellationVisibilityYearTable" class="constellation-visibility-year-table">
+            <thead><tr><th scope="col" id="constellationVisibilityYearNameHeading">Constellation</th><th scope="col" data-visibility-month></th><th scope="col" data-visibility-month></th><th scope="col" data-visibility-month></th><th scope="col" data-visibility-month></th><th scope="col" data-visibility-month></th><th scope="col" data-visibility-month></th><th scope="col" data-visibility-month></th><th scope="col" data-visibility-month></th><th scope="col" data-visibility-month></th><th scope="col" data-visibility-month></th><th scope="col" data-visibility-month></th><th scope="col" data-visibility-month></th></tr></thead>
+            <tbody id="constellationVisibilityYearRows"></tbody>
+          </table>
+        </div>
+      </section>
+      <div id="constellationVisibilityLegend" class="legend-small"></div>
+      <p id="constellationVisibilityNote" class="constellation-visibility-note"></p>
+    </section>
+    <template id="constellationVisibilityMonthRowTemplate">
+      <tr><th scope="row" data-visibility-name></th><td data-visibility-range></td><td data-visibility-direction></td><td data-visibility-altitude></td></tr>
+    </template>
+    <template id="constellationVisibilityYearRowTemplate">
+      <tr><th scope="row" data-visibility-year-name></th><td data-visibility-month-cell></td><td data-visibility-month-cell></td><td data-visibility-month-cell></td><td data-visibility-month-cell></td><td data-visibility-month-cell></td><td data-visibility-month-cell></td><td data-visibility-month-cell></td><td data-visibility-month-cell></td><td data-visibility-month-cell></td><td data-visibility-month-cell></td><td data-visibility-month-cell></td><td data-visibility-month-cell></td></tr>
+    </template>
+    <dialog id="constellationVisibilityDialog" class="constellation-visibility-dialog" aria-labelledby="constellationVisibilityDetailTitle">
+      <div class="constellation-visibility-dialog-body">
+        <div class="constellation-visibility-dialog-heading"><h2 id="constellationVisibilityDetailTitle"></h2><button id="constellationVisibilityDetailClose" type="button" autofocus>Close</button></div>
+        <p id="constellationVisibilityDetailContext" class="constellation-visibility-context"></p>
+        <div class="constellation-detail-layout" tabindex="0">
+          <div class="constellation-detail-visual">
+            <div id="constellationVisibilityDetailFigure" class="constellation-visibility-detail-figure"></div>
+            <p id="constellationVisibilityNoFigure" class="constellation-visibility-no-figure" hidden></p>
+            <div class="constellation-visibility-detail-direction"><span id="constellationVisibilityDetailCompass"></span><strong id="constellationVisibilityDetailDirection"></strong><span id="constellationVisibilityDetailAltitude"></span></div>
+            <p id="constellationVisibilityDetailRange" class="constellation-visibility-note"></p>
+          </div>
+          <article id="constellationVisibilityDetailDescription" class="constellation-description"></article>
+        </div>
+      </div>
+    </dialog>
+    <template id="constellationIllustrationTemplate"><svg xmlns="http://www.w3.org/2000/svg"><image class="constellation-illustration" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet"></image></svg></template>
+    <template id="constellationIllustrationTemplate"><svg xmlns="http://www.w3.org/2000/svg"><image class="constellation-illustration" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet"></image></svg></template>
     <template id="constellationYearMiniTemplate"><svg xmlns="http://www.w3.org/2000/svg"><g class="constellation-year-mini"><g data-constellation-figure transform="scale(2)"><circle r="32" class="constellation-mini-ring"></circle></g></g></svg></template>
     <template id="constellationYearLineTemplate"><svg xmlns="http://www.w3.org/2000/svg"><line class="constellation-mini-line"></line></svg></template>
     <template id="constellationYearStarTemplate"><svg xmlns="http://www.w3.org/2000/svg"><circle class="constellation-mini-star"></circle></svg></template>
@@ -460,15 +516,34 @@
         <div class="knowledge-sources" data-knowledge-sources></div>
       </article>
     </template>
-    <dialog id="constellationYearDetailDialog" class="diagram-dialog" aria-labelledby="constellationYearDetailTitle" aria-describedby="constellationYearDetailHint">
+    <dialog id="constellationYearDetailDialog" class="diagram-dialog constellation-detail-dialog" aria-labelledby="constellationYearDetailTitle" aria-describedby="constellationYearDetailHint">
       <div class="diagram-dialog-heading"><h2 id="constellationYearDetailTitle"></h2><button id="constellationYearDetailClose" type="button" autofocus></button></div>
       <p id="constellationYearDetailHint"></p>
-      <div class="diagram-detail-content constellation-year-detail-content" tabindex="0">
-        <div id="constellationYearDetailMap" class="constellation-map"></div>
-        <div id="constellationYearDetailSkyHint" class="constellation-skyhint"></div>
-        <div id="constellationYearDetailSummary" class="constellation-summary"></div>
+      <div class="diagram-detail-content constellation-year-detail-content constellation-detail-layout" tabindex="0">
+        <div class="constellation-detail-visual">
+          <div id="constellationYearDetailMap" class="constellation-map"></div>
+          <div id="constellationYearDetailSkyHint" class="constellation-skyhint"></div>
+          <div id="constellationYearDetailSummary" class="constellation-summary"></div>
+        </div>
+        <article id="constellationYearDetailDescription" class="constellation-description"></article>
       </div>
     </dialog>
+    <template id="constellationDescriptionTemplate">
+      <p class="constellation-description-meta" data-constellation-description-title></p>
+      <p data-constellation-description-intro></p>
+      <dl data-constellation-description-facts></dl>
+      <p class="constellation-description-note" data-constellation-description-note></p>
+      <nav data-constellation-description-sources>
+        <h4 data-constellation-description-sources-title></h4>
+        <ul data-constellation-description-links></ul>
+      </nav>
+    </template>
+    <template id="constellationDescriptionFactTemplate">
+      <div><dt></dt><dd></dd></div>
+    </template>
+    <template id="constellationDescriptionLinkTemplate">
+      <li><a target="_blank" rel="noopener noreferrer"></a></li>
+    </template>
     <dialog id="diagramDetailDialog" class="diagram-dialog" aria-labelledby="diagramDetailTitle" aria-describedby="diagramDetailHint">
       <div class="diagram-dialog-heading"><h2 id="diagramDetailTitle"></h2><button id="diagramDetailClose" type="button" autofocus></button></div>
       <p id="diagramDetailHint"></p>
@@ -476,6 +551,12 @@
     </dialog>
     <template id="diagramOpenTemplate"><button class="diagram-open" type="button" aria-haspopup="dialog" aria-controls="diagramDetailDialog"></button></template>
     <template id="diagramFigureTemplate"><figure class="diagram-detail-figure"></figure></template>
+    <template id="diagramConstellationTemplate">
+      <div class="diagram-constellation-content">
+        <div data-diagram-constellation-chart></div>
+        <div class="diagram-constellation-copy" data-diagram-constellation-copy></div>
+      </div>
+    </template>
     <template id="diagramSolarStageTemplate"><div class="diagram-solar-stage"></div></template>
     <template id="knowledgeGraphicTemplate"><svg class="knowledge-drawing" viewBox="0 0 360 158" role="img" focusable="false"></svg></template>
     <template id="knowledgeGraphic-circle"><svg><circle /></svg></template>
@@ -488,19 +569,25 @@
     <section class="display-container horizon-card wide-card" data-help-key="planet_horizon">
       <h2 class="group-title" data-explorer-text="title_planet_horizon"></h2>
       <div class="explorer-context" id="horizonContext"></div>
-      <div id="horizonLightState" class="horizon-light-state" role="status"></div>
-      <svg id="planetHorizonPlot" class="horizon-plot" role="img"></svg>
-      <div class="horizon-daylight-panel">
-        <div class="horizon-band-heading"><span data-explorer-text="horizon_day_course"></span><span id="horizonBandDate"></span></div>
-        <div id="horizonLightBand" class="horizon-light-band" role="img">
-          <div id="horizonLightSegments" class="horizon-light-segments" aria-hidden="true"></div>
-          <span id="horizonLightCursor" class="horizon-light-cursor" aria-hidden="true"></span>
-        </div>
-        <div id="horizonLightTicks" class="horizon-light-ticks" aria-hidden="true"></div>
-        <div id="horizonLightLegend" class="horizon-light-legend"></div>
-        <div class="horizon-solar-events"><span id="horizonSunrise"></span><span id="horizonSunset"></span></div>
-        <div id="horizonPolarNote" class="explorer-note" hidden></div>
+      <div id="horizonViewTabs" class="horizon-view-tabs" role="tablist">
+        <button id="horizonOverviewTab" type="button" role="tab" aria-selected="true" aria-controls="horizonOverviewPanel" data-explorer-text="horizon_view_overview"></button>
+        <button id="horizonCalculationTab" type="button" role="tab" aria-selected="false" aria-controls="horizonCalculationPanel" tabindex="-1" data-explorer-text="horizon_view_calculation"></button>
       </div>
+      <section id="horizonOverviewPanel" class="horizon-view-panel" role="tabpanel" aria-labelledby="horizonOverviewTab" tabindex="0">
+        <div id="horizonLightState" class="horizon-light-state" role="status"></div>
+        <svg id="planetHorizonPlot" class="horizon-plot" role="img"></svg>
+        <div class="horizon-daylight-panel">
+          <div class="horizon-band-heading"><span data-explorer-text="horizon_day_course"></span><span id="horizonBandDate"></span></div>
+          <div id="horizonLightBand" class="horizon-light-band" role="img">
+            <div id="horizonLightSegments" class="horizon-light-segments" aria-hidden="true"></div>
+            <span id="horizonLightCursor" class="horizon-light-cursor" aria-hidden="true"></span>
+          </div>
+          <div id="horizonLightTicks" class="horizon-light-ticks" aria-hidden="true"></div>
+          <div id="horizonLightLegend" class="horizon-light-legend"></div>
+          <div class="horizon-solar-events"><span id="horizonSunrise"></span><span id="horizonSunset"></span></div>
+          <div id="horizonPolarNote" class="explorer-note" hidden></div>
+          </div>
+      </section>
       <div class="explorer-slider-heading">
         <label for="horizonTimeOffset" data-explorer-text="horizon_explore_time"></label>
         <output id="horizonTimeValue" for="horizonTimeOffset"></output>
@@ -510,9 +597,36 @@
       <div id="horizonPlanetList" class="horizon-planet-list"></div>
       <div id="horizonSelection" class="explorer-detail" role="status"></div>
       <div id="horizonDaylight" class="explorer-note"></div>
+      <section id="horizonCalculationPanel" class="horizon-view-panel" role="tabpanel" aria-labelledby="horizonCalculationTab" tabindex="0" hidden>
+        <p class="horizon-calculation-copy" data-explorer-text="horizon_calculation_intro"></p>
+        <div class="horizon-calculation-equations">
+          <code>H = θ − α</code>
+          <code>h = arcsin(sin φ · sin δ + cos φ · cos δ · cos H)</code>
+        </div>
+        <div id="horizonCalculationBodies" class="horizon-calculation-bodies"></div>
+      </section>
       <div id="horizonAccuracy" class="explorer-note" hidden></div>
       <div class="legend-small" data-explorer-text="horizon_legend"></div>
     </section>
+    <template id="horizonCalculationBodyTemplate">
+      <article class="horizon-calculation-body">
+        <h3 data-horizon-calculation-name></h3>
+        <figure class="horizon-calculation-figure">
+          <svg viewBox="0 0 160 148" aria-hidden="true" focusable="false">
+            <rect width="160" height="74" class="horizon-sketch-sky"></rect>
+            <rect y="74" width="160" height="74" class="horizon-sketch-ground"></rect>
+            <line x1="16" x2="148" y1="74" y2="74" class="horizon-sketch-axis"></line>
+            <line x1="33" y1="74" class="horizon-sketch-ray" data-horizon-calculation-ray></line>
+            <path class="horizon-sketch-angle" data-horizon-calculation-arc></path>
+            <circle cx="33" cy="74" r="3" class="horizon-sketch-observer"></circle>
+            <circle r="6" class="horizon-sketch-marker" data-horizon-calculation-marker></circle>
+          </svg>
+          <figcaption data-horizon-calculation-caption></figcaption>
+        </figure>
+        <code data-horizon-calculation-hour></code>
+        <code data-horizon-calculation-formula></code>
+      </article>
+    </template>
     <section class="display-container light-travel-card" data-help-key="light_travel">
       <h2 class="group-title" data-explorer-text="title_light_travel"></h2>
       <div class="explorer-context" data-explorer-text="light_question"></div>
@@ -547,9 +661,89 @@
 
     <div class="display-container retrograde-card" data-help-key="retrograde">
       <div class="group-title" id="titleRetrograde">Retrograde phases</div>
-      <div id="retrogradePanel" class="retrograde-panel"></div>
-      <div class="legend-small" id="retrogradeLegend">Approximate apparent geocentric motion from day to day</div>
+      <div id="retrogradeTabs" class="retro-calculation-tabs" role="tablist">
+        <button type="button" id="retrogradeOverviewTab" role="tab" aria-controls="retrogradeOverview" aria-selected="true" data-retro-label="retrograde_view_overview"></button>
+        <button type="button" id="retrogradeCalculationTab" role="tab" aria-controls="retrogradeCalculation" aria-selected="false" tabindex="-1" data-retro-label="retrograde_view_calculation"></button>
+      </div>
+      <section id="retrogradeOverview" class="retro-overview" role="tabpanel" aria-labelledby="retrogradeOverviewTab" tabindex="0">
+        <div id="retrogradePanel" class="retrograde-panel"></div>
+        <div class="legend-small" id="retrogradeLegend">Approximate apparent geocentric motion from day to day</div>
+      </section>
+      <section id="retrogradeCalculation" class="retro-calculation" role="tabpanel" aria-labelledby="retrogradeCalculationTab" tabindex="0" hidden>
+        <label class="retro-body-select"><span data-retro-label="retrograde_calc_planet"></span><select id="retrogradeBody"></select></label>
+        <p id="retrogradeCalculationEmpty" data-retro-label="retrograde_calc_empty" hidden></p>
+        <div id="retrogradeCalculationContent" class="retro-calculation-content">
+          <p data-retro-label="retrograde_calc_intro"></p>
+          <figure class="retro-calculation-figure">
+            <figcaption data-retro-label="retrograde_calc_geometry"></figcaption>
+            <svg id="retrogradeGeometry" class="retro-geometry-plot" viewBox="0 0 176 176" aria-hidden="true" focusable="false">
+              <circle cx="88" cy="88" class="retro-geometry-orbit" data-retro-orbit="earth"></circle>
+              <circle cx="88" cy="88" class="retro-geometry-orbit" data-retro-orbit="planet"></circle>
+              <circle cx="88" cy="88" r="4" class="retro-geometry-sun"></circle>
+              <g data-retro-geometry-days></g>
+            </svg>
+            <div class="retro-geometry-dates">
+              <span data-retro-day="first"><i aria-hidden="true"></i><strong data-retro-date></strong></span>
+              <span data-retro-day="second"><i aria-hidden="true"></i><strong data-retro-date></strong></span>
+            </div>
+            <p id="retrogradeGeometryLegend"></p>
+          </figure>
+          <figure class="retro-calculation-figure">
+            <figcaption data-retro-label="retrograde_calc_sky"></figcaption>
+            <svg id="retrogradeLongitudePlot" class="retro-longitude-plot" viewBox="0 0 420 186" role="img">
+              <title></title>
+              <rect x="18" y="12" width="384" height="156" class="retro-plot-background"></rect>
+              <g data-retro-sections></g>
+              <g data-retro-stations></g>
+              <g data-retro-time-markers></g>
+            </svg>
+            <div class="retro-calculation-axis">
+              <span id="retrogradePlotStart"></span>
+              <span data-retro-label="retrograde_calc_longitude_axis"></span>
+              <span id="retrogradePlotEnd"></span>
+            </div>
+            <p class="retro-station-dates">
+              <span id="retrogradeStationStart"></span>
+              <span id="retrogradeStationEnd"></span>
+            </p>
+          </figure>
+          <div class="retro-phase-buttons">
+            <button type="button" aria-pressed="false" data-retro-jump="before" data-retro-label="retrograde_calc_before"></button>
+            <button type="button" aria-pressed="false" data-retro-jump="during" data-retro-label="retrograde_calc_during"></button>
+            <button type="button" aria-pressed="false" data-retro-jump="after" data-retro-label="retrograde_calc_after"></button>
+          </div>
+          <label for="retrogradeDay" data-retro-label="retrograde_calc_day"></label>
+          <input id="retrogradeDay" type="range" class="explorer-slider" min="0" step="1" />
+          <div class="retro-calculation-formula">
+            <code>Δλ/Δt = (λ₂ − λ₁) / 10&nbsp;d</code>
+            <code id="retrogradeFormulaValues"></code>
+            <p id="retrogradeLongitudeNote" hidden></p>
+            <p id="retrogradeMotionExplanation"></p>
+            <p id="retrogradeIntervalNote" data-retro-label="retrograde_calc_interval_crossing" hidden></p>
+            <p data-retro-label="retrograde_calc_normalization"></p>
+          </div>
+        </div>
+      </section>
     </div>
+    <template id="retrogradeBodyOptionTemplate"><option></option></template>
+    <template id="retrogradeGeometryDayTemplate">
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <g>
+          <line class="retro-day-ray" data-retro-ray></line>
+          <circle class="retro-geometry-earth" data-retro-dot="earth"></circle>
+          <circle class="retro-geometry-planet" data-retro-dot="planet"></circle>
+        </g>
+      </svg>
+    </template>
+    <template id="retrogradePlotPointTemplate">
+      <svg xmlns="http://www.w3.org/2000/svg"><g><title></title><circle r="5"></circle></g></svg>
+    </template>
+    <template id="retrogradePlotSectionTemplate">
+      <svg xmlns="http://www.w3.org/2000/svg"><g><path class="retro-plot-curve"></path><path class="retro-plot-arrow" d="M 8 0 L -7 -6 L -7 6 Z"></path></g></svg>
+    </template>
+    <template id="retrogradePlotStationTemplate">
+      <svg xmlns="http://www.w3.org/2000/svg"><g><title></title><circle r="11"></circle><text text-anchor="middle" y="4.5"></text></g></svg>
+    </template>
     <template id="retrogradeRowTemplate">
       <div class="retro-row">
         <div class="retro-head">
@@ -700,8 +894,12 @@
     <template id="calendarMonthCellTemplate">
       <div class="calendar-month-cell">
         <div class="calendar-month-day" data-calendar-day-number></div>
+        <div class="calendar-month-ranges" data-calendar-day-ranges aria-hidden="true"></div>
         <div class="calendar-month-events" data-calendar-day-events></div>
       </div>
+    </template>
+    <template id="calendarMonthRangeTemplate">
+      <span class="calendar-month-range" data-calendar-month-range></span>
     </template>
     <template id="calendarMonthEventTemplate">
       <button class="calendar-month-event" type="button" data-calendar-month-event>
@@ -1196,107 +1394,116 @@
     </div>
   </template>
 
-  <script src="js/data/translations.js?v=1.75.7"></script>
-  <script src="js/data/milky-way-config.js?v=1.75.7"></script>
-  <script src="js/core/app-updates.js?v=1.75.7"></script>
-  <script src="js/data/card-help-config.js?v=1.75.7"></script>
-  <script src="js/data/calendar-events.js?v=1.75.7"></script>
-  <script src="js/data/eclipse-calendar-config.js?v=1.75.7"></script>
-  <script src="js/data/small-bodies-config.js?v=1.75.7"></script>
-  <script src="js/data/phenomena-config.js?v=1.75.7"></script>
-  <script src="js/data/bsky-feed-config.js?v=1.75.7"></script>
-  <script src="js/data/extended-calendar-config.js?v=1.75.7"></script>
-  <script src="js/data/locations-config.js?v=1.75.7"></script>
-  <script src="js/data/eclipse-visibility-config.js?v=1.75.7"></script>
-  <script src="js/data/eclipse-phase-config.js?v=1.75.7"></script>
-  <script src="js/data/astronomy-explorer-config.js?v=1.75.7"></script>
-  <script src="js/data/voyager-data.js?v=1.75.7"></script>
-  <script src="js/models/conjunction-model.js?v=1.75.7"></script>
-  <script src="js/models/astronomy-explorer-model.js?v=1.75.7"></script>
-  <script src="js/cards/astronomy-explorer.js?v=1.75.7"></script>
-  <script src="js/data/daily-highlights-config.js?v=1.75.7"></script>
-  <script src="js/models/daily-highlights-model.js?v=1.75.7"></script>
-  <script src="js/shared/direction-compass.js?v=1.75.7"></script>
-  <script src="js/data/celestial-bodies-config.js?v=1.75.7"></script>
-  <script src="js/shared/celestial-bodies.js?v=1.75.7"></script>
-  <script src="js/shared/solar-system-labels.js?v=1.75.7"></script>
-  <script src="js/data/solar-system-config.js?v=1.75.7"></script>
-  <script src="js/shared/daily-highlight-graphics.js?v=1.75.7"></script>
-  <script src="js/cards/daily-highlights.js?v=1.75.7"></script>
-  <script src="js/models/milky-way-sky-model.js?v=1.75.7"></script>
-  <script src="js/cards/milky-way.js?v=1.75.7"></script>
-  <script src="js/data/mnemonics-config.js?v=1.75.7"></script>
-  <script src="js/data/sky-knowledge-graphics-config.js?v=1.75.7"></script>
-  <script src="js/shared/sky-knowledge-graphics.js?v=1.75.7"></script>
-  <script src="js/cards/sky-knowledge.js?v=1.75.7"></script>
-  <script src="js/shared/diagram-details.js?v=1.75.7"></script>
-  <script src="js/shared/earth-moon-visuals.js?v=1.75.7"></script>
-  <script src="js/shared/meteor-labels.js?v=1.75.7"></script>
-  <script src="js/data/idefix-config.js?v=1.75.7"></script>
-  <script src="js/data/idefix-ephemeris.js?v=1.75.7"></script>
-  <script src="js/models/idefix-model.js?v=1.75.7"></script>
-  <script src="js/cards/idefix.js?v=1.75.7"></script>
-  <script src="js/core/date-time.js?v=1.75.7"></script>
-  <script src="js/core/observation-format.js?v=1.75.7"></script>
-  <script src="js/models/astronomy-coordinates.js?v=1.75.7"></script>
-  <script src="js/data/planet-elements-config.js?v=1.75.7"></script>
-  <script src="js/models/planet-model.js?v=1.75.7"></script>
-  <script src="js/models/moon-model.js?v=1.75.7"></script>
-  <script src="js/models/solar-visibility-model.js?v=1.75.7"></script>
-  <script src="js/models/eclipse-model.js?v=1.75.7"></script>
-  <script src="js/models/eclipse-location-model.js?v=1.75.7"></script>
-  <script src="js/core/dashboard-context.js?v=1.75.7"></script>
-  <script src="js/core/dashboard-errors.js?v=1.75.7"></script>
-  <script src="js/core/dashboard-refresh.js?v=1.75.7"></script>
-  <script src="js/core/date-location-controls.js?v=1.75.7"></script>
-  <script src="js/cards/solar-system.js?v=1.75.7"></script>
-  <script src="js/cards/earth-moon.js?v=1.75.7"></script>
-  <script src="js/core/dashboard-layout.js?v=1.75.7"></script>
-  <script src="js/data/card-sizes-config.js?v=1.75.7"></script>
-  <script src="js/core/card-sizes.js?v=1.75.7"></script>
-  <script src="js/core/card-help.js?v=1.75.7"></script>
-  <script src="js/core/card-navigation.js?v=1.75.7"></script>
-  <script src="js/cards/conjunctions.js?v=1.75.7"></script>
-  <script src="js/cards/meteor-streams.js?v=1.75.7"></script>
-  <script src="js/cards/constellation-month.js?v=1.75.7"></script>
-  <script src="js/cards/constellation-year.js?v=1.75.7"></script>
-  <script src="js/cards/seasons.js?v=1.75.7"></script>
-  <script src="js/models/retrograde-model.js?v=1.75.7"></script>
-  <script src="js/cards/retrograde.js?v=1.75.7"></script>
-  <script src="js/models/inner-planets-model.js?v=1.75.7"></script>
-  <script src="js/cards/inner-planets.js?v=1.75.7"></script>
-  <script src="js/data/barycenter-config.js?v=1.75.7"></script>
-  <script src="js/models/barycenter-model.js?v=1.75.7"></script>
-  <script src="js/cards/barycenter.js?v=1.75.7"></script>
-  <script src="js/models/lagrange-model.js?v=1.75.7"></script>
-  <script src="js/cards/lagrange.js?v=1.75.7"></script>
-  <script src="js/models/analemma-model.js?v=1.75.7"></script>
-  <script src="js/cards/analemma.js?v=1.75.7"></script>
-  <script src="js/models/exoplanets-model.js?v=1.75.7"></script>
-  <script src="js/cards/exoplanets.js?v=1.75.7"></script>
-  <script src="js/models/satellites-model.js?v=1.75.7"></script>
-  <script src="js/cards/satellites.js?v=1.75.7"></script>
-  <script src="js/models/small-bodies-model.js?v=1.75.7"></script>
-  <script src="js/cards/small-bodies.js?v=1.75.7"></script>
-  <script src="js/models/spacecraft-model.js?v=1.75.7"></script>
-  <script src="js/cards/spacecraft.js?v=1.75.7"></script>
-  <script src="js/data/aurora-data-config.js?v=1.75.7"></script>
-  <script src="js/services/aurora-data.js?v=1.75.7"></script>
-  <script src="js/cards/aurora-card.js?v=1.75.7"></script>
-  <script src="js/services/bsky-feed-data.js?v=1.75.7"></script>
-  <script src="js/cards/bsky-feed-card.js?v=1.75.7"></script>
-  <script src="js/models/calendar-model.js?v=1.75.7"></script>
-  <script src="js/cards/calendar.js?v=1.75.7"></script>
-  <script src="js/cards/sunlight-card.js?v=1.75.7"></script>
-  <script src="js/cards/planet-visibility.js?v=1.75.7"></script>
-  <script src="js/cards/polaris-card.js?v=1.75.7"></script>
-  <script src="js/cards/eclipse-geometry.js?v=1.75.7"></script>
-  <script src="js/cards/moon-nodes-card.js?v=1.75.7"></script>
-  <script src="js/data/jupiter-moons-config.js?v=1.75.7"></script>
-  <script src="js/cards/jupiter-card.js?v=1.75.7"></script>
-  <script src="js/data/planetary-systems-config.js?v=1.75.7"></script>
-  <script src="js/cards/planetary-systems-card.js?v=1.75.7"></script>
-  <script src="js/core/dashboard-i18n.js?v=1.75.7"></script>
-  <script src="js/core/app.js?v=1.75.7"></script>
+  <script src="js/data/translations.js?v=1.75.17"></script>
+  <script src="js/data/milky-way-config.js?v=1.75.17"></script>
+  <script src="js/core/app-updates.js?v=1.75.17"></script>
+  <script src="js/data/card-help-config.js?v=1.75.17"></script>
+  <script src="js/data/calendar-events.js?v=1.75.17"></script>
+  <script src="js/data/eclipse-calendar-config.js?v=1.75.17"></script>
+  <script src="js/data/small-bodies-config.js?v=1.75.17"></script>
+  <script src="js/data/phenomena-config.js?v=1.75.17"></script>
+  <script src="js/data/constellation-illustrations-config.js?v=1.75.17"></script>
+  <script src="js/data/constellation-illustrations-config.js?v=1.75.17"></script>
+  <script src="js/data/constellation-descriptions.js?v=1.75.17"></script>
+  <script src="js/data/constellation-visibility-config.js?v=1.75.17"></script>
+  <script src="js/data/bsky-feed-config.js?v=1.75.17"></script>
+  <script src="js/data/extended-calendar-config.js?v=1.75.17"></script>
+  <script src="js/data/locations-config.js?v=1.75.17"></script>
+  <script src="js/data/eclipse-visibility-config.js?v=1.75.17"></script>
+  <script src="js/data/eclipse-phase-config.js?v=1.75.17"></script>
+  <script src="js/data/astronomy-explorer-config.js?v=1.75.17"></script>
+  <script src="js/data/voyager-data.js?v=1.75.17"></script>
+  <script src="js/models/conjunction-model.js?v=1.75.17"></script>
+  <script src="js/models/astronomy-explorer-model.js?v=1.75.17"></script>
+  <script src="js/cards/astronomy-explorer.js?v=1.75.17"></script>
+  <script src="js/data/daily-highlights-config.js?v=1.75.17"></script>
+  <script src="js/models/daily-highlights-model.js?v=1.75.17"></script>
+  <script src="js/shared/direction-compass.js?v=1.75.17"></script>
+  <script src="js/data/celestial-bodies-config.js?v=1.75.17"></script>
+  <script src="js/shared/celestial-bodies.js?v=1.75.17"></script>
+  <script src="js/shared/solar-system-labels.js?v=1.75.17"></script>
+  <script src="js/data/solar-system-config.js?v=1.75.17"></script>
+  <script src="js/shared/daily-highlight-graphics.js?v=1.75.17"></script>
+  <script src="js/cards/daily-highlights.js?v=1.75.17"></script>
+  <script src="js/models/milky-way-sky-model.js?v=1.75.17"></script>
+  <script src="js/cards/milky-way.js?v=1.75.17"></script>
+  <script src="js/data/mnemonics-config.js?v=1.75.17"></script>
+  <script src="js/data/sky-knowledge-graphics-config.js?v=1.75.17"></script>
+  <script src="js/shared/sky-knowledge-graphics.js?v=1.75.17"></script>
+  <script src="js/cards/sky-knowledge.js?v=1.75.17"></script>
+  <script src="js/shared/diagram-details.js?v=1.75.17"></script>
+  <script src="js/shared/constellation-details.js?v=1.75.17"></script>
+  <script src="js/shared/constellation-illustrations.js?v=1.75.17"></script>
+  <script src="js/shared/constellation-illustrations.js?v=1.75.17"></script>
+  <script src="js/shared/earth-moon-visuals.js?v=1.75.17"></script>
+  <script src="js/shared/meteor-labels.js?v=1.75.17"></script>
+  <script src="js/data/idefix-config.js?v=1.75.17"></script>
+  <script src="js/data/idefix-ephemeris.js?v=1.75.17"></script>
+  <script src="js/models/idefix-model.js?v=1.75.17"></script>
+  <script src="js/cards/idefix.js?v=1.75.17"></script>
+  <script src="js/core/date-time.js?v=1.75.17"></script>
+  <script src="js/core/observation-format.js?v=1.75.17"></script>
+  <script src="js/models/astronomy-coordinates.js?v=1.75.17"></script>
+  <script src="js/models/constellation-visibility-model.js?v=1.75.17"></script>
+  <script src="js/data/planet-elements-config.js?v=1.75.17"></script>
+  <script src="js/models/planet-model.js?v=1.75.17"></script>
+  <script src="js/models/moon-model.js?v=1.75.17"></script>
+  <script src="js/models/solar-visibility-model.js?v=1.75.17"></script>
+  <script src="js/models/eclipse-model.js?v=1.75.17"></script>
+  <script src="js/models/eclipse-location-model.js?v=1.75.17"></script>
+  <script src="js/core/dashboard-context.js?v=1.75.17"></script>
+  <script src="js/core/dashboard-errors.js?v=1.75.17"></script>
+  <script src="js/core/dashboard-refresh.js?v=1.75.17"></script>
+  <script src="js/core/date-location-controls.js?v=1.75.17"></script>
+  <script src="js/cards/solar-system.js?v=1.75.17"></script>
+  <script src="js/cards/earth-moon.js?v=1.75.17"></script>
+  <script src="js/core/dashboard-layout.js?v=1.75.17"></script>
+  <script src="js/data/card-sizes-config.js?v=1.75.17"></script>
+  <script src="js/core/card-sizes.js?v=1.75.17"></script>
+  <script src="js/core/card-help.js?v=1.75.17"></script>
+  <script src="js/core/card-navigation.js?v=1.75.17"></script>
+  <script src="js/cards/conjunctions.js?v=1.75.17"></script>
+  <script src="js/cards/meteor-streams.js?v=1.75.17"></script>
+  <script src="js/cards/constellation-month.js?v=1.75.17"></script>
+  <script src="js/cards/constellation-year.js?v=1.75.17"></script>
+  <script src="js/cards/constellation-visibility.js?v=1.75.17"></script>
+  <script src="js/cards/seasons.js?v=1.75.17"></script>
+  <script src="js/models/retrograde-model.js?v=1.75.17"></script>
+  <script src="js/cards/retrograde.js?v=1.75.17"></script>
+  <script src="js/models/inner-planets-model.js?v=1.75.17"></script>
+  <script src="js/cards/inner-planets.js?v=1.75.17"></script>
+  <script src="js/data/barycenter-config.js?v=1.75.17"></script>
+  <script src="js/models/barycenter-model.js?v=1.75.17"></script>
+  <script src="js/cards/barycenter.js?v=1.75.17"></script>
+  <script src="js/models/lagrange-model.js?v=1.75.17"></script>
+  <script src="js/cards/lagrange.js?v=1.75.17"></script>
+  <script src="js/models/analemma-model.js?v=1.75.17"></script>
+  <script src="js/cards/analemma.js?v=1.75.17"></script>
+  <script src="js/models/exoplanets-model.js?v=1.75.17"></script>
+  <script src="js/cards/exoplanets.js?v=1.75.17"></script>
+  <script src="js/models/satellites-model.js?v=1.75.17"></script>
+  <script src="js/cards/satellites.js?v=1.75.17"></script>
+  <script src="js/models/small-bodies-model.js?v=1.75.17"></script>
+  <script src="js/cards/small-bodies.js?v=1.75.17"></script>
+  <script src="js/models/spacecraft-model.js?v=1.75.17"></script>
+  <script src="js/cards/spacecraft.js?v=1.75.17"></script>
+  <script src="js/data/aurora-data-config.js?v=1.75.17"></script>
+  <script src="js/services/aurora-data.js?v=1.75.17"></script>
+  <script src="js/cards/aurora-card.js?v=1.75.17"></script>
+  <script src="js/services/bsky-feed-data.js?v=1.75.17"></script>
+  <script src="js/cards/bsky-feed-card.js?v=1.75.17"></script>
+  <script src="js/models/calendar-model.js?v=1.75.17"></script>
+  <script src="js/cards/calendar.js?v=1.75.17"></script>
+  <script src="js/cards/sunlight-card.js?v=1.75.17"></script>
+  <script src="js/cards/planet-visibility.js?v=1.75.17"></script>
+  <script src="js/cards/polaris-card.js?v=1.75.17"></script>
+  <script src="js/cards/eclipse-geometry.js?v=1.75.17"></script>
+  <script src="js/cards/moon-nodes-card.js?v=1.75.17"></script>
+  <script src="js/data/jupiter-moons-config.js?v=1.75.17"></script>
+  <script src="js/cards/jupiter-card.js?v=1.75.17"></script>
+  <script src="js/data/planetary-systems-config.js?v=1.75.17"></script>
+  <script src="js/cards/planetary-systems-card.js?v=1.75.17"></script>
+  <script src="js/core/dashboard-i18n.js?v=1.75.17"></script>
+  <script src="js/core/app.js?v=1.75.17"></script>
 </body>
 </html>

@@ -116,6 +116,11 @@ window.PLANETENUHR_DAILY = (() => {
       const data = item.data;
       if (item.kind === 'calendar') {
         let detail = data.visibility || '';
+        if (data.endDate) {
+          const period = calendarDate(data.date) + ' – ' + calendarDate(data.endDate);
+          if (detail) detail = period + ' · ' + detail;
+          else detail = period;
+        }
         if (data.category === 'eclipse') {
           let local = message('daily_eclipse_unknown');
           if (data.eclipseStatus && data.eclipseStatus !== 'unknown') {
@@ -206,7 +211,8 @@ window.PLANETENUHR_DAILY = (() => {
         node.dataset.kind = item.kind;
         const badge = node.querySelector('[data-daily-when]');
         badge.textContent = message('daily_on_day');
-        if (item.days === 1) badge.textContent = message('daily_in_one_day');
+        if (item.activeRange) badge.textContent = message('daily_active_range');
+        else if (item.days === 1) badge.textContent = message('daily_in_one_day');
         else if (item.days > 1) badge.textContent = message('daily_in_days', {days:number(item.days)});
         node.querySelector('[data-daily-title]').textContent = content.title;
         window.PLANETENUHR_DAILY_GRAPHICS.render(node.querySelector('[data-daily-graphic]'), item, day.moon.frac);

@@ -1,0 +1,192 @@
+.constellation-visibility-card {
+  order:999;
+  grid-column:1 / -1;
+  align-items:stretch;
+  gap:10px;
+}
+.constellation-visibility-card .group-title { text-align:center; padding-inline:34px; }
+.constellation-visibility-card > .constellation-visibility-context { text-align:center; }
+.constellation-visibility-context,
+.constellation-visibility-note {
+  margin:0;
+  color:var(--muted);
+  font-size:var(--font-note);
+  line-height:var(--line-note);
+}
+.constellation-visibility-tabs {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:6px;
+  margin:2px 0 4px;
+}
+.constellation-visibility-tabs button {
+  min-height:var(--control-height);
+  padding:7px 13px;
+  border:1px solid #bfdbfe;
+  border-radius:999px;
+  background:#f8fbff;
+  color:#0f172a;
+  font-size:var(--font-control);
+  font-weight:600;
+}
+.constellation-visibility-tabs button[aria-selected="true"] {
+  border-color:#2563eb;
+  background:linear-gradient(135deg,#1d4ed8,#3b82f6);
+  color:#fff;
+}
+.constellation-visibility-tabs button:focus-visible,
+.constellation-visibility-open:focus-visible {
+  outline:2px solid var(--accent);
+  outline-offset:2px;
+}
+.constellation-visibility-card [role="tabpanel"][hidden] { display:none; }
+.constellation-visibility-heading {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:4px 12px;
+  margin:2px 0 8px;
+}
+.constellation-visibility-heading strong { font-size:var(--font-subheading); }
+.constellation-visibility-heading span { color:var(--muted); font-size:var(--font-note); }
+.constellation-visibility-table-wrap { width:100%; overflow-x:auto; }
+.constellation-visibility-table,
+.constellation-visibility-year-table {
+  width:100%;
+  border-collapse:collapse;
+  table-layout:fixed;
+  font-size:var(--font-control);
+}
+.constellation-visibility-table th,
+.constellation-visibility-year-table th {
+  padding:6px 5px;
+  border-bottom:1px solid var(--border);
+  color:var(--muted);
+  font-size:var(--font-note);
+  font-weight:600;
+  text-align:left;
+}
+.constellation-visibility-table th:first-child { width:29%; }
+.constellation-visibility-table th:nth-child(2) { width:17%; }
+.constellation-visibility-table th:nth-child(3) { width:31%; }
+.constellation-visibility-table th:nth-child(4) { width:23%; }
+.constellation-visibility-table td,
+.constellation-visibility-table tbody th {
+  height:38px;
+  padding:3px 5px;
+  border-bottom:1px solid rgba(148,163,184,.2);
+  text-align:left;
+  vertical-align:middle;
+  font-weight:400;
+}
+.constellation-visibility-open {
+  display:flex;
+  width:100%;
+  min-height:34px;
+  align-items:center;
+  gap:6px;
+  border:0;
+  padding:2px 1px;
+  background:transparent;
+  color:var(--accent);
+  font:inherit;
+  text-align:left;
+  cursor:pointer;
+}
+.constellation-visibility-open > span:last-child { overflow-wrap:anywhere; }
+.constellation-visibility-mini { display:block; flex:none; width:36px; height:28px; overflow:visible; }
+.constellation-visibility-line { stroke:#4c82c3; stroke-width:1.3; stroke-linecap:round; opacity:.9; }
+.constellation-visibility-star { fill:#d3a33d; stroke:#fff; stroke-width:.45; }
+.constellation-visibility-table td[data-visibility-direction] {
+  white-space:nowrap;
+}
+.constellation-visibility-direction-content { display:flex; align-items:center; gap:4px; }
+.constellation-visibility-compass { --direction-compass-size:21px; }
+.constellation-visibility-degrees { color:var(--muted); font-size:var(--font-note); }
+.constellation-visibility-table td[data-visibility-altitude] { white-space:nowrap; }
+.constellation-visibility-table td[data-visibility-altitude] small {
+  display:block;
+  color:var(--muted);
+  font-size:var(--font-small);
+  line-height:1.2;
+}
+.constellation-visibility-year-table { min-width:520px; }
+.constellation-visibility-year-table th:first-child { width:175px; }
+.constellation-visibility-year-table th[data-visibility-month] { padding-left:1px; padding-right:1px; text-align:center; }
+.constellation-visibility-year-table th.is-selected-month { background:#fff2cf; color:#49370f; }
+.constellation-visibility-year-table td,
+.constellation-visibility-year-table tbody th {
+  height:29px;
+  padding:2px 2px;
+  border-bottom:1px solid rgba(148,163,184,.16);
+  text-align:center;
+  font-weight:400;
+}
+.constellation-visibility-year-table tbody th { text-align:left; }
+.constellation-visibility-year-table .constellation-visibility-open { min-height:27px; gap:5px; }
+.constellation-visibility-year-table .constellation-visibility-mini { width:28px; height:22px; }
+.constellation-visibility-year-table td::before {
+  display:block;
+  width:100%;
+  height:6px;
+  border-radius:4px;
+  background:transparent;
+  content:"";
+}
+.constellation-visibility-year-table td.is-visible::before { background:#6a9bdb; }
+.constellation-visibility-year-table td.is-visible.is-selected-month::before { background:#d8a338; }
+.constellation-visibility-year-table td.is-selected-month { background:#fff8e7; }
+.constellation-visibility-legend { margin:3px 0 0; }
+.constellation-visibility-dialog {
+  width:min(620px,calc(100% - 24px));
+  max-width:620px;
+  max-height:calc(100% - 24px);
+  overflow:auto;
+  padding:0;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:var(--card);
+  color:var(--fg);
+  box-shadow:0 12px 42px rgba(0,0,0,.28);
+}
+.constellation-visibility-dialog::backdrop { background:rgba(15,23,42,.58); }
+.constellation-visibility-dialog-body { display:grid; gap:8px; padding:16px; }
+.constellation-visibility-dialog-heading { display:flex; justify-content:space-between; align-items:center; gap:10px; }
+.constellation-visibility-dialog-heading h2 { margin:0; font-size:var(--font-subheading); }
+.constellation-visibility-dialog-heading button {
+  min-height:var(--control-height);
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:6px 12px;
+  background:var(--card);
+  color:var(--accent);
+}
+.constellation-visibility-detail-figure .constellation-map { width:min(100%,360px); margin:4px auto; }
+.constellation-visibility-detail-figure .constellation-skyhint,
+.constellation-visibility-detail-figure .constellation-summary { display:none; }
+.constellation-visibility-detail-figure .constellation-map svg { display:block; }
+.constellation-visibility-detail-figure:empty { display:none; }
+.constellation-visibility-detail-direction { display:flex; flex-wrap:wrap; align-items:center; gap:7px; }
+.constellation-visibility-detail-compass { --direction-compass-size:26px; display:inline-flex; }
+.constellation-visibility-no-figure { margin:4px 0; color:var(--muted); font-size:var(--font-note); }
+.constellation-visibility-no-figure[hidden] { display:none; }
+
+@media (max-width:700px) {
+  .constellation-visibility-card { gap:8px; }
+  .constellation-visibility-table th:first-child { width:45%; }
+  .constellation-visibility-table th:nth-child(2),
+  .constellation-visibility-table td[data-visibility-range] { display:none; }
+  .constellation-visibility-table th:nth-child(3) { width:32%; }
+  .constellation-visibility-table th:nth-child(4) { width:23%; }
+  .constellation-visibility-table td,
+  .constellation-visibility-table tbody th { height:36px; padding-left:2px; padding-right:2px; }
+  .constellation-visibility-mini { width:28px; height:24px; }
+  .constellation-visibility-direction-content { gap:2px; }
+  .constellation-visibility-degrees { font-size:10px; }
+  .constellation-visibility-year-table { min-width:480px; }
+  .constellation-visibility-year-table th:first-child { width:130px; }
+  .constellation-visibility-year-table .constellation-visibility-open { font-size:var(--font-small); }
+  .constellation-visibility-year-table .constellation-visibility-mini { width:24px; flex-basis:24px; }
+}

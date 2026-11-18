@@ -285,7 +285,7 @@
     /**
      * Creates a small ICS payload for one single calendar event.
      * @param {object} event Selected calendar event.
-     * @returns {string} RFC5545-style text for one all-day event.
+     * @returns {string} RFC5545-style text with an exclusive end date.
      */
     function calendarEventIcsContent(event){
       if (!event) {
@@ -293,8 +293,9 @@
       }
 
       const startDate = String(event.date || '').replace(/[^0-9]/g, '');
-      const endDate = new Date(event.dateObj.getTime() + 86400000);
-      const endDateKey = formatDateKey(endDate).replace(/[^0-9]/g, '');
+      const endDate = new Date((event.endDate || event.date) + 'T00:00:00Z');
+      endDate.setUTCDate(endDate.getUTCDate() + 1);
+      const endDateKey = endDate.toISOString().slice(0, 10).replace(/-/g, '');
       const createdStamp = new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d{3}Z$/, 'Z');
       const escapedTitle = String(event.title || '').replace(/\\/g, '\\\\').replace(/,/g, '\\,').replace(/;/g, '\\;');
       const escapedDescription = String(event.note || '').replace(/\r?\n/g, '\\n').replace(/\\/g, '\\\\').replace(/,/g, '\\,').replace(/;/g, '\\;');
@@ -436,7 +437,7 @@
       const backdrop = fragment.querySelector('[data-calendar-detail-close]');
 
       if (dateLabel) {
-        dateLabel.textContent = fmtDateOnly(event.dateObj);
+        dateLabel.textContent = calendarEventDateLabel(event);
       }
       if (titleLabel) {
         titleLabel.textContent = event.title;
@@ -533,7 +534,7 @@
           const dot = fragment.querySelector('[data-calendar-dot]');
 
           if (dateLabel) {
-            dateLabel.textContent = fmtDateOnly(event.dateObj);
+            dateLabel.textContent = calendarEventDateLabel(event);
           }
           if (titleLabel) {
             titleLabel.textContent = event.title;
@@ -562,6 +563,16 @@
       timeline.replaceChildren(...nodes);
     }
 
+    /** Formats the start and, when supplied, the inclusive end of an event.
+     * @param {object} event Calendar event with local date objects.
+     * @returns {string} Localized date or date range.
+     */
+    function calendarEventDateLabel(event){
+      const start = fmtDateOnly(event.dateObj);
+      if (event.endDateObj) return start + ' – ' + fmtDateOnly(event.endDateObj);
+      return start;
+    }
+
     /**
      * Builds all events that belong to one displayed month.
      * @param {Date} monthDate First day of the displayed month.
@@ -575,10 +586,11 @@
     /**
      * Groups visible month events by local date key for the month grid.
      * @param {Array<object>} monthEvents Events in the selected month.
+     * @param {Date} monthDate First day of the displayed month.
      * @returns {Map<string, Array<object>>} Events grouped by YYYY-MM-DD.
      */
-    function calendarEventsByDay(monthEvents){
-      return options.model.eventsByDay(monthEvents);
+    function calendarEventsByDay(monthEvents, monthDate){
+      return options.model.eventsByDay(monthEvents, monthDate);
     }
 
     /**
@@ -598,7 +610,7 @@
       const monthDate = new Date(referenceDay.getFullYear(), referenceDay.getMonth(), 1);
       const selectedDay = referenceDay.getDate();
       const monthEvents = calendarEventsForMonth(monthDate, events);
-      const byDay = calendarEventsByDay(monthEvents);
+      const byDay = calendarEventsByDay(monthEvents, monthDate);
       const weekdayNodes = [];
       const gridNodes = [];
 
@@ -625,6 +637,7 @@
         if (fragment) {
           const cell = fragment.querySelector('.calendar-month-cell');
           const dayNumberLabel = fragment.querySelector('[data-calendar-day-number]');
+          const rangesContainer = fragment.querySelector('[data-calendar-day-ranges]');
           const eventsContainer = fragment.querySelector('[data-calendar-day-events]');
 
           if (dayNumber < 1 || dayNumber > daysInMonth) {
@@ -644,9 +657,24 @@
               cell.classList.add('is-selected-month-day');
             }
 
-            let dayEventIndex = 0;
-            while (dayEventIndex < dayEvents.length) {
-              const monthEvent = dayEvents[dayEventIndex];
+            for (const monthEvent of dayEvents) {
+              let chipTitle = monthEvent.title;
+              if (monthEvent.endDate && monthEvent.endDate !== monthEvent.date) {
+                const rangeFragment = cloneTemplate('calendarMonthRangeTemplate');
+                const marker = rangeFragment?.querySelector('[data-calendar-month-range]');
+                if (marker && rangesContainer) {
+                  marker.classList.toggle('is-range-start', dayKey === monthEvent.date);
+                  marker.classList.toggle('is-range-end', dayKey === monthEvent.endDate);
+                  rangesContainer.appendChild(rangeFragment);
+                }
+
+                // An ongoing range is listed again on the first day of the next month.
+                if (dayKey !== monthEvent.date && dayNumber !== 1) {
+                  continue;
+                }
+                chipTitle += ' · ' + calendarEventDateLabel(monthEvent);
+              }
+
               const eventFragment = cloneTemplate('calendarMonthEventTemplate');
               if (eventFragment) {
                 const chip = eventFragment.querySelector('[data-calendar-month-event]');
@@ -654,11 +682,10 @@
                 const label = eventFragment.querySelector('[data-calendar-month-label]');
                 if (label) {
                   label.textContent = monthEvent.title;
-                  label.title = monthEvent.title;
                 }
                 if (chip) {
-                  chip.title = monthEvent.title;
-                  chip.setAttribute('aria-label', monthEvent.title);
+                  chip.title = chipTitle;
+                  chip.setAttribute('aria-label', chipTitle);
                   chip.addEventListener('click', clickEvent => {
                     clickEvent.preventDefault();
                     if (clickEvent.currentTarget instanceof HTMLElement) {
@@ -673,7 +700,6 @@
                   eventsContainer.appendChild(eventFragment);
                 }
               }
-              dayEventIndex += 1;
             }
           }
 
@@ -812,7 +838,7 @@
       const currentSelection = getSelectedEvent(visibleEvents);
 
       if (nextEvent) {
-        nextLabel.textContent = (t.calendar_next_event || 'Next event') + ': ' + fmtDateOnly(nextEvent.dateObj) + ' - ' + nextEvent.title;
+        nextLabel.textContent = (t.calendar_next_event || 'Next event') + ': ' + calendarEventDateLabel(nextEvent) + ' - ' + nextEvent.title;
       } else {
         nextLabel.textContent = (t.calendar_next_event || 'Next event') + ': -';
       }

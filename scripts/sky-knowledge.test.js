@@ -10,10 +10,10 @@ for (const file of ['js/data/mnemonics-config.js', 'js/data/sky-knowledge-graphi
 }
 const entries = realm.window.PLANETENUHR_MNEMONICS.entries;
 const shuffledIds = realm.window.PLANETENUHR_KNOWLEDGE.shuffledIds;
-test('31 reviewed entries have unique ids, supported categories and complete language packs', () => {
-  assert.equal(entries.length, 31);
-  assert.equal(new Set(entries.map(entry => entry.id)).size, 31);
-  for (const [kind,count] of [['mnemonic',11],['planet',10],['star',10]]) {
+test('35 reviewed entries have unique ids, supported categories and complete language packs', () => {
+  assert.equal(entries.length, 35);
+  assert.equal(new Set(entries.map(entry => entry.id)).size, entries.length);
+  for (const [kind,count] of [['mnemonic',11],['planet',10],['star',10],['extreme',4]]) {
     assert.equal(entries.filter(entry => entry.kind === kind).length, count);
   }
   for (const entry of entries) {
@@ -65,7 +65,7 @@ test('shuffle deals every item exactly once and prevents immediate repeats acros
 test('card labels and help are available in all three languages', () => {
   for (const language of ['de','en','fr']) {
     const labels = realm.window.PLANETENUHR_TRANSLATIONS[language];
-    for (const key of ['title_sky_knowledge','knowledge_next','knowledge_counter','knowledge_kind_mnemonic','knowledge_kind_planet','knowledge_kind_star','knowledge_sources','knowledge_own_wording']) {
+    for (const key of ['title_sky_knowledge','knowledge_next','knowledge_counter','knowledge_kind_mnemonic','knowledge_kind_planet','knowledge_kind_star','knowledge_kind_extreme','knowledge_sources','knowledge_own_wording']) {
       assert.ok(labels[key], language + ' ' + key);
     }
     assert.ok(labels.knowledge_counter.includes('{current}') && labels.knowledge_counter.includes('{total}'));

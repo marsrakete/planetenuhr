@@ -12,6 +12,10 @@ window.PLANETENUHR_EXPLORER = (() => {
     const model = window.PLANETENUHR_EXPLORER_MODEL;
     const plot = document.getElementById('planetHorizonPlot');
     const horizonCard = plot.closest('.display-container');
+    const horizonTabs = document.getElementById('horizonViewTabs');
+    const horizonOverview = document.getElementById('horizonOverviewPanel');
+    const horizonCalculation = document.getElementById('horizonCalculationPanel');
+    const calculationBodies = document.getElementById('horizonCalculationBodies');
     const timeSlider = document.getElementById('horizonTimeOffset');
     const progressSlider = document.getElementById('lightTravelProgress');
     const planetList = document.getElementById('horizonPlanetList');
@@ -20,6 +24,7 @@ window.PLANETENUHR_EXPLORER = (() => {
     let selectedLightPlanet = config.defaultLightPlanet;
     let baseDate = dependencies.getDate();
     let rows = [];
+    let horizonObservation = null;
     let lastWidth = 0;
     let plotResizeFrame = 0;
     let currentLightTravel = null;
@@ -109,11 +114,17 @@ window.PLANETENUHR_EXPLORER = (() => {
       }).format(date);
     }
 
-    /** Computes geometric solar altitude using the same coordinate model as the planets. @param {Date} date Instant. @param {object} location Observer. @returns {number} Solar-center altitude in degrees. */
-    function solarAltitudeAt(date, location){
-      const vector = dependencies.getGeocentricVector('sun', date);
+    /** Computes mean equatorial and geometric horizon coordinates from the same planetary model.
+     * @param {string} key Planet key or sun.
+     * @param {Date} date Observation instant.
+     * @param {object} location Observer's latitude and longitude.
+     * @returns {object} Right ascension, declination, azimuth and altitude in degrees.
+     */
+    function bodyHorizonPosition(key, date, location){
+      const vector = dependencies.getGeocentricVector(key, date);
       const equatorial = model.equatorialOfDate(vector, date);
-      return dependencies.getHorizontalCoordinates(date, location, equatorial).altitudeDeg;
+      const horizontal = dependencies.getHorizontalCoordinates(date, location, equatorial);
+      return {...equatorial, ...horizontal};
     }
 
     /** Builds localized phase labels, adding twilight depth where relevant. @param {object} state Light phase and level. @returns {string} Accessible phase name. */
@@ -191,7 +202,7 @@ window.PLANETENUHR_EXPLORER = (() => {
 
     /** Updates the sky and day-band cursor for this instant without replacing controls. @param {Date} date Instant. @param {object} location Observer. @returns {void} */
     function renderHorizonLighting(date, location){
-      const altitudeAt = instant => solarAltitudeAt(instant, location);
+      const altitudeAt = instant => bodyHorizonPosition('sun', instant, location).altitudeDeg;
       currentSkyState = model.solarLightAt(date, altitudeAt);
       horizonCard.dataset.skyPhase = currentSkyState.phase;
       horizonCard.dataset.skyLevel = currentSkyState.level;
@@ -256,6 +267,7 @@ window.PLANETENUHR_EXPLORER = (() => {
         node.textContent = text(node.dataset.explorerText);
       });
       plot.setAttribute('aria-label', text('horizon_plot_aria'));
+      horizonTabs.setAttribute('aria-label', text('horizon_view_tabs'));
       timeSlider.setAttribute('aria-label', text('horizon_explore_time'));
       progressSlider.setAttribute('aria-label', text('light_follow'));
       lightTargets.setAttribute('aria-label', text('light_targets'));
@@ -350,6 +362,7 @@ window.PLANETENUHR_EXPLORER = (() => {
 
     /** Draws the panorama structure only when its width changes; updates existing markers otherwise. @returns {void} */
     function drawHorizon(){
+      if (horizonOverview.hidden || !rows.length) return;
       const width = Math.max(220, plot.getBoundingClientRect().width);
       if (width === lastWidth && plot.querySelectorAll('.horizon-marker').length === rows.length) {
         updateHorizonMarkers();
@@ -425,16 +438,101 @@ window.PLANETENUHR_EXPLORER = (() => {
       setText('horizonSelection', detail);
     }
 
+    /** Updates one sketch and the substituted altitude formula.
+     * @param {DocumentFragment} fragment Cloned calculation body template.
+     * @param {object} body Body name and modeled equatorial and horizon coordinates.
+     * @param {number} latitude Observer's latitude in degrees.
+     * @param {number} siderealAngle Local sidereal angle in degrees.
+     * @returns {void}
+     */
+    function fillHorizonCalculation(fragment, body, latitude, siderealAngle){
+      const hourAngle = dependencies.signedDegrees(siderealAngle - body.rightAscensionDeg);
+      const formulaValues = {
+        sidereal:number(siderealAngle, 4),
+        rightAscension:number(body.rightAscensionDeg, 4),
+        latitude:number(latitude, 4),
+        declination:number(body.declinationDeg, 4),
+        hourAngle:number(hourAngle, 4),
+        altitude:number(body.altitudeDeg, 1)
+      };
+      fragment.querySelector('[data-horizon-calculation-name]').textContent = body.name;
+      fragment.querySelector('[data-horizon-calculation-caption]').textContent =
+        message('horizon_calculation_caption', {altitude:formulaValues.altitude});
+      fragment.querySelector('[data-horizon-calculation-hour]').textContent =
+        message('horizon_calculation_hour_value', formulaValues);
+      fragment.querySelector('[data-horizon-calculation-formula]').textContent =
+        message('horizon_calculation_altitude_value', formulaValues);
+
+      const radians = body.altitudeDeg * Math.PI / 180;
+      const cosine = Math.cos(radians);
+      const sine = Math.sin(radians);
+      const x = 33 + 61 * cosine;
+      const y = 74 - 61 * sine;
+      const ray = fragment.querySelector('[data-horizon-calculation-ray]');
+      ray.setAttribute('x2', x);
+      ray.setAttribute('y2', y);
+      const marker = fragment.querySelector('[data-horizon-calculation-marker]');
+      marker.setAttribute('cx', x);
+      marker.setAttribute('cy', y);
+      let sweep = 0;
+      if (body.altitudeDeg < 0) sweep = 1;
+      fragment.querySelector('[data-horizon-calculation-arc]').setAttribute('d',
+        'M 55 74 A 22 22 0 0 ' + sweep + ' ' + (33 + 22 * cosine) + ' ' + (74 - 22 * sine));
+    }
+
+    /** Renders the selected planet and Sun at the instant shown above the tabs.
+     * @returns {void}
+     */
+    function renderHorizonCalculation(){
+      if (horizonCalculation.hidden || !horizonObservation) return;
+      const {date, location} = horizonObservation;
+      const selected = rows.find(row => row.key === selectedHorizonPlanet);
+      const sun = {name:text('eclipse_sun'), ...bodyHorizonPosition('sun', date, location)};
+      const siderealAngle = dependencies.getLocalSiderealAngle(date, location.longitude || 0);
+      const planetCard = clone('horizonCalculationBodyTemplate');
+      const sunCard = clone('horizonCalculationBodyTemplate');
+      sunCard.querySelector('article').classList.add('horizon-calculation-sun');
+      fillHorizonCalculation(planetCard, selected, location.latitude || 0, siderealAngle);
+      fillHorizonCalculation(sunCard, sun, location.latitude || 0, siderealAngle);
+      calculationBodies.replaceChildren(planetCard, sunCard);
+    }
+
+    /** Selects a horizon tab by mouse or by arrow, Home or End key.
+     * @param {Event} event Delegated click or keyboard navigation.
+     * @returns {void}
+     */
+    function selectHorizonView(event){
+      const tabs = Array.from(horizonTabs.querySelectorAll('[role="tab"]'));
+      const target = event.target.closest('[role="tab"]');
+      if (!target) return;
+      let selected = tabs.indexOf(target);
+      if (event.type === 'keydown') {
+        if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') selected = (selected + 1) % tabs.length;
+        else if (event.key === 'Home') selected = 0;
+        else if (event.key === 'End') selected = tabs.length - 1;
+        else return;
+        event.preventDefault();
+        tabs[selected].focus();
+      }
+      tabs.forEach((tab, index) => {
+        const active = index === selected;
+        tab.setAttribute('aria-selected', String(active));
+        if (active) tab.tabIndex = 0;
+        else tab.tabIndex = -1;
+        document.getElementById(tab.getAttribute('aria-controls')).hidden = !active;
+      });
+      drawHorizon();
+      renderHorizonCalculation();
+      dependencies.updateCardLayout(horizonCard);
+    }
+
     /** Computes and renders positions for the shared date plus the local time offset. @returns {void} */
     function renderHorizon(){
       const date = new Date(baseDate.getTime() + Number(timeSlider.value) * 3600000);
       const location = dependencies.getLocation();
-      rows = config.horizonPlanetKeys.map((key, index) => {
-        const vector = dependencies.getGeocentricVector(key, date);
-        const equatorial = model.equatorialOfDate(vector, date);
-        const horizontal = dependencies.getHorizontalCoordinates(date, location, equatorial);
-        return { key, index, name:text('planet_' + key), ...horizontal };
-      });
+      horizonObservation = {date, location};
+      rows = config.horizonPlanetKeys.map((key, index) =>
+        ({key, index, name:text('planet_' + key), ...bodyHorizonPosition(key, date, location)}));
       setText('horizonContext', location.name + ' · ' + localDateTime(date));
       updateAccuracyNote('horizonAccuracy', date);
       let offsetLabel = text('horizon_shared_time');
@@ -458,6 +556,7 @@ window.PLANETENUHR_EXPLORER = (() => {
       });
       renderHorizonLighting(date, location);
       renderHorizonSelection();
+      renderHorizonCalculation();
       drawHorizon();
     }
 
@@ -558,7 +657,8 @@ window.PLANETENUHR_EXPLORER = (() => {
         }
         selectedHorizonPlanet = button.dataset.horizonPlanet;
         renderHorizonSelection();
-        updateHorizonMarkers();
+        if (!horizonOverview.hidden) updateHorizonMarkers();
+        renderHorizonCalculation();
         dependencies.updateCardLayout(planetList.closest('.display-container'));
       }
     }
@@ -649,7 +749,7 @@ window.PLANETENUHR_EXPLORER = (() => {
 
     /** Redraws the panorama after an actual width change without restarting masonry loops. @returns {void} */
     function resizePlot(){
-      if (rows.length && Math.abs(plot.getBoundingClientRect().width - lastWidth) > 0.5) {
+      if (!horizonOverview.hidden && rows.length && Math.abs(plot.getBoundingClientRect().width - lastWidth) > 0.5) {
         drawHorizon();
       }
     }
@@ -670,6 +770,8 @@ window.PLANETENUHR_EXPLORER = (() => {
     }
 
     buildControls();
+    horizonTabs.addEventListener('click', selectHorizonView);
+    horizonTabs.addEventListener('keydown', selectHorizonView);
     planetList.addEventListener('click', selectHorizonPlanet);
     lightTargets.addEventListener('click', selectLightPlanet);
     timeSlider.addEventListener('input', exploreTime);

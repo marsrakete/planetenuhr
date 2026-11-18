@@ -34,7 +34,11 @@ window.PLANETENUHR_KNOWLEDGE_GRAPHICS_CONFIG = {
     "stellar-temperature": "colors",
     "sun-age": "sun-age",
     "stellar-fusion": "fusion",
-    "white-dwarf": "white-dwarf"
+    "white-dwarf": "white-dwarf",
+    "neutron-stars-pulsars": "pulsar-beam",
+    "black-holes": "black-hole-disk",
+    "supernovae": "supernova-ejecta",
+    "gravitational-waves": "gravitational-wave-strain"
   },
   scenes: {
     "planets": {
@@ -467,6 +471,60 @@ window.PLANETENUHR_KNOWLEDGE_GRAPHICS_CONFIG = {
         {"tag":"text","attrs":{"x":65,"y":129,"text-anchor":"middle"},"text":{"de":"4 H-Kerne","en":"4 H nuclei","fr":"4 noyaux H"}},
         {"tag":"text","attrs":{"x":217,"y":129,"text-anchor":"middle"},"text":{"de":"He-Kern","en":"He nucleus","fr":"Noyau He"}},
         {"tag":"text","attrs":{"x":307,"y":129,"text-anchor":"middle"},"text":{"de":"Energie","en":"Energy","fr":"Énergie"}}
+      ]
+    },
+    "pulsar-beam": {
+      caption: {"de":"Die gestrichelte Linie ist die Drehachse. Die Strahlen stehen schräg dazu und schwenken mit dem Stern. Ein Puls erreicht uns, wenn ein Strahl über die Erde streicht. Schematische Ansicht.","en":"The dashed line is the spin axis. The tilted beams sweep around as the star turns. We receive a pulse when a beam sweeps past Earth. Schematic view.","fr":"La ligne pointillée représente l’axe de rotation. Les faisceaux inclinés tournent avec l’étoile. Une impulsion nous parvient lorsqu’un faisceau balaie la Terre. Vue schématique."},
+      shapes: [
+        {"tag":"path","attrs":{"d":"M 132 82 L 34 105 L 40 119 Z M 132 82 L 298 17 L 304 43 Z","fill":"#ffd36a"}},
+        {"tag":"line","attrs":{"x1":132,"y1":17,"x2":132,"y2":146,"stroke":"#d1e0ff","stroke-dasharray":"4 4"}},
+        {"tag":"circle","attrs":{"cx":132,"cy":82,"r":19,"fill":"#a8beff","stroke":"#e8f1ff","stroke-width":2}},
+        {"tag":"path","attrs":{"d":"M 107 52 C 83 60 84 36 107 31 M 99 27 L 107 31 L 100 36","fill":"none","stroke":"#7dc9ff","stroke-width":2}},
+        {"tag":"circle","attrs":{"cx":313,"cy":27,"r":8,"fill":"#7dc9ff"}},
+        {"tag":"text","attrs":{"x":313,"y":66,"text-anchor":"middle","font-size":18},"text":{"de":"Erde","en":"Earth","fr":"Terre"}},
+        {"tag":"text","attrs":{"x":184,"y":127,"text-anchor":"middle","font-size":18},"text":"Pulsar"}
+      ]
+    },
+    "black-hole-disk": {
+      caption: {"de":"In dieser schematischen Draufsicht markiert der gestrichelte Rand den Ereignishorizont. Außen leuchtet die heiße Akkretionsscheibe. Ein beobachteter Schatten kann größer sein als der Horizont.","en":"In this schematic top view, the dashed edge marks the event horizon. The hot accretion disk glows outside it. An observed shadow can be larger than the horizon.","fr":"Dans cette vue schématique de dessus, le bord pointillé marque l’horizon des événements. Le disque d’accrétion chaud brille à l’extérieur. L’ombre observée peut être plus grande que l’horizon."},
+      shapes: [
+        {"tag":"circle","attrs":{"cx":180,"cy":70,"r":53,"fill":"#754055"}},
+        {"tag":"circle","attrs":{"cx":180,"cy":70,"r":43,"fill":"#c47060","stroke":"#e89b65","stroke-width":2}},
+        {"tag":"circle","attrs":{"cx":180,"cy":70,"r":33,"fill":"#f0a965","stroke":"#ffd36a","stroke-width":3}},
+        {"tag":"circle","attrs":{"cx":180,"cy":70,"r":28,"fill":"#0d1930"}},
+        {"tag":"circle","attrs":{"cx":180,"cy":70,"r":19,"fill":"#050811","stroke":"#e5ecfa","stroke-width":1.5,"stroke-dasharray":"3 3"}},
+        {"tag":"path","attrs":{"d":"M 162 76 L 106 100 L 48 100 M 220 83 L 246 115 L 321 115","fill":"none","stroke":"#d4dff2","stroke-width":1.5}},
+        {"tag":"text","attrs":{"x":18,"y":119,"font-size":18},"text":{"de":"Horizont","en":"Horizon","fr":"Horizon"}},
+        {"tag":"text","attrs":{"x":342,"y":137,"text-anchor":"end","font-size":18},"text":{"de":"Akkretionsscheibe","en":"Accretion disk","fr":"Disque d’accrétion"}}
+      ]
+    },
+    "supernova-ejecta": {
+      caption: {"de":"Links ein massereicher Stern, rechts ausgeworfenes Gas. Die Pfeile zeigen die Ausbreitung. O und S stehen für Sauerstoff und Schwefel. Schematische Größen und Farben.","en":"A massive star on the left and expelled gas on the right. The arrows show its expansion. O and S stand for oxygen and sulfur. Sizes and colours are schematic.","fr":"Une étoile massive à gauche et le gaz éjecté à droite. Les flèches indiquent l’expansion. O et S désignent l’oxygène et le soufre. Tailles et couleurs schématiques."},
+      shapes: [
+        {"tag":"circle","attrs":{"cx":69,"cy":70,"r":32,"fill":"#d67e66","stroke":"#f0a965","stroke-width":3}},
+        {"tag":"circle","attrs":{"cx":69,"cy":70,"r":13,"fill":"#ffd36a"}},
+        {"tag":"path","attrs":{"d":"M 115 70 H 170 M 162 63 L 170 70 L 162 77","fill":"none","stroke":"#e1e9f8","stroke-width":2}},
+        {"tag":"path","attrs":{"d":"M 252 36 L 264 55 L 291 43 L 278 64 L 302 72 L 278 81 L 288 101 L 263 90 L 251 110 L 244 87 L 218 97 L 232 77 L 209 65 L 234 61 L 226 41 L 245 53 Z","fill":"#ac5572","stroke":"#f09a7d","stroke-width":2}},
+        {"tag":"circle","attrs":{"cx":254,"cy":71,"r":13,"fill":"#ffd36a"}},
+        {"tag":"path","attrs":{"d":"M 266 53 L 289 27 M 279 29 L 289 27 L 288 37 M 279 81 L 312 92 M 305 84 L 312 92 L 302 96 M 240 84 L 219 111 M 229 108 L 219 111 L 219 101","fill":"none","stroke":"#f6b58f","stroke-width":2}},
+        {"tag":"text","attrs":{"x":306,"y":34,"text-anchor":"middle","font-size":18},"text":"O"},
+        {"tag":"text","attrs":{"x":324,"y":97,"text-anchor":"middle","font-size":18},"text":"S"},
+        {"tag":"text","attrs":{"x":69,"y":135,"text-anchor":"middle","font-size":18},"text":{"de":"Stern","en":"Star","fr":"Étoile"}},
+        {"tag":"text","attrs":{"x":266,"y":135,"text-anchor":"middle","font-size":18},"text":{"de":"Auswurf","en":"Ejecta","fr":"Éjectas"}}
+      ]
+    },
+    "gravitational-wave-strain": {
+      caption: {"de":"Momentaufnahmen beim Durchgang einer Welle. Ein Kreis aus Testteilchen wird abwechselnd seitlich und senkrecht gedehnt und jeweils quer dazu gestaucht. Die Verformung ist stark übertrieben.","en":"Snapshots as a wave passes. A ring of test particles alternately stretches sideways and vertically while squeezing in the other direction. The distortion is greatly exaggerated.","fr":"Instantanés au passage d’une onde. Un cercle de particules témoins s’étire alternativement à l’horizontale et à la verticale tout en se comprimant dans l’autre direction. La déformation est fortement exagérée."},
+      shapes: [
+        {"tag":"circle","attrs":{"cx":55,"cy":69,"r":29,"fill":"none","stroke":"#91a2c4","stroke-dasharray":"4 3"}},
+        {"tag":"circle","attrs":{"cx":180,"cy":69,"r":29,"fill":"none","stroke":"#91a2c4","stroke-dasharray":"4 3"}},
+        {"tag":"circle","attrs":{"cx":303,"cy":69,"r":29,"fill":"none","stroke":"#91a2c4","stroke-dasharray":"4 3"}},
+        {"tag":"ellipse","attrs":{"cx":180,"cy":69,"rx":40,"ry":19,"fill":"none","stroke":"#ffd36a","stroke-width":2.5}},
+        {"tag":"ellipse","attrs":{"cx":303,"cy":69,"rx":19,"ry":40,"fill":"none","stroke":"#7dc9ff","stroke-width":2.5}},
+        {"tag":"path","attrs":{"d":"M 96 69 H 124 M 118 64 L 124 69 L 118 74 M 231 69 H 256 M 250 64 L 256 69 L 250 74","fill":"none","stroke":"#e1e9f8","stroke-width":2}},
+        {"tag":"text","attrs":{"x":55,"y":134,"text-anchor":"middle","font-size":18},"text":{"de":"Ruheform","en":"At rest","fr":"Au repos"}},
+        {"tag":"text","attrs":{"x":180,"y":134,"text-anchor":"middle","font-size":18},"text":{"de":"waagerecht","en":"horizontal","fr":"horizontal"}},
+        {"tag":"text","attrs":{"x":303,"y":134,"text-anchor":"middle","font-size":18},"text":{"de":"senkrecht","en":"vertical","fr":"vertical"}}
       ]
     },
     "white-dwarf": {

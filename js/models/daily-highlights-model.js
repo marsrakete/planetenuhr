@@ -46,17 +46,20 @@ window.PLANETENUHR_DAILY_MODEL = (() => {
     });
     snapshot.calendar.forEach((event, index) => {
       if (showers.some(shower => shower.curated === event)) return;
-      const days = dayDifference(snapshot.dateKey, event.date);
-      if (!Number.isFinite(days) || days < 0 || days > config.lookahead.calendar) return;
+      const untilStart = dayDifference(snapshot.dateKey, event.date);
+      const activeRange = Boolean(event.endDate && event.date <= snapshot.dateKey && snapshot.dateKey <= event.endDate);
+      if (!Number.isFinite(untilStart) || (!activeRange && (untilStart < 0 || untilStart > config.lookahead.calendar))) return;
+      const days = Math.max(0, untilStart);
       let group = 'calendar';
       let score = config.scores.calendar;
       let target = 'sky_calendar';
       if (['eclipse','meteor','moon'].includes(event.category)) group = event.category;
       if (group === 'eclipse') score = config.scores.eclipse;
       if (event.eclipseStatus === 'not_visible') score -= 35;
+      if (activeRange) score += 1;
       if (event.approach) target = 'conjunctions';
       candidates.push({id:'calendar-' + event.date + '-' + event.category + '-' + index,
-        kind:'calendar', group, score:score - days * config.futureDayPenalty, days, dateKey:event.date,
+        kind:'calendar', group, score:score - days * config.futureDayPenalty, days, activeRange, dateKey:event.date,
         target, data:event});
     });
     showers.forEach(({stream, state, curated}) => {

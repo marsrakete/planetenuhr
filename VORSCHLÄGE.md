@@ -32,7 +32,7 @@ Hier sammeln wir mögliche neue Inhalte und Verbesserungen für die Planetenuhr.
 
 ## Extreme Objekte im All
 
-**Idee:** Eine Erklär-Kachel stellt kompakt extreme Himmelsobjekte und Phänomene vor:
+Vier Einträge in **Himmelswissen** stellen extreme Himmelsobjekte und Phänomene vor:
 
 - **Neutronensterne und Pulsare:** extrem kompakte Sternreste; bei Pulsaren machen Strahlen und schnelle Rotation den Leuchtturm-Effekt sichtbar.
 - **Schwarze Löcher:** Ereignishorizont und Akkretionsscheibe erklären und deutlich machen, dass das Schwarze Loch selbst nicht als leuchtende Scheibe erscheint.
@@ -41,7 +41,7 @@ Hier sammeln wir mögliche neue Inhalte und Verbesserungen für die Planetenuhr.
 
 **Wichtige Grenze:** Die Darstellungen sind statische, schematische Erklärungen. Sie zeigen keine aktuellen Ereignisse oder individuellen Beobachtungsprognosen.
 
-**Status:** Idee; noch nicht umgesetzt.
+**Status:** umgesetzt in „Himmelswissen“.
 
 ## Milchstraße
 

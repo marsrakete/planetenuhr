@@ -10,11 +10,13 @@
     let index = 0;
     while (index < sourceEvents.length) {
       const event = sourceEvents[index];
-      enrichedEvents.push({
+      const entry = {
         ...event,
         dateObj:new Date(event.date + "T00:00:00"),
         key:eventKey(event)
-      });
+      };
+      if (event.endDate) entry.endDateObj = new Date(event.endDate + "T00:00:00");
+      enrichedEvents.push(entry);
       index += 1;
     }
     enrichedEvents.sort((left, right) => left.dateObj - right.dateObj);
@@ -73,7 +75,7 @@
     while (index < events.length) {
       const event = events[index];
       if (matchesCategory(event, category)) {
-        if (showPast || event.dateObj >= referenceDay) {
+        if (showPast || (event.endDateObj || event.dateObj) >= referenceDay) {
           visibleEvents.push(event);
         }
       }
@@ -119,39 +121,39 @@
     return null;
   }
 
-  /** Returns the events whose local dates fall in the requested month.
+  /** Returns events that overlap the requested local month.
    * @param {Date} monthDate Any date in the target month.
    * @param {Array<object>} events Candidate enriched events.
    * @returns {Array<object>} Events in the target local month.
    */
   function eventsForMonth(monthDate, events){
-    const monthEvents = [];
-    let index = 0;
-    while (index < events.length) {
-      const event = events[index];
-      if (event.dateObj.getFullYear() === monthDate.getFullYear() && event.dateObj.getMonth() === monthDate.getMonth()) {
-        monthEvents.push(event);
-      }
-      index += 1;
-    }
-    return monthEvents;
+    const first = new Date(monthDate.getFullYear(), monthDate.getMonth(), 1);
+    const nextMonth = new Date(monthDate.getFullYear(), monthDate.getMonth() + 1, 1);
+    return events.filter(event => event.dateObj < nextMonth && (event.endDateObj || event.dateObj) >= first);
   }
 
-  /** Groups events by their source YYYY-MM-DD date key.
+  /** Groups events by every date covered, limiting the result to the displayed month when provided.
    * @param {Array<object>} monthEvents Events from a single month.
+   * @param {Date} [monthDate] Any day in the displayed local month.
    * @returns {Map<string, Array<object>>} Events grouped by date key.
    */
-  function eventsByDay(monthEvents){
+  function eventsByDay(monthEvents, monthDate){
     const grouped = new Map();
-    let index = 0;
-    while (index < monthEvents.length) {
-      const event = monthEvents[index];
-      const dayKey = event.date;
-      if (!grouped.has(dayKey)) {
-        grouped.set(dayKey, []);
+    for (const event of monthEvents) {
+      const day = new Date(event.dateObj);
+      let lastDay = event.endDateObj || event.dateObj;
+      if (monthDate) {
+        const first = new Date(monthDate.getFullYear(), monthDate.getMonth(), 1);
+        const last = new Date(monthDate.getFullYear(), monthDate.getMonth() + 1, 0);
+        if (day < first) day.setTime(first.getTime());
+        if (lastDay > last) lastDay = last;
       }
-      grouped.get(dayKey).push(event);
-      index += 1;
+      while (day <= lastDay) {
+        const dayKey = new Date(Date.UTC(day.getFullYear(), day.getMonth(), day.getDate())).toISOString().slice(0, 10);
+        if (!grouped.has(dayKey)) grouped.set(dayKey, []);
+        grouped.get(dayKey).push(event);
+        day.setDate(day.getDate() + 1);
+      }
     }
     return grouped;
   }

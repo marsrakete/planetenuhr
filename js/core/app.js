@@ -157,17 +157,60 @@
       polarPoint, svgArcPath, formatDate:formatDateStamp, appendSummaryText, appendSummaryLine,
       renderLabels:window.PLANETENUHR_METEOR_LABELS.render, requestLayout:dashboardLayout.requestMasonryLayout
     });
+    const constellationArt = window.PLANETENUHR_CONSTELLATION_ART.create({
+      document, config:window.PLANETENUHR_CONSTELLATION_ILLUSTRATIONS
+    });
     const constellationMonthController = window.PLANETENUHR_CONSTELLATION_MONTH.create({
+      illustrations:constellationArt,
       document, cloneTemplate, createSvgElement:createChartSvgElement,
-      getItems:() => phenomenaConfig.constellations || [], getTranslations:() => t,
+      getItems:() => (phenomenaConfig.constellations || []).filter(item => Number.isInteger(item.month)), getTranslations:() => t,
       compassLabelForAzimuth, altitudeThumbEstimate, appendSummaryText, appendSummaryLine,
       requestMasonryLayout:dashboardLayout.requestMasonryLayout
     });
+    const constellationDetails = window.PLANETENUHR_CONSTELLATION_DETAILS.create({
+      document, config:window.PLANETENUHR_CONSTELLATION_DESCRIPTIONS
+    });
     const constellationYearController = window.PLANETENUHR_CONSTELLATION_YEAR.create({
+      illustrations:constellationArt,
       document, createSvgElement:createChartSvgElement,
-      getItems:() => phenomenaConfig.constellations || [], getTranslations:() => t,
+      details:constellationDetails,
+      getItems:() => (phenomenaConfig.constellations || []).filter(item => Number.isInteger(item.month)), getTranslations:() => t,
       polarPoint, dayOfYearLocal:window.PLANETENUHR_SOLAR_VISIBILITY.dayOfYearLocal, daysInYear:window.PLANETENUHR_SOLAR_VISIBILITY.daysInYear, monthShortLabel, appendSummaryText, appendSummaryLine,
       renderDetail:(item, detailContext, targets) => constellationMonthController.render(detailContext, Object.assign({}, targets, {item}))
+    });
+    const constellationVisibilityModel = window.PLANETENUHR_CONSTELLATION_VISIBILITY_MODEL.create({
+      dateTime:window.PLANETENUHR_DATE_TIME,
+      coordinates:window.PLANETENUHR_COORDINATES
+    });
+    const constellationVisibilityController = window.PLANETENUHR_CONSTELLATION_VISIBILITY_CARD.create({
+      illustrations:constellationArt,
+      document,
+      details:constellationDetails,
+      config:window.PLANETENUHR_CONSTELLATION_VISIBILITY,
+      getEntries:() => window.PLANETENUHR_CONSTELLATION_VISIBILITY.constellations,
+      getFigures:() => phenomenaConfig.constellations || [],
+      getTranslations:() => t,
+      model:constellationVisibilityModel,
+      dateTime:window.PLANETENUHR_DATE_TIME,
+      compass:window.PLANETENUHR_COMPASS,
+      compassLabelForAzimuth,
+      altitudeThumbEstimate,
+      createSvgElement:createChartSvgElement,
+      cloneTemplate,
+      requestLayout:dashboardLayout.requestMasonryLayout,
+      renderFigure:(item, context, target) => {
+        target.className = 'constellation-map';
+        const hiddenSkyHint = document.createElement('div');
+        const hiddenSummary = document.createElement('div');
+        constellationMonthController.render(context, {
+          target,
+          skyHint:hiddenSkyHint,
+          summary:hiddenSummary,
+          item,
+          idPrefix:'constellation-visibility-detail-',
+          suppressLayout:true
+        });
+      }
     });
     const retrogradeModel = window.PLANETENUHR_RETROGRADE_MODEL.create({
       longitude:geocentricLongitude, latitude:geocentricLatitude,
@@ -175,7 +218,10 @@
     });
     const retrogradeController = window.PLANETENUHR_RETROGRADE_CARD.create({
       document, cloneTemplate, model:retrogradeModel, getTranslations:() => t,
-      getBodies:() => phenomenaConfig.retrogradeBodies, clamp01, bodyDisplayName, formatDate:formatDateStamp
+      getBodies:() => phenomenaConfig.retrogradeBodies, clamp01, bodyDisplayName, formatDate:formatDateStamp,
+      getLanguage:() => lang, atLocalTime:window.PLANETENUHR_DATE_TIME.dateAtTimeInZone,
+      getPosition:window.PLANETENUHR_PLANET_MODEL.heliocentricPosition,
+      updateCardLayout:dashboardLayout.updateSingleCardMasonryLayout
     });
     const seasonsController = window.PLANETENUHR_SEASONS.create({
       document, cloneTemplate, createSvgElement:createChartSvgElement, getTranslations:() => t,
@@ -671,6 +717,7 @@
           {key:'renderMeteorStreams', changes, render:context => meteorController.render(context)},
           {key:'renderConstellationOfMonth', changes, render:context => constellationMonthController.render(context)},
           {key:'renderConstellationYear', changes, render:context => constellationYearController.render(context)},
+          {key:'renderConstellationVisibility', changes, render:context => constellationVisibilityController.render(context)},
           {key:'renderSeasonAxis', changes, render:context => seasonsController.render(context)},
           {key:'renderRetrogradePhases', changes, render:context => retrogradeController.render(context)},
           {key:'renderInnerPlanetPhases', changes, render:context => innerPlanetsController.render(context)},
@@ -1064,6 +1111,8 @@
       getHeliocentricPosition: window.PLANETENUHR_PLANET_MODEL.heliocentricPosition,
       getGeocentricVector: window.PLANETENUHR_PLANET_MODEL.geocentricVector,
       getHorizontalCoordinates: window.PLANETENUHR_COORDINATES.horizontalCoordinates,
+      getLocalSiderealAngle: window.PLANETENUHR_COORDINATES.localSiderealAngleDegrees,
+      signedDegrees: window.PLANETENUHR_COORDINATES.signedDeg,
       getAltitudeEstimate: altitudeThumbEstimate,
       requestLayout: dashboardLayout.requestMasonryLayout,
       updateCardLayout: dashboardLayout.updateSingleCardMasonryLayout

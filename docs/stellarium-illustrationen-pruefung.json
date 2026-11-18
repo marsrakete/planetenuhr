@@ -1,0 +1,6633 @@
+{
+  "checkedOn": "2026-11-18",
+  "stellariumRevision": "daace2add6a1bf886e8ee1934f51e9c69f818d18",
+  "hygRevision": "3bf37f4b2d5460e1278286320d1d62fab9b493c1",
+  "sourceUrl": "https://github.com/Stellarium/stellarium/blob/daace2add6a1bf886e8ee1934f51e9c69f818d18/skycultures/modern/index.json",
+  "hygUrl": "https://github.com/astronexus/HYG-Database/blob/3bf37f4b2d5460e1278286320d1d62fab9b493c1/hyg/CURRENT/hygdata_v41.csv",
+  "figureSourceSha256": "8a9bbe6a08270921894f0b53713ff7e62adabcda4c41b42bb4f0d256c46433ef",
+  "summary": {
+    "entries": 49,
+    "images": 47,
+    "missing": [
+      "serpens_caput",
+      "serpens_cauda"
+    ],
+    "withAlpha": 0,
+    "additionalAnchorFigures": 12,
+    "additionalAnchorCount": 14,
+    "imagePlaneHorizonCrossings": [],
+    "imagesExtendingOutsideChart": [
+      "aquila",
+      "andromeda",
+      "crater",
+      "delphinus",
+      "draco",
+      "triangulum",
+      "eridanus",
+      "pisces",
+      "auriga",
+      "camelopardalis",
+      "ursa_major",
+      "canis_major",
+      "coma_berenices",
+      "lepus",
+      "hercules",
+      "canes_venatici",
+      "virgo",
+      "cassiopeia",
+      "cepheus",
+      "ursa_minor",
+      "canis_minor",
+      "cancer",
+      "lyra",
+      "leo",
+      "lynx",
+      "corona_borealis",
+      "orion",
+      "pegasus",
+      "perseus",
+      "corvus",
+      "bootes",
+      "scutum",
+      "ophiuchus",
+      "sagittarius",
+      "capricornus",
+      "taurus",
+      "piscis_austrinus",
+      "libra",
+      "cetus",
+      "aquarius",
+      "aries"
+    ],
+    "projectionMismatches": []
+  },
+  "rows": [
+    {
+      "key": "aquila",
+      "name": "Adler",
+      "abbreviation": "Aql",
+      "sourceId": "CON modern Aql",
+      "projection": {
+        "centerRaDeg": -66.25912125655431,
+        "centerDecDeg": 5.950846882076416,
+        "scale": 208.07758352802583,
+        "offset": [
+          50.9423242727317,
+          47.036821802147244
+        ],
+        "maxCoordinateDifference": 0.004987982307511629
+      },
+      "image": {
+        "file": "illustrations/aquila.png",
+        "width": 512,
+        "height": 512,
+        "bytes": 35935,
+        "sha256": "c627aca0719e0e771114661289ce8b651df891f8aa8c6ebe338d13b986eae7db",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": 60264,
+        "anchors": [
+          {
+            "hip": 97649,
+            "pixel": [
+              163,
+              232
+            ],
+            "inFigure": true,
+            "raHours": 19.846388,
+            "decDeg": 8.868322,
+            "name": "Altair",
+            "chart": [
+              36.71062573623606,
+              36.35658764272095
+            ]
+          },
+          {
+            "hip": 93244,
+            "pixel": [
+              385,
+              131
+            ],
+            "inFigure": true,
+            "raHours": 18.993711,
+            "decDeg": 15.068298,
+            "name": "",
+            "chart": [
+              82.56260241401898,
+              13
+            ]
+          },
+          {
+            "hip": 93805,
+            "pixel": [
+              397,
+              397
+            ],
+            "inFigure": true,
+            "raHours": 19.10415,
+            "decDeg": -4.882554,
+            "name": "",
+            "chart": [
+              77.53039864019388,
+              87
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": 0.07168432934412879,
+          "corners": [
+            {
+              "point": [
+                12.479731552733938,
+                -28.886731366685325
+              ],
+              "denominator": 1.01185350330285
+            },
+            {
+              "point": [
+                111.72393198361036,
+                -21.322585959228604
+              ],
+              "denominator": 0.9644259335124279
+            },
+            {
+              "point": [
+                97.31815070922733,
+                122.25156637197222
+              ],
+              "denominator": 0.9635633383152593
+            },
+            {
+              "point": [
+                -1.3349231137375952,
+                107.94562153720015
+              ],
+              "denominator": 1.010990908105682
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              -1.3349231137375952,
+              -28.886731366685325
+            ],
+            "maximum": [
+              111.72393198361036,
+              122.25156637197222
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "andromeda",
+      "name": "Andromeda",
+      "abbreviation": "And",
+      "sourceId": "CON modern And",
+      "projection": {
+        "centerRaDeg": 14.049371406979466,
+        "centerDecDeg": 36.56219094779583,
+        "scale": 181.626095741438,
+        "offset": [
+          53.331871365547784,
+          50.15711094216996
+        ],
+        "maxCoordinateDifference": 0.004375241603810309
+      },
+      "image": {
+        "file": "illustrations/andromeda.png",
+        "width": 512,
+        "height": 512,
+        "bytes": 29180,
+        "sha256": "1e631fa6846b3805b9708b03089cf38df160b51a2ca50b7ec17dcd1e8e55eefb",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": 31661,
+        "anchors": [
+          {
+            "hip": 3881,
+            "pixel": [
+              198,
+              215
+            ],
+            "inFigure": true,
+            "raHours": 0.830234,
+            "decDeg": 41.078911,
+            "name": "",
+            "chart": [
+              57.15753679485337,
+              35.77437524160381
+            ]
+          },
+          {
+            "hip": 3092,
+            "pixel": [
+              337,
+              136
+            ],
+            "inFigure": true,
+            "raHours": 0.655462,
+            "decDeg": 30.861024,
+            "name": "",
+            "chart": [
+              64.87645903468214,
+              68.07040939654986
+            ]
+          },
+          {
+            "hip": 9640,
+            "pixel": [
+              224,
+              428
+            ],
+            "inFigure": true,
+            "raHours": 2.064984,
+            "decDeg": 42.329725,
+            "name": "Almach",
+            "chart": [
+              13,
+              27.750705354824476
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": 0.039674704613363504,
+          "corners": [
+            {
+              "point": [
+                107.80820269921844,
+                10.891970261493618
+              ],
+              "denominator": 1.0401333983538115
+            },
+            {
+              "point": [
+                81.74070298352169,
+                110.96168668808059
+              ],
+              "denominator": 0.9931120092295268
+            },
+            {
+              "point": [
+                -23.250853620776624,
+                82.62079997199871
+              ],
+              "denominator": 0.9328870158589533
+            },
+            {
+              "point": [
+                9.456821648401245,
+                -22.239231673960667
+              ],
+              "denominator": 0.979908404983238
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              -23.250853620776624,
+              -22.239231673960667
+            ],
+            "maximum": [
+              107.80820269921844,
+              110.96168668808059
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "crater",
+      "name": "Becher",
+      "abbreviation": "Crt",
+      "sourceId": "CON modern Crt",
+      "projection": {
+        "centerRaDeg": 171.82670784011142,
+        "centerDecDeg": -16.261214806036897,
+        "scale": 315.0665120914925,
+        "offset": [
+          50.89078861600407,
+          49.55001716816722
+        ],
+        "maxCoordinateDifference": 0.00422644606513245
+      },
+      "image": {
+        "file": "illustrations/crater.png",
+        "width": 256,
+        "height": 256,
+        "bytes": 14822,
+        "sha256": "78521af72845d29eb707e07435a927247411b8d89472d131b5fa9d2f297f80b7",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": 22035,
+        "anchors": [
+          {
+            "hip": 58188,
+            "pixel": [
+              45,
+              41
+            ],
+            "inFigure": true,
+            "raHours": 11.933599,
+            "decDeg": -17.150829,
+            "name": "",
+            "chart": [
+              13,
+              55.14319237621618
+            ]
+          },
+          {
+            "hip": 55282,
+            "pixel": [
+              160,
+              149
+            ],
+            "inFigure": true,
+            "raHours": 11.322347,
+            "decDeg": -14.778541,
+            "name": "",
+            "chart": [
+              61.48704001358304,
+              41.44204568276023
+            ]
+          },
+          {
+            "hip": 54682,
+            "pixel": [
+              55,
+              242
+            ],
+            "inFigure": true,
+            "raHours": 11.194302,
+            "decDeg": -22.825847,
+            "name": "",
+            "chart": [
+              70.87577355393486,
+              86.07391365810541
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": 0.02270960988301762,
+          "corners": [
+            {
+              "point": [
+                -5.791067846678011,
+                60.76458392429591
+              ],
+              "denominator": 0.9901701199514574
+            },
+            {
+              "point": [
+                35.374315782644445,
+                -9.294660262194874
+              ],
+              "denominator": 1.0067889297753243
+            },
+            {
+              "point": [
+                106.156989824285,
+                32.922672293188754
+              ],
+              "denominator": 1.0042936272870004
+            },
+            {
+              "point": [
+                66.07860739772411,
+                103.86927415232789
+              ],
+              "denominator": 0.9876748174631337
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              -5.791067846678011,
+              -9.294660262194874
+            ],
+            "maximum": [
+              106.156989824285,
+              103.86927415232789
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "delphinus",
+      "name": "Delphin",
+      "abbreviation": "Del",
+      "sourceId": "CON modern Del",
+      "projection": {
+        "centerRaDeg": -49.98134435230929,
+        "centerDecDeg": 14.60506010281026,
+        "scale": 878.4766728890929,
+        "offset": [
+          49.20809121184015,
+          36.39566415735732
+        ],
+        "maxCoordinateDifference": 0.004433944238911636
+      },
+      "image": {
+        "file": "illustrations/delphinus.png",
+        "width": 256,
+        "height": 256,
+        "bytes": 19622,
+        "sha256": "109625afb21447ae6b8d03d06bab84695009141b682ac5978b19e0404fbb40f0",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": -15992,
+        "anchors": [
+          {
+            "hip": 102532,
+            "pixel": [
+              59,
+              31
+            ],
+            "inFigure": true,
+            "raHours": 20.77764,
+            "decDeg": 16.124296,
+            "name": "",
+            "chart": [
+              24.950216661926337,
+              12.999999999999993
+            ]
+          },
+          {
+            "hip": 102805,
+            "pixel": [
+              75,
+              148
+            ],
+            "inFigure": false,
+            "raHours": 20.827158,
+            "decDeg": 12.545128,
+            "name": "",
+            "chart": [
+              13.415831026038035,
+              67.83060872892904
+            ]
+          },
+          {
+            "hip": 101421,
+            "pixel": [
+              211,
+              143
+            ],
+            "inFigure": true,
+            "raHours": 20.553547,
+            "decDeg": 11.303263,
+            "name": "Aldulfin",
+            "chart": [
+              75.04978333807367,
+              87
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": -0.004645612420163786,
+          "corners": [
+            {
+              "point": [
+                3.5487763451943266,
+                -10.100724607285926
+              ],
+              "denominator": 0.9997190839944339
+            },
+            {
+              "point": [
+                117.98135760638331,
+                30.078236288200163
+              ],
+              "denominator": 0.9985025399855446
+            },
+            {
+              "point": [
+                77.16554051257869,
+                144.74408739338458
+              ],
+              "denominator": 0.997067405671413
+            },
+            {
+              "point": [
+                -37.381809583976185,
+                104.36762932313516
+              ],
+              "denominator": 0.998283949680302
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              -37.381809583976185,
+              -10.100724607285926
+            ],
+            "maximum": [
+              117.98135760638331,
+              144.74408739338458
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "draco",
+      "name": "Drache",
+      "abbreviation": "Dra",
+      "sourceId": "CON modern Dra",
+      "projection": {
+        "centerRaDeg": -107.2711529706035,
+        "centerDecDeg": 66.59167967245932,
+        "scale": 115.78169271149294,
+        "offset": [
+          41.452375213181575,
+          56.2556267884951
+        ],
+        "maxCoordinateDifference": 0.004714151046840698
+      },
+      "image": {
+        "file": "illustrations/draco.png",
+        "width": 512,
+        "height": 512,
+        "bytes": 43164,
+        "sha256": "624e24404ad3139806c898f2495638ec0bceedcb15daf4bfc9850e6c34da3367",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": 118316,
+        "anchors": [
+          {
+            "hip": 56211,
+            "pixel": [
+              13,
+              411
+            ],
+            "inFigure": true,
+            "raHours": 11.523407,
+            "decDeg": 69.331076,
+            "name": "Giausar",
+            "chart": [
+              87,
+              14.993246006190297
+            ]
+          },
+          {
+            "hip": 85670,
+            "pixel": [
+              361,
+              154
+            ],
+            "inFigure": true,
+            "raHours": 17.507213,
+            "decDeg": 52.301387,
+            "name": "Rastaban",
+            "chart": [
+              28.87003573916263,
+              84.85920266841612
+            ]
+          },
+          {
+            "hip": 97433,
+            "pixel": [
+              449,
+              429
+            ],
+            "inFigure": true,
+            "raHours": 19.80285,
+            "decDeg": 70.26793,
+            "name": "",
+            "chart": [
+              12.999999999999996,
+              37.88812152900272
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": 0.2344029884901932,
+          "corners": [
+            {
+              "point": [
+                90.25925461013439,
+                96.9742184761017
+              ],
+              "denominator": 0.9129275710893492
+            },
+            {
+              "point": [
+                6.968854911145094,
+                119.06844635820569
+              ],
+              "denominator": 1.0044191276061984
+            },
+            {
+              "point": [
+                2.554636028582749,
+                25.734912748791817
+              ],
+              "denominator": 0.9645854947903103
+            },
+            {
+              "point": [
+                89.18247207272478,
+                -7.14775749104502
+              ],
+              "denominator": 0.8730939382734615
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              2.554636028582749,
+              -7.14775749104502
+            ],
+            "maximum": [
+              90.25925461013439,
+              119.06844635820569
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "triangulum",
+      "name": "Dreieck",
+      "abbreviation": "Tri",
+      "sourceId": "CON modern Tri",
+      "projection": {
+        "centerRaDeg": 31.60600943407235,
+        "centerDecDeg": 32.830582562164736,
+        "scale": 789.0182709550702,
+        "offset": [
+          45.55854479810871,
+          42.74846289886176
+        ],
+        "maxCoordinateDifference": 0.004827390015840649
+      },
+      "image": {
+        "file": "illustrations/triangulum.png",
+        "width": 128,
+        "height": 128,
+        "bytes": 4278,
+        "sha256": "ae9ccd84362146b52a6f90764165d22a32dacb8cadec026d230ae05c7dc77448",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": -2376,
+        "anchors": [
+          {
+            "hip": 10064,
+            "pixel": [
+              16,
+              42
+            ],
+            "inFigure": true,
+            "raHours": 2.159058,
+            "decDeg": 34.987297,
+            "name": "",
+            "chart": [
+              36.753423018446924,
+              13.000000000000004
+            ]
+          },
+          {
+            "hip": 10559,
+            "pixel": [
+              13,
+              70
+            ],
+            "inFigure": false,
+            "raHours": 2.265635,
+            "decDeg": 33.358895,
+            "name": "",
+            "chart": [
+              18.1907720086472,
+              35.16046078838792
+            ]
+          },
+          {
+            "hip": 8796,
+            "pixel": [
+              97,
+              78
+            ],
+            "inFigure": true,
+            "raHours": 1.884696,
+            "decDeg": 29.578829,
+            "name": "Mothallah",
+            "chart": [
+              85.5977926828813,
+              87
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": -0.003928328384365624,
+          "corners": [
+            {
+              "point": [
+                47.055421032164006,
+                -31.18517426051305
+              ],
+              "denominator": 0.9995807380036219
+            },
+            {
+              "point": [
+                156.95187210372848,
+                37.28038262848892
+              ],
+              "denominator": 0.9962070003229855
+            },
+            {
+              "point": [
+                83.58709239600955,
+                146.22881699623957
+              ],
+              "denominator": 0.9964168074295721
+            },
+            {
+              "point": [
+                -26.038731413196302,
+                77.40998723462607
+              ],
+              "denominator": 0.9997905451102085
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              -26.038731413196302,
+              -31.18517426051305
+            ],
+            "maximum": [
+              156.95187210372848,
+              146.22881699623957
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "monoceros",
+      "name": "Einhorn",
+      "abbreviation": "Mon",
+      "sourceId": "CON modern Mon",
+      "projection": {
+        "centerRaDeg": 104.49861065541678,
+        "centerDecDeg": 1.4038738615743735,
+        "scale": 145.16459838599832,
+        "offset": [
+          59.26407789666846,
+          50.91279921406033
+        ],
+        "maxCoordinateDifference": 0.004870547587074725
+      },
+      "image": {
+        "file": "illustrations/monoceros.png",
+        "width": 512,
+        "height": 512,
+        "bytes": 31882,
+        "sha256": "b17d0febbba11ee0985d12241a46f7f1383c8a5380fa209b8c51b74e621a84bc",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": 130336,
+        "anchors": [
+          {
+            "hip": 39863,
+            "pixel": [
+              20,
+              306
+            ],
+            "inFigure": true,
+            "raHours": 8.143236,
+            "decDeg": -2.983786,
+            "name": "",
+            "chart": [
+              12.999999999999993,
+              62.42613935832652
+            ]
+          },
+          {
+            "hip": 31978,
+            "pixel": [
+              394,
+              80
+            ],
+            "inFigure": true,
+            "raHours": 6.682961,
+            "decDeg": 9.895754,
+            "name": "",
+            "chart": [
+              70.01949236631864,
+              29.169422642259928
+            ]
+          },
+          {
+            "hip": 29651,
+            "pixel": [
+              509,
+              359
+            ],
+            "inFigure": true,
+            "raHours": 6.247592,
+            "decDeg": -6.274776,
+            "name": "",
+            "chart": [
+              87,
+              70.77348167076761
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": 0.1271395593339925,
+          "corners": [
+            {
+              "point": [
+                11.30631823111257,
+                16.23292194458009
+              ],
+              "denominator": 0.9700307765621522
+            },
+            {
+              "point": [
+                87.1427003152778,
+                17.929136701920825
+              ],
+              "denominator": 0.9983588597971077
+            },
+            {
+              "point": [
+                87.5752734429006,
+                94.12030034889099
+              ],
+              "denominator": 0.9631156056947711
+            },
+            {
+              "point": [
+                8.89282543197929,
+                94.66905511396341
+              ],
+              "denominator": 0.9347875224598158
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              8.89282543197929,
+              16.23292194458009
+            ],
+            "maximum": [
+              87.5752734429006,
+              94.66905511396341
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": false
+        }
+      }
+    },
+    {
+      "key": "eridanus",
+      "name": "Eridanus",
+      "abbreviation": "Eri",
+      "sourceId": "CON modern Eri",
+      "projection": {
+        "centerRaDeg": 55.14627148883478,
+        "centerDecDeg": -26.78525598532053,
+        "scale": 66.43865151657589,
+        "offset": [
+          52.64681044485095,
+          41.74482947643915
+        ],
+        "maxCoordinateDifference": 0.004954090335999695
+      },
+      "image": {
+        "file": "illustrations/eridanus.png",
+        "width": 512,
+        "height": 512,
+        "bytes": 22399,
+        "sha256": "21d5ecce9bd6b998fbf597fb575b849995fb64ac8566146a99b0d5746db63691",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": 123777,
+        "anchors": [
+          {
+            "hip": 22109,
+            "pixel": [
+              41,
+              95
+            ],
+            "inFigure": true,
+            "raHours": 4.758375,
+            "decDeg": -3.254657,
+            "name": "",
+            "chart": [
+              31.61211221181722,
+              13
+            ]
+          },
+          {
+            "hip": 13701,
+            "pixel": [
+              296,
+              44
+            ],
+            "inFigure": true,
+            "raHours": 2.940458,
+            "decDeg": -8.898144,
+            "name": "Azha",
+            "chart": [
+              66.08447084927163,
+              20.51329380335687
+            ]
+          },
+          {
+            "hip": 7588,
+            "pixel": [
+              493,
+              490
+            ],
+            "inFigure": true,
+            "raHours": 1.628556,
+            "decDeg": -57.236757,
+            "name": "Achernar",
+            "chart": [
+              75.76977390091054,
+              87
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": 0.32917979447465995,
+          "corners": [
+            {
+              "point": [
+                31.074655965627578,
+                0.9563852482459154
+              ],
+              "denominator": 0.9115101692257817
+            },
+            {
+              "point": [
+                92.33375669226652,
+                26.148489005968454
+              ],
+              "denominator": 0.9813967925831847
+            },
+            {
+              "point": [
+                77.64679741002898,
+                91.32012066697555
+              ],
+              "denominator": 0.7885840767635897
+            },
+            {
+              "point": [
+                -1.4751126399887369,
+                65.70679283809409
+              ],
+              "denominator": 0.7186974534061867
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              -1.4751126399887369,
+              0.9563852482459154
+            ],
+            "maximum": [
+              92.33375669226652,
+              91.32012066697555
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "pisces",
+      "name": "Fische",
+      "abbreviation": "Psc",
+      "sourceId": "CON modern Psc",
+      "projection": {
+        "centerRaDeg": 9.489601655107021,
+        "centerDecDeg": 9.395049470831644,
+        "scale": 97.96267261279536,
+        "offset": [
+          50.83591391459125,
+          63.39881814643277
+        ],
+        "maxCoordinateDifference": 0.004945622636391533
+      },
+      "image": {
+        "file": "illustrations/pisces.png",
+        "width": 512,
+        "height": 512,
+        "bytes": 52817,
+        "sha256": "82a011c9d022af1dd651ef35deef0075c21e0e6ad900f38ef48d8c367d26dab2",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": -171508,
+        "anchors": [
+          {
+            "hip": 4889,
+            "pixel": [
+              24,
+              104
+            ],
+            "inFigure": true,
+            "raHours": 1.046971,
+            "decDeg": 31.804263,
+            "name": "",
+            "chart": [
+              41.03447100818475,
+              22.6997484883616
+            ]
+          },
+          {
+            "hip": 9487,
+            "pixel": [
+              111,
+              489
+            ],
+            "inFigure": true,
+            "raHours": 2.034117,
+            "decDeg": 2.763759,
+            "name": "Alrescha",
+            "chart": [
+              12.999999999999993,
+              74.4469333339897
+            ]
+          },
+          {
+            "hip": 114971,
+            "pixel": [
+              481,
+              155
+            ],
+            "inFigure": true,
+            "raHours": 23.286094,
+            "decDeg": 3.282289,
+            "name": "",
+            "chart": [
+              87,
+              73.51917149845545
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": -0.3156896962681011,
+          "corners": [
+            {
+              "point": [
+                48.6365594383979,
+                8.512909600451621
+              ],
+              "denominator": 0.9173369376367209
+            },
+            {
+              "point": [
+                105.66651678061373,
+                59.395835165444424
+              ],
+              "denominator": 0.932398067282997
+            },
+            {
+              "point": [
+                55.5403359300786,
+                115.67796546476305
+              ],
+              "denominator": 0.9398515642771686
+            },
+            {
+              "point": [
+                -1.8463338958323163,
+                66.12174933362127
+              ],
+              "denominator": 0.9247904346308925
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              -1.8463338958323163,
+              8.512909600451621
+            ],
+            "maximum": [
+              105.66651678061373,
+              115.67796546476305
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "auriga",
+      "name": "Fuhrmann",
+      "abbreviation": "Aur",
+      "sourceId": "CON modern Aur",
+      "projection": {
+        "centerRaDeg": 81.62269287855284,
+        "centerDecDeg": 38.66916695481253,
+        "scale": 241.42238786987085,
+        "offset": [
+          50.885401202612805,
+          44.1625708119922
+        ],
+        "maxCoordinateDifference": 0.004021689317525556
+      },
+      "image": {
+        "file": "illustrations/auriga.png",
+        "width": 512,
+        "height": 512,
+        "bytes": 57787,
+        "sha256": "059dfbbce1388bab8f9ad3ccf86bcd3b060f3eb9e0d09ca1b96d13b064ef2c8e",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": 50396,
+        "anchors": [
+          {
+            "hip": 28380,
+            "pixel": [
+              196,
+              189
+            ],
+            "inFigure": true,
+            "raHours": 5.995351,
+            "decDeg": 37.212585,
+            "name": "Mahasim",
+            "chart": [
+              22.913619902980038,
+              49.07241206591347
+            ]
+          },
+          {
+            "hip": 24608,
+            "pixel": [
+              419,
+              208
+            ],
+            "inFigure": true,
+            "raHours": 5.27815,
+            "decDeg": 45.997991,
+            "name": "Capella",
+            "chart": [
+              58.11865896840081,
+              13.000000000000004
+            ]
+          },
+          {
+            "hip": 23015,
+            "pixel": [
+              290,
+              423
+            ],
+            "inFigure": true,
+            "raHours": 4.949894,
+            "decDeg": 33.16609,
+            "name": "Hassaleh",
+            "chart": [
+              77.08638009701995,
+              66.49402168931752
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": 0.04293535917221224,
+          "corners": [
+            {
+              "point": [
+                -37.64059800345472,
+                55.88380039864905
+              ],
+              "denominator": 0.9965800732537633
+            },
+            {
+              "point": [
+                35.271084944222316,
+                -33.06733744536788
+              ],
+              "denominator": 0.9928700643945272
+            },
+            {
+              "point": [
+                124.63556150958604,
+                40.63751220547373
+              ],
+              "denominator": 0.9874312228940034
+            },
+            {
+              "point": [
+                50.989272772621604,
+                129.800875601322
+              ],
+              "denominator": 0.9911412317532395
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              -37.64059800345472,
+              -33.06733744536788
+            ],
+            "maximum": [
+              124.63556150958604,
+              129.800875601322
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "camelopardalis",
+      "name": "Giraffe",
+      "abbreviation": "Cam",
+      "sourceId": "CON modern Cam",
+      "projection": {
+        "centerRaDeg": 62.300400020212166,
+        "centerDecDeg": 68.25933247172054,
+        "scale": 215.7368172589433,
+        "offset": [
+          48.904165824476884,
+          56.91944113499904
+        ],
+        "maxCoordinateDifference": 0.004453730211523066
+      },
+      "image": {
+        "file": "illustrations/camelopardalis.png",
+        "width": 256,
+        "height": 256,
+        "bytes": 8194,
+        "sha256": "18490202bf130ba4bfbeda97e20c3ab841b153d12e7c59a08cc3131230a273a8",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": -8048,
+        "anchors": [
+          {
+            "hip": 25110,
+            "pixel": [
+              77,
+              46
+            ],
+            "inFigure": true,
+            "raHours": 5.376036,
+            "decDeg": 79.231149,
+            "name": "",
+            "chart": [
+              35.93777671758094,
+              12.999999999999993
+            ]
+          },
+          {
+            "hip": 22783,
+            "pixel": [
+              128,
+              135
+            ],
+            "inFigure": true,
+            "raHours": 4.900836,
+            "decDeg": 66.342678,
+            "name": "",
+            "chart": [
+              32.014377541154204,
+              62.61955670694702
+            ]
+          },
+          {
+            "hip": 16228,
+            "pixel": [
+              219,
+              136
+            ],
+            "inFigure": true,
+            "raHours": 3.484482,
+            "decDeg": 59.94033,
+            "name": "",
+            "chart": [
+              67.98562245884581,
+              87
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": -0.03886364936209291,
+          "corners": [
+            {
+              "point": [
+                17.566445984055825,
+                -26.452262993885107
+              ],
+              "denominator": 0.9743915818866571
+            },
+            {
+              "point": [
+                123.51052071915748,
+                41.21991022872371
+              ],
+              "denominator": 0.9456000890290799
+            },
+            {
+              "point": [
+                49.58461386694262,
+                142.65872148053995
+              ],
+              "denominator": 1.0150195552385808
+            },
+            {
+              "point": [
+                -47.27446569341735,
+                76.68914695714406
+              ],
+              "denominator": 1.043811048096158
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              -47.27446569341735,
+              -26.452262993885107
+            ],
+            "maximum": [
+              123.51052071915748,
+              142.65872148053995
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "ursa_major",
+      "name": "Großer Bär",
+      "abbreviation": "UMa",
+      "sourceId": "CON modern UMa",
+      "projection": {
+        "centerRaDeg": 162.60792684883896,
+        "centerDecDeg": 54.90558572239692,
+        "scale": 88.00002021369215,
+        "offset": [
+          58.06309745869972,
+          47.78912495282667
+        ],
+        "maxCoordinateDifference": 0.004795348472178773
+      },
+      "image": {
+        "file": "illustrations/ursa-major.png",
+        "width": 512,
+        "height": 512,
+        "bytes": 28437,
+        "sha256": "da2a2a5c5024bd850ccd97924d18aab8b9ac45f32d168a8ee32c31dd2679ec4c",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": 90190,
+        "anchors": [
+          {
+            "hip": 67301,
+            "pixel": [
+              26,
+              75
+            ],
+            "inFigure": true,
+            "raHours": 13.792354,
+            "decDeg": 49.313265,
+            "name": "Alkaid",
+            "chart": [
+              13,
+              42.437047140613075
+            ]
+          },
+          {
+            "hip": 41704,
+            "pixel": [
+              452,
+              272
+            ],
+            "inFigure": true,
+            "raHours": 8.504431,
+            "decDeg": 60.718169,
+            "name": "Muscida",
+            "chart": [
+              84.24524549315385,
+              31.58415142188998
+            ]
+          },
+          {
+            "hip": 50372,
+            "pixel": [
+              258,
+              394
+            ],
+            "inFigure": true,
+            "raHours": 10.284952,
+            "decDeg": 42.914365,
+            "name": "Tania Borealis",
+            "chart": [
+              67.65610178636736,
+              65.9935267684439
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": 0.23960535992760507,
+          "corners": [
+            {
+              "point": [
+                2.596565006226477,
+                33.396023841485686
+              ],
+              "denominator": 0.8690776501392118
+            },
+            {
+              "point": [
+                73.90213338703828,
+                -17.13839779075687
+              ],
+              "denominator": 0.873863352815121
+            },
+            {
+              "point": [
+                105.73471257149909,
+                59.22665252248215
+              ],
+              "denominator": 1.0067289376728998
+            },
+            {
+              "point": [
+                44.03687142480148,
+                103.42456242608716
+              ],
+              "denominator": 1.0019432349969901
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              2.596565006226477,
+              -17.13839779075687
+            ],
+            "maximum": [
+              105.73471257149909,
+              103.42456242608716
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "canis_major",
+      "name": "Großer Hund",
+      "abbreviation": "CMa",
+      "sourceId": "CON modern CMa",
+      "projection": {
+        "centerRaDeg": 103.22709941852014,
+        "centerDecDeg": -23.267441235580122,
+        "scale": 204.83516175575517,
+        "offset": [
+          49.31600187116715,
+          53.66483307341606
+        ],
+        "maxCoordinateDifference": 0.004149540463842527
+      },
+      "image": {
+        "file": "illustrations/canis-major.png",
+        "width": 512,
+        "height": 512,
+        "bytes": 27199,
+        "sha256": "802bd40c4e93c540e2fa601f1363fff4d6145575b91e441846ae8959bc238298",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": 139431,
+        "anchors": [
+          {
+            "hip": 35904,
+            "pixel": [
+              21,
+              347
+            ],
+            "inFigure": true,
+            "raHours": 7.401584,
+            "decDeg": -29.303104,
+            "name": "Aludra",
+            "chart": [
+              24.76622177612011,
+              76.14612858321361
+            ]
+          },
+          {
+            "hip": 33160,
+            "pixel": [
+              321,
+              24
+            ],
+            "inFigure": true,
+            "raHours": 6.903167,
+            "decDeg": -12.038628,
+            "name": "",
+            "chart": [
+              48.17385459264557,
+              13
+            ]
+          },
+          {
+            "hip": 30122,
+            "pixel": [
+              318,
+              492
+            ],
+            "inFigure": true,
+            "raHours": 6.338553,
+            "decDeg": -30.063367,
+            "name": "Furud",
+            "chart": [
+              74.82839111345913,
+              78.99200378710839
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": 0.07335937960334327,
+          "corners": [
+            {
+              "point": [
+                1.658662624780881,
+                28.744384048550444
+              ],
+              "denominator": 0.984271949498752
+            },
+            {
+              "point": [
+                73.78586697514045,
+                -1.8425800817559832
+              ],
+              "denominator": 0.978470391255689
+            },
+            {
+              "point": [
+                103.35247158829986,
+                70.37393182481873
+              ],
+              "denominator": 0.9829218220206436
+            },
+            {
+              "point": [
+                31.376509618476085,
+                100.3994405833254
+              ],
+              "denominator": 0.9887233802637067
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              1.658662624780881,
+              -1.8425800817559832
+            ],
+            "maximum": [
+              103.35247158829986,
+              100.3994405833254
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "coma_berenices",
+      "name": "Haar der Berenike",
+      "abbreviation": "Com",
+      "sourceId": "CON modern Com",
+      "projection": {
+        "centerRaDeg": -165.83161301189162,
+        "centerDecDeg": 24.650681171101475,
+        "scale": 387.00935781969173,
+        "offset": [
+          39.130394825709274,
+          38.84039882541282
+        ],
+        "maxCoordinateDifference": 0.00445399454400075
+      },
+      "image": {
+        "file": "illustrations/coma-berenices.png",
+        "width": 256,
+        "height": 256,
+        "bytes": 29048,
+        "sha256": "0a9c1b6e7b3e2041ec29aa1df42f92504f3f77efbd5cd3416612a6615eb85a57",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": 18960,
+        "anchors": [
+          {
+            "hip": 64241,
+            "pixel": [
+              27,
+              199
+            ],
+            "inFigure": true,
+            "raHours": 13.166469,
+            "decDeg": 17.529431,
+            "name": "Diadem",
+            "chart": [
+              17.504453994544,
+              87
+            ]
+          },
+          {
+            "hip": 64394,
+            "pixel": [
+              38,
+              58
+            ],
+            "inFigure": true,
+            "raHours": 13.197904,
+            "decDeg": 27.878183,
+            "name": "",
+            "chart": [
+              16.381158623212634,
+              16.663412109620847
+            ]
+          },
+          {
+            "hip": 60742,
+            "pixel": [
+              172,
+              64
+            ],
+            "inFigure": true,
+            "raHours": 12.448966,
+            "decDeg": 28.268423,
+            "name": "",
+            "chart": [
+              83.61884137678737,
+              13.000000000000007
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": 0.0309359024440954,
+          "corners": [
+            {
+              "point": [
+                -5.125570240146423,
+                -9.900005725221703
+              ],
+              "denominator": 1.000662255823098
+            },
+            {
+              "point": [
+                122.62597404414886,
+                -22.835934944605825
+              ],
+              "denominator": 0.9909138042705332
+            },
+            {
+              "point": [
+                136.01653473312768,
+                104.87593203937881
+              ],
+              "denominator": 0.9795800693260447
+            },
+            {
+              "point": [
+                6.669525099866583,
+                116.70163292533509
+              ],
+              "denominator": 0.9893285208786095
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              -5.125570240146423,
+              -22.835934944605825
+            ],
+            "maximum": [
+              136.01653473312768,
+              116.70163292533509
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "lepus",
+      "name": "Hase",
+      "abbreviation": "Lep",
+      "sourceId": "CON modern Lep",
+      "projection": {
+        "centerRaDeg": 82.86978289195213,
+        "centerDecDeg": -16.568445062199604,
+        "scale": 292.3103206250403,
+        "offset": [
+          56.04357740016594,
+          46.721106365900646
+        ],
+        "maxCoordinateDifference": 0.0049556938304711196
+      },
+      "image": {
+        "file": "illustrations/lepus.png",
+        "width": 256,
+        "height": 256,
+        "bytes": 14328,
+        "sha256": "4b8f15f5485c0114360fee3dd0f28ed4a92ec58bb997a8e089e185b9ab7794c0",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": 39387,
+        "anchors": [
+          {
+            "hip": 28910,
+            "pixel": [
+              21,
+              48
+            ],
+            "inFigure": true,
+            "raHours": 6.10259,
+            "decDeg": -14.935254,
+            "name": "",
+            "chart": [
+              13,
+              39.227862658401406
+            ]
+          },
+          {
+            "hip": 24244,
+            "pixel": [
+              246,
+              62
+            ],
+            "inFigure": true,
+            "raHours": 5.204973,
+            "decDeg": -11.869219,
+            "name": "",
+            "chart": [
+              80.11652595897823,
+              22.900809874093017
+            ]
+          },
+          {
+            "hip": 23685,
+            "pixel": [
+              213,
+              235
+            ],
+            "inFigure": true,
+            "raHours": 5.091018,
+            "decDeg": -22.371032,
+            "name": "",
+            "chart": [
+              87,
+              77.09919012590699
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": 0.04265013083284955,
+          "corners": [
+            {
+              "point": [
+                2.316281054876896,
+                26.929203501676483
+              ],
+              "denominator": 0.9895545647901309
+            },
+            {
+              "point": [
+                77.13273195540287,
+                3.7525839656843942
+              ],
+              "denominator": 0.994817607691562
+            },
+            {
+              "point": [
+                101.56556434537791,
+                79.37604783034425
+              ],
+              "denominator": 0.9896291045138557
+            },
+            {
+              "point": [
+                26.485396156849394,
+                103.07916001881219
+              ],
+              "denominator": 0.9843660616124246
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              2.316281054876896,
+              3.7525839656843942
+            ],
+            "maximum": [
+              101.56556434537791,
+              103.07916001881219
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "hercules",
+      "name": "Herkules",
+      "abbreviation": "Her",
+      "sourceId": "CON modern Her",
+      "projection": {
+        "centerRaDeg": -102.975356134696,
+        "centerDecDeg": 33.94207898188574,
+        "scale": 151.54974465550612,
+        "offset": [
+          48.63600667410584,
+          48.02351467128564
+        ],
+        "maxCoordinateDifference": 0.00485872316556879
+      },
+      "image": {
+        "file": "illustrations/hercules.png",
+        "width": 512,
+        "height": 512,
+        "bytes": 43187,
+        "sha256": "b67337cc651db0bcfe1a332d2f735b81e468c2fd6db0df6b0a835323d225ba29",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": -146444,
+        "anchors": [
+          {
+            "hip": 80170,
+            "pixel": [
+              44,
+              115
+            ],
+            "inFigure": true,
+            "raHours": 16.365338,
+            "decDeg": 19.15313,
+            "name": "",
+            "chart": [
+              78.76243793044108,
+              87
+            ]
+          },
+          {
+            "hip": 79992,
+            "pixel": [
+              254,
+              477
+            ],
+            "inFigure": true,
+            "raHours": 16.329011,
+            "decDeg": 46.313366,
+            "name": "",
+            "chart": [
+              71.37659861013427,
+              13.000000000000007
+            ]
+          },
+          {
+            "hip": 88794,
+            "pixel": [
+              441,
+              102
+            ],
+            "inFigure": true,
+            "raHours": 18.125708,
+            "decDeg": 28.762488,
+            "name": "",
+            "chart": [
+              13.566605946269938,
+              59.551399559630624
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": -0.17925795481170526,
+          "corners": [
+            {
+              "point": [
+                77.38201359516182,
+                109.17441545414414
+              ],
+              "denominator": 0.948052950785609
+            },
+            {
+              "point": [
+                -5.164326099550614,
+                70.61226080873286
+              ],
+              "denominator": 0.974683590899992
+            },
+            {
+              "point": [
+                32.55386043347475,
+                -10.590631908091424
+              ],
+              "denominator": 0.977696521567105
+            },
+            {
+              "point": [
+                115.89483808938677,
+                25.575610787425155
+              ],
+              "denominator": 0.9510658814527215
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              -5.164326099550614,
+              -10.590631908091424
+            ],
+            "maximum": [
+              115.89483808938677,
+              109.17441545414414
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "canes_venatici",
+      "name": "Jagdhunde",
+      "abbreviation": "CVn",
+      "sourceId": "CON modern CVn",
+      "projection": {
+        "centerRaDeg": -168.7166696704441,
+        "centerDecDeg": 39.87123653266717,
+        "scale": 991.3470970866617,
+        "offset": [
+          49.99999999999997,
+          49.99999999999989
+        ],
+        "maxCoordinateDifference": 0.00107573596080357
+      },
+      "image": {
+        "file": "illustrations/canes-venatici.png",
+        "width": 256,
+        "height": 256,
+        "bytes": 11587,
+        "sha256": "4cefc086d9500502b2172e3aae15800233a62c86203f4ef17c57dea024289d1c",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": 10041,
+        "anchors": [
+          {
+            "hip": 63901,
+            "pixel": [
+              117,
+              113
+            ],
+            "inFigure": false,
+            "raHours": 13.095678,
+            "decDeg": 35.798899,
+            "name": "",
+            "chart": [
+              -22.566353078348968,
+              118.66510755281936
+            ]
+          },
+          {
+            "hip": 61317,
+            "pixel": [
+              206,
+              40
+            ],
+            "inFigure": true,
+            "raHours": 12.562411,
+            "decDeg": 41.35748,
+            "name": "Chara",
+            "chart": [
+              87,
+              23.671075735960805
+            ]
+          },
+          {
+            "hip": 61309,
+            "pixel": [
+              207,
+              152
+            ],
+            "inFigure": false,
+            "raHours": 12.56081,
+            "decDeg": 33.247584,
+            "name": "",
+            "chart": [
+              91.84173298535146,
+              164.5387492065348
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": 0.01595436162071539,
+          "corners": [
+            {
+              "point": [
+                -171.5147808098438,
+                -18.4222921400952
+              ],
+              "denominator": 1.0017108254827047
+            },
+            {
+              "point": [
+                148.2064236941021,
+                -28.105829998909762
+              ],
+              "denominator": 1.0011370945685925
+            },
+            {
+              "point": [
+                157.35496353897844,
+                295.1783971918083
+              ],
+              "denominator": 0.9864382936548446
+            },
+            {
+              "point": [
+                -167.13291757672388,
+                304.8182255932071
+              ],
+              "denominator": 0.9870120245689565
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              -171.5147808098438,
+              -28.105829998909762
+            ],
+            "maximum": [
+              157.35496353897844,
+              304.8182255932071
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "virgo",
+      "name": "Jungfrau",
+      "abbreviation": "Vir",
+      "sourceId": "CON modern Vir",
+      "projection": {
+        "centerRaDeg": 199,
+        "centerDecDeg": 0,
+        "scale": 89.11169770193214,
+        "offset": [
+          50.02462532719863,
+          49.8454150456949
+        ],
+        "maxCoordinateDifference": 0.004786004280070699
+      },
+      "image": {
+        "file": "illustrations/virgo.png",
+        "width": 512,
+        "height": 512,
+        "bytes": 42158,
+        "sha256": "7f59ab17b11794e708cd30e0e638ec65ceb926842d0d6461ebfd2bb5b25c8353",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": 87913,
+        "anchors": [
+          {
+            "hip": 72220,
+            "pixel": [
+              65,
+              389
+            ],
+            "inFigure": true,
+            "raHours": 14.770812,
+            "decDeg": 1.892885,
+            "name": "",
+            "chart": [
+              13,
+              46.65626804626186
+            ]
+          },
+          {
+            "hip": 57380,
+            "pixel": [
+              454,
+              57
+            ],
+            "inFigure": true,
+            "raHours": 11.764322,
+            "decDeg": 6.529376,
+            "name": "",
+            "chart": [
+              87,
+              38.80298469894645
+            ]
+          },
+          {
+            "hip": 65474,
+            "pixel": [
+              338,
+              382
+            ],
+            "inFigure": true,
+            "raHours": 13.419883,
+            "decDeg": -11.161322,
+            "name": "Spica",
+            "chart": [
+              46.44826376418008,
+              67.44165460311062
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": 0.18828445818170936,
+          "corners": [
+            {
+              "point": [
+                35.26216826611033,
+                -14.079181489422787
+              ],
+              "denominator": 0.8037557932035447
+            },
+            {
+              "point": [
+                98.83450957434528,
+                36.681813710073165
+              ],
+              "denominator": 0.9148361850344952
+            },
+            {
+              "point": [
+                55.578276862669455,
+                92.70270404339792
+              ],
+              "denominator": 1.0531709198785846
+            },
+            {
+              "point": [
+                -3.759499315379621,
+                56.00068817334821
+              ],
+              "denominator": 0.9420905280476342
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              -3.759499315379621,
+              -14.079181489422787
+            ],
+            "maximum": [
+              98.83450957434528,
+              92.70270404339792
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "cassiopeia",
+      "name": "Kassiopeia",
+      "abbreviation": "Cas",
+      "sourceId": "CON modern Cas",
+      "projection": {
+        "centerRaDeg": 14.846948962302745,
+        "centerDecDeg": 60.36259286127049,
+        "scale": 338.7582070151317,
+        "offset": [
+          49.00384325578757,
+          50.6779558927094
+        ],
+        "maxCoordinateDifference": 0.0045435282009513855
+      },
+      "image": {
+        "file": "illustrations/cassiopeia.png",
+        "width": 512,
+        "height": 512,
+        "bytes": 44222,
+        "sha256": "e0cf5e4d328b0105a44aea2001a9fc9a5e6cb99f041a29242d9d4e331410f004",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": -35949,
+        "anchors": [
+          {
+            "hip": 8886,
+            "pixel": [
+              390,
+              336
+            ],
+            "inFigure": true,
+            "raHours": 1.906584,
+            "decDeg": 63.670101,
+            "name": "Segin",
+            "chart": [
+              13,
+              27.203083539452347
+            ]
+          },
+          {
+            "hip": 3179,
+            "pixel": [
+              163,
+              156
+            ],
+            "inFigure": true,
+            "raHours": 0.675116,
+            "decDeg": 56.537331,
+            "name": "Schedar",
+            "chart": [
+              64.42333512409616,
+              72.79691646054766
+            ]
+          },
+          {
+            "hip": 746,
+            "pixel": [
+              73,
+              243
+            ],
+            "inFigure": true,
+            "raHours": 0.152887,
+            "decDeg": 59.14978,
+            "name": "Caph",
+            "chart": [
+              87,
+              54.26097628828096
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": -0.01697710626309716,
+          "corners": [
+            {
+              "point": [
+                100.64024389675335,
+                111.3717033749185
+              ],
+              "denominator": 1.0011451580079835
+            },
+            {
+              "point": [
+                -19.771982268033057,
+                102.49502615960338
+              ],
+              "denominator": 1.003230932547901
+            },
+            {
+              "point": [
+                -13.925741655975116,
+                -16.09797710702845
+              ],
+              "denominator": 0.9869460124212772
+            },
+            {
+              "point": [
+                108.48991337038242,
+                -7.3256825070637674
+              ],
+              "denominator": 0.98486023788136
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              -19.771982268033057,
+              -16.09797710702845
+            ],
+            "maximum": [
+              108.48991337038242,
+              111.3717033749185
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "cepheus",
+      "name": "Kepheus",
+      "abbreviation": "Cep",
+      "sourceId": "CON modern Cep",
+      "projection": {
+        "centerRaDeg": -27.779414460555394,
+        "centerDecDeg": 67.44724895226676,
+        "scale": 206.0445315000273,
+        "offset": [
+          48.26764700145628,
+          53.46183457752277
+        ],
+        "maxCoordinateDifference": 0.0043918840351295785
+      },
+      "image": {
+        "file": "illustrations/cepheus.png",
+        "width": 512,
+        "height": 512,
+        "bytes": 40144,
+        "sha256": "3efd152711397e3424e220f6a2ead2e590ce9782a7de9eac8f009100457198b6",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": 33155,
+        "anchors": [
+          {
+            "hip": 116727,
+            "pixel": [
+              60,
+              335
+            ],
+            "inFigure": true,
+            "raHours": 23.65582,
+            "decDeg": 77.632276,
+            "name": "Errai",
+            "chart": [
+              30.913057359689933,
+              13
+            ]
+          },
+          {
+            "hip": 106032,
+            "pixel": [
+              125,
+              170
+            ],
+            "inFigure": true,
+            "raHours": 21.477662,
+            "decDeg": 70.560716,
+            "name": "Alfirk",
+            "chart": [
+              60.282146018307984,
+              41.25605858906307
+            ]
+          },
+          {
+            "hip": 109492,
+            "pixel": [
+              335,
+              147
+            ],
+            "inFigure": true,
+            "raHours": 22.180908,
+            "decDeg": 58.201261,
+            "name": "",
+            "chart": [
+              47.32107875468196,
+              87
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": 0.038736618573049,
+          "corners": [
+            {
+              "point": [
+                104.70308321764367,
+                30.564451987791582
+              ],
+              "denominator": 1.0273848182819794
+            },
+            {
+              "point": [
+                63.13287731579551,
+                135.8397217644332
+              ],
+              "denominator": 0.9963978804529001
+            },
+            {
+              "point": [
+                -51.057810695695736,
+                95.17958409310214
+              ],
+              "denominator": 0.9263548030546235
+            },
+            {
+              "point": [
+                -2.7500683175174316,
+                -16.481984796855947
+              ],
+              "denominator": 0.9573417408837028
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              -51.057810695695736,
+              -16.481984796855947
+            ],
+            "maximum": [
+              104.70308321764367,
+              135.8397217644332
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "ursa_minor",
+      "name": "Kleiner Bär",
+      "abbreviation": "UMi",
+      "sourceId": "CON modern UMi",
+      "projection": {
+        "centerRaDeg": -123.55096785532626,
+        "centerDecDeg": 80.01880364060797,
+        "scale": 223.83738699399387,
+        "offset": [
+          46.70703157434676,
+          55.20975872666365
+        ],
+        "maxCoordinateDifference": 0.004358846802062999
+      },
+      "image": {
+        "file": "illustrations/ursa-minor.png",
+        "width": 256,
+        "height": 256,
+        "bytes": 9042,
+        "sha256": "e95cd699568b7b8877086d746d86b79f78863634904e8388291983e31265b1b5",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": 31224,
+        "anchors": [
+          {
+            "hip": 11767,
+            "pixel": [
+              15,
+              20
+            ],
+            "inFigure": true,
+            "raHours": 2.52975,
+            "decDeg": 89.264109,
+            "name": "Polaris",
+            "chart": [
+              45.77861639659039,
+              13
+            ]
+          },
+          {
+            "hip": 59504,
+            "pixel": [
+              193,
+              51
+            ],
+            "inFigure": false,
+            "raHours": 12.203311,
+            "decDeg": 77.616241,
+            "name": "",
+            "chart": [
+              85.86717882232014,
+              45.347444500516104
+            ]
+          },
+          {
+            "hip": 79822,
+            "pixel": [
+              93,
+              209
+            ],
+            "inFigure": true,
+            "raHours": 16.291791,
+            "decDeg": 75.75533,
+            "name": "",
+            "chart": [
+              39.08614714755842,
+              71.38341371230025
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": 0.04919676429447716,
+          "corners": [
+            {
+              "point": [
+                44.81073058260711,
+                5.7960187885572765
+              ],
+              "denominator": 0.9812107987109835
+            },
+            {
+              "point": [
+                108.93070190984646,
+                41.033064186758985
+              ],
+              "denominator": 0.9798452639856391
+            },
+            {
+              "point": [
+                72.70366664728472,
+                105.0827441749022
+              ],
+              "denominator": 0.9995785662972229
+            },
+            {
+              "point": [
+                9.897223270022415,
+                70.4530066239796
+              ],
+              "denominator": 1.000944101022567
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              9.897223270022415,
+              5.7960187885572765
+            ],
+            "maximum": [
+              108.93070190984646,
+              105.0827441749022
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "canis_minor",
+      "name": "Kleiner Hund",
+      "abbreviation": "CMi",
+      "sourceId": "CON modern CMi",
+      "projection": {
+        "centerRaDeg": 113.31140231499339,
+        "centerDecDeg": 6.759507084290125,
+        "scale": 1382.8140794284157,
+        "offset": [
+          49.999999999999886,
+          49.99999999999998
+        ],
+        "maxCoordinateDifference": 0.001664147198965793
+      },
+      "image": {
+        "file": "illustrations/canis-minor.png",
+        "width": 256,
+        "height": 256,
+        "bytes": 24562,
+        "sha256": "198114abce3010a74f7804dcdfb0004b3ba1a2aa2e805463b23be373c8c3dd96",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": -10859,
+        "anchors": [
+          {
+            "hip": 37921,
+            "pixel": [
+              96,
+              43
+            ],
+            "inFigure": false,
+            "raHours": 7.771167,
+            "decDeg": 10.768252,
+            "name": "",
+            "chart": [
+              -27.471123391503085,
+              -47.32027968552031
+            ]
+          },
+          {
+            "hip": 37279,
+            "pixel": [
+              101,
+              171
+            ],
+            "inFigure": true,
+            "raHours": 7.655033,
+            "decDeg": 5.224993,
+            "name": "Procyon",
+            "chart": [
+              13.588335852801038,
+              87
+            ]
+          },
+          {
+            "hip": 36188,
+            "pixel": [
+              184,
+              124
+            ],
+            "inFigure": true,
+            "raHours": 7.452512,
+            "decDeg": 8.289315,
+            "name": "Gomeisa",
+            "chart": [
+              86.41166414719896,
+              13.000000000000007
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": -0.006668074774133798,
+          "corners": [
+            {
+              "point": [
+                -139.6408241429271,
+                -65.1081685602746
+              ],
+              "denominator": 0.993509572367576
+            },
+            {
+              "point": [
+                126.57968733386673,
+                -139.6721170446822
+              ],
+              "denominator": 0.9971855747884196
+            },
+            {
+              "point": [
+                197.02783750585408,
+                131.28948354855223
+              ],
+              "denominator": 1.0036772386379946
+            },
+            {
+              "point": [
+                -67.20549478657954,
+                206.36544281088192
+              ],
+              "denominator": 1.0000012362171509
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              -139.6408241429271,
+              -139.6721170446822
+            ],
+            "maximum": [
+              197.02783750585408,
+              206.36544281088192
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "cancer",
+      "name": "Krebs",
+      "abbreviation": "Cnc",
+      "sourceId": "CON modern Cnc",
+      "projection": {
+        "centerRaDeg": 129.58053222699374,
+        "centerDecDeg": 19.48185402013743,
+        "scale": 214.75616276240606,
+        "offset": [
+          49.070664931760525,
+          48.145294172378065
+        ],
+        "maxCoordinateDifference": 0.0025271657087486687
+      },
+      "image": {
+        "file": "illustrations/cancer.png",
+        "width": 256,
+        "height": 256,
+        "bytes": 12396,
+        "sha256": "4d8b1123815f81fa99ceab520141e2225c466f5e48ca5e82ab9742ef8902d7ef",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": -21153,
+        "anchors": [
+          {
+            "hip": 44066,
+            "pixel": [
+              29,
+              166
+            ],
+            "inFigure": true,
+            "raHours": 8.974784,
+            "decDeg": 11.857701,
+            "name": "Acubens",
+            "chart": [
+              30.370127459933354,
+              76.72136519128841
+            ]
+          },
+          {
+            "hip": 40526,
+            "pixel": [
+              101,
+              255
+            ],
+            "inFigure": true,
+            "raHours": 8.275256,
+            "decDeg": 9.185545,
+            "name": "Tarf",
+            "chart": [
+              69.62987254006666,
+              87
+            ]
+          },
+          {
+            "hip": 40843,
+            "pixel": [
+              206,
+              91
+            ],
+            "inFigure": true,
+            "raHours": 8.334406,
+            "decDeg": 27.217707,
+            "name": "",
+            "chart": [
+              64.4495489213179,
+              18.68937091953314
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": -0.05449566006721762,
+          "corners": [
+            {
+              "point": [
+                -12.10363142166483,
+                36.278912288383474
+              ],
+              "denominator": 0.9996697885124074
+            },
+            {
+              "point": [
+                59.29379557460921,
+                -16.97668212325454
+              ],
+              "denominator": 0.9931953154035187
+            },
+            {
+              "point": [
+                114.17749005701089,
+                54.66809929782468
+              ],
+              "denominator": 0.9756984290917504
+            },
+            {
+              "point": [
+                41.14636326760043,
+                108.40013209330999
+              ],
+              "denominator": 0.9821729022006391
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              -12.10363142166483,
+              -16.97668212325454
+            ],
+            "maximum": [
+              114.17749005701089,
+              108.40013209330999
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "lyra",
+      "name": "Leier",
+      "abbreviation": "Lyr",
+      "sourceId": "CON modern Lyr",
+      "projection": {
+        "centerRaDeg": -77.69297541413292,
+        "centerDecDeg": 35.88318413943172,
+        "scale": 693.1551113900279,
+        "offset": [
+          47.876219872895106,
+          48.608070157160064
+        ],
+        "maxCoordinateDifference": 0.004040649764398552
+      },
+      "image": {
+        "file": "illustrations/lyra.png",
+        "width": 256,
+        "height": 256,
+        "bytes": 11604,
+        "sha256": "53604076248c70ef79ae7e98e6661613d65d22ebdf39a423398c06d71ccb13c1",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": 6024,
+        "anchors": [
+          {
+            "hip": 92791,
+            "pixel": [
+              100,
+              96
+            ],
+            "inFigure": true,
+            "raHours": 18.908412,
+            "decDeg": 36.898613,
+            "name": "",
+            "chart": [
+              35.11080737364253,
+              36.234040649764395
+            ]
+          },
+          {
+            "hip": 91262,
+            "pixel": [
+              157,
+              38
+            ],
+            "inFigure": true,
+            "raHours": 18.61564,
+            "decDeg": 38.783692,
+            "name": "Vega",
+            "chart": [
+              76.90025190205276,
+              13.000000000000007
+            ]
+          },
+          {
+            "hip": 92420,
+            "pixel": [
+              139,
+              162
+            ],
+            "inFigure": true,
+            "raHours": 18.834665,
+            "decDeg": 33.362667,
+            "name": "Sheliak",
+            "chart": [
+              45.722439159434686,
+              79.11836277685565
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": 0.004228318718061931,
+          "corners": [
+            {
+              "point": [
+                -4.425873907780073,
+                -32.81976084509747
+              ],
+              "denominator": 1.0017570198556656
+            },
+            {
+              "point": [
+                139.11334213629726,
+                7.4889501463017965
+              ],
+              "denominator": 0.9949538670348428
+            },
+            {
+              "point": [
+                95.37143990746425,
+                150.23676784430157
+              ],
+              "denominator": 0.9964783999256678
+            },
+            {
+              "point": [
+                -47.65305212907491,
+                109.02134899960322
+              ],
+              "denominator": 1.0032815527464911
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              -47.65305212907491,
+              -32.81976084509747
+            ],
+            "maximum": [
+              139.11334213629726,
+              150.23676784430157
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "leo",
+      "name": "Löwe",
+      "abbreviation": "Leo",
+      "sourceId": "CON modern Leo",
+      "projection": {
+        "centerRaDeg": 158.11541600517327,
+        "centerDecDeg": 19.424330757298858,
+        "scale": 141.1203033801374,
+        "offset": [
+          60.36519556267638,
+          49.41454450238072
+        ],
+        "maxCoordinateDifference": 0.0048722022604295034
+      },
+      "image": {
+        "file": "illustrations/leo.png",
+        "width": 512,
+        "height": 512,
+        "bytes": 32902,
+        "sha256": "1e12035d808d63f4dbc9e4a195fce32ef69281d38efea2ea2242c38cf0fec2ba",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": -62306,
+        "anchors": [
+          {
+            "hip": 57632,
+            "pixel": [
+              69,
+              411
+            ],
+            "inFigure": true,
+            "raHours": 11.817663,
+            "decDeg": 14.57206,
+            "name": "Denebola",
+            "chart": [
+              13,
+              59.3769739138078
+            ]
+          },
+          {
+            "hip": 49669,
+            "pixel": [
+              383,
+              186
+            ],
+            "inFigure": true,
+            "raHours": 10.139532,
+            "decDeg": 11.967207,
+            "name": "Regulus",
+            "chart": [
+              75.04840370185809,
+              67.72443622945781
+            ]
+          },
+          {
+            "hip": 47908,
+            "pixel": [
+              321,
+              32
+            ],
+            "inFigure": true,
+            "raHours": 9.764188,
+            "decDeg": 23.774255,
+            "name": "Ras Elased Australis",
+            "chart": [
+              87,
+              37.58117835627758
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": -0.0903994521776807,
+          "corners": [
+            {
+              "point": [
+                56.37249515074311,
+                -11.625301513326939
+              ],
+              "denominator": 0.9390585849218748
+            },
+            {
+              "point": [
+                110.02110299821746,
+                57.818743641415566
+              ],
+              "denominator": 1.0035235485623772
+            },
+            {
+              "point": [
+                50.07107880444539,
+                129.85521806784254
+              ],
+              "denominator": 1.0012360945351981
+            },
+            {
+              "point": [
+                -7.834059504384754,
+                65.19887237994124
+              ],
+              "denominator": 0.9367711308946955
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              -7.834059504384754,
+              -11.625301513326939
+            ],
+            "maximum": [
+              110.02110299821746,
+              129.85521806784254
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "lynx",
+      "name": "Luchs",
+      "abbreviation": "Lyn",
+      "sourceId": "CON modern Lyn",
+      "projection": {
+        "centerRaDeg": 126.33745838593259,
+        "centerDecDeg": 46.198747960134995,
+        "scale": 148.776066595685,
+        "offset": [
+          43.71261844077203,
+          57.80492013928867
+        ],
+        "maxCoordinateDifference": 0.004893209795824305
+      },
+      "image": {
+        "file": "illustrations/lynx.png",
+        "width": 512,
+        "height": 512,
+        "bytes": 25636,
+        "sha256": "1be70d1645d9d936c0b93f6dbfde116e69ed962a03c3929502a0d14aca01154e",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": -21501,
+        "anchors": [
+          {
+            "hip": 44248,
+            "pixel": [
+              100,
+              216
+            ],
+            "inFigure": true,
+            "raHours": 9.010685,
+            "decDeg": 41.782911,
+            "name": "",
+            "chart": [
+              26.541091109046594,
+              68.4086817808281
+            ]
+          },
+          {
+            "hip": 36145,
+            "pixel": [
+              337,
+              212
+            ],
+            "inFigure": true,
+            "raHours": 7.445237,
+            "decDeg": 49.211527,
+            "name": "",
+            "chart": [
+              68.71056709846879,
+              47.53680972472483
+            ]
+          },
+          {
+            "hip": 30060,
+            "pixel": [
+              472,
+              119
+            ],
+            "inFigure": true,
+            "raHours": 6.327052,
+            "decDeg": 59.010964,
+            "name": "",
+            "chart": [
+              87,
+              13.261966959970806
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": -0.04323368596102663,
+          "corners": [
+            {
+              "point": [
+                -20.02174901834288,
+                26.278425990173
+              ],
+              "denominator": 0.8569010441016784
+            },
+            {
+              "point": [
+                86.29668313324258,
+                -24.476306042823623
+              ],
+              "denominator": 0.8471630524413382
+            },
+            {
+              "point": [
+                114.87289178025001,
+                91.15746159848273
+              ],
+              "denominator": 1.1693563551126642
+            },
+            {
+              "point": [
+                37.37048440332075,
+                127.08820990813173
+              ],
+              "denominator": 1.179094346773005
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              -20.02174901834288,
+              -24.476306042823623
+            ],
+            "maximum": [
+              114.87289178025001,
+              127.08820990813173
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "corona_borealis",
+      "name": "Nördliche Krone",
+      "abbreviation": "CrB",
+      "sourceId": "CON modern CrB",
+      "projection": {
+        "centerRaDeg": -124.0307481522301,
+        "centerDecDeg": 28.07058605074655,
+        "scale": 578.8088367583937,
+        "offset": [
+          51.5445524000824,
+          56.694496579145735
+        ],
+        "maxCoordinateDifference": 0.004702715769042243
+      },
+      "image": {
+        "file": "illustrations/corona-borealis.png",
+        "width": 256,
+        "height": 256,
+        "bytes": 16900,
+        "sha256": "090649da2d64f53ed7f8f593c4642e242addffaded11a4887e7a590cbfa664e2",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": -33107,
+        "anchors": [
+          {
+            "hip": 78493,
+            "pixel": [
+              16,
+              186
+            ],
+            "inFigure": true,
+            "raHours": 16.024047,
+            "decDeg": 29.851061,
+            "name": "",
+            "chart": [
+              13,
+              37.96618070101225
+            ]
+          },
+          {
+            "hip": 76952,
+            "pixel": [
+              201,
+              203
+            ],
+            "inFigure": true,
+            "raHours": 15.712381,
+            "decDeg": 26.295637,
+            "name": "",
+            "chart": [
+              54.113723050186906,
+              74.62816539784274
+            ]
+          },
+          {
+            "hip": 76127,
+            "pixel": [
+              157,
+              20
+            ],
+            "inFigure": true,
+            "raHours": 15.548829,
+            "decDeg": 31.359133,
+            "name": "",
+            "chart": [
+              75.20381208603649,
+              23.14207400767448
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": -0.008577021555196775,
+          "corners": [
+            {
+              "point": [
+                41.25664525855861,
+                -9.460123224742063
+              ],
+              "denominator": 0.9955466416681309
+            },
+            {
+              "point": [
+                102.17282506297718,
+                35.84013527414241
+              ],
+              "denominator": 0.9984513703464095
+            },
+            {
+              "point": [
+                58.052149391893586,
+                96.9148982527198
+              ],
+              "denominator": 1.0005740322520789
+            },
+            {
+              "point": [
+                -2.8628818732456693,
+                51.88884158363557
+              ],
+              "denominator": 0.9976693035738
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              -2.8628818732456693,
+              -9.460123224742063
+            ],
+            "maximum": [
+              102.17282506297718,
+              96.9148982527198
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "orion",
+      "name": "Orion",
+      "abbreviation": "Ori",
+      "sourceId": "CON modern Ori",
+      "projection": {
+        "centerRaDeg": 82.43748804379531,
+        "centerDecDeg": 6.526349749783732,
+        "scale": 137.62310664525288,
+        "offset": [
+          50.512967586286514,
+          46.95085945884426
+        ],
+        "maxCoordinateDifference": 0.004763952296535479
+      },
+      "image": {
+        "file": "illustrations/orion.png",
+        "width": 512,
+        "height": 512,
+        "bytes": 41095,
+        "sha256": "3edea0a3275ce25e084642f55111e07d8e7fc16cfeb8a04844719f45523744ae",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": -147092,
+        "anchors": [
+          {
+            "hip": 27913,
+            "pixel": [
+              59,
+              11
+            ],
+            "inFigure": true,
+            "raHours": 5.906386,
+            "decDeg": 20.276174,
+            "name": "",
+            "chart": [
+              36.17623877081335,
+              13
+            ]
+          },
+          {
+            "hip": 27366,
+            "pixel": [
+              329,
+              477
+            ],
+            "inFigure": true,
+            "raHours": 5.795941,
+            "decDeg": -9.669605,
+            "name": "Saiph",
+            "chart": [
+              39.38969741869917,
+              87
+            ]
+          },
+          {
+            "hip": 22449,
+            "pixel": [
+              421,
+              91
+            ],
+            "inFigure": true,
+            "raHours": 4.830669,
+            "decDeg": 6.961276,
+            "name": "Tabit",
+            "chart": [
+              74.54093149919692,
+              45.65194650292408
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": -0.13148984514420906,
+          "corners": [
+            {
+              "point": [
+                29.64761688751332,
+                7.799064484393227
+              ],
+              "denominator": 0.9627382629524541
+            },
+            {
+              "point": [
+                90.54505101054424,
+                40.54527953324287
+              ],
+              "denominator": 0.9961203965847241
+            },
+            {
+              "point": [
+                59.45564274669795,
+                102.3996925428304
+              ],
+              "denominator": 0.9672499612167338
+            },
+            {
+              "point": [
+                -4.435754905807329,
+                70.85218545098692
+              ],
+              "denominator": 0.9338678275844637
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              -4.435754905807329,
+              7.799064484393227
+            ],
+            "maximum": [
+              90.54505101054424,
+              102.3996925428304
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "pegasus",
+      "name": "Pegasus",
+      "abbreviation": "Peg",
+      "sourceId": "CON modern Peg",
+      "projection": {
+        "centerRaDeg": -19.125695776450268,
+        "centerDecDeg": 21.0110328036772,
+        "scale": 111.66375604823482,
+        "offset": [
+          57.3822182081548,
+          47.636184199816064
+        ],
+        "maxCoordinateDifference": 0.004697448330659881
+      },
+      "image": {
+        "file": "illustrations/pegasus.png",
+        "width": 512,
+        "height": 512,
+        "bytes": 33947,
+        "sha256": "ad4a6926b939cd113aa78c06418513bc6b0e2342cca6df9d4fa0c9bd20743148",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": -95326,
+        "anchors": [
+          {
+            "hip": 107315,
+            "pixel": [
+              164,
+              41
+            ],
+            "inFigure": true,
+            "raHours": 21.736433,
+            "decDeg": 9.875011,
+            "name": "Enif",
+            "chart": [
+              87,
+              68.94301590710505
+            ]
+          },
+          {
+            "hip": 109410,
+            "pixel": [
+              47,
+              283
+            ],
+            "inFigure": false,
+            "raHours": 22.166457,
+            "decDeg": 33.178224,
+            "name": "",
+            "chart": [
+              71.43138782064224,
+              22.984532948592744
+            ]
+          },
+          {
+            "hip": 1067,
+            "pixel": [
+              409,
+              349
+            ],
+            "inFigure": true,
+            "raHours": 0.220598,
+            "decDeg": 15.183596,
+            "name": "Algenib",
+            "chart": [
+              13,
+              56.71530255166934
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": -0.2198144799863082,
+          "corners": [
+            {
+              "point": [
+                113.39633422880459,
+                54.89482419882219
+              ],
+              "denominator": 0.969617349966584
+            },
+            {
+              "point": [
+                44.50420491455168,
+                118.89110892275465
+              ],
+              "denominator": 0.9076934896499473
+            },
+            {
+              "point": [
+                -23.682356819152403,
+                46.705067239404094
+              ],
+              "denominator": 0.9172222939398561
+            },
+            {
+              "point": [
+                48.8516348375276,
+                -12.103180527692565
+              ],
+              "denominator": 0.9791461542564925
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              -23.682356819152403,
+              -12.103180527692565
+            ],
+            "maximum": [
+              113.39633422880459,
+              118.89110892275465
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "perseus",
+      "name": "Perseus",
+      "abbreviation": "Per",
+      "sourceId": "CON modern Per",
+      "projection": {
+        "centerRaDeg": 51.84041386698618,
+        "centerDecDeg": 42.4554859334407,
+        "scale": 172.6015696780985,
+        "offset": [
+          48.81502128941159,
+          55.33451774899605
+        ],
+        "maxCoordinateDifference": 0.004599815875650393
+      },
+      "image": {
+        "file": "illustrations/perseus.png",
+        "width": 512,
+        "height": 512,
+        "bytes": 51300,
+        "sha256": "fe9278ddf3dd52f1e1cfbc9f29b14739ebd146656b1d0b39e91309ba5983802e",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": 41213,
+        "anchors": [
+          {
+            "hip": 18532,
+            "pixel": [
+              164,
+              323
+            ],
+            "inFigure": true,
+            "raHours": 3.96423,
+            "decDeg": 40.010215,
+            "name": "",
+            "chart": [
+              31.173783277549173,
+              61.94897595158042
+            ]
+          },
+          {
+            "hip": 15863,
+            "pixel": [
+              299,
+              175
+            ],
+            "inFigure": true,
+            "raHours": 3.405378,
+            "decDeg": 49.86118,
+            "name": "Mirfak",
+            "chart": [
+              50.302844211939096,
+              32.892440417286124
+            ]
+          },
+          {
+            "hip": 13254,
+            "pixel": [
+              385,
+              386
+            ],
+            "inFigure": true,
+            "raHours": 2.843063,
+            "decDeg": 38.318644,
+            "name": "",
+            "chart": [
+              70.672548004845,
+              66.7257226938363
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": 0.0405877717629291,
+          "corners": [
+            {
+              "point": [
+                -5.227774347059622,
+                11.33888571050327
+              ],
+              "denominator": 0.9972386008638532
+            },
+            {
+              "point": [
+                82.24230887096948,
+                -3.1794355881841625
+              ],
+              "denominator": 0.9876903843228
+            },
+            {
+              "point": [
+                95.91976447559014,
+                84.94640377155683
+              ],
+              "denominator": 0.987555664503069
+            },
+            {
+              "point": [
+                8.306888450920397,
+                98.62279805802396
+              ],
+              "denominator": 0.9971038810441222
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              -5.227774347059622,
+              -3.1794355881841625
+            ],
+            "maximum": [
+              95.91976447559014,
+              98.62279805802396
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "sagitta",
+      "name": "Pfeil",
+      "abbreviation": "Sge",
+      "sourceId": "CON modern Sge",
+      "projection": {
+        "centerRaDeg": -62.391136397959755,
+        "centerDecDeg": 18.71770511392078,
+        "scale": 715.7873062544915,
+        "offset": [
+          56.272040854752476,
+          50.521918565197566
+        ],
+        "maxCoordinateDifference": 0.004729669731645458
+      },
+      "image": {
+        "file": "illustrations/sagitta.png",
+        "width": 256,
+        "height": 256,
+        "bytes": 4501,
+        "sha256": "5dd90e4c916e947f496560c7e8b87e2b61631c09db6412dc0c83823f0bf87227",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": 13521,
+        "anchors": [
+          {
+            "hip": 98920,
+            "pixel": [
+              6,
+              12
+            ],
+            "inFigure": true,
+            "raHours": 20.08597,
+            "decDeg": 19.991071,
+            "name": "",
+            "chart": [
+              13,
+              34.135884830632605
+            ]
+          },
+          {
+            "hip": 96757,
+            "pixel": [
+              249,
+              213
+            ],
+            "inFigure": true,
+            "raHours": 19.668275,
+            "decDeg": 18.01389,
+            "name": "Sham",
+            "chart": [
+              87,
+              59.100621234184054
+            ]
+          },
+          {
+            "hip": 96837,
+            "pixel": [
+              218,
+              243
+            ],
+            "inFigure": true,
+            "raHours": 19.68415,
+            "decDeg": 17.476041,
+            "name": "",
+            "chart": [
+              84.25472966973165,
+              65.8641151693674
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": 0.0011061198923754457,
+          "corners": [
+            {
+              "point": [
+                10.323078518164138,
+                32.259180525582636
+              ],
+              "denominator": 0.997872700070244
+            },
+            {
+              "point": [
+                62.83179099114584,
+                20.69518605750849
+              ],
+              "denominator": 0.9984946867045333
+            },
+            {
+              "point": [
+                93.59888281263002,
+                66.46853915320744
+              ],
+              "denominator": 0.9991323227427881
+            },
+            {
+              "point": [
+                41.14286700725485,
+                78.05366188951294
+              ],
+              "denominator": 0.9985103361084983
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              10.323078518164138,
+              20.69518605750849
+            ],
+            "maximum": [
+              93.59888281263002,
+              78.05366188951294
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": false
+        }
+      }
+    },
+    {
+      "key": "corvus",
+      "name": "Rabe",
+      "abbreviation": "Crv",
+      "sourceId": "CON modern Crv",
+      "projection": {
+        "centerRaDeg": -174.5278603404373,
+        "centerDecDeg": -20.18619475219172,
+        "scale": 494.6462387655562,
+        "offset": [
+          49.14648849520997,
+          47.37242033379427
+        ],
+        "maxCoordinateDifference": 0.003440336124612031
+      },
+      "image": {
+        "file": "illustrations/corvus.png",
+        "width": 256,
+        "height": 256,
+        "bytes": 13062,
+        "sha256": "c0e7f48acaa272c44a4f9e63dc508577851f1bb184e36a31b4b2ba6219e2e5d7",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": -24512,
+        "anchors": [
+          {
+            "hip": 60965,
+            "pixel": [
+              65,
+              59
+            ],
+            "inFigure": true,
+            "raHours": 12.497739,
+            "decDeg": -16.515432,
+            "name": "Algorab",
+            "chart": [
+              32.602925730717544,
+              15.720550398063672
+            ]
+          },
+          {
+            "hip": 61359,
+            "pixel": [
+              77,
+              235
+            ],
+            "inFigure": true,
+            "raHours": 12.573121,
+            "decDeg": -23.396759,
+            "name": "Kraz",
+            "chart": [
+              24.330105216414086,
+              75.38812850114222
+            ]
+          },
+          {
+            "hip": 59316,
+            "pixel": [
+              213,
+              187
+            ],
+            "inFigure": true,
+            "raHours": 12.168746,
+            "decDeg": -22.619766,
+            "name": "",
+            "chart": [
+              72.62093180683931,
+              68.62655966387538
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": -0.011461536050378317,
+          "corners": [
+            {
+              "point": [
+                15.20712735060232,
+                -8.464365463571
+              ],
+              "denominator": 0.997165499633874
+            },
+            {
+              "point": [
+                99.79106477638913,
+                9.106193268957867
+              ],
+              "denominator": 0.9985221186577258
+            },
+            {
+              "point": [
+                82.03178493129718,
+                94.61684011140974
+              ],
+              "denominator": 0.9980605018330004
+            },
+            {
+              "point": [
+                -2.6154992382858637,
+                77.15453269261458
+              ],
+              "denominator": 0.9967038828091483
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              -2.6154992382858637,
+              -8.464365463571
+            ],
+            "maximum": [
+              99.79106477638913,
+              94.61684011140974
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "bootes",
+      "name": "Rinderhirte",
+      "abbreviation": "Boo",
+      "sourceId": "CON modern Boo",
+      "projection": {
+        "centerRaDeg": -142.38303797630502,
+        "centerDecDeg": 26.43748223512659,
+        "scale": 154.5882141168353,
+        "offset": [
+          49.23539013562069,
+          52.17671444431297
+        ],
+        "maxCoordinateDifference": 0.004845420361633046
+      },
+      "image": {
+        "file": "illustrations/bootes.png",
+        "width": 512,
+        "height": 512,
+        "bytes": 36561,
+        "sha256": "dc958bf2f6e4779302df7a890e24c028fb037d7bb6d5963f820abaae8fee0a78",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": 24376,
+        "anchors": [
+          {
+            "hip": 72105,
+            "pixel": [
+              225,
+              222
+            ],
+            "inFigure": true,
+            "raHours": 14.749784,
+            "decDeg": 27.074222,
+            "name": "Izar",
+            "chart": [
+              40.50645091247105,
+              50.33277696398429
+            ]
+          },
+          {
+            "hip": 71075,
+            "pixel": [
+              365,
+              184
+            ],
+            "inFigure": true,
+            "raHours": 14.534636,
+            "decDeg": 38.308253,
+            "name": "Seginus",
+            "chart": [
+              48.36444069920901,
+              19.680285937797564
+            ]
+          },
+          {
+            "hip": 67927,
+            "pixel": [
+              207,
+              401
+            ],
+            "inFigure": true,
+            "raHours": 13.911411,
+            "decDeg": 18.397717,
+            "name": "Muphrid",
+            "chart": [
+              72.51462432967719,
+              73.4316458834343
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": 0.0465723254097654,
+          "corners": [
+            {
+              "point": [
+                -20.525615647318276,
+                66.94711029445834
+              ],
+              "denominator": 1.0642754677499573
+            },
+            {
+              "point": [
+                29.21686653968105,
+                -28.651971494062046
+              ],
+              "denominator": 0.9752815060940019
+            },
+            {
+              "point": [
+                132.6033666691173,
+                26.445884464494434
+              ],
+              "denominator": 0.913407979533108
+            },
+            {
+              "point": [
+                70.61178906785764,
+                123.0542179355663
+              ],
+              "denominator": 1.0024019411890637
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              -20.525615647318276,
+              -28.651971494062046
+            ],
+            "maximum": [
+              132.6033666691173,
+              123.0542179355663
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "scutum",
+      "name": "Schild",
+      "abbreviation": "Sct",
+      "sourceId": "CON modern Sct",
+      "projection": {
+        "centerRaDeg": -79.3090758497736,
+        "centerDecDeg": -9.779753275053563,
+        "scale": 388.70153273733297,
+        "offset": [
+          48.63753148392011,
+          47.21897935742617
+        ],
+        "maxCoordinateDifference": 0.0026606619358418016
+      },
+      "image": {
+        "file": "illustrations/scutum.png",
+        "width": 256,
+        "height": 256,
+        "bytes": 22049,
+        "sha256": "252312723d04a799482e61eecd7e357a74bbba16d58259a2eef3cfd017b06b53",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": 23199,
+        "anchors": [
+          {
+            "hip": 92175,
+            "pixel": [
+              52,
+              17
+            ],
+            "inFigure": true,
+            "raHours": 18.786242,
+            "decDeg": -4.747867,
+            "name": "",
+            "chart": [
+              41.152563112944804,
+              13.000000000000007
+            ]
+          },
+          {
+            "hip": 90595,
+            "pixel": [
+              224,
+              124
+            ],
+            "inFigure": true,
+            "raHours": 18.486626,
+            "decDeg": -14.565813,
+            "name": "",
+            "chart": [
+              71.00897592236737,
+              79.93107119731752
+            ]
+          },
+          {
+            "hip": 92814,
+            "pixel": [
+              139,
+              206
+            ],
+            "inFigure": true,
+            "raHours": 18.911976,
+            "decDeg": -15.603036,
+            "name": "",
+            "chart": [
+              28.991024077632627,
+              87
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": 0.019699013900112125,
+          "corners": [
+            {
+              "point": [
+                29.040713952121248,
+                -2.657794478241051
+              ],
+              "denominator": 0.9960928703048375
+            },
+            {
+              "point": [
+                105.5210845492458,
+                49.588453939688655
+              ],
+              "denominator": 0.9966061441379839
+            },
+            {
+              "point": [
+                53.94149124260125,
+                125.86489711271881
+              ],
+              "denominator": 0.9930979309774776
+            },
+            {
+              "point": [
+                -22.83586550688431,
+                73.4734315862199
+              ],
+              "denominator": 0.9925846571443309
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              -22.83586550688431,
+              -2.657794478241051
+            ],
+            "maximum": [
+              105.5210845492458,
+              125.86489711271881
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "serpens_caput",
+      "name": "Kopf der Schlange",
+      "abbreviation": "Ser",
+      "sourceId": "CON modern Ser",
+      "projection": {
+        "centerRaDeg": -122.32784062614306,
+        "centerDecDeg": 7.958699367224682,
+        "scale": 191.59838079278975,
+        "offset": [
+          53.56709071623005,
+          47.4169532163718
+        ],
+        "maxCoordinateDifference": 0.0044336103873590105
+      },
+      "image": null
+    },
+    {
+      "key": "serpens_cauda",
+      "name": "Schwanz der Schlange",
+      "abbreviation": "Ser",
+      "sourceId": "CON modern Ser",
+      "projection": {
+        "centerRaDeg": -88.99884808906182,
+        "centerDecDeg": -7.27835459795597,
+        "scale": 175.07162451010888,
+        "offset": [
+          54.31946193098094,
+          55.31504347266723
+        ],
+        "maxCoordinateDifference": 0.004829008987982775
+      },
+      "image": null
+    },
+    {
+      "key": "ophiuchus",
+      "name": "Schlangenträger",
+      "abbreviation": "Oph",
+      "sourceId": "CON modern Oph",
+      "projection": {
+        "centerRaDeg": -103.16437975550046,
+        "centerDecDeg": -4.082104265424395,
+        "scale": 111.35583511521361,
+        "offset": [
+          46.872237810345055,
+          46.47357037697866
+        ],
+        "maxCoordinateDifference": 0.004778167500639086
+      },
+      "image": {
+        "file": "illustrations/ophiuchus.png",
+        "width": 512,
+        "height": 512,
+        "bytes": 35799,
+        "sha256": "09967fbed6f14e768da00d492b7ba2daa2165406690014d0f00b711d372a0079",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": 152378,
+        "anchors": [
+          {
+            "hip": 92946,
+            "pixel": [
+              5,
+              183
+            ],
+            "inFigure": false,
+            "raHours": 18.936995,
+            "decDeg": 4.203595,
+            "name": "Alya",
+            "chart": [
+              -10.890719606042325,
+              29.220998023863295
+            ]
+          },
+          {
+            "hip": 77233,
+            "pixel": [
+              452,
+              47
+            ],
+            "inFigure": false,
+            "raHours": 15.769793,
+            "decDeg": 15.421826,
+            "name": "",
+            "chart": [
+              89.02863561487469,
+              4.903872922134219
+            ]
+          },
+          {
+            "hip": 85755,
+            "pixel": [
+              238,
+              453
+            ],
+            "inFigure": true,
+            "raHours": 17.523598,
+            "decDeg": -23.962643,
+            "name": "",
+            "chart": [
+              35.466143659577746,
+              87
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": 0.4041776359390676,
+          "corners": [
+            {
+              "point": [
+                -10.379354465587909,
+                -12.037191231299374
+              ],
+              "denominator": 0.8500663185489375
+            },
+            {
+              "point": [
+                103.21949543826429,
+                -4.74754356225727
+              ],
+              "denominator": 0.878875384606812
+            },
+            {
+              "point": [
+                89.4506401656821,
+                100.17634289488325
+              ],
+              "denominator": 0.9601645334365188
+            },
+            {
+              "point": [
+                -14.659151837964906,
+                96.76848747048552
+              ],
+              "denominator": 0.9313554673786446
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              -14.659151837964906,
+              -12.037191231299374
+            ],
+            "maximum": [
+              103.21949543826429,
+              100.17634289488325
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "sagittarius",
+      "name": "Schütze",
+      "abbreviation": "Sgr",
+      "sourceId": "CON modern Sgr",
+      "projection": {
+        "centerRaDeg": -75.50230075858993,
+        "centerDecDeg": -29.420461401621992,
+        "scale": 139.0965680386964,
+        "offset": [
+          48.38228975127787,
+          44.77207788352527
+        ],
+        "maxCoordinateDifference": 0.00499276918353786
+      },
+      "image": {
+        "file": "illustrations/sagittarius.png",
+        "width": 512,
+        "height": 512,
+        "bytes": 33662,
+        "sha256": "0ee208629e5edf87be38fb008b41b5dd0fc4fc67ba49cbe6c57356e5182e9317",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": -164302,
+        "anchors": [
+          {
+            "hip": 95168,
+            "pixel": [
+              96,
+              82
+            ],
+            "inFigure": true,
+            "raHours": 19.361211,
+            "decDeg": -17.847197,
+            "name": "",
+            "chart": [
+              34.37858043131829,
+              16.513832537817624
+            ]
+          },
+          {
+            "hip": 95294,
+            "pixel": [
+              307,
+              492
+            ],
+            "inFigure": true,
+            "raHours": 19.386976,
+            "decDeg": -44.799778,
+            "name": "Arkab Posterior",
+            "chart": [
+              37.09323636392331,
+              83.48616746218238
+            ]
+          },
+          {
+            "hip": 87072,
+            "pixel": [
+              506,
+              100
+            ],
+            "inFigure": true,
+            "raHours": 17.792674,
+            "decDeg": -27.830788,
+            "name": "",
+            "chart": [
+              87,
+              43.70520391587594
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": -0.16094803000926322,
+          "corners": [
+            {
+              "point": [
+                26.91398566858988,
+                0.17913159767390852
+              ],
+              "denominator": 0.979691734196723
+            },
+            {
+              "point": [
+                93.74403794985204,
+                30.871357879942803
+              ],
+              "denominator": 0.9655492429066623
+            },
+            {
+              "point": [
+                62.99879809773826,
+                99.10295630914763
+              ],
+              "denominator": 0.9543504858235181
+            },
+            {
+              "point": [
+                -4.15505543138319,
+                67.05947647740203
+              ],
+              "denominator": 0.9684929771135786
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              -4.15505543138319,
+              0.17913159767390852
+            ],
+            "maximum": [
+              93.74403794985204,
+              99.10295630914763
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "cygnus",
+      "name": "Schwan",
+      "abbreviation": "Cyg",
+      "sourceId": "CON modern Cyg",
+      "projection": {
+        "centerRaDeg": -54.973673513740735,
+        "centerDecDeg": 39.75918159799725,
+        "scale": 139.19046192938907,
+        "offset": [
+          59.70756039850954,
+          54.365622899713316
+        ],
+        "maxCoordinateDifference": 0.004974101673575149
+      },
+      "image": {
+        "file": "illustrations/cygnus.png",
+        "width": 512,
+        "height": 512,
+        "bytes": 29252,
+        "sha256": "d9ad9d2ffea6fb50eedf1ace1353efcca35bedf7fe4c45c6b67b8b01ec5e87a0",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": 187717,
+        "anchors": [
+          {
+            "hip": 107310,
+            "pixel": [
+              7,
+              382
+            ],
+            "inFigure": true,
+            "raHours": 21.73571,
+            "decDeg": 28.742632,
+            "name": "",
+            "chart": [
+              12.999999999999993,
+              77.22033949432712
+            ]
+          },
+          {
+            "hip": 94779,
+            "pixel": [
+              474,
+              46
+            ],
+            "inFigure": true,
+            "raHours": 19.28504,
+            "decDeg": 53.368459,
+            "name": "",
+            "chart": [
+              83.32149470049302,
+              17.97111142260639
+            ]
+          },
+          {
+            "hip": 95947,
+            "pixel": [
+              467,
+              453
+            ],
+            "inFigure": true,
+            "raHours": 19.512023,
+            "decDeg": 27.959681,
+            "name": "Albireo",
+            "chart": [
+              87,
+              82.02888857739362
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": 0.20997127713510153,
+          "corners": [
+            {
+              "point": [
+                6.578209175252617,
+                15.523559840012716
+              ],
+              "denominator": 0.9280848416956415
+            },
+            {
+              "point": [
+                88.70985223787434,
+                10.28948867881757
+              ],
+              "denominator": 0.9557542062935512
+            },
+            {
+              "point": [
+                94.61613188813261,
+                90.56189326667362
+              ],
+              "denominator": 0.9668805999618915
+            },
+            {
+              "point": [
+                13.631464029640568,
+                98.09880111894236
+              ],
+              "denominator": 0.9392112353639813
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              6.578209175252617,
+              10.28948867881757
+            ],
+            "maximum": [
+              94.61613188813261,
+              98.09880111894236
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": false
+        }
+      }
+    },
+    {
+      "key": "scorpius",
+      "name": "Skorpion",
+      "abbreviation": "Sco",
+      "sourceId": "CON modern Sco",
+      "projection": {
+        "centerRaDeg": -107.26174019867769,
+        "centerDecDeg": -34.24826772157331,
+        "scale": 178.22056414205113,
+        "offset": [
+          48.33083239600548,
+          57.691313313466914
+        ],
+        "maxCoordinateDifference": 0.004962711808055076
+      },
+      "image": {
+        "file": "illustrations/scorpius.png",
+        "width": 512,
+        "height": 512,
+        "bytes": 38820,
+        "sha256": "e681573f0d51cc934bf170fa4136396a78d234d5d0db3f778cc16ea0df6f2d64",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": -89425,
+        "anchors": [
+          {
+            "hip": 78820,
+            "pixel": [
+              447,
+              29
+            ],
+            "inFigure": true,
+            "raHours": 16.09062,
+            "decDeg": -19.805453,
+            "name": "Acrab",
+            "chart": [
+              83.04091918058828,
+              13
+            ]
+          },
+          {
+            "hip": 85927,
+            "pixel": [
+              62,
+              365
+            ],
+            "inFigure": true,
+            "raHours": 17.560145,
+            "decDeg": -37.103821,
+            "name": "Shaula",
+            "chart": [
+              21.692013399072838,
+              68.08266492702674
+            ]
+          },
+          {
+            "hip": 82729,
+            "pixel": [
+              217,
+              462
+            ],
+            "inFigure": false,
+            "raHours": 16.909731,
+            "decDeg": -42.361313,
+            "name": "",
+            "chart": [
+              46.223389596134204,
+              83.1086188837023
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": -0.06666855151031043,
+          "corners": [
+            {
+              "point": [
+                10.526174047000978,
+                9.413535531423555
+              ],
+              "denominator": 0.9634133983556508
+            },
+            {
+              "point": [
+                93.78163352678101,
+                7.968703239926555
+              ],
+              "denominator": 0.9492756480119047
+            },
+            {
+              "point": [
+                92.80960312677333,
+                90.7297945253294
+              ],
+              "denominator": 0.9852857405452096
+            },
+            {
+              "point": [
+                12.56766008957026,
+                90.95183767646523
+              ],
+              "denominator": 0.9994234908889558
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              10.526174047000978,
+              7.968703239926555
+            ],
+            "maximum": [
+              93.78163352678101,
+              90.95183767646523
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": false
+        }
+      }
+    },
+    {
+      "key": "capricornus",
+      "name": "Steinbock",
+      "abbreviation": "Cap",
+      "sourceId": "CON modern Cap",
+      "projection": {
+        "centerRaDeg": -43.91495061306726,
+        "centerDecDeg": -18.90991419895626,
+        "scale": 193.80916012767625,
+        "offset": [
+          48.081493643204354,
+          46.6843167994165
+        ],
+        "maxCoordinateDifference": 0.004592316303067889
+      },
+      "image": {
+        "file": "illustrations/capricornus.png",
+        "width": 512,
+        "height": 512,
+        "bytes": 41969,
+        "sha256": "7135358cd50bbc2717a8f7e3ce3fa47431261e7cee01d21d26688b2aca8424f7",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": 191681,
+        "anchors": [
+          {
+            "hip": 107556,
+            "pixel": [
+              15,
+              436
+            ],
+            "inFigure": true,
+            "raHours": 21.784011,
+            "decDeg": -16.127286,
+            "name": "Deneb Algedi",
+            "chart": [
+              12.999999999999993,
+              38.17587202444347
+            ]
+          },
+          {
+            "hip": 100064,
+            "pixel": [
+              403,
+              7
+            ],
+            "inFigure": true,
+            "raHours": 20.300904,
+            "decDeg": -12.544852,
+            "name": "Algedi",
+            "chart": [
+              87,
+              25.926633343513778
+            ]
+          },
+          {
+            "hip": 102978,
+            "pixel": [
+              460,
+              438
+            ],
+            "inFigure": true,
+            "raHours": 20.863692,
+            "decDeg": -26.919133,
+            "name": "",
+            "chart": [
+              57.62122104667891,
+              74.07336665648623
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": 0.08084007979571659,
+          "corners": [
+            {
+              "point": [
+                46.618895289055466,
+                -7.836286011769765
+              ],
+              "denominator": 0.969569694640131
+            },
+            {
+              "point": [
+                98.57966387219194,
+                34.08512798475743
+              ],
+              "denominator": 0.9762818854936163
+            },
+            {
+              "point": [
+                56.87317009977884,
+                85.55543354749449
+              ],
+              "denominator": 0.9919310800015538
+            },
+            {
+              "point": [
+                5.453603308632296,
+                44.65056002429273
+              ],
+              "denominator": 0.9852188891480687
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              5.453603308632296,
+              -7.836286011769765
+            ],
+            "maximum": [
+              98.57966387219194,
+              85.55543354749449
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "taurus",
+      "name": "Stier",
+      "abbreviation": "Tau",
+      "sourceId": "CON modern Tau",
+      "projection": {
+        "centerRaDeg": 66.9524183670427,
+        "centerDecDeg": 18.61159168534955,
+        "scale": 128.94239780286145,
+        "offset": [
+          50.65101947571474,
+          51.80904505182365
+        ],
+        "maxCoordinateDifference": 0.004212446744368492
+      },
+      "image": {
+        "file": "illustrations/taurus.png",
+        "width": 512,
+        "height": 512,
+        "bytes": 30557,
+        "sha256": "019f267b9fee7fe3188944c2fe265c58c216119a919fd72475a8cd3c1676162a",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": -89074,
+        "anchors": [
+          {
+            "hip": 26451,
+            "pixel": [
+              13,
+              92
+            ],
+            "inFigure": true,
+            "raHours": 5.627413,
+            "decDeg": 21.142549,
+            "name": "Tianguan",
+            "chart": [
+              12.999999999999993,
+              44.02224768055763
+            ]
+          },
+          {
+            "hip": 15900,
+            "pixel": [
+              399,
+              438
+            ],
+            "inFigure": true,
+            "raHours": 3.413554,
+            "decDeg": 9.02887,
+            "name": "",
+            "chart": [
+              87,
+              72.7779016771249
+            ]
+          },
+          {
+            "hip": 17999,
+            "pixel": [
+              382,
+              192
+            ],
+            "inFigure": false,
+            "raHours": 3.847896,
+            "decDeg": 23.96147,
+            "name": "",
+            "chart": [
+              69.85801277319237,
+              39.10150744661826
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": -0.10786301433527004,
+          "corners": [
+            {
+              "point": [
+                6.502839531958543,
+                31.95253249354916
+              ],
+              "denominator": 0.9701092484344855
+            },
+            {
+              "point": [
+                75.91368341707425,
+                7.911582558644689
+              ],
+              "denominator": 1.0262998824427108
+            },
+            {
+              "point": [
+                107.08427815376243,
+                77.28111767058186
+              ],
+              "denominator": 0.9526693260928021
+            },
+            {
+              "point": [
+                33.92625812160577,
+                107.64465700747533
+              ],
+              "denominator": 0.8964786920845769
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              6.502839531958543,
+              7.911582558644689
+            ],
+            "maximum": [
+              107.08427815376243,
+              107.64465700747533
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "piscis_austrinus",
+      "name": "Südlicher Fisch",
+      "abbreviation": "PsA",
+      "sourceId": "CON modern PsA",
+      "projection": {
+        "centerRaDeg": -23.40892242341702,
+        "centerDecDeg": -30.646815773779984,
+        "scale": 279.6500796336646,
+        "offset": [
+          46.3200522592869,
+          53.5420266603233
+        ],
+        "maxCoordinateDifference": 0.004883297853453428
+      },
+      "image": {
+        "file": "illustrations/piscis-austrinus.png",
+        "width": 256,
+        "height": 256,
+        "bytes": 12235,
+        "sha256": "32697eddefcdada4cd27e234178265f63db9d185a99bcd14e9beae6703161a07",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": -18458,
+        "anchors": [
+          {
+            "hip": 113246,
+            "pixel": [
+              190,
+              5
+            ],
+            "inFigure": true,
+            "raHours": 22.932472,
+            "decDeg": -32.539628,
+            "name": "",
+            "chart": [
+              15.77173544245602,
+              63.84643066113716
+            ]
+          },
+          {
+            "hip": 107608,
+            "pixel": [
+              82,
+              202
+            ],
+            "inFigure": true,
+            "raHours": 21.795598,
+            "decDeg": -30.898304,
+            "name": "",
+            "chart": [
+              87,
+              56.53416875014144
+            ]
+          },
+          {
+            "hip": 111954,
+            "pixel": [
+              236,
+              92
+            ],
+            "inFigure": true,
+            "raHours": 22.677594,
+            "decDeg": -27.043617,
+            "name": "",
+            "chart": [
+              30.744492781585905,
+              36.15356933886284
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": -0.023336921669560556,
+          "corners": [
+            {
+              "point": [
+                47.846757570163284,
+                115.06739860818553
+              ],
+              "denominator": 0.9835788913641215
+            },
+            {
+              "point": [
+                3.0002461213011813,
+                47.50275030501447
+              ],
+              "denominator": 0.996781370315099
+            },
+            {
+              "point": [
+                70.41480893305985,
+                1.5374358022025802
+              ],
+              "denominator": 0.9989628984917861
+            },
+            {
+              "point": [
+                116.06496942529583,
+                68.336938471335
+              ],
+              "denominator": 0.985760419540809
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              3.0002461213011813,
+              1.5374358022025802
+            ],
+            "maximum": [
+              116.06496942529583,
+              115.06739860818553
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "libra",
+      "name": "Waage",
+      "abbreviation": "Lib",
+      "sourceId": "CON modern Lib",
+      "projection": {
+        "centerRaDeg": -129.89379449921464,
+        "centerDecDeg": -16.51574334118042,
+        "scale": 263.9715259632811,
+        "offset": [
+          52.10272645623771,
+          46.028189504838
+        ],
+        "maxCoordinateDifference": 0.004653389194203328
+      },
+      "image": {
+        "file": "illustrations/libra.png",
+        "width": 256,
+        "height": 256,
+        "bytes": 10659,
+        "sha256": "b62452cb1273f425cf54be07c95ff5efc759cea23761f31a63bb3c5ca6095681",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": -24809,
+        "anchors": [
+          {
+            "hip": 74785,
+            "pixel": [
+              41,
+              27
+            ],
+            "inFigure": true,
+            "raHours": 15.283449,
+            "decDeg": -9.382917,
+            "name": "Zubeneschamali",
+            "chart": [
+              56.01731242911606,
+              13
+            ]
+          },
+          {
+            "hip": 77853,
+            "pixel": [
+              58,
+              170
+            ],
+            "inFigure": true,
+            "raHours": 15.897093,
+            "decDeg": -16.729293,
+            "name": "",
+            "chart": [
+              15.029394072092089,
+              47.79106673806095
+            ]
+          },
+          {
+            "hip": 73714,
+            "pixel": [
+              224,
+              107
+            ],
+            "inFigure": true,
+            "raHours": 15.067839,
+            "decDeg": -25.281965,
+            "name": "Brachium",
+            "chart": [
+              69.36066830276876,
+              87
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": -0.04862709502390693,
+          "corners": [
+            {
+              "point": [
+                55.86768778810888,
+                -5.319012319953558
+              ],
+              "denominator": 0.9935991890877721
+            },
+            {
+              "point": [
+                109.52674613687527,
+                74.88632693428633
+              ],
+              "denominator": 0.9862464905998984
+            },
+            {
+              "point": [
+                29.404003569879666,
+                128.16625804957687
+              ],
+              "denominator": 0.9837259779815766
+            },
+            {
+              "point": [
+                -23.79709917431439,
+                47.361662800133615
+              ],
+              "denominator": 0.9910786764694502
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              -23.79709917431439,
+              -5.319012319953558
+            ],
+            "maximum": [
+              109.52674613687527,
+              128.16625804957687
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "cetus",
+      "name": "Walfisch",
+      "abbreviation": "Cet",
+      "sourceId": "CON modern Cet",
+      "projection": {
+        "centerRaDeg": 32.75248101335673,
+        "centerDecDeg": -4.1996702936128365,
+        "scale": 98.22141671446117,
+        "offset": [
+          35.52819359774792,
+          49.3978667945561
+        ],
+        "maxCoordinateDifference": 0.0049087390138993214
+      },
+      "image": {
+        "file": "illustrations/cetus.png",
+        "width": 512,
+        "height": 512,
+        "bytes": 41780,
+        "sha256": "794eef84ea06637886179d5384b0b1446b91978f3215f28ddf272b5b91a8e3d2",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": -90818,
+        "anchors": [
+          {
+            "hip": 14143,
+            "pixel": [
+              87,
+              63
+            ],
+            "inFigure": false,
+            "raHours": 3.039588,
+            "decDeg": 4.352884,
+            "name": "",
+            "chart": [
+              12.948573947030145,
+              34.43143445993342
+            ]
+          },
+          {
+            "hip": 12770,
+            "pixel": [
+              28,
+              274
+            ],
+            "inFigure": true,
+            "raHours": 2.735375,
+            "decDeg": -13.858696,
+            "name": "",
+            "chart": [
+              21.45662807884796,
+              66.36229680973918
+            ]
+          },
+          {
+            "hip": 1562,
+            "pixel": [
+              412,
+              440
+            ],
+            "inFigure": true,
+            "raHours": 0.323799,
+            "decDeg": -8.823921,
+            "name": "",
+            "chart": [
+              87,
+              59.30979257198771
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": -0.1851817288891756,
+          "corners": [
+            {
+              "point": [
+                -2.021378537557702,
+                33.30826050732408
+              ],
+              "denominator": 0.9854761601322454
+            },
+            {
+              "point": [
+                65.44257608580864,
+                -13.3136380281993
+              ],
+              "denominator": 0.8632744229761877
+            },
+            {
+              "point": [
+                108.86904654920914,
+                61.448415015832936
+              ],
+              "denominator": 0.857559666185628
+            },
+            {
+              "point": [
+                35.59517718275252,
+                99.01747689761834
+              ],
+              "denominator": 0.9797614033416853
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              -2.021378537557702,
+              -13.3136380281993
+            ],
+            "maximum": [
+              108.86904654920914,
+              99.01747689761834
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "aquarius",
+      "name": "Wassermann",
+      "abbreviation": "Aqr",
+      "sourceId": "CON modern Aqr",
+      "projection": {
+        "centerRaDeg": -22.8916626478232,
+        "centerDecDeg": -9.235509535657208,
+        "scale": 106.60116182431639,
+        "offset": [
+          37.6851776004072,
+          47.07553707914783
+        ],
+        "maxCoordinateDifference": 0.004739213961272526
+      },
+      "image": {
+        "file": "illustrations/aquarius.png",
+        "width": 512,
+        "height": 512,
+        "bytes": 43176,
+        "sha256": "775c2a9b2758e6b2dd4b9aee9c67ea9666021107f55f19eb58d4a49f66f81e6d",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": 102961,
+        "anchors": [
+          {
+            "hip": 115438,
+            "pixel": [
+              144,
+              464
+            ],
+            "inFigure": true,
+            "raHours": 23.382842,
+            "decDeg": -20.10058,
+            "name": "",
+            "chart": [
+              13.000000000000004,
+              68.56898278623244
+            ]
+          },
+          {
+            "hip": 109074,
+            "pixel": [
+              179,
+              98
+            ],
+            "inFigure": true,
+            "raHours": 22.096399,
+            "decDeg": -0.319851,
+            "name": "Sadalmelik",
+            "chart": [
+              48.383702609821185,
+              30.35538125294095
+            ]
+          },
+          {
+            "hip": 102618,
+            "pixel": [
+              465,
+              49
+            ],
+            "inFigure": true,
+            "raHours": 20.794598,
+            "decDeg": -9.495776,
+            "name": "Albali",
+            "chart": [
+              87,
+              49.377549170551255
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": 0.16125058569825657,
+          "corners": [
+            {
+              "point": [
+                37.483179860948326,
+                6.766727586575932
+              ],
+              "denominator": 1.0434853691912986
+            },
+            {
+              "point": [
+                97.49747053705359,
+                47.819473323745996
+              ],
+              "denominator": 0.8991178905818953
+            },
+            {
+              "point": [
+                50.92270925560881,
+                113.74672228364386
+              ],
+              "denominator": 0.8473345484077777
+            },
+            {
+              "point": [
+                -5.445183404657051,
+                60.95295074791698
+              ],
+              "denominator": 0.9917020270171812
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              -5.445183404657051,
+              6.766727586575932
+            ],
+            "maximum": [
+              97.49747053705359,
+              113.74672228364386
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "hydra",
+      "name": "Wasserschlange",
+      "abbreviation": "Hya",
+      "sourceId": "CON modern Hya",
+      "projection": {
+        "centerRaDeg": 158.7593464198657,
+        "centerDecDeg": -14.434593129741593,
+        "scale": 33.613720343734684,
+        "offset": [
+          66.89284714725838,
+          44.53279977327752
+        ],
+        "maxCoordinateDifference": 0.004901171002764215
+      },
+      "image": {
+        "file": "illustrations/hydra.png",
+        "width": 512,
+        "height": 512,
+        "bytes": 35348,
+        "sha256": "10b18b023fe61877c476054587534d98762c8dee26729a7ef3781a2d0a031aa8",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": 89320,
+        "anchors": [
+          {
+            "hip": 64962,
+            "pixel": [
+              26,
+              491
+            ],
+            "inFigure": true,
+            "raHours": 13.315359,
+            "decDeg": -23.171512,
+            "name": "",
+            "chart": [
+              40.58925388799713,
+              53.610735784337706
+            ]
+          },
+          {
+            "hip": 55434,
+            "pixel": [
+              111,
+              149
+            ],
+            "inFigure": false,
+            "raHours": 11.352276,
+            "decDeg": 6.029322,
+            "name": "",
+            "chart": [
+              59.613522173003794,
+              31.906912602273508
+            ]
+          },
+          {
+            "hip": 43813,
+            "pixel": [
+              401,
+              33
+            ],
+            "inFigure": true,
+            "raHours": 8.92323,
+            "decDeg": 5.945563,
+            "name": "",
+            "chart": [
+              83.50338498101843,
+              31.639801864800397
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": 0.272260648767789,
+          "corners": [
+            {
+              "point": [
+                57.44281638803591,
+                22.025290479550968
+              ],
+              "denominator": 1.0493848229954574
+            },
+            {
+              "point": [
+                93.58417144027601,
+                32.279000089851245
+              ],
+              "denominator": 0.814911587564509
+            },
+            {
+              "point": [
+                84.208436440912,
+                84.08692236397663
+              ],
+              "denominator": 0.5363134910493321
+            },
+            {
+              "point": [
+                37.856015820470844,
+                54.36708208386885
+              ],
+              "denominator": 0.7707867264802809
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              37.856015820470844,
+              22.025290479550968
+            ],
+            "maximum": [
+              93.58417144027601,
+              84.08692236397663
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": false
+        }
+      }
+    },
+    {
+      "key": "aries",
+      "name": "Widder",
+      "abbreviation": "Ari",
+      "sourceId": "CON modern Ari",
+      "projection": {
+        "centerRaDeg": 32.697120687509695,
+        "centerDecDeg": 22.806094971911296,
+        "scale": 329.0297795320693,
+        "offset": [
+          63.534650509417354,
+          53.859834223223025
+        ],
+        "maxCoordinateDifference": 0.004348836187091365
+      },
+      "image": {
+        "file": "illustrations/aries.png",
+        "width": 256,
+        "height": 256,
+        "bytes": 30182,
+        "sha256": "70158bca8ab737c5529707be030a77d99ec0f0a0cec00c640396a1ebbdf26d5e",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": -18866,
+        "anchors": [
+          {
+            "hip": 13209,
+            "pixel": [
+              12,
+              130
+            ],
+            "inFigure": true,
+            "raHours": 2.833063,
+            "decDeg": 27.260507,
+            "name": "Bharani",
+            "chart": [
+              13,
+              26.237882553012014
+            ]
+          },
+          {
+            "hip": 13914,
+            "pixel": [
+              58,
+              206
+            ],
+            "inFigure": false,
+            "raHours": 2.986868,
+            "decDeg": 21.340429,
+            "name": "",
+            "chart": [
+              -2.010937498435503,
+              59.74835561510082
+            ]
+          },
+          {
+            "hip": 8832,
+            "pixel": [
+              210,
+              47
+            ],
+            "inFigure": true,
+            "raHours": 1.89217,
+            "decDeg": 19.293852,
+            "name": "Mesarthim",
+            "chart": [
+              87,
+              73.76211744698799
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": -0.028365407875918597,
+          "corners": [
+            {
+              "point": [
+                53.889909451495456,
+                -7.816340944740254
+              ],
+              "denominator": 0.9941820118377622
+            },
+            {
+              "point": [
+                113.04308042141574,
+                78.18067593229294
+              ],
+              "denominator": 1.0001377665501716
+            },
+            {
+              "point": [
+                27.79299094441855,
+                139.01788869554247
+              ],
+              "denominator": 0.9815557019861842
+            },
+            {
+              "point": [
+                -33.00728616645019,
+                51.75429671590934
+              ],
+              "denominator": 0.9755999472737751
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              -33.00728616645019,
+              -7.816340944740254
+            ],
+            "maximum": [
+              113.04308042141574,
+              139.01788869554247
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": true
+        }
+      }
+    },
+    {
+      "key": "gemini",
+      "name": "Zwillinge",
+      "abbreviation": "Gem",
+      "sourceId": "CON modern Gem",
+      "projection": {
+        "centerRaDeg": 105.0282539027988,
+        "centerDecDeg": 24.03473044969583,
+        "scale": 182.37297029038618,
+        "offset": [
+          45.43261747160794,
+          48.068729144089865
+        ],
+        "maxCoordinateDifference": 0.004676864557643157
+      },
+      "image": {
+        "file": "illustrations/gemini.png",
+        "width": 256,
+        "height": 256,
+        "bytes": 18325,
+        "sha256": "fb481f6bb73c44a7b0009a20fc7b17d574dac1d425a13b48b75a8bb6b2e5511a",
+        "hasAlpha": false,
+        "cornerPixels": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "anchorDeterminant": -31533,
+        "anchors": [
+          {
+            "hip": 37740,
+            "pixel": [
+              14,
+              81
+            ],
+            "inFigure": true,
+            "raHours": 7.740793,
+            "decDeg": 24.397993,
+            "name": "",
+            "chart": [
+              13,
+              45.6125630762646
+            ]
+          },
+          {
+            "hip": 32362,
+            "pixel": [
+              117,
+              252
+            ],
+            "inFigure": true,
+            "raHours": 6.754824,
+            "decDeg": 12.895591,
+            "name": "Alzirr",
+            "chart": [
+              57.165869000687245,
+              83.89193654683902
+            ]
+          },
+          {
+            "hip": 28734,
+            "pixel": [
+              249,
+              165
+            ],
+            "inFigure": true,
+            "raHours": 6.068671,
+            "decDeg": 23.263341,
+            "name": "",
+            "chart": [
+              87,
+              48.508499132313915
+            ]
+          }
+        ],
+        "geometry": {
+          "skyDeterminant": -0.07644114558009227,
+          "corners": [
+            {
+              "point": [
+                1.9567701829300717,
+                24.61185547885696
+              ],
+              "denominator": 0.9856048531653874
+            },
+            {
+              "point": [
+                74.25391848279766,
+                2.227358134451734
+              ],
+              "denominator": 0.9759766186354721
+            },
+            {
+              "point": [
+                97.1525337040276,
+                73.14245400619521
+              ],
+              "denominator": 0.9740412866292136
+            },
+            {
+              "point": [
+                24.489010097134578,
+                94.87686946145499
+              ],
+              "denominator": 0.9836695211591289
+            }
+          ],
+          "chartBounds": {
+            "minimum": [
+              1.9567701829300717,
+              2.227358134451734
+            ],
+            "maximum": [
+              97.1525337040276,
+              94.87686946145499
+            ]
+          },
+          "crossesProjectionHorizon": false,
+          "extendsOutsideChart": false
+        }
+      }
+    }
+  ]
+}

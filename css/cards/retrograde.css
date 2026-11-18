@@ -1,0 +1,78 @@
+.retro-calculation-tabs,
+.retro-phase-buttons { display:flex; flex-wrap:wrap; justify-content:center; gap:6px; }
+.retro-calculation-tabs button,
+.retro-phase-buttons button {
+  min-height:var(--control-height);
+  margin:0;
+  padding:7px 12px;
+  border:1px solid #bfdbfe;
+  border-radius:999px;
+  background:#f8fbff;
+  color:#0f172a;
+  box-shadow:none;
+  font-size:var(--font-control);
+}
+.retro-calculation-tabs button[aria-selected="true"],
+.retro-phase-buttons button[aria-pressed="true"] {
+  background:linear-gradient(135deg,#1d4ed8,#3b82f6);
+  border-color:#2563eb;
+  color:#fff;
+}
+.retrograde-card [role="tabpanel"][hidden],
+.retro-calculation [hidden] { display:none; }
+.retro-overview { display:grid; justify-items:center; gap:8px; width:100%; }
+.retro-calculation,
+.retro-calculation-content { display:grid; gap:12px; width:100%; min-width:0; }
+.retro-calculation p { margin:0; font-size:var(--font-note); line-height:var(--line-note); }
+.retro-body-select { display:flex; flex-wrap:wrap; align-items:center; gap:8px; }
+.retro-body-select select { max-width:100%; min-height:var(--control-height); }
+.retro-calculation-figure,
+.retro-calculation-formula {
+  display:grid;
+  gap:8px;
+  min-width:0;
+  margin:0;
+  padding:10px;
+  border:1px solid #dbeafe;
+  border-radius:10px;
+  background:#fbfdff;
+}
+.retro-calculation-figure figcaption { font-weight:700; }
+.retro-calculation-formula code { overflow-wrap:anywhere; line-height:1.55; font-size:var(--font-note); }
+.retro-geometry-plot,
+.retro-longitude-plot { display:block; width:100%; height:auto; }
+.retro-geometry-plot { max-width:320px; margin:auto; }
+.retro-geometry-dates { display:flex; flex-wrap:wrap; justify-content:center; gap:4px 16px; }
+.retro-geometry-dates span { display:inline-flex; align-items:center; gap:6px; color:var(--retro-day-color); font-size:var(--font-note); }
+.retro-geometry-dates i { width:16px; border-top:2px solid currentColor; }
+.retro-geometry-dates [data-retro-day="second"] i { border-top-style:dashed; }
+.retro-calculation [data-retro-day="first"] { --retro-day-color:#175aa4; }
+.retro-calculation [data-retro-day="second"] { --retro-day-color:#a33b21; }
+.retro-geometry-orbit { fill:none; stroke:#9aacc4; stroke-width:1; stroke-dasharray:3 3; }
+.retro-day-ray { stroke:var(--retro-day-color); stroke-width:3; stroke-linecap:round; }
+.retro-geometry-plot [data-retro-day="second"] .retro-day-ray { stroke-width:1.8; stroke-dasharray:4 3; }
+.retro-geometry-sun { fill:#af750a; }
+.retro-geometry-earth { r:4px; fill:none; stroke:var(--retro-day-color); stroke-width:1.5; }
+.retro-geometry-planet { r:3.5px; fill:var(--retro-day-color); }
+.retro-geometry-plot [data-retro-day="second"] circle { r:2.3px; }
+.retro-calculation-axis { display:flex; justify-content:space-between; align-items:center; gap:6px; text-align:center; font-size:var(--font-note); }
+.retro-station-dates { display:flex; flex-wrap:wrap; gap:4px 12px; }
+.retro-station-dates span { display:inline-flex; align-items:baseline; gap:5px; }
+.retro-station-dates span::before { content:"1"; width:1.35em; height:1.35em; line-height:1.35; text-align:center; flex:none; border-radius:50%; background:#f7e6c8; color:#63350a; font-weight:700; }
+.retro-station-dates span:last-child::before { content:"2"; }
+.retro-plot-background { fill:#f2f6fc; }
+.retro-longitude-plot [data-retro-section] { color:#627a97; }
+.retro-longitude-plot [data-retro-section="during"] { color:#9a641c; }
+.retro-longitude-plot[data-retro-active="before"] [data-retro-section="before"],
+.retro-longitude-plot[data-retro-active="after"] [data-retro-section="after"] { color:#1555a0; }
+.retro-longitude-plot[data-retro-active="during"] [data-retro-section="during"] { color:#914208; }
+.retro-plot-curve { fill:none; stroke:currentColor; stroke-width:2.4; }
+.retro-longitude-plot[data-retro-active="before"] [data-retro-section="before"] .retro-plot-curve,
+.retro-longitude-plot[data-retro-active="during"] [data-retro-section="during"] .retro-plot-curve,
+.retro-longitude-plot[data-retro-active="after"] [data-retro-section="after"] .retro-plot-curve { stroke-width:4.5; }
+.retro-plot-arrow { fill:currentColor; }
+.retro-longitude-plot [data-retro-stations] circle { fill:#f7e6c8; stroke:#8e5b06; stroke-width:1.5; }
+.retro-longitude-plot [data-retro-stations] text { fill:#63350a; font-size:14px; font-weight:700; }
+.retro-longitude-plot [data-retro-time-markers] g { color:var(--retro-day-color); }
+.retro-longitude-plot [data-retro-time-markers] circle { fill:currentColor; stroke:white; stroke-width:1.3; }
+.retro-longitude-plot [data-retro-day="first"] circle { r:7px; }

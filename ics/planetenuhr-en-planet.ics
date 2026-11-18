@@ -126,6 +126,26 @@ DESCRIPTION:Sichtbarkeit: Morning/eastern twilight\, low\n\nClose pairing\, but 
 X-PLANETENUHR-VISIBILITY:Morning/eastern twilight\, low
 END:VEVENT
 BEGIN:VEVENT
+UID:planetenuhr-en-planet-2027-05-10-mercury-in-the-evening-sky@marsrakete.github.io
+DTSTAMP:20261117T165625Z
+DTSTART;VALUE=DATE:20270510
+DTEND;VALUE=DATE:20270604
+SUMMARY:Mercury in the evening sky
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Low in the west-northwest after sunset in Central Europe.\n\nLook for a clear view of the horizon. Mercury reaches its greatest eastern elongation on May 28.
+X-PLANETENUHR-VISIBILITY:Low in the west-northwest after sunset in Central Europe.
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2027-05-28-mercury-at-greatest-eastern-elongation@marsrakete.github.io
+DTSTAMP:20261117T164807Z
+DTSTART;VALUE=DATE:20270528
+DTEND;VALUE=DATE:20270529
+SUMMARY:Mercury at greatest eastern elongation
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: From about May 10 to early June in Central Europe\, low in the west-northwest after sunset.\n\nOn May 28 Mercury reaches its greatest angular separation east of the Sun\, 22° 55′. Look for a clear view of the horizon.
+X-PLANETENUHR-VISIBILITY:From about May 10 to early June in Central Europe\, low in the west-northwest after sunset.
+END:VEVENT
+BEGIN:VEVENT
 UID:planetenuhr-en-planet-2027-07-05-earth-at-aphelion@marsrakete.github.io
 DTSTAMP:20261026T134556Z
 DTSTART;VALUE=DATE:20270705
@@ -144,6 +164,26 @@ SUMMARY:Venus-Jupiter conjunction
 CATEGORIES:PLANET
 DESCRIPTION:Sichtbarkeit: Very close to the Sun\; difficult or unsafe to observe\n\nGeometrically close\, but only about 4 degrees from the Sun. Do not search with optical aid near the Sun.
 X-PLANETENUHR-VISIBILITY:Very close to the Sun\; difficult or unsafe to observe
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2027-10-29-mercury-in-the-morning-sky@marsrakete.github.io
+DTSTAMP:20261117T171211Z
+DTSTART;VALUE=DATE:20271029
+DTEND;VALUE=DATE:20271120
+SUMMARY:Mercury in the morning sky
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Low in the east-southeast before sunrise in Central Europe.\n\nThe best chances are around November 1–15. Near the edges of the window\, Mercury is harder to spot. Greatest western elongation is on November 4.
+X-PLANETENUHR-VISIBILITY:Low in the east-southeast before sunrise in Central Europe.
+END:VEVENT
+BEGIN:VEVENT
+UID:planetenuhr-en-planet-2027-11-04-mercury-at-greatest-western-elongation@marsrakete.github.io
+DTSTAMP:20261117T171211Z
+DTSTART;VALUE=DATE:20271104
+DTEND;VALUE=DATE:20271105
+SUMMARY:Mercury at greatest western elongation
+CATEGORIES:PLANET
+DESCRIPTION:Sichtbarkeit: Low in the east-southeast before sunrise in Central Europe.\n\nMercury reaches its greatest angular separation west of the Sun\, 18° 46′. Find a spot with a clear horizon.
+X-PLANETENUHR-VISIBILITY:Low in the east-southeast before sunrise in Central Europe.
 END:VEVENT
 BEGIN:VEVENT
 UID:planetenuhr-en-planet-2027-11-25-venus-mars-conjunction@marsrakete.github.io

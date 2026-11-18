@@ -1,4 +1,16 @@
-﻿window.PLANETENUHR_EVENTS = {
+﻿// Shared calendar dates. endDate is inclusive in the app.
+const mercuryEvening2027 = Object.freeze({
+  date: "2027-05-10",
+  endDate: "2027-06-03",
+  category: "planet"
+});
+const mercuryMorning2027 = Object.freeze({
+  date: "2027-10-29",
+  endDate: "2027-11-19",
+  category: "planet"
+});
+
+window.PLANETENUHR_EVENTS = {
   en: [
     {
       date: "2026-01-03",
@@ -267,6 +279,19 @@
       note: "Close pairing, but altitude and twilight may make the view challenging."
     },
     {
+      ...mercuryEvening2027,
+      title: "Mercury in the evening sky",
+      visibility: "Low in the west-northwest after sunset in Central Europe.",
+      note: "Look for a clear view of the horizon. Mercury reaches its greatest eastern elongation on May 28."
+    },
+    {
+      date: "2027-05-28",
+      category: "planet",
+      title: "Mercury at greatest eastern elongation",
+      visibility: "From about May 10 to early June in Central Europe, low in the west-northwest after sunset.",
+      note: "On May 28 Mercury reaches its greatest angular separation east of the Sun, 22° 55′. Look for a clear view of the horizon."
+    },
+    {
       date: "2027-06-21",
       category: "season",
       title: "June solstice",
@@ -328,6 +353,19 @@
       title: "Orionids meteor shower maximum",
       visibility: "Visible from Europe after midnight",
       note: "Fast Halley-comet meteors; best before dawn."
+    },
+    {
+      ...mercuryMorning2027,
+      title: "Mercury in the morning sky",
+      visibility: "Low in the east-southeast before sunrise in Central Europe.",
+      note: "The best chances are around November 1–15. Near the edges of the window, Mercury is harder to spot. Greatest western elongation is on November 4."
+    },
+    {
+      date: "2027-11-04",
+      category: "planet",
+      title: "Mercury at greatest western elongation",
+      visibility: "Low in the east-southeast before sunrise in Central Europe.",
+      note: "Mercury reaches its greatest angular separation west of the Sun, 18° 46′. Find a spot with a clear horizon."
     },
     {
       date: "2027-11-17",
@@ -640,6 +678,19 @@
       note: "Enge Begegnung, aber geringe Höhe und Dämmerung können die Beobachtung erschweren."
     },
     {
+      ...mercuryEvening2027,
+      title: "Merkur am Abendhimmel",
+      visibility: "In Mitteleuropa nach Sonnenuntergang tief im Westnordwesten.",
+      note: "Ein freier Blick zum Horizont hilft. Am 28. Mai erreicht Merkur seine größte östliche Elongation."
+    },
+    {
+      date: "2027-05-28",
+      category: "planet",
+      title: "Merkur in größter östlicher Elongation",
+      visibility: "In Mitteleuropa etwa vom 10. Mai bis Anfang Juni nach Sonnenuntergang tief im Westnordwesten.",
+      note: "Am 28. Mai erreicht Merkur mit 22° 55′ seinen größten östlichen Winkelabstand zur Sonne. Ein freier Blick zum Horizont hilft."
+    },
+    {
       date: "2027-06-21",
       category: "season",
       title: "Juni-Sonnenwende",
@@ -701,6 +752,19 @@
       title: "Maximum der Orioniden",
       visibility: "In Europa nach Mitternacht sichtbar",
       note: "Schnelle Meteore des Halleyschen Kometen; am besten vor der Dämmerung."
+    },
+    {
+      ...mercuryMorning2027,
+      title: "Merkur am Morgenhimmel",
+      visibility: "In Mitteleuropa vor Sonnenaufgang tief im Ostsüdosten.",
+      note: "Die besten Chancen liegen etwa zwischen dem 1. und 15. November. An den Randtagen ist Merkur schwieriger zu sehen. Am 4. November erreicht er seine größte westliche Elongation."
+    },
+    {
+      date: "2027-11-04",
+      category: "planet",
+      title: "Merkur in größter westlicher Elongation",
+      visibility: "In Mitteleuropa vor Sonnenaufgang tief im Ostsüdosten.",
+      note: "Merkur erreicht mit 18° 46′ seinen größten westlichen Winkelabstand zur Sonne. Ein freier Blick zum Horizont hilft."
     },
     {
       date: "2027-11-17",
@@ -1013,6 +1077,19 @@
       note: "Rapprochement serré, mais faible hauteur et crépuscule peuvent compliquer l’observation."
     },
     {
+      ...mercuryEvening2027,
+      title: "Mercure dans le ciel du soir",
+      visibility: "En Europe centrale, bas à l’ouest-nord-ouest après le coucher du Soleil.",
+      note: "Un horizon dégagé facilite l’observation. Le 28 mai, Mercure atteint sa plus grande élongation est."
+    },
+    {
+      date: "2027-05-28",
+      category: "planet",
+      title: "Mercure à sa plus grande élongation est",
+      visibility: "En Europe centrale, du 10 mai environ au début juin, bas à l’ouest-nord-ouest après le coucher du Soleil.",
+      note: "Le 28 mai, Mercure atteint sa séparation angulaire maximale à l’est du Soleil, soit 22° 55′. Un horizon dégagé facilite l’observation."
+    },
+    {
       date: "2027-06-21",
       category: "season",
       title: "Solstice de juin",
@@ -1074,6 +1151,19 @@
       title: "Maximum des Orionides",
       visibility: "Visible depuis l'Europe après minuit",
       note: "Météores rapides de la comète de Halley; meilleurs avant l'aube."
+    },
+    {
+      ...mercuryMorning2027,
+      title: "Mercure dans le ciel du matin",
+      visibility: "En Europe centrale, bas à l’est-sud-est avant le lever du Soleil.",
+      note: "Les meilleures chances d’observation se situent vers le 1er au 15 novembre. Mercure est plus difficile à voir en début et en fin de période. Sa plus grande élongation ouest a lieu le 4 novembre."
+    },
+    {
+      date: "2027-11-04",
+      category: "planet",
+      title: "Mercure à sa plus grande élongation ouest",
+      visibility: "En Europe centrale, bas à l’est-sud-est avant le lever du Soleil.",
+      note: "Mercure atteint sa séparation angulaire maximale à l’ouest du Soleil, soit 18° 46′. Un horizon dégagé facilite l’observation."
     },
     {
       date: "2027-11-17",

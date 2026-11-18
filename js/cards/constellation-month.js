@@ -88,6 +88,52 @@ window.PLANETENUHR_CONSTELLATION_MONTH = (() => {
       };
     }
 
+    /** Keeps star names apart after fitting the artwork and stars into their shared frame.
+     * @param {SVGSVGElement} svg Attached chart, so text geometry is available.
+     * @param {number} size Chart edge in SVG units.
+     * @returns {void} Adjusts label positions only; star positions are preserved.
+     */
+    function separateConstellationLabels(svg, size){
+      const placed = [];
+      const shifts = [0, -16, 16, -32, 32, -48, 48, -64, 64];
+      const originals = [...svg.querySelectorAll('.constellation-star-label')];
+      // Dialog content is rendered before showModal(); hidden SVG text has no reliable bounding box.
+      const measurement = options.createSvgElement('svg');
+      measurement.setAttribute('class', 'constellation-label-measurement');
+      measurement.setAttribute('aria-hidden', 'true');
+      originals.forEach(label => measurement.appendChild(label.cloneNode(true)));
+      document.body.appendChild(measurement);
+      for (const [index, label] of [...measurement.children].entries()) {
+        const originalX = Number(label.getAttribute('x'));
+        const originalY = Number(label.getAttribute('y'));
+        let accepted = false;
+        for (const dy of shifts) {
+          for (const dx of shifts) {
+            label.setAttribute('x', String(originalX + dx));
+            label.setAttribute('y', String(originalY + dy));
+            const box = label.getBBox();
+            const fits = box.x >= 6 && box.y >= 6 && box.x + box.width <= size - 6 && box.y + box.height <= size - 6;
+            const overlaps = placed.some(other => box.x < other.x + other.width + 3 && box.x + box.width + 3 > other.x
+              && box.y < other.y + other.height + 3 && box.y + box.height + 3 > other.y);
+            if (fits && !overlaps) {
+              placed.push(box);
+              accepted = true;
+              break;
+            }
+          }
+          if (accepted) break;
+        }
+        if (!accepted) {
+          label.setAttribute('x', String(originalX));
+          label.setAttribute('y', String(originalY));
+          placed.push(label.getBBox());
+        }
+        originals[index].setAttribute('x', label.getAttribute('x'));
+        originals[index].setAttribute('y', label.getAttribute('y'));
+      }
+      measurement.remove();
+    }
+
     /**
      * Renders the configured constellation for a month as a schematic star chart.
      * @param {object} context Shared context containing the selected date and language.
@@ -109,9 +155,10 @@ window.PLANETENUHR_CONSTELLATION_MONTH = (() => {
       const summary = renderOptions.summary || document.getElementById('constellationSummary');
       if (!target) return;
       const month = date.getMonth() + 1;
-      const item = renderOptions.item || (options.getItems() || []).find(entry => entry.month === month);
+      let item = renderOptions.item || (options.getItems() || []).find(entry => entry.month === month);
       const idPrefix = renderOptions.idPrefix || '';
       if (!item) return;
+      item = options.illustrations.prepare(item);
       const size = 460;
       target.innerHTML = '';
       const svg = options.createSvgElement('svg');
@@ -188,6 +235,7 @@ window.PLANETENUHR_CONSTELLATION_MONTH = (() => {
         svg.appendChild(star);
       });
 
+      options.illustrations.append(svg, item, size);
       (item.lines || []).forEach(([from, to]) => {
         const a = item.stars[from];
         const b = item.stars[to];
@@ -240,6 +288,7 @@ window.PLANETENUHR_CONSTELLATION_MONTH = (() => {
         svg.appendChild(text);
       });
       target.appendChild(svg);
+      if (item.illustration) separateConstellationLabels(svg, size);
       if (skyHint) {
         skyHint.innerHTML = '';
         if (Number.isFinite(item.skyAngle) && Number.isFinite(item.skyAltitude)) {

@@ -1,0 +1,14 @@
+.constellation-illustration {
+  opacity: .38;
+  pointer-events: none;
+}
+.constellation-year-mini .constellation-illustration {
+  opacity: .35;
+}
+.constellation-label-measurement {
+  position: fixed;
+  width: 460px;
+  height: 460px;
+  visibility: hidden;
+  pointer-events: none;
+}

@@ -158,6 +158,28 @@ window.PLANETENUHR_DIAGRAM_DETAILS = (() => {
     return stage;
   }
 
+  /** Copies the complete monthly constellation, including its compass and HTML explanations.
+   * @param {HTMLElement} card Monthly constellation card.
+   * @param {string} prefix Unique namespace for snapshot identifiers.
+   * @returns {DocumentFragment} Enlarged chart and its full accompanying content.
+   */
+  function enlargedConstellationMonth(card, prefix){
+    const fragment = document.getElementById('diagramConstellationTemplate').content.cloneNode(true);
+    const chart = fragment.querySelector('[data-diagram-constellation-chart]');
+    const copy = fragment.querySelector('[data-diagram-constellation-copy]');
+    const svg = card.querySelector('#constellationMap svg');
+    if (svg) {
+      chart.appendChild(enlargedClone(svg, prefix + 'chart-'));
+    }
+    for (const id of ['constellationSkyHint', 'constellationSummary', 'constellationLegend']) {
+      const source = card.querySelector('#' + id);
+      if (source) {
+        copy.appendChild(snapshotNodes(source, prefix + id + '-').clone);
+      }
+    }
+    return fragment;
+  }
+
   /**
    * Adds retained enlargement controls to cards whose overview labels are too small.
    * Uses a modal snapshot so dense diagrams need no crowded labels or oversized dashboard cards.
@@ -173,6 +195,25 @@ window.PLANETENUHR_DIAGRAM_DETAILS = (() => {
     let frame = 0;
     let serial = 0;
     let opener = null;
+    let suppressHint = false;
+
+    /** Shows reading instructions only when the open diagram actually needs scrolling.
+     * No parameters. @returns {void}
+     */
+    function updateHint(){
+      if (!dialog.open) {
+        return;
+      }
+      const hint = document.getElementById('diagramDetailHint');
+      const overflows = content.scrollWidth > content.clientWidth + 1
+        || content.scrollHeight > content.clientHeight + 1;
+      hint.hidden = suppressHint || !overflows;
+      if (hint.hidden) {
+        dialog.removeAttribute('aria-describedby');
+      } else {
+        dialog.setAttribute('aria-describedby', hint.id);
+      }
+    }
 
     /** Returns copy for the active document language. No parameters. @returns {object} Shared translation pack. */
     function labels(){
@@ -194,10 +235,12 @@ window.PLANETENUHR_DIAGRAM_DETAILS = (() => {
       const title = document.getElementById('diagramDetailTitle');
       const hint = document.getElementById('diagramDetailHint');
       const isConstellationYear = card.dataset.helpKey === 'constellation_year';
+      const isConstellationMonth = card.dataset.helpKey === 'constellation_month';
+      suppressHint = isConstellationYear;
       title.textContent = card.querySelector('.group-title').textContent;
       title.hidden = isConstellationYear;
       hint.textContent = copy.diagram_hint;
-      hint.hidden = isConstellationYear;
+      hint.hidden = true;
       if (isConstellationYear) {
         dialog.removeAttribute('aria-describedby');
       } else {
@@ -205,25 +248,36 @@ window.PLANETENUHR_DIAGRAM_DETAILS = (() => {
       }
       close.textContent = copy.diagram_close;
       const fragment = document.createDocumentFragment();
-      diagrams(card).forEach(svg => {
-        const figure = document.getElementById('diagramFigureTemplate').content.cloneNode(true);
+      if (isConstellationMonth) {
         serial += 1;
-        let enlarged;
-        if (svg.id === 'solarSystem') enlarged = enlargedSolarClone(svg, 'diagram-detail-' + serial + '-');
-        else enlarged = enlargedClone(svg, 'diagram-detail-' + serial + '-');
-        enlarged.setAttribute('role', 'img');
-        enlarged.setAttribute('aria-label', card.querySelector('.group-title').textContent);
-        figure.querySelector('figure').appendChild(enlarged);
-        fragment.appendChild(figure);
-      });
+        fragment.appendChild(enlargedConstellationMonth(card, 'diagram-detail-' + serial + '-'));
+      } else {
+        diagrams(card).forEach(svg => {
+          const figure = document.getElementById('diagramFigureTemplate').content.cloneNode(true);
+          serial += 1;
+          let enlarged;
+          if (svg.id === 'solarSystem') {
+            enlarged = enlargedSolarClone(svg, 'diagram-detail-' + serial + '-');
+          } else {
+            enlarged = enlargedClone(svg, 'diagram-detail-' + serial + '-');
+          }
+          enlarged.setAttribute('role', 'img');
+          enlarged.setAttribute('aria-label', card.querySelector('.group-title').textContent);
+          figure.querySelector('figure').appendChild(enlarged);
+          fragment.appendChild(figure);
+        });
+      }
       content.replaceChildren(fragment);
       content.scrollTop = 0;
       content.scrollLeft = 0;
       dialog.showModal();
+      updateHint();
       const firstFigure = content.firstElementChild;
       if (firstFigure) {
         content.scrollLeft = Math.max(0, (firstFigure.offsetWidth - content.clientWidth) / 2);
-        content.scrollTop = Math.max(0, (firstFigure.offsetHeight - content.clientHeight) / 2);
+        if (!isConstellationMonth) {
+          content.scrollTop = Math.max(0, (firstFigure.offsetHeight - content.clientHeight) / 2);
+        }
       }
     }
 
@@ -257,6 +311,7 @@ window.PLANETENUHR_DIAGRAM_DETAILS = (() => {
           button.hidden = !needed;
         }
       });
+      updateHint();
     }
 
     /** Batches mutation and resize notifications without writing during observer delivery. No parameters. @returns {void} */
