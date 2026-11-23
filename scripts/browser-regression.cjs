@@ -878,6 +878,19 @@ async function checkSpaceMissions(browser, url){
   try {
     await page.clock.setFixedTime(new Date('2026-11-23T12:00:00Z'));
     await page.goto(url + '/?lang=de&date=20261123');
+    const missionCard = page.locator('.idefix-card');
+    const helpButton = missionCard.locator('.card-help-button');
+    await helpButton.click();
+    const help = missionCard.locator('.card-help-popup');
+    assert.ok(await help.isVisible());
+    assert.match(await help.textContent(), /BepiColombo.*Dragonfly/s);
+    assert.match(await help.textContent(), /globale Button „Heute“/);
+    assert.doesNotMatch(await help.textContent(), /Dashboardzeit/);
+    assert.equal(await help.getByRole('link', {name:'ESA SPICE · BepiColombo / Mio'}).count(), 1);
+    assert.equal(await help.locator('.card-help-formula-expr').count(), 6);
+    assert.match(await help.textContent(), /Summe der Kreuzprodukte.*feste Zeichenpunkte/s);
+    await helpButton.press('Escape');
+    assert.equal(await help.isVisible(), false);
     const tabs = page.locator('#spaceMissionTabs');
     const buttons = tabs.getByRole('tab');
     assert.deepEqual(errors, []);

@@ -1875,20 +1875,37 @@ window.PLANETENUHR_CARD_HELP.fr.cards.sky_knowledge = {
   ]
 };
 
-// IDEFIX: source provenance, interpolation and schematic local moon geometry.
+// The original IDEFIX key also serves existing direct links to the mission card.
+const spaceMissionHelpSources = [
+  { label: "NASA/JPL Horizons", url: "https://ssd.jpl.nasa.gov/horizons/" },
+  { label: "ESA SPICE · BepiColombo / Mio", url: "https://spiftp.esac.esa.int/data/SPICE/BEPICOLOMBO/kernels/mk/bc_map_v434_20261123_001.tm" },
+  { label: "NASA / Johns Hopkins APL · Dragonfly", url: "https://science.nasa.gov/mission/dragonfly/multimedia/" }
+];
 window.PLANETENUHR_CARD_HELP.de.cards.idefix = {
   "intro": [
-    "IDEFIX ist der deutsch-französische Rover von DLR und CNES an Bord der japanischen MMX-Mission. Die Kachel zeigt die Reise von der Erde zum Mars und den geplanten Einsatz auf Phobos.",
-    "Vergrößerte Skizze: Phobos umläuft Mars in rund 7 h 39 min. Lage und Größen sind schematisch."
+    "Sieben Reiter zeigen IDEFIX / MMX, BepiColombo, Hera, Europa Clipper, Juice, Psyche und Dragonfly. Jeder Reiter hat einen eigenen Regler mit Wiedergabe. Anklickbare Meilensteine springen zu einem durch Bahndaten abgedeckten Zeitpunkt.",
+    "Ein Wechsel des globalen Datums und der globale Button „Heute“ setzen die datierten Ansichten auf die Dashboard-Zeit. Fehlen für dieses Datum Bahndaten, zeigt die Ansicht einen Hinweis. Dragonfly behält die gewählte Phase der geplanten Titan-Landung."
   ],
   "formulas": [
     {
       "expr": "r(t) = (1 − u) r₀ + u r₁",
-      "note": "Lineare Interpolation zwischen zwei gespeicherten JPL-Vektoren: u = (t − t₀)/(t₁ − t₀). Zeiten sind UTC, Positionen heliozentrisch in AE, Ekliptik J2000/ICRF. Außerhalb der Datenabdeckung wird nicht extrapoliert."
+      "note": "Lineare Interpolation zwischen zwei Stützpunkten mit u = (t − t₀)/(t₁ − t₀). Zeitstempel stehen in UTC, heliozentrische Vektoren in AE und zielzentrierte Vektoren in Kilometern. Die Datenabdeckung begrenzt die Interpolation."
     },
     {
       "expr": "x = 310 + 94 X; y = 180 − 94 Y",
-      "note": "Draufsicht: X und Y sind die ekliptischen Koordinaten in AE, x und y SVG-Koordinaten. Die z-Komponente wird nicht gezeigt. Planeten- und Rovergrößen sind vergrößert."
+      "note": "Maßstab und Ursprung der IDEFIX-Reiseansicht. Die übrigen Animationsansichten passen den Maßstab an ihre jeweilige Bahn an."
+    },
+    {
+      "expr": "x = 300 + s U; y = 185 − s V; s = 145 / ρ<sub>max</sub>",
+      "note": "Reise- und Nahansichten. Für Reisen sowie die Nahansichten bei Didymos, Erde und Mars gilt U = X und V = Y in der J2000-Ekliptik. Die Merkur-Projektion steht darunter. ρₘₐₓ ist der größte berücksichtigte Abstand, einschließlich der Referenzradien."
+    },
+    {
+      "expr": "n ∝ ∑ (r<sub>i</sub> × r<sub>i+1</sub>); U = r · e<sub>1</sub>; V = r · e<sub>2</sub>",
+      "note": "Merkur-Draufsicht. Die Summe der Kreuzprodukte benachbarter MPO-Positionen bestimmt die Normale der mittleren Bahnebene. MPO und Mio werden auf dieselben rechtwinkligen Achsen e₁ und e₂ in dieser Ebene projiziert."
+    },
+    {
+      "expr": "P(u) = (1 − u) P<sub>k</sub> + u P<sub>k+1</sub>",
+      "note": "Dragonfly. Pₖ und Pₖ₊₁ sind feste Zeichenpunkte benachbarter Landephasen. Der Fortschritt u läuft während der Wiedergabe von 0 bis 1 und beschreibt eine Bewegung im Schema."
     },
     {
       "expr": "φ = 2π frac((t − t₀)/T)",
@@ -1900,9 +1917,12 @@ window.PLANETENUHR_CARD_HELP.de.cards.idefix = {
     "Die bestätigte Startmeldung und ihr Prüfdatum stehen getrennt von den zeitabhängigen Planungsphasen. Der Status wird nicht automatisch aus Webseiten ausgelesen. Nach zwei Wochen weist die Kachel auf den älteren Meldungsstand hin; aktuelle Nachrichten führen direkt zum JAXA-Blog und den Partnern.",
     "August 2027 für Mars und Ende 2028/Anfang 2029 für die Roverlandung sind Planungszeiträume. Die intern verwendeten Tagesgrenzen und Sprungtage dienen nur der Zeitleiste. Eine hohle Markierung ab Ende der Bahnabdeckung zeigt ausschließlich den geplanten Zielbereich bei Phobos, keine bestätigte Landung oder Oberflächenposition.",
     "IDEFIX soll etwa 100 Tage auf Phobos arbeiten und dort bleiben. Die geplante Probenrückkehr 2031 ist keine Rückreise des Rovers.",
-    "Tage, Monate und Jahre lassen sich lokal erkunden. „Heute“ stellt die aktuelle Uhrzeit her, „Dashboardzeit“ übernimmt das gemeinsame Datum. Ein deutlicher Datumswechsel im Dashboard setzt den lokalen Versatz zurück. Positionen werden im Hintergrund einmal pro Minute aktualisiert; Controls und SVG-Knoten bleiben bestehen."
+    "BepiColombo, Hera, Europa Clipper, Juice und Psyche verwenden gespeicherte Horizons-Bahnen. Die kräftige Spur endet am gewählten Zeitpunkt. Gestrichelte Abschnitte sind vorausberechnet. Die Angaben an der Grafik nennen Datenstand, Abdeckung und Quelle.",
+    "Die Merkur-Nahansicht blickt senkrecht auf die mittlere Umlaufebene von MPO. Mios separate ESA-SPICE-Planbahn erscheint ab der modellierten Trennung in derselben Projektion. Die Nahansichten bei Didymos, Erde und Mars verwenden Vektoren relativ zum jeweiligen Ziel.",
+    "Dragonfly zeigt den geplanten Landeablauf schematisch. Die Reglerstufen bezeichnen Phasen ohne Zeit- oder Entfernungsmaßstab."
   ],
   "links": [
+    ...spaceMissionHelpSources,
     {
       "label": "JAXA · MMX Mission News",
       "url": "https://mmx-news.isas.jaxa.jp/"
@@ -1927,17 +1947,29 @@ window.PLANETENUHR_CARD_HELP.de.cards.idefix = {
 };
 window.PLANETENUHR_CARD_HELP.en.cards.idefix = {
   "intro": [
-    "IDEFIX is the French-German rover built by CNES and DLR aboard Japan’s MMX mission. This card follows the journey from Earth to Mars and the planned exploration of Phobos.",
+    "Seven tabs cover IDEFIX / MMX, BepiColombo, Hera, Europa Clipper, Juice, Psyche and Dragonfly. Each has its own slider and playback. Milestone buttons jump to dates covered by the trajectory data.",
     "Enlarged sketch: Phobos orbits Mars in about 7 h 39 min. Orientation and sizes are schematic."
   ],
   "formulas": [
     {
       "expr": "r(t) = (1 − u) r₀ + u r₁",
-      "note": "Linear interpolation between cached JPL vectors: u = (t − t₀)/(t₁ − t₀). Times are UTC; heliocentric positions are in AU, ecliptic J2000/ICRF. There is no extrapolation beyond coverage."
+      "note": "Linear interpolation uses u = (t − t₀)/(t₁ − t₀) within the sampled range. Times are in UTC. Sun-centered vectors use AU and target-centered vectors use kilometers."
     },
     {
       "expr": "x = 310 + 94 X; y = 180 − 94 Y",
-      "note": "Top view: X and Y are ecliptic coordinates in AU; x and y are SVG coordinates. The z component is omitted. Planet and rover sizes are enlarged."
+      "note": "Scale and origin of the IDEFIX journey view. The other animations fit their scales to their respective trajectories."
+    },
+    {
+      "expr": "x = 300 + s U; y = 185 − s V; s = 145 / ρ<sub>max</sub>",
+      "note": "Cruise views and the Didymos, Earth and Mars close-ups use U = X and V = Y in the J2000 ecliptic. The Mercury projection is given below. ρₘₐₓ is the largest distance considered, including reference radii."
+    },
+    {
+      "expr": "n ∝ ∑ (r<sub>i</sub> × r<sub>i+1</sub>); U = r · e<sub>1</sub>; V = r · e<sub>2</sub>",
+      "note": "Mercury view. The sum of the cross products of adjacent MPO positions determines the mean orbital plane’s normal. MPO and Mio are projected onto the same perpendicular axes e₁ and e₂ within that plane."
+    },
+    {
+      "expr": "P(u) = (1 − u) P<sub>k</sub> + u P<sub>k+1</sub>",
+      "note": "Dragonfly. Pₖ and Pₖ₊₁ are fixed drawing points for adjacent landing stages. Playback increases u from 0 to 1 to move the marker through the schematic."
     },
     {
       "expr": "φ = 2π frac((t − t₀)/T)",
@@ -1949,9 +1981,12 @@ window.PLANETENUHR_CARD_HELP.en.cards.idefix = {
     "The confirmed launch report and review date are separate from the displayed planning phases. Status is not scraped automatically. After two weeks the card flags the older report; links lead directly to the JAXA mission blog and partners.",
     "August 2027 for Mars arrival and late 2028/early 2029 for rover landing are planning periods. Internal day boundaries and preset days only organize the timeline. A hollow marker after trajectory coverage ends shows only the planned destination near Phobos, not a confirmed landing or surface location.",
     "IDEFIX is planned to operate on Phobos for about 100 days and remain there. The planned sample return in 2031 does not bring the rover home.",
-    "Explore days, months and years locally. “Today” restores the current time; “Dashboard time” follows the shared date. A substantial dashboard date change resets local exploration. Positions refresh once a minute; controls and SVG nodes are retained."
+    "A dashboard date change or the global Today button resets the dated views. The card flags dates outside the available trajectory. Dragonfly keeps its selected landing stage.",
+    "BepiColombo, Hera, Europa Clipper, Juice and Psyche use cached Horizons trajectories. The highlighted trail ends at the selected time. Dashed segments show predictions. Each view identifies its data coverage and source.",
+    "The Mercury view looks down on MPO’s mean orbital plane and shows Mio’s separate ESA SPICE prediction from the planned separation. Other close-ups use target-centered vectors. Dragonfly’s planned landing uses schematic stages without a time or distance scale."
   ],
   "links": [
+    ...spaceMissionHelpSources,
     {
       "label": "JAXA · MMX Mission News",
       "url": "https://mmx-news.isas.jaxa.jp/"
@@ -1976,17 +2011,29 @@ window.PLANETENUHR_CARD_HELP.en.cards.idefix = {
 };
 window.PLANETENUHR_CARD_HELP.fr.cards.idefix = {
   "intro": [
-    "IDEFIX est le rover franco-allemand du CNES et du DLR embarqué sur la mission japonaise MMX. Cette carte suit le voyage de la Terre à Mars et l’exploration prévue de Phobos.",
+    "Sept onglets présentent IDEFIX / MMX, BepiColombo, Hera, Europa Clipper, Juice, Psyche et Dragonfly. Chacun dispose de son propre curseur et de la lecture. Les boutons d’étape mènent aux dates couvertes par les données.",
     "Schéma agrandi : Phobos fait le tour de Mars en environ 7 h 39 min. Orientation et tailles schématiques."
   ],
   "formulas": [
     {
       "expr": "r(t) = (1 − u) r₀ + u r₁",
-      "note": "Interpolation linéaire entre deux vecteurs JPL enregistrés : u = (t − t₀)/(t₁ − t₀). Temps UTC ; positions héliocentriques en UA, écliptique J2000/ICRF. Aucune extrapolation hors des données."
+      "note": "Interpolation linéaire par u = (t − t₀)/(t₁ − t₀) dans la période couverte. Les temps sont en UTC, les vecteurs héliocentriques en UA et les vecteurs centrés sur la cible en kilomètres."
     },
     {
       "expr": "x = 310 + 94 X; y = 180 − 94 Y",
-      "note": "Vue de dessus : X et Y sont les coordonnées écliptiques en UA ; x et y les coordonnées SVG. La composante z est omise. Les planètes et le rover sont agrandis."
+      "note": "Échelle et origine de la vue du trajet d’IDEFIX. L’échelle des autres animations est adaptée à la trajectoire affichée."
+    },
+    {
+      "expr": "x = 300 + s U; y = 185 − s V; s = 145 / ρ<sub>max</sub>",
+      "note": "Les trajets et les vues rapprochées de Didymos, de la Terre et de Mars utilisent U = X et V = Y dans l’écliptique J2000. La projection de Mercure est indiquée ci-dessous. ρₘₐₓ est la plus grande distance prise en compte, rayons de référence compris."
+    },
+    {
+      "expr": "n ∝ ∑ (r<sub>i</sub> × r<sub>i+1</sub>); U = r · e<sub>1</sub>; V = r · e<sub>2</sub>",
+      "note": "Vue de Mercure. La somme des produits vectoriels des positions consécutives de MPO détermine la normale au plan orbital moyen. MPO et Mio sont projetés sur les mêmes axes perpendiculaires e₁ et e₂ dans ce plan."
+    },
+    {
+      "expr": "P(u) = (1 − u) P<sub>k</sub> + u P<sub>k+1</sub>",
+      "note": "Dragonfly. Pₖ et Pₖ₊₁ sont des points fixes du dessin pour deux étapes d’atterrissage consécutives. Pendant la lecture, u passe de 0 à 1 et déplace le marqueur dans le schéma."
     },
     {
       "expr": "φ = 2π frac((t − t₀)/T)",
@@ -1998,9 +2045,12 @@ window.PLANETENUHR_CARD_HELP.fr.cards.idefix = {
     "La confirmation du lancement et sa date de vérification sont séparées des phases prévues. L’état n’est pas extrait automatiquement des sites. Après deux semaines, la carte signale l’ancienneté de l’information ; les liens mènent au blog JAXA et aux partenaires.",
     "Août 2027 pour Mars et fin 2028/début 2029 pour le rover sont des périodes prévues. Les limites journalières et dates des boutons servent seulement à la frise. Après la fin des données, un marqueur creux indique uniquement la destination prévue près de Phobos, pas un atterrissage ou un emplacement confirmé.",
     "IDEFIX doit travailler environ 100 jours sur Phobos et y rester. Le retour prévu des échantillons en 2031 ne ramène pas le rover.",
-    "Explorer localement les jours, mois et années. « Aujourd’hui » rétablit l’heure actuelle ; « Date du tableau » reprend la date commune. Un changement important de date du tableau réinitialise l’exploration. Les positions s’actualisent chaque minute sans remplacer les contrôles ni les nœuds SVG."
+    "Un changement de la date globale ou le bouton global « Aujourd’hui » réinitialise les vues datées. La carte signale les dates hors couverture. Dragonfly conserve l’étape d’atterrissage sélectionnée.",
+    "BepiColombo, Hera, Europa Clipper, Juice et Psyche utilisent des trajectoires Horizons enregistrées. La trace mise en évidence s’arrête à la date choisie. Les pointillés indiquent la prévision. Chaque vue indique la couverture et la source des données.",
+    "La vue de Mercure est perpendiculaire au plan orbital moyen de MPO. Elle ajoute la prévision ESA SPICE de Mio à partir de la séparation prévue. Les autres vues rapprochées utilisent des vecteurs centrés sur la cible. L’atterrissage prévu de Dragonfly est un schéma par étapes sans échelle de temps ni de distance."
   ],
   "links": [
+    ...spaceMissionHelpSources,
     {
       "label": "JAXA · MMX Mission News",
       "url": "https://mmx-news.isas.jaxa.jp/"

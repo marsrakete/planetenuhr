@@ -500,7 +500,11 @@ Die Bilder zeigen keine aktuellen Himmelspositionen. Maßstäbe, verwendete Zahl
 
 Prüfung: `npm run test:knowledge` kontrolliert den Inhaltsvertrag, Quellen, Sprachabdeckung und Mischrunden. Browserprüfungen sind zusätzlich für Layout, Fokus und Scrollposition nötig.
 
-## IDEFIX-Kachel und Bahndaten
+## Raumfahrtmissionen und Bahndaten
+
+Die Kachel behält für bestehende Direktlinks den Schlüssel `idefix` bei. `js/cards/space-missions.js` bindet die Reiter und Zeitleisten an das Dashboard an. `js/cards/space-mission-animation.js` verwaltet lokale Regler, Wiedergabe, SVG-Projektionen und Quellenhinweise. `js/data/space-missions.js` enthält die Missionsansichten und Meilensteine. `js/data/space-mission-trajectories.js` enthält die gespeicherten Horizons-Vektoren und Mios ESA-SPICE-Planbahn. Der Import erfolgt über `node scripts/update-space-mission-trajectories.js`. Die Referenzrahmen und Datenabdeckung stehen in [BERECHNUNGEN.md](BERECHNUNGEN.md#raumfahrtmissionen).
+
+### IDEFIX / MMX
 
 - `js/data/idefix-config.js`: kuratierte Meilensteine, Zeitregler-Schritte, Status-Prüfdatum und Quellen. Landefenster und Sprungtage sind zeitliche Einordnungen des Missionsplans, keine bestätigten Tagesdaten.
 - `js/data/idefix-ephemeris.js`: lokal gespeicherte JAXA-Vorstartplanung aus JPL Horizons für MMX (−239), einschließlich Abfrage-URLs, Referenzrahmen, UTC-Zeitskala, Abruf- und Revisionsdatum.
