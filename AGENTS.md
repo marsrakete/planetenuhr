@@ -4,6 +4,20 @@
 
 These guidelines are meant as a reusable default for frontend-oriented projects. The goal is not maximum cleverness, but code that stays understandable, stable and easy to extend.
 
+## Erst prüfen, dann nach Freigabe umsetzen
+
+Recherchen, Analysen und Vorschläge darfst du sofort durchführen. Du darfst
+dafür den bestehenden Stand lesen, Daten prüfen und Ergebnisse erklären.
+
+Bevor du Dateien, Code, Dokumentation oder Konfiguration änderst, beschreibe
+kurz, was du ändern möchtest, und frage ausdrücklich nach Freigabe. Warte
+auf die Antwort, bevor du mit der Umsetzung beginnst. Das gilt auch für
+kleine oder offensichtliche Korrekturen.
+
+Eine Bitte wie „prüf mal“, „schau dir das an“ oder „was hältst du davon?“
+ist ein Prüfauftrag. Eine ausdrückliche Zustimmung zu einem bereits
+beschriebenen Vorschlag gilt als Freigabe für genau diesen Umfang.
+
 ## Core principles
 
 - Prefer clarity over brevity.
