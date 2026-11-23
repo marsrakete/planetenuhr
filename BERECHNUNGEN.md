@@ -707,13 +707,15 @@ Die folgenden Grenzen stammen aus dem mitgelieferten Datensatz und sind als UTC-
 | Psyche-Reise | −255 | Sonne | 14.10.2023 bis 24.02.2029 | 2 Tage |
 | Psyche am Mars | −255 | Mars | 14.05. bis 17.05.2026 | 5 Minuten |
 
-Die Merkur-Ansicht ergänzt Mio (SPICE-ID −68) ab dem 9. Dezember 2026, 22:48:51 UTC. Mios Vektoren stammen aus den originalen Stützstellen eines SPK-Kernels vom Typ 13, der die Planlösung vom 27. Mai 2026 enthält. Die App verwendet für die Nahansicht einen Ausschnitt dieser Lösung, mit rund zehn Minuten zwischen den gespeicherten Stützpunkten. Beim Import werden die Vektoren vom äquatorialen J2000-Rahmen in die J2000-Ekliptik gedreht. Die TDB-Zeitstempel werden für dieses Zeitfenster mit 69,184 Sekunden Abstand zwischen TT und UTC auf ganze UTC-Sekunden gerundet. [ESA-Metakernel](https://spiftp.esac.esa.int/data/SPICE/BEPICOLOMBO/kernels/mk/bc_map_v434_20261123_001.tm) · [NAIF-SPK-Format](https://naif.jpl.nasa.gov/pub/naif/toolkit_docs/C/req/spk.html)
-
 ### Interpolation und Projektion
 
-Zwischen zwei gespeicherten Vektoren wird jede Komponente linear interpoliert. Die Formel steht im Abschnitt zu IDEFIX. Die Gesamtbahn dient als dezente Orientierung. Die kräftige Spur endet am gewählten Zeitpunkt. Bei Horizons-Lösungen mit ausgewiesener Trackinggrenze markiert der Wechsel zur gestrichelten Linie den Beginn des folgenden UTC-Tages. Mios vollständige Spur ist vorausberechnet. Bestätigte Missionsereignisse stammen aus separaten Meldungen und stehen in der Zeitleiste.
+Zwischen zwei gespeicherten Vektoren `r₀` und `r₁` mit den UTC-Zeitstempeln `t₀` und `t₁` wird jede der drei Komponenten linear interpoliert:
 
-In den Reiseansichten sowie den Nahansichten bei Didymos, Erde und Mars werden X und Y der J2000-Ekliptik gezeichnet. Näherungspositionen der Planeten kommen aus dem bestehenden Planetenmodell. Die Merkuransicht bestimmt aus den MPO-Stützpunkten einen Normalenvektor proportional zur Summe der Kreuzprodukte benachbarter Positionsvektoren: `n ∝ Σ (rᵢ × rᵢ₊₁)`. Zwei orthogonale Achsen senkrecht zu `n` bilden die Zeichenebene. Skalarprodukte mit diesen Achsen liefern die SVG-Koordinaten vor der Skalierung. MPO und Mio verwenden dieselbe Projektion und denselben Merkur-Mittelpunkt.
+`u = (t − t₀) / (t₁ − t₀); r(t) = (1 − u) r₀ + u r₁`
+
+Die Interpolation ist auf `0 ≤ u ≤ 1` begrenzt. Die Gesamtbahn dient als dezente Orientierung. Die kräftige Spur endet am gewählten Zeitpunkt. Bei Horizons-Lösungen mit ausgewiesener Trackinggrenze markiert der Wechsel zur gestrichelten Linie den Beginn des folgenden UTC-Tages. Mios vollständige Spur ist vorausberechnet. Bestätigte Missionsereignisse stammen aus separaten Meldungen und stehen in der Zeitleiste.
+
+In den Reiseansichten sowie den Nahansichten bei Didymos, Erde und Mars gilt `U = X` und `V = Y` in der J2000-Ekliptik. Näherungspositionen der Referenzplaneten kommen aus dem bestehenden Planetenmodell. Die Merkur-Draufsicht verwendet eine eigene Zeichenebene.
 
 Für die Reise- und Nahansichten gilt nach der Projektion in die Zeichenebene:
 
@@ -721,21 +723,13 @@ Für die Reise- und Nahansichten gilt nach der Projektion in die Zeichenebene:
 
 `U` und `V` sind die Koordinaten in der Zeichenebene. `ρₘₐₓ` ist das Maximum aus den Abständen der projizierten Bahnstützpunkte vom Bezugspunkt und den berücksichtigten Referenzradien. Der Maßstab `s` gilt für die gesamte jeweilige Ansicht und bleibt beim Verschieben des Reglers konstant.
 
-Dragonfly verwendet feste Zeichenkoordinaten für Atmosphäreneintritt, Fallschirmabstieg, Abwurf des Hitzeschilds, Rotorflug und Aufsetzen. Zwischen zwei aufeinanderfolgenden Zeichenpunkten `Pₖ` und `Pₖ₊₁` liegt der Marker bei `P(u) = (1 − u) Pₖ + u Pₖ₊₁`. Der Fortschritt `u` läuft während der Wiedergabe pro Abschnitt von 0 bis 1 und hat keinen physikalischen Zeit- oder Entfernungsmaßstab. [NASA / Johns Hopkins APL](https://science.nasa.gov/mission/dragonfly/multimedia/)
-
 ### IDEFIX und MMX
 
 Die Reise verwendet geometrische heliozentrische Vektoren der JAXA-Vorstartplanung aus [JPL Horizons](https://ssd-api.jpl.nasa.gov/doc/horizons.html), Objekt −239, nicht eine selbst konstruierte Transferellipse. Der gespeicherte Stand ist eine Vorhersage vom 7. Oktober 2026 und keine Live-Telemetrie.
 
 #### Interpolation innerhalb der Datenabdeckung
 
-Gespeicherte Reihen enthalten UTC-Zeitstempel und die drei Positionskomponenten X, Y, Z in AE im Rahmen „Ecliptic of J2000.0 / ICRF“. Zwischen benachbarten Zeitpunkten t₀ und t₁ gilt:
-
-`u = (t − t₀) / (t₁ − t₀)`
-
-`r(t) = (1 − u) r₀ + u r₁`
-
-r₀ und r₁ sind Vektoren; dieselbe Gewichtung wird für X, Y und Z verwendet. Außerhalb der gespeicherten Zeiten wird keine Position berechnet. Die lineare Interpolation und zeitliche Abtastung sind für die heliozentrische Übersicht gedacht, nicht für Navigation, lokale Marsorbits oder eine genaue Lage gegenüber Phobos. Der Datensatz beginnt erst nach dem Start; diese Lücke wird nicht durch einen erfundenen Weg aufgefüllt.
+Gespeicherte Reihen enthalten UTC-Zeitstempel und die drei Positionskomponenten X, Y, Z in AE im Rahmen „Ecliptic of J2000.0 / ICRF“. IDEFIX verwendet die oben beschriebene Interpolation. Die zeitliche Abtastung ist für die heliozentrische Übersicht ausgelegt. Der Datensatz beginnt erst nach dem Start. Für die Zeit vor dem ersten Stützpunkt und für lokale Positionen am Mars oder Phobos liegen in dieser Reihe keine Daten vor.
 
 #### Projektion und Pixelspur
 
@@ -762,6 +756,50 @@ t und t₀ werden in derselben Zeiteinheit eingesetzt. frac bezeichnet den auf [
 Die bestätigte Startmeldung wird mit eigenem Prüfdatum aus der [CNES-Chronik](https://cnes.fr/en/projects/mmx) dargestellt. Die JAXA-Startzeit entspricht dem 19. Oktober 2026, 19:41:03 UTC, beziehungsweise dem 20. Oktober in Japan. [ESA](https://www.esa.int/Science_Exploration/Space_Science/Mars_moon_lander_set_to_launch_on_19_October) und [DLR](https://www.dlr.de/de/aktuelles/nachrichten/2026/auf-zu-den-marsmonden-mission-mmx-und-rover-idefix-bereit-zum-start) beschreiben Marsankunft 2027 und Roverabsetzen Ende 2028/Anfang 2029 als Planung.
 
 Die Tagesgrenzen der Zeitleistenabschnitte und Sprungdaten sind illustrative Einordnungen, keine offiziell bestätigten Manövertermine. Nach Ende der Horizons-Abdeckung markiert ein hohles Symbol lediglich den geplanten Zielbereich bei Phobos. Ob Landung und Betrieb tatsächlich erfolgen, muss durch neue Meldungen bestätigt werden. IDEFIX soll auf Phobos verbleiben; die für 2031 geplante Rückkehr betrifft das Probenmaterial.
+
+### BepiColombo · Merkur
+
+Die Reiseansicht verwendet MPO als Referenz für den gemeinsamen Flug und zeichnet Merkur, Venus und Erde zur Orientierung. Die Positionslösung vom 11. November 2026 basiert bis einschließlich 10. November auf Trackingdaten. Die Merkur-Nahansicht beginnt am 22. November. Ihr kompletter MPO-Ausschnitt stammt daher aus dem Prognoseabschnitt dieser Lösung. Die Zeitleiste führt den bestätigten Orbit-Einschuss am 21. November separat. [ESA-Mission](https://www.esa.int/bepicolombo)
+
+Für die Draufsicht bestimmt die App die Normale `n` der mittleren MPO-Bahnebene aus den Merkur-zentrierten Stützpunkten:
+
+`n ∝ Σ (rᵢ × rᵢ₊₁)`
+
+Aus der normierten Normalen werden zwei orthogonale Achsen `e₁` und `e₂` der Zeichenebene gebildet. Für beide Sonden gilt `U = r · e₁` und `V = r · e₂`. Die gemeinsame Projektion und der gemeinsame Maßstab erhalten den räumlichen Bezug zum Merkur. Der konfigurierte Referenzradius für die Merkurscheibe beträgt 2.440 km.
+
+Mio (SPICE-ID −68) erscheint ab dem 9. Dezember 2026, 22:48:51 UTC, dem ersten gespeicherten Stützpunkt nach der modellierten Trennung. Die ESA-SPK-Datei vom Typ 13 enthält die Planlösung vom 27. Mai 2026. Die App übernimmt Originalstützstellen im Abstand von rund zehn Minuten. Beim Import werden die äquatorialen J2000-Koordinaten mit der Schiefe der Ekliptik `ε = 84381,448″` um die X-Achse in die J2000-Ekliptik gedreht. Dabei gilt `Y = y cos ε + z sin ε` und `Z = z cos ε − y sin ε`. Für diesen Ausschnitt werden die TDB-Zeitstempel mit der Näherung `UTC ≈ TDB − 69,184 s` auf ganze Sekunden gerundet. [ESA-Metakernel](https://spiftp.esac.esa.int/data/SPICE/BEPICOLOMBO/kernels/mk/bc_map_v434_20261123_001.tm) · [NAIF-SPK-Format](https://naif.jpl.nasa.gov/pub/naif/toolkit_docs/C/req/spk.html)
+
+### Hera · Didymos
+
+Die Reiseansicht zeichnet Heras heliozentrische Horizons-Bahn mit Erde und Mars als Referenzen. Die Nahansicht wechselt zum Zentrum von Didymos. Die dortigen X/Y-Vektoren zeigen Heras projizierte Bewegung relativ zum Asteroiden, mit Stützpunkten alle zehn Minuten. Der in der Skala berücksichtigte Didymos-Referenzradius beträgt 0,39 km. Die Darstellung enthält einen Didymos-Marker und die Sondenbahn. [ESA-Mission](https://www.esa.int/et/missions/about-us/directorates/operations/space-safety/hera)
+
+Die Horizons-Lösung vom 3. November 2026 basiert bis einschließlich 1. November auf Trackingdaten. Der Nahansichts-Ausschnitt vom 5. bis 12. November zeigt entsprechend eine Prognose. Heras bestätigte Ankunft und spätere Bildveröffentlichungen gehören zur separaten Missionszeitleiste.
+
+### Europa Clipper · Erdvorbeiflug und Reise zu Jupiter
+
+Die heliozentrische Ansicht zeichnet den Reiseverlauf mit Erde, Mars und Jupiter als Referenzplaneten. Für den Erdvorbeiflug nutzt die App eine eigene geozentrische Reihe vom 2. bis 5. Dezember 2026 in Fünf-Minuten-Schritten. Der Erdmittelpunkt liegt im Zentrum der Grafik. Der konfigurierte Referenzradius beträgt 6.378 km. Die 2D-Position folgt der Projektion der geozentrischen Vektoren. [NASA-Mission](https://science.nasa.gov/mission/europa-clipper/)
+
+Die Lösung vom 20. November 2026 weist den 18. November als Trackinggrenze aus. Der Dezember-Vorbeiflug erscheint daher gestrichelt. Die Reisebahn reicht bis 11. April 2030. Die Europa-Vorbeiflüge ab 2031 bleiben Meilensteine in der Zeitleiste.
+
+### Juice · Reise zu Jupiter
+
+Die Reiseansicht verwendet die heliozentrische Horizons-Lösung vom 3. November 2026 mit Zwei-Tages-Stützpunkten. Die Referenzbahnen sind Venus, Erde und Jupiter. Die Grafik zeigt den Verlauf der Route über die Schwungmanöver in der J2000-Ekliptik. Die interpolierten Positionen zwischen den Stützpunkten dienen dem Reiseüberblick. [ESA-Mission und Schwungmanöver](https://www.esa.int/articles/about-us/directorates/science/juice/where-is-juice-now)
+
+Der Übergang zur gestrichelten Spur beginnt nach der ausgewiesenen Trackinggrenze am 22. Oktober 2026. Damit liegen der weitere Erdvorbeiflug und der Reiseabschnitt Richtung Jupiter im Vorhersagebereich. Der gespeicherte Ausschnitt endet am 20. Juli 2031.
+
+### Psyche · Marsvorbeiflug und Reise zum Asteroiden
+
+Die heliozentrische Ansicht zeigt die Reise mit Erde und Mars als Referenz. Für den Marsvorbeiflug wechselt die Darstellung auf Mars-zentrierte Vektoren in Kilometern. Die Stützpunkte vom 14. bis 17. Mai 2026 liegen fünf Minuten auseinander. Der konfigurierte Marsradius von 3.390 km ist Teil der Skalierung der Nahansicht. Damit lässt sich der Richtungswechsel vor und nach dem Vorbeiflug in der Projektion erkennen. [NASA-Mission](https://science.nasa.gov/mission/psyche/)
+
+Die Lösung vom 3. November 2026 basiert bis einschließlich 27. Oktober auf Trackingdaten. Der Marsvorbeiflug liegt in diesem Abschnitt. Die gespeicherte Reisebahn endet am 24. Februar 2029. Die geplante Ankunft im August 2029 steht in der Zeitleiste.
+
+### Dragonfly · Landephasen auf Titan
+
+Die Animation verwendet fünf feste Zeichenpunkte für Atmosphäreneintritt, Fallschirmabstieg, Abwurf des Hitzeschilds, Rotorflug und Aufsetzen. Der Regler wählt einen dieser Punkte. Bei der Wiedergabe bewegt sich der Marker zwischen den benachbarten Punkten `Pₖ` und `Pₖ₊₁`:
+
+`P(u) = (1 − u) Pₖ + u Pₖ₊₁`
+
+Der Fortschritt `u` läuft pro Abschnitt von 0 bis 1. Für die Zeichnung gilt `xSVG = 300 + 94 X` und `ySVG = 305 − 94 Y`, wobei `X` und `Y` freie Schema-Koordinaten sind. Die programmierte Wiedergabedauer von neun Sekunden legt die Bewegung im Diagramm fest. Zeiten, Abstände und Höhen im realen Landeablauf lassen sich daraus nicht ableiten. [NASA / Johns Hopkins APL](https://science.nasa.gov/mission/dragonfly/multimedia/)
 
 
 ## Himmelswissen: statische Lehrgrafiken
