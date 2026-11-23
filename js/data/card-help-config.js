@@ -492,6 +492,7 @@ window.PLANETENUHR_CARD_HELP = {
         formulas: [
           { expr: "r = R |cos(2&pi;f)|", note: "Projected terminator semi-axis; the lit side follows the existing lunar phase model." },
           { expr: "age = ((t - t<sub>0</sub>) mod 29.530588861 d)", note: "Moon age from a reference new moon and the synodic month." },
+          { expr: "JDE = JDE<sub>0</sub> + &Delta;JDE", note: "The next full Moon uses Meeus’s mean phase and periodic corrections. The result is converted from terrestrial time and displayed in the selected city’s time zone." },
           { expr: "illum = 0.5 (1 - cos(2&pi;f))", note: "Illuminated fraction from lunar phase fraction f." },
           { expr: "cos H = (cos Z - sin &delta; sin &phi;) / (cos &delta; cos &phi;)", note: "Solar event relation behind sunrise, sunset and twilight times." },
           { expr: "H = LST - &alpha;, &nbsp; sin h = sin &phi; sin &delta; + cos &phi; cos &delta; cos H", note: "Approximate Moon altitude h from local sidereal time, latitude &phi;, right ascension &alpha; and declination &delta;." }
@@ -1051,6 +1052,7 @@ window.PLANETENUHR_CARD_HELP = {
         formulas: [
           { expr: "r = R |cos(2&pi;f)|", note: "Projizierte Halbachse der Lichtgrenze; die helle Seite folgt dem bestehenden Mondphasenmodell." },
           { expr: "Alter = ((t - t<sub>0</sub>) mod 29.530588861 d)", note: "Mondalter aus Referenz-Neumond und synodischem Monat." },
+          { expr: "JDE = JDE<sub>0</sub> + &Delta;JDE", note: "Der nächste Vollmond verwendet die mittlere Phase mit periodischen Korrekturen nach Meeus. Der Zeitpunkt wird aus der terrestrischen Zeit umgerechnet und in der Zeitzone des gewählten Orts angezeigt." },
           { expr: "Beleuchtung = 0.5 (1 - cos(2&pi;f))", note: "Beleuchteter Anteil aus der Phasenfraktion f." },
           { expr: "cos H = (cos Z - sin &delta; sin &phi;) / (cos &delta; cos &phi;)", note: "Grundbeziehung hinter Sonnenaufgang, Sonnenuntergang und Dämmerung." }
         ],
@@ -1608,6 +1610,7 @@ window.PLANETENUHR_CARD_HELP = {
         formulas: [
           { expr: "r = R |cos(2&pi;f)|", note: "Demi-axe projeté du terminateur ; le côté éclairé suit le modèle de phase existant." },
           { expr: "age = ((t - t<sub>0</sub>) mod 29.530588861 d)", note: "Age lunaire a partir d'une nouvelle lune de reference et du mois synodique." },
+          { expr: "JDE = JDE<sub>0</sub> + &Delta;JDE", note: "La prochaine pleine lune utilise la phase moyenne et les corrections périodiques de Meeus. L’instant en temps terrestre est converti et affiché dans le fuseau du lieu choisi." },
           { expr: "illum = 0.5 (1 - cos(2&pi;f))", note: "Fraction eclairee selon la phase lunaire f." },
           { expr: "cos H = (cos Z - sin &delta; sin &phi;) / (cos &delta; cos &phi;)", note: "Relation de base pour lever, coucher et crepuscule du Soleil." }
         ],

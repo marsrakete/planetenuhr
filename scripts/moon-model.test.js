@@ -8,14 +8,13 @@ vm.runInContext(fs.readFileSync(path.join(__dirname, '..', 'js/models/moon-model
 const model = context.window.PLANETENUHR_MOON_MODEL;
 const reference = JSON.parse(fs.readFileSync(path.join(__dirname, 'baselines/moon-model.json'), 'utf8'));
 
-test('moon phase and next full Moon preserve the pre-extraction reference including subsecond dates', () => {
+test('schematic moon phase preserves the pre-extraction reference including subsecond dates', () => {
   assert.equal(reference.length, 16);
   for (const sample of reference) {
     const date = new Date(sample.date);
     const timestamp = date.getTime();
     const moon = model.computeMoon(date);
     assert.deepEqual(JSON.parse(JSON.stringify(moon)), sample.moon);
-    assert.equal(model.nextFullMoon(date).toISOString(), sample.nextFullMoon);
     assert.equal(date.getTime(), timestamp);
   }
 });
@@ -36,17 +35,26 @@ test('reference new Moon and the eight cycle phases retain correct order and ill
   assert.ok(beforeEpoch.frac > 0.99 && beforeEpoch.frac < 1);
 });
 
-test('next full Moon switches lunation across the modeled midpoint and always lies ahead', () => {
-  const epoch = Date.UTC(2000, 0, 6, 18, 14, 0);
-  const period = 29.530588861 * 86400000;
-  const midpoint = epoch + period / 2;
-  const before = model.nextFullMoon(new Date(midpoint - 2000));
-  const after = model.nextFullMoon(new Date(midpoint + 2000));
-  assert.ok(Math.abs(before.getTime() - midpoint) < 1000);
-  assert.ok(Math.abs(after.getTime() - midpoint - period) < 1000);
+test('next full Moon agrees with USNO reference phases and switches at the calculated event', () => {
+  // https://aa.usno.navy.mil/calculated/moon/phases?date=2026-01-01&format=t&nump=50
+  const phases = [
+    ['2026-06-25', '2026-06-29T23:56:00Z'],
+    ['2026-11-23', '2026-11-24T14:53:00Z'],
+    ['2026-11-25', '2026-12-24T01:28:00Z']
+  ];
+  for (const [start, expected] of phases) {
+    const date = new Date(start);
+    const input = date.getTime();
+    const actual = model.nextFullMoon(date);
+    assert.ok(Math.abs(actual.getTime() - Date.parse(expected)) < 60000, actual.toISOString());
+    assert.equal(date.getTime(), input);
+    assert.equal(model.nextFullMoon(new Date(actual.getTime() - 1)).getTime(), actual.getTime());
+    assert.ok(model.nextFullMoon(actual).getTime() > actual.getTime() + 28 * 86400000);
+  }
   for (const sample of reference) {
     const date = new Date(sample.date);
     const remaining = model.nextFullMoon(date).getTime() - date.getTime();
-    assert.ok(remaining > 0 && remaining <= period + 1);
+    assert.ok(remaining > 0 && remaining <= 31 * 86400000);
   }
+  assert.ok(Number.isNaN(model.nextFullMoon(new Date(NaN)).getTime()));
 });

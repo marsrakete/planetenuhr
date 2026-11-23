@@ -996,6 +996,27 @@ async function checkSpaceMissions(browser, url){
   }
 }
 
+/** Checks the November 2026 full Moon in Köln using two browser time zones.
+ * @param {import('playwright').Browser} browser Browser engine.
+ * @param {string} url Dashboard origin.
+ * @returns {Promise<void>} Resolves after checking the local time.
+ */
+async function checkCologneFullMoon(browser, url){
+  for (const timezoneId of ['UTC', 'Asia/Tokyo']) {
+    const page = await browser.newPage({timezoneId});
+    const errors = [];
+    page.on('pageerror', error => errors.push(error.message));
+    await page.route('**/*', route => serveDashboard(route, url));
+    try {
+      await page.goto(url + '/?lang=de&date=20261123&place=cologne');
+      assert.equal(await page.locator('#moonNextFull').textContent(), 'Nächster Vollmond: 24.11.2026 15:53');
+      assert.deepEqual(errors, []);
+    } finally {
+      await page.close();
+    }
+  }
+}
+
 async function main(){
   const url = 'http://planetenuhr.test';
   const engines = (process.env.PLANETENUHR_TEST_BROWSERS || 'chromium').split(',');
@@ -1006,6 +1027,8 @@ async function main(){
     }
     const browser = await playwright[engine].launch(options);
     try {
+      await checkCologneFullMoon(browser, url);
+      console.log(engine + ': Cologne full Moon passed');
       await checkSpaceMissions(browser, url);
       console.log(engine + ': space missions passed');
       await checkMonthlyConstellationEnlargement(browser, url);

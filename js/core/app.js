@@ -393,15 +393,16 @@
     /** Formats a date and time using an explicit zone or the browser's local zone.
      * @param {Date} d Instant to format.
      * @param {string} tz IANA time-zone key or local.
+     * @param {boolean} [withSeconds=true] Include seconds in the displayed time.
      * @returns {string} Localized date and time.
      */
-    function fmtTZ(d, tz){
+    function fmtTZ(d, tz, withSeconds = true){
       let timeZone;
       if (tz !== 'local') {
         timeZone = tz;
       }
       return formatDateStamp(d, timeZone) + ' ' + d.toLocaleTimeString(lang, {
-        hour:'2-digit', minute:'2-digit', second:'2-digit',
+        hour:'2-digit', minute:'2-digit', second:withSeconds ? '2-digit' : undefined,
         hour12:false,
         timeZone
       });

@@ -24,11 +24,14 @@ Daraus werden berechnet:
 - Phasenname
 - Beleuchtung
 - Zyklusfortschritt
-- nächster Vollmond als Näherung
 
 Die seit dem Referenz-Neumond verstrichenen UTC-Tage werden mit positivem Modulo auf einen Zyklus abgebildet: `Alter = ((Tage % Periode) + Periode) % Periode`, `f = Alter / Periode`. Wie bisher wird die Phase sekundengenau ausgewertet; vorhandene Millisekunden werden dabei verworfen. Die Beleuchtung ist `rund(100 · (1 − cos(2πf)) / 2)`. Phasennamen werden anhand dieser gerundeten Beleuchtung und der zunehmenden beziehungsweise abnehmenden Zyklushälfte gewählt.
 
-Für den nächsten Vollmond gilt `Δf = 0,5 − f`; bei `Δf ≤ 0` wird ein ganzer Zyklus addiert. Das Ergebnis ist `Ausgangszeitpunkt + Δf · Periode · 86400000 ms`. Der Ausgangszeitpunkt selbst behält seine Millisekunden. Dieses Rundungsverhalten und die Wahl des folgenden Zyklus bleiben bei der Auslagerung unverändert. Die mittlere Periode liefert eine Näherung, keine genaue astronomische Vollmond-Ephemeride.
+Für **„Nächster Vollmond“** berechnet `nextFullMoon` den nächsten geozentrischen Vollmond mit der Phasenformel aus Jean Meeus, *Astronomical Algorithms*, 2. Auflage, Kapitel 49. Der Lunationsindex `k` ist für Vollmond eine Halbzahl. Für `T = k / 1236,85` gilt:
+
+`JDE₀ = 2451550,09766 + 29,530588861 k + 0,00015437 T² − 0,000000150 T³ + 0,00000000073 T⁴`
+
+Die periodischen Vollmondterme und die planetaren Terme korrigieren `JDE₀`. Die App zieht anschließend die geschätzte Differenz `ΔT = TT − UT` ab, verwendet UT als Näherung für UTC und wählt den ersten Zeitpunkt nach dem Ausgangszeitpunkt. Die Anzeige verwendet Stunden und Minuten in der Zeitzone des gewählten Standorts. Phasensymbol und Beleuchtung basieren weiterhin auf dem mittleren Zyklus. [NASA-Polynome für ΔT](https://eclipse.gsfc.nasa.gov/SEhelp/deltatpoly2004.html) · [USNO-Referenz für 2026](https://aa.usno.navy.mil/calculated/moon/phases?date=2026-01-01&format=t&nump=50)
 
 Die SVG-Mondphase in `js/shared/celestial-bodies.js` verwendet dieselbe Phasenfraktion `f`. Die Lichtgrenze auf der projizierten Kugel ist eine Halbellipse mit horizontaler Halbachse `R · |cos(2πf)|` und vertikaler Halbachse `R`. Ihr Vorzeichen und die zunehmende bzw. abnehmende Phase bestimmen die Bogenrichtung; bei den Vierteln wird die Lichtgrenze eine Gerade. So entspricht die helle Fläche dem Anteil `(1 − cos(2πf)) / 2`. Die dunkle Fläche wird als komplementäre Lichtregion für `f + 0,5` gezeichnet.
 

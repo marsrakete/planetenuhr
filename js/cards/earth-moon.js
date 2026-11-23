@@ -52,7 +52,7 @@ window.PLANETENUHR_EARTH_MOON = (() => {
 
       // Nächster Vollmond
       const nextFull = document.getElementById('moonNextFull');
-      if (nextFull) nextFull.textContent = t.next_full + ': ' + options.formatDateTime(nf, tz);
+      if (nextFull) nextFull.textContent = t.next_full + ': ' + options.formatDateTime(nf, context.timeZone || tz, false);
       const moonLocalPositionLabel = document.getElementById('moonLocalPositionLabel');
       const moonLocalPositionMain = document.getElementById('moonLocalPositionMain');
       const moonLocalPositionSub = document.getElementById('moonLocalPositionSub');
