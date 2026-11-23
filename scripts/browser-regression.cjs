@@ -929,6 +929,26 @@ async function checkSpaceMissions(browser, url){
         assert.ok(await elapsedLength() > 0);
       }
     }
+    await buttons.nth(2).click();
+    const hera = page.locator('#space-mission-hera');
+    const heraSlider = hera.locator('.mission-time');
+    const didymosMarker = hera.locator('.mission-reference-target');
+    assert.ok(await hera.locator('.mission-target-orbit').evaluate(path => path.getTotalLength() > 0));
+    assert.equal(await didymosMarker.textContent(), 'Didymos');
+    await heraSlider.press('Home');
+    const beginning = await didymosMarker.getAttribute('transform');
+    await heraSlider.press('End');
+    assert.notEqual(await didymosMarker.getAttribute('transform'), beginning);
+    assert.equal(await hera.locator('.mission-distance').isVisible(), false);
+    await hera.getByRole('button', {name:'Bei Didymos'}).click();
+    assert.ok(await hera.locator('.mission-center .mission-didymos-outline').isVisible());
+    assert.equal(await hera.locator('.mission-center circle').count(), 0);
+    await heraSlider.press('Home');
+    assert.match(await hera.locator('.mission-distance').textContent(), /30,3 km/);
+    await heraSlider.press('End');
+    assert.match(await hera.locator('.mission-distance').textContent(), /32,5 km/);
+    assert.match(await hera.locator('.mission-animation-source').textContent(), /vergrößert dargestellt/);
+    assert.match(await hera.locator('.space-mission-timeline').textContent(), /Juventas landet auf Dimorphos.*Mögliche Landung von Hera.*Wird erwogen/s);
     const bepi = page.locator('#space-mission-bepicolombo');
     await buttons.nth(1).click();
     await bepi.getByRole('button', {name:'Um Merkur'}).click();

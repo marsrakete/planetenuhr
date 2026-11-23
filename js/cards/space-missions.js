@@ -74,9 +74,20 @@ window.PLANETENUHR_SPACE_MISSIONS = (() => {
         localizedNodes.push({node: event.querySelector('small'), key: confirmed ? 'confirmed' : 'planned'});
         panel.querySelector('ol').append(event);
       }
+      if (mission.notes) {
+        const noteTemplate = document.getElementById('spaceMissionNoteTemplate');
+        for (const keys of mission.notes) {
+          const row = noteTemplate.content.firstElementChild.cloneNode(true);
+          [...row.children].forEach((node, index) => localizedNodes.push({node, key: keys[index]}));
+          panel.querySelector('ol').append(row);
+        }
+      }
       addLink(panel, 'source', mission.source);
       if (mission.tracker) {
         addLink(panel, 'tracker', mission.tracker);
+      }
+      for (const [key, url] of mission.references || []) {
+        addLink(panel, key, url);
       }
       return {panel, animation};
     }

@@ -703,6 +703,7 @@ Die folgenden Grenzen stammen aus dem mitgelieferten Datensatz und sind als UTC-
 | BepiColombo-Reise | −121 | Sonne | 21.10.2018 bis 05.04.2027 | 2 Tage |
 | MPO am Merkur | −121 | Merkur | 22.11.2026 bis 17.12.2026 | 10 Minuten |
 | Hera-Reise | −91 | Sonne | 08.10.2024 bis 23.11.2026 | 1 Tag |
+| Didymos-Sonnenbahn | 65803 | Sonne | 08.10.2024 bis 23.11.2026 | 1 Tag |
 | Hera bei Didymos | −91 | Didymos | 05.11. bis 12.11.2026 | 10 Minuten |
 | Europa-Clipper-Reise | −159 | Sonne | 15.10.2024 bis 11.04.2030 | 2 Tage |
 | Europa Clipper bei der Erde | −159 | Erde | 02.12. bis 05.12.2026 | 5 Minuten |
@@ -774,9 +775,13 @@ Mio (SPICE-ID −68) erscheint ab dem 9. Dezember 2026, 22:48:51 UTC, dem ersten
 
 ### Hera · Didymos
 
-Die Reiseansicht zeichnet Heras heliozentrische Horizons-Bahn mit Erde und Mars als Referenzen. Die Nahansicht wechselt zum Zentrum von Didymos. Die dortigen X/Y-Vektoren zeigen Heras projizierte Bewegung relativ zum Asteroiden, mit Stützpunkten alle zehn Minuten. Der in der Skala berücksichtigte Didymos-Referenzradius beträgt 0,39 km. Die Darstellung enthält einen Didymos-Marker und die Sondenbahn. [ESA-Mission](https://www.esa.int/et/missions/about-us/directorates/operations/space-safety/hera)
+Die Reiseansicht zeichnet Heras heliozentrische Horizons-Bahn mit Erde und Mars als Referenzen. Didymos erhält eine eigene gepunktete Sonnenbahn aus der Horizons-Lösung JPL#240 vom 1. März 2026. Der Didymos-Marker verwendet täglich gespeicherte Vektoren im selben J2000-Ekliptikrahmen und dieselbe Interpolation wie Hera. Beide Marker folgen dem gewählten Zeitpunkt. [NASA/JPL Horizons](https://ssd.jpl.nasa.gov/horizons/)
+
+Die Nahansicht wechselt zum Zentrum von Didymos. Die dortigen X/Y-Vektoren zeigen Heras projizierte Bewegung relativ zum Asteroiden, mit Stützpunkten alle zehn Minuten. Der in der Skala berücksichtigte Didymos-Referenzradius beträgt 0,39 km. Die Darstellung enthält einen Didymos-Marker und die Sondenbahn. [ESA-Mission](https://www.esa.int/et/missions/about-us/directorates/operations/space-safety/hera)
 
 Die Horizons-Lösung vom 3. November 2026 basiert bis einschließlich 1. November auf Trackingdaten. Der Nahansichts-Ausschnitt vom 5. bis 12. November zeigt entsprechend eine Prognose. Heras bestätigte Ankunft und spätere Bildveröffentlichungen gehören zur separaten Missionszeitleiste.
+
+Die Nahansicht zeigt eine vergrößerte, schematische Silhouette mit dem für Didymos typischen Äquatorgrat. Der eingeblendete Abstand bezieht sich auf den Mittelpunkt und wird aus dem interpolierten 3D-Vektor in Kilometern berechnet: `d = √(X² + Y² + Z²)`. Die 2D-Grafik verwendet nur X und Y. Die späteren Nahbeobachtungen und Landungshinweise stehen als eigene Einträge in der Zeitleiste. [NASA zur Form von Didymos](https://science.nasa.gov/solar-system/asteroids/didymos/) · [ESA zu Heras Flugplan](https://www.esa.int/articles/about-us/directorates/operations/space-safety/finding-hera-s-way-flight-dynamics-team-in-action) · [ESA zum Missionsende](https://www.esa.int/articles/about-us/directorates/operations/space-safety/hera-operations)
 
 ### Europa Clipper · Erdvorbeiflug und Reise zu Jupiter
 

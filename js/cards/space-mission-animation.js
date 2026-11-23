@@ -129,6 +129,7 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
     root.append(template.content.cloneNode(true));
     const plot = root.querySelector('svg');
     const referenceOrbits = root.querySelector('.mission-reference-orbits');
+    const targetOrbit = root.querySelector('.mission-target-orbit');
     const routeOverview = root.querySelector('.mission-route-overview');
     const referenceBodies = root.querySelector('.mission-reference-bodies');
     const trackedPath = root.querySelector('.mission-tracked-path');
@@ -139,6 +140,7 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
     const slider = root.querySelector('.mission-time');
     const label = root.querySelector('.mission-time-label');
     const output = root.querySelector('.mission-time-readout');
+    const distance = root.querySelector('.mission-distance');
     const dashboardStatus = root.querySelector('.mission-dashboard-status');
     const play = root.querySelector('.mission-play');
     const source = root.querySelector('.mission-animation-source');
@@ -151,7 +153,8 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
     output.htmlFor = slider.id;
 
     const views = mission.views.map(view => ({
-      ...view, data:trajectories[view.key], secondaryData:trajectories[view.secondary]
+      ...view, data:trajectories[view.key], secondaryData:trajectories[view.secondary],
+      targetData:trajectories[view.targetOrbit]
     }));
     const positions = new Map();
     let view;
@@ -161,6 +164,7 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
     let bodies = [];
     let probe;
     let secondaryProbe;
+    let targetMarker;
     let routeTracks = [];
     const playback = createPlayback({
       getValue: () => Number(slider.value),
@@ -177,6 +181,7 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
     let missingDashboardDate = false;
     let dateFormatter;
     let timeFormatter;
+    let distanceFormatter;
 
     function text(key) {
       return getTranslations()['space_' + key];
@@ -230,10 +235,21 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
         const date = new Date(selected);
         const position = positionAt(view.data.rows, date);
         move(probe, position.x, position.y, position.z);
+        if (view.distanceLabel) {
+          const kilometers = Math.hypot(position.x, position.y, position.z);
+          distance.textContent = text(view.distanceLabel).replace('{distance}', distanceFormatter.format(kilometers));
+        }
         drawElapsedRoute(selected);
         for (const {key, node} of bodies) {
           const body = getHeliocentricPosition(key, date);
           move(node, body.x, body.y);
+        }
+        if (targetMarker) {
+          const target = positionAt(view.targetData.rows, date);
+          targetMarker.style.display = target ? '' : 'none';
+          if (target) {
+            move(targetMarker, target.x, target.y, target.z);
+          }
         }
         if (secondaryProbe) {
           const secondary = positionAt(view.secondaryData.rows, date);
@@ -248,7 +264,7 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
         caption = formatter.format(date) + ' · ' + text(dataStatus(selected, view.data.trackingThrough));
       }
       output.textContent = caption;
-      slider.setAttribute('aria-valuetext', caption);
+      slider.setAttribute('aria-valuetext', view.distanceLabel ? caption + ' · ' + distance.textContent : caption);
       plot.setAttribute('aria-label', text(view.label) + ' · ' + caption);
       positions.set(view.key, Number(slider.value));
     }
@@ -256,10 +272,13 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
     function describeSource() {
       sourceLink.href = view.source || view.data.url;
       sourceLink.textContent = view.stages ? text('nasaAnimation') : 'NASA/JPL Horizons';
-      secondaryLink.hidden = !view.secondaryData;
+      secondaryLink.hidden = !(view.secondaryData || view.targetData);
       if (view.secondaryData) {
         secondaryLink.href = view.secondaryData.url;
         secondaryLink.textContent = 'ESA SPICE · Mio';
+      } else if (view.targetData) {
+        secondaryLink.href = view.targetData.url;
+        secondaryLink.textContent = 'NASA/JPL Horizons · ' + view.targetName;
       }
       if (view.stages) {
         source.textContent = text('landingSource');
@@ -282,12 +301,16 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
         details.push(text('mioSource') + ' · ' + text('solutionDate') + ' ' +
           dateFormatter.format(new Date(view.secondaryData.revised)));
       }
+      if (view.viewNote) {
+        details.push(text(view.viewNote));
+      }
       source.textContent = details.join(' · ');
     }
 
     function updateLabels() {
       const translations = getTranslations();
       dateFormatter = new Intl.DateTimeFormat(language, {dateStyle:'medium', timeZone:'UTC'});
+      distanceFormatter = new Intl.NumberFormat(language, {minimumFractionDigits:1, maximumFractionDigits:1});
       timeFormatter = new Intl.DateTimeFormat(language, {
         year:'numeric', month:'short', day:'numeric', hour:'2-digit', minute:'2-digit', timeZone:'UTC', timeZoneName:'short'
       });
@@ -369,6 +392,8 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
       spacecraft.replaceChildren();
       bodies = [];
       secondaryProbe = null;
+      targetMarker = null;
+      targetOrbit.setAttribute('d', '');
       const {planets, stages} = view;
       orbitPlane = view.faceOn ? orbitalProjection(view.data.rows) : null;
       plot.setAttribute('viewBox', orbitPlane ? '90 0 420 380' : '0 0 600 380');
@@ -388,6 +413,9 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
         if (view.secondaryData) {
           distances.push(...view.secondaryData.rows.map(projectedDistance));
         }
+        if (view.targetData) {
+          distances.push(...view.targetData.rows.map(projectedDistance));
+        }
         const extent = Math.max(view.radius || 0, ...distances, ...(planets || []).map(key => planetRadii[key]));
         scale = 145 / extent;
         if (view.radius) {
@@ -405,10 +433,21 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
           return pathFor(points);
         });
         referenceOrbits.setAttribute('d', orbitalPaths.join(' '));
+        if (view.targetData) {
+          targetOrbit.setAttribute('d', pathFor(view.targetData.rows.map(([, x, y]) => [x, y])));
+          targetMarker = marker(referenceBodies, view.targetName, 8, 'mission-reference-target');
+          targetMarker.querySelector('text').setAttribute('y', 22);
+        }
         prepareTrajectory();
       }
       const center = marker(referenceBodies, '', centerRadius, 'mission-center');
       move(center, 0, 0);
+      distance.hidden = !view.distanceLabel;
+      if (view.bodyTemplate) {
+        const template = document.getElementById(view.bodyTemplate);
+        center.querySelector('circle').replaceWith(template.content.querySelector('g').cloneNode(true));
+        center.querySelector('text').setAttribute('y', -19);
+      }
       if (stages) {
         center.querySelector('circle').setAttribute('r', 0);
         center.querySelector('text').setAttribute('y', 27);

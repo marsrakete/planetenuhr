@@ -24,14 +24,25 @@ window.PLANETENUHR_SPACE_MISSION_DATA = [
     source: 'https://www.esa.int/et/missions/about-us/directorates/operations/space-safety/hera',
     tracker: 'https://hera.esa.int/',
     views: [
-      {key:'hera', label:'cruiseView', planets:['earth','mars']},
-      {key:'didymos', label:'didymosView', bodyName:'Didymos', radius:0.39}
+      {key:'hera', label:'cruiseView', planets:['earth','mars'], targetOrbit:'didymosOrbit', targetName:'Didymos'},
+      {key:'didymos', label:'didymosView', bodyName:'Didymos', radius:0.39,
+        bodyTemplate:'spaceMissionDidymosTemplate', distanceLabel:'didymosDistance', viewNote:'didymosScale'}
     ],
     events: [
       ['2024-10-07', 'launch', true],
       ['2025-03-12', 'marsFlyby', true],
       ['2026-11', 'asteroidSurvey', true],
       ['2026-11-25', 'dimorphosImages', false]
+    ],
+    notes: [
+      ['laterMission', 'heraCloseObservation', 'planned'],
+      ['missionEnd', 'heraJuventasLanding', 'planned'],
+      ['missionEnd', 'heraDidymosLanding', 'underReview']
+    ],
+    references: [
+      ['heraOperations', 'https://www.esa.int/articles/about-us/directorates/operations/space-safety/finding-hera-s-way-flight-dynamics-team-in-action'],
+      ['heraMissionEndSource', 'https://www.esa.int/articles/about-us/directorates/operations/space-safety/hera-operations'],
+      ['heraMediaKit', 'https://media.esa.int/global/public/common/misc/2026/11/hera-media-kit-nov-2026-1794864022.pdf']
     ]
   },
   {

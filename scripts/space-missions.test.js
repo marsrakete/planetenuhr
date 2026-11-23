@@ -53,6 +53,13 @@ test('each mission and milestone has copy in every dashboard language', () => {
     keys.push(mission.id, ...mission.events.map(event => event[1]));
     for (const view of mission.views) {
       keys.push(view.label, ...(view.stages || []).map(stage => stage[0]));
+      keys.push(...[view.distanceLabel, view.viewNote].filter(Boolean));
+    }
+    for (const row of mission.notes || []) {
+      keys.push(...row);
+    }
+    for (const [key] of mission.references || []) {
+      keys.push(key);
     }
   }
   for (const [language, translations] of Object.entries(languages)) {
@@ -71,7 +78,7 @@ test('each trajectory scene uses finite, chronological vectors and identifiable 
         assert.equal(new URL(view.source).hostname, 'science.nasa.gov');
         continue;
       }
-      for (const key of [view.key, view.secondary].filter(Boolean)) {
+      for (const key of [view.key, view.secondary, view.targetOrbit].filter(Boolean)) {
         const data = trajectories[key];
         assert.ok(data.solution, key);
         assert.match(data.revised, /^\d{4}-\d{2}-\d{2}$/);
@@ -90,6 +97,10 @@ test('each trajectory scene uses finite, chronological vectors and identifiable 
   assert.equal(trajectories.mio.center, trajectories.mercury.center);
   assert.equal(new Date(trajectories.mio.rows[0][0]).toISOString().slice(0, 10), '2026-12-09');
   assert.ok(trajectories.mio.rows.every(([, x, y, z]) => Math.hypot(x, y, z) > 2440));
+  assert.equal(trajectories.didymosOrbit.id, 65803);
+  assert.equal(trajectories.didymosOrbit.center, trajectories.hera.center);
+  assert.equal(trajectories.didymosOrbit.rows[0][0], trajectories.hera.rows[0][0]);
+  assert.equal(trajectories.didymosOrbit.rows.at(-1)[0], trajectories.hera.rows.at(-1)[0]);
 });
 
 test('the sourced tracking cutoff includes the whole published UTC day', () => {

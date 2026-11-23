@@ -8,6 +8,8 @@ const requests = [
   {key:'bepicolombo', id:-121, center:10, start:'2018-10-21', end:'2027-04-06', step:'2 d'},
   {key:'mercury', id:-121, center:199, start:'2026-11-22', end:'2026-12-17', step:'10 m'},
   {key:'hera', id:-91, center:10, start:'2024-10-08', end:'2026-11-23', step:'1 d'},
+  {key:'didymosOrbit', id:65803, target:'65803 Didymos', command:'65803;', center:10,
+    start:'2024-10-08', end:'2026-11-23', step:'1 d'},
   {key:'didymos', id:-91, center:20065803, start:'2026-11-05', end:'2026-11-12', step:'10 m'},
   {key:'europa', id:-159, center:10, start:'2024-10-15', end:'2030-04-12', step:'2 d'},
   {key:'clipperEarth', id:-159, center:399, start:'2026-12-02', end:'2026-12-05', step:'5 m'},
@@ -20,9 +22,9 @@ const requests = [
  * @param {object} request Target, center, date range and sampling step.
  * @returns {Promise<object>} Cached trajectory and its provenance.
  */
-async function download({id, center, start, end, step}) {
+async function download({id, target, command = String(id), center, start, end, step}) {
   const parameters = new URLSearchParams({
-    format:'json', COMMAND:String(id), CENTER:'500@' + center, EPHEM_TYPE:'VECTORS',
+    format:'json', COMMAND:command, CENTER:'500@' + center, EPHEM_TYPE:'VECTORS',
     START_TIME:start, STOP_TIME:end, STEP_SIZE:"'" + step + "'", TIME_TYPE:'UT',
     REF_PLANE:'ECLIPTIC', REF_SYSTEM:'ICRF', VEC_TABLE:'1', CSV_FORMAT:'YES',
     VEC_CORR:'NONE', OUT_UNITS:center === 10 ? 'AU-D' : 'KM-S'
@@ -38,10 +40,13 @@ async function download({id, center, start, end, step}) {
   }
   const targetLine = result.match(/Target body name:[^\n]+/)[0];
   const centerLine = result.match(/Center body name:[^\n]+/)[0];
-  if (!targetLine.includes('(' + id + ')') || !centerLine.includes('(' + center + ')')) {
+  const correctTarget = target ? targetLine.replace(/^Target body name:\s*/, '').startsWith(target) :
+    targetLine.includes('(' + id + ')');
+  if (!correctTarget || !centerLine.includes('(' + center + ')')) {
     throw new Error('Unexpected target or center');
   }
-  const revision = result.match(/Revised:\s*([A-Za-z]+\s+\d{1,2},\s+\d{4})/);
+  const revision = result.match(/Revised:\s*([A-Za-z]+\s+\d{1,2},\s+\d{4})/) ||
+    result.match(/Soln\.date:\s*(\d{4}-[A-Za-z]{3}-\d{2})/);
   const tracking = result.match(/(?:data fit|tracking data|tracking-data based trajectory) through\s+(\d{4}-[A-Za-z]{3}-\d{2})/i);
   const shortTracking = result.match(/([A-Za-z]+ \d{1,2}), prediction (?:after that|thereafter)/i);
   if (!revision) {
