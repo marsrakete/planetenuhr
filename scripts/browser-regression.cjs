@@ -886,7 +886,7 @@ async function checkSpaceMissions(browser, url){
     assert.match(await help.textContent(), /BepiColombo.*Dragonfly/s);
     assert.match(await help.textContent(), /globale Button „Heute“/);
     assert.doesNotMatch(await help.textContent(), /Dashboardzeit/);
-    assert.equal(await help.getByRole('link', {name:'ESA SPICE · BepiColombo / Mio'}).count(), 1);
+    assert.equal(await help.getByRole('link', {name:'ESA · BepiColombo', exact:true}).getAttribute('href'), 'https://www.esa.int/bepicolombo');
     assert.equal(await help.locator('.card-help-formula-expr').count(), 6);
     assert.match(await help.textContent(), /Summe der Kreuzprodukte.*feste Zeichenpunkte/s);
     await helpButton.press('Escape');

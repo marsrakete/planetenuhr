@@ -1878,7 +1878,7 @@ window.PLANETENUHR_CARD_HELP.fr.cards.sky_knowledge = {
 // The original IDEFIX key also serves existing direct links to the mission card.
 const spaceMissionHelpSources = [
   { label: "NASA/JPL Horizons", url: "https://ssd.jpl.nasa.gov/horizons/" },
-  { label: "ESA SPICE · BepiColombo / Mio", url: "https://spiftp.esac.esa.int/data/SPICE/BEPICOLOMBO/kernels/mk/bc_map_v434_20261123_001.tm" },
+  { label: "ESA · BepiColombo", url: "https://www.esa.int/bepicolombo" },
   { label: "NASA / Johns Hopkins APL · Dragonfly", url: "https://science.nasa.gov/mission/dragonfly/multimedia/" }
 ];
 window.PLANETENUHR_CARD_HELP.de.cards.idefix = {
