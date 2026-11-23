@@ -435,6 +435,7 @@ window.PLANETENUHR_DATE_CONTROLS = (() => {
       slider.value = '0';
       context.setDayOffset(0);
       slider.setAttribute('aria-valuenow', '0');
+      dependencies.onToday?.(context.getDate());
       dependencies.refresh();
     }
 

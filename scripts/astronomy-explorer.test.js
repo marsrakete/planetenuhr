@@ -275,6 +275,7 @@ test('IDEFIX adapts its SVG only when its rendered width changes', () => {
   const attrs=[];let width=300;
   const realm=vm.createContext({
     lastPlotWidth:0,
+    dependencies:{fitPlotLabels(_plot, measuredWidth){assert.equal(measuredWidth,width);return 18;}},
     plot:{getBoundingClientRect(){return {width};},setAttribute(...args){attrs.push(args);},style:{setProperty(...args){attrs.push(args);}}},
     document:{querySelector(){return {setAttribute(...args){attrs.push(args);}};}}
   });

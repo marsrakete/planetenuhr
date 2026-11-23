@@ -1,9 +1,49 @@
 .idefix-card { order:23; gap:12px; }
 .idefix-card .group-title { margin:0; }
+.space-mission-panel { display:grid; gap:12px; width:100%; min-width:0; }
+.space-mission-panel[hidden] { display:none; }
+.space-mission-title { margin:0; text-align:center; }
+.space-mission-title,.idefix-news h3 { font-size:var(--font-subheading); line-height:var(--line-heading); }
+#spaceMissionTabs [aria-selected="true"] { border-color:var(--accent); font-weight:700; }
+.space-mission-timeline { display:grid; gap:1px; padding:0; margin:0; list-style:none; font-size:var(--font-body); line-height:var(--line-body); }
+.space-mission-timeline li { display:grid; grid-template-columns:minmax(8rem,auto) minmax(0,1fr) auto; gap:8px 14px; align-items:baseline; padding:10px 12px; border-bottom:1px solid var(--border); text-align:left; }
+.space-mission-timeline time,.space-mission-timeline small { color:var(--muted); font-size:var(--font-note); line-height:var(--line-note); }
+.mission-animation { display:grid; gap:9px; min-width:0; }
+.mission-animation-views[hidden] { display:none; }
+.mission-animation-views [aria-pressed="true"] { border-color:var(--accent); font-weight:700; }
+.mission-animation-plot { width:100%; height:auto; display:block; background:#0b1730; border-radius:12px; }
+.mission-animation-plot path { fill:none; vector-effect:non-scaling-stroke; }
+.mission-reference-orbits { stroke:#6882a5; stroke-width:1; opacity:.42; }
+.mission-route-overview { stroke:#91b8f3; stroke-width:.8; opacity:.24; }
+.mission-tracked-path { stroke:#ffd477; stroke-width:1.6; }
+.mission-predicted-path { stroke:#91b8f3; stroke-width:1.5; stroke-dasharray:4 4; }
+.mission-mio-track { stroke:#9ce9e2; stroke-width:1.5; stroke-dasharray:4 4; }
+.mission-reference-bodies circle { fill:#91b8f3; }
+.mission-center circle { fill:#d49b59; stroke:#ffe0a3; stroke-width:1; }
+.mission-probe circle,.mission-mio circle { fill:#ffd477; stroke:#fff3d3; stroke-width:1.5; }
+.mission-mio circle { fill:#9ce9e2; stroke:#dcfffa; }
+.mission-lander rect { fill:#ffd477; }
+.mission-animation-plot .mission-lander path { display:none; stroke:#f5e0ac; stroke-width:1.5; }
+.mission-lander[data-stage="entry"] .mission-entry-shield,
+.mission-lander[data-stage="parachute"] .mission-parachute,
+.mission-lander[data-stage="heatShield"] .mission-parachute,
+.mission-lander[data-stage="rotorFlight"] .mission-rotors,
+.mission-lander[data-stage="touchdown"] .mission-landing-legs { display:block; }
+.mission-animation-controls { display:grid; grid-template-columns:auto minmax(0,1fr); align-items:center; gap:5px 12px; text-align:left; }
+.mission-play { grid-row:1 / 3; min-height:42px; margin:0; padding:6px 10px; border:1px solid var(--border); border-radius:8px; background:var(--card); color:var(--accent); }
+.mission-time-label,.mission-time-readout,.mission-animation-source { color:var(--muted); font-size:var(--font-note); line-height:var(--line-note); }
+.mission-time-readout { grid-column:1 / -1; font-variant-numeric:tabular-nums; }
+.mission-dashboard-status { grid-column:1 / -1; margin:0; color:var(--muted); font-size:var(--font-note); line-height:var(--line-note); }
+.mission-animation-source { margin:0; text-align:left; }
+.mission-event-jump { margin:0; padding:0; border:0; background:none; color:var(--accent); text-align:left; font:inherit; text-decoration:underline; }
+@media (max-width:480px) {
+  .space-mission-timeline li { grid-template-columns:minmax(0,1fr) auto; }
+  .space-mission-timeline li span { grid-row:2; grid-column:1 / -1; }
+}
 .idefix-intro { margin:0; color:var(--muted); font-size:var(--font-body); line-height:var(--line-body); text-align:center; }
 .idefix-views { display:grid; grid-template-columns:minmax(0,1fr) 180px; align-items:center; gap:8px; width:100%; padding:8px; border-radius:12px; background:#0b1730; color:#e8efff; }
 .idefix-overview { display:block; width:100%; height:auto; overflow:visible; }
-.idefix-overview text { fill:#edf3ff; font-size:var(--idefix-label-size,18px); paint-order:stroke; stroke:#0b1730; stroke-width:3px; stroke-linejoin:round; }
+.idefix-overview text,.mission-animation-plot text { fill:#edf3ff; font-family:inherit; font-size:var(--mission-plot-label-size,18px); paint-order:stroke; stroke:#0b1730; stroke-width:3px; stroke-linejoin:round; }
 .idefix-orbit { fill:none; stroke-width:1; }
 .idefix-orbit-earth { stroke:#52c7ed66; }
 .idefix-orbit-mars { stroke:#f69a7066; }
@@ -28,17 +68,16 @@
 .idefix-key-line { border-top:1px dashed var(--muted); transform:translateY(4px); }
 .idefix-key-target { border:1px dashed #c78f15; }
 .idefix-position { width:100%; margin:0; color:var(--muted); font-size:var(--font-note); line-height:var(--line-note); text-align:center; }
-.idefix-date-heading { display:flex; flex-wrap:wrap; justify-content:space-between; gap:6px 12px; width:100%; font-size:var(--font-note); line-height:var(--line-note); }
-.idefix-date-heading output { font-variant-numeric:tabular-nums; }
 .idefix-controls,.idefix-jumps { display:flex; flex-wrap:wrap; justify-content:center; gap:6px; width:100%; }
-.idefix-controls button,.idefix-jumps button { min-height:36px; margin:0; padding:7px 9px; border:1px solid var(--border); border-radius:8px; background:var(--card); color:var(--accent); font-size:var(--font-control); line-height:var(--line-control); }
+.idefix-controls button,.idefix-jumps button,.mission-play { font-family:inherit; font-size:var(--font-control); line-height:var(--line-control); }
+.idefix-controls button,.idefix-jumps button { min-height:36px; margin:0; padding:7px 9px; border:1px solid var(--border); border-radius:8px; background:var(--card); color:var(--accent); }
 .idefix-jumps button { border-style:dashed; color:var(--muted); }
 .idefix-card button:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
 .idefix-phase-box { display:grid; gap:7px; width:100%; padding:12px 14px; border-radius:9px; background:color-mix(in srgb,var(--accent) 8%,var(--card)); line-height:var(--line-body); text-align:left; font-size:var(--font-body); }
 .idefix-eyebrow { color:var(--muted); font-size:var(--font-note); line-height:var(--line-note); }
 .idefix-phase-box p,.idefix-news p { margin:0; }
 .idefix-news { display:grid; gap:7px; width:100%; text-align:left; font-size:var(--font-body); line-height:var(--line-body); }
-.idefix-news h3 { margin:0; font-size:var(--font-subheading); line-height:var(--line-heading); }
+.idefix-news h3 { margin:0; }
 #idefixVerified,#idefixStale,.idefix-coverage { color:var(--muted); font-size:var(--font-note); line-height:var(--line-note); }
 .idefix-coverage { margin:0; text-align:left; line-height:var(--line-note); width:100%; overflow-wrap:anywhere; }
 .idefix-links { display:flex; flex-wrap:wrap; gap:8px 16px; width:100%; font-size:var(--font-note); line-height:var(--line-note); }

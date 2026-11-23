@@ -89,10 +89,6 @@ window.PLANETENUHR_IDEFIX_CONFIG = {
       "unit": "year",
       "amount": 1,
       "label": "idefix_next_year"
-    },
-    {
-      "action": "shared",
-      "label": "idefix_shared"
     }
   ],
   "presets": [

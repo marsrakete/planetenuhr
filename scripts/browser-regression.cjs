@@ -865,6 +865,124 @@ async function checkMonthlyConstellationEnlargement(browser, url){
 /** Runs the browser regression matrix and always releases browser resources.
  * @returns {Promise<void>} Resolves when the matrix passes.
  */
+/** Checks mission tab wiring and layout on a small viewport.
+ * @param {import('playwright').Browser} browser Browser engine.
+ * @param {string} url Dashboard origin.
+ * @returns {Promise<void>} Resolves after checking navigation and initialization.
+ */
+async function checkSpaceMissions(browser, url){
+  const page = await browser.newPage({viewport:{width:375,height:812}});
+  const errors = [];
+  page.on('pageerror', error => errors.push(error.message));
+  await page.route('**/*', route => serveDashboard(route, url));
+  try {
+    await page.clock.setFixedTime(new Date('2026-11-23T12:00:00Z'));
+    await page.goto(url + '/?lang=de&date=20261123');
+    const tabs = page.locator('#spaceMissionTabs');
+    const buttons = tabs.getByRole('tab');
+    assert.deepEqual(errors, []);
+    assert.equal(await buttons.count(), 7);
+    assert.ok(await page.locator('#idefixTime').isVisible());
+    const idefixSlider = page.locator('#idefixTime');
+    const idefixPlay = page.locator('#idefixPlay');
+    await idefixSlider.press('Home');
+    await idefixPlay.click();
+    assert.equal(await idefixPlay.textContent(), 'Pause');
+    await page.waitForFunction(() => Number(document.getElementById('idefixTime').value) > 0);
+    for (const button of (await buttons.all()).slice(1)) {
+      await button.click();
+      assert.equal(await idefixPlay.textContent(), 'Abspielen');
+      const panel = page.locator('#' + await button.getAttribute('aria-controls'));
+      assert.ok(await panel.isVisible());
+      assert.equal(await page.locator('.space-mission-panel:visible').count(), 1);
+      assert.ok(await panel.locator('time').count() > 0);
+      assert.ok(await panel.evaluate(node => node.scrollWidth <= node.clientWidth + 1));
+      const slider = panel.locator('.mission-time');
+      const readout = panel.locator('.mission-time-readout');
+      assert.ok(await slider.isVisible());
+      assert.ok(await panel.locator('.mission-animation-links a:visible').count() > 0);
+      await slider.press('Home');
+      const before = await readout.textContent();
+      const route = panel.locator('.mission-route-overview');
+      const elapsedLength = () => panel.locator('.mission-tracked-path, .mission-predicted-path')
+        .evaluateAll(paths => paths.reduce((total, path) => total + path.getTotalLength(), 0));
+      const hasOverview = await route.evaluate(path => path.getTotalLength() > 0);
+      if (hasOverview) {
+        assert.equal(await elapsedLength(), 0);
+      }
+      await slider.press('End');
+      assert.notEqual(await readout.textContent(), before);
+      if (hasOverview) {
+        assert.ok(await elapsedLength() > 0);
+      }
+    }
+    const bepi = page.locator('#space-mission-bepicolombo');
+    await buttons.nth(1).click();
+    await bepi.getByRole('button', {name:'Um Merkur'}).click();
+    assert.match(await bepi.locator('.mission-animation-source').textContent(), /Draufsicht/);
+    const orbitBounds = await bepi.locator('.mission-route-overview').evaluate(path => {
+      const {width, height} = path.getBBox();
+      return {width, height};
+    });
+    // The highly elliptical orbits remain elongated. This checks that the view is no longer edge-on.
+    const proportion = Math.min(orbitBounds.width, orbitBounds.height) / Math.max(orbitBounds.width, orbitBounds.height);
+    assert.ok(proportion > .4, 'Mercury orbit projection aspect ratio: ' + proportion);
+    await bepi.locator('.mission-time').press('Home');
+    assert.equal(await bepi.locator('.mission-mio').evaluate(node => node.style.display), 'none');
+    await bepi.locator('.mission-time').press('End');
+    assert.equal(await bepi.locator('.mission-mio').evaluate(node => node.style.display), '');
+    await bepi.locator('.mission-play').click();
+    assert.equal(await bepi.locator('.mission-play').textContent(), 'Pause');
+    await buttons.last().click();
+    assert.equal(await bepi.locator('.mission-play').textContent(), 'Abspielen');
+    assert.match(await page.locator('#space-mission-dragonfly .mission-time-readout').textContent(), /Aufsetzen/);
+    await buttons.last().press('Home');
+    assert.equal(await buttons.first().getAttribute('aria-selected'), 'true');
+    assert.ok(await page.locator('#idefixTime').isVisible());
+    async function labelTypography(selector) {
+      await page.waitForFunction(selector => {
+        const label = document.querySelector(selector);
+        const transform = label?.getScreenCTM();
+        return transform && Math.abs(parseFloat(getComputedStyle(label).fontSize) * transform.a - 12) < .1;
+      }, selector);
+      return page.locator(selector).evaluate(label => getComputedStyle(label).fontFamily);
+    }
+    for (const width of [375, 1280]) {
+      await page.setViewportSize({width, height:812});
+      await buttons.first().click();
+      const family = await labelTypography('#idefixPlot .idefix-sun text');
+      await buttons.nth(1).click();
+      assert.equal(await labelTypography('#space-mission-bepicolombo .mission-center text'), family);
+    }
+    const bepiSlider = bepi.locator('.mission-time');
+    const bepiReadout = bepi.locator('.mission-time-readout');
+    await page.locator('#btnSolarToday').click();
+    assert.match(await bepiReadout.textContent(), /23\. Nov\. 2026/);
+    await bepiSlider.press('Home');
+    assert.doesNotMatch(await bepiReadout.textContent(), /23\. Nov\. 2026/);
+    await page.locator('#btnSolarNextMonth').evaluate(button => button.click());
+    assert.match(await bepiReadout.textContent(), /23\.12\.2026/);
+    await page.locator('#solarDateSlider').press('Home');
+    assert.match(await bepi.locator('.mission-dashboard-status').textContent(), /keine Position/);
+    assert.match(await bepiReadout.textContent(), /23\.12\.2026/);
+    await page.locator('#btnSolarToday').click();
+    assert.match(await bepiReadout.textContent(), /23\.11\.2026/);
+    await buttons.first().click();
+    const todayValue = await idefixSlider.inputValue();
+    await idefixSlider.press('End');
+    await page.setViewportSize({width:375, height:812});
+    await page.locator('#btnSolarTodayMobile').click();
+    assert.equal(await idefixSlider.inputValue(), todayValue);
+    await buttons.last().click();
+    const dragonfly = page.locator('#space-mission-dragonfly');
+    assert.equal(await page.locator('.mission-sync, [data-idefix-action="shared"]').count(), 0);
+    assert.match(await dragonfly.locator('.mission-time-readout').textContent(), /Aufsetzen/);
+    assert.deepEqual(errors, []);
+  } finally {
+    await page.close();
+  }
+}
+
 async function main(){
   const url = 'http://planetenuhr.test';
   const engines = (process.env.PLANETENUHR_TEST_BROWSERS || 'chromium').split(',');
@@ -875,6 +993,8 @@ async function main(){
     }
     const browser = await playwright[engine].launch(options);
     try {
+      await checkSpaceMissions(browser, url);
+      console.log(engine + ': space missions passed');
       await checkMonthlyConstellationEnlargement(browser, url);
       console.log(engine + ': complete monthly constellation enlargement passed');
       await checkConstellationFigures(browser, url);

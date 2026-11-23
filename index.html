@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="planetenuhr-version" content="1.75.17" />
+  <meta name="planetenuhr-version" content="1.75.24" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Planetenuhr – Astronomie-Dashboard für Sonne, Mond und Planeten</title>
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
@@ -39,25 +39,25 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.18.0/dist/katex.min.css" integrity="sha384-KfwFj/Q/jGrY4ijtfzWyW5NXzT5irvfnTq6aRnH2xPvLzLdi1XyVr7w4l2uwTq0V" crossorigin="anonymous" />
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.18.0/dist/katex.min.js" integrity="sha384-OE4SMRr5gMJQzKSD08J46vKsKgY8NxVtO1LW+/q3NJ0WHsGsdN4oebgEjwwWuyvG" crossorigin="anonymous"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.18.0/dist/contrib/auto-render.min.js" integrity="sha384-bjyGPfbij8/NDKJhSGZNP/khQVgtHUE5exjm4Ydllo42FwIgYsdLO2lXGmRBf5Mz" crossorigin="anonymous" onload="window.renderPlanetenuhrHelpMath && window.renderPlanetenuhrHelpMath()"></script>
-  <link rel="stylesheet" href="css/base/styles.css?v=1.75.17" />
-  <link rel="stylesheet" href="css/cards/astronomy-explorer.css?v=1.75.17" />
-  <link rel="stylesheet" href="css/cards/sky-knowledge.css?v=1.75.17" />
-  <link rel="stylesheet" href="css/cards/idefix.css?v=1.75.17" />
-  <link rel="stylesheet" href="css/shared/earth-moon-visuals.css?v=1.75.17" />
-  <link rel="stylesheet" href="css/shared/meteor-labels.css?v=1.75.17" />
-  <link rel="stylesheet" href="css/shared/diagram-details.css?v=1.75.17" />
-  <link rel="stylesheet" href="css/shared/app-updates.css?v=1.75.17" />
-  <link rel="stylesheet" href="css/shared/direction-compass.css?v=1.75.17" />
-  <link rel="stylesheet" href="css/shared/celestial-bodies.css?v=1.75.17" />
-  <link rel="stylesheet" href="css/shared/daily-highlight-graphics.css?v=1.75.17" />
-  <link rel="stylesheet" href="css/cards/daily-highlights.css?v=1.75.17" />
-  <link rel="stylesheet" href="css/cards/milky-way.css?v=1.75.17" />
-  <link rel="stylesheet" href="css/cards/conjunctions.css?v=1.75.17" />
-  <link rel="stylesheet" href="css/cards/constellation-visibility.css?v=1.75.17" />
-  <link rel="stylesheet" href="css/shared/constellation-details.css?v=1.75.17" />
-  <link rel="stylesheet" href="css/shared/constellation-illustrations.css?v=1.75.17" />
-  <link rel="stylesheet" href="css/shared/constellation-illustrations.css?v=1.75.17" />
-  <link rel="stylesheet" href="css/cards/retrograde.css?v=1.75.17" />
+  <link rel="stylesheet" href="css/base/styles.css?v=1.75.24" />
+  <link rel="stylesheet" href="css/cards/astronomy-explorer.css?v=1.75.24" />
+  <link rel="stylesheet" href="css/cards/sky-knowledge.css?v=1.75.24" />
+  <link rel="stylesheet" href="css/cards/idefix.css?v=1.75.24" />
+  <link rel="stylesheet" href="css/shared/earth-moon-visuals.css?v=1.75.24" />
+  <link rel="stylesheet" href="css/shared/meteor-labels.css?v=1.75.24" />
+  <link rel="stylesheet" href="css/shared/diagram-details.css?v=1.75.24" />
+  <link rel="stylesheet" href="css/shared/app-updates.css?v=1.75.24" />
+  <link rel="stylesheet" href="css/shared/direction-compass.css?v=1.75.24" />
+  <link rel="stylesheet" href="css/shared/celestial-bodies.css?v=1.75.24" />
+  <link rel="stylesheet" href="css/shared/daily-highlight-graphics.css?v=1.75.24" />
+  <link rel="stylesheet" href="css/cards/daily-highlights.css?v=1.75.24" />
+  <link rel="stylesheet" href="css/cards/milky-way.css?v=1.75.24" />
+  <link rel="stylesheet" href="css/cards/conjunctions.css?v=1.75.24" />
+  <link rel="stylesheet" href="css/cards/constellation-visibility.css?v=1.75.24" />
+  <link rel="stylesheet" href="css/shared/constellation-details.css?v=1.75.24" />
+  <link rel="stylesheet" href="css/shared/constellation-illustrations.css?v=1.75.24" />
+  <link rel="stylesheet" href="css/shared/constellation-illustrations.css?v=1.75.24" />
+  <link rel="stylesheet" href="css/cards/retrograde.css?v=1.75.24" />
 </head>
 <body>
   <div class="overlay-controls">
@@ -451,44 +451,101 @@
     </div>
 
     <section class="display-container idefix-card wide-card" data-help-key="idefix">
-      <h2 class="group-title" data-idefix-text="idefix_title"></h2>
-      <p class="idefix-intro" data-idefix-text="idefix_intro"></p>
-      <div class="idefix-views">
-        <svg id="idefixPlot" class="idefix-overview" viewBox="0 0 620 360" role="img">
-          <path id="idefixMarsOrbit" class="idefix-orbit idefix-orbit-mars"></path>
-          <path id="idefixEarthOrbit" class="idefix-orbit idefix-orbit-earth"></path>
-          <path id="idefixPrediction" class="idefix-prediction"></path>
-          <g id="idefixTrail" aria-hidden="true"></g>
-          <g transform="translate(310 180)" class="idefix-sun"><circle r="13"></circle><text y="31" text-anchor="middle" data-idefix-text="eclipse_sun"></text></g>
-          <g id="idefixEarth" class="idefix-earth"><circle r="6"></circle><text y="22" text-anchor="middle" data-idefix-text="planet_earth"></text></g>
-          <g id="idefixMars" class="idefix-mars"><circle r="5"></circle><text y="-15" text-anchor="middle" data-idefix-text="planet_mars"></text></g>
-          <g id="idefixProbe" class="idefix-probe"><rect x="-4" y="-4" width="8" height="8"></rect><path d="M -7 -7 L -3 -7 M 3 -7 L 7 -7 M -7 7 L -3 7 M 3 7 L 7 7"></path></g>
-        </svg>
-        <div class="idefix-moon-view">
-          <svg id="idefixMoonPlot" viewBox="0 0 200 190" role="img">
-            <circle class="idefix-moon-orbit" cx="100" cy="92" r="60"></circle>
-            <g class="idefix-mars" transform="translate(100 92)"><circle r="17"></circle><text y="34" text-anchor="middle" data-idefix-text="planet_mars"></text></g>
-            <g id="idefixPhobos" class="idefix-phobos"><path d="M -6 -3 L -2 -6 L 5 -3 L 6 3 L 0 5 L -5 2 Z"></path></g>
-            <g id="idefixRoverOnPhobos" class="idefix-rover-target"><rect x="-4" y="-4" width="8" height="8"></rect></g>
-            <text class="idefix-phobos-caption" x="100" y="176" text-anchor="middle" data-idefix-text="idefix_phobos"></text>
+      <h2 id="spaceMissionsTitle" class="group-title" data-idefix-text="space_missions"></h2>
+      <div id="spaceMissionTabs" class="idefix-controls" role="tablist" aria-labelledby="spaceMissionsTitle"></div>
+      <div id="spaceMissionIdefix" class="space-mission-panel" role="tabpanel">
+        <h3 class="space-mission-title" data-idefix-text="idefix_title"></h3>
+        <p class="idefix-intro" data-idefix-text="idefix_intro"></p>
+        <div class="idefix-views">
+          <svg id="idefixPlot" class="idefix-overview" viewBox="0 0 620 360" role="img">
+            <path id="idefixMarsOrbit" class="idefix-orbit idefix-orbit-mars"></path>
+            <path id="idefixEarthOrbit" class="idefix-orbit idefix-orbit-earth"></path>
+            <path id="idefixPrediction" class="idefix-prediction"></path>
+            <g id="idefixTrail" aria-hidden="true"></g>
+            <g transform="translate(310 180)" class="idefix-sun"><circle r="13"></circle><text y="31" text-anchor="middle" data-idefix-text="eclipse_sun"></text></g>
+            <g id="idefixEarth" class="idefix-earth"><circle r="6"></circle><text y="22" text-anchor="middle" data-idefix-text="planet_earth"></text></g>
+            <g id="idefixMars" class="idefix-mars"><circle r="5"></circle><text y="-15" text-anchor="middle" data-idefix-text="planet_mars"></text></g>
+            <g id="idefixProbe" class="idefix-probe"><rect x="-4" y="-4" width="8" height="8"></rect><path d="M -7 -7 L -3 -7 M 3 -7 L 7 -7 M -7 7 L -3 7 M 3 7 L 7 7"></path></g>
           </svg>
+          <div class="idefix-moon-view">
+            <svg id="idefixMoonPlot" viewBox="0 0 200 190" role="img">
+              <circle class="idefix-moon-orbit" cx="100" cy="92" r="60"></circle>
+              <g class="idefix-mars" transform="translate(100 92)"><circle r="17"></circle><text y="34" text-anchor="middle" data-idefix-text="planet_mars"></text></g>
+              <g id="idefixPhobos" class="idefix-phobos"><path d="M -6 -3 L -2 -6 L 5 -3 L 6 3 L 0 5 L -5 2 Z"></path></g>
+              <g id="idefixRoverOnPhobos" class="idefix-rover-target"><rect x="-4" y="-4" width="8" height="8"></rect></g>
+              <text class="idefix-phobos-caption" x="100" y="176" text-anchor="middle" data-idefix-text="idefix_phobos"></text>
+            </svg>
+          </div>
         </div>
+        <div class="idefix-legend">
+          <span><i class="idefix-key-pixels"></i><span data-idefix-text="idefix_pixels"></span></span>
+          <span><i class="idefix-key-line"></i><span data-idefix-text="idefix_forecast"></span></span>
+          <span><i class="idefix-key-target"></i><span data-idefix-text="idefix_target"></span></span>
+        </div>
+        <div class="mission-animation-controls">
+          <button id="idefixPlay" type="button" class="mission-play"></button>
+          <label for="idefixTime" class="mission-time-label" data-idefix-text="idefix_explore"></label>
+          <input id="idefixTime" class="explorer-slider" type="range" min="0" max="1900" step="any" value="0" />
+          <output id="idefixDate" class="mission-time-readout" for="idefixTime"></output>
+        </div>
+        <p id="idefixPosition" class="idefix-position"></p>
+        <div id="idefixControls" class="idefix-controls" role="group"></div>
+        <div id="idefixJumps" class="idefix-jumps"></div>
+        <div class="idefix-phase-box"><span class="idefix-eyebrow" data-idefix-text="idefix_plan_heading"></span><strong id="idefixPhase"></strong><p id="idefixPhaseDetail"></p></div>
+        <div class="idefix-news"><h3 data-idefix-text="idefix_news_heading"></h3><p id="idefixLatest"></p><p id="idefixVerified"></p><p id="idefixStale" data-idefix-text="idefix_stale" hidden></p></div>
+        <p id="idefixCoverage" class="idefix-coverage"></p>
+        <nav id="idefixLinks" class="idefix-links"></nav>
       </div>
-      <div class="idefix-legend">
-        <span><i class="idefix-key-pixels"></i><span data-idefix-text="idefix_pixels"></span></span>
-        <span><i class="idefix-key-line"></i><span data-idefix-text="idefix_forecast"></span></span>
-        <span><i class="idefix-key-target"></i><span data-idefix-text="idefix_target"></span></span>
-      </div>
-      <input id="idefixTime" class="explorer-slider" type="range" min="0" max="1900" step="any" value="0" />
-      <p id="idefixPosition" class="idefix-position"></p>
-      <div class="idefix-date-heading"><label for="idefixTime" data-idefix-text="idefix_explore"></label><output id="idefixDate" for="idefixTime"></output></div>
-      <div id="idefixControls" class="idefix-controls" role="group"></div>
-      <div id="idefixJumps" class="idefix-jumps"></div>
-      <div class="idefix-phase-box"><span class="idefix-eyebrow" data-idefix-text="idefix_plan_heading"></span><strong id="idefixPhase"></strong><p id="idefixPhaseDetail"></p></div>
-      <div class="idefix-news"><h3 data-idefix-text="idefix_news_heading"></h3><p id="idefixLatest"></p><p id="idefixVerified"></p><p id="idefixStale" data-idefix-text="idefix_stale" hidden></p></div>
-      <p id="idefixCoverage" class="idefix-coverage"></p>
-      <nav id="idefixLinks" class="idefix-links"></nav>
     </section>
+    <template id="spaceMissionPanelTemplate">
+      <div class="space-mission-panel" role="tabpanel" hidden>
+        <h3 class="space-mission-title"></h3>
+        <p class="idefix-intro"></p>
+        <div class="mission-animation"></div>
+        <ol class="space-mission-timeline"></ol>
+        <div class="idefix-links"></div>
+      </div>
+    </template>
+    <template id="spaceMissionEventTemplate">
+      <li><time></time><span></span><small></small></li>
+    </template>
+    <template id="spaceMissionAnimationTemplate">
+      <div class="mission-animation-views idefix-controls" role="group"></div>
+      <svg class="mission-animation-plot" viewBox="0 0 600 380" role="img">
+        <path class="mission-reference-orbits"></path>
+        <path class="mission-route-overview"></path>
+        <path class="mission-tracked-path"></path>
+        <path class="mission-predicted-path"></path>
+        <path class="mission-mio-track"></path>
+        <g class="mission-reference-bodies"></g>
+        <g class="mission-spacecraft"></g>
+      </svg>
+      <div class="mission-animation-controls">
+        <button type="button" class="mission-play"></button>
+        <label class="mission-time-label"></label>
+        <input class="mission-time explorer-slider" type="range" min="0" value="0" />
+        <output class="mission-time-readout"></output>
+        <p class="mission-dashboard-status" hidden></p>
+      </div>
+      <p class="mission-animation-source"></p>
+      <div class="mission-animation-links idefix-links"></div>
+    </template>
+    <template id="spaceMissionMarkerTemplate">
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <g><circle r="5"></circle><text x="0" y="-12" text-anchor="middle"></text></g>
+      </svg>
+    </template>
+    <template id="spaceMissionLanderTemplate">
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <g class="mission-lander">
+          <path class="mission-entry-shield" d="M-11 -3 Q0 -15 11 -3 L8 6 H-8 Z"></path>
+          <path class="mission-parachute" d="M-18 -21 Q0 -44 18 -21 Z M-18 -21 L0 -4 L18 -21"></path>
+          <path class="mission-rotors" d="M-18 -7 H-3 M3 -7 H18 M-10 -7 V0 M10 -7 V0"></path>
+          <path class="mission-landing-legs" d="M-5 2 L-10 8 H-14 M5 2 L10 8 H14"></path>
+          <rect x="-9" y="-4" width="18" height="9" rx="3"></rect>
+        </g>
+      </svg>
+    </template>
     <template id="idefixTrailPixelTemplate"><svg xmlns="http://www.w3.org/2000/svg"><rect width="2" height="2" class="idefix-trail-pixel"></rect></svg></template>
     <template id="idefixControlTemplate"><button type="button"></button></template>
     <template id="idefixLinkTemplate"><a target="_blank" rel="noopener noreferrer"></a></template>
@@ -1394,116 +1451,120 @@
     </div>
   </template>
 
-  <script src="js/data/translations.js?v=1.75.17"></script>
-  <script src="js/data/milky-way-config.js?v=1.75.17"></script>
-  <script src="js/core/app-updates.js?v=1.75.17"></script>
-  <script src="js/data/card-help-config.js?v=1.75.17"></script>
-  <script src="js/data/calendar-events.js?v=1.75.17"></script>
-  <script src="js/data/eclipse-calendar-config.js?v=1.75.17"></script>
-  <script src="js/data/small-bodies-config.js?v=1.75.17"></script>
-  <script src="js/data/phenomena-config.js?v=1.75.17"></script>
-  <script src="js/data/constellation-illustrations-config.js?v=1.75.17"></script>
-  <script src="js/data/constellation-illustrations-config.js?v=1.75.17"></script>
-  <script src="js/data/constellation-descriptions.js?v=1.75.17"></script>
-  <script src="js/data/constellation-visibility-config.js?v=1.75.17"></script>
-  <script src="js/data/bsky-feed-config.js?v=1.75.17"></script>
-  <script src="js/data/extended-calendar-config.js?v=1.75.17"></script>
-  <script src="js/data/locations-config.js?v=1.75.17"></script>
-  <script src="js/data/eclipse-visibility-config.js?v=1.75.17"></script>
-  <script src="js/data/eclipse-phase-config.js?v=1.75.17"></script>
-  <script src="js/data/astronomy-explorer-config.js?v=1.75.17"></script>
-  <script src="js/data/voyager-data.js?v=1.75.17"></script>
-  <script src="js/models/conjunction-model.js?v=1.75.17"></script>
-  <script src="js/models/astronomy-explorer-model.js?v=1.75.17"></script>
-  <script src="js/cards/astronomy-explorer.js?v=1.75.17"></script>
-  <script src="js/data/daily-highlights-config.js?v=1.75.17"></script>
-  <script src="js/models/daily-highlights-model.js?v=1.75.17"></script>
-  <script src="js/shared/direction-compass.js?v=1.75.17"></script>
-  <script src="js/data/celestial-bodies-config.js?v=1.75.17"></script>
-  <script src="js/shared/celestial-bodies.js?v=1.75.17"></script>
-  <script src="js/shared/solar-system-labels.js?v=1.75.17"></script>
-  <script src="js/data/solar-system-config.js?v=1.75.17"></script>
-  <script src="js/shared/daily-highlight-graphics.js?v=1.75.17"></script>
-  <script src="js/cards/daily-highlights.js?v=1.75.17"></script>
-  <script src="js/models/milky-way-sky-model.js?v=1.75.17"></script>
-  <script src="js/cards/milky-way.js?v=1.75.17"></script>
-  <script src="js/data/mnemonics-config.js?v=1.75.17"></script>
-  <script src="js/data/sky-knowledge-graphics-config.js?v=1.75.17"></script>
-  <script src="js/shared/sky-knowledge-graphics.js?v=1.75.17"></script>
-  <script src="js/cards/sky-knowledge.js?v=1.75.17"></script>
-  <script src="js/shared/diagram-details.js?v=1.75.17"></script>
-  <script src="js/shared/constellation-details.js?v=1.75.17"></script>
-  <script src="js/shared/constellation-illustrations.js?v=1.75.17"></script>
-  <script src="js/shared/constellation-illustrations.js?v=1.75.17"></script>
-  <script src="js/shared/earth-moon-visuals.js?v=1.75.17"></script>
-  <script src="js/shared/meteor-labels.js?v=1.75.17"></script>
-  <script src="js/data/idefix-config.js?v=1.75.17"></script>
-  <script src="js/data/idefix-ephemeris.js?v=1.75.17"></script>
-  <script src="js/models/idefix-model.js?v=1.75.17"></script>
-  <script src="js/cards/idefix.js?v=1.75.17"></script>
-  <script src="js/core/date-time.js?v=1.75.17"></script>
-  <script src="js/core/observation-format.js?v=1.75.17"></script>
-  <script src="js/models/astronomy-coordinates.js?v=1.75.17"></script>
-  <script src="js/models/constellation-visibility-model.js?v=1.75.17"></script>
-  <script src="js/data/planet-elements-config.js?v=1.75.17"></script>
-  <script src="js/models/planet-model.js?v=1.75.17"></script>
-  <script src="js/models/moon-model.js?v=1.75.17"></script>
-  <script src="js/models/solar-visibility-model.js?v=1.75.17"></script>
-  <script src="js/models/eclipse-model.js?v=1.75.17"></script>
-  <script src="js/models/eclipse-location-model.js?v=1.75.17"></script>
-  <script src="js/core/dashboard-context.js?v=1.75.17"></script>
-  <script src="js/core/dashboard-errors.js?v=1.75.17"></script>
-  <script src="js/core/dashboard-refresh.js?v=1.75.17"></script>
-  <script src="js/core/date-location-controls.js?v=1.75.17"></script>
-  <script src="js/cards/solar-system.js?v=1.75.17"></script>
-  <script src="js/cards/earth-moon.js?v=1.75.17"></script>
-  <script src="js/core/dashboard-layout.js?v=1.75.17"></script>
-  <script src="js/data/card-sizes-config.js?v=1.75.17"></script>
-  <script src="js/core/card-sizes.js?v=1.75.17"></script>
-  <script src="js/core/card-help.js?v=1.75.17"></script>
-  <script src="js/core/card-navigation.js?v=1.75.17"></script>
-  <script src="js/cards/conjunctions.js?v=1.75.17"></script>
-  <script src="js/cards/meteor-streams.js?v=1.75.17"></script>
-  <script src="js/cards/constellation-month.js?v=1.75.17"></script>
-  <script src="js/cards/constellation-year.js?v=1.75.17"></script>
-  <script src="js/cards/constellation-visibility.js?v=1.75.17"></script>
-  <script src="js/cards/seasons.js?v=1.75.17"></script>
-  <script src="js/models/retrograde-model.js?v=1.75.17"></script>
-  <script src="js/cards/retrograde.js?v=1.75.17"></script>
-  <script src="js/models/inner-planets-model.js?v=1.75.17"></script>
-  <script src="js/cards/inner-planets.js?v=1.75.17"></script>
-  <script src="js/data/barycenter-config.js?v=1.75.17"></script>
-  <script src="js/models/barycenter-model.js?v=1.75.17"></script>
-  <script src="js/cards/barycenter.js?v=1.75.17"></script>
-  <script src="js/models/lagrange-model.js?v=1.75.17"></script>
-  <script src="js/cards/lagrange.js?v=1.75.17"></script>
-  <script src="js/models/analemma-model.js?v=1.75.17"></script>
-  <script src="js/cards/analemma.js?v=1.75.17"></script>
-  <script src="js/models/exoplanets-model.js?v=1.75.17"></script>
-  <script src="js/cards/exoplanets.js?v=1.75.17"></script>
-  <script src="js/models/satellites-model.js?v=1.75.17"></script>
-  <script src="js/cards/satellites.js?v=1.75.17"></script>
-  <script src="js/models/small-bodies-model.js?v=1.75.17"></script>
-  <script src="js/cards/small-bodies.js?v=1.75.17"></script>
-  <script src="js/models/spacecraft-model.js?v=1.75.17"></script>
-  <script src="js/cards/spacecraft.js?v=1.75.17"></script>
-  <script src="js/data/aurora-data-config.js?v=1.75.17"></script>
-  <script src="js/services/aurora-data.js?v=1.75.17"></script>
-  <script src="js/cards/aurora-card.js?v=1.75.17"></script>
-  <script src="js/services/bsky-feed-data.js?v=1.75.17"></script>
-  <script src="js/cards/bsky-feed-card.js?v=1.75.17"></script>
-  <script src="js/models/calendar-model.js?v=1.75.17"></script>
-  <script src="js/cards/calendar.js?v=1.75.17"></script>
-  <script src="js/cards/sunlight-card.js?v=1.75.17"></script>
-  <script src="js/cards/planet-visibility.js?v=1.75.17"></script>
-  <script src="js/cards/polaris-card.js?v=1.75.17"></script>
-  <script src="js/cards/eclipse-geometry.js?v=1.75.17"></script>
-  <script src="js/cards/moon-nodes-card.js?v=1.75.17"></script>
-  <script src="js/data/jupiter-moons-config.js?v=1.75.17"></script>
-  <script src="js/cards/jupiter-card.js?v=1.75.17"></script>
-  <script src="js/data/planetary-systems-config.js?v=1.75.17"></script>
-  <script src="js/cards/planetary-systems-card.js?v=1.75.17"></script>
-  <script src="js/core/dashboard-i18n.js?v=1.75.17"></script>
-  <script src="js/core/app.js?v=1.75.17"></script>
+  <script src="js/data/translations.js?v=1.75.24"></script>
+  <script src="js/data/milky-way-config.js?v=1.75.24"></script>
+  <script src="js/core/app-updates.js?v=1.75.24"></script>
+  <script src="js/data/card-help-config.js?v=1.75.24"></script>
+  <script src="js/data/calendar-events.js?v=1.75.24"></script>
+  <script src="js/data/eclipse-calendar-config.js?v=1.75.24"></script>
+  <script src="js/data/small-bodies-config.js?v=1.75.24"></script>
+  <script src="js/data/phenomena-config.js?v=1.75.24"></script>
+  <script src="js/data/constellation-illustrations-config.js?v=1.75.24"></script>
+  <script src="js/data/constellation-illustrations-config.js?v=1.75.24"></script>
+  <script src="js/data/constellation-descriptions.js?v=1.75.24"></script>
+  <script src="js/data/constellation-visibility-config.js?v=1.75.24"></script>
+  <script src="js/data/bsky-feed-config.js?v=1.75.24"></script>
+  <script src="js/data/extended-calendar-config.js?v=1.75.24"></script>
+  <script src="js/data/locations-config.js?v=1.75.24"></script>
+  <script src="js/data/eclipse-visibility-config.js?v=1.75.24"></script>
+  <script src="js/data/eclipse-phase-config.js?v=1.75.24"></script>
+  <script src="js/data/astronomy-explorer-config.js?v=1.75.24"></script>
+  <script src="js/data/voyager-data.js?v=1.75.24"></script>
+  <script src="js/models/conjunction-model.js?v=1.75.24"></script>
+  <script src="js/models/astronomy-explorer-model.js?v=1.75.24"></script>
+  <script src="js/cards/astronomy-explorer.js?v=1.75.24"></script>
+  <script src="js/data/daily-highlights-config.js?v=1.75.24"></script>
+  <script src="js/models/daily-highlights-model.js?v=1.75.24"></script>
+  <script src="js/shared/direction-compass.js?v=1.75.24"></script>
+  <script src="js/data/celestial-bodies-config.js?v=1.75.24"></script>
+  <script src="js/shared/celestial-bodies.js?v=1.75.24"></script>
+  <script src="js/shared/solar-system-labels.js?v=1.75.24"></script>
+  <script src="js/data/solar-system-config.js?v=1.75.24"></script>
+  <script src="js/shared/daily-highlight-graphics.js?v=1.75.24"></script>
+  <script src="js/cards/daily-highlights.js?v=1.75.24"></script>
+  <script src="js/models/milky-way-sky-model.js?v=1.75.24"></script>
+  <script src="js/cards/milky-way.js?v=1.75.24"></script>
+  <script src="js/data/mnemonics-config.js?v=1.75.24"></script>
+  <script src="js/data/sky-knowledge-graphics-config.js?v=1.75.24"></script>
+  <script src="js/shared/sky-knowledge-graphics.js?v=1.75.24"></script>
+  <script src="js/cards/sky-knowledge.js?v=1.75.24"></script>
+  <script src="js/shared/diagram-details.js?v=1.75.24"></script>
+  <script src="js/shared/constellation-details.js?v=1.75.24"></script>
+  <script src="js/shared/constellation-illustrations.js?v=1.75.24"></script>
+  <script src="js/shared/constellation-illustrations.js?v=1.75.24"></script>
+  <script src="js/shared/earth-moon-visuals.js?v=1.75.24"></script>
+  <script src="js/shared/meteor-labels.js?v=1.75.24"></script>
+  <script src="js/data/idefix-config.js?v=1.75.24"></script>
+  <script src="js/data/idefix-ephemeris.js?v=1.75.24"></script>
+  <script src="js/models/idefix-model.js?v=1.75.24"></script>
+  <script src="js/cards/idefix.js?v=1.75.24"></script>
+  <script src="js/data/space-missions.js?v=1.75.24"></script>
+  <script src="js/data/space-mission-trajectories.js?v=1.75.24"></script>
+  <script src="js/cards/space-mission-animation.js?v=1.75.24"></script>
+  <script src="js/cards/space-missions.js?v=1.75.24"></script>
+  <script src="js/core/date-time.js?v=1.75.24"></script>
+  <script src="js/core/observation-format.js?v=1.75.24"></script>
+  <script src="js/models/astronomy-coordinates.js?v=1.75.24"></script>
+  <script src="js/models/constellation-visibility-model.js?v=1.75.24"></script>
+  <script src="js/data/planet-elements-config.js?v=1.75.24"></script>
+  <script src="js/models/planet-model.js?v=1.75.24"></script>
+  <script src="js/models/moon-model.js?v=1.75.24"></script>
+  <script src="js/models/solar-visibility-model.js?v=1.75.24"></script>
+  <script src="js/models/eclipse-model.js?v=1.75.24"></script>
+  <script src="js/models/eclipse-location-model.js?v=1.75.24"></script>
+  <script src="js/core/dashboard-context.js?v=1.75.24"></script>
+  <script src="js/core/dashboard-errors.js?v=1.75.24"></script>
+  <script src="js/core/dashboard-refresh.js?v=1.75.24"></script>
+  <script src="js/core/date-location-controls.js?v=1.75.24"></script>
+  <script src="js/cards/solar-system.js?v=1.75.24"></script>
+  <script src="js/cards/earth-moon.js?v=1.75.24"></script>
+  <script src="js/core/dashboard-layout.js?v=1.75.24"></script>
+  <script src="js/data/card-sizes-config.js?v=1.75.24"></script>
+  <script src="js/core/card-sizes.js?v=1.75.24"></script>
+  <script src="js/core/card-help.js?v=1.75.24"></script>
+  <script src="js/core/card-navigation.js?v=1.75.24"></script>
+  <script src="js/cards/conjunctions.js?v=1.75.24"></script>
+  <script src="js/cards/meteor-streams.js?v=1.75.24"></script>
+  <script src="js/cards/constellation-month.js?v=1.75.24"></script>
+  <script src="js/cards/constellation-year.js?v=1.75.24"></script>
+  <script src="js/cards/constellation-visibility.js?v=1.75.24"></script>
+  <script src="js/cards/seasons.js?v=1.75.24"></script>
+  <script src="js/models/retrograde-model.js?v=1.75.24"></script>
+  <script src="js/cards/retrograde.js?v=1.75.24"></script>
+  <script src="js/models/inner-planets-model.js?v=1.75.24"></script>
+  <script src="js/cards/inner-planets.js?v=1.75.24"></script>
+  <script src="js/data/barycenter-config.js?v=1.75.24"></script>
+  <script src="js/models/barycenter-model.js?v=1.75.24"></script>
+  <script src="js/cards/barycenter.js?v=1.75.24"></script>
+  <script src="js/models/lagrange-model.js?v=1.75.24"></script>
+  <script src="js/cards/lagrange.js?v=1.75.24"></script>
+  <script src="js/models/analemma-model.js?v=1.75.24"></script>
+  <script src="js/cards/analemma.js?v=1.75.24"></script>
+  <script src="js/models/exoplanets-model.js?v=1.75.24"></script>
+  <script src="js/cards/exoplanets.js?v=1.75.24"></script>
+  <script src="js/models/satellites-model.js?v=1.75.24"></script>
+  <script src="js/cards/satellites.js?v=1.75.24"></script>
+  <script src="js/models/small-bodies-model.js?v=1.75.24"></script>
+  <script src="js/cards/small-bodies.js?v=1.75.24"></script>
+  <script src="js/models/spacecraft-model.js?v=1.75.24"></script>
+  <script src="js/cards/spacecraft.js?v=1.75.24"></script>
+  <script src="js/data/aurora-data-config.js?v=1.75.24"></script>
+  <script src="js/services/aurora-data.js?v=1.75.24"></script>
+  <script src="js/cards/aurora-card.js?v=1.75.24"></script>
+  <script src="js/services/bsky-feed-data.js?v=1.75.24"></script>
+  <script src="js/cards/bsky-feed-card.js?v=1.75.24"></script>
+  <script src="js/models/calendar-model.js?v=1.75.24"></script>
+  <script src="js/cards/calendar.js?v=1.75.24"></script>
+  <script src="js/cards/sunlight-card.js?v=1.75.24"></script>
+  <script src="js/cards/planet-visibility.js?v=1.75.24"></script>
+  <script src="js/cards/polaris-card.js?v=1.75.24"></script>
+  <script src="js/cards/eclipse-geometry.js?v=1.75.24"></script>
+  <script src="js/cards/moon-nodes-card.js?v=1.75.24"></script>
+  <script src="js/data/jupiter-moons-config.js?v=1.75.24"></script>
+  <script src="js/cards/jupiter-card.js?v=1.75.24"></script>
+  <script src="js/data/planetary-systems-config.js?v=1.75.24"></script>
+  <script src="js/cards/planetary-systems-card.js?v=1.75.24"></script>
+  <script src="js/core/dashboard-i18n.js?v=1.75.24"></script>
+  <script src="js/core/app.js?v=1.75.24"></script>
 </body>
 </html>

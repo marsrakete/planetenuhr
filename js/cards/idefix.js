@@ -3,8 +3,8 @@ window.PLANETENUHR_IDEFIX = (() => {
 
   /**
    * Creates the dated MMX/IDEFIX journey card using retained SVG and HTML template nodes.
-   * @param {object} dependencies getDate, getLanguage, getTranslations, getHeliocentricPosition and updateCardLayout adapters.
-   * @returns {{render:Function}} Controller preserving local exploration until the dashboard date changes.
+   * @param {object} dependencies Dashboard, layout and playback adapters.
+   * @returns {{render:Function,pause:Function}} Controller preserving local exploration until the dashboard date changes.
    */
   function create(dependencies){
     const config = window.PLANETENUHR_IDEFIX_CONFIG;
@@ -24,6 +24,24 @@ window.PLANETENUHR_IDEFIX = (() => {
     const end = Date.parse(config.timelineEnd);
     slider.max = String((end - start) / 86400000);
     const pixels = [];
+    const dateFormatters = new Map();
+    const play = document.getElementById('idefixPlay');
+    const playback = dependencies.createPlayback({
+      getValue: () => Number(slider.value),
+      getMax: () => Number(slider.max),
+      getDuration: () => 22000,
+      onFrame(value) {
+        followNow = false;
+        localDate = new Date(start + value * 86400000);
+        render();
+      },
+      onState(playing) {
+        play.textContent = text(playing ? 'space_pause' : 'space_play');
+        if (!playing) {
+          dependencies.updateCardLayout(card);
+        }
+      }
+    });
 
     /** Returns an active-language label. @param {string} key Translation key. @returns {string} Localized text. */
     function text(key){
@@ -49,6 +67,11 @@ window.PLANETENUHR_IDEFIX = (() => {
 
     /** Formats dates in the browser's civil time, explicitly including its zone for instants. @param {Date} date Instant. @param {boolean} [withTime=false] Include time and zone. @returns {string} Localized date. */
     function formatDate(date, withTime = false){
+      const language = dependencies.getLanguage();
+      const key = language + ':' + withTime;
+      if (dateFormatters.has(key)) {
+        return dateFormatters.get(key).format(date);
+      }
       const options = {year:'numeric',month:'2-digit',day:'2-digit'};
       if (withTime) {
         options.hour = '2-digit';
@@ -56,7 +79,9 @@ window.PLANETENUHR_IDEFIX = (() => {
         options.timeZoneName = 'short';
         options.hour12 = false;
       }
-      return new Intl.DateTimeFormat(dependencies.getLanguage(), options).format(date);
+      const formatter = new Intl.DateTimeFormat(language, options);
+      dateFormatters.set(key, formatter);
+      return formatter.format(date);
     }
 
     /** Moves an existing SVG group. @param {string} id Group id. @param {{x:number,y:number}} point SVG point. @returns {void} */
@@ -116,15 +141,12 @@ window.PLANETENUHR_IDEFIX = (() => {
         return;
       }
       lastPlotWidth = width;
-      let viewWidth = 620;
       let viewBox = '0 -25 620 410';
       if (width < 400) {
-        viewWidth = 400;
         viewBox = '110 -25 400 410';
       }
       plot.setAttribute('viewBox', viewBox);
-      const fontSize = 12 * viewWidth / width;
-      plot.style.setProperty('--idefix-label-size', fontSize + 'px');
+      const fontSize = dependencies.fitPlotLabels(plot, width);
       document.querySelector('#idefixEarth text').setAttribute('y', String(fontSize + 12));
     }
 
@@ -166,11 +188,13 @@ window.PLANETENUHR_IDEFIX = (() => {
     /**
      * Displays an instant, distinguishing JPL forecast positions, unavailable positions and a planned destination.
      * @param {Date} [date] Updated shared dashboard date.
+     * @param {boolean} [resetLocal=false] Whether the global Today control should override local exploration.
      * @returns {void}
      */
-    function render(date){
+    function render(date, resetLocal = false){
       if (date) {
-        if (Math.abs(date.getTime() - baseDate.getTime()) > 12 * 3600000) {
+        if (resetLocal || Math.abs(date.getTime() - baseDate.getTime()) > 12 * 3600000) {
+          playback.pause();
           localDate = null;
           followNow = false;
         }
@@ -213,15 +237,21 @@ window.PLANETENUHR_IDEFIX = (() => {
         if (pixel.time <= timestamp) {
           visibility = 'visible';
         }
-        pixel.node.setAttribute('visibility', visibility);
+        if (pixel.node.getAttribute('visibility') !== visibility) {
+          pixel.node.setAttribute('visibility', visibility);
+        }
       });
       const angle = model.phobosAngle(currentDate, config);
       const moon = {x:100 + Math.cos(angle) * 60,y:92 - Math.sin(angle) * 60};
       move('idefixPhobos', moon);
       move('idefixRoverOnPhobos', {x:moon.x,y:moon.y - 9});
       document.querySelectorAll('[data-idefix-text]').forEach(node => {
-        node.textContent = text(node.dataset.idefixText);
+        const label = text(node.dataset.idefixText);
+        if (node.textContent !== label) {
+          node.textContent = label;
+        }
       });
+      write('idefixPlay', text(playback.isPlaying() ? 'space_pause' : 'space_play'));
       write('idefixDate', formatDate(currentDate, true));
       write('idefixPhase', text('idefix_phase_' + phase));
       write('idefixPhaseDetail', text('idefix_detail_' + phase));
@@ -234,11 +264,14 @@ window.PLANETENUHR_IDEFIX = (() => {
       slider.setAttribute('aria-valuetext', formatDate(currentDate, true));
       plot.setAttribute('aria-label', message('idefix_plot_aria', {date:formatDate(currentDate),mode:text('idefix_position_' + positionMode)}));
       document.getElementById('idefixMoonPlot').setAttribute('aria-label', text('idefix_moon_aria'));
-      dependencies.updateCardLayout(card);
+      if (!playback.isPlaying()) {
+        dependencies.updateCardLayout(card);
+      }
     }
 
     /** Explores a UTC instant within the slider's mission period. No parameters. @returns {void} */
     function seek(){
+      playback.pause();
       followNow = false;
       localDate = new Date(start + Number(slider.value) * 86400000);
       render();
@@ -251,13 +284,10 @@ window.PLANETENUHR_IDEFIX = (() => {
         return;
       }
       const action = button.dataset.idefixAction;
+      playback.pause();
       if (action === 'today') {
         followNow = true;
         localDate = null;
-      } else if (action === 'shared') {
-        followNow = false;
-        localDate = null;
-        baseDate = dependencies.getDate();
       } else if (action === 'jump') {
         followNow = false;
         localDate = new Date(button.dataset.date);
@@ -293,6 +323,7 @@ window.PLANETENUHR_IDEFIX = (() => {
     buildLinks();
     buildControls();
     slider.addEventListener('input', seek);
+    play.addEventListener('click', playback.toggle);
     card.addEventListener('click', control);
     if ('ResizeObserver' in window) {
       new ResizeObserver(schedulePlotResize).observe(plot);
@@ -301,7 +332,7 @@ window.PLANETENUHR_IDEFIX = (() => {
     }
     setInterval(refreshCurrent, 60000);
     render();
-    return {render};
+    return {render, pause:playback.pause};
   }
 
   return {create};

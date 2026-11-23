@@ -92,6 +92,7 @@
       document, window, context:dashboardContext, getTranslations:() => t, getNow:() => new Date(),
       formatDate:formatDateStamp, syncUrl:cardNavigation.syncUrlState,
       refresh:dashboardLayout.refreshDateDrivenTilesWithAnchor, requestLayout:dashboardLayout.requestMasonryLayout,
+      onToday: date => idefixMission?.render(date, true),
       locations, getLocationOptionLabel:locationOptionLabel
     });
     const planetarySystemsController = window.PLANETENUHR_PLANETARY_SYSTEMS_CARD.create({
@@ -1090,11 +1091,23 @@
       solarDateSlider.value = String(dashboardContext.getDayOffset());
       solarDateSlider.setAttribute('aria-valuenow', String(dashboardContext.getDayOffset()));
     }
-    idefixMission = window.PLANETENUHR_IDEFIX.create({
+    idefixMission = window.PLANETENUHR_SPACE_MISSIONS.create(window.PLANETENUHR_IDEFIX.create({
+      createPlayback: window.PLANETENUHR_SPACE_MISSION_ANIMATION.createPlayback,
+      fitPlotLabels: window.PLANETENUHR_SPACE_MISSION_ANIMATION.fitPlotLabels,
       getDate:dashboardContext.getDate,
       getLanguage: () => lang,
       getTranslations: () => t,
       getHeliocentricPosition: window.PLANETENUHR_PLANET_MODEL.heliocentricPosition,
+      updateCardLayout: dashboardLayout.updateSingleCardMasonryLayout
+    }), {
+      card: document.querySelector('[data-help-key="idefix"]'),
+      missions: window.PLANETENUHR_SPACE_MISSION_DATA,
+      createAnimation: window.PLANETENUHR_SPACE_MISSION_ANIMATION.create,
+      trajectories: window.PLANETENUHR_SPACE_MISSION_TRAJECTORIES,
+      positionAt: window.PLANETENUHR_IDEFIX_MODEL.positionAt,
+      getHeliocentricPosition: window.PLANETENUHR_PLANET_MODEL.heliocentricPosition,
+      getLanguage: () => lang,
+      getTranslations: () => t,
       updateCardLayout: dashboardLayout.updateSingleCardMasonryLayout
     });
     skyKnowledge = window.PLANETENUHR_KNOWLEDGE.create({
