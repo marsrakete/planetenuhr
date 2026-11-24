@@ -101,20 +101,22 @@ window.PLANETENUHR_AURORA_CARD = (() => {
 
     /** Loads NOAA data and preserves the existing loading, cache and unavailable states.
      * @param {boolean} [force=false] Bypass a fresh cache when requesting data.
+     * @param {AbortSignal} [signal] Canceled when the visitor revokes access.
      * @returns {Promise<object|null>} Loaded Kp sample or null when unavailable.
      */
-    function load(force = false){
+    function load(force = false, signal){
       const panel = document.getElementById('auroraPanel');
-      if (!panel) return Promise.resolve(null);
+      if (!panel || signal?.aborted) return Promise.resolve(null);
       const cached = options.data.getFreshSample();
       if (!force && cached) {
         renderSample(cached);
         return Promise.resolve(cached);
       }
-      if (options.data.hasPending()) return options.data.load(force);
+      if (options.data.hasPending(signal)) return options.data.load(force, signal);
 
       renderState({loading:true});
-      return options.data.load(force).then(sample => {
+      return options.data.load(force, signal).then(sample => {
+        if (signal?.aborted) return null;
         if (!sample) {
           const t = options.getTranslations();
           renderState({
@@ -129,7 +131,15 @@ window.PLANETENUHR_AURORA_CARD = (() => {
       });
     }
 
-    return {load,renderState};
+    /** Removes displayed live data when consent is revoked.
+     * No parameters. @returns {void}
+     */
+    function clear(){
+      document.getElementById('auroraStatus').textContent = '';
+      document.getElementById('auroraMeta').replaceChildren();
+    }
+
+    return {load,renderState,clear};
   }
 
   return {create};

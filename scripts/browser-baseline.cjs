@@ -700,9 +700,9 @@ async function runCase(browser,url,language,width){
       const actor = requestUrl.searchParams.get('actor');
       let feed = [];
       if (actor === 'dlr-next.bsky.social') {
-        feed = [{post:{uri:'at://did:plc:planetenuhr/app.bsky.feed.post/dlr-today',indexedAt:'2026-10-27T12:00:00Z',author:{handle:actor,displayName:'DLR-next'},record:{createdAt:'2026-10-27T12:00:00Z',text:'Test post for the current day'},embed:{images:[{fullsize:'https://cdn.example.test/dlr.jpg',alt:'Mars mission'}]}}}];
+        feed = [{post:{uri:'at://did:plc:planetenuhr/app.bsky.feed.post/dlr-today',indexedAt:'2026-10-27T12:00:00Z',author:{handle:actor,displayName:'DLR-next'},record:{createdAt:'2026-10-27T12:00:00Z',text:'Test post for the current day'},embed:{images:[{fullsize:'https://cdn.bsky.app/dlr.jpg',alt:'Mars mission'}]}}}];
       } else if (actor === 'stellarvisions.bsky.social') {
-        feed = [{post:{uri:'at://did:plc:planetenuhr/app.bsky.feed.post/stellar-old',indexedAt:'2026-10-26T12:00:00Z',author:{handle:actor,displayName:'Stellar Visions'},record:{createdAt:'2026-10-26T12:00:00Z',text:'Earlier astronomy image'},embed:{images:[{fullsize:'https://cdn.example.test/stellar.jpg',alt:'Nebula'}]}}}];
+        feed = [{post:{uri:'at://did:plc:planetenuhr/app.bsky.feed.post/stellar-old',indexedAt:'2026-10-26T12:00:00Z',author:{handle:actor,displayName:'Stellar Visions'},record:{createdAt:'2026-10-26T12:00:00Z',text:'Earlier astronomy image'},embed:{images:[{fullsize:'https://cdn.bsky.app/stellar.jpg',alt:'Nebula'}]}}}];
       }
       await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({feed})});
       return;
@@ -720,6 +720,8 @@ async function runCase(browser,url,language,width){
       throw new Error('Dashboard did not initialize its Moon view. Page errors: ' + pageErrors, {cause:error});
     }
     if (process.env.PLANETENUHR_EXTERNAL_DATA_BASELINE === '1') {
+      await page.locator('#external-consent-aurora input').check();
+      await page.locator('#external-consent-bsky_feed input').check();
       await page.waitForFunction(() => {
         const aurora = document.getElementById('auroraStatus');
         const bskyCard = document.getElementById('bskyCard');

@@ -2,6 +2,9 @@ window.PLANETENUHR_CARD_HELP = {
   en: {
     sections: {
       button: "More info",
+      copyLink: "Copy link to this card",
+      linkCopied: "Link copied",
+      linkCopyFailed: "Could not copy link",
       title: "About this card",
       overview: "Overview",
       formulas: "Formulas used",
@@ -563,6 +566,9 @@ window.PLANETENUHR_CARD_HELP = {
   de: {
     sections: {
       button: "Mehr Info",
+      copyLink: "Link zu dieser Kachel kopieren",
+      linkCopied: "Link kopiert",
+      linkCopyFailed: "Link konnte nicht kopiert werden",
       title: "Diese Kachel erklärt",
       overview: "Kurz erklärt",
       formulas: "Verwendete Formeln",
@@ -1121,6 +1127,9 @@ window.PLANETENUHR_CARD_HELP = {
   fr: {
     sections: {
       button: "Plus d'infos",
+      copyLink: "Copier le lien vers cette carte",
+      linkCopied: "Lien copié",
+      linkCopyFailed: "Impossible de copier le lien",
       title: "A propos de cette carte",
       overview: "Vue d'ensemble",
       formulas: "Formules utilisees",
@@ -2149,9 +2158,15 @@ const aboutConstellationSources = [
   { label: "CC BY-SA 4.0", url: "https://creativecommons.org/licenses/by-sa/4.0/" }
 ];
 
+const aboutKaTeXLicenses = [
+  { label: "KaTeX · MIT License", url: "assets/vendor/katex-0.18.0/LICENSE" },
+  { label: "KaTeX Fonts · SIL Open Font License 1.1", url: "assets/vendor/katex-0.18.0/fonts/OFL-1.1.txt" }
+];
+
 window.PLANETENUHR_CARD_HELP.de.cards.about = {
   intro: ["Hier findest du die Projektseite, offene Fehler und Vorschläge sowie das Formular für eine neue Rückmeldung. Zum Melden eines Fehlers oder Einreichen eines Vorschlags musst du bei GitHub angemeldet sein."],
   details: [
+    "Die Formeln in der Kachelhilfe werden mit KaTeX 0.18.0 (MIT-Lizenz) dargestellt. KaTeX und die zugehörigen Formelschriften (SIL Open Font License 1.1) werden lokal von Planetenuhr geladen.",
     "„Sternbild des Monats“ und „Jahresuhr der Sternbilder“ verwenden die Linienfiguren „Modern“ des Stellarium-Teams. Die Planetenuhr hat die Sternverbindungen in einzelne Liniensegmente für die Anzeige übertragen. Die bearbeiteten Figuren stehen unter CC BY-SA 4.0.",
     "Sternpositionen und Sternnamen wie Bayer- und Flamsteed-Bezeichnungen stammen aus dem HYG-Sternkatalog v4.1 von David Nash (CC BY-SA 4.0). Für die Jungfrau stammen die Sternpositionen aus der Sterntabelle der Association Sterenn.",
     "Die 47 figürlichen Illustrationen stammen aus Stellarium Modern (Stellarium-Team) und stehen unter der Free Art License 1.3. Planetenuhr hat die Bilder anhand ihrer Referenzsterne umprojiziert, den schwarzen Hintergrund transparent aufbereitet und die Deckkraft reduziert. Schlangenkopf und Schlangenschwanz bleiben ohne Illustration. Originale, Bearbeitungsnachweis und Lizenz liegen unter assets/constellations/."
@@ -2160,12 +2175,14 @@ window.PLANETENUHR_CARD_HELP.de.cards.about = {
     { label: "Projekt auf GitHub", url: "https://github.com/marsrakete/planetenuhr" },
     { label: "Offene Issues ansehen", url: "https://github.com/marsrakete/planetenuhr/issues" },
     { label: "Fehler melden oder Vorschlag machen", url: "https://github.com/marsrakete/planetenuhr/issues/new" },
+    ...aboutKaTeXLicenses,
     ...aboutConstellationSources
   ]
 };
 window.PLANETENUHR_CARD_HELP.en.cards.about = {
   intro: ["Find the project, open issues and suggestions here, or submit new feedback. You must be signed in to GitHub to report a bug or submit a suggestion."],
   details: [
+    "The formulas in the card help use KaTeX 0.18.0 (MIT License). Planetenuhr hosts KaTeX and its math fonts (SIL Open Font License 1.1) locally.",
     "“Constellation of the month” and “Constellation year clock” use the Stellarium team’s “Modern” line figures. Planetenuhr converted the star connections into individual line segments for display. The adapted figures are licensed under CC BY-SA 4.0.",
     "Star positions and names, including Bayer and Flamsteed designations, come from David Nash’s HYG v4.1 star catalogue (CC BY-SA 4.0). Virgo’s star positions come from the Association Sterenn star table.",
     "The 47 artistic illustrations are from Stellarium Modern (Stellarium’s team), under the Free Art License 1.3. Planetenuhr reprojected them using their anchor stars, converted the black background to transparency and reduced display opacity. Both Serpens parts have no illustration. Originals, modification notes and licence are provided under assets/constellations/."
@@ -2174,12 +2191,14 @@ window.PLANETENUHR_CARD_HELP.en.cards.about = {
     { label: "Project on GitHub", url: "https://github.com/marsrakete/planetenuhr" },
     { label: "Browse open issues", url: "https://github.com/marsrakete/planetenuhr/issues" },
     { label: "Report a bug or suggest an improvement", url: "https://github.com/marsrakete/planetenuhr/issues/new" },
+    ...aboutKaTeXLicenses,
     ...aboutConstellationSources
   ]
 };
 window.PLANETENUHR_CARD_HELP.fr.cards.about = {
   intro: ["Retrouvez ici le projet, les problèmes ouverts et les suggestions, ou envoyez un nouveau retour. Vous devez être connecté à GitHub pour signaler un problème ou envoyer une suggestion."],
   details: [
+    "Les formules de l’aide des cartes sont affichées avec KaTeX 0.18.0 (licence MIT). Planetenuhr héberge KaTeX et ses polices mathématiques (SIL Open Font License 1.1) localement.",
     "« Constellation du mois » et « Horloge annuelle des constellations » utilisent les figures de la culture céleste « Modern » de l’équipe Stellarium. Planetenuhr a converti les liaisons entre les étoiles en segments pour l’affichage. Les figures adaptées sont sous licence CC BY-SA 4.0.",
     "Les positions et les noms des étoiles, y compris les désignations de Bayer et de Flamsteed, proviennent du catalogue HYG v4.1 de David Nash (CC BY-SA 4.0). Les positions de la Vierge proviennent du tableau d’étoiles de l’Association Sterenn.",
     "Les 47 illustrations artistiques proviennent de Stellarium Modern (équipe Stellarium), sous Licence Art Libre 1.3. Planetenuhr les a reprojetées à partir des étoiles de référence, a rendu le fond noir transparent et a réduit leur opacité. Les deux parties du Serpent restent sans illustration. Originaux, modifications et licence sont fournis dans assets/constellations/."
@@ -2188,6 +2207,7 @@ window.PLANETENUHR_CARD_HELP.fr.cards.about = {
     { label: "Projet sur GitHub", url: "https://github.com/marsrakete/planetenuhr" },
     { label: "Voir les problèmes ouverts", url: "https://github.com/marsrakete/planetenuhr/issues" },
     { label: "Signaler un problème ou proposer une amélioration", url: "https://github.com/marsrakete/planetenuhr/issues/new" },
+    ...aboutKaTeXLicenses,
     ...aboutConstellationSources
   ]
 };

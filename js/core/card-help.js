@@ -1,7 +1,7 @@
 window.PLANETENUHR_HELP = (() => {
   'use strict';
   /** Creates the localized help owner; initialization wires document handlers once.
-   * @param {object} options Document, window, curated content, language and template adapters.
+   * @param {object} options Document, window, curated content, language, template and card URL adapters.
    * @returns {object} Help rendering, formula rendering and initialization operations.
    */
   function create(options){
@@ -163,7 +163,84 @@ window.PLANETENUHR_HELP = (() => {
       });
     }
 
-    /** Creates template-based help popups and wires outside-click/Escape once.
+    /** Copies a card URL through the selection-based clipboard command.
+     * @param {string} url Absolute card URL. @returns {boolean} Whether the command copied it.
+     */
+    function copyCardLinkFromSelection(url){
+      const fragment = options.cloneTemplate('cardLinkClipboardTemplate');
+      const field = fragment.querySelector('textarea');
+      const previousFocus = document.activeElement;
+      field.value = url;
+      document.body.appendChild(fragment);
+      try {
+        field.focus({preventScroll:true});
+        field.select();
+        return document.execCommand('copy');
+      } finally {
+        field.remove();
+        if (previousFocus) {
+          previousFocus.focus({preventScroll:true});
+        }
+      }
+    }
+
+    /** Copies a URL with the Clipboard API or the selection-based fallback.
+     * @param {string} url Absolute card URL. @returns {Promise<boolean>} Whether copying succeeded.
+     */
+    async function copyCardLink(url){
+      const clipboard = window.navigator.clipboard;
+      if (clipboard && typeof clipboard.writeText === 'function') {
+        try {
+          await clipboard.writeText(url);
+          return true;
+        } catch {
+          // A browser can expose the API while denying access to it.
+        }
+      }
+      try {
+        return copyCardLinkFromSelection(url);
+      } catch {
+        return false;
+      }
+    }
+
+    /** Wires one copy button and its localized status message.
+     * @param {HTMLElement} controls Cloned header controls.
+     * @param {string} key Card help key used by the URL builder.
+     * @param {object} sections Localized help labels. @returns {void}
+     */
+    function initCardLink(controls, key, sections){
+      const button = controls.querySelector('.card-link-button');
+      const status = controls.querySelector('.card-link-status');
+      let statusTimeout;
+      button.title = sections.copyLink;
+      button.setAttribute('aria-label', sections.copyLink);
+
+      /** Copies the current selection URL and resets the status dismissal timer.
+       * No parameters. @returns {Promise<void>}
+       */
+      async function onCopyCardLink(){
+        const copied = await copyCardLink(options.getCardUrl(key));
+        window.clearTimeout(statusTimeout);
+        if (copied) {
+          status.textContent = sections.linkCopied;
+        } else {
+          status.textContent = sections.linkCopyFailed;
+        }
+        statusTimeout = window.setTimeout(clearStatus, 2200);
+      }
+
+      /** Clears the visible and announced clipboard status.
+       * No parameters. @returns {void}
+       */
+      function clearStatus(){
+        status.textContent = '';
+      }
+
+      button.addEventListener('click', onCopyCardLink);
+    }
+
+    /** Creates template-based copy buttons and help popups and wires outside-click/Escape once.
      * No parameters. @returns {void}
      */
     function initCardHelp(){
@@ -181,6 +258,7 @@ window.PLANETENUHR_HELP = (() => {
         const wrap = fragment.querySelector('.card-help');
         const button = wrap.querySelector('.card-help-button');
         const popup = wrap.querySelector('.card-help-popup');
+        initCardLink(wrap, key, sections);
         button.setAttribute('aria-label', sections.button || 'More info');
         popup.appendChild(renderCardHelpEntry(entry, sections, key));
         renderHelpMathInElement(popup);

@@ -77,7 +77,7 @@
     });
     const helpController = window.PLANETENUHR_HELP.create({
       document, window, config:window.PLANETENUHR_CARD_HELP || {},
-      getLanguage:() => lang, cloneTemplate
+      getLanguage:() => lang, cloneTemplate, getCardUrl:cardNavigation.dailyHighlightCardUrl
     });
     const dashboardLayout = window.PLANETENUHR_LAYOUT.create({
       document, window, refresh:refreshDateDrivenTiles,
@@ -299,8 +299,18 @@
     });
     const blueskyFeedController = window.PLANETENUHR_BSKY_FEED_CARD.create({
       document, data:blueskyFeedData, feeds:bskyFeeds, cloneTemplate,
-      getTranslations:() => t, getLanguage:() => lang, getProtocol:() => location.protocol,
+      getTranslations:() => t, getLanguage:() => lang,
       formatDate:formatDateStamp, requestLayout:dashboardLayout.scheduleMasonryLayout
+    });
+    const externalContentConfig = window.PLANETENUHR_EXTERNAL_CONTENT_CONFIG;
+    const externalContent = window.PLANETENUHR_EXTERNAL_CONTENT_CONSENT.create({
+      window, document, cloneTemplate, getTranslations:() => t,
+      preferences:window.PLANETENUHR_EXTERNAL_CONTENT_PREFERENCES.create(window),
+      requestLayout:dashboardLayout.requestMasonryLayout,
+      providers:{
+        aurora:{...externalContentConfig.aurora, load:auroraController.load.bind(null, false), clear:auroraController.clear},
+        bsky_feed:{...externalContentConfig.bsky_feed, load:blueskyFeedController.load, clear:blueskyFeedController.clear}
+      }
     });
     const dashboardRefresh = createDashboardRefresh();
 
@@ -776,8 +786,7 @@
      */
     function refreshDynamicTiles(){
       updateInfrequent();
-      auroraController.load();
-      blueskyFeedController.load();
+      externalContent.refresh();
     }
 
     // Solar-system model: approximate heliocentric J2000 orbital elements.
@@ -1166,6 +1175,7 @@
     helpController.initCardHelp();
     // Half-hourly refresh for time-dependent cards.
     dashboardLayout.initMasonryLayout();
+    externalContent.init();
     refreshDynamicTiles();
     window.PLANETENUHR_DIAGRAM_DETAILS.create({beforeOpen:dashboardLayout.releasePendingViewportRestoration});
     dashboardLayout.scheduleMasonryLayout(cardNavigation.scrollToRequestedCard);

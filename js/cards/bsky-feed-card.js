@@ -3,7 +3,7 @@ window.PLANETENUHR_BSKY_FEED_CARD = (() => {
 
   /** Creates the translated Bluesky feed view, leaving all network access in its data service.
    * @param {object} options DOM, templates, data service, feeds, translation and layout dependencies.
-   * @returns {object} Feed-card loading operation.
+   * @returns {object} Feed-card loading and clearing operations.
    */
   function create(options){
     const document = options.document;
@@ -33,12 +33,14 @@ window.PLANETENUHR_BSKY_FEED_CARD = (() => {
       const fragment = options.cloneTemplate('bskyPostTemplate');
       const feedItem = fragment.querySelector('article');
       let avatar = feedItem.querySelector('.bsky-avatar');
-      if (author.avatar) {
+      const avatarUrl = options.data.mediaUrl(author.avatar);
+      if (avatarUrl) {
         const image = document.createElement('img');
         image.className = 'bsky-avatar';
         image.alt = author.displayName || author.handle || item.feed.label || '';
         image.loading = 'lazy';
-        image.src = author.avatar;
+        image.referrerPolicy = 'no-referrer';
+        image.src = avatarUrl;
         avatar.replaceWith(image);
         avatar = image;
       } else {
@@ -83,19 +85,16 @@ window.PLANETENUHR_BSKY_FEED_CARD = (() => {
     }
 
     /** Loads and renders configured feeds while preserving individual errors and empty states.
+     * @param {AbortSignal} [signal] Canceled when the visitor revokes access.
      * @returns {Promise<void>} Resolves after all configured feeds finish rendering.
      */
-    async function load(){
+    async function load(signal){
       const card = document.getElementById('bskyCard');
       const status = document.getElementById('bskyStatus');
-      if (!card || !status) return;
+      if (!card || !status || signal?.aborted) return;
       const feeds = options.feeds || [];
-      if (options.getProtocol() === 'file:' || !feeds.length) {
-        card.hidden = true;
-        return;
-      }
+      if (!feeds.length) return;
 
-      card.hidden = false;
       status.hidden = false;
       status.textContent = options.getTranslations().bsky_loading || 'Loading Bluesky post...';
       const target = document.getElementById('bskyPost');
@@ -103,7 +102,8 @@ window.PLANETENUHR_BSKY_FEED_CARD = (() => {
       target.replaceChildren();
       target.hidden = true;
 
-      const results = await options.data.fetchAll();
+      const results = await options.data.fetchAll(signal);
+      if (signal?.aborted) return;
       results.forEach((result, index) => {
         const feed = feeds[index];
         if (result.status !== 'fulfilled') {
@@ -123,7 +123,20 @@ window.PLANETENUHR_BSKY_FEED_CARD = (() => {
       options.requestLayout();
     }
 
-    return {load};
+    /** Removes posts and disconnects their image sources when consent is revoked.
+     * No parameters. @returns {void}
+     */
+    function clear(){
+      const target = document.getElementById('bskyPost');
+      target.querySelectorAll('img').forEach(image => image.removeAttribute('src'));
+      target.replaceChildren();
+      target.hidden = true;
+      const status = document.getElementById('bskyStatus');
+      status.textContent = '';
+      status.hidden = true;
+    }
+
+    return {load,clear};
   }
 
   return {create};

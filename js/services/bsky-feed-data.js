@@ -35,6 +35,19 @@ window.PLANETENUHR_BSKY_FEED_DATA = (() => {
       return 'https://bsky.app/profile/' + encodeURIComponent(handle) + '/post/' + encodeURIComponent(rkey);
     }
 
+    /** Allows media only from the Bluesky CDN named in the consent notice.
+     * @param {string} value Media URL from a feed response. @returns {string} Safe URL or an empty string.
+     */
+    function mediaUrl(value){
+      try {
+        const url = new URL(value);
+        if (url.origin === 'https://cdn.bsky.app' && !url.username && !url.password) return url.href;
+      } catch {
+        // Missing and malformed media are omitted.
+      }
+      return '';
+    }
+
     /** Extracts renderable images from the supported author-feed embed shape.
      * @param {object} post Bluesky post-view record.
      * @returns {Array<{src:string,alt:string}>} Valid image URL and alt-text pairs.
@@ -43,7 +56,7 @@ window.PLANETENUHR_BSKY_FEED_DATA = (() => {
       let images = [];
       if (post.embed && Array.isArray(post.embed.images)) images = post.embed.images;
       return images
-        .map(image => ({src:image.fullsize || image.thumb,alt:image.alt || ''}))
+        .map(image => ({src:mediaUrl(image.fullsize) || mediaUrl(image.thumb),alt:image.alt || ''}))
         .filter(image => image.src);
     }
 
@@ -61,12 +74,15 @@ window.PLANETENUHR_BSKY_FEED_DATA = (() => {
 
     /** Fetches the latest image posts for one configured author feed.
      * @param {object} feed Configured account handle and display metadata.
+     * @param {AbortSignal} [signal] Canceled when the visitor revokes access.
      * @returns {Promise<Array<object>>} Image posts sorted newest first.
      */
-    async function fetchImagePosts(feed){
+    async function fetchImagePosts(feed, signal){
       const url = 'https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor='
         + encodeURIComponent(feed.handle) + '&limit=20&filter=posts_no_replies';
-      const response = await options.fetch(url, {headers:{accept:'application/json'}});
+      const response = await options.fetch(url, {
+        headers:{accept:'application/json'}, credentials:'omit', referrerPolicy:'no-referrer', redirect:'error', signal
+      });
       if (!response.ok) throw new Error('Bluesky HTTP ' + response.status);
       const data = await response.json();
       let feedItems = [];
@@ -85,11 +101,12 @@ window.PLANETENUHR_BSKY_FEED_DATA = (() => {
     }
 
     /** Fetches all configured accounts concurrently while preserving per-feed failures.
+     * @param {AbortSignal} [signal] Shared consent session for all configured feeds.
      * @returns {Promise<Array<object>>} Promise.allSettled results in configured feed order.
      */
-    function fetchAll(){
+    function fetchAll(signal){
       const feeds = options.feeds || [];
-      return Promise.allSettled(feeds.map(fetchImagePosts));
+      return Promise.allSettled(feeds.map(feed => fetchImagePosts(feed, signal)));
     }
 
     /** Chooses today's image post or the newest available fallback for one feed.
@@ -101,7 +118,7 @@ window.PLANETENUHR_BSKY_FEED_DATA = (() => {
       return {item:todayItem || items[0],isFallback:!todayItem};
     }
 
-    return {localDateKey,postUrl,postImages,isTodayPost,fetchImagePosts,fetchAll,chooseFeedItem};
+    return {localDateKey,postUrl,mediaUrl,postImages,isTodayPost,fetchImagePosts,fetchAll,chooseFeedItem};
   }
 
   return {create};

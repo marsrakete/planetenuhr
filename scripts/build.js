@@ -140,6 +140,9 @@ function getRequiredFiles() {
     "js/data/constellation-descriptions.js",
     "js/data/small-bodies-config.js",
     "js/data/bsky-feed-config.js",
+    "js/data/external-content-config.js",
+    "js/services/external-content-preferences.js",
+    "js/cards/external-content-consent.js",
     "site.webmanifest",
     "favicon.svg",
     "image_og.jpg"

@@ -4,7 +4,7 @@ const path = require('node:path');
 const vm = require('node:vm');
 const {test} = require('node:test');
 
-const realm = vm.createContext({window:{},Math,Date,Promise,Number,String,Array,encodeURIComponent});
+const realm = vm.createContext({window:{},Math,Date,Promise,Number,String,Array,URL,encodeURIComponent});
 for (const file of ['js/data/aurora-data-config.js','js/services/aurora-data.js','js/services/bsky-feed-data.js']) {
   vm.runInContext(fs.readFileSync(path.join(__dirname,'..',file),'utf8'),realm);
 }
@@ -97,9 +97,9 @@ test('Bluesky image feed requests preserve endpoint, filter and newest-first dat
       requestedUrl = url;
       requestedHeaders = options.headers;
       return jsonResponse({feed:[
-        {post:{uri:'at://did:plc:x/app.bsky.feed.post/old',indexedAt:'2026-10-26T10:00:00Z',record:{createdAt:'2026-10-26T10:00:00Z'},embed:{images:[{thumb:'old.jpg',alt:'old'}]}}},
+        {post:{uri:'at://did:plc:x/app.bsky.feed.post/old',indexedAt:'2026-10-26T10:00:00Z',record:{createdAt:'2026-10-26T10:00:00Z'},embed:{images:[{thumb:'https://cdn.bsky.app/old.jpg',alt:'old'}]}}},
         {post:{uri:'at://did:plc:x/app.bsky.feed.post/no-image',record:{createdAt:'2026-10-27T11:00:00Z'},embed:{}}},
-        {post:{uri:'at://did:plc:x/app.bsky.feed.post/today',indexedAt:'2026-10-27T11:00:00Z',author:{handle:'some account.bsky.social'},record:{createdAt:'2026-10-27T11:00:00Z'},embed:{images:[{fullsize:'today.jpg',alt:'today'}]}}}
+        {post:{uri:'at://did:plc:x/app.bsky.feed.post/today',indexedAt:'2026-10-27T11:00:00Z',author:{handle:'some account.bsky.social'},record:{createdAt:'2026-10-27T11:00:00Z'},embed:{images:[{fullsize:'https://cdn.bsky.app/today.jpg',alt:'today'}, {thumb:'https://example.test/foreign.jpg'}]}}}
       ]});
     }
   });
@@ -107,7 +107,10 @@ test('Bluesky image feed requests preserve endpoint, filter and newest-first dat
   assert.match(requestedUrl,/app\.bsky\.feed\.getAuthorFeed\?actor=some%20account\.bsky\.social&limit=20&filter=posts_no_replies/);
   assert.deepEqual(JSON.parse(JSON.stringify(requestedHeaders)),{accept:'application/json'});
   assert.deepEqual(items.map(item => item.post.uri.split('/').pop()),['today','old']);
-  assert.deepEqual(JSON.parse(JSON.stringify(items[0].images)),[{src:'today.jpg',alt:'today'}]);
+  assert.deepEqual(JSON.parse(JSON.stringify(items[0].images)),[{src:'https://cdn.bsky.app/today.jpg',alt:'today'}]);
+  assert.equal(service.mediaUrl('http://cdn.bsky.app/unsafe.png'), '');
+  assert.equal(service.mediaUrl('https://cdn.bsky.app.example.test/avatar.png'), '');
+  assert.equal(service.mediaUrl(undefined), '');
   assert.equal(service.chooseFeedItem(items).item.post.uri.split('/').pop(),'today');
   assert.equal(service.chooseFeedItem(items).isFallback,false);
   assert.equal(service.chooseFeedItem(items.slice(1)).isFallback,true);
@@ -121,7 +124,7 @@ test('Bluesky all-feed results retain per-account errors, empty feeds and config
     fetch:async url => {
       if (url.includes('error.test')) return {ok:false,status:503,json:async () => null};
       if (url.includes('empty.test')) return jsonResponse({feed:[]});
-      return jsonResponse({feed:[{post:{uri:'at://did:plc:x/app.bsky.feed.post/one',record:{createdAt:'2026-10-27T10:00:00Z'},embed:{images:[{thumb:'one.jpg'}]}}}]});
+      return jsonResponse({feed:[{post:{uri:'at://did:plc:x/app.bsky.feed.post/one',record:{createdAt:'2026-10-27T10:00:00Z'},embed:{images:[{thumb:'https://cdn.bsky.app/one.jpg'}]}}}]});
     }
   });
   const results = await service.fetchAll();
@@ -129,4 +132,24 @@ test('Bluesky all-feed results retain per-account errors, empty feeds and config
   assert.equal(results[0].value[0].feed,feeds[0]);
   assert.equal(results[1].value.length,0);
   assert.match(results[2].reason.message,/HTTP 503/);
+});
+
+test('revoking Aurora consent aborts the request sequence before it can try the fallback', async () => {
+  const requests = [];
+  const consent = new AbortController();
+  const service = auroraFactory.create({
+    config:auroraConfig,
+    fetch(url, options){
+      requests.push(url);
+      assert.equal(options.signal, consent.signal);
+      return new Promise((resolve, reject) => {
+        options.signal.addEventListener('abort', () => reject(options.signal.reason), {once:true});
+      });
+    }
+  });
+  const load = service.load(false, consent.signal);
+  consent.abort();
+  assert.equal(await load, null);
+  assert.equal(service.getFreshSample(), null);
+  assert.deepEqual(requests, [auroraConfig.sources[0]]);
 });

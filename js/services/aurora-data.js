@@ -73,43 +73,52 @@ window.PLANETENUHR_AURORA_DATA = (() => {
       return {...lastSample};
     }
 
-    /** Reports whether one endpoint request sequence is already in progress.
-     * @returns {boolean} True when a load promise is pending.
+    /** Reports whether this consent session already has an endpoint request in progress.
+     * @param {AbortSignal} [signal] Consent session for the request.
+     * @returns {boolean} True for a pending request with the same signal.
      */
-    function hasPending(){
-      return pending !== null;
+    function hasPending(signal){
+      return pending !== null && pending.signal === signal;
     }
 
     /** Loads NOAA data, reuses a fresh cache and shares concurrent requests.
      * @param {boolean} [force=false] Bypasses a fresh cache while retaining in-flight deduplication.
+     * @param {AbortSignal} [signal] Stops the request and any fallback after revocation.
      * @returns {Promise<object|null>} Latest sample, or null when every source fails.
      */
-    function load(force = false){
+    function load(force = false, signal){
+      if (signal?.aborted) return Promise.resolve(null);
       if (!force) {
         const cached = getFreshSample();
         if (cached) return Promise.resolve(cached);
       }
-      if (pending) return pending;
+      if (hasPending(signal)) return pending.promise;
 
-      pending = (async () => {
+      const request = {signal,promise:null};
+      pending = request;
+      request.promise = (async () => {
         let sample = null;
         for (const source of config.sources) {
+          if (signal?.aborted) break;
           try {
-            const response = await options.fetch(source, {cache:'no-store'});
+            const response = await options.fetch(source, {
+              cache:'no-store', credentials:'omit', referrerPolicy:'no-referrer', redirect:'error', signal
+            });
             if (!response.ok) continue;
             const payload = await response.json();
             sample = parsePayload(payload);
             if (sample) break;
           } catch (error) {}
         }
+        if (pending === request) pending = null;
+        if (signal?.aborted) return null;
         if (sample) {
           fetchedAt = now();
           lastSample = {...sample};
         }
-        pending = null;
         return sample;
       })();
-      return pending;
+      return request.promise;
     }
 
     /** Returns a snapshot useful for deterministic cache diagnostics.
@@ -118,7 +127,7 @@ window.PLANETENUHR_AURORA_DATA = (() => {
     function getState(){
       let sample = null;
       if (lastSample) sample = {...lastSample};
-      return {fetchedAt,lastSample:sample,pending:hasPending()};
+      return {fetchedAt,lastSample:sample,pending:pending !== null};
     }
 
     return {bandForKp,normalizeSample,parsePayload,getFreshSample,hasPending,load,getState};

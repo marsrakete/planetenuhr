@@ -27,7 +27,8 @@ async function serveDashboard(route, origin){
   }
   try {
     const body = await fs.promises.readFile(file);
-    const types = {'.html':'text/html', '.js':'text/javascript', '.css':'text/css', '.json':'application/json', '.svg':'image/svg+xml', '.jpg':'image/jpeg'};
+    const types = {'.html':'text/html', '.js':'text/javascript', '.css':'text/css', '.json':'application/json',
+      '.svg':'image/svg+xml', '.jpg':'image/jpeg', '.woff2':'font/woff2'};
     await route.fulfill({status:200,body,contentType:types[path.extname(file)] || 'application/octet-stream'});
   } catch (error) {
     await route.fulfill({status:404,body:''});
@@ -862,6 +863,195 @@ async function checkMonthlyConstellationEnlargement(browser, url){
   }
 }
 
+/** Activates a mobile control through the pointer support of the test browser.
+ * @param {import('playwright').Browser} browser Browser engine.
+ * @param {import('playwright').Locator} button Control to activate. @returns {Promise<void>}
+ */
+function activateMobileControl(browser, button){
+  if (process.platform === 'win32' && browser.browserType().name() === 'webkit') {
+    // The Windows WebKit test port emits touch events without a button click.
+    return button.click();
+  }
+  return button.tap();
+}
+
+/** Checks touch targets, clipboard content and deep-link navigation on phones.
+ * @param {import('playwright').Browser} browser Browser engine.
+ * @param {string} origin Synthetic local origin. @returns {Promise<void>}
+ */
+async function checkMobileCardLinks(browser, origin){
+  const page = await browser.newPage({viewport:{width:320,height:740},isMobile:true,hasTouch:true});
+  const errors = [];
+  page.on('pageerror', error => errors.push(error.message));
+  try {
+    await page.route('**/*', route => serveDashboard(route, origin));
+    await page.addInitScript(() => {
+      Object.defineProperty(navigator, 'clipboard', {
+        value:{async writeText(value){ window.copiedCardLink = value; }}
+      });
+    });
+    const entry = origin + '/?lang=de&date=20270310&place=Berlin&time=1234';
+    await page.goto(entry, {waitUntil:'load'});
+    for (const width of [320,390]) {
+      await page.setViewportSize({width,height:740});
+      const layoutIssues = await page.locator('.display-container:visible > .card-help').evaluateAll(headers => {
+        return headers.flatMap(header => {
+          const card = header.parentElement;
+          const cardBounds = card.getBoundingClientRect();
+          const title = card.querySelector('.group-title').getBoundingClientRect();
+          const copyButton = header.querySelector('.card-link-button');
+          const helpButton = header.querySelector('.card-help-button');
+          const copy = copyButton.getBoundingClientRect();
+          const help = helpButton.getBoundingClientRect();
+          const settingsButton = header.querySelector('.card-external-settings');
+          const settings = settingsButton.getBoundingClientRect();
+          const copyIcon = getComputedStyle(copyButton, '::before');
+          const helpIcon = getComputedStyle(helpButton, '::before');
+          const iconGap = (help.left + help.width / 2 + new DOMMatrix(helpIcon.transform).m41) -
+            (copy.left + copy.width / 2 + new DOMMatrix(copyIcon.transform).m41) -
+            (parseFloat(copyIcon.width) + parseFloat(helpIcon.width)) / 2;
+          let minimumWidth = 44;
+          if (settings.width) {
+            minimumWidth = 26;
+            const gearIcon = getComputedStyle(settingsButton, '::before');
+            const gearGap = (copy.left + copy.width / 2 + new DOMMatrix(copyIcon.transform).m41) -
+              (settings.left + settings.width / 2 + new DOMMatrix(gearIcon.transform).m41) -
+              (parseFloat(copyIcon.width) + parseFloat(gearIcon.width)) / 2;
+            if (settings.width !== copy.width || settings.height !== copy.height || settings.right > copy.left ||
+                settings.left < cardBounds.left || settings.top !== copy.top || title.right > settings.left ||
+                Math.abs(gearGap - 4) > .5) {
+              return [card.dataset.helpKey + ' settings'];
+            }
+          }
+          if (copy.width < minimumWidth || copy.height < 44 || copy.width !== help.width || copy.height !== help.height ||
+              copy.right > help.left || copy.top !== help.top || copy.left < cardBounds.left ||
+              help.right > cardBounds.right || title.right > copy.left || Math.abs(iconGap - 4) > .5) {
+            return [card.dataset.helpKey];
+          }
+          return [];
+        });
+      });
+      assert.deepEqual(layoutIssues, [], 'Card header geometry at ' + width + 'px');
+    }
+
+    await page.setViewportSize({width:320,height:740});
+    const card = page.locator('#skyCalendarCard');
+    const copy = card.getByRole('button', {name:'Link zu dieser Kachel kopieren'});
+    const help = card.getByRole('button', {name:'Mehr Info',exact:true});
+    await activateMobileControl(browser, help);
+    await help.and(card.locator('[aria-expanded="true"]')).waitFor({timeout:5000});
+    const beforeCopy = page.url();
+    await activateMobileControl(browser, copy);
+    const status = card.locator('.card-link-status');
+    await status.filter({hasText:'Link kopiert'}).waitFor({state:'visible'});
+    assert.equal(await help.getAttribute('aria-expanded'), 'false');
+    assert.equal(page.url(), beforeCopy);
+    const copied = new URL(await page.evaluate(() => window.copiedCardLink));
+    assert.equal(copied.hash, '#skyCalendarCard');
+    assert.equal(copied.searchParams.get('card'), 'sky_calendar');
+    assert.equal(copied.searchParams.get('date'), '20270310');
+    assert.equal(copied.searchParams.get('time'), '1234');
+    assert.equal(copied.searchParams.get('place'), 'Berlin');
+    assert.equal(copied.searchParams.get('lang'), 'de');
+    await status.filter({hasText:'Link kopiert'}).waitFor({state:'hidden'});
+    await page.goto(copied.href, {waitUntil:'load'});
+    await page.waitForFunction(() => {
+      const card = document.getElementById('skyCalendarCard').getBoundingClientRect();
+      return card.top >= 0 && card.top < window.innerHeight / 2;
+    });
+    assert.deepEqual(errors, [], 'Card link initialization/runtime errors');
+  } finally {
+    await page.close();
+  }
+}
+
+/** Checks that both live integrations remain idle until independently enabled and stay off after revocation.
+ * @param {import('playwright').Browser} browser Browser engine.
+ * @param {string} origin Synthetic local origin. @returns {Promise<void>}
+ */
+async function checkExternalContentConsent(browser, origin){
+  const page = await browser.newPage({viewport:{width:320,height:740},isMobile:true,hasTouch:true});
+  const errors = [];
+  const requests = [];
+  page.on('pageerror', error => errors.push(error.message));
+  try {
+    await page.route('**/*', async route => {
+      const url = new URL(route.request().url());
+      if (url.origin === origin) return serveDashboard(route, origin);
+      requests.push(url.hostname);
+      if (url.hostname === 'services.swpc.noaa.gov') {
+        return route.fulfill({headers:{'access-control-allow-origin':'*'},json:[{time_tag:'2026-11-24T12:00:00Z',kp_index:5}]});
+      }
+      if (url.hostname === 'public.api.bsky.app') {
+        const handle = url.searchParams.get('actor');
+        const post = {
+          uri:'at://did:plc:test/app.bsky.feed.post/example',
+          author:{handle, avatar:'https://cdn.bsky.app/avatar.png'},
+          record:{createdAt:'2026-11-24T12:00:00Z',text:'Fixture'},
+          embed:{images:[{fullsize:'https://cdn.bsky.app/post.png',alt:'Fixture image'}]}
+        };
+        return route.fulfill({headers:{'access-control-allow-origin':'*'},json:{feed:[{post}]}});
+      }
+      if (url.hostname === 'cdn.bsky.app') {
+        return route.fulfill({path:path.join(root, 'favicon-32x32.png'),contentType:'image/png'});
+      }
+      return route.abort();
+    });
+    await page.goto(origin + '/?lang=de', {waitUntil:'networkidle'});
+    const aurora = page.locator('[data-help-key="aurora"]');
+    const bluesky = page.locator('#bskyCard');
+    const auroraCheck = aurora.getByRole('checkbox');
+    const blueskyCheck = bluesky.getByRole('checkbox');
+    await auroraCheck.waitFor();
+    await blueskyCheck.waitFor();
+    assert.equal(await auroraCheck.isChecked(), false);
+    assert.equal(await blueskyCheck.isChecked(), false);
+    assert.deepEqual(requests, [], 'Initial load makes no third-party requests');
+
+    await auroraCheck.check();
+    await aurora.locator('[id="auroraMeta"]').filter({hasText:'5.0'}).waitFor();
+    assert.deepEqual(requests, ['services.swpc.noaa.gov'], 'Aurora consent only loads NOAA');
+
+    await page.reload({waitUntil:'networkidle'});
+    await aurora.locator('[id="auroraMeta"]').filter({hasText:'5.0'}).waitFor();
+    assert.equal(await blueskyCheck.isChecked(), false);
+    assert.ok(requests.every(host => host === 'services.swpc.noaa.gov'));
+    const store = await page.evaluate(async () => {
+      const preferences = window.PLANETENUHR_EXTERNAL_CONTENT_PREFERENCES.create(window);
+      return [await preferences.read('aurora',1), await preferences.read('aurora',2),
+        await preferences.read('unknown',1)];
+    });
+    assert.deepEqual(store, [true,false,false], 'IndexedDB grants only the saved provider and notice version');
+
+    await blueskyCheck.check();
+    const image = bluesky.getByAltText('Fixture image').first();
+    await image.scrollIntoViewIfNeeded();
+    await page.waitForFunction(() => document.querySelector('#bskyPost .bsky-image')?.naturalWidth > 0);
+    assert.ok(requests.includes('public.api.bsky.app') && requests.includes('cdn.bsky.app'));
+
+    const blueskySettings = bluesky.getByRole('button', {name:'Einstellungen für Bluesky-Feeds'});
+    await activateMobileControl(browser, blueskySettings);
+    await blueskyCheck.uncheck();
+    await blueskyCheck.waitFor();
+    assert.equal(await bluesky.locator('#bskyPost img').count(), 0);
+    const auroraSettings = aurora.getByRole('button', {name:'Einstellungen für Polarlicht-Daten'});
+    await activateMobileControl(browser, auroraSettings);
+    await auroraCheck.uncheck();
+    await page.waitForFunction(async () => {
+      const preferences = window.PLANETENUHR_EXTERNAL_CONTENT_PREFERENCES.create(window);
+      return !(await preferences.read('aurora',1)) && !(await preferences.read('bsky_feed',1));
+    });
+    requests.length = 0;
+    await page.reload({waitUntil:'networkidle'});
+    assert.equal(await auroraCheck.isChecked(), false);
+    assert.equal(await blueskyCheck.isChecked(), false);
+    assert.deepEqual(requests, [], 'Reload after revocation makes no third-party requests');
+    assert.deepEqual(errors, [], 'Consent initialization/runtime errors');
+  } finally {
+    await page.close();
+  }
+}
+
 /** Runs the browser regression matrix and always releases browser resources.
  * @returns {Promise<void>} Resolves when the matrix passes.
  */
@@ -1051,6 +1241,10 @@ async function main(){
       console.log(engine + ': Cologne full Moon passed');
       await checkSpaceMissions(browser, url);
       console.log(engine + ': space missions passed');
+      await checkMobileCardLinks(browser, url);
+      console.log(engine + ': mobile card links passed');
+      await checkExternalContentConsent(browser, url);
+      console.log(engine + ': external content consent passed');
       await checkMonthlyConstellationEnlargement(browser, url);
       console.log(engine + ': complete monthly constellation enlargement passed');
       await checkConstellationFigures(browser, url);

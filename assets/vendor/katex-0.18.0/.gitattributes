@@ -1,0 +1,4 @@
+# Preserve the upstream bytes checked by Subresource Integrity.
+katex.min.css -text
+katex.min.js -text
+contrib/auto-render.min.js -text
