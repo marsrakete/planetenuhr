@@ -235,7 +235,7 @@ window.PLANETENUHR_DASHBOARD_I18N = (() => {
       });
 
       // Mondnamen (Jupiter + andere Planeten) lokalisieren
-      document.querySelectorAll('[data-moon]').forEach(el => {
+      document.querySelectorAll('[data-jupiter-label], [data-planetary-moon-label]').forEach(el => {
         const key = el.dataset.moon;
         if (key && t['moon_' + key]) el.textContent = t['moon_' + key];
       });

@@ -5,11 +5,13 @@ window.PLANETENUHR_CONSTELLATION_YEAR = (() => {
    * @param {Function} options.renderDetail Renders a configured constellation into supplied detail targets.
    * @param {Function} options.getTranslations Returns the active language pack.
    * @param {object} options.details Shared constellation profile renderer.
-   * @returns {{render:Function}} Controller for the date-driven yearly wheel.
+   * @returns {{render:Function, connectEnlargedWheel:Function}} Controller for both wheel views.
    */
   function create(options){
     const document = options.document;
     const detailDialog = document.getElementById('constellationYearDetailDialog');
+    const detailView = document.getElementById('constellationYearDetailView');
+    const detailContent = detailView?.querySelector('.diagram-detail-content');
     const detailTitle = document.getElementById('constellationYearDetailTitle');
     const detailHint = document.getElementById('constellationYearDetailHint');
     const detailClose = document.getElementById('constellationYearDetailClose');
@@ -18,6 +20,7 @@ window.PLANETENUHR_CONSTELLATION_YEAR = (() => {
     const detailSummary = document.getElementById('constellationYearDetailSummary');
     const detailDescription = document.getElementById('constellationYearDetailDescription');
     let detailOpener = null;
+    let currentWheel = null;
 
     if (detailDialog && detailClose) {
       detailClose.addEventListener('click', () => detailDialog.close());
@@ -30,22 +33,17 @@ window.PLANETENUHR_CONSTELLATION_YEAR = (() => {
     }
 
     /**
-     * Opens the selected constellation with its star chart, description and seasonal guide.
+     * Renders the star chart, description and seasonal guide shared by both entry points.
      * @param {object} item Configured constellation for one month.
      * @param {object} context Shared dashboard context.
-     * @param {SVGElement} opener Focusable constellation control in the yearly wheel.
-     * @returns {void}
+     * @returns {{view:HTMLElement, scroll:HTMLElement, name:string, hintId:string}|null} Rendered detail view.
      */
-    function openDetails(item, context, opener){
-      if (!detailDialog || !detailTitle || !detailHint || !detailClose || !detailMap || !detailSkyHint || !detailSummary || typeof options.renderDetail !== 'function') {
-        return;
+    function renderDetails(item, context){
+      if (!detailView || !detailContent || !detailHint || !detailMap || !detailSkyHint || !detailSummary || typeof options.renderDetail !== 'function') {
+        return null;
       }
 
-      const translations = options.getTranslations();
-      detailOpener = opener;
-      detailTitle.textContent = item.name;
-      detailHint.textContent = translations.constellation_year_detail_hint;
-      detailClose.textContent = translations.diagram_close;
+      detailHint.textContent = options.getTranslations().constellation_year_detail_hint;
 
       const detailContext = {
         ...context,
@@ -59,11 +57,57 @@ window.PLANETENUHR_CONSTELLATION_YEAR = (() => {
         suppressLayout:true
       });
       options.details.render(detailDescription, item.name, context.language, item.highlight);
+      return {view:detailView, scroll:detailContent, name:options.details.titleFor(item.name, context.language), hintId:detailHint.id};
+    }
+
+    /** Opens the standalone constellation dialog from the dashboard wheel.
+     * @param {object} item Configured constellation. @param {object} context Dashboard snapshot.
+     * @param {SVGElement} opener Activated wheel control. @returns {void}
+     */
+    function openDetails(item, context, opener){
+      if (!detailDialog || !detailTitle || !detailClose) return;
+      const detail = renderDetails(item, context);
+      if (!detail) return;
+      detailOpener = opener;
+      detailTitle.textContent = detail.name;
+      detailClose.textContent = options.getTranslations().diagram_close;
       detailDialog.showModal();
-      const detailContent = detailDialog.querySelector('.diagram-detail-content');
-      if (detailContent) {
-        detailContent.scrollTop = 0;
-      }
+      detail.scroll.scrollTop = 0;
+    }
+
+    /** Gives an SVG wheel control pointer, Enter and Space activation.
+     * @param {SVGElement} selection Focusable constellation control.
+     * @param {Function} activate Callback for the selected constellation. @returns {void}
+     */
+    function bindSelection(selection, activate){
+      selection.addEventListener('click', activate);
+      selection.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          activate();
+        }
+      });
+    }
+
+    /** Reconnects the enlarged copy to the dashboard state captured with the drawing.
+     * @param {SVGSVGElement} svg Enlarged annual wheel snapshot.
+     * @param {Function} showDetails Receives the activated control and its rendered detail view.
+     * @returns {void}
+     */
+    function connectEnlargedWheel(svg, showDetails){
+      if (!currentWheel || !detailView) return;
+      const {items, context} = currentWheel;
+      svg.setAttribute('role', 'group');
+      svg.querySelectorAll('[data-constellation-month]').forEach(selection => {
+        const item = items.find(entry => entry.month === Number(selection.dataset.constellationMonth));
+        if (!item) return;
+        selection.removeAttribute('aria-haspopup');
+        selection.setAttribute('aria-controls', detailView.id);
+        bindSelection(selection, () => {
+          const detail = renderDetails(item, context);
+          if (detail) showDetails(selection, detail);
+        });
+      });
     }
     // Draw the annual constellation wheel:
     // - one configured constellation per month
@@ -90,6 +134,7 @@ window.PLANETENUHR_CONSTELLATION_YEAR = (() => {
       const summary = document.getElementById('constellationYearSummary');
       if (!target) return;
       const items = options.getItems() || [];
+      currentWheel = {items, context};
       const size = 760;
       const center = size / 2;
       const radius = 176;
@@ -190,15 +235,10 @@ window.PLANETENUHR_CONSTELLATION_YEAR = (() => {
         selection.setAttribute('tabindex', '0');
         selection.setAttribute('aria-haspopup', 'dialog');
         selection.setAttribute('aria-controls', 'constellationYearDetailDialog');
+        selection.dataset.constellationMonth = String(item.month);
         const openLabel = t.constellation_year_open_detail.replace('{name}', item.name);
         selection.setAttribute('aria-label', openLabel);
-        selection.addEventListener('click', () => openDetails(item, context, selection));
-        selection.addEventListener('keydown', event => {
-          if (event.key === 'Enter' || event.key === ' ') {
-            event.preventDefault();
-            openDetails(item, context, selection);
-          }
-        });
+        bindSelection(selection, () => openDetails(item, context, selection));
 
         const miniPoint = options.polarPoint(center, miniatureOrbit, fraction);
         const mini = document.getElementById('constellationYearMiniTemplate').content.querySelector('g').cloneNode(true);
@@ -340,7 +380,7 @@ window.PLANETENUHR_CONSTELLATION_YEAR = (() => {
       }
     }
 
-    return {render};
+    return {render, connectEnlargedWheel};
   }
   return {create};
 })();

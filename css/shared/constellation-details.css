@@ -9,12 +9,17 @@
 }
 .constellation-detail-dialog:modal {
   display:grid;
-  grid-template-rows:auto auto minmax(0, 1fr);
+  grid-template-rows:auto minmax(0, 1fr);
 }
 .constellation-detail-dialog > .diagram-dialog-heading {
   padding-bottom:10px;
 }
-.constellation-detail-dialog > p {
+.constellation-year-detail-view {
+  display:grid;
+  grid-template-rows:auto minmax(0, 1fr);
+  min-height:0;
+}
+.constellation-year-detail-view > p {
   margin:0 0 14px;
   color:var(--muted);
   line-height:1.5;

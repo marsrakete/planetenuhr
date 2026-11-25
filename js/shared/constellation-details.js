@@ -3,11 +3,26 @@ window.PLANETENUHR_CONSTELLATION_DETAILS = (() => {
 
   /** Creates the shared profile renderer for constellation dialogs.
    * @param {{document:Document,config:object}} options DOM templates and localized profile data.
-   * @returns {{render:Function}} Stateless renderer for either constellation card.
+   * @returns {{titleFor:Function, render:Function}} Stateless profile helpers for both constellation cards.
    */
   function create(options){
     const document = options.document;
     const config = options.config;
+
+    /** Combines the localized and Latin names for a constellation dialog heading.
+     * @param {string} key Shared figure name or visibility entry key.
+     * @param {string} language Requested UI language.
+     * @param {string} [fallback=key] Display name for a missing profile.
+     * @returns {string} Heading with both names when they differ.
+     */
+    function titleFor(key, language, fallback = key){
+      const names = config.entries[key]?.names;
+      if (!names) return fallback;
+      const latin = names.en;
+      const localized = names[language] || latin;
+      if (localized === latin) return latin;
+      return localized + ' (' + latin + ')';
+    }
 
     /** Renders a constellation profile into a dialog's content column.
      * @param {HTMLElement|null} target Destination article.
@@ -31,11 +46,15 @@ window.PLANETENUHR_CONSTELLATION_DETAILS = (() => {
       const labels = config.labels[language] || config.labels.en;
       const text = entry.text[language] || entry.text.en;
       const fragment = template.content.cloneNode(true);
-      let area = entry.area.toLocaleString(language) + ' °²';
+      fragment.querySelector('[data-constellation-abbreviation-label]').textContent = labels.abbreviation;
+      fragment.querySelector('[data-constellation-abbreviation]').textContent = entry.abbreviation;
+      fragment.querySelector('[data-constellation-area-label]').textContent = labels.area;
+      fragment.querySelector('[data-constellation-area]').textContent = entry.area.toLocaleString(language) + ' ' + labels.squareDegrees;
       if (entry.areaNote) {
-        area += ' · ' + (entry.areaNote[language] || entry.areaNote.en);
+        const note = fragment.querySelector('[data-constellation-area-note]');
+        note.textContent = ' (' + (entry.areaNote[language] || entry.areaNote.en) + ')';
+        note.hidden = false;
       }
-      fragment.querySelector('[data-constellation-description-title]').textContent = entry.abbreviation + ' · ' + area;
       let introduction = text.intro;
       if (typeof lead === 'string' && lead) {
         introduction = lead;
@@ -65,7 +84,7 @@ window.PLANETENUHR_CONSTELLATION_DETAILS = (() => {
       return true;
     }
 
-    return {render};
+    return {titleFor, render};
   }
 
   return {create};

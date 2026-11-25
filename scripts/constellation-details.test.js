@@ -42,3 +42,14 @@ test('shared renderer clears unknown profiles and handles absent targets or temp
   assert.equal(renderer.render(target, 'Orion', 'unknown'), false);
   assert.equal(clears, 2);
 });
+
+test('constellation titles show distinct localized and Latin names with safe fallbacks', () => {
+  const renderer = realm.window.PLANETENUHR_CONSTELLATION_DETAILS.create({document:{}, config});
+  assert.equal(renderer.titleFor('Gemini', 'de'), 'Zwillinge (Gemini)');
+  assert.equal(renderer.titleFor('Gemini', 'fr'), 'Gémeaux (Gemini)');
+  assert.equal(renderer.titleFor('Gemini', 'en'), 'Gemini');
+  assert.equal(renderer.titleFor('Orion', 'de'), 'Orion');
+  assert.equal(renderer.titleFor('Bootes', 'de'), 'Bärenhüter (Boötes)');
+  assert.equal(renderer.titleFor('Gemini', 'unknown'), 'Gemini');
+  assert.equal(renderer.titleFor('missing', 'de', 'Fallback'), 'Fallback');
+});

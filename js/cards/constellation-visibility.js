@@ -320,7 +320,8 @@ window.PLANETENUHR_CONSTELLATION_VISIBILITY_CARD = (() => {
       }
       lastOpener = opener;
       const name = localizedName(item, context.language);
-      detailTitle.textContent = name;
+      const profileKey = item.figureKey || item.key;
+      detailTitle.textContent = options.details.titleFor(profileKey, context.language, name);
       const direction = options.model.calculateDirection(context.date, context.location, item);
       let timeLabel = '—';
       if (direction) {
@@ -372,7 +373,7 @@ window.PLANETENUHR_CONSTELLATION_VISIBILITY_CARD = (() => {
       detailClose.textContent = translations.diagram_close;
       options.details.render(
         document.getElementById('constellationVisibilityDetailDescription'),
-        item.figureKey || item.key,
+        profileKey,
         context.language,
         figure?.highlight
       );

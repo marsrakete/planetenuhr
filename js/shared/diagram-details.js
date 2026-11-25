@@ -183,28 +183,31 @@ window.PLANETENUHR_DIAGRAM_DETAILS = (() => {
   /**
    * Adds retained enlargement controls to cards whose overview labels are too small.
    * Uses a modal snapshot so dense diagrams need no crowded labels or oversized dashboard cards.
-   * @param {object} [options={}] Optional beforeOpen callback releasing app-specific scroll restoration.
+   * @param {object} [options={}] Optional beforeOpen callback and annual wheel controller.
    * @returns {void}
    */
   function create(options = {}){
     const grid = document.querySelector('.grid');
     const dialog = document.getElementById('diagramDetailDialog');
+    const title = document.getElementById('diagramDetailTitle');
+    const hint = document.getElementById('diagramDetailHint');
     const content = document.getElementById('diagramDetailContent');
     const close = document.getElementById('diagramDetailClose');
+    const back = document.getElementById('diagramDetailBack');
     const controls = new WeakMap();
     let frame = 0;
     let serial = 0;
     let opener = null;
     let suppressHint = false;
+    let yearDetail = null;
 
     /** Shows reading instructions only when the open diagram actually needs scrolling.
      * No parameters. @returns {void}
      */
     function updateHint(){
-      if (!dialog.open) {
+      if (!dialog.open || yearDetail) {
         return;
       }
-      const hint = document.getElementById('diagramDetailHint');
       const overflows = content.scrollWidth > content.clientWidth + 1
         || content.scrollHeight > content.clientHeight + 1;
       hint.hidden = suppressHint || !overflows;
@@ -227,13 +230,64 @@ window.PLANETENUHR_DIAGRAM_DETAILS = (() => {
       if (typeof options.beforeOpen === 'function') options.beforeOpen();
     }
 
+    /** Switches the open modal from the annual wheel to the shared constellation detail view.
+     * @param {SVGElement} selection Activated control in the enlarged wheel.
+     * @param {object} detail Rendered view, scroll container, title and hint ID. @returns {void}
+     */
+    function showYearDetails(selection, detail){
+      yearDetail = {
+        view:detail.view,
+        home:detail.view.parentElement,
+        title:title.textContent,
+        left:content.scrollLeft,
+        top:content.scrollTop,
+        dialogTop:dialog.scrollTop,
+        selection
+      };
+      title.textContent = detail.name;
+      title.hidden = false;
+      content.hidden = true;
+      back.hidden = false;
+      content.after(detail.view);
+      dialog.setAttribute('aria-describedby', detail.hintId);
+      detail.scroll.scrollTop = 0;
+      dialog.scrollTop = 0;
+      title.focus({preventScroll:true});
+    }
+
+    /** Returns the shared detail markup to its standalone dialog and shows the wheel viewport.
+     * No parameters. @returns {void}
+     */
+    function releaseYearDetails(){
+      if (!yearDetail) return;
+      yearDetail.home.appendChild(yearDetail.view);
+      title.textContent = yearDetail.title;
+      title.hidden = true;
+      back.hidden = true;
+      content.hidden = false;
+      dialog.removeAttribute('aria-describedby');
+      yearDetail = null;
+    }
+
+    /** Returns to the same zoomed wheel position and selected control.
+     * No parameters. @returns {void}
+     */
+    function backToYearWheel(){
+      if (!yearDetail) return;
+      const {left, top, dialogTop, selection} = yearDetail;
+      releaseYearDetails();
+      content.scrollLeft = left;
+      content.scrollTop = top;
+      dialog.scrollTop = dialogTop;
+      selection.focus({preventScroll:true});
+    }
+
     /** Opens a static snapshot of the card's current diagrams. @param {HTMLElement} card Source card. @returns {void} */
     function open(card){
       prepareInteraction();
+      releaseYearDetails();
       opener = controls.get(card) || null;
       const copy = labels();
-      const title = document.getElementById('diagramDetailTitle');
-      const hint = document.getElementById('diagramDetailHint');
       const isConstellationYear = card.dataset.helpKey === 'constellation_year';
       const isConstellationMonth = card.dataset.helpKey === 'constellation_month';
       suppressHint = isConstellationYear;
@@ -247,6 +301,7 @@ window.PLANETENUHR_DIAGRAM_DETAILS = (() => {
         dialog.setAttribute('aria-describedby', hint.id);
       }
       close.textContent = copy.diagram_close;
+      back.textContent = copy.constellation_year_back;
       const fragment = document.createDocumentFragment();
       if (isConstellationMonth) {
         serial += 1;
@@ -263,6 +318,9 @@ window.PLANETENUHR_DIAGRAM_DETAILS = (() => {
           }
           enlarged.setAttribute('role', 'img');
           enlarged.setAttribute('aria-label', card.querySelector('.group-title').textContent);
+          if (isConstellationYear && options.constellationYear) {
+            options.constellationYear.connectEnlargedWheel(enlarged, showYearDetails);
+          }
           figure.querySelector('figure').appendChild(enlarged);
           fragment.appendChild(figure);
         });
@@ -322,9 +380,17 @@ window.PLANETENUHR_DIAGRAM_DETAILS = (() => {
     }
 
     close.addEventListener('click', () => dialog.close());
+    back.addEventListener('click', backToYearWheel);
+    dialog.addEventListener('cancel', event => {
+      if (yearDetail) {
+        event.preventDefault();
+        backToYearWheel();
+      }
+    });
     dialog.addEventListener('close', () => {
       // A queued close event may arrive after the user has already reopened it.
       if (dialog.open) return;
+      releaseYearDetails();
       content.replaceChildren();
       if (opener && opener.isConnected) opener.focus({preventScroll:true});
       opener = null;

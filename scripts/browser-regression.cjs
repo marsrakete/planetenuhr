@@ -55,6 +55,22 @@ async function checkDashboard(browser, url, language, browserZone){
     await page.clock.setFixedTime(new Date('2026-11-05T12:00:00Z'));
     await page.goto(url + '/?lang=' + language + '&date=20261105&place=berlin', {waitUntil:'domcontentloaded'});
     await page.locator('#moonIcon [data-moon-shadow]').waitFor({state:'attached'});
+    const moonLabels = await page.evaluate(language => {
+      const translations = window.PLANETENUHR_TRANSLATIONS[language];
+      const jupiter = document.getElementById('jupiterSystem');
+      const planetaryLabels = Array.from(document.querySelectorAll('#planetSystems [data-planetary-moon-label]'));
+      return {
+        jupiterMarkers:Array.from(jupiter.querySelectorAll('[data-jupiter-moon]'), node => node.textContent),
+        jupiterLabels:Array.from(jupiter.querySelectorAll('[data-jupiter-label]'), node => node.textContent),
+        expectedJupiterLabels:window.PLANETENUHR_JUPITER_MOONS.map(moon => translations['moon_' + moon.key]),
+        planetaryLabels:planetaryLabels.map(node => node.textContent),
+        expectedPlanetaryLabels:planetaryLabels.map(node => translations['moon_' + node.dataset.moon] ?? node.dataset.moon)
+      };
+    }, language);
+    assert.deepEqual(moonLabels.jupiterMarkers, Array(10).fill(''), 'Jupiter moon markers contain no text');
+    assert.deepEqual(moonLabels.jupiterLabels, moonLabels.expectedJupiterLabels, 'One localized label per Jupiter moon');
+    assert.ok(moonLabels.planetaryLabels.length > 0);
+    assert.deepEqual(moonLabels.planetaryLabels, moonLabels.expectedPlanetaryLabels, 'Other planetary moon labels stay localized');
     const calendarTitle = page.locator('#calendarMonthTitle');
     const expectedMonths = await page.evaluate(language => [10, 11, 12].map(month =>
       new Date(2026, month, 1).toLocaleDateString(language, {month:'long',year:'numeric'})), language);
@@ -721,6 +737,14 @@ async function checkConstellationFigures(browser, url, language = 'de'){
         return {entry:config.entries[name], labels:config.labels[language]};
       }, {name, language});
       assert.ok((await description.locator('[data-constellation-description-title]').textContent()).includes(expected.entry.abbreviation));
+      if (name === 'Gemini' && language === 'de') {
+        assert.equal(await mini.locator('.constellation-name-label').textContent(), 'Gemini');
+        assert.equal(await dialog.getByRole('heading', {name:'Zwillinge (Gemini)',exact:true}).count(), 1);
+        assert.equal(await description.locator('[data-constellation-abbreviation-label]').textContent(), 'Offizielles Kürzel');
+        assert.equal(await description.locator('[data-constellation-abbreviation]').textContent(), 'Gem');
+        assert.equal(await description.locator('[data-constellation-area-label]').textContent(), 'Fläche');
+        assert.equal(await description.locator('[data-constellation-area]').textContent(), '514 Quadratgrad');
+      }
       assert.equal(await description.locator('dd').count(), 5, name);
       const original = await page.evaluate(({name,language}) => {
         const figure = window.PLANETENUHR_PHENOMENA.constellations.find(item => item.name === name);
@@ -777,6 +801,17 @@ async function checkConstellationVisibilityProfiles(browser, url, language = 'de
       await opener.click();
       await dialog.waitFor({state:'visible'});
       const article = dialog.locator('.constellation-description');
+      if (item.key === 'gemini' && language === 'de') {
+        assert.equal(await dialog.getByRole('heading', {name:'Zwillinge (Gemini)',exact:true}).count(), 1);
+        assert.equal(await article.locator('[data-constellation-abbreviation]').textContent(), 'Gem');
+        assert.equal(await article.locator('[data-constellation-area]').textContent(), '514 Quadratgrad');
+      }
+      if (item.key === 'serpens_caput' && language === 'de') {
+        assert.equal(await dialog.getByRole('heading', {name:'Kopf der Schlange (Serpens Caput)',exact:true}).count(), 1);
+        assert.equal(await article.locator('[data-constellation-area]').textContent(), '637 Quadratgrad');
+        assert.ok(await article.locator('[data-constellation-area-note]').isVisible());
+        assert.match(await article.locator('[data-constellation-area-note]').textContent(), /gesamtes Sternbild Schlange/);
+      }
       assert.equal(await article.locator('dd').count(), 5, item.key);
       assert.ok((await article.locator('[data-constellation-description-intro]').textContent()).length > 15, item.key);
       assert.ok((await article.locator('dd').nth(2).textContent()).includes('mag'), item.key);
@@ -1052,6 +1087,71 @@ async function checkExternalContentConsent(browser, origin){
   }
 }
 
+/** Checks that enlarged year-wheel profiles share the modal and restore chart position and focus.
+ * @param {import('playwright').Browser} browser Browser engine.
+ * @param {string} origin Synthetic local origin. @returns {Promise<void>}
+ */
+async function checkEnlargedConstellationNavigation(browser, origin){
+  const page = await browser.newPage({viewport:{width:390,height:740}});
+  const errors = [];
+  page.on('pageerror', error => errors.push(error.message));
+  await page.route('**/*', route => serveDashboard(route, origin));
+  try {
+    await page.goto(origin + '/?lang=de&date=20270115&place=berlin', {waitUntil:'domcontentloaded'});
+    const opener = page.locator('[data-help-key="constellation_year"]').getByRole('button', {name:'Grafik vergrößern'});
+    const dialog = page.locator('#diagramDetailDialog');
+    const chart = dialog.locator('#diagramDetailContent');
+    const selection = chart.getByRole('button', {name:'Details zu Virgo öffnen'});
+    const label = selection.locator('.constellation-name-label');
+    const back = dialog.getByRole('button', {name:'Zurück zur Jahresuhr'});
+    const close = dialog.getByRole('button', {name:'Schließen',exact:true});
+    const profile = dialog.locator('#constellationYearDetailView');
+
+    await opener.click();
+    await label.evaluate(node => node.scrollIntoView({block:'center',inline:'center'}));
+    const position = await chart.evaluate(node => [node.scrollLeft, node.scrollTop]);
+    assert.ok(position.every(value => value > 0), 'This test exercises both scroll axes');
+    // Click the visible text without asking Playwright to scroll the SVG text a second time.
+    const point = await label.evaluate(node => {
+      const bounds = node.getBoundingClientRect();
+      return {x:bounds.x + bounds.width / 2,y:bounds.y + bounds.height / 2};
+    });
+    await page.mouse.click(point.x, point.y);
+    await profile.waitFor({state:'visible'});
+    assert.equal(await dialog.getByRole('heading', {name:'Jungfrau (Virgo)',exact:true}).evaluate(node => node === document.activeElement), true);
+    assert.deepEqual(await page.locator('dialog[open]').evaluateAll(nodes => nodes.map(node => node.id)), ['diagramDetailDialog']);
+    assert.ok(await profile.locator('#constellationYearDetailMap svg').count());
+
+    await back.click();
+    await selection.waitFor();
+    assert.deepEqual(await chart.evaluate(node => [node.scrollLeft, node.scrollTop]), position);
+    assert.equal(await selection.evaluate(node => node === document.activeElement), true);
+
+    await selection.press('Enter');
+    await profile.waitFor({state:'visible'});
+    await page.keyboard.press('Escape');
+    await selection.waitFor();
+    assert.deepEqual(await chart.evaluate(node => [node.scrollLeft, node.scrollTop]), position);
+    assert.equal(await selection.evaluate(node => node === document.activeElement), true);
+
+    await selection.press('Space');
+    await profile.waitFor({state:'visible'});
+    await close.click();
+    await dialog.waitFor({state:'hidden'});
+    await page.waitForFunction(() => document.activeElement.matches('[data-help-key="constellation_year"] .diagram-open'));
+    assert.equal(await page.locator('dialog[open]').count(), 0);
+    assert.equal(await page.locator('#constellationYearDetailDialog #constellationYearDetailView').count(), 1);
+
+    await opener.click();
+    await chart.waitFor({state:'visible'});
+    await page.keyboard.press('Escape');
+    await dialog.waitFor({state:'hidden'});
+    assert.deepEqual(errors, [], 'Year clock dialog errors');
+  } finally {
+    await page.close();
+  }
+}
+
 /** Runs the browser regression matrix and always releases browser resources.
  * @returns {Promise<void>} Resolves when the matrix passes.
  */
@@ -1249,6 +1349,8 @@ async function main(){
       console.log(engine + ': complete monthly constellation enlargement passed');
       await checkConstellationFigures(browser, url);
       console.log(engine + ': monthly and annual constellation figures passed');
+      await checkEnlargedConstellationNavigation(browser, url);
+      console.log(engine + ': enlarged year clock navigation passed');
       await checkConstellationVisibilityProfiles(browser, url);
       console.log(engine + ': all 49 constellation profiles passed');
       await checkMobileMilkyWay(browser, url);

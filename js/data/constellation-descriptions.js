@@ -1,5 +1,6 @@
 // Shared descriptions for all 49 visibility entries, including the twelve year-wheel figures.
 // Evening seasons refer to Central Europe and are approximate, independent of the selected date.
+// English profile names use the Latin constellation names.
 window.PLANETENUHR_CONSTELLATION_DESCRIPTIONS = {
   "labels": {
     "de": {
@@ -8,7 +9,9 @@ window.PLANETENUHR_CONSTELLATION_DESCRIPTIONS = {
       "brightest": "Hellster Stern",
       "highlights": "Besonderheiten",
       "mythology": "Mythologischer Hintergrund",
+      "abbreviation": "Offizielles Kürzel",
       "area": "Fläche",
+      "squareDegrees": "Quadratgrad",
       "sources": "Quellen",
       "note": "Die Monate sind saisonale Richtwerte für den Abendhimmel in Mitteleuropa. Helligkeiten sind gerundet. Je kleiner die Zahl in mag, desto heller erscheint ein Stern."
     },
@@ -18,7 +21,9 @@ window.PLANETENUHR_CONSTELLATION_DESCRIPTIONS = {
       "brightest": "Brightest star",
       "highlights": "Highlights",
       "mythology": "Mythological background",
+      "abbreviation": "Official abbreviation",
       "area": "Area",
+      "squareDegrees": "square degrees",
       "sources": "Sources",
       "note": "The months are seasonal guidelines for the evening sky in Central Europe. Magnitudes are rounded. A smaller magnitude means a brighter-looking star."
     },
@@ -28,7 +33,9 @@ window.PLANETENUHR_CONSTELLATION_DESCRIPTIONS = {
       "brightest": "Étoile la plus brillante",
       "highlights": "Particularités",
       "mythology": "Origine mythologique",
+      "abbreviation": "Abréviation officielle",
       "area": "Superficie",
+      "squareDegrees": "degrés carrés",
       "sources": "Sources",
       "note": "Les mois sont des repères saisonniers pour le ciel du soir en Europe centrale. Les magnitudes sont arrondies. Une magnitude plus petite indique une étoile apparemment plus brillante."
     }

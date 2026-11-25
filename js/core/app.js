@@ -1177,7 +1177,10 @@
     dashboardLayout.initMasonryLayout();
     externalContent.init();
     refreshDynamicTiles();
-    window.PLANETENUHR_DIAGRAM_DETAILS.create({beforeOpen:dashboardLayout.releasePendingViewportRestoration});
+    window.PLANETENUHR_DIAGRAM_DETAILS.create({
+      beforeOpen:dashboardLayout.releasePendingViewportRestoration,
+      constellationYear:constellationYearController
+    });
     dashboardLayout.scheduleMasonryLayout(cardNavigation.scrollToRequestedCard);
     setInterval(refreshDynamicTiles, 1800000);
     setInterval(refreshMilkyWaySky, 60000);
