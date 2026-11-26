@@ -1,0 +1,15 @@
+.mission-photo-field,
+.milky-way-sky-visual {
+  --galactic-band-copper: 166 111 79;
+}
+
+.mission-photo-field {
+  --galactic-band: linear-gradient(
+    103deg,
+    transparent 38%,
+    #a8735630 52%,
+    rgb(var(--galactic-band-copper) / 53.3333%) 63%,
+    #875f4b45 74%,
+    transparent 86%
+  );
+}

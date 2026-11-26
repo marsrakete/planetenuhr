@@ -553,7 +553,7 @@ window.PLANETENUHR_CARD_HELP = {
           "If no image post exists for today, it can fall back to the latest image post instead."
         ],
         details: [
-          "The card is hidden when the page is opened via file:// because feed fetching should not run there.",
+          "Planetenuhr loads external posts and images after you enable the feed in this card.",
           "Every account entry is rendered separately, so multiple sources can stack in one scrollable tile."
         ],
         links: [
@@ -1114,7 +1114,7 @@ window.PLANETENUHR_CARD_HELP = {
           "Falls es heute noch keinen Bildpost gibt, kann stattdessen der letzte verfügbare Bildpost gezeigt werden."
         ],
         details: [
-          "Bei einem Aufruf per file:// bleibt die Kachel verborgen, weil dort kein Feed-Fetching laufen soll.",
+          "Planetenuhr lädt externe Beiträge und Bilder nach der Freigabe in dieser Kachel.",
           "Jeder Account wird als eigener Abschnitt gerendert, sodass mehrere Quellen untereinander in einer scrollbaren Kachel erscheinen können."
         ],
         links: [
@@ -1675,7 +1675,7 @@ window.PLANETENUHR_CARD_HELP = {
           "S'il n'existe pas encore de post image aujourd'hui, elle peut afficher le dernier post image disponible."
         ],
         details: [
-          "La carte reste cachee lorsque la page est ouverte via file://, afin d'eviter le chargement du flux dans ce contexte.",
+          "Planetenuhr charge les publications et les images externes après votre accord dans cette carte.",
           "Chaque compte est rendu dans son propre bloc, ce qui permet d'empiler plusieurs sources dans une carte scrollable."
         ],
         links: [
@@ -1891,11 +1891,13 @@ window.PLANETENUHR_CARD_HELP.fr.cards.sky_knowledge = {
 const spaceMissionHelpSources = [
   { label: "NASA/JPL Horizons", url: "https://ssd.jpl.nasa.gov/horizons/" },
   { label: "ESA · BepiColombo", url: "https://www.esa.int/bepicolombo" },
-  { label: "NASA / Johns Hopkins APL · Dragonfly", url: "https://science.nasa.gov/mission/dragonfly/multimedia/" }
+  { label: "NASA / Johns Hopkins APL · Dragonfly", url: "https://science.nasa.gov/mission/dragonfly/multimedia/" },
+  { label: "NASA · Voyager", url: "https://science.nasa.gov/mission/voyager/planetary-voyage/" },
+  { label: "NASA/JPL · Voyager 2 / Triton", url: "https://www.jpl.nasa.gov/news/nasa-contacts-voyager-2-using-upgraded-deep-space-network-dish/" }
 ];
 window.PLANETENUHR_CARD_HELP.de.cards.idefix = {
   "intro": [
-    "Sieben Reiter zeigen IDEFIX / MMX, BepiColombo, Hera, Europa Clipper, Juice, Psyche und Dragonfly. Jeder Reiter hat einen eigenen Regler mit Wiedergabe. Anklickbare Meilensteine springen zu einem durch Bahndaten abgedeckten Zeitpunkt.",
+    "Die Kachel zeigt IDEFIX / MMX, BepiColombo, Hera, Europa Clipper, Juice, Psyche und Dragonfly. Im Reiter „Äußeres Sonnensystem“ stehen Voyager 1 und 2 zur Auswahl. Jede Mission hat einen eigenen Regler mit Wiedergabe und anklickbaren Meilensteinen.",
     "Ein Wechsel des globalen Datums und der globale Button „Heute“ setzen die datierten Ansichten auf die Dashboard-Zeit. Fehlen für dieses Datum Bahndaten, zeigt die Ansicht einen Hinweis. Dragonfly behält die gewählte Phase der geplanten Titan-Landung."
   ],
   "formulas": [
@@ -1931,7 +1933,11 @@ window.PLANETENUHR_CARD_HELP.de.cards.idefix = {
     "IDEFIX soll etwa 100 Tage auf Phobos arbeiten und dort bleiben. Die geplante Probenrückkehr 2031 ist keine Rückreise des Rovers.",
     "BepiColombo, Hera, Europa Clipper, Juice und Psyche verwenden gespeicherte Horizons-Bahnen. Die kräftige Spur endet am gewählten Zeitpunkt. Gestrichelte Abschnitte sind vorausberechnet. Die Angaben an der Grafik nennen Datenstand, Abdeckung und Quelle.",
     "Die Merkur-Nahansicht blickt senkrecht auf die mittlere Umlaufebene von MPO. Mios separate ESA-SPICE-Planbahn erscheint ab der modellierten Trennung in derselben Projektion. Die Nahansichten bei Didymos, Erde und Mars verwenden Vektoren relativ zum jeweiligen Ziel.",
-    "Dragonfly zeigt den geplanten Landeablauf schematisch. Die Reglerstufen bezeichnen Phasen ohne Zeit- oder Entfernungsmaßstab."
+    "Dragonfly zeigt den geplanten Landeablauf schematisch. Die Reglerstufen bezeichnen Phasen ohne Zeit- oder Entfernungsmaßstab.",
+    "Die Voyager-Reiseansichten zeigen die Ekliptik schräg. Die türkise Linie verbindet die Sonde mit ihrem Lotpunkt in der Ebene. Die Angabe in AE gibt den Abstand oberhalb oder unterhalb der Ebene an. Frühe Bahndaten einschließlich der Vorbeiflüge sind näherungsweise rekonstruiert. Spätere Vorausberechnungen sind gestrichelt.",
+    "Bei einer Planetenannäherung erscheint eine Nahansicht. Sie folgt demselben Zeitregler wie die Reiseübersicht. Beim Abspielen läuft die Zeit im Vorbeiflug langsamer. Die Meilensteine führen direkt zur größten Annäherung.",
+    "Der 3D-Knopf öffnet Bahnen mit räumlichen Daten in einer Großansicht. Dort lassen sich Blickrichtung, Zoom und Ausschnitt ändern. Das × schließt die Ansicht und übernimmt den zuletzt gewählten Zeitpunkt.",
+    "Warum verließen die Voyager-Sonden die Ekliptik, also die Ebene der Erdbahn? Voyager 1 sollte Titan aus der Nähe und Saturns Ringe untersuchen. Saturns Schwerkraft lenkte die Sonde auf dieser Route nach Norden ab. Voyager 2 flog über Neptuns Nordpol, um anschließend nahe an Triton vorbeizukommen. Neptuns Schwerkraft lenkte sie dabei nach Süden ab."
   ],
   "links": [
     ...spaceMissionHelpSources,
@@ -1959,7 +1965,7 @@ window.PLANETENUHR_CARD_HELP.de.cards.idefix = {
 };
 window.PLANETENUHR_CARD_HELP.en.cards.idefix = {
   "intro": [
-    "Seven tabs cover IDEFIX / MMX, BepiColombo, Hera, Europa Clipper, Juice, Psyche and Dragonfly. Each has its own slider and playback. Milestone buttons jump to dates covered by the trajectory data.",
+    "The card covers IDEFIX / MMX, BepiColombo, Hera, Europa Clipper, Juice, Psyche and Dragonfly. Select Voyager 1 or 2 in the Outer Solar System tab. Each mission has its own slider, playback and milestone buttons.",
     "Enlarged sketch: Phobos orbits Mars in about 7 h 39 min. Orientation and sizes are schematic."
   ],
   "formulas": [
@@ -1995,7 +2001,11 @@ window.PLANETENUHR_CARD_HELP.en.cards.idefix = {
     "IDEFIX is planned to operate on Phobos for about 100 days and remain there. The planned sample return in 2031 does not bring the rover home.",
     "A dashboard date change or the global Today button resets the dated views. The card flags dates outside the available trajectory. Dragonfly keeps its selected landing stage.",
     "BepiColombo, Hera, Europa Clipper, Juice and Psyche use cached Horizons trajectories. The highlighted trail ends at the selected time. Dashed segments show predictions. Each view identifies its data coverage and source.",
-    "The Mercury view looks down on MPO’s mean orbital plane and shows Mio’s separate ESA SPICE prediction from the planned separation. Other close-ups use target-centered vectors. Dragonfly’s planned landing uses schematic stages without a time or distance scale."
+    "The Mercury view looks down on MPO’s mean orbital plane and shows Mio’s separate ESA SPICE prediction from the planned separation. Other close-ups use target-centered vectors. Dragonfly’s planned landing uses schematic stages without a time or distance scale.",
+    "The Voyager views show the ecliptic at an angle. The teal line connects the spacecraft to its perpendicular projection on the plane. The value in AU gives its distance above or below the plane. Early trajectory data, including the flybys, are approximate reconstructions. The later predictions are dashed.",
+    "A close-up appears during each planetary encounter and follows the same slider as the journey overview. Playback slows during the flyby. Milestone buttons jump to closest approach.",
+    "The 3D button opens trajectories with spatial data in an enlarged view. You can rotate, zoom and pan. Close with × to return to the card at the selected time.",
+    "Why did the Voyagers leave the ecliptic, the plane of Earth’s orbit? Voyager 1’s route was chosen to study Titan up close and observe Saturn’s rings. Saturn’s gravity sent the spacecraft northward. Voyager 2 passed over Neptune’s north pole to fly close to Triton afterward. Neptune’s gravity deflected it southward."
   ],
   "links": [
     ...spaceMissionHelpSources,
@@ -2023,7 +2033,7 @@ window.PLANETENUHR_CARD_HELP.en.cards.idefix = {
 };
 window.PLANETENUHR_CARD_HELP.fr.cards.idefix = {
   "intro": [
-    "Sept onglets présentent IDEFIX / MMX, BepiColombo, Hera, Europa Clipper, Juice, Psyche et Dragonfly. Chacun dispose de son propre curseur et de la lecture. Les boutons d’étape mènent aux dates couvertes par les données.",
+    "La carte présente IDEFIX / MMX, BepiColombo, Hera, Europa Clipper, Juice, Psyche et Dragonfly. L’onglet « Système solaire externe » permet de choisir Voyager 1 ou 2. Chaque mission dispose d’un curseur, d’une commande de lecture et de boutons d’étape.",
     "Schéma agrandi : Phobos fait le tour de Mars en environ 7 h 39 min. Orientation et tailles schématiques."
   ],
   "formulas": [
@@ -2059,7 +2069,11 @@ window.PLANETENUHR_CARD_HELP.fr.cards.idefix = {
     "IDEFIX doit travailler environ 100 jours sur Phobos et y rester. Le retour prévu des échantillons en 2031 ne ramène pas le rover.",
     "Un changement de la date globale ou le bouton global « Aujourd’hui » réinitialise les vues datées. La carte signale les dates hors couverture. Dragonfly conserve l’étape d’atterrissage sélectionnée.",
     "BepiColombo, Hera, Europa Clipper, Juice et Psyche utilisent des trajectoires Horizons enregistrées. La trace mise en évidence s’arrête à la date choisie. Les pointillés indiquent la prévision. Chaque vue indique la couverture et la source des données.",
-    "La vue de Mercure est perpendiculaire au plan orbital moyen de MPO. Elle ajoute la prévision ESA SPICE de Mio à partir de la séparation prévue. Les autres vues rapprochées utilisent des vecteurs centrés sur la cible. L’atterrissage prévu de Dragonfly est un schéma par étapes sans échelle de temps ni de distance."
+    "La vue de Mercure est perpendiculaire au plan orbital moyen de MPO. Elle ajoute la prévision ESA SPICE de Mio à partir de la séparation prévue. Les autres vues rapprochées utilisent des vecteurs centrés sur la cible. L’atterrissage prévu de Dragonfly est un schéma par étapes sans échelle de temps ni de distance.",
+    "Les vues Voyager montrent l’écliptique en oblique. La ligne turquoise relie la sonde à sa projection perpendiculaire sur le plan. La valeur en UA indique la distance au-dessus ou au-dessous du plan. Les premières trajectoires, dont les survols, sont des reconstitutions approximatives. Les prévisions ultérieures sont en pointillés.",
+    "Une vue rapprochée apparaît lors de chaque rencontre planétaire. Elle suit le même curseur que la vue d’ensemble. La lecture ralentit pendant le survol. Les boutons d’étape mènent au point d’approche minimale.",
+    "Le bouton 3D agrandit les trajectoires disposant de données spatiales. Vous pouvez tourner, zoomer et déplacer la vue. Le bouton × ramène à la carte en conservant la date choisie.",
+    "Pourquoi les sondes Voyager ont-elles quitté l’écliptique, le plan de l’orbite terrestre ? La trajectoire de Voyager 1 permettait d’étudier Titan de près et d’observer les anneaux de Saturne. La gravité de Saturne a dévié la sonde vers le nord. Voyager 2 a survolé le pôle nord de Neptune afin de passer ensuite près de Triton. La gravité de Neptune l’a déviée vers le sud."
   ],
   "links": [
     ...spaceMissionHelpSources,
@@ -2147,6 +2161,51 @@ window.PLANETENUHR_CARD_HELP.en.cards.solar_system.details.push("All eight plane
 window.PLANETENUHR_CARD_HELP.en.cards.daily_highlights.details.push("The schematic miniatures share their planet, Earth and Moon artwork with the other cards. The lunar phase uses the same approximate model and terminator as Earth & Moon; colors and surface features are illustrations.");
 window.PLANETENUHR_CARD_HELP.fr.cards.solar_system.details.push("Les huit planètes utilisent des illustrations SVG communes. Tailles et distances sont schématiques. Les rayons fixes de js/data/solar-system-config.js espacent les planètes intérieures sans représenter leurs distances. Seules les directions héliocentriques calculées suivent la date. La Terre est représentée sans ombre nocturne dans cette vue ; les continents sont schématiques. Les libellés déplacés ont des lignes de liaison droites.");
 window.PLANETENUHR_CARD_HELP.fr.cards.daily_highlights.details.push("Les miniatures schématiques partagent leurs illustrations des planètes, de la Terre et de la Lune avec les autres cartes. La phase lunaire utilise le même modèle approché et le même terminateur que Terre et Lune ; couleurs et reliefs sont illustratifs.");
+
+const fictionalMissionSources = [
+  { label:"Hergé · Objectif Lune (1953)", url:"https://www.tintin.com/fr/albums/objectif-lune" },
+  { label:"Hergé · On a marché sur la Lune (1954)", url:"https://www.tintin.com/fr/albums/on-a-marche-sur-la-lune" },
+  { label:"Stanley Kubrick · 2001: A Space Odyssey (1968)", url:"https://www.oscars.org/events/2001-space-odyssey-1968" },
+  { label:"Christopher Nolan · Interstellar (2014)", url:"https://www.paramountmovies.com/movies/interstellar" },
+  { label:"Phil Lord & Christopher Miller · Project Hail Mary (2026)", url:"https://www.aboutamazon.com/news/entertainment/project-hail-mary-ryan-gosling-amazon-mgm-studios" }
+];
+
+window.PLANETENUHR_CARD_HELP.de.cards.fictional_missions = {
+  intro:[
+    "Erkunde vier Geschichten in eigens für Planetenuhr gezeichneten Animationen: Schritte auf dem Mond, 2001: Odyssee im Weltraum, Interstellar und Project Hail Mary.",
+    "Wähle eine Mission und starte die Wiedergabe oder bewege den Zeitregler. Ein Klick auf einen Missionsschritt springt zur Szene. Je nach Abschnitt siehst du die Flugbahn, ein Manöver aus der Nähe oder die Oberfläche eines Himmelskörpers."
+  ],
+  details:[
+    "Die Kalenderdaten wurden für den Zeitregler festgelegt und stehen in UTC. Flugzeiten, Flugbahnen, Entfernungen und Größenverhältnisse sind schematisch.",
+    "Zwei Uhren zeigen, wie unterschiedlich viel Zeit auf Millers Planeten und an Bord der Endurance vergeht. Nach der Rückkehr läuft die Zeitleiste ab Manns Eisplaneten auf der Zeit der Endurance weiter.",
+    "Die Mondreise stützt sich auf Hergés Alben Reiseziel Mond und Schritte auf dem Mond. Project Hail Mary ist die Verfilmung des Romans von Andy Weir."
+  ],
+  links:fictionalMissionSources
+};
+window.PLANETENUHR_CARD_HELP.en.cards.fictional_missions = {
+  intro:[
+    "Explore four stories in animations drawn for Planetenuhr: Explorers on the Moon, 2001: A Space Odyssey, Interstellar and Project Hail Mary.",
+    "Choose a mission, then press Play or move the time slider. Select a milestone to jump to its scene. The view follows the flight path, shows a close-up of a manoeuvre or switches to the surface."
+  ],
+  details:[
+    "The calendar dates were chosen for this slider and are displayed in UTC. Flight times, trajectories, distances and sizes are schematic.",
+    "Two clocks show how differently time passes on Miller’s planet and aboard Endurance. After the reunion, the timeline continues on Endurance time from Mann’s ice planet.",
+    "The Moon journey draws on Hergé’s Destination Moon and Explorers on the Moon. Project Hail Mary adapts Andy Weir’s novel."
+  ],
+  links:fictionalMissionSources
+};
+window.PLANETENUHR_CARD_HELP.fr.cards.fictional_missions = {
+  intro:[
+    "Explorez quatre récits dans des animations dessinées pour Planetenuhr : On a marché sur la Lune, 2001, l’Odyssée de l’espace, Interstellar et Project Hail Mary.",
+    "Choisissez une mission, lancez la lecture ou déplacez le curseur temporel. Sélectionnez une étape pour afficher la scène. La vue montre la trajectoire, une manœuvre de près ou la surface d’un astre."
+  ],
+  details:[
+    "Les dates ont été choisies pour ce curseur et sont affichées en UTC. Les temps de vol, les trajectoires, les distances et les tailles sont schématiques.",
+    "Deux horloges montrent la différence entre le temps écoulé sur la planète de Miller et à bord de l’Endurance. Après les retrouvailles, la chronologie reprend au temps de l’Endurance à partir de la planète glacée de Mann.",
+    "Le voyage lunaire reprend les albums Objectif Lune et On a marché sur la Lune d’Hergé. Project Hail Mary adapte le roman d’Andy Weir."
+  ],
+  links:fictionalMissionSources
+};
 
 const aboutConstellationSources = [
   { label: "Stellarium · Illustrationen / Illustrations", url: "https://github.com/Stellarium/stellarium/tree/daace2add6a1bf886e8ee1934f51e9c69f818d18/skycultures/modern/illustrations" },

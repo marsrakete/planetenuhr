@@ -10,6 +10,7 @@ window.PLANETENUHR_DIAGRAM_DETAILS = (() => {
     const solarSystem = card.querySelector('#solarSystem');
     if (solarSystem && solarSystem.getBoundingClientRect().width > 0) return [solarSystem];
     return Array.from(card.querySelectorAll('svg')).filter(svg => {
+      if (svg.hasAttribute('data-live-diagram')) return false;
       const rect = svg.getBoundingClientRect();
       return rect.width > 80 && rect.height > 60 && svg.querySelector('text');
     });

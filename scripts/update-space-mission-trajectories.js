@@ -17,15 +17,35 @@ const requests = [
   {key:'psyche', id:-255, center:10, start:'2023-10-14', end:'2029-02-24', step:'2 d'},
   {key:'psycheMars', id:-255, center:499, start:'2026-05-14', end:'2026-05-17', step:'5 m'}
 ];
+const voyagerRequests = [
+  {key:'voyager1', id:-31, center:10, start:'1977-09-05T14:00Z', end:'1985-01-01', step:'3 d'},
+  {key:'voyager1Interstellar', id:-31, center:10, start:'1981-01-01', end:'2099-12-31', step:'28 d'},
+  {key:'voyager1Jupiter', id:-31, center:599, start:'1979-03-04', end:'1979-03-07', step:'10 m'},
+  {key:'voyager1Saturn', id:-31, center:699, start:'1980-11-11', end:'1980-11-14', step:'10 m'},
+  {key:'voyager2', id:-32, center:10, start:'1977-08-20T16:00Z', end:'1995-01-01', step:'4 d'},
+  {key:'voyager2Interstellar', id:-32, center:10, start:'1989-08-29', end:'2099-12-31', step:'28 d'},
+  {key:'voyager2Jupiter', id:-32, center:599, start:'1979-07-08', end:'1979-07-11', step:'10 m'},
+  {key:'voyager2Saturn', id:-32, center:699, start:'1981-08-25', end:'1981-08-28', step:'10 m'},
+  {key:'voyager2Uranus', id:-32, center:799, start:'1986-01-23', end:'1986-01-26', step:'10 m'},
+  {key:'voyager2Neptune', id:-32, center:899, start:'1989-08-24', end:'1989-08-27', step:'10 m'}
+];
+const voyagerProvenance = {
+  '-31':{reconstructedBefore:'1981-01-01', trackingThrough:'1992-04-24'},
+  '-32':{reconstructedBefore:'1989-08-29', trackingThrough:'1992-10-30'}
+};
 
 /** Downloads geometric vectors and records the selected Horizons solution and its tracking cutoff.
  * @param {object} request Target, center, date range and sampling step.
  * @returns {Promise<object>} Cached trajectory and its provenance.
  */
 async function download({id, target, command = String(id), center, start, end, step}) {
+  let startParameter = start;
+  if (start.includes('T')) {
+    startParameter = "'" + start.replace('T',' ').replace('Z','') + "'";
+  }
   const parameters = new URLSearchParams({
     format:'json', COMMAND:command, CENTER:'500@' + center, EPHEM_TYPE:'VECTORS',
-    START_TIME:start, STOP_TIME:end, STEP_SIZE:"'" + step + "'", TIME_TYPE:'UT',
+    START_TIME:startParameter, STOP_TIME:end, STEP_SIZE:"'" + step + "'", TIME_TYPE:'UT',
     REF_PLANE:'ECLIPTIC', REF_SYSTEM:'ICRF', VEC_TABLE:'1', CSV_FORMAT:'YES',
     VEC_CORR:'NONE', OUT_UNITS:center === 10 ? 'AU-D' : 'KM-S'
   });
@@ -67,6 +87,24 @@ async function download({id, target, command = String(id), center, start, end, s
     solution:targetLine.match(/\{source: ([^}]+)\}/)?.[1] || targetLine,
     rows
   };
+}
+
+/** Writes the Voyager cache separately so the other missions need not be refreshed.
+ * No parameters. @returns {Promise<void>} Resolves after all ten Voyager series validate.
+ */
+async function downloadVoyager() {
+  const data = {};
+  for (const request of voyagerRequests) {
+    const series = await download(request);
+    Object.assign(series,voyagerProvenance[request.id]);
+    data[request.key] = series;
+    console.log(request.key, series.revised, series.rows.length);
+  }
+  const output = path.join(__dirname, '../js/data/voyager-trajectories.js');
+  const header = '// NASA/JPL Horizons Ecliptic J2000. Generate with node scripts/update-space-mission-trajectories.js --voyager.\n';
+  const entries = Object.entries(data).map(([key, value]) => '  ' + key + ': ' + JSON.stringify(value));
+  fs.writeFileSync(output, header + 'Object.assign(window.PLANETENUHR_SPACE_MISSION_TRAJECTORIES, {\n' +
+    entries.join(',\n') + '\n});\n', 'utf8');
 }
 
 /** Samples original state epochs from ESA's Mio DAF/SPK Type 13 file.
@@ -158,7 +196,11 @@ async function main() {
 }
 
 if (require.main === module) {
-  main().catch(error => {
+  let update = main;
+  if (process.argv.includes('--voyager')) {
+    update = downloadVoyager;
+  }
+  update().catch(error => {
     console.error(error.message);
     process.exitCode = 1;
   });

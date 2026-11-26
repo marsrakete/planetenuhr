@@ -28,7 +28,7 @@ window.PLANETENUHR_SPACE_MISSIONS = (() => {
    * @param {object} dependencies Card element, mission data, locale and layout adapters.
    * @returns {{render:Function}} Controller for dashboard date and language updates.
    */
-  function create(idefix, {card, missions, createAnimation, trajectories, positionAt,
+  function create(idefix, {card, missions, outerMissions, createAnimation, trajectories, positionAt,
     getHeliocentricPosition, getLanguage, getTranslations, updateCardLayout}) {
     const document = card.ownerDocument;
     const tabs = card.querySelector('#spaceMissionTabs');
@@ -43,29 +43,34 @@ window.PLANETENUHR_SPACE_MISSIONS = (() => {
     function addLink(panel, key, href) {
       const link = linkTemplate.content.firstElementChild.cloneNode(true);
       link.href = href;
-      panel.querySelector('.idefix-links').append(link);
+      panel.querySelector('.mission-animation-links').append(link);
       localizedNodes.push({node: link, key});
     }
 
-    function createPanel(mission) {
+    /** Mounts a mission panel in its tab group.
+     * @param {object} mission Definition with views, events and source links.
+     * @param {HTMLElement} [container=card] Panel's parent.
+     * @returns {{panel:HTMLElement,animation:object}} Panel and its animation controller.
+     */
+    function createPanel(mission, container = card) {
       const panel = panelTemplate.content.firstElementChild.cloneNode(true);
       panel.id = 'space-mission-' + mission.id;
       panel.querySelector('h3').textContent = mission.name + ' · ' + mission.agency;
       localizedNodes.push({node: panel.querySelector('p'), key: mission.id});
-      card.append(panel);
+      container.append(panel);
       const animation = createAnimation(panel.querySelector('.mission-animation'), mission, {
         trajectories, positionAt, getHeliocentricPosition, getLanguage, getTranslations
       });
-      for (const [start, key, confirmed, end] of mission.events) {
+      for (const [start, key, confirmed, end, seekAt = start] of mission.events) {
         const event = eventTemplate.content.firstElementChild.cloneNode(true);
         const time = event.querySelector('time');
         time.dateTime = start;
         localizedNodes.push({node: time, start, end});
         const title = event.querySelector('span');
-        if (animation.canSeek(start)) {
+        if (animation.canSeek(seekAt)) {
           const button = tabTemplate.content.firstElementChild.cloneNode(true);
           button.classList.add('mission-event-jump');
-          button.addEventListener('click', () => animation.seek(start));
+          button.addEventListener('click', () => animation.seek(seekAt));
           title.append(button);
           localizedNodes.push({node: button, key});
         } else {
@@ -92,7 +97,14 @@ window.PLANETENUHR_SPACE_MISSIONS = (() => {
       return {panel, animation};
     }
 
-    function addTab(name, panel, animation) {
+    /** Connects a tab button to its panel in the supplied tab list.
+     * @param {string} name Tab caption.
+     * @param {HTMLElement} panel Associated panel.
+     * @param {object} animation Panel controller.
+     * @param {HTMLElement} [tabList=tabs] Parent tab list.
+     * @returns {object} Tab, panel and animation entry.
+     */
+    function addTab(name, panel, animation, tabList = tabs) {
       const tab = tabTemplate.content.firstElementChild.cloneNode(true);
       tab.textContent = name;
       tab.id = panel.id + '-tab';
@@ -100,7 +112,7 @@ window.PLANETENUHR_SPACE_MISSIONS = (() => {
       tab.setAttribute('aria-controls', panel.id);
       panel.setAttribute('aria-labelledby', tab.id);
       panel.tabIndex = 0;
-      tabs.append(tab);
+      tabList.append(tab);
       return {tab, panel, animation};
     }
 
@@ -110,8 +122,13 @@ window.PLANETENUHR_SPACE_MISSIONS = (() => {
       entries.push(addTab(mission.name, panel, animation));
     }
 
-    function select(index) {
-      entries.forEach(({tab, panel, animation}, position) => {
+    /** Shows the selected panel and pauses the other panels.
+     * @param {number} index Selected tab index.
+     * @param {object[]} group Tabs in the selected tab list.
+     * @returns {void}
+     */
+    function select(index,group) {
+      group.forEach(({tab, panel, animation}, position) => {
         const selected = index === position;
         tab.setAttribute('aria-selected', String(selected));
         tab.tabIndex = selected ? 0 : -1;
@@ -122,26 +139,61 @@ window.PLANETENUHR_SPACE_MISSIONS = (() => {
       });
     }
 
-    select(0);
-    entries.forEach(({tab}, index) => {
-      tab.addEventListener('click', () => {
-        select(index);
-        updateCardLayout(card);
+    /** Enables pointer and keyboard selection for either mission tab list.
+     * @param {object[]} group Tab, panel and animation entries in display order.
+     * @returns {void}
+     */
+    function wireTabs(group) {
+      group.forEach(({tab}, index) => {
+        tab.addEventListener('click', () => {
+          select(index,group);
+          updateCardLayout(card);
+        });
+        tab.addEventListener('keydown', event => {
+          let next;
+          switch (event.key) {
+            case 'ArrowRight': next = (index + 1) % group.length; break;
+            case 'ArrowLeft': next = (index + group.length - 1) % group.length; break;
+            case 'Home': next = 0; break;
+            case 'End': next = group.length - 1; break;
+            default: return;
+          }
+          event.preventDefault();
+          group[next].tab.click();
+          group[next].tab.focus();
+        });
       });
-      tab.addEventListener('keydown', event => {
-        let next;
-        switch (event.key) {
-          case 'ArrowRight': next = (index + 1) % entries.length; break;
-          case 'ArrowLeft': next = (index + entries.length - 1) % entries.length; break;
-          case 'Home': next = 0; break;
-          case 'End': next = entries.length - 1; break;
-          default: return;
+      select(0,group);
+    }
+
+    if (outerMissions?.length) {
+      const template = document.getElementById('outerSpaceMissionTemplate');
+      const panel = template.content.firstElementChild.cloneNode(true);
+      const tabList = panel.querySelector('[role="tablist"]');
+      card.append(panel);
+      const outerEntries = outerMissions.map(mission => {
+        const entry = createPanel(mission,panel);
+        return addTab(mission.name,entry.panel,entry.animation,tabList);
+      });
+      wireTabs(outerEntries);
+      const outerAnimation = {
+        /** Stops playback in the nested panels. No parameters. @returns {void} */
+        pause() {
+          outerEntries.forEach(({animation}) => animation.pause());
+        },
+        /** Updates both nested panels. @param {Date} date Dashboard date.
+         * @param {boolean} resetLocal Whether to reset the local date. @returns {void}
+         */
+        render(date,resetLocal) {
+          outerEntries.forEach(({animation}) => animation.render(date,resetLocal));
         }
-        event.preventDefault();
-        entries[next].tab.click();
-        entries[next].tab.focus();
-      });
-    });
+      };
+      const entry = addTab('',panel,outerAnimation);
+      localizedNodes.push({node:entry.tab,key:'outerSystem'});
+      tabList.setAttribute('aria-labelledby',entry.tab.id);
+      entries.push(entry);
+    }
+    wireTabs(entries);
 
     function render(date, resetLocal = false) {
       const nextLanguage = getLanguage();

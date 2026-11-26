@@ -2,8 +2,30 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
   'use strict';
 
   const DAY_MS = 86400000;
-  const planetPeriods = {mercury:87.97, venus:224.7, earth:365.26, mars:686.98, jupiter:4332.59};
-  const planetRadii = {mercury:.47, venus:.73, earth:1.02, mars:1.67, jupiter:5.46};
+  const planetPeriods = {mercury:87.97, venus:224.7, earth:365.26, mars:686.98, jupiter:4332.59, saturn:10759.22, uranus:30688.5, neptune:60182};
+  const planetRadii = {mercury:.47, venus:.73, earth:1.02, mars:1.67, jupiter:5.46, saturn:10.12, uranus:20.1, neptune:30.34};
+  const eclipticTilt = 22 * Math.PI / 180;
+  const obliqueAxes = {right:[0,-1,0],up:[Math.sin(eclipticTilt),0,Math.cos(eclipticTilt)],
+    front:[-Math.cos(eclipticTilt),0,Math.sin(eclipticTilt)]};
+
+  /** Projects an ecliptic vector into an orthographic view tilted above the plane.
+   * @param {number} x Ecliptic x coordinate.
+   * @param {number} y Ecliptic y coordinate.
+   * @param {number} z Height above the ecliptic.
+   * @returns {number[]} Horizontal and vertical plot coordinates before scaling.
+   */
+  function obliqueProjection(x,y,z) {
+    return [-y,x * Math.sin(eclipticTilt) + z * Math.cos(eclipticTilt)];
+  }
+
+  /** Returns the signed distance toward the oblique camera.
+   * @param {number} x Ecliptic x coordinate.
+   * @param {number} z Height above the ecliptic.
+   * @returns {number} Larger values are closer to the viewer.
+   */
+  function obliqueDepth(x,z) {
+    return -x * Math.cos(eclipticTilt) + z * Math.sin(eclipticTilt);
+  }
 
   /** Sets orbit labels to the same visible size at every SVG scale.
    * @param {SVGSVGElement} plot Diagram with a defined viewBox.
@@ -19,16 +41,17 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
     return size;
   }
 
-  /** Runs shared linear playback on a mission slider.
-   * @param {object} callbacks Reads the range and duration and updates the frame and play label.
+  /** Runs playback on a mission slider, linearly or using a supplied clock.
+   * @param {object} callbacks Reads the range, optionally supplies a clock and updates the frame and play label.
    * @returns {{toggle:Function,pause:Function,isPlaying:Function}} Playback controls.
    */
-  function createPlayback({getValue, getMax, getDuration, onFrame, onState}) {
+  function createPlayback({getValue, getMax, getDuration, getTimeline, onFrame, onState, onFinish}) {
     let timer = null;
     let from;
     let start;
     let range;
     let duration;
+    let timeAt;
 
     function pause() {
       if (timer !== null) {
@@ -39,10 +62,14 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
     }
 
     function frame(now) {
-      const current = Math.min(range, from + (now - start) * range / duration);
+      const elapsed = now - start;
+      let position = from + elapsed * range / duration;
+      if (timeAt) position = timeAt(elapsed);
+      const current = Math.min(range,position);
       onFrame(current);
       if (current >= range) {
         pause();
+        onFinish?.();
       } else if (timer !== null) {
         timer = requestAnimationFrame(frame);
       }
@@ -59,6 +86,7 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
       if (from >= range) {
         from = 0;
       }
+      timeAt = getTimeline?.(from,range,duration);
       start = performance.now();
       timer = requestAnimationFrame(frame);
       onState(true);
@@ -70,9 +98,13 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
   /** Classifies the selected UTC day using the cutoff published with the solution.
    * @param {number} timestamp UTC milliseconds.
    * @param {string|null} trackingThrough Last tracking-based date.
+   * @param {string} [reconstructedBefore] First date in the tracking-based section.
    * @returns {string} Translation key for the trajectory provenance.
    */
-  function dataStatus(timestamp, trackingThrough) {
+  function dataStatus(timestamp, trackingThrough, reconstructedBefore) {
+    if (timestamp < Date.parse(reconstructedBefore)) {
+      return 'reconstructed';
+    }
     if (!trackingThrough || !Number.isFinite(timestamp)) {
       return 'vectorData';
     }
@@ -82,14 +114,13 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
     return 'predicted';
   }
 
-  /** Builds a face-on projection using the mean angular-momentum direction of the orbit.
+  /** Finds the face-on axes using the mean angular-momentum direction of the orbit.
    * @param {number[][]} rows Ordered position vectors [time, x, y, z].
-   * @returns {Function|null} Mapper from Cartesian vectors to two in-plane coordinates.
+   * @returns {object|null} Orthogonal camera basis or null for a degenerate path.
    */
-  function orbitalProjection(rows) {
+  function orbitalAxes(rows) {
     const cross = ([ax, ay, az], [bx, by, bz]) =>
       [ay * bz - az * by, az * bx - ax * bz, ax * by - ay * bx];
-    const dot = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
     const normal = [0, 0, 0];
     for (let index = 1; index < rows.length; index += 1) {
       const area = cross(rows[index - 1].slice(1), rows[index].slice(1));
@@ -108,10 +139,27 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
     const width = Math.hypot(...horizontal);
     const right = horizontal.map(value => value / width);
     const up = cross(unitNormal, right);
-    return (x, y, z) => {
+    return {right,up,front:unitNormal};
+  }
+
+  /** Makes a mapper from Cartesian vectors to in-plane coordinates.
+   * @param {object|null} axes Original orbital basis.
+   * @returns {Function|null} Orbit mapper, or null when the basis is unavailable.
+   */
+  function projectionForAxes(axes) {
+    if (!axes) return null;
+    return (x,y,z) => {
       const point = [x, y, z];
-      return [dot(point, right), dot(point, up)];
+      return [axes.right.reduce((sum,value,index) => sum + value * point[index],0),
+        axes.up.reduce((sum,value,index) => sum + value * point[index],0)];
     };
+  }
+
+  /** Builds a face-on mapper for a sampled local orbit.
+   * @param {number[][]} rows Sampled vectors. @returns {Function|null} Orbit mapper.
+   */
+  function orbitalProjection(rows) {
+    return projectionForAxes(orbitalAxes(rows));
   }
 
   /** Mounts a local animation with its own slider and playback state.
@@ -124,10 +172,15 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
     const document = root.ownerDocument;
     const template = document.getElementById('spaceMissionAnimationTemplate');
     const markerTemplate = document.getElementById('spaceMissionMarkerTemplate');
+    const saturnTemplate = document.getElementById('spaceMissionSaturnTemplate');
+    const legendTemplate = document.getElementById('spaceMissionPlanetLegendTemplate');
     const buttonTemplate = document.getElementById('idefixControlTemplate');
     const linkTemplate = document.getElementById('idefixLinkTemplate');
     root.append(template.content.cloneNode(true));
     const plot = root.querySelector('svg');
+    const eclipticPlane = plot.querySelector('.mission-ecliptic-plane');
+    const eclipticOffset = plot.querySelector('.mission-ecliptic-offset');
+    const planetLegend = root.querySelector('.mission-planet-legend');
     const referenceOrbits = root.querySelector('.mission-reference-orbits');
     const targetOrbit = root.querySelector('.mission-target-orbit');
     const routeOverview = root.querySelector('.mission-route-overview');
@@ -164,17 +217,70 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
     let bodies = [];
     let probe;
     let secondaryProbe;
+    let centerMarker;
     let targetMarker;
     let routeTracks = [];
+    let spatialOrbits = [];
+    let originalAxes;
+    let spatial;
+    let flyby;
+    const journeyLayout = root.querySelector('.mission-journey-layout');
+    const milestones = root.parentElement.querySelector('.space-mission-timeline');
+    const photoJump = root.querySelector('[data-mission-photo-jump]');
+    const photoCountdown = root.querySelector('.mission-photo-countdown');
+    const photoEvent = mission.photo && mission.events.find(([,key]) => key === mission.photo.milestone);
+    let photo;
+    let photoDay;
+    let photoDisplayWindow;
+    if (photoEvent) {
+      const date = new Date(photoEvent[0]);
+      const timestamp = date.getTime();
+      const year = date.getUTCFullYear();
+      const month = date.getUTCMonth();
+      const day = date.getUTCDate();
+      const years = mission.photo.displayYears;
+      photoDay = [timestamp,timestamp + DAY_MS];
+      photoDisplayWindow = [Date.UTC(year - years,month,day),Date.UTC(year + years,month,day) + DAY_MS];
+      const photoTemplate = document.getElementById('spaceMissionPhotoTemplate');
+      photo = photoTemplate.content.firstElementChild.cloneNode(true);
+      photo.querySelector('time').dateTime = photoEvent[0];
+      photo.querySelector('a').href = mission.photo.source;
+      journeyLayout.append(photo);
+      photoJump.addEventListener('click', jumpToPhoto);
+    }
+    if (mission.flybys?.length) {
+      flyby = window.PLANETENUHR_SPACE_MISSION_FLYBYS.create(journeyLayout,
+        mission.flybys,{trajectories,positionAt,orbitalProjection,orbitalAxes,addSaturnRings,missionName:mission.name,
+          getTranslations,getOverviewScene:getSpatialScene,getStatus:getSpatialStatus,milestones,
+          controls:slider.closest('.mission-animation-controls')});
+    }
     const playback = createPlayback({
       getValue: () => Number(slider.value),
       getMax: () => Number(slider.max),
       getDuration: () => view.stages ? 9000 : 22000,
+      /** Gets the optional slowed encounter clock for the current slider.
+       * @param {number} from Starting slider minute. @param {number} end Final slider minute.
+       * @param {number} duration Base duration in milliseconds. @returns {Function|undefined}
+       */
+      getTimeline(from,end,duration) {
+        return flyby?.timeline(view.data.rows[0][0],from,end,duration,photoDay,mission.photo?.playbackDuration);
+      },
       onFrame(current) {
         slider.value = String(Math.floor(current));
+        updatePhotoCountdown(current);
         drawFrame(current);
       },
-      onState: playing => { play.textContent = text(playing ? 'pause' : 'play'); }
+      onFinish:continueToPhoto,
+      onState(playing) {
+        if (playing) {
+          play.textContent = text('pause');
+        } else {
+          play.textContent = text('play');
+        }
+        updatePhotoCountdown(Number(slider.value));
+        spatial?.update();
+        flyby?.updateSpatial();
+      }
     });
     let language;
     let dashboardDate;
@@ -188,19 +294,29 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
     }
 
     function project(x, y, z = 0) {
-      if (orbitPlane) {
+      if (view.oblique) {
+        [x, y] = obliqueProjection(x,y,z);
+      } else if (orbitPlane) {
         [x, y] = orbitPlane(x, y, z);
       }
       return [300 + x * scale, originY - y * scale];
     }
 
+    /** Moves a marker to a projected position.
+     * @param {SVGGElement} node Marker group.
+     * @param {number} x X coordinate. @param {number} y Y coordinate.
+     * @param {number} [z] Height in the view's reference frame.
+     * @returns {number[]} Plot coordinates of the marker.
+     */
     function move(node, x, y, z) {
-      node.setAttribute('transform', 'translate(' + project(x, y, z).join(' ') + ')');
+      const point = project(x,y,z);
+      node.setAttribute('transform','translate(' + point.join(' ') + ')');
+      return point;
     }
 
     function pathFor(points) {
-      return points.map(([x, y], index) => {
-        const point = project(x, y);
+      return points.map(([x, y, z], index) => {
+        const point = project(x, y, z);
         return (index === 0 ? 'M' : 'L') + point.map(value => value.toFixed(2)).join(' ');
       }).join(' ');
     }
@@ -214,11 +330,35 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
       return node;
     }
 
+    /** Replaces the marker disc with Saturn and its rings.
+     * @param {SVGGElement} node Marker containing a disc and label.
+     * @param {number} radius Saturn's disc radius in plot units.
+     * @returns {void}
+     */
+    function addSaturnRings(node,radius) {
+      const saturn = saturnTemplate.content.querySelector('g').cloneNode(true);
+      saturn.setAttribute('transform','scale(' + radius / 8 + ')');
+      node.querySelector('circle').replaceWith(saturn);
+    }
+
     function dateValue() {
       if (view.stages) {
         return Number(slider.value);
       }
       return view.data.rows[0][0] + Number(slider.value) * 60000;
+    }
+
+    /** Paints the oblique scene's markers from farthest to nearest.
+     * @param {object[]} markers SVG nodes and their depths toward the viewer.
+     * @returns {void}
+     */
+    function orderObliqueMarkers(markers) {
+      markers.sort((first,second) => first.depth - second.depth);
+      let next = referenceBodies.firstElementChild;
+      for (const {node} of markers) {
+        if (node !== next) referenceBodies.insertBefore(node,next);
+        next = node.nextElementSibling;
+      }
     }
 
     function drawFrame(stageProgress) {
@@ -234,16 +374,47 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
       } else {
         const date = new Date(selected);
         const position = positionAt(view.data.rows, date);
-        move(probe, position.x, position.y, position.z);
-        if (view.distanceLabel) {
+        const probePosition = move(probe,position.x,position.y,position.z);
+        if (view.oblique) {
+          const probeLabel = probe.querySelector('text');
+          probeLabel.setAttribute('y',4);
+          if (probePosition[0] > 390) {
+            probeLabel.setAttribute('x',-12);
+            probeLabel.setAttribute('text-anchor','end');
+          } else {
+            probeLabel.setAttribute('x',12);
+            probeLabel.setAttribute('text-anchor','start');
+          }
+        }
+        if (view.oblique) {
+          const foot = project(position.x,position.y);
+          eclipticOffset.setAttribute('d','M' + foot.join(' ') + ' L' + probePosition.join(' '));
+          let direction = 'nearEcliptic';
+          if (position.z >= .05) {
+            direction = 'northOfEcliptic';
+          } else if (position.z <= -.05) {
+            direction = 'southOfEcliptic';
+          }
+          distance.textContent = text(direction).replace('{distance}',distanceFormatter.format(Math.abs(position.z)));
+        } else if (view.distanceLabel) {
           const kilometers = Math.hypot(position.x, position.y, position.z);
           distance.textContent = text(view.distanceLabel).replace('{distance}', distanceFormatter.format(kilometers));
         }
         drawElapsedRoute(selected);
+        let depthMarkers;
+        if (view.oblique) {
+          depthMarkers = [{node:centerMarker,depth:0},{node:probe,depth:obliqueDepth(position.x,position.z)}];
+        }
         for (const {key, node} of bodies) {
           const body = getHeliocentricPosition(key, date);
-          move(node, body.x, body.y);
+          if (depthMarkers) {
+            move(node,body.x,body.y,body.z);
+            depthMarkers.push({node,depth:obliqueDepth(body.x,body.z)});
+          } else {
+            move(node,body.x,body.y);
+          }
         }
+        if (depthMarkers) orderObliqueMarkers(depthMarkers);
         if (targetMarker) {
           const target = positionAt(view.targetData.rows, date);
           targetMarker.style.display = target ? '' : 'none';
@@ -260,13 +431,30 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
             move(secondaryProbe, secondary.x, secondary.y, secondary.z);
           }
         }
-        const formatter = view.planets ? dateFormatter : timeFormatter;
-        caption = formatter.format(date) + ' · ' + text(dataStatus(selected, view.data.trackingThrough));
+        const encounterVisible = flyby?.render(selected,getTranslations(),distanceFormatter);
+        if (photo) {
+          const visible = selected >= photoDisplayWindow[0] && selected < photoDisplayWindow[1];
+          if (photo.hidden === visible) {
+            photo.hidden = !visible;
+            journeyLayout.classList.toggle('has-mission-photo',visible);
+            if (visible && playback.isPlaying()) revealPhoto();
+          }
+        }
+        let formatter = timeFormatter;
+        if ((view.oblique || view.planets) && !encounterVisible) {
+          formatter = dateFormatter;
+        }
+        caption = formatter.format(date) + ' · ' +
+          text(dataStatus(selected,view.data.trackingThrough,view.data.reconstructedBefore));
       }
       output.textContent = caption;
-      slider.setAttribute('aria-valuetext', view.distanceLabel ? caption + ' · ' + distance.textContent : caption);
+      if (!distance.hidden) {
+        caption += ' · ' + distance.textContent;
+      }
+      slider.setAttribute('aria-valuetext',caption);
       plot.setAttribute('aria-label', text(view.label) + ' · ' + caption);
       positions.set(view.key, Number(slider.value));
+      spatial?.update();
     }
 
     function describeSource() {
@@ -288,11 +476,19 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
       const coverage = dateFormatter.format(new Date(rows[0][0])) + ' – ' +
         dateFormatter.format(new Date(rows.at(-1)[0]));
       const precision = step.endsWith(' d') ? text('sampleDays') : text('sampleMinutes');
+      let referenceFrame = 'localFrame';
+      if (view.oblique) {
+        referenceFrame = 'obliqueFrame';
+      } else if (orbitPlane) {
+        referenceFrame = 'orbitPlaneFrame';
+      } else if (view.planets) {
+        referenceFrame = 'sunFrame';
+      }
       const details = [
         text('solutionDate') + ' ' + dateFormatter.format(new Date(revised)),
         coverage,
         precision.replace('{n}', step.split(' ')[0]),
-        text(orbitPlane ? 'orbitPlaneFrame' : view.planets ? 'sunFrame' : 'localFrame')
+        text(referenceFrame)
       ];
       if (trackingThrough) {
         details.push(text('trackingCutoff') + ' ' + dateFormatter.format(new Date(trackingThrough)));
@@ -310,6 +506,14 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
     function updateLabels() {
       const translations = getTranslations();
       dateFormatter = new Intl.DateTimeFormat(language, {dateStyle:'medium', timeZone:'UTC'});
+      if (photo) {
+        photo.querySelector('[data-mission-photo-title]').textContent = text(mission.photo.milestone);
+        photo.querySelector('time').textContent = dateFormatter.format(photoDay[0]);
+        photo.querySelector('.mission-photo-caption').textContent = text('paleBlueDotCaption');
+        photo.querySelector('a').textContent = text('paleBlueDotSource');
+        photoJump.hidden = !coversDate(view,photoDay[0]);
+        photoJump.textContent = text(mission.photo.milestone) + ' · ' + dateFormatter.format(photoDay[0]);
+      }
       distanceFormatter = new Intl.NumberFormat(language, {minimumFractionDigits:1, maximumFractionDigits:1});
       timeFormatter = new Intl.DateTimeFormat(language, {
         year:'numeric', month:'short', day:'numeric', hour:'2-digit', minute:'2-digit', timeZone:'UTC', timeZoneName:'short'
@@ -320,8 +524,13 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
         node.textContent = text(config.label);
         node.setAttribute('aria-pressed', String(config === view));
       });
-      for (const {key, node} of bodies) {
-        node.querySelector('text').textContent = translations['planet_' + key];
+      for (const {key, node, legend} of bodies) {
+        const name = translations['planet_' + key];
+        if (legend) {
+          legend.textContent = name;
+        } else {
+          node.querySelector('text').textContent = name;
+        }
       }
       referenceBodies.querySelector('.mission-center text').textContent =
         view.bodyName || translations[view.body || 'eclipse_sun'];
@@ -329,6 +538,7 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
       renderDashboardStatus();
       describeSource();
       drawFrame();
+      spatial?.update(true);
     }
 
     function prepareTrajectory() {
@@ -390,15 +600,35 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
       view = config;
       referenceBodies.replaceChildren();
       spacecraft.replaceChildren();
+      planetLegend.replaceChildren();
       bodies = [];
+      spatialOrbits = [];
       secondaryProbe = null;
       targetMarker = null;
       targetOrbit.setAttribute('d', '');
+      eclipticPlane.toggleAttribute('hidden',!view.oblique);
+      eclipticOffset.setAttribute('d','');
       const {planets, stages} = view;
-      orbitPlane = view.faceOn ? orbitalProjection(view.data.rows) : null;
-      plot.setAttribute('viewBox', orbitPlane ? '90 0 420 380' : '0 0 600 380');
+      originalAxes = null;
+      if (view.faceOn) originalAxes = orbitalAxes(view.data.rows);
+      orbitPlane = projectionForAxes(originalAxes);
+      spatial?.setAvailable(Boolean(view.data));
+      let viewBox = '0 0 600 380';
+      if (view.oblique) {
+        viewBox = '100 15 400 340';
+      } else if (orbitPlane) {
+        viewBox = '90 0 420 380';
+      }
+      plot.setAttribute('viewBox',viewBox);
+      planetLegend.hidden = !(view.oblique && planets?.length);
       fitPlotLabels(plot);
       originY = stages ? 305 : 185;
+      if (view.oblique) {
+        eclipticPlane.setAttribute('cx',300);
+        eclipticPlane.setAttribute('cy',originY);
+        eclipticPlane.setAttribute('rx',145);
+        eclipticPlane.setAttribute('ry',145 * Math.sin(eclipticTilt));
+      }
       let centerRadius = 8;
       if (stages) {
         scale = 94;
@@ -408,7 +638,15 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
         predictedPath.setAttribute('d', pathFor(stages.map(([, x, y]) => [x, y])));
         referenceOrbits.setAttribute('d', 'M 42 305 L 558 305');
       } else {
-        const projectedDistance = ([, x, y, z]) => orbitPlane ? Math.hypot(...orbitPlane(x, y, z)) : Math.hypot(x, y);
+        const projectedDistance = ([, x, y, z]) => {
+          if (view.oblique) {
+            return Math.max(Math.hypot(x,y),Math.hypot(...obliqueProjection(x,y,z)));
+          }
+          if (orbitPlane) {
+            return Math.hypot(...orbitPlane(x,y,z));
+          }
+          return Math.hypot(x,y);
+        };
         const distances = view.data.rows.map(projectedDistance);
         if (view.secondaryData) {
           distances.push(...view.secondaryData.rows.map(projectedDistance));
@@ -427,13 +665,27 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
           const points = Array.from({length:121}, (_, index) => {
             const date = new Date(rows[0][0] + planetPeriods[key] * DAY_MS * index / 120);
             const position = getHeliocentricPosition(key, date);
-            return [position.x, position.y];
+            return [position.x,position.y,position.z];
           });
-          bodies.push({key, node:marker(referenceBodies, '', 4, 'mission-planet')});
-          return pathFor(points);
+          spatialOrbits.push(points);
+          const node = marker(referenceBodies,'',4,'mission-planet');
+          let legend;
+          if (!planetLegend.hidden) {
+            node.dataset.planet = key;
+            if (key === 'saturn') {
+              addSaturnRings(node,4);
+            }
+            legend = legendTemplate.content.firstElementChild.cloneNode(true);
+            legend.dataset.planet = key;
+            planetLegend.append(legend);
+          }
+          bodies.push({key,node,legend});
+          if (view.oblique) return pathFor(points);
+          return pathFor(points.map(([x,y]) => [x,y]));
         });
         referenceOrbits.setAttribute('d', orbitalPaths.join(' '));
         if (view.targetData) {
+          spatialOrbits.push(view.targetData.rows.map(row => row.slice(1)));
           targetOrbit.setAttribute('d', pathFor(view.targetData.rows.map(([, x, y]) => [x, y])));
           targetMarker = marker(referenceBodies, view.targetName, 8, 'mission-reference-target');
           targetMarker.querySelector('text').setAttribute('y', 22);
@@ -441,8 +693,19 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
         prepareTrajectory();
       }
       const center = marker(referenceBodies, '', centerRadius, 'mission-center');
+      centerMarker = center;
       move(center, 0, 0);
-      distance.hidden = !view.distanceLabel;
+      if (view.oblique) {
+        const centerLabel = center.querySelector('text');
+        centerLabel.setAttribute('x',-12);
+        centerLabel.setAttribute('y',4);
+        centerLabel.setAttribute('text-anchor','end');
+        const earth = referenceBodies.querySelector('[data-planet="earth"]');
+        if (earth) {
+          center.querySelector('circle').setAttribute('r',5);
+        }
+      }
+      distance.hidden = !(view.distanceLabel || view.oblique);
       if (view.bodyTemplate) {
         const template = document.getElementById(view.bodyTemplate);
         center.querySelector('circle').replaceWith(template.content.querySelector('g').cloneNode(true));
@@ -456,13 +719,15 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
         const lander = document.getElementById('spaceMissionLanderTemplate');
         probe = lander.content.querySelector('g').cloneNode(true);
         spacecraft.append(probe);
+      } else if (view.oblique) {
+        probe = marker(referenceBodies,view.marker || mission.name,2.75,'mission-probe');
       } else {
         probe = marker(spacecraft, view.marker || mission.name, 5, 'mission-probe');
       }
       let initial = positions.get(view.key);
       if (initial === undefined) {
         initial = 0;
-        if (planets) {
+        if (planets && !flyby) {
           initial = Math.round((Date.now() - view.data.rows[0][0]) / 60000);
         }
       }
@@ -494,6 +759,29 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
     function clearDashboardStatus() {
       missingDashboardDate = false;
       renderDashboardStatus();
+    }
+
+    /** Brings the photo into view if the user is watching the mobile overview.
+     * No parameters. @returns {void}
+     */
+    function revealPhoto() {
+      const window = document.defaultView;
+      if (document.getElementById('spaceMission3DDialog').open || !window.matchMedia('(max-width:759px)').matches) return;
+      const bounds = plot.getBoundingClientRect();
+      if (bounds.bottom > 0 && bounds.top < window.innerHeight) photo.scrollIntoView({block:'nearest',behavior:'instant'});
+    }
+
+    /** Continues playback in the next view when the current view ends before the photo.
+     * No parameters. @returns {void}
+     */
+    function continueToPhoto() {
+      if (!photoDay) return;
+      const timestamp = dateValue();
+      if (timestamp >= photoDay[0]) return;
+      const next = matchingView(photoDay[0]);
+      if (!next || next === view || !coversDate(next,timestamp)) return;
+      setPosition(next,timestamp);
+      playback.toggle();
     }
 
     function setPosition(targetView, timestamp) {
@@ -529,6 +817,33 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
       }
     }
 
+    /** Seeks to the photograph. No parameters. @returns {void} */
+    function jumpToPhoto() {
+      seek(photoEvent[0]);
+    }
+
+    /** Shows the remaining time on the slowed photo clock while it is running.
+     * @param {number} minute Current slider position, including the fractional playback minute.
+     * @returns {void}
+     */
+    function updatePhotoCountdown(minute) {
+      if (!photoDay) return;
+      let seconds = 0;
+      if (playback.isPlaying()) {
+        const timestamp = view.data.rows[0][0] + minute * 60000;
+        if (timestamp >= photoDay[0] && timestamp < photoDay[1]) {
+          const duration = mission.photo.playbackDuration / 1000;
+          const fraction = (photoDay[1] - timestamp) / DAY_MS;
+          seconds = Math.ceil(fraction * duration);
+        }
+      }
+      photoCountdown.hidden = seconds === 0;
+      if (seconds) {
+        const message = text('photoCountdown').replace('{seconds}',seconds);
+        if (photoCountdown.textContent !== message) photoCountdown.textContent = message;
+      }
+    }
+
     const buttons = views.map(config => {
       const node = buttonTemplate.content.firstElementChild.cloneNode(true);
       node.addEventListener('click', () => {
@@ -549,6 +864,81 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
       playback.toggle();
     });
 
+    /** Names the encounter or photograph that affects 3D playback.
+     * No parameters. @returns {string} Current milestone or end-of-range text.
+     */
+    function getSpatialStatus() {
+      let key = flyby?.getMilestone();
+      let slowed = Boolean(key);
+      if (photo && !photo.hidden) {
+        key = mission.photo.milestone;
+        const timestamp = dateValue();
+        slowed = timestamp >= photoDay[0] && timestamp < photoDay[1];
+      }
+      if (slowed && playback.isPlaying()) {
+        return text('3dPlaybackSlow').replace('{milestone}',text(key));
+      }
+      if (key) return text(key);
+      if (Number(slider.value) >= Number(slider.max)) return text('3dPlaybackEnd');
+      return '';
+    }
+
+    /** Supplies the original axes and current 3D vectors without changing the timeline.
+     * No parameters. @returns {object|null} Current mission scene, if backed by vectors.
+     */
+    function getSpatialScene() {
+      if (!view?.data) return null;
+      const timestamp = dateValue();
+      const date = new Date(timestamp);
+      const copy = getTranslations();
+      let axes = originalAxes || window.PLANETENUHR_SPACE_MISSION_CAMERA.topDown;
+      if (view.oblique) axes = obliqueAxes;
+      const position = positionAt(view.data.rows,date);
+      const point = [position.x,position.y,position.z];
+      const objects = [
+        {key:'center',kind:'planet',label:view.bodyName || copy[view.body || 'eclipse_sun'],radius:7,point:[0,0,0]},
+        {key:'probe',kind:'probe',label:view.marker || mission.name,radius:3,point}
+      ];
+      if (!view.body && !view.bodyName) objects[0].kind = 'sun';
+      for (const {key} of bodies) {
+        const {x,y,z} = getHeliocentricPosition(key,date);
+        let kind = 'planet';
+        if (key === 'saturn') kind = 'saturn';
+        objects.push({key,kind,label:copy['planet_' + key],radius:4,point:[x,y,z]});
+      }
+      if (view.targetData) {
+        const target = positionAt(view.targetData.rows,date);
+        if (target) objects.push({key:'target',kind:'planet',label:view.targetName,radius:5,point:[target.x,target.y,target.z]});
+      }
+      if (view.secondaryData) {
+        const mio = positionAt(view.secondaryData.rows,date);
+        if (mio) objects.push({key:'mio',kind:'secondary',label:'Mio',radius:3,point:[mio.x,mio.y,mio.z]});
+      }
+      const tracks = routeTracks.map(track => {
+        let kind = 'tracked';
+        if (track.secondary) {
+          kind = 'secondary';
+        } else if (track.forecast) {
+          kind = 'predicted';
+        }
+        return {rows:track.rows,kind};
+      });
+      const scene = {key:view,axes,timestamp,tracks,orbits:spatialOrbits,objects,
+        scale:scale * 640 / plot.viewBox.baseVal.width};
+      if (view.planets || view.oblique) scene.planeRadius = 145 / scale;
+      if (view.oblique) scene.guide = point;
+      if (photo && !photo.hidden) scene.photo = photo;
+      scene.flyby = flyby?.getDetail();
+      return scene;
+    }
+
+    if (views.some(config => config.data)) {
+      spatial = window.PLANETENUHR_SPACE_MISSION_3D.create({
+        anchor:plot,controls:slider.closest('.mission-animation-controls'),getScene:getSpatialScene,
+        positionAt,getTranslations,milestones,getStatus:getSpatialStatus,
+        getTitle:() => mission.name + ' · ' + text(view.label)
+      });
+    }
     language = getLanguage();
     select(views[0]);
     const resizeLabels = () => fitPlotLabels(plot);
@@ -573,5 +963,5 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
     }};
   }
 
-  return {create, dataStatus, createPlayback, orbitalProjection, fitPlotLabels};
+  return {create, dataStatus, createPlayback, orbitalProjection, obliqueProjection, fitPlotLabels};
 })();

@@ -1,0 +1,94 @@
+.fictional-missions-card { order:24; gap:12px; }
+.fictional-missions-card .group-title { margin-block:0; }
+.fictional-mission-tabs [aria-selected="true"] {
+  border-color:var(--accent);
+  background:#eaf3ff;
+  color:#14365d;
+  font-weight:700;
+}
+.fictional-mission-figure {
+  min-width:0;
+  margin:0;
+  overflow:hidden;
+  border-radius:12px;
+  background:#0a182c;
+  color:#eaf2fb;
+}
+.fictional-mission-stage svg { display:block; width:100%; height:auto; }
+.fictional-mission-stage [hidden] { display:none; }
+.fictional-mission-figure figcaption {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:4px 12px;
+  padding:10px 14px;
+  border-top:1px solid #334964;
+  line-height:var(--line-body);
+  text-align:left;
+}
+.fictional-mission-figure time {
+  color:#a7c4dd;
+  font-size:var(--font-note);
+  font-variant-numeric:tabular-nums;
+}
+.fictional-stars {
+  fill:none;
+  stroke:#c7e0ef;
+  stroke-width:1.6;
+  stroke-linecap:round;
+  opacity:.55;
+}
+.fictional-route,.fictional-orbits {
+  fill:none;
+  stroke:#87d5d5;
+  stroke-width:1.7;
+  vector-effect:non-scaling-stroke;
+}
+.fictional-orbits { stroke:#6c8fae; stroke-width:1; opacity:.6; }
+.fictional-route-secondary { stroke:#aabdd4; opacity:.68; }
+.fictional-route-abandoned { stroke:#aabdd4; stroke-dasharray:5 5; opacity:.68; }
+.fictional-motion-guide { opacity:0; pointer-events:none; }
+.fictional-label {
+  fill:#ecf4fb;
+  stroke:#0a182c;
+  stroke-width:4;
+  paint-order:stroke;
+  stroke-linejoin:round;
+  font-size:var(--mission-plot-label-size,22px);
+}
+.fictional-label-secondary { fill:#fde1a1; }
+.fictional-mission-clocks {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px;
+  margin:0;
+  text-align:left;
+}
+.fictional-mission-clocks[hidden] { display:none; }
+.fictional-mission-clocks > div {
+  padding:9px 11px;
+  border:1px solid var(--border);
+  border-radius:8px;
+  background:#f2f7fb;
+}
+.fictional-mission-clocks dt { color:var(--muted); font-size:var(--font-note); }
+.fictional-mission-clocks dd { margin:3px 0 0; font-variant-numeric:tabular-nums; }
+.fictional-mission-timeline {
+  max-height:min(34vh,300px);
+  overflow:auto;
+  overscroll-behavior:contain;
+  border:1px solid var(--border);
+  border-radius:8px;
+}
+.fictional-mission-timeline li { grid-template-columns:minmax(9rem,auto) minmax(0,1fr); }
+.fictional-mission-timeline li:last-child { border-bottom:0; }
+.fictional-mission-timeline .mission-event-jump { min-height:44px; overflow-wrap:anywhere; }
+.fictional-mission-timeline [aria-current="step"] { color:#173653; font-weight:700; }
+.fictional-missions-card button:focus-visible,
+.fictional-missions-card input:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+@media (min-width:1180px) { .fictional-missions-card { grid-column:span 2; } }
+@media (max-width:480px) {
+  .fictional-mission-timeline li { grid-template-columns:minmax(0,1fr); gap:0; padding-block:5px; }
+  .fictional-mission-figure figcaption { flex-direction:column; }
+}

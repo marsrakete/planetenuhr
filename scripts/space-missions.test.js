@@ -6,8 +6,9 @@ const {test} = require('node:test');
 
 const context = vm.createContext({window: {}});
 for (const file of [
-  'data/space-missions.js', 'data/space-mission-trajectories.js', 'data/translations.js',
-  'cards/space-missions.js', 'cards/space-mission-animation.js'
+  'data/space-missions.js', 'data/space-mission-trajectories.js', 'data/voyager-trajectories.js', 'data/translations.js',
+  'cards/space-missions.js', 'cards/space-mission-camera.js', 'cards/space-mission-3d.js',
+  'cards/space-mission-flybys.js', 'cards/space-mission-animation.js'
 ]) {
   vm.runInContext(fs.readFileSync(path.join(__dirname, '../js', file), 'utf8'), context);
 }
@@ -47,9 +48,12 @@ test('each additional mission has unique identity, official links and chronologi
 });
 
 test('each mission and milestone has copy in every dashboard language', () => {
-  const {PLANETENUHR_SPACE_MISSION_DATA: missions, PLANETENUHR_TRANSLATIONS: languages} = context.window;
-  const keys = ['missions', 'source', 'tracker', 'confirmed', 'planned'];
-  for (const mission of missions) {
+  const {PLANETENUHR_SPACE_MISSION_DATA: missions, PLANETENUHR_OUTER_MISSION_DATA: outer, PLANETENUHR_TRANSLATIONS: languages} = context.window;
+  const keys = ['missions', 'source', 'tracker', 'confirmed', 'planned', 'outerSystem', 'obliqueFrame',
+    'nearEcliptic', 'northOfEcliptic', 'southOfEcliptic', 'reconstructed', 'flybyDetail', 'voyagerCenterDistance',
+    '3dOpen', '3dClose', '3dReset', '3dPlot', '3dHint', '3dTouchHint', '3dMilestones', '3dPlaybackSlow', '3dPlaybackEnd',
+    'paleBlueDotCaption','paleBlueDotSource','photoCountdown'];
+  for (const mission of [...missions,...outer]) {
     keys.push(mission.id, ...mission.events.map(event => event[1]));
     for (const view of mission.views) {
       keys.push(view.label, ...(view.stages || []).map(stage => stage[0]));
@@ -70,9 +74,10 @@ test('each mission and milestone has copy in every dashboard language', () => {
 });
 
 test('each trajectory scene uses finite, chronological vectors and identifiable source metadata', () => {
-  const {PLANETENUHR_SPACE_MISSION_DATA: missions, PLANETENUHR_SPACE_MISSION_TRAJECTORIES: trajectories} = context.window;
-  for (const mission of missions) {
-    for (const view of mission.views) {
+  const {PLANETENUHR_SPACE_MISSION_DATA: missions, PLANETENUHR_OUTER_MISSION_DATA: outer,
+    PLANETENUHR_SPACE_MISSION_TRAJECTORIES: trajectories} = context.window;
+  for (const mission of [...missions,...outer]) {
+    for (const view of [...mission.views,...(mission.flybys || [])]) {
       if (view.stages) {
         assert.ok(view.stages.length >= 2);
         assert.equal(new URL(view.source).hostname, 'science.nasa.gov');
@@ -109,6 +114,72 @@ test('the sourced tracking cutoff includes the whole published UTC day', () => {
   assert.equal(dataStatus(Date.parse('2026-11-11T00:00:00Z'), '2026-11-10'), 'predicted');
   assert.equal(dataStatus(NaN, '2026-11-10'), 'vectorData');
   assert.equal(dataStatus(0, null), 'vectorData');
+  assert.equal(dataStatus(Date.parse('1980-12-31T23:59Z'), '1992-04-24','1981-01-01'), 'reconstructed');
+  assert.equal(dataStatus(Date.parse('1981-01-01'), '1992-04-24','1981-01-01'), 'trackingBased');
+});
+
+test('Voyager milestones are covered and the oblique view preserves opposite departures', () => {
+  const {PLANETENUHR_OUTER_MISSION_DATA: missions, PLANETENUHR_SPACE_MISSION_TRAJECTORIES: trajectories,
+    PLANETENUHR_SPACE_MISSION_ANIMATION: animation} = context.window;
+  assert.deepEqual(Array.from(missions,mission => mission.id),['voyager1','voyager2']);
+  assert.deepEqual(Array.from(missions,mission => mission.flybys.length),[2,4]);
+  for (const mission of missions) {
+    assert.ok(mission.views.every(view => view.oblique));
+    for (const flyby of mission.flybys) {
+      assert.ok(mission.events.some(([,key]) => key === flyby.milestone));
+    }
+    for (const [start,,,,seekAt = start] of mission.events) {
+      const timestamp = Date.parse(seekAt);
+      assert.ok(mission.views.some(view => {
+        const {rows} = trajectories[view.key];
+        return timestamp >= rows[0][0] && timestamp <= rows.at(-1)[0];
+      }), mission.id + ' ' + seekAt);
+    }
+  }
+  const north = trajectories.voyager1Interstellar.rows.at(-1);
+  const south = trajectories.voyager2Interstellar.rows.at(-1);
+  assert.ok(north[3] > 0 && south[3] < 0);
+  const northOffset = animation.obliqueProjection(north[1],north[2],north[3])[1] - animation.obliqueProjection(north[1],north[2],0)[1];
+  const southOffset = animation.obliqueProjection(south[1],south[2],south[3])[1] - animation.obliqueProjection(south[1],south[2],0)[1];
+  assert.ok(northOffset > 0 && southOffset < 0);
+});
+
+test('flyby playback holds each encounter window long enough to follow the close approach', () => {
+  const {playbackTimeline} = context.window.PLANETENUHR_SPACE_MISSION_FLYBYS;
+  const playback = playbackTimeline(0,1000,20000,[[100,101],[600,601]]);
+  assert.equal(playback(0),0);
+  assert.equal(playback(2000),100);
+  assert.equal(playback(4250),100.5);
+  assert.equal(playback(6500),101);
+  assert.equal(playback(16480),600);
+  assert.equal(playback(18730),600.5);
+  assert.equal(playback(40000),1000);
+  assert.equal(playbackTimeline(100.5,1000,20000,[[100,101]])(1125),100.75);
+  assert.equal(playbackTimeline(500,1000,20000,[])(1000),550);
+  const withPhoto = playbackTimeline(0,1000,20000,[[100,101],[200,201,15000]]);
+  assert.equal(withPhoto(6500),101);
+  assert.equal(withPhoto(8480),200);
+  assert.equal(withPhoto(15980),200.5);
+  assert.equal(withPhoto(23480),201);
+});
+
+test('the 3D camera rotates depth and keeps the zoom anchor fixed', () => {
+  const model = context.window.PLANETENUHR_SPACE_MISSION_CAMERA;
+  const camera = model.standard();
+  const point = [1,0,0];
+  assert.deepEqual(Array.from(model.project(point,model.topDown,camera,100)),[420,200,0]);
+  model.zoomAt(camera,2,420,200);
+  assert.deepEqual(Array.from(model.project(point,model.topDown,camera,100)),[420,200,0]);
+  model.zoomAt(camera,.0001);
+  assert.equal(camera.zoom,.3);
+  model.zoomAt(camera,1000);
+  assert.equal(camera.zoom,20);
+  const rotated = model.standard();
+  rotated.yaw = Math.PI / 2;
+  const [x,y,depth] = model.project(point,model.topDown,rotated,100);
+  assert.ok(Math.abs(x - 320) < 1e-8);
+  assert.equal(y,200);
+  assert.equal(depth,1);
 });
 
 test('playback advances from the slider position and restarts at the end', () => {

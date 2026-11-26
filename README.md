@@ -1,6 +1,6 @@
 # Planetenuhr
 
-Planetenuhr ist ein statisches Astronomie-Dashboard als reine HTML-App. Die Anwendung läuft ohne Build-Schritt direkt im Browser und kombiniert Zeit, Sonnensystem, Mond, Sichtbarkeit, Kalender und mehrere erklärende Himmelskarten auf einer Seite.
+Planetenuhr ist ein statisches Astronomie-Dashboard. Ein Webserver liefert die Anwendung ohne Build-Schritt aus. Sie kombiniert Zeit, Sonnensystem, Mond, Sichtbarkeit, Kalender und mehrere erklärende Himmelskarten auf einer Seite.
 
 ## Weitere Dokumentation
 
@@ -51,6 +51,10 @@ Die Rechenmodelle, Konstanten und Näherungen stehen in [BERECHNUNGEN.md](BERECH
 Alle Reiter haben einen eigenen Zeitregler mit Wiedergabe. Missionen mit Bahndaten übernehmen Änderungen am globalen Datum und springen über den globalen Button „Heute“ zurück auf heute. Bei fehlender Abdeckung zeigt die Ansicht einen Hinweis. Dragonfly bleibt beim Regler für die Landephasen. Reiseansichten von BepiColombo, Hera, Europa Clipper, Juice und Psyche verwenden gespeicherte NASA/JPL-Horizons-Vektoren. Die gesamte Route ist dezent sichtbar. Die hervorgehobene Spur reicht bis zum gewählten Zeitpunkt, wobei vorausberechnete Abschnitte gestrichelt sind. Zielnahe Ansichten verwenden dichter abgetastete Daten. Mio erscheint ab der geplanten Trennung mit einer eigenen ESA-SPICE-Bahn. Die Ansichten nennen Quelle, Abdeckung, zeitlichen Abstand der Stützpunkte und Stand der Bahnlösung. Zwischen Stützpunkten werden Positionen linear interpoliert. Der Dragonfly-Regler zeigt die geplanten Landephasen anhand eines Schemas nach NASA / Johns Hopkins APL. Die Bahndaten lassen sich mit `node scripts/update-space-mission-trajectories.js` aktualisieren.
 
 Die Nahansichten zeigen MPO und Mio in Draufsicht um Merkur, Hera bei Didymos, Europa Clipper beim Erdvorbeiflug und Psyche beim Marsvorbeiflug. [Berechnungen und Datenabdeckung](BERECHNUNGEN.md#raumfahrtmissionen)
+
+Im Reiter **„Äußeres Sonnensystem“** sind Voyager 1 und 2 auswählbar. Schräge Ekliptikansichten zeigen den Flug nach Norden beziehungsweise Süden. Bei den sechs Vorbeiflügen an den Riesenplaneten erscheint automatisch eine Nahansicht, und die Wiedergabe wird langsamer. Die Bahndaten stammen aus lokal gespeicherten JPL-Horizons-Vektoren.
+
+**Fiktive Raumfahrtmissionen** erzählt vier Reisen mit eigenen SVG-Animationen. „Schritte auf dem Mond“ führt vom Erdstart über die Mondlandung, Fußspuren und den Mondpanzer zurück zur Erde. „2001: Odyssee im Weltraum“ beginnt an der Raumstation V, führt zur Mondlandung auf der Clavius-Basis und folgt der Discovery One zum Jupiter. „Interstellar“ führt von Millers Planet und den beiden Uhren über Manns Eisplaneten und Gargantua zur Cooper Station und zu Brands Lager. „Project Hail Mary“ zeigt die Begegnung mit Rocky, den Atmosphärenflug bei Adrian und die Umkehr nach der Trennung. Jede Mission hat einen eigenen Zeitregler und anklickbare Missionsschritte. Die Datumsangaben sind für die Kachel festgelegt, die Flugbahnen sind schematisch. Die Werkquellen stehen im ?-Popup.
 
 ## Zentrale Bedienung
 
@@ -157,7 +161,7 @@ Die Seite unterstützt Deep-Links für Datum, Ort, Sprache und eine direkte Ziel
 - `Himmelskalender`\
   filterbare Ereignisliste für Finsternisse, Meteorströme, Mond-, Planeten- und Jahreszeiten-Ereignisse
 - `Bluesky-Feed`\
-  neuester Bildbeitrag konfigurierbarer Accounts; bei `file://` ausgeblendet
+  neuester Bildbeitrag konfigurierbarer Accounts nach Freigabe
 
 ## Sprachen
 

@@ -420,8 +420,15 @@ window.PLANETENUHR_LAYOUT = (() => {
       if (masonryObserverActive) {
         return;
       }
-      visibleGridCards().forEach(card => masonryObserver.observe(card));
       masonryObserverActive = true;
+      visibleGridCards().forEach(observeCard);
+    }
+
+    /** Adds a newly mounted card to desktop layout observation when it is enabled.
+     * @param {HTMLElement} card Card that has been inserted in the grid. @returns {void}
+     */
+    function observeCard(card){
+      if (masonryObserverActive) masonryObserver.observe(card);
     }
 
     /**
@@ -481,7 +488,7 @@ window.PLANETENUHR_LAYOUT = (() => {
       scheduleMasonryLayout();
     }
 
-    return { visibleGridCards, masonryCardHeight, scheduleDeferredMasonryPasses, requestMasonryLayout, runWithDeferredMasonryLayout, updateMasonryLayout, scheduleMasonryLayout, withSuppressedMasonryObserver, updateSingleCardMasonryLayout, captureViewportAnchor, pageScrollElement, capturePageScrollPosition, restorePageScrollPosition, restoreViewportAnchor, renderWithViewportAnchor, refreshDateDrivenTilesWithAnchor, releasePendingViewportRestoration, syncMasonryObservation, handleMasonryResize, initMasonryLayout };
+    return { visibleGridCards, masonryCardHeight, scheduleDeferredMasonryPasses, requestMasonryLayout, runWithDeferredMasonryLayout, updateMasonryLayout, scheduleMasonryLayout, withSuppressedMasonryObserver, updateSingleCardMasonryLayout, captureViewportAnchor, pageScrollElement, capturePageScrollPosition, restorePageScrollPosition, restoreViewportAnchor, renderWithViewportAnchor, refreshDateDrivenTilesWithAnchor, releasePendingViewportRestoration, syncMasonryObservation, observeCard, handleMasonryResize, initMasonryLayout };
   }
   return {create};
 })();

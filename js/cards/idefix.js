@@ -12,11 +12,15 @@ window.PLANETENUHR_IDEFIX = (() => {
     const model = window.PLANETENUHR_IDEFIX_MODEL;
     const card = document.querySelector('[data-help-key="idefix"]');
     const slider = document.getElementById('idefixTime');
+    const jumps = document.getElementById('idefixJumps');
     const plot = document.getElementById('idefixPlot');
     let baseDate = dependencies.getDate();
     let localDate = null;
     let followNow = false;
     let orbitYear = null;
+    let spatialOrbits = [];
+    let spatial;
+    let spatialLanguage;
     let plotResizeFrame = 0;
     let lastPlotWidth = 0;
     let currentDate = baseDate;
@@ -36,7 +40,12 @@ window.PLANETENUHR_IDEFIX = (() => {
         render();
       },
       onState(playing) {
-        play.textContent = text(playing ? 'space_pause' : 'space_play');
+        if (playing) {
+          play.textContent = text('space_pause');
+        } else {
+          play.textContent = text('space_play');
+        }
+        spatial?.update();
         if (!playing) {
           dependencies.updateCardLayout(card);
         }
@@ -119,11 +128,15 @@ window.PLANETENUHR_IDEFIX = (() => {
         return;
       }
       orbitYear = year;
+      spatialOrbits = [];
       for (const [key, days, id] of [['earth',365.256,'idefixEarthOrbit'],['mars',686.98,'idefixMarsOrbit']]) {
         const parts = [];
+        const vectors = [];
         for (let index = 0; index <= 120; index += 1) {
           const time = new Date(Date.UTC(year, 0, 1) + days * 86400000 * index / 120);
-          const point = model.project(dependencies.getHeliocentricPosition(key, time));
+          const position = dependencies.getHeliocentricPosition(key,time);
+          vectors.push([position.x,position.y,position.z]);
+          const point = model.project(position);
           let command = 'L';
           if (index === 0) {
             command = 'M';
@@ -131,7 +144,31 @@ window.PLANETENUHR_IDEFIX = (() => {
           parts.push(command + point.x.toFixed(3) + ',' + point.y.toFixed(3));
         }
         document.getElementById(id).setAttribute('d', parts.join(' ') + ' Z');
+        spatialOrbits.push(vectors);
       }
+    }
+
+    /** Supplies the MMX trajectory and marker state to the 3D dialog.
+     * No parameters. @returns {object} Current heliocentric scene.
+     */
+    function getSpatialScene() {
+      const timestamp = currentDate.getTime();
+      const objects = [{key:'sun',kind:'sun',label:text('eclipse_sun'),radius:9,point:[0,0,0]}];
+      let mars;
+      for (const key of ['earth','mars']) {
+        const {x,y,z} = dependencies.getHeliocentricPosition(key,currentDate);
+        const point = [x,y,z];
+        if (key === 'mars') mars = point;
+        objects.push({key,kind:'planet',label:text('planet_' + key),radius:5,point});
+      }
+      const vector = model.positionAt(ephemeris.rows,currentDate);
+      if (vector) {
+        objects.push({key:'probe',kind:'probe',label:'MMX',radius:3,point:[vector.x,vector.y,vector.z]});
+      } else if (timestamp > ephemeris.rows.at(-1)[0]) {
+        objects.push({key:'probe',kind:'probe',label:'MMX',radius:4,point:mars,planned:true});
+      }
+      return {key:orbitYear,axes:window.PLANETENUHR_SPACE_MISSION_CAMERA.topDown,scale:94 * 640 / 620,
+        planeRadius:2,orbits:spatialOrbits,timestamp,objects,tracks:[{rows:ephemeris.rows,kind:'predicted'}]};
     }
 
     /** Adapts SVG labels and framing to the rendered width without replacing nodes. No parameters. @returns {void} */
@@ -263,6 +300,9 @@ window.PLANETENUHR_IDEFIX = (() => {
       slider.value = String(Math.max(0, Math.min(Number(slider.max), (timestamp - start) / 86400000)));
       slider.setAttribute('aria-valuetext', formatDate(currentDate, true));
       plot.setAttribute('aria-label', message('idefix_plot_aria', {date:formatDate(currentDate),mode:text('idefix_position_' + positionMode)}));
+      const nextSpatialLanguage = dependencies.getLanguage();
+      spatial.update(nextSpatialLanguage !== spatialLanguage);
+      spatialLanguage = nextSpatialLanguage;
       document.getElementById('idefixMoonPlot').setAttribute('aria-label', text('idefix_moon_aria'));
       if (!playback.isPlaying()) {
         dependencies.updateCardLayout(card);
@@ -324,7 +364,13 @@ window.PLANETENUHR_IDEFIX = (() => {
     buildControls();
     slider.addEventListener('input', seek);
     play.addEventListener('click', playback.toggle);
-    card.addEventListener('click', control);
+    document.getElementById('idefixControls').addEventListener('click',control);
+    jumps.addEventListener('click',control);
+    spatial = window.PLANETENUHR_SPACE_MISSION_3D.create({
+      anchor:plot,controls:slider.closest('.mission-animation-controls'),getScene:getSpatialScene,
+      positionAt:model.positionAt,getTranslations:dependencies.getTranslations,milestones:jumps,
+      getTitle:() => text('idefix_title')
+    });
     if ('ResizeObserver' in window) {
       new ResizeObserver(schedulePlotResize).observe(plot);
     } else {

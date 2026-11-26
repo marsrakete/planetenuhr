@@ -1,0 +1,509 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="fictionalMissionSceneTitle" data-live-diagram="">
+  <defs>
+    <radialGradient id="fiction-sky" cx=".58" cy=".35" r=".8">
+      <stop stop-color="#172f4e"/><stop offset="1" stop-color="#060e1c"/>
+    </radialGradient>
+    <radialGradient id="fiction-earth" cx=".28" cy=".22" r=".85">
+      <stop stop-color="#82d8eb"/><stop offset=".75" stop-color="#277fa6"/><stop offset="1" stop-color="#172e5b"/>
+    </radialGradient>
+    <radialGradient id="fiction-moon" cx=".26" cy=".24" r=".83">
+      <stop stop-color="#eee2c8"/><stop offset=".7" stop-color="#9b8e82"/><stop offset="1" stop-color="#544f57"/>
+    </radialGradient>
+    <radialGradient id="fiction-jupiter" cx=".28" cy=".35" r=".75">
+      <stop stop-color="#f8d4a4"/><stop offset=".72" stop-color="#b77d65"/><stop offset="1" stop-color="#674457"/>
+    </radialGradient>
+    <linearGradient id="fiction-ground" x2="0" y2="1">
+      <stop stop-color="#898396"/><stop offset="1" stop-color="#332c46"/>
+    </linearGradient>
+    <linearGradient id="fiction-water" x2="0" y2="1">
+      <stop stop-color="#4e9c9e"/><stop offset="1" stop-color="#16293e"/>
+    </linearGradient>
+    <radialGradient id="fiction-star">
+      <stop stop-color="#fff7d2"/><stop offset=".46" stop-color="#ffcd77"/><stop offset="1" stop-color="#b05d39"/>
+    </radialGradient>
+    <linearGradient id="fiction-rocket-red">
+      <stop stop-color="#7d3033"/><stop offset=".58" stop-color="#d2574a"/><stop offset="1" stop-color="#aa3d39"/>
+    </linearGradient>
+    <pattern id="fiction-rocket-checkerboard" patternUnits="userSpaceOnUse" x="-13.5" y="-79" width="54" height="62">
+      <rect width="54" height="62" fill="#fff1da"/>
+      <path d="M0 0H27V31H0ZM27 31H54V62H27Z" fill="#bf473e"/>
+    </pattern>
+    <linearGradient id="fiction-rocket-shading">
+      <stop stop-color="#3a232b" stop-opacity=".34"/><stop offset=".25" stop-color="#3a232b" stop-opacity=".09"/>
+      <stop offset=".58" stop-color="#fff3d9" stop-opacity=".12"/><stop offset="1" stop-color="#3a232b" stop-opacity=".16"/>
+    </linearGradient>
+    <path id="fiction-rocket-hull" d="M0-107C18-83 39-60 45-27 53 13 43 48 25 71 15 80-15 80-25 71-43 48-53 13-45-27-39-60-18-83 0-107Z"/>
+    <radialGradient id="fiction-cooper-wall">
+      <stop stop-color="#759da8"/><stop offset=".48" stop-color="#365660"/><stop offset="1" stop-color="#142b39"/>
+    </radialGradient>
+    <g id="fiction-cooper-fields">
+      <path d="M36 27 288 216A360 360 0 0 1-288 216L-36 27A45 45 0 0 0 36 27Z" fill="#59735b"/>
+      <path d="M60 45 108 81A135 135 0 0 1-108 81L-60 45A75 75 0 0 0 60 45Z" fill="#8c9965"/>
+      <path d="M144 108 208 156A260 260 0 0 1-208 156L-144 108A180 180 0 0 0 144 108Z" fill="#a5a16c"/>
+      <path d="M-144 108A180 180 0 0 0 144 108M-168 126A210 210 0 0 0 168 126M-208 156A260 260 0 0 0 208 156"
+            fill="none" stroke="#c4b783" stroke-width="3"/>
+      <path d="M-9 44 14 44 85 360H35Z" fill="#c7b998"/>
+      <path d="M2 46 59 355" stroke="#efe0b4" stroke-width="1.4"/>
+    </g>
+    <g id="fiction-cooper-house">
+      <path d="M-8 0V-10L0-17 8-10V0Z" fill="#efd7ae" stroke="#52635c" stroke-width="1.4"/>
+      <path d="M-9-10 0-18 9-10Z" fill="#a56f5d"/>
+      <path d="M-4-7h2v3h-2m5 4v-5h3v5" fill="#4e6564"/>
+    </g>
+    <g id="fiction-earth-body">
+      <circle r="39" fill="none" stroke="#5cc6e6" stroke-opacity=".26" stroke-width="6"/>
+      <circle r="36" fill="url(#fiction-earth)"/>
+      <path d="M-28-11-17-24-5-25 2-14-5-8-8 1-19 4-25-4ZM3-7 18-14 31-9 28-1 18 1 15 12 7 21 2 11Z" fill="#80b9a1" opacity=".84"/>
+      <path d="M-24 17Q-9 21 4 17M-14-31Q2-28 13-23" fill="none" stroke="#ceeceb" stroke-opacity=".62" stroke-width="2"/>
+    </g>
+    <g id="fiction-moon-body">
+      <circle r="32" fill="url(#fiction-moon)"/>
+      <g fill="#766c77" opacity=".6"><circle cx="-11" cy="-8" r="6"/><circle cx="12" cy="6" r="8"/><circle cx="-15" cy="14" r="4"/></g>
+    </g>
+    <g id="fiction-jupiter-body">
+      <circle r="54" fill="url(#fiction-jupiter)"/>
+      <path d="M-36-38Q0-23 37-39M-49-17Q0-5 51-17M-53 4Q0 17 53 4M-46 23Q0 38 43 26" fill="none" stroke="#f6d8b2" stroke-opacity=".51" stroke-width="5"/>
+      <path d="M-46-26Q5-13 47-26M-42 32Q3 44 39 32" fill="none" stroke="#9d594f" stroke-opacity=".65" stroke-width="4"/>
+      <ellipse cx="19" cy="15" rx="11" ry="5" fill="#b65d4f"/>
+    </g>
+    <g id="fiction-rocket" transform="translate(0 -5) scale(.24)" stroke-linejoin="round">
+      <path d="M-32 22-70 64-72 81-36 70-21 51ZM32 22 70 64 72 81 36 70 21 51Z"
+            fill="url(#fiction-rocket-red)" stroke="#e38774" stroke-width="2.4"/>
+      <path d="M-64 67-34 51m98 16L34 51" fill="none" stroke="#f6aa95" stroke-width="2"/>
+      <use href="#fiction-rocket-hull" fill="url(#fiction-rocket-checkerboard)" stroke="#ecb3a0" stroke-width="2.8"/>
+      <use href="#fiction-rocket-hull" fill="url(#fiction-rocket-shading)"/>
+      <path d="M-34 54Q0 62 34 54M-27 67Q0 74 27 67" fill="none" stroke="#703436" stroke-opacity=".76" stroke-width="1.8"/>
+      <path d="M-16 77H16L21 93H-21Z" fill="#50657a" stroke="#c6cfc8" stroke-width="2.4"/>
+      <path d="M-13 87h26m-19-7v10m12-10v10" stroke="#8198a2" stroke-width="1.4"/>
+    </g>
+    <path id="fiction-rocket-landing-gear" d="M-61 77-59 108-70 117h-13M61 77l-2 31 11 9h13"
+          transform="translate(0 -5) scale(.24)" fill="none" stroke="#c4cfc9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <g id="fiction-discovery">
+      <path d="M-75-13H-51L-47-4H66V4H-47L-51 13H-75L-85 0Z" fill="#abb9c8" stroke="#e0e8e7" stroke-width="2"/>
+      <path d="M-42-10H35L54 0 35 10H-42Z" fill="#d4d3cc" stroke="#778da1" stroke-width="2"/>
+      <path d="M-31-10V10M-13-10V10M5-10V10M23-10V10" stroke="#7891a3" stroke-width="2"/>
+      <path d="M50-12Q77-24 93 0 77 24 50 12L63 0Z" fill="#e8e6dd" stroke="#9da9b5" stroke-width="2"/>
+      <path d="M75-6 87 0 75 6 67 0Z" fill="#294f69"/><path d="M-22 0-30-21 0-12" fill="none" stroke="#e4e3dd" stroke-width="2"/>
+    </g>
+    <g id="fiction-endurance">
+      <circle r="28" fill="none" stroke="#d9d9cd" stroke-width="5" stroke-dasharray="22 7"/>
+      <circle r="20" fill="none" stroke="#6a92a7" stroke-width="2"/>
+      <path d="M-28 0H28M0-28V28" stroke="#98bccc" stroke-width="2"/>
+      <path d="M-11-6H7L14 0 7 6H-11Z" fill="#edf0e8"/><circle r="3" fill="#77cfe2"/>
+    </g>
+    <g id="fiction-lander">
+      <path d="M-26 5-18-9 5-12 27-1 17 8H-20Z" fill="#d8e2dc" stroke="#778e9a" stroke-width="2"/>
+      <path d="M-8-7 8-9 18-4 12 0H-7Z" fill="#427c99"/><path d="M-15 8-19 13M13 8l7 5" stroke="#edf7e8" stroke-width="2"/>
+    </g>
+    <g id="fiction-hail-module">
+      <path d="M-36-4-32-6H21L32-3V3L21 6H-32L-36 4Z" fill="#d5dedb" stroke="#8aa7b4" stroke-width="1.4"/>
+      <path d="M-29-5V5M-21-5V5M1-5V5M16-5V5" stroke="#748f9e" stroke-width="1.4"/>
+      <path d="M-16-2H-3M5 2H12" stroke="#a7b9ba" stroke-width="1.2"/>
+      <path d="M-34-2h5v4h-5Z" fill="#abc2c9"/>
+    </g>
+    <g id="fiction-hail" stroke-linejoin="round">
+      <path d="M25-45H30V45H25ZM30-31H35V31H30Z" fill="#466780" stroke="#a4bac5" stroke-width="1.4"/>
+      <path d="M25-37h5m-5 8h10m-10 8h10m-10 8h10m-10 26h10m-10 8h10m-10 8h10m-10 8h5"
+            fill="none" stroke="#89a8ba" stroke-width="1.1"/>
+      <path d="M-27-9H17V9H-27Z" fill="#6e899a"/>
+      <use href="#fiction-hail-module" transform="translate(1 -10)"/>
+      <use href="#fiction-hail-module" transform="translate(1 10)"/>
+      <path d="M-46-2-42-3.8H18V3.8H-42L-46 2Z" fill="#e5e9df" stroke="#8eaab7" stroke-width="1.3"/>
+      <path d="M-42-1h5m7-2v6m12-6v6m9-6v6m13-6v6m9-6v6" fill="none" stroke="#698797" stroke-width="1.2"/>
+      <path d="M16-16H23L41-7 43-3 37-1H21L16-6ZM16 16H23L41 7 43 3 37 1H21L16 6Z"
+            fill="#c0d0d0" stroke="#8ba6b2" stroke-width="1.4"/>
+      <path d="M17-5H28L43-2 44 0 43 2 28 5H17Z" fill="#e4e9e1" stroke="#a2b9bf" stroke-width="1.3"/>
+      <path d="M22-4V4M27-4V4M32-3V3M37-2V2" stroke="#728e9d" stroke-width="1.1"/>
+    </g>
+    <linearGradient id="fiction-blip-metal" x1="0" y1="1" x2="0" y2="0">
+      <stop stop-color="#332b28"/><stop offset=".48" stop-color="#816544"/><stop offset="1" stop-color="#463a32"/>
+    </linearGradient>
+    <g id="fiction-blip-boom" stroke-linejoin="round">
+      <path d="M-40-11-26-16 3-22 29-17 61-13 108-10 61-8 29-6 11-5-15-6-33-8Z"
+            fill="url(#fiction-blip-metal)" stroke="#bb9e6e" stroke-width="1.6"/>
+      <path d="M-40-11-17-11 3-16 29-12 61-10 108-10M-26-16-17-11-15-6 3-22 11-5 29-17 29-6 61-13 61-8"
+            fill="none" stroke="#b69768" stroke-width="1"/>
+      <path d="M-17-12-11-16-5-17-1-13-7-10ZM14-13 26-13 33-11 19-10ZM42-11l13 1-12 1Z"
+            fill="#e7c688"/>
+    </g>
+    <!-- The central hull provides the left-hand docking point; the two booms taper away from it. -->
+    <g id="fiction-rocky" stroke-linecap="round" stroke-linejoin="round">
+      <use href="#fiction-blip-boom" transform="scale(1 -1)" opacity=".87"/>
+      <use href="#fiction-blip-boom"/>
+      <path d="M-10-14-3-10 0-5V5L-3 10-10 14H-19L-11 7-9 0-11-7-19-14Z"
+            fill="#997f54" stroke="#c4a573" stroke-width="1.3"/>
+      <path d="M-41 0-28-5-13-6-5-8H9L20-4 34-1 20 2 9 7H-5L-13 5-28 4Z"
+            fill="#54483b" stroke="#c1a271" stroke-width="1.5"/>
+      <path d="M-28-5l12 5-12 4M-5-8 0 0-5 7M9-8 12 0 9 7M-33 0H33"
+            fill="none" stroke="#ad9167" stroke-width="1.25"/>
+      <path d="M-41 0h7m14 0h7m14 0h5m17-1h10" stroke="#ffe2a4" stroke-width="2.3"/>
+    </g>
+    <path id="fiction-boot" d="M-3-6Q0-10 3-6L3 0H-3ZM-2 2H3V6H-2Z" fill="#40394b"/>
+  </defs>
+  <rect width="640" height="360" fill="url(#fiction-sky)"/>
+  <path class="fictional-stars" d="M20 31h1m18 77h1m22-62h1m28 95h1m43-82h1m25 224h1m-97 21h1m65-58h1m153-193h1m52 46h1m-118-62h1m168 237h1m-82 34h1m-43-130h1m204-153h1m68 60h1m43-30h1m41 81h1m-61 94h1m-66 83h1m118-31h1m-177-57h1m35-98h1m-239 35h1m178-80h1m-35 190h1m231-65h1"/>
+
+  <g data-fictional-scene="moon-route" hidden="">
+    <use href="#fiction-earth-body" transform="translate(114 223) scale(1.25)"/>
+    <!-- The circular arc is centered on Earth at (114, 223). -->
+    <path class="fictional-motion-guide" data-fictional-track="moon-orbit" d="M527 142A420.868 420.868 0 0 0 496.76 48"/>
+    <g data-fictional-actor="moon">
+      <use href="#fiction-moon-body"/>
+      <text class="fictional-label" y="60" text-anchor="middle" data-fictional-text="moonBody"></text>
+    </g>
+    <path class="fictional-route" data-fictional-track="moon-out" d="M115 168Q287-2 500 129"/>
+    <path class="fictional-route fictional-route-secondary" data-fictional-track="moon-back" d="M526 142Q348 315 150 254"/>
+    <use href="#fiction-rocket" data-fictional-actor="ship"/>
+    <text class="fictional-label" x="114" y="294" text-anchor="middle" data-fictional-text="earth"></text>
+  </g>
+
+  <g data-fictional-scene="moon-surface" hidden="">
+    <use href="#fiction-earth-body" transform="translate(149 89) scale(.73)"/>
+    <path d="M0 238 55 206 101 221 162 180 218 224 281 210 340 244 406 230 478 200 537 239 592 217 640 232V360H0Z" fill="#514b66"/>
+    <path d="M0 270Q105 245 196 267T383 270 640 250V360H0Z" fill="url(#fiction-ground)"/>
+    <path d="M23 308Q44 295 66 304T96 316M482 312Q511 294 545 308M117 326Q132 320 147 325M566 278l26-5" fill="none" stroke="#aaa1ad" stroke-opacity=".48" stroke-width="3"/>
+    <ellipse cx="469" cy="270" rx="47" ry="6" fill="#25243a" opacity=".55"/>
+    <path class="fictional-motion-guide" data-fictional-track="moon-touchdown" d="M514 97C496 120 469 151 469 189V208"/>
+    <g data-fictional-actor="ship">
+      <g transform="scale(2.6)">
+        <use href="#fiction-rocket-landing-gear"/>
+        <use href="#fiction-rocket"/>
+      </g>
+    </g>
+    <g data-fictional-extra="footsteps">
+      <use href="#fiction-boot" transform="translate(436 277) rotate(-62)"/><use href="#fiction-boot" transform="translate(421 283) rotate(-60)"/>
+      <use href="#fiction-boot" transform="translate(405 279) rotate(-74)"/><use href="#fiction-boot" transform="translate(388 287) rotate(-64)"/>
+      <use href="#fiction-boot" transform="translate(370 283) rotate(-77)"/><use href="#fiction-boot" transform="translate(354 291) rotate(-65)"/>
+      <use href="#fiction-boot" transform="translate(336 288) rotate(-74)"/><use href="#fiction-boot" transform="translate(319 295) rotate(-75)"/>
+    </g>
+    <path class="fictional-motion-guide" data-fictional-track="moon-drive" d="M417 283Q272 299 164 300"/>
+    <g data-fictional-actor="rover">
+      <rect x="-29" y="-10" width="58" height="18" rx="9" fill="#333748" stroke="#9ba9ae" stroke-width="2"/>
+      <path d="M-25-11-17-24H19L26-11Z" fill="#a6a184" stroke="#dcd2ab" stroke-width="2"/>
+      <path d="M-14-20H12V-13H-13Z" fill="#488499"/><path d="M12-24l8-15" stroke="#e3daa8" stroke-width="2"/>
+      <g fill="#9fa4a9"><circle cx="-20" cy="-1" r="5"/><circle cx="-7" cy="-1" r="5"/><circle cx="7" cy="-1" r="5"/><circle cx="20" cy="-1" r="5"/></g>
+    </g>
+  </g>
+
+  <g data-fictional-scene="odyssey-station" hidden="">
+    <circle cx="115" cy="502" r="326" fill="url(#fiction-earth)" stroke="#78cbdc" stroke-width="5"/>
+    <path d="M0 230Q79 208 123 226T227 228M21 296Q101 254 187 282T365 291M195 332Q268 306 350 322"
+          fill="none" stroke="#bae7e7" stroke-opacity=".35" stroke-width="7"/>
+    <path d="M0 195Q110 148 228 195" fill="none" stroke="#7dbdde" stroke-opacity=".18" stroke-width="3"/>
+    <path class="fictional-motion-guide" data-fictional-track="station-hub" d="M438 158h1"/>
+    <g data-fictional-actor="station">
+      <g fill="none">
+        <path d="M-96-47A107 107 0 1 1-98 42" transform="translate(12 10)" stroke="#42566d" stroke-width="11"/>
+        <path d="M-95-50A107 107 0 1 1-96 49" transform="translate(12 10)" stroke="#8ca1ae" stroke-width="3"/>
+        <path d="M0-100V100M-100 0H100M-74-74 74 74M74-74-74 74" stroke="#78909e" stroke-width="5"/>
+        <path d="M0-100V100M-100 0H100" stroke="#c9d9d9" stroke-width="2"/>
+        <circle r="107" stroke="#304b64" stroke-width="21"/>
+        <circle r="107" stroke="#b9cbd2" stroke-width="14"/>
+        <circle r="113" stroke="#e0e6dd" stroke-width="2"/>
+        <circle r="102" stroke="#617c90" stroke-width="2"/>
+        <circle r="107" stroke="#2b4864" stroke-width="5" stroke-dasharray="8 7"/>
+      </g>
+      <circle r="17" fill="#8fa8b4" stroke="#e3e9df" stroke-width="3"/>
+      <circle r="9" fill="#122337" stroke="#b1e2dd" stroke-width="2"/>
+    </g>
+    <path class="fictional-motion-guide" data-fictional-track="orion-dock" d="M88 212C158 270 260 224 330 177Q369 158 405 158"/>
+    <g data-fictional-actor="orion" data-fictional-align="">
+      <path d="M-29-2-19-8H8L23-4 34 0 23 4 8 8H-19L-29 4Z" fill="#e5e9e2" stroke="#8ba6b4" stroke-width="2"/>
+      <path d="m1-5-19-15h-10l9 15m20 10-19 15h-10l9-15" fill="#aabec6" stroke="#d9e5e3" stroke-width="2"/>
+      <path d="M19-4 29-1 22 1 16-1Z" fill="#295472"/>
+      <path d="M-18 4H12" stroke="#ac6f5c" stroke-width="2"/>
+    </g>
+    <text class="fictional-label" x="438" y="307" text-anchor="middle" data-fictional-text="stationFive"></text>
+  </g>
+
+  <g data-fictional-scene="odyssey-clavius" hidden="">
+    <path d="M0 236 47 223 98 192 148 208 201 228 253 218 309 201 377 224 451 202 496 178 548 189 604 219 640 211V360H0Z"
+          fill="#414d62" stroke="#76869c" stroke-width="2"/>
+    <path d="M0 270 68 250 134 264 208 250 286 226 362 232 438 251 516 244 640 251V360H0Z" fill="url(#fiction-ground)"/>
+    <path d="M25 304 82 284 125 298 162 288M480 291l46-20 61 4M461 329l73 4 54-8"
+          fill="none" stroke="#a5a0ac" stroke-opacity=".65" stroke-width="3"/>
+    <ellipse cx="328" cy="280" rx="122" ry="41" fill="#2a2c3d" stroke="#7a7f91" stroke-width="4"/>
+    <path d="M210 284Q328 341 445 284M219 290Q328 330 437 291" fill="none" stroke="#96939d" stroke-opacity=".56" stroke-width="3"/>
+    <path d="M268 271H388L408 287 389 305H267L249 287Z" fill="#555b68" stroke="#9298a8" stroke-width="2"/>
+    <ellipse cx="328" cy="287" rx="53" ry="17" fill="#212c3b" stroke="#e0bd85" stroke-width="4"/>
+    <ellipse cx="328" cy="287" rx="40" ry="11" fill="#3e4554" stroke="#8da7b4" stroke-width="2"/>
+    <path d="M260 286h6m20-15h5m73 0h5m20 15h6m-32 15h6m-84 0h5" stroke="#ffda8e" stroke-width="4" stroke-linecap="round"/>
+    <path class="fictional-motion-guide" data-fictional-track="aries-descent" d="M190 85C239 105 325 149 328 205V259"/>
+    <g data-fictional-actor="aries">
+      <path d="M-15 14-22 25h-9m46-11 7 11h9m-31-8v9" fill="none" stroke="#c4c8c4" stroke-width="3" stroke-linecap="round"/>
+      <ellipse rx="27" ry="21" fill="#dad8d0" stroke="#a3bbc7" stroke-width="2"/>
+      <path d="M-24 5Q0 15 24 5M-12-17Q-17 0-11 17M12-17Q17 0 11 17" fill="none" stroke="#8299a9" stroke-width="1.5"/>
+      <path d="M-11-11Q0-16 11-11L8-5H-8Z" fill="#294860"/>
+      <path d="M-6 17H6M-12 23l-6 23m24-23 6 23" fill="none" stroke="#ffdf9e" stroke-width="2" stroke-opacity=".68"/>
+    </g>
+    <text class="fictional-label" x="328" y="343" text-anchor="middle" data-fictional-text="clavius"></text>
+  </g>
+
+  <g data-fictional-scene="jupiter-route" hidden="">
+    <use href="#fiction-earth-body" transform="translate(91 235) scale(.8)"/>
+    <use href="#fiction-jupiter-body" transform="translate(521 153) scale(1.13)"/>
+    <path class="fictional-orbits" d="M423 154C433 82 573 63 607 117 643 180 540 247 464 214"/>
+    <path class="fictional-route" data-fictional-track="jupiter-out" d="M112 212C203 81 354 81 450 139"/>
+    <g data-fictional-actor="ship" data-fictional-align=""><use href="#fiction-discovery" transform="scale(.43)"/></g>
+    <text class="fictional-label" x="91" y="292" text-anchor="middle" data-fictional-text="earth"></text>
+    <text class="fictional-label" x="521" y="243" text-anchor="middle" data-fictional-text="jupiter"></text>
+  </g>
+
+  <g data-fictional-scene="discovery" hidden="">
+    <path d="M0 294Q260 240 640 290" fill="none" stroke="#203c51" stroke-width="2"/>
+    <use href="#fiction-discovery" transform="translate(277 151) rotate(-10) scale(2.1)"/>
+    <path class="fictional-motion-guide" data-fictional-track="discovery-pod" d="M393 157Q459 167 514 236"/>
+    <g data-fictional-actor="pod">
+      <path d="M-12-6-4-12 8-10 15-1 9 10-7 10-13 4Z" fill="#e4e2d3" stroke="#91a6ae" stroke-width="2"/>
+      <path d="M2-6 10-2 8 3H0Z" fill="#2c6886"/>
+      <path d="M-12 4-19 6M-9 9-14 14" stroke="#bce2e9" stroke-width="2"/>
+    </g>
+    <path class="fictional-motion-guide" data-fictional-track="discovery-eva" d="M413 188C413 224 445 250 479 240"/>
+    <g data-fictional-actor="astronaut">
+      <path d="M-5 2-11 7M5 2l9-5M-3 10l-6 10M3 10l7 7" fill="none" stroke="#dedfd5" stroke-width="3" stroke-linecap="round"/>
+      <path d="M-7-1 6-2 6 9-4 12Z" fill="#dce2df" stroke="#7c9cac" stroke-width="2"/>
+      <circle cy="-7" r="6" fill="#ece9dc"/><path d="M-4-8Q0-12 4-8V-5H-4Z" fill="#3f7185"/>
+    </g>
+    <g data-fictional-extra="halOn"><circle cx="436" cy="124" r="6" fill="#f28e60"/><circle cx="436" cy="124" r="11" fill="none" stroke="#f28e60" opacity=".45"/></g>
+    <g data-fictional-extra="halOff"><circle cx="436" cy="124" r="6" fill="#1a2530" stroke="#acb6b7" stroke-width="2"/></g>
+  </g>
+
+  <g data-fictional-scene="monolith" hidden="">
+    <use href="#fiction-jupiter-body" transform="translate(463 195) scale(1.98)"/>
+    <path d="M267 71 303 61 304 230 268 249Z" fill="#070b13" stroke="#a0a7bb" stroke-width="2"/>
+    <path d="M303 61 314 69 315 232 304 230Z" fill="#293340"/>
+    <path class="fictional-motion-guide" data-fictional-track="monolith-pass" d="M108 267Q154 275 211 268"/>
+    <g data-fictional-actor="ship"><use href="#fiction-discovery" transform="scale(.46)"/></g>
+    <text class="fictional-label" x="488" y="330" text-anchor="middle" data-fictional-text="jupiter"></text>
+  </g>
+
+  <g data-fictional-scene="saturn-route" hidden="">
+    <use href="#fiction-earth-body" transform="translate(105 231) scale(.73)"/>
+    <ellipse cx="502" cy="147" rx="88" ry="21" transform="rotate(-21 502 147)" fill="none" stroke="#c5aa98" stroke-width="9"/>
+    <circle cx="501" cy="142" r="42" fill="url(#fiction-jupiter)"/>
+    <path d="M418 178Q464 183 556 139 579 127 585 115" fill="none" stroke="#e3c6a4" stroke-width="6"/>
+    <path class="fictional-route" data-fictional-track="saturn-out" d="M124 209C249 73 328 84 413 139"/>
+    <g data-fictional-actor="ship"><use href="#fiction-endurance" transform="scale(.7)"/></g>
+    <text class="fictional-label" x="105" y="290" text-anchor="middle" data-fictional-text="earth"></text>
+    <text class="fictional-label" x="501" y="225" text-anchor="middle" data-fictional-text="saturn"></text>
+  </g>
+
+  <g data-fictional-scene="wormhole" hidden="">
+    <ellipse cx="436" cy="173" rx="126" ry="91" fill="#22344f" stroke="#7595bb" stroke-opacity=".36" stroke-width="2"/>
+    <ellipse cx="436" cy="173" rx="108" ry="73" fill="#122339" stroke="#849dcc" stroke-width="2"/>
+    <ellipse cx="436" cy="173" rx="78" ry="50" fill="#081325" stroke="#8bafd4" stroke-width="2"/>
+    <ellipse cx="436" cy="173" rx="43" ry="29" fill="#060c17" stroke="#709db8" stroke-width="3"/>
+    <path d="M323 138Q431 191 548 133M324 202Q428 159 543 205" fill="none" stroke="#aac9e6" stroke-opacity=".37" stroke-width="2"/>
+    <path class="fictional-route" data-fictional-track="wormhole-pass" d="M109 256Q225 238 436 173"/>
+    <g data-fictional-actor="ship"><use href="#fiction-endurance" transform="scale(.8)"/></g>
+    <text class="fictional-label" x="436" y="303" text-anchor="middle" data-fictional-text="wormhole"></text>
+  </g>
+
+  <g data-fictional-scene="miller-orbit" hidden="">
+    <ellipse cx="198" cy="140" rx="128" ry="29" transform="rotate(-13 198 140)" fill="none" stroke="#edad72" stroke-width="14" opacity=".56"/>
+    <circle cx="195" cy="132" r="75" fill="#050915" stroke="#dea177" stroke-width="4"/>
+    <path d="M75 168Q169 187 311 109" fill="none" stroke="#ffd2a0" stroke-width="6"/>
+    <circle cx="540" cy="238" r="46" fill="#47618d" stroke="#80c5d5" stroke-width="4"/>
+    <path d="M502 241Q539 225 577 243M511 260Q533 251 566 260" fill="none" stroke="#97cacf" stroke-opacity=".6" stroke-width="2"/>
+    <use href="#fiction-endurance" transform="translate(331 219)"/>
+    <path class="fictional-route" data-fictional-track="miller-in" d="M350 223Q440 139 507 210"/>
+    <path class="fictional-motion-guide" data-fictional-track="miller-back" d="M507 210Q440 139 355 223"/>
+    <g data-fictional-actor="lander" data-fictional-align=""><use href="#fiction-lander" transform="scale(.76)"/></g>
+    <text class="fictional-label" x="540" y="314" text-anchor="middle" data-fictional-text="miller"></text>
+  </g>
+
+  <g data-fictional-scene="miller-surface" hidden="">
+    <rect y="150" width="640" height="210" fill="url(#fiction-water)"/>
+    <path d="M0 178Q111 165 205 175T449 176 640 169M0 206Q70 199 143 201T353 211 640 196M0 324Q133 292 288 309T640 302" fill="none" stroke="#b1dadd" stroke-opacity=".35" stroke-width="3"/>
+    <path class="fictional-motion-guide" data-fictional-track="miller-down" d="M126 133Q224 182 276 248"/>
+    <path class="fictional-motion-guide" data-fictional-track="miller-wave" d="M620 247 398 247"/>
+    <g data-fictional-actor="wave">
+      <path d="M-76 63Q-19 41-9-19 4-74 80-93 46-75 48-55 66-31 132-38L132 72Z" fill="#71b1b9" opacity=".92"/>
+      <path d="M-38 48Q-11 30-6-12 6-63 68-86" fill="none" stroke="#c5e3df" stroke-width="3"/>
+    </g>
+    <g data-fictional-actor="lander"><use href="#fiction-lander" transform="scale(1.75)"/></g>
+  </g>
+
+  <g data-fictional-scene="mann-surface" hidden="">
+    <rect width="640" height="360" fill="#1a3047"/>
+    <path d="M0 107Q176 66 394 119T640 108M0 153Q192 124 356 171T640 146"
+          fill="none" stroke="#9bb3c9" stroke-opacity=".28" stroke-width="9"/>
+    <path d="M0 267V194L52 161 86 117 113 164 151 174 196 226 242 211 292 234 341 200 385 212 423 175 461 161 489 101 506 143 546 160 580 194 640 181V360H0Z"
+          fill="#435d78" stroke="#829db5" stroke-width="2"/>
+    <path d="M0 193 52 161 86 117 76 161 113 164 133 193 91 179 42 195ZM423 175 461 161 489 101 486 155 510 155 546 160 567 184 511 173 463 179Z"
+          fill="#a9c0ce"/>
+    <path d="M0 278 111 245 223 270 309 256 403 267 514 230 640 252V360H0Z" fill="#91adc0"/>
+    <path d="M0 316 79 290 157 296 211 289 272 306 382 294 428 306 528 274 640 283V360H0Z" fill="#516c85"/>
+    <path d="m45 328 62-17 49 2m45 3 33 10 56-6m162 2 54-10 53-22 63 7"
+          fill="none" stroke="#bed1dd" stroke-width="3"/>
+    <ellipse cx="399" cy="267" rx="52" ry="6" fill="#293f53" opacity=".52"/>
+    <path class="fictional-motion-guide" data-fictional-track="mann-descent" d="M100 126C231 108 386 171 399 250"/>
+    <g data-fictional-actor="lander">
+      <use href="#fiction-lander" transform="scale(1.35)"/>
+    </g>
+    <text class="fictional-label" x="324" y="337" text-anchor="middle" data-fictional-text="mann"></text>
+  </g>
+
+  <g data-fictional-scene="endurance-docking" hidden="">
+    <circle cx="203" cy="415" r="182" fill="#385571" stroke="#809bb2" stroke-width="4"/>
+    <path d="M54 314Q137 267 229 289T352 323M74 326Q157 287 254 315" fill="none" stroke="#a1b8ca" stroke-opacity=".45" stroke-width="5"/>
+    <path class="fictional-motion-guide" data-fictional-track="endurance-hub" d="M407 163h1"/>
+    <g data-fictional-actor="ring">
+      <g transform="scale(2.9 2.35)">
+        <use href="#fiction-endurance"/>
+        <path d="M15-27 21-25 25-19" fill="none" stroke="#fb9766" stroke-width="4"/>
+        <circle cx="18" cy="-23" r="2" fill="#ffdd94"/>
+      </g>
+    </g>
+    <path class="fictional-motion-guide" data-fictional-track="endurance-dock" d="M139 248C235 248 302 169 373 163"/>
+    <g data-fictional-actor="lander">
+      <use href="#fiction-lander" transform="scale(1.25)"/>
+    </g>
+  </g>
+
+  <g data-fictional-scene="gargantua" hidden="">
+    <ellipse cx="419" cy="155" rx="159" ry="52" transform="rotate(-9 419 155)" fill="none" stroke="#f58f61" stroke-opacity=".25" stroke-width="23"/>
+    <path d="M332 157C321 88 360 57 410 57 474 57 513 104 505 155" fill="none" stroke="#fabe82" stroke-opacity=".55" stroke-width="17"/>
+    <circle cx="418" cy="157" r="85" fill="#070a15" stroke="#ffc581" stroke-width="5"/>
+    <path d="M252 180Q406 208 578 136" fill="none" stroke="#e3a165" stroke-opacity=".42" stroke-width="23"/>
+    <path d="M252 179Q410 202 578 135" fill="none" stroke="#ffd391" stroke-width="6"/>
+    <path d="M339 177Q367 226 426 225 474 225 495 198" fill="none" stroke="#f2ad77" stroke-opacity=".55" stroke-width="8"/>
+    <path class="fictional-route fictional-route-secondary" data-fictional-track="gargantua-out" d="M120 225Q225 333 536 286"/>
+    <path class="fictional-motion-guide" data-fictional-track="gargantua-in" d="M155 240Q262 304 382 211"/>
+    <g data-fictional-actor="ship"><use href="#fiction-endurance" transform="scale(.76)"/></g>
+    <g data-fictional-actor="ranger" data-fictional-align=""><use href="#fiction-lander" transform="scale(.64)"/></g>
+    <text class="fictional-label" x="419" y="39" text-anchor="middle" data-fictional-text="gargantua"></text>
+  </g>
+
+  <g data-fictional-scene="cooper-station" hidden="">
+    <rect width="640" height="360" fill="#142b39"/>
+    <!-- An axial view: every cross-section is centered on the same vanishing point. -->
+    <g transform="translate(334 174)">
+      <circle r="385" fill="url(#fiction-cooper-wall)"/>
+      <path d="M-350-101 350 101M-350 101 350-101M-348 0H348"
+            fill="none" stroke="#a1c2c5" stroke-opacity=".42" stroke-width="3"/>
+      <path d="M44-10 341-78 341 78 44 10ZM-44-10-341-78-341 78-44 10Z" fill="#83a8b1" opacity=".28"/>
+      <use href="#fiction-cooper-fields"/>
+      <use href="#fiction-cooper-fields" transform="rotate(180)" opacity=".85"/>
+      <g fill="none" stroke="#c1d0c8" stroke-opacity=".52">
+        <circle r="73" stroke-width="1.6"/>
+        <circle r="115" stroke-width="2.4"/>
+        <circle r="171" stroke-width="3.5"/>
+        <circle r="254" stroke-width="5"/>
+        <circle r="350" stroke-width="7"/>
+      </g>
+      <g>
+        <use href="#fiction-cooper-house" transform="translate(-18 67) rotate(15) scale(.47)"/>
+        <use href="#fiction-cooper-house" transform="translate(38 86) rotate(-24) scale(.64)"/>
+        <use href="#fiction-cooper-house" transform="translate(-43 103) rotate(23) scale(.8)"/>
+        <use href="#fiction-cooper-house" transform="translate(-78 131) rotate(31) scale(1.15)"/>
+        <use href="#fiction-cooper-house" transform="translate(73 140) rotate(-28) scale(1.34)"/>
+        <use href="#fiction-cooper-house" transform="translate(111 152) rotate(-36) scale(1.58)"/>
+      </g>
+      <g transform="rotate(180)">
+        <use href="#fiction-cooper-house" transform="translate(-31 80) rotate(21) scale(.6)"/>
+        <use href="#fiction-cooper-house" transform="translate(33 89) rotate(-20) scale(.71)"/>
+        <use href="#fiction-cooper-house" transform="translate(55 112) rotate(-26) scale(.95)"/>
+        <use href="#fiction-cooper-house" transform="translate(-42 129) rotate(18) scale(1.06)"/>
+        <use href="#fiction-cooper-house" transform="translate(-89 151) rotate(30) scale(1.5)"/>
+      </g>
+      <circle r="45" fill="#314e59" stroke="#a5c2c0" stroke-width="4"/>
+      <circle r="31" fill="#597d85" stroke="#c9ded1" stroke-width="2"/>
+      <circle r="15" fill="#d9e9d7"/>
+      <path d="M-36 0h16m40 0h16M0-36v16m0 40v16" stroke="#a5c2c0" stroke-width="2"/>
+    </g>
+    <text class="fictional-label" x="118" y="335" text-anchor="middle" data-fictional-text="cooperStation"></text>
+  </g>
+
+  <g data-fictional-scene="edmunds-camp" hidden="">
+    <circle cx="520" cy="99" r="45" fill="#c48c61" opacity=".17"/>
+    <circle cx="520" cy="99" r="27" fill="url(#fiction-star)"/>
+    <path d="M0 208 90 166 143 172 198 138 254 182 300 171 375 198 421 176 493 194 567 151 640 161V360H0Z"
+          fill="#6a575f" stroke="#9e7470" stroke-width="2"/>
+    <path d="M0 252 91 232 153 244 230 216 287 227 347 260 430 236 492 251 568 212 640 227V360H0Z" fill="#a2725b"/>
+    <path d="M0 299 91 274 179 282 252 265 360 299 447 263 532 276 640 252V360H0Z" fill="#694b4b"/>
+    <path d="M20 321 98 298 177 304m314-6 56 5 60-14" fill="none" stroke="#b8876c" stroke-width="3"/>
+    <use href="#fiction-lander" transform="translate(182 245) scale(1.15)"/>
+    <ellipse cx="361" cy="269" rx="85" ry="13" fill="#4b4142" opacity=".7"/>
+    <path d="M290 268 307 234 343 217 381 233 397 268Z" fill="#d3c4ac" stroke="#e6d8b9" stroke-width="3"/>
+    <path d="M343 217 333 269M308 234l16 35m35-1 15-38M290 268h107" fill="none" stroke="#a38772" stroke-width="2"/>
+    <path d="M346 242 354 237 365 243V268H346Z" fill="#475968" stroke="#f1ca89" stroke-width="2"/>
+    <path d="M409 232v38m0-32 24-16m-24 26 22 8" fill="none" stroke="#e0ceb3" stroke-width="3"/>
+    <circle cx="433" cy="222" r="4" fill="#f8cc92"/>
+    <text class="fictional-label" x="351" y="332" text-anchor="middle" data-fictional-text="edmunds"></text>
+  </g>
+
+  <g data-fictional-scene="hail-cabin" hidden="">
+    <path d="M0 360V74L105 0H535L640 74V360Z" fill="#203248" stroke="#5a778e" stroke-width="4"/>
+    <path d="M0 330 146 241H501L640 330M105 0l41 241M535 0l-34 241" fill="none" stroke="#456380" stroke-width="4"/>
+    <rect x="141" y="38" width="357" height="123" rx="24" fill="#0a1525" stroke="#718b9e" stroke-width="5"/>
+    <circle cx="427" cy="106" r="21" fill="url(#fiction-star)"/>
+    <circle cx="353" cy="87" r="3" fill="#d6efec"/><circle cx="274" cy="127" r="2" fill="#d6efec"/><circle cx="204" cy="91" r="2" fill="#d6efec"/>
+    <path d="M203 270 214 225Q235 210 272 210H417L464 236V280H211Z" fill="#829aa5" stroke="#c3d2d3" stroke-width="3"/>
+    <path d="M223 224 277 216H403L435 227 393 247H212Z" fill="#c1d0ca"/>
+    <path d="M288 224Q318 194 336 207L385 225 378 238H286Z" fill="#567483"/>
+    <circle cx="279" cy="216" r="12" fill="#e4c6aa"/>
+    <path d="M252 280v33M422 280v33" stroke="#708a9b" stroke-width="9"/>
+    <path d="M468 193h54v34h-54Z" fill="#182f43" stroke="#7994aa" stroke-width="3"/>
+    <path d="M477 210h10l4-8 6 15 5-7h13" fill="none" stroke="#99d5c9" stroke-width="2"/>
+  </g>
+
+  <g data-fictional-scene="tau-route" hidden="">
+    <circle cx="118" cy="201" r="18" fill="url(#fiction-star)"/>
+    <circle cx="521" cy="150" r="38" fill="url(#fiction-star)"/>
+    <ellipse cx="521" cy="150" rx="66" ry="54" class="fictional-orbits"/>
+    <ellipse cx="521" cy="150" rx="88" ry="72" class="fictional-orbits"/>
+    <circle cx="565" cy="114" r="6" fill="#91d5d7"/><circle cx="454" cy="182" r="7" fill="#cfb49f"/>
+    <path class="fictional-route" data-fictional-track="tau-in" d="M139 201C255 299 387 211 472 165"/>
+    <g data-fictional-actor="ship" data-fictional-align=""><use href="#fiction-hail" transform="scale(.62)"/></g>
+    <text class="fictional-label" x="521" y="253" text-anchor="middle" data-fictional-text="tauCeti"></text>
+  </g>
+
+  <g data-fictional-scene="rendezvous" hidden="">
+    <path class="fictional-motion-guide" data-fictional-track="hail-dock" d="M127 173H232"/>
+    <path class="fictional-motion-guide" data-fictional-track="rocky-dock" d="M517 173H421"/>
+    <g data-fictional-extra="tunnel">
+      <path d="M286 167H369L379 172 369 181H286Z" fill="#99d6d1" fill-opacity=".28" stroke="#bce0d9" stroke-width="2" stroke-dasharray="5 3"/>
+      <path d="M300 168V180M322 168V180M344 168V180M365 168V180" stroke="#8bd4ca" stroke-width="2"/>
+    </g>
+    <g data-fictional-actor="ship"><use href="#fiction-hail" transform="scale(1.24)"/></g>
+    <g data-fictional-actor="rocky"><use href="#fiction-rocky" transform="scale(1.07)"/></g>
+  </g>
+
+  <g data-fictional-scene="adrian" hidden="">
+    <path d="M0 295Q320 67 640 297V360H0Z" fill="#233d57" stroke="#57adbb" stroke-opacity=".35" stroke-width="12"/>
+    <path d="M0 313Q320 99 640 313" fill="none" stroke="#75bdc2" stroke-width="4"/>
+    <path d="M0 346Q338 149 640 345M142 348Q333 251 497 330" fill="none" stroke="#527d9a" stroke-opacity=".65" stroke-width="3"/>
+    <path class="fictional-route" data-fictional-track="adrian-pass" d="M116 103C224 195 355 225 532 104"/>
+    <g data-fictional-actor="ship" data-fictional-align="">
+      <use href="#fiction-hail" transform="scale(.84)"/>
+      <path data-fictional-extra="sample" d="M-4 9Q-11 22-4 37M-8 37l9 2" fill="none" stroke="#f3da9f" stroke-width="3"/>
+    </g>
+    <text class="fictional-label" x="546" y="322" text-anchor="middle" data-fictional-text="adrian"></text>
+  </g>
+
+  <g data-fictional-scene="hail-return" hidden="">
+    <use href="#fiction-earth-body" transform="translate(81 232) scale(.90)"/>
+    <circle cx="559" cy="122" r="32" fill="#b47d61" stroke="#efceaa" stroke-width="3"/>
+    <path d="M540 104 551 100 562 106 573 108M533 125 552 124 560 130 585 125M548 141l19 3 12-5" fill="none" stroke="#edba94" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="320" cy="212" r="12" fill="url(#fiction-star)"/>
+    <path class="fictional-route fictional-route-secondary" data-fictional-extra="earthRoute" d="M320 212Q234 140 163 167Q129 181 102 207"/>
+    <path class="fictional-motion-guide" data-fictional-track="hail-earth" d="M320 212Q234 140 163 167"/>
+    <path class="fictional-route fictional-route-abandoned" data-fictional-extra="abandoned" d="M320 212Q234 140 163 167Q129 181 102 207"/>
+    <path class="fictional-route fictional-route-secondary" d="M320 212C371 212 449 136 530 126"/>
+    <path class="fictional-motion-guide" data-fictional-track="hail-rocky" d="M320 212C370 212 416 209 453 200"/>
+    <path class="fictional-route" data-fictional-extra="rescuePath" data-fictional-track="hail-turn" d="M163 167C211 290 347 280 436 153"/>
+    <path class="fictional-route" data-fictional-extra="jointPath" data-fictional-track="hail-erid" d="M436 153Q473 127 530 118"/>
+    <path class="fictional-motion-guide" data-fictional-track="rocky-erid" d="M453 200Q486 177 529 168"/>
+    <path class="fictional-motion-guide" data-fictional-track="hail-probes" d="M163 167Q125 180 102 207"/>
+    <g data-fictional-actor="ship" data-fictional-align=""><use href="#fiction-hail" transform="scale(.56)"/></g>
+    <g data-fictional-actor="rocky"><use href="#fiction-rocky" transform="scale(.50)"/></g>
+    <g data-fictional-actor="probes" fill="#fff1b4">
+      <path d="M-5-2 0-7 5-2 0 3ZM5 5l4-4 4 4-4 4ZM-11 8l4-4 4 4-4 4Z"/>
+    </g>
+    <text class="fictional-label" x="81" y="289" text-anchor="middle" data-fictional-text="earth"></text>
+    <text class="fictional-label" x="320" y="247" text-anchor="middle" data-fictional-text="tauCeti"></text>
+    <text class="fictional-label" x="559" y="185" text-anchor="middle" data-fictional-text="erid"></text>
+    <text class="fictional-label fictional-label-secondary" x="103" y="115" data-fictional-extra="probeCaption" data-fictional-text="probes"></text>
+  </g>
+</svg>

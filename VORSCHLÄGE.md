@@ -4,7 +4,7 @@ Hier sammeln wir mögliche neue Inhalte und Verbesserungen für die Planetenuhr.
 
 ## Voyager, Pioneer und New Horizons animieren
 
-**Idee:** Die Kachel „Raumfahrtmissionen“ um fünf Sonden im Stil der vorhandenen Animationen ergänzen. Jede Sonde erhält eine sonnenzentrierte Reiseansicht mit eigenem Zeitregler und Wiedergabe. Sprungpunkte führen zu planeten- oder zielzentrierten Nahansichten.
+**Idee:** In der Kachel „Raumfahrtmissionen“ fasst der Reiter „Äußeres Sonnensystem“ fünf auswählbare Sonden zusammen. Jede Sonde erhält eine sonnenzentrierte Reiseansicht mit eigenem Zeitregler und Wiedergabe. Sprungpunkte führen zu planeten- oder zielzentrierten Nahansichten.
 
 | Sonde | Geprüfte Nahansichten | Verfügbare sonnenzentrierte Bahn |
 | --- | --- | --- |
@@ -16,9 +16,11 @@ Hier sammeln wir mögliche neue Inhalte und Verbesserungen für die Planetenuhr.
 
 **Darstellung:** Die Reiseübersicht und die Nahansichten verwenden unterschiedliche Maßstäbe, damit die Vorbeiflüge auch bei großen Sonnenabständen lesbar bleiben. Arrokoth kann eine vergrößerte zweilappige Silhouette mit Abstandsanzeige zum Mittelpunkt erhalten, analog zur Didymos-Ansicht. Ein möglicher Einstieg ist Voyager 2 mit seinen vier Planetenbegegnungen.
 
+**Voyager:** Eine schräge 3D-Ansicht zeigt die Ekliptik und die Bahnen mit ihrer Höhe relativ zur Ebene. Nach Saturn und dem Titan-Vorbeiflug verläuft die Bahn von Voyager 1 nach Norden. Nach dem Vorbeiflug über Neptuns Nordpol auf dem Weg zu Triton verläuft die Bahn von Voyager 2 nach Süden. Die Hilfe der Kachel erklärt, wie die Ziele der Vorbeiflüge die Bahnrichtungen bestimmt haben. [NASA · Voyager-Planetenreise](https://science.nasa.gov/mission/voyager/planetary-voyage/) · [NASA/JPL · Neptune und Triton](https://www.jpl.nasa.gov/news/nasa-contacts-voyager-2-using-upgraded-deep-space-network-dish/)
+
 **Daten und Genauigkeit:** Sonnen- und zielzentrierte 3D-Vektoren wurden für alle fünf Sonden bei NASA/JPL Horizons abgefragt. Die frühen Voyager-Bahnen sind näherungsweise rekonstruiert. Bei Pioneer eignen sich die älteren Bahnlösungen für historische Darstellungen mit entsprechend begrenzter Genauigkeit. Bei New Horizons liegen rekonstruierte Ausschnitte für Pluto und Arrokoth vor. Rekonstruktionen und Vorausberechnungen sollen in der Anzeige mit Quelle und Datenstand gekennzeichnet werden. [JPL Horizons](https://ssd.jpl.nasa.gov/horizons/manual.html) · [New-Horizons-Bahnlösung](https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=-98&MAKE_EPHEM=NO&OBJ_DATA=YES)
 
-**Status:** Daten geprüft, Umsetzung offen.
+**Status:** Voyager 1 und 2 sind umgesetzt. Pioneer 10, Pioneer 11 und New Horizons bleiben offen.
 
 ## Gezeiten verstehen
 

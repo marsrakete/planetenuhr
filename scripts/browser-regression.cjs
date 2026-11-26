@@ -8,15 +8,23 @@ const moonReference = JSON.parse(fs.readFileSync(path.join(__dirname, 'baselines
 /** Serves local dashboard files through browser routing without a network listener.
  * @param {import('playwright').Route} route Intercepted browser request.
  * @param {string} origin Synthetic local origin.
+ * @param {string} [prefix=''] Optional hosting subdirectory.
  * @returns {Promise<void>} Fulfilled local file or blocked external request.
  */
-async function serveDashboard(route, origin){
+async function serveDashboard(route, origin, prefix = ''){
   const url = new URL(route.request().url());
   if (url.origin !== origin) {
     await route.abort();
     return;
   }
   let pathname = url.pathname;
+  if (prefix) {
+    if (!pathname.startsWith(prefix + '/')) {
+      await route.fulfill({status:404,body:''});
+      return;
+    }
+    pathname = pathname.slice(prefix.length);
+  }
   if (pathname === '/') {
     pathname = '/index.html';
   }
@@ -256,10 +264,10 @@ async function checkDashboard(browser, url, language, browserZone){
   }
 }
 
-/** Checks that the enlarged Milky Way chart keeps its sky background on a phone viewport.
+/** Checks that the enlarged Milky Way chart keeps its sky background and aligned glow on a phone viewport.
  * @param {import('playwright').Browser} browser Browser engine.
  * @param {string} url Dashboard origin.
- * @returns {Promise<void>} Resolves when the modal preserves all three sky backgrounds.
+ * @returns {Promise<void>} Resolves when the modal preserves the three sky backgrounds and the band geometry.
  */
 async function checkMobileMilkyWay(browser, url){
   const page = await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
@@ -275,6 +283,12 @@ async function checkMobileMilkyWay(browser, url){
     const dialog = page.locator('#diagramDetailDialog');
     const openButton = card.locator('.diagram-open');
     await openButton.waitFor({state:'visible',timeout:10000});
+    const track = sky.locator('[data-milky-sky-track]');
+    const trackPath = await track.getAttribute('d');
+    assert.ok(trackPath.startsWith('M'), 'Computed Milky Way path');
+    for (const layer of ['halo', 'glow']) {
+      assert.equal(await sky.locator('[data-milky-sky-track-' + layer + ']').getAttribute('d'), trackPath);
+    }
     const backgrounds = new Set();
     for (const light of ['night', 'twilight', 'day']) {
       const background = await sky.evaluate((visual, light) => {
@@ -282,11 +296,19 @@ async function checkMobileMilkyWay(browser, url){
         return getComputedStyle(visual).backgroundImage;
       }, light);
       assert.notEqual(background, 'none');
+      assert.equal(background.match(/gradient\(/g)?.length, 1, 'The sky background contains a single gradient');
       backgrounds.add(background);
       await openButton.evaluate(button => button.click());
       const enlarged = dialog.locator('.milky-way-sky-chart');
       await enlarged.waitFor({state:'visible'});
       assert.equal(await enlarged.evaluate(svg => getComputedStyle(svg).backgroundImage), background, light);
+      const clipId = await enlarged.locator('clipPath').getAttribute('id');
+      assert.notEqual(clipId, 'milkyWaySkyHorizonClip');
+      for (const layer of ['halo', 'glow']) {
+        const path = enlarged.locator('[data-milky-sky-track-' + layer + ']');
+        assert.equal(await path.getAttribute('d'), trackPath);
+        assert.equal(await path.getAttribute('clip-path'), 'url(#' + clipId + ')');
+      }
       await dialog.locator('#diagramDetailClose').evaluate(button => button.click());
     }
     assert.equal(backgrounds.size, 3);
@@ -1184,7 +1206,7 @@ async function checkSpaceMissions(browser, url){
     const tabs = page.locator('#spaceMissionTabs');
     const buttons = tabs.getByRole('tab');
     assert.deepEqual(errors, []);
-    assert.equal(await buttons.count(), 7);
+    assert.equal(await buttons.count(), 8);
     assert.ok(await page.locator('#idefixTime').isVisible());
     const idefixSlider = page.locator('#idefixTime');
     const idefixPlay = page.locator('#idefixPlay');
@@ -1192,12 +1214,12 @@ async function checkSpaceMissions(browser, url){
     await idefixPlay.click();
     assert.equal(await idefixPlay.textContent(), 'Pause');
     await page.waitForFunction(() => Number(document.getElementById('idefixTime').value) > 0);
-    for (const button of (await buttons.all()).slice(1)) {
+    for (const button of (await buttons.all()).slice(1,-1)) {
       await button.click();
       assert.equal(await idefixPlay.textContent(), 'Abspielen');
       const panel = page.locator('#' + await button.getAttribute('aria-controls'));
       assert.ok(await panel.isVisible());
-      assert.equal(await page.locator('.space-mission-panel:visible').count(), 1);
+      assert.equal(await missionCard.locator('.space-mission-panel:visible').count(), 1);
       assert.ok(await panel.locator('time').count() > 0);
       assert.ok(await panel.evaluate(node => node.scrollWidth <= node.clientWidth + 1));
       const slider = panel.locator('.mission-time');
@@ -1256,10 +1278,11 @@ async function checkSpaceMissions(browser, url){
     assert.equal(await bepi.locator('.mission-mio').evaluate(node => node.style.display), '');
     await bepi.locator('.mission-play').click();
     assert.equal(await bepi.locator('.mission-play').textContent(), 'Pause');
-    await buttons.last().click();
+    const dragonflyTab = tabs.getByRole('tab',{name:'Dragonfly',exact:true});
+    await dragonflyTab.click();
     assert.equal(await bepi.locator('.mission-play').textContent(), 'Abspielen');
     assert.match(await page.locator('#space-mission-dragonfly .mission-time-readout').textContent(), /Aufsetzen/);
-    await buttons.last().press('Home');
+    await dragonflyTab.press('Home');
     assert.equal(await buttons.first().getAttribute('aria-selected'), 'true');
     assert.ok(await page.locator('#idefixTime').isVisible());
     async function labelTypography(selector) {
@@ -1296,11 +1319,350 @@ async function checkSpaceMissions(browser, url){
     await page.setViewportSize({width:375, height:812});
     await page.locator('#btnSolarTodayMobile').click();
     assert.equal(await idefixSlider.inputValue(), todayValue);
-    await buttons.last().click();
+    await dragonflyTab.click();
     const dragonfly = page.locator('#space-mission-dragonfly');
     assert.equal(await page.locator('.mission-sync, [data-idefix-action="shared"]').count(), 0);
     assert.match(await dragonfly.locator('.mission-time-readout').textContent(), /Aufsetzen/);
+
+    await tabs.getByRole('tab',{name:'Äußeres Sonnensystem',exact:true}).press('Enter');
+    const outer = page.locator('#space-mission-outer');
+    const voyager1Tab = outer.getByRole('tab',{name:'Voyager 1',exact:true});
+    const voyager2Tab = outer.getByRole('tab',{name:'Voyager 2',exact:true});
+    const voyager1 = page.locator('#space-mission-voyager1');
+    const voyager2 = page.locator('#space-mission-voyager2');
+    assert.equal(await voyager1Tab.getAttribute('aria-selected'),'true');
+    assert.ok(await voyager1.locator('.mission-ecliptic-plane').isVisible());
+    assert.match(await voyager1.locator('.mission-distance').textContent(),/nördlich der Ekliptik/);
+    await voyager1.getByRole('button',{name:'Jupitervorbeiflug',exact:true}).press('Enter');
+    assert.deepEqual(await voyager1.locator('.mission-animation-views button').allTextContents(),
+      ['Planetenreise','Interstellarer Weiterflug']);
+    assert.equal(await voyager1.getByRole('button',{name:'Planetenreise',exact:true}).getAttribute('aria-pressed'),'true');
+    assert.match(await voyager1.locator('.mission-time-readout').textContent(),/12:05.*rekonstruierte Bahn/);
+    const jupiterDetail = voyager1.locator('.mission-flyby');
+    assert.equal(await jupiterDetail.locator('h4').textContent(),'Nahansicht · Jupiter');
+    assert.ok(await jupiterDetail.isVisible());
+    assert.ok(await voyager1.locator('.mission-ecliptic-plane').isVisible());
+    const jupiterSlider = voyager1.locator('.mission-time');
+    const jupiterMinute = Number(await jupiterSlider.inputValue());
+    const flybyProbe = jupiterDetail.locator('.mission-probe');
+    const flybyPlot = jupiterDetail.locator('svg');
+    const closest = await flybyProbe.getAttribute('transform');
+    const closestWidth = await flybyPlot.evaluate(plot => plot.viewBox.baseVal.width);
+    await jupiterSlider.fill(String(jupiterMinute - 1440));
+    assert.notEqual(await flybyProbe.getAttribute('transform'),closest);
+    assert.ok(await flybyPlot.evaluate(plot => plot.viewBox.baseVal.width) > closestWidth);
+    assert.match(await jupiterDetail.locator('.mission-flyby-distance').textContent(),/km vom Planetenzentrum/);
+    assert.equal(await jupiterDetail.getByRole('link').count(),1);
+    await jupiterSlider.fill(String(jupiterMinute + 10080));
+    assert.ok(!(await jupiterDetail.isVisible()));
+    await jupiterSlider.fill(String(jupiterMinute));
+    assert.ok(await jupiterDetail.isVisible());
+
+    /** Checks the drawing order of the Sun, planets and spacecraft in the oblique view.
+     * @param {import('playwright').Locator} panel Visible Voyager panel on the planetary view.
+     * @param {string} key Heliocentric Horizons series for this probe.
+     * @returns {Promise<void>} Resolves when both sides of the orbits match the projection.
+     */
+    async function checkDepthOrder(panel,key) {
+      const slider = panel.locator('.mission-time');
+      const earthOrders = new Set();
+      const jupiterOrders = new Set();
+      for (const minute of ['0','131400','262800','394200','800000','1500000']) {
+        await slider.fill(minute);
+        const {ordered,earthInFront,probeInFront} = await panel.locator('.mission-journey-main .mission-reference-bodies').evaluate((layer,selection) => {
+          const rows = window.PLANETENUHR_SPACE_MISSION_TRAJECTORIES[selection.key].rows;
+          const date = new Date(rows[0][0] + Number(selection.minute) * 60000);
+          const inclination = 22 * Math.PI / 180;
+          const depths = [];
+          for (const node of layer.children) {
+            let position = {x:0,z:0};
+            if (node.dataset.planet) {
+              position = window.PLANETENUHR_PLANET_MODEL.heliocentricPosition(node.dataset.planet,date);
+            } else if (node.classList.contains('mission-probe')) {
+              position = window.PLANETENUHR_IDEFIX_MODEL.positionAt(rows,date);
+            }
+            depths.push(-position.x * Math.cos(inclination) + position.z * Math.sin(inclination));
+          }
+          const sun = layer.querySelector('.mission-center');
+          const earth = layer.querySelector('[data-planet="earth"]');
+          const jupiter = layer.querySelector('[data-planet="jupiter"]');
+          const probe = layer.querySelector('.mission-probe');
+          return {
+            ordered:depths.slice(1).every((depth,index) => depth >= depths[index]),
+            earthInFront:Boolean(sun.compareDocumentPosition(earth) & Node.DOCUMENT_POSITION_FOLLOWING),
+            probeInFront:Boolean(jupiter.compareDocumentPosition(probe) & Node.DOCUMENT_POSITION_FOLLOWING)
+          };
+        },{key,minute});
+        assert.ok(ordered,key + ' depth order at mission minute ' + minute);
+        earthOrders.add(earthInFront);
+        jupiterOrders.add(probeInFront);
+      }
+      assert.equal(earthOrders.size,2,'Earth passes both in front of and behind the Sun');
+      assert.equal(jupiterOrders.size,2,'Voyager passes both in front of and behind Jupiter');
+      const probe = panel.locator('.mission-journey-main .mission-probe circle');
+      const planet = panel.locator('.mission-journey-main [data-planet="jupiter"] circle');
+      assert.ok(Number(await probe.getAttribute('r')) < Number(await planet.getAttribute('r')));
+    }
+
+    await voyager1.getByRole('button',{name:'Planetenreise',exact:true}).press('Enter');
+    await checkDepthOrder(voyager1,'voyager1');
+    assert.ok(await voyager1.locator('.mission-planet[data-planet="saturn"] .mission-saturn-ring').first().isVisible());
+    await voyager1.getByRole('button',{name:'Vorbeiflüge an Saturn und Titan',exact:true}).press('Enter');
+    assert.equal(await jupiterDetail.locator('h4').textContent(),'Nahansicht · Saturn');
+    await voyager1.getByRole('button',{name:'Aufnahme „Pale Blue Dot“',exact:true}).press('Enter');
+    const photograph = voyager1.locator('.mission-photo');
+    assert.ok(await photograph.isVisible());
+    assert.equal(await photograph.locator('time').getAttribute('datetime'),'1990-02-14');
+    const earthPixel = await photograph.locator('.mission-photo-earth').boundingBox();
+    assert.equal(earthPixel.width,1);
+    assert.equal(earthPixel.height,1);
+    assert.ok(!(await jupiterDetail.isVisible()));
+    assert.match(await voyager1.locator('.mission-time-readout').textContent(),/1990/);
+    const photoMinute = Number(await jupiterSlider.inputValue());
+    const yearInMinutes = 365 * 1440;
+    await jupiterSlider.fill(String(photoMinute - yearInMinutes - 1));
+    assert.ok(!(await photograph.isVisible()));
+    await jupiterSlider.fill(String(photoMinute - yearInMinutes));
+    assert.ok(await photograph.isVisible());
+    await jupiterSlider.fill(String(photoMinute + yearInMinutes + 1439));
+    assert.ok(await photograph.isVisible());
+    await jupiterSlider.fill(String(photoMinute + yearInMinutes + 1440));
+    assert.ok(!(await photograph.isVisible()));
+    const photoJump = voyager1.locator('[data-mission-photo-jump]');
+    await photoJump.press('Enter');
+    await photograph.waitFor({state:'visible'});
+    assert.equal(Number(await jupiterSlider.inputValue()),photoMinute);
+    await voyager1.getByRole('button',{name:'Planetenreise',exact:true}).press('Enter');
+    await jupiterSlider.fill(String(Number(await jupiterSlider.getAttribute('max')) - 30000));
+    await voyager1.getByRole('button',{name:'Abspielen',exact:true}).press('Enter');
+    await photograph.waitFor({timeout:9000});
+    assert.equal(await voyager1.getByRole('button',{name:'Interstellarer Weiterflug',exact:true}).getAttribute('aria-pressed'),'true');
+    await voyager1.getByRole('button',{name:'Pause',exact:true}).press('Enter');
+    await voyager1Tab.press('ArrowRight');
+    assert.equal(await voyager2Tab.getAttribute('aria-selected'),'true');
+    assert.match(await voyager2.locator('.mission-distance').textContent(),/südlich der Ekliptik/);
+    await voyager2.getByRole('button',{name:'Vorbeiflüge an Neptun und Triton',exact:true}).press('Enter');
+    const voyageDetail = voyager2.locator('.mission-flyby');
+    assert.equal(await voyageDetail.locator('h4').textContent(),'Nahansicht · Neptun');
+    assert.match(await voyager2.locator('.mission-time-readout').textContent(),/03:57.*rekonstruierte Bahn/);
+    await voyager2.getByRole('button',{name:'Uranusvorbeiflug',exact:true}).press('Enter');
+    assert.equal(await voyageDetail.locator('h4').textContent(),'Nahansicht · Uranus');
+    await voyager2.getByRole('button',{name:'Jupitervorbeiflug',exact:true}).press('Enter');
+    assert.equal(await voyageDetail.locator('h4').textContent(),'Nahansicht · Jupiter');
+    await voyager2.getByRole('button',{name:'Planetenreise',exact:true}).press('Enter');
+    assert.deepEqual(await voyager2.locator('.mission-planet-legend li:visible').allTextContents(),
+      ['Erde','Jupiter','Saturn','Uranus','Neptun']);
+    await checkDepthOrder(voyager2,'voyager2');
+    await voyager2.getByRole('button',{name:'Saturnvorbeiflug',exact:true}).press('Enter');
+    assert.equal(await voyageDetail.locator('h4').textContent(),'Nahansicht · Saturn');
+    assert.ok(await voyageDetail.locator('.mission-center .mission-saturn-ring').first().isVisible());
+    await page.setViewportSize({width:320,height:812});
+    await page.waitForFunction(() => {
+      const panel = document.getElementById('space-mission-voyager2');
+      const overview = panel.querySelector('.mission-journey-main').getBoundingClientRect();
+      const detail = panel.querySelector('.mission-flyby').getBoundingClientRect();
+      return matchMedia('(max-width:759px)').matches && detail.top >= overview.bottom;
+    });
+    await page.setViewportSize({width:1280,height:812});
+    await page.waitForFunction(() => {
+      const panel = document.getElementById('space-mission-voyager2');
+      const overview = panel.querySelector('.mission-journey-main').getBoundingClientRect();
+      const detail = panel.querySelector('.mission-flyby').getBoundingClientRect();
+      return matchMedia('(min-width:760px)').matches && detail.right <= overview.left;
+    });
+    await voyager2.getByRole('button',{name:'Interstellarer Weiterflug',exact:true}).press('Enter');
+    assert.ok(!(await voyageDetail.isVisible()));
+    assert.ok(!(await voyager2.locator('.mission-planet-legend').isVisible()));
+    const voyagerTime = voyager2.locator('.mission-time');
+    await voyagerTime.press('End');
+    assert.match(await voyager2.locator('.mission-time-readout').textContent(),/2099.*Vorausberechnete Bahn/);
+    assert.ok(await voyager2.locator('.mission-ecliptic-offset').evaluate(path => path.getTotalLength() > 0));
+    for (const width of [320,1280]) {
+      await page.setViewportSize({width,height:812});
+      assert.ok(await voyager2.evaluate(panel => panel.scrollWidth <= panel.clientWidth + 1));
+    }
+    await voyager2.getByRole('button',{name:'Abspielen',exact:true}).press('Enter');
+    await voyager2Tab.press('ArrowLeft');
+    assert.equal(await voyager1Tab.getAttribute('aria-selected'),'true');
+    assert.equal(await voyager2.locator('.mission-play').textContent(),'Abspielen');
     assert.deepEqual(errors, []);
+  } finally {
+    await page.close();
+  }
+}
+
+/** Exercises the real-mission 3D dialog, gestures and shared playback.
+ * @param {import('playwright').Browser} browser Browser engine.
+ * @param {string} origin Dashboard origin. @returns {Promise<void>} Browser check.
+ */
+async function checkMission3D(browser,origin) {
+  const page = await browser.newPage({viewport:{width:390,height:820},isMobile:true,hasTouch:true,reducedMotion:'reduce'});
+  const errors = [];
+  page.on('pageerror',error => errors.push(error.message));
+  await page.route('**/*',route => serveDashboard(route,origin));
+  try {
+    await page.goto(origin + '/?lang=de&date=20261123&card=idefix',{waitUntil:'domcontentloaded'});
+    const dialog = page.locator('#spaceMission3DDialog');
+    const route = dialog.locator('.mission-route-overview');
+    const plot = dialog.locator('.mission-3d-plot');
+    const close = dialog.getByRole('button',{name:'3D-Ansicht schließen',exact:true});
+    const reset = dialog.getByRole('button',{name:'Standardansicht',exact:true});
+    const mmx = page.locator('#spaceMissionIdefix .mission-3d-launch');
+    await mmx.press('Enter');
+    await dialog.locator('#idefixTime').waitFor();
+    await page.waitForFunction(() => document.querySelector('#spaceMission3DDialog .mission-3d-plane').getTotalLength() > 0);
+    const milestoneList = dialog.locator('.mission-3d-milestones');
+    await milestoneList.locator('summary').press('Enter');
+    const mmxTime = dialog.locator('#idefixTime');
+    const beforeJump = await mmxTime.inputValue();
+    await milestoneList.locator('#idefixJumps button').first().press('Enter');
+    assert.notEqual(await mmxTime.inputValue(),beforeJump);
+    await activateMobileControl(browser,close);
+    await page.waitForFunction(() => !document.querySelector('html').classList.contains('mission-3d-open'));
+    assert.equal(await page.locator('#spaceMissionIdefix #idefixJumps').count(),1);
+    await page.getByRole('tab',{name:'Dragonfly',exact:true}).press('Enter');
+    assert.equal(await page.locator('#space-mission-dragonfly .mission-3d-launch').count(),0);
+
+    await page.getByRole('tab',{name:'Äußeres Sonnensystem',exact:true}).press('Enter');
+    const voyager = page.locator('#space-mission-voyager1');
+    await voyager.getByRole('button',{name:'Interstellarer Weiterflug',exact:true}).press('Enter');
+    const mobileSlider = voyager.locator('#mission-time-voyager1');
+    const photoJump = voyager.locator('[data-mission-photo-jump]');
+    await activateMobileControl(browser,photoJump);
+    const photoMinute = Number(await mobileSlider.inputValue());
+    const maxMinute = Number(await mobileSlider.getAttribute('max'));
+    await mobileSlider.press('Home');
+    const mobilePhoto = voyager.locator('.mission-photo');
+    await mobilePhoto.waitFor({state:'hidden'});
+    await mobileSlider.scrollIntoViewIfNeeded();
+    const sliderBounds = await mobileSlider.boundingBox();
+    const position = {x:12 + (sliderBounds.width - 24) * photoMinute / maxMinute,y:sliderBounds.height / 2};
+    if (process.platform === 'win32' && browser.browserType().name() === 'webkit') {
+      await mobileSlider.click({position});
+    } else {
+      await mobileSlider.tap({position});
+    }
+    await mobilePhoto.waitFor({state:'visible'});
+    const photoBounds = await mobilePhoto.boundingBox();
+    assert.ok(photoBounds.y + photoBounds.height <= (await mobileSlider.boundingBox()).y,'The mobile photo stays above the slider while scrubbing');
+    await voyager.getByRole('button',{name:'Planetenreise',exact:true}).press('Enter');
+    const launch = voyager.locator('.mission-journey-main .mission-3d-launch');
+    await launch.evaluate(node => node.scrollIntoView({block:'center'}));
+    await launch.focus();
+    const scrollBefore = await page.evaluate(() => scrollY);
+    await launch.press('Enter');
+    const modalSlider = dialog.locator('#mission-time-voyager1');
+    await modalSlider.waitFor();
+    await page.waitForFunction(() => document.querySelector('#spaceMission3DDialog .mission-route-overview').getTotalLength() > 0);
+    const standard = await route.getAttribute('d');
+    await plot.press('ArrowRight');
+    await page.waitForFunction(previous => document.querySelector('#spaceMission3DDialog .mission-route-overview').getAttribute('d') !== previous,standard);
+    await reset.press('Enter');
+    await page.waitForFunction(previous => document.querySelector('#spaceMission3DDialog .mission-route-overview').getAttribute('d') === previous,standard);
+    const box = await plot.boundingBox();
+    const x = box.x + box.width / 2;
+    const y = box.y + box.height / 2;
+    await plot.dispatchEvent('wheel',{clientX:x,clientY:y,deltaY:-260});
+    await page.waitForFunction(previous => document.querySelector('#spaceMission3DDialog .mission-route-overview').getAttribute('d') !== previous,standard);
+    const afterWheel = await route.getAttribute('d');
+    await plot.dispatchEvent('pointerdown',{pointerType:'touch',pointerId:1,button:0,clientX:x,clientY:y});
+    await plot.dispatchEvent('pointermove',{pointerType:'touch',pointerId:1,clientX:x + 20,clientY:y + 15});
+    await plot.dispatchEvent('pointerup',{pointerType:'touch',pointerId:1});
+    await page.waitForFunction(previous => document.querySelector('#spaceMission3DDialog .mission-route-overview').getAttribute('d') !== previous,afterWheel);
+    const afterTurn = await route.getAttribute('d');
+    await plot.dispatchEvent('pointerdown',{pointerType:'touch',pointerId:1,button:0,clientX:x - 20,clientY:y});
+    await plot.dispatchEvent('pointerdown',{pointerType:'touch',pointerId:2,button:0,clientX:x + 20,clientY:y});
+    await plot.dispatchEvent('pointermove',{pointerType:'touch',pointerId:1,clientX:x - 35,clientY:y + 12});
+    await plot.dispatchEvent('pointermove',{pointerType:'touch',pointerId:2,clientX:x + 35,clientY:y + 12});
+    await plot.dispatchEvent('pointerup',{pointerType:'touch',pointerId:1});
+    await plot.dispatchEvent('pointerup',{pointerType:'touch',pointerId:2});
+    await page.waitForFunction(previous => document.querySelector('#spaceMission3DDialog .mission-route-overview').getAttribute('d') !== previous,afterTurn);
+    await modalSlider.fill('5000');
+    await dialog.getByRole('button',{name:'Abspielen',exact:true}).press('Enter');
+    await page.waitForFunction(() => Number(document.getElementById('mission-time-voyager1').value) > 5000);
+    await dialog.getByRole('button',{name:'Pause',exact:true}).press('Enter');
+    const stoppedAt = await modalSlider.inputValue();
+    await plot.press('Escape');
+    await page.waitForFunction(() => !document.querySelector('html').classList.contains('mission-3d-open'));
+    assert.equal(await voyager.locator('#mission-time-voyager1').inputValue(),stoppedAt);
+    assert.ok(Math.abs(await page.evaluate(() => scrollY) - scrollBefore) < 2);
+    assert.ok(await launch.evaluate(button => document.activeElement === button));
+
+    await voyager.getByRole('button',{name:'Planetenreise',exact:true}).press('Enter');
+    const planetarySlider = voyager.locator('#mission-time-voyager1');
+    await planetarySlider.fill(String(Number(await planetarySlider.getAttribute('max')) - 30000));
+    await launch.press('Enter');
+    await dialog.getByRole('button',{name:'Abspielen',exact:true}).press('Enter');
+    const modalPhoto = dialog.locator('.mission-3d-photo .mission-photo-earth');
+    await modalPhoto.waitFor({timeout:9000});
+    const pixelBounds = await modalPhoto.boundingBox();
+    assert.equal(pixelBounds.width,1);
+    assert.equal(pixelBounds.height,1);
+    const playbackStatus = dialog.locator('.mission-3d-status');
+    await playbackStatus.filter({hasText:/Wiedergabe verlangsamt.*Pale Blue Dot/}).waitFor();
+    const countdown = dialog.getByRole('timer');
+    await countdown.waitFor();
+    await dialog.getByRole('button',{name:'Pause',exact:true}).press('Enter');
+    await dialog.locator('[data-mission-photo-jump]').press('Enter');
+    const countdownAtStart = await dialog.getByRole('button',{name:'Abspielen',exact:true}).evaluate(button => {
+      button.click();
+      return button.parentElement.querySelector('[role="timer"]').textContent;
+    });
+    assert.equal(countdownAtStart,'Pale Blue Dot · Weiter in 15 s');
+    await countdown.filter({hasText:/Pale Blue Dot · Weiter in (?:1[0-4]|[1-9]) s/}).waitFor();
+    await dialog.getByRole('button',{name:'Pause',exact:true}).press('Enter');
+    await countdown.waitFor({state:'hidden'});
+    assert.equal(await dialog.locator('.mission-3d-photo time').getAttribute('datetime'),'1990-02-14');
+    const capturedAt = Number(await modalSlider.inputValue());
+    await modalSlider.fill(String(capturedAt - 30 * 1440));
+    await modalPhoto.waitFor({state:'visible'});
+    await modalSlider.fill(String(capturedAt - 366 * 1440));
+    await modalPhoto.waitFor({state:'hidden'});
+    await milestoneList.locator('summary').press('Enter');
+    await milestoneList.getByRole('button',{name:'Jupitervorbeiflug',exact:true}).press('Enter');
+    await playbackStatus.filter({hasText:'Jupitervorbeiflug'}).waitFor();
+    assert.equal(await playbackStatus.textContent(),'Jupitervorbeiflug');
+    const flyby = dialog.locator('.mission-3d-flyby .mission-flyby');
+    await flyby.waitFor({state:'visible'});
+    assert.equal(await flyby.locator('h4').textContent(),'Nahansicht · Jupiter');
+    assert.ok((await flyby.boundingBox()).y >= (await plot.boundingBox()).y + (await plot.boundingBox()).height);
+    const flybyProbe = flyby.locator('.mission-probe');
+    const previousFlybyPosition = await flybyProbe.getAttribute('transform');
+    await modalSlider.fill(String(Number(await modalSlider.inputValue()) + 60));
+    assert.notEqual(await flybyProbe.getAttribute('transform'),previousFlybyPosition);
+    await dialog.getByRole('button',{name:'Abspielen',exact:true}).press('Enter');
+    await playbackStatus.filter({hasText:/Wiedergabe verlangsamt.*Jupitervorbeiflug/}).waitFor();
+    await dialog.getByRole('button',{name:'Pause',exact:true}).press('Enter');
+    await modalSlider.press('End');
+    await playbackStatus.filter({hasText:'Ende des Zeitbereichs'}).waitFor();
+    await flyby.waitFor({state:'hidden'});
+    await activateMobileControl(browser,close);
+    await page.waitForFunction(() => !document.querySelector('html').classList.contains('mission-3d-open'));
+    assert.equal(await voyager.locator('.space-mission-timeline').count(),1);
+
+    await page.getByRole('tab',{name:'Voyager 2',exact:true}).press('Enter');
+    const voyager2 = page.locator('#space-mission-voyager2');
+    await voyager2.getByRole('button',{name:'Vorbeiflüge an Neptun und Triton',exact:true}).press('Enter');
+    await page.setViewportSize({width:1100,height:820});
+    await voyager2.locator('.mission-journey-main .mission-3d-launch').press('Enter');
+    await flyby.waitFor({state:'visible'});
+    assert.equal(await flyby.locator('h4').textContent(),'Nahansicht · Neptun');
+    const desktopDetail = await flyby.boundingBox();
+    assert.ok(desktopDetail.x + desktopDetail.width <= (await plot.boundingBox()).x);
+    await activateMobileControl(browser,close);
+    await page.waitForFunction(() => !document.querySelector('html').classList.contains('mission-3d-open'));
+    assert.ok(await voyager2.locator('.mission-flyby').isVisible());
+    await page.setViewportSize({width:390,height:820});
+    await voyager2.locator('.mission-flyby .mission-3d-launch').press('Enter');
+    assert.match(await dialog.getByRole('heading').textContent(),/Neptun/);
+    await dialog.locator('#mission-time-voyager2').fill('0');
+    await page.waitForFunction(() => document.querySelector('#spaceMission3DTitle').textContent === 'Voyager 2');
+    const closeBox = await close.boundingBox();
+    assert.ok(closeBox.width >= 44 && closeBox.height >= 44);
+    await activateMobileControl(browser,close);
+    await page.waitForFunction(() => !document.querySelector('html').classList.contains('mission-3d-open'));
+    assert.equal(await voyager2.locator('#mission-time-voyager2').inputValue(),'0');
+    assert.deepEqual(errors,[]);
   } finally {
     await page.close();
   }
@@ -1327,6 +1689,231 @@ async function checkCologneFullMoon(browser, url){
   }
 }
 
+/** Verifies the fictional mission dates, artwork, keyboard tabs and playback on a narrow viewport.
+ * @param {import('playwright').Browser} browser Browser engine.
+ * @param {string} origin Synthetic local origin. @returns {Promise<void>}
+ */
+async function checkFictionalMissions(browser, origin){
+  const page = await browser.newPage({viewport:{width:390,height:820}});
+  const errors = [];
+  const loadedAssets = new Set();
+  const prefix = '/planetenuhr';
+  const assetPaths = [prefix + '/assets/fictional-missions/scenes.svg',prefix + '/templates/fictional-missions.html'];
+  page.on('response',response => {
+    const url = new URL(response.url());
+    if (url.origin === origin && assetPaths.includes(url.pathname) && response.ok()) {
+      loadedAssets.add(url.pathname + url.search);
+    }
+  });
+  page.on('pageerror',error => errors.push(error.message));
+  page.on('dialog',dialog => {
+    errors.push(dialog.message());
+    return dialog.dismiss();
+  });
+  await page.route('**/*',route => serveDashboard(route,origin,prefix));
+  try {
+    await page.goto(origin + prefix + '/?lang=de&date=20261125&card=fictional_missions#card-fictional_missions',
+      {waitUntil:'domcontentloaded',timeout:60000});
+    const card = page.locator('#card-fictional_missions');
+    const moon = card.getByRole('tab',{name:'Schritte auf dem Mond',exact:true});
+    const odyssey = card.getByRole('tab',{name:'2001: Odyssee im Weltraum'});
+    const interstellar = card.getByRole('tab',{name:'Interstellar',exact:true});
+    const hailMary = card.getByRole('tab',{name:'Project Hail Mary',exact:true});
+    const slider = card.getByRole('slider',{name:'Missionszeit (UTC)'});
+    const readout = card.locator('[data-fictional-date]');
+    const clocks = card.locator('[data-fictional-clocks]');
+    const activeScene = card.locator('[data-fictional-scene]:not([hidden])');
+    await moon.waitFor();
+    await page.waitForFunction(() => {
+      const rect = document.getElementById('card-fictional_missions').getBoundingClientRect();
+      return rect.top >= 0 && rect.top < innerHeight / 2;
+    });
+    const release = await page.locator('meta[name="planetenuhr-version"]').getAttribute('content');
+    assert.deepEqual([...loadedAssets].sort(),assetPaths.map(name => name + '?v=' + release));
+    assert.equal(await card.getByRole('tab').count(),4);
+    assert.equal(await moon.getAttribute('aria-selected'),'true');
+    assert.equal(await readout.getAttribute('datetime'),'1954-07-17T08:00:00.000Z');
+
+    const moonBody = activeScene.locator('[data-fictional-actor="moon"]');
+    const outboundMoon = await moonBody.getAttribute('transform');
+    await card.getByRole('button',{name:'Landung auf dem Mond',exact:true}).click();
+    const lander = activeScene.locator('[data-fictional-actor="ship"]');
+    const moonDescentStart = await lander.evaluate(actor => actor.transform.baseVal.getItem(0).matrix.f);
+    await slider.fill('3.75');
+    const descentProgress = await lander.evaluate(actor => actor.transform.baseVal.getItem(0).matrix.f);
+    assert.ok(descentProgress > moonDescentStart + 60, 'The rocket descends onto the Moon');
+    await card.getByRole('button',{name:'Erste Schritte auf dem Mond',exact:true}).click();
+    assert.equal(await activeScene.getAttribute('data-fictional-scene'),'moon-surface');
+    assert.equal(await readout.getAttribute('datetime'),'1954-07-20T21:00:00.000Z');
+    assert.equal(await lander.evaluate(actor => actor.transform.baseVal.getItem(0).matrix.f),208);
+    assert.equal(await activeScene.locator('[data-fictional-extra="footsteps"] use').count(),8);
+    assert.ok(await activeScene.locator('[data-fictional-extra="footsteps"]').isVisible());
+    assert.ok(!(await activeScene.locator('[data-fictional-actor="rover"]').isVisible()));
+    await card.getByRole('button',{name:'Erkundungsfahrt mit dem Mondpanzer',exact:true}).click();
+    const rover = activeScene.locator('[data-fictional-actor="rover"]');
+    const startPosition = await rover.getAttribute('transform');
+    await slider.fill('5.5');
+    assert.notEqual(await rover.getAttribute('transform'),startPosition);
+
+    await card.getByRole('button',{name:'Rückflug zur Erde',exact:true}).click();
+    const returnMoon = await moonBody.getAttribute('transform');
+    assert.notEqual(returnMoon,outboundMoon);
+    await slider.fill('7.5');
+    assert.notEqual(await moonBody.getAttribute('transform'),returnMoon);
+    await card.getByRole('button',{name:'Wiedereintritt und Landung auf der Erde',exact:true}).click();
+    assert.notEqual(await moonBody.getAttribute('transform'),returnMoon);
+    const orbitDeviation = await activeScene.evaluate(scene => {
+      const earth = scene.querySelector('use[href="#fiction-earth-body"]').transform.baseVal.getItem(0).matrix;
+      const orbit = scene.querySelector('[data-fictional-track="moon-orbit"]');
+      const length = orbit.getTotalLength();
+      const start = orbit.getPointAtLength(0);
+      const radius = Math.hypot(start.x - earth.e,start.y - earth.f);
+      return Math.max(...[.25,.5,.75,1].map(fraction => {
+        const point = orbit.getPointAtLength(fraction * length);
+        return Math.abs(Math.hypot(point.x - earth.e,point.y - earth.f) - radius);
+      }));
+    });
+    assert.ok(orbitDeviation < .2, 'The Moon stays at a constant distance from Earth');
+
+    await moon.press('ArrowRight');
+    assert.equal(await odyssey.getAttribute('aria-selected'),'true');
+    await card.getByRole('button',{name:'Anflug und Andocken an Raumstation V',exact:true}).click();
+    assert.equal(await activeScene.getAttribute('data-fictional-scene'),'odyssey-station');
+    const station = activeScene.locator('[data-fictional-actor="station"]');
+    const orion = activeScene.locator('[data-fictional-actor="orion"]');
+    const orionStart = await orion.getAttribute('transform');
+    await slider.fill('0.5');
+    assert.match(await station.getAttribute('transform'),/rotate\(72\.5\)/);
+    assert.notEqual(await orion.getAttribute('transform'),orionStart);
+    await card.getByRole('button',{name:'Mondlandung auf der Clavius-Basis',exact:true}).click();
+    assert.equal(await activeScene.getAttribute('data-fictional-scene'),'odyssey-clavius');
+    const aries = activeScene.locator('[data-fictional-actor="aries"]');
+    const descentStart = await aries.evaluate(actor => actor.transform.baseVal.getItem(0).matrix.f);
+    await slider.fill('1.9');
+    const descentEnd = await aries.evaluate(actor => actor.transform.baseVal.getItem(0).matrix.f);
+    assert.ok(descentEnd > descentStart + 120, 'Aries descends to the landing bay');
+    await card.getByRole('button',{name:'Abschaltung von HAL',exact:true}).click();
+    assert.ok(await activeScene.locator('[data-fictional-extra="halOff"]').isVisible());
+    await interstellar.click();
+    await card.getByRole('button',{name:'Rückkehr zur Endurance',exact:true}).click();
+    assert.ok(await clocks.isVisible());
+    assert.equal(await clocks.locator('[data-fictional-lander-clock]').getAttribute('datetime'),'2069-09-03T13:00:00.000Z');
+    assert.equal(await clocks.locator('[data-fictional-endurance-clock]').getAttribute('datetime'),'2092-09-03T09:00:00.000Z');
+    const clockBounds = await clocks.boundingBox();
+    const sliderBounds = await slider.boundingBox();
+    assert.ok(clockBounds.y + clockBounds.height <= sliderBounds.y, 'Both mission clocks sit above the slider');
+
+    await card.getByRole('button',{name:'Landung auf Manns Eisplaneten',exact:true}).click();
+    assert.equal(await activeScene.getAttribute('data-fictional-scene'),'mann-surface');
+    assert.ok(!(await clocks.isVisible()));
+    await card.getByRole('button',{name:'Andocken an die taumelnde Endurance',exact:true}).click();
+    await slider.fill('8.5');
+    assert.match(await activeScene.locator('[data-fictional-actor="ring"]').getAttribute('transform'),/rotate\(180\)/);
+    assert.match(await activeScene.locator('[data-fictional-actor="lander"]').getAttribute('transform'),/rotate\(180\)/);
+    await card.getByRole('button',{name:'Coopers Rettung und Ankunft auf der Cooper Station',exact:true}).click();
+    assert.equal(await activeScene.getAttribute('data-fictional-scene'),'cooper-station');
+    await card.getByRole('button',{name:'Brands Lager auf Edmunds’ Planet',exact:true}).click();
+    assert.equal(await activeScene.getAttribute('data-fictional-scene'),'edmunds-camp');
+
+    await hailMary.click();
+    assert.ok(!(await clocks.isVisible()));
+    await card.getByRole('button',{name:'Die Schiffe verbinden sich über einen Tunnel',exact:true}).click();
+    assert.ok(await activeScene.locator('[data-fictional-extra="tunnel"]').isVisible());
+    await card.getByRole('button',{name:'Atmosphärenflug und Probenahme bei Adrian',exact:true}).click();
+    assert.equal(await activeScene.getAttribute('data-fictional-scene'),'adrian');
+    await card.getByRole('button',{name:'Graces Umkehr zu Rocky',exact:true}).click();
+    assert.ok(await activeScene.locator('.fictional-route-abandoned').isVisible());
+    assert.ok(await activeScene.locator('[data-fictional-extra="rescuePath"]').isVisible());
+    await page.waitForFunction(() => {
+      const figure = document.querySelector('.fictional-mission-figure').getBoundingClientRect();
+      const controls = document.querySelector('.overlay-controls').getBoundingClientRect();
+      return figure.top >= controls.bottom && figure.bottom <= innerHeight;
+    });
+    await card.getByRole('button',{name:'Ankunft bei Erid',exact:true}).click();
+    assert.equal(await readout.getAttribute('datetime'),'2068-06-12T12:00:00.000Z');
+
+    // Exercise all supplied scene references and SVG tracks through the actual card controls.
+    const missing = await card.evaluate(node => {
+      const failures = [];
+      const tabs = node.querySelectorAll('[role="tab"]');
+      window.PLANETENUHR_FICTIONAL_MISSIONS.forEach((mission,missionIndex) => {
+        tabs[missionIndex].click();
+        const buttons = node.querySelectorAll('[data-fictional-timeline] button');
+        mission.events.forEach((event,eventIndex) => {
+          buttons[eventIndex].click();
+          const scene = node.querySelector('[data-fictional-scene]:not([hidden])');
+          if (scene?.dataset.fictionalScene !== event.scene) {
+            failures.push(event.key + ' scene');
+            return;
+          }
+          for (const [actor] of event.motions || []) {
+            const drawing = scene.querySelector('[data-fictional-actor="' + actor + '"]:not([hidden])');
+            if (!drawing || !/^translate\([-\d.]+ [-\d.]+\)/.test(drawing.getAttribute('transform'))) {
+              failures.push(event.key + ' ' + actor);
+            }
+          }
+          for (const extra of event.show || []) {
+            if (!scene.querySelector('[data-fictional-extra="' + extra + '"]:not([hidden])')) failures.push(event.key + ' ' + extra);
+          }
+        });
+      });
+      return failures;
+    });
+    assert.deepEqual(missing,[]);
+
+    await moon.click();
+    await slider.fill('0');
+    await card.getByRole('button',{name:'Abspielen',exact:true}).click();
+    await page.waitForFunction(() => Number(document.getElementById('fictionalMissionTime').value) > .02);
+    await card.getByRole('button',{name:'Pause',exact:true}).click();
+    const paused = await slider.inputValue();
+    await odyssey.click();
+    await moon.click();
+    assert.equal(await slider.inputValue(),paused);
+    await card.getByRole('button',{name:'Mehr Info',exact:true}).click();
+    assert.equal(await card.locator('.card-help-popup .card-help-link').count(),5);
+    await page.keyboard.press('Escape');
+    for (const width of [320,390,1280]) {
+      await page.setViewportSize({width,height:820});
+      assert.ok(await card.evaluate(node => {
+        const stage = node.querySelector('[data-fictional-stage]');
+        const slider = node.querySelector('.mission-time');
+        return node.scrollWidth <= node.clientWidth + 1 && stage.clientWidth > 200 && slider.clientWidth > 100;
+      }), 'Card fits ' + width + 'px');
+    }
+    assert.deepEqual(errors,[]);
+  } finally {
+    await page.close();
+  }
+}
+
+/** Verifies that a failed mission-template request does not block the rest of the dashboard.
+ * @param {import('playwright').Browser} browser Browser engine.
+ * @param {string} origin Synthetic local origin. @returns {Promise<void>}
+ */
+async function checkFictionalMissionAssetFailure(browser, origin){
+  const page = await browser.newPage({viewport:{width:390,height:820}});
+  const errors = [];
+  page.on('pageerror',error => errors.push(error.message));
+  await page.route('**/*',route => {
+    if (new URL(route.request().url()).pathname === '/assets/fictional-missions/scenes.svg') {
+      return route.fulfill({status:404,body:''});
+    }
+    return serveDashboard(route,origin);
+  });
+  try {
+    const missing = page.waitForResponse(response => response.status() === 404
+      && new URL(response.url()).pathname === '/assets/fictional-missions/scenes.svg');
+    await page.goto(origin + '/?lang=de',{waitUntil:'domcontentloaded'});
+    await missing;
+    await page.locator('#jupiterSystem [data-jupiter-moon]').first().waitFor({state:'attached'});
+    assert.equal(await page.locator('#card-fictional_missions').count(),0);
+    assert.deepEqual(errors,[]);
+  } finally {
+    await page.close();
+  }
+}
+
 async function main(){
   const url = 'http://planetenuhr.test';
   const engines = (process.env.PLANETENUHR_TEST_BROWSERS || 'chromium').split(',');
@@ -1337,10 +1924,16 @@ async function main(){
     }
     const browser = await playwright[engine].launch(options);
     try {
+      await checkFictionalMissions(browser,url);
+      console.log(engine + ': fictional missions passed');
+      await checkFictionalMissionAssetFailure(browser,url);
+      console.log(engine + ': dashboard survives an unavailable fictional mission asset');
       await checkCologneFullMoon(browser, url);
       console.log(engine + ': Cologne full Moon passed');
       await checkSpaceMissions(browser, url);
       console.log(engine + ': space missions passed');
+      await checkMission3D(browser,url);
+      console.log(engine + ': space-mission 3D controls passed');
       await checkMobileCardLinks(browser, url);
       console.log(engine + ': mobile card links passed');
       await checkExternalContentConsent(browser, url);

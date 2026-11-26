@@ -182,13 +182,14 @@ window.PLANETENUHR_CARD_NAVIGATION = (() => {
     }
 
     /** Scrolls to the initial deep-link card after layout has settled.
-     * No parameters. @returns {void}
+     * @param {string} [key=requestedCardKey] Explicit destination key or fragment without the hash.
+     * @returns {void}
      */
-    function scrollToRequestedCard(){
-      if (!requestedCardKey) {
+    function scrollToRequestedCard(key = requestedCardKey){
+      if (!key) {
         return;
       }
-      const card = cardElementFromParameter(requestedCardKey);
+      const card = cardElementFromParameter(key);
       if (!card) {
         return;
       }

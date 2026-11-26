@@ -110,3 +110,50 @@ window.PLANETENUHR_SPACE_MISSION_DATA = [
     ]
   }
 ];
+
+window.PLANETENUHR_OUTER_MISSION_DATA = [
+  {
+    id:'voyager1', name:'Voyager 1', agency:'NASA',
+    source:'https://science.nasa.gov/mission/voyager/voyager-1/',
+    photo:{milestone:'paleBlueDot',displayYears:1,playbackDuration:15000,source:'https://science.nasa.gov/photojournal/solar-system-portrait-earth-as-pale-blue-dot/'},
+    views:[
+      {key:'voyager1', label:'planetaryVoyage', planets:['earth','jupiter','saturn'], oblique:true},
+      {key:'voyager1Interstellar', label:'interstellarVoyage', oblique:true}
+    ],
+    flybys:[
+      {key:'voyager1Jupiter', body:'planet_jupiter', radius:71492, milestone:'jupiterFlyby'},
+      {key:'voyager1Saturn', body:'planet_saturn', radius:60268, milestone:'saturnTitanFlyby'}
+    ],
+    events:[
+      ['1977-09-05','launch',true,undefined,'1977-09-05T14:00Z'],
+      ['1979-03-05','jupiterFlyby',true,undefined,'1979-03-05T12:05Z'],
+      ['1980-11-12','saturnTitanFlyby',true,undefined,'1980-11-12T23:46Z'],
+      ['1990-02-14','paleBlueDot',true],
+      ['2012-08-25','heliopause',true]
+    ],
+    references:[['flybyTimes','https://nssdc.gsfc.nasa.gov/planetary/voyager-periapse.html']]
+  },
+  {
+    id:'voyager2', name:'Voyager 2', agency:'NASA',
+    source:'https://science.nasa.gov/mission/voyager/voyager-2/',
+    views:[
+      {key:'voyager2', label:'planetaryVoyage', planets:['earth','jupiter','saturn','uranus','neptune'], oblique:true},
+      {key:'voyager2Interstellar', label:'interstellarVoyage', oblique:true}
+    ],
+    flybys:[
+      {key:'voyager2Jupiter', body:'planet_jupiter', radius:71492, milestone:'jupiterFlyby'},
+      {key:'voyager2Saturn', body:'planet_saturn', radius:60268, milestone:'saturnFlyby'},
+      {key:'voyager2Uranus', body:'planet_uranus', radius:25559, milestone:'uranusFlyby'},
+      {key:'voyager2Neptune', body:'planet_neptune', radius:24764, milestone:'neptuneTritonFlyby'}
+    ],
+    events:[
+      ['1977-08-20','launch',true,undefined,'1977-08-20T16:00Z'],
+      ['1979-07-09','jupiterFlyby',true,undefined,'1979-07-09T22:30Z'],
+      ['1981-08-26','saturnFlyby',true,undefined,'1981-08-26T03:25Z'],
+      ['1986-01-24','uranusFlyby',true,undefined,'1986-01-24T18:00Z'],
+      ['1989-08-25','neptuneTritonFlyby',true,undefined,'1989-08-25T03:57Z'],
+      ['2018-11-05','heliopause',true]
+    ],
+    references:[['flybyTimes','https://nssdc.gsfc.nasa.gov/planetary/voyager-periapse.html']]
+  }
+];

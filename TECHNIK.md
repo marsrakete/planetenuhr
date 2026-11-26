@@ -306,27 +306,9 @@ Für ein Release müssen `version.json`, das HTML-Metadatum und alle lokalen CSS
 
 ## Start
 
-Die App kann direkt geöffnet werden:
+Für die lokale Entwicklung liefert XAMPP-Apache die statischen Dateien aus. Auf dem Entwicklungsrechner verweist der Apache-Alias `/projekte` auf `C:/Projekte`. Bei laufendem Apache ist das Dashboard unter [http://localhost/projekte/planetenuhr/](http://localhost/projekte/planetenuhr/) erreichbar.
 
-```text
-index.html
-```
-
-Alternativ kann lokal ein einfacher PowerShell-Server genutzt werden:
-
-```text
-start-server.ps1
-```
-
-Das Script lauscht standardmäßig auf `http://localhost:5020/` für lokalen Zugriff am Rechner. Für Zugriff im Heimnetz kann es ausdrücklich mit `./start-server.ps1 -ListenAddress "+"` gestartet werden; dann bedient es auch `http://<LAN-IP>:5020/`. Mit `-Port` kann ein anderer Port gewählt werden. Nach einer Scriptänderung muss der laufende Server neu gestartet werden.
-
-Für die optionale Bindung an alle Rechneradressen (`+`) benötigt Windows eine zusätzliche HTTP-URL-Berechtigung. Diese wird für den lokalen Standardstart nicht benötigt. Eine dauerhafte URL-Reservierung ist eine eigene Systemeinstellung und wird vom Script nicht automatisch angelegt. Falls gewünscht, kann sie einmalig in einer PowerShell mit Administratorrechten für das eigene Benutzerkonto eingerichtet werden:
-
-```powershell
-netsh http add urlacl url=http://+:5020/ user="$env:USERDOMAIN\$env:USERNAME" listen=yes delegate=no
-```
-
-Anschließend kann das Script ohne Administratorrechte laufen. Andere Geräte müssen den Rechner über das Netzwerk erreichen können; ein Test vom selben Rechner prüft die HTTP-Bindung, nicht eine mögliche eingehende Firewall-Sperre. Der Server lehnt versteckte Metadaten und Pfade außerhalb des Projektordners ab. Startfehler brechen das Script ab.
+Auf anderen Rechnern kann ein statischer Webserver den Projektordner unter einer eigenen URL ausliefern. Die Einstiegsseite ist `index.html`.
 
 ## Build und Encoding-Schutz
 
@@ -503,6 +485,30 @@ Prüfung: `npm run test:knowledge` kontrolliert den Inhaltsvertrag, Quellen, Spr
 ## Raumfahrtmissionen und Bahndaten
 
 Die Kachel behält für bestehende Direktlinks den Schlüssel `idefix` bei. `js/cards/space-missions.js` bindet die Reiter und Zeitleisten an das Dashboard an. `js/cards/space-mission-animation.js` verwaltet lokale Regler, Wiedergabe, SVG-Projektionen und Quellenhinweise. `js/data/space-missions.js` enthält die Missionsansichten und Meilensteine. `js/data/space-mission-trajectories.js` enthält die gespeicherten Horizons-Vektoren und Mios ESA-SPICE-Planbahn. Der Import erfolgt über `node scripts/update-space-mission-trajectories.js`. Die Referenzrahmen und Datenabdeckung stehen in [BERECHNUNGEN.md](BERECHNUNGEN.md#raumfahrtmissionen).
+
+### Voyager im äußeren Sonnensystem
+
+Der Reiter „Äußeres Sonnensystem“ gruppiert Voyager 1 und 2. Die Planetenreise und der interstellare Weiterflug verwenden eine orthografische Projektion mit 22° Neigung zur Ekliptikebene. Die Grafik markiert den Lotpunkt der Sonde auf der Ebene und zeigt den Betrag der ekliptikalen z-Komponente in AE mit seiner Richtung. Sonne, Planeten und Sonde werden nach ihrer Tiefe in Blickrichtung gezeichnet. Die Marker sind schematisch vergrößert. Die Vorbeiflüge verwenden separate planetenzentrierte Bahnen in Kilometern und eine Ansicht senkrecht zur mittleren Bahnebene der Sonde.
+
+`js/cards/space-mission-flybys.js` blendet die Nahansicht während des Zeitfensters der planetenzentrierten Bahndaten ein. Übersicht und Nahansicht folgen derselben UTC-Zeit. Die Nahansicht passt ihren Maßstab an die Entfernung zum Planeten an. In der 3D-Reiseübersicht erscheint sie links neben der Bahn, auf schmalen Bildschirmen direkt unter der Grafik. Beim Abspielen dauert ein vollständiges Vorbeiflugfenster mindestens 4,5 Sekunden. Die manuelle Reglerbewegung und die Sprünge verwenden weiterhin die direkte Zeitzuordnung.
+
+Voyager 1 zeigt die lokale Nachzeichnung von „Pale Blue Dot“ mit einem blauen CSS-Pixel für die Erde vom 14. Februar 1989 bis einschließlich 14. Februar 1991 (UTC), auch in der 3D-Großansicht. Im interstellaren Weiterflug springt eine Schaltfläche am Regler direkt zum Aufnahmedatum. Auf schmalen Bildschirmen erscheint die Nachzeichnung an der Stelle der Reisegrafik, damit der Regler beim Ziehen an seinem Platz bleibt. Die Wiedergabe geht am Ende der Planetenreise in den interstellaren Weiterflug über und verweilt 15 Sekunden am Aufnahmetag, dem 14. Februar 1990. Währenddessen zeigt der Countdown am Regler die verbleibenden Sekunden. [NASA · Originalaufnahme](https://science.nasa.gov/photojournal/solar-system-portrait-earth-as-pale-blue-dot/)
+
+`node scripts/update-space-mission-trajectories.js --voyager` schreibt die zehn Voyager-Serien nach `js/data/voyager-trajectories.js`. Der Import bezieht geometrische Vektoren in der J2000-Ekliptik in UTC von JPL Horizons. Die Planetenübersichten nutzen Abstände von drei oder vier Tagen, der Weiterflug 28 Tage und die Vorbeiflüge zehn Minuten. Die Startmarken springen zum ersten verfügbaren Vektor. Die Vorbeiflugmarken springen auf die von der NASA veröffentlichte Minute der größten Annäherung. Frühe Bahnen sind rekonstruiert. Auf die trackinggestützten Abschnitte folgen vorausberechnete Vektoren bis Dezember 2099.
+
+### Interaktive 3D-Großansicht
+
+`js/cards/space-mission-camera.js` projiziert die Ekliptik- oder Zielkoordinaten in die aktuelle Kamerabasis. `js/cards/space-mission-3d.js` zeigt die Bahnen im gemeinsamen Dialog und sortiert die Marker entlang der Blickrichtung. Die Großansicht übernimmt die Ausrichtung der jeweiligen Karte. Zeitregler, Wiedergabekontrollen und Meilensteine wechseln beim Öffnen in den Dialog und werden beim Schließen an ihren Platz zurückgesetzt. Während eines Voyager-Vorbeiflugs oder des Fotofensters erscheint der Meilenstein am Regler. Die Statuszeile zeigt, wann die Wiedergabe verlangsamt läuft oder das Ende des Zeitbereichs erreicht ist. Missionszeit, Fokus und Dashboard-Scrollposition bleiben erhalten. Die Kamerasteuerung wirkt auf die SVG-Grafik innerhalb des Dialogs.
+
+### Fiktive Raumfahrtmissionen
+
+Die separate Kachel hat den Direktlink `?card=fictional_missions`. Ihre redaktionell gesetzten UTC-Daten und Szenen stehen in `js/data/fictional-missions.js`, die lokalisierten Texte in `js/data/fictional-mission-copy.js`. Der Zeitregler weist jedem Missionsabschnitt denselben Platz zu. Das Modell interpoliert das angezeigte Datum zwischen den jeweiligen Stützpunkten. Für Millers Planeten und die Endurance berechnet es zusätzlich zwei Anzeigezeiten anhand der festgelegten Endpunkte. Flugbahnen, Maßstäbe und Uhren dienen der Illustration der Handlung.
+
+Bei der Rückkehr von Millers Planeten bleiben beide Uhren auf dem Stand des Wiedersehens. Ab Manns Eisplaneten verwendet die Zeitleiste die zeitliche Einordnung der Endurance.
+
+`js/cards/fictional-missions.js` verbindet Reiter, Regler und Missionsschritte mit der gemeinsamen Missionswiedergabe. `js/cards/fictional-mission-graphics.js` setzt die beweglichen Elemente auf ihre Szenenpfade. Die Kachel startet ihre Geschichten unabhängig vom globalen Dashboard-Datum. Die Quellenabschnitte in den drei Sprachfassungen der Hilfe verlinken auf die Comic- und Filmvorlagen.
+
+Das Kachel-Markup steht in `templates/fictional-missions.html`, die Bildszenen stehen in `assets/fictional-missions/scenes.svg`. Der Einhängepunkt in `index.html` verweist auf beide Ressourcen. Der Browser lädt sie direkt vom selben Webserver und bindet die Kachel anschließend ins Dashboard ein.
 
 ### IDEFIX / MMX
 

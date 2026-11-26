@@ -60,7 +60,7 @@ function dashboardFunction(name){
 }
 
 const dates = vm.createContext({Intl, Date, URL, lang:'de', requestedCardKey:'planet_horizon',
-  window:{location:{href:'http://localhost:5020/?date=20200101#test'}},
+  window:{location:{href:'http://planetenuhr.test/planetenuhr/?date=20200101#test'}},
   history:{replaceState(state, title, url){this.url = url;}},
   selectedSolarDate(){return new Date(2026, 9, 21, 12);},
   selectedLocation(){return {name:'Berlin'};}

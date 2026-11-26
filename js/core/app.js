@@ -1092,6 +1092,28 @@
     }
 
 
+    /** Registers the dynamically loaded mission card with the dashboard.
+     * @param {HTMLElement|null} card Newly mounted grid card, if present. @returns {void}
+     */
+    function registerFictionalMissionCard(card){
+      if (!card) return;
+      cardNavigation.applyCardAnchorIds();
+      helpController.initCardHelp();
+      dashboardLayout.observeCard(card);
+      dashboardLayout.scheduleMasonryLayout();
+    }
+
+    const fictionalMissionCardReady = window.PLANETENUHR_FICTIONAL_MISSION_CARD.mount({
+      slot:document.getElementById('fictionalMissionSlot'),
+      missions:window.PLANETENUHR_FICTIONAL_MISSIONS,
+      copy:window.PLANETENUHR_FICTIONAL_MISSION_COPY[lang],
+      language:lang, translations:t,
+      model:window.PLANETENUHR_FICTIONAL_MISSIONS_MODEL,
+      graphics:window.PLANETENUHR_FICTIONAL_MISSION_GRAPHICS,
+      createPlayback:window.PLANETENUHR_SPACE_MISSION_ANIMATION.createPlayback,
+      fitLabels:window.PLANETENUHR_SPACE_MISSION_ANIMATION.fitPlotLabels,
+      updateLayout:dashboardLayout.updateSingleCardMasonryLayout
+    }).then(registerFictionalMissionCard).catch(error => console.warn('Fictional missions unavailable:',error));
     cardNavigation.applyCardAnchorIds();
     applyInitialUrlState();
     dateLocationControls.populateLocationSelector();
@@ -1112,6 +1134,7 @@
     }), {
       card: document.querySelector('[data-help-key="idefix"]'),
       missions: window.PLANETENUHR_SPACE_MISSION_DATA,
+      outerMissions: window.PLANETENUHR_OUTER_MISSION_DATA,
       createAnimation: window.PLANETENUHR_SPACE_MISSION_ANIMATION.create,
       trajectories: window.PLANETENUHR_SPACE_MISSION_TRAJECTORIES,
       positionAt: window.PLANETENUHR_IDEFIX_MODEL.positionAt,
@@ -1181,7 +1204,13 @@
       beforeOpen:dashboardLayout.releasePendingViewportRestoration,
       constellationYear:constellationYearController
     });
-    dashboardLayout.scheduleMasonryLayout(cardNavigation.scrollToRequestedCard);
+    const initialCardDestination = cardNavigation.getRequestedCardKey() || window.location.hash.slice(1);
+    if (initialCardDestination) {
+      // A late card above the destination can shift it while the browser is scrolling.
+      fictionalMissionCardReady.then(() => {
+        dashboardLayout.scheduleMasonryLayout(() => cardNavigation.scrollToRequestedCard(initialCardDestination));
+      });
+    }
     setInterval(refreshDynamicTiles, 1800000);
     setInterval(refreshMilkyWaySky, 60000);
 

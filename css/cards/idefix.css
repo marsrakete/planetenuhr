@@ -4,15 +4,104 @@
 .space-mission-panel[hidden] { display:none; }
 .space-mission-title { margin:0; text-align:center; }
 .space-mission-title,.idefix-news h3 { font-size:var(--font-subheading); line-height:var(--line-heading); }
-#spaceMissionTabs [aria-selected="true"] { border-color:var(--accent); font-weight:700; }
+#spaceMissionTabs [aria-selected="true"],.space-mission-tabs [aria-selected="true"] { border-color:var(--accent); font-weight:700; }
 .space-mission-timeline { display:grid; gap:1px; padding:0; margin:0; list-style:none; font-size:var(--font-body); line-height:var(--line-body); }
 .space-mission-timeline li { display:grid; grid-template-columns:minmax(8rem,auto) minmax(0,1fr) auto; gap:8px 14px; align-items:baseline; padding:10px 12px; border-bottom:1px solid var(--border); text-align:left; }
 .space-mission-timeline time,.space-mission-timeline small { color:var(--muted); font-size:var(--font-note); line-height:var(--line-note); }
 .mission-animation { display:grid; gap:9px; min-width:0; }
 .mission-animation-views[hidden] { display:none; }
 .mission-animation-views [aria-pressed="true"] { border-color:var(--accent); font-weight:700; }
+.mission-journey-layout,.mission-journey-main { display:grid; gap:9px; min-width:0; }
+.mission-flyby,.mission-photo {
+  display:grid;
+  gap:6px;
+  min-width:0;
+  align-content:start;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:8px;
+}
+.mission-flyby[hidden],.mission-photo[hidden] { display:none; }
+.mission-flyby h4,.mission-flyby-distance,.mission-photo h4,.mission-photo-caption { margin:0; }
+.mission-flyby h4,.mission-photo h4 { font-size:var(--font-control); }
+.mission-flyby-distance,.mission-photo-caption { color:var(--muted); font-size:var(--font-note); }
+.mission-photo-field {
+  position:relative;
+  aspect-ratio:1.45;
+  border-radius:10px;
+  overflow:hidden;
+  background:
+    var(--galactic-band),
+    linear-gradient(160deg,#050911,#171426 73%,#0a0912);
+}
+.mission-photo-earth {
+  position:absolute;
+  inset-inline-start:64%;
+  inset-block-start:56%;
+  width:1px;
+  height:1px;
+  background:#a8caff;
+}
+@media (min-width:760px) {
+  .mission-journey-layout:is(.has-flyby,.has-mission-photo) {
+    grid-template-columns:minmax(0,1fr) minmax(0,1.55fr);
+    grid-template-areas:"detail overview" "controls controls";
+    align-items:start;
+  }
+  :is(.has-flyby,.has-mission-photo) > .mission-journey-main { grid-area:overview; }
+  :is(.has-flyby,.has-mission-photo) > :is(.mission-flyby,.mission-photo) { grid-area:detail; }
+  :is(.has-flyby,.has-mission-photo) > .mission-animation-controls { grid-area:controls; }
+}
+@media (max-width:759px) {
+  .mission-journey-layout.has-mission-photo {
+    position:relative;
+    grid-template-areas:"overview" "controls";
+  }
+  .has-mission-photo > .mission-journey-main { grid-area:overview; }
+  .has-mission-photo > .mission-animation-controls { grid-area:controls; }
+  .has-mission-photo > .mission-photo {
+    position:absolute;
+    grid-area:overview;
+    inset:0;
+    grid-template-rows:auto minmax(0,1fr) auto auto;
+    background:var(--card);
+  }
+  .has-mission-photo > .mission-photo h4 { padding-inline-end:60px; }
+  .has-mission-photo > .mission-photo .mission-photo-field { aspect-ratio:auto; }
+}
+.mission-flyby .mission-center circle,.mission-flyby .mission-probe circle { vector-effect:non-scaling-stroke; }
 .mission-animation-plot { width:100%; height:auto; display:block; background:#0b1730; border-radius:12px; }
 .mission-animation-plot path { fill:none; vector-effect:non-scaling-stroke; }
+.mission-ecliptic-plane { fill:#355775; fill-opacity:.35; stroke:#6586aa; stroke-width:1; vector-effect:non-scaling-stroke; }
+.mission-ecliptic-plane[hidden] { display:none; }
+.mission-ecliptic-offset { stroke:#99e0db; stroke-width:1.5; stroke-dasharray:4 3; }
+.mission-planet-legend {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:4px 12px;
+  margin:0;
+  padding:0;
+  list-style:none;
+  font-size:var(--font-note);
+}
+.mission-planet-legend[hidden] { display:none; }
+.mission-legend-item::before {
+  content:"";
+  display:inline-block;
+  width:.65em;
+  height:.65em;
+  margin-inline-end:5px;
+  border-radius:50%;
+  background:var(--mission-planet-color);
+}
+.mission-reference-bodies .mission-planet[data-planet] circle { fill:var(--mission-planet-color); }
+.mission-flyby .mission-center[data-planet] > circle { fill:var(--mission-planet-color); }
+.mission-animation [data-planet="earth"] { --mission-planet-color:#83aaff; }
+.mission-animation [data-planet="jupiter"] { --mission-planet-color:#d9a779; }
+.mission-animation [data-planet="saturn"] { --mission-planet-color:#d9c985; }
+.mission-animation [data-planet="uranus"] { --mission-planet-color:#76d9d3; }
+.mission-animation [data-planet="neptune"] { --mission-planet-color:#b7aafa; }
 .mission-reference-orbits { stroke:#6882a5; stroke-width:1; opacity:.42; }
 .mission-target-orbit { stroke:#78d9d2; stroke-width:1.2; stroke-dasharray:2 4; opacity:.8; }
 .mission-route-overview { stroke:#91b8f3; stroke-width:.8; opacity:.24; }
@@ -22,11 +111,14 @@
 .mission-reference-bodies circle { fill:#91b8f3; }
 .mission-reference-bodies .mission-reference-target circle { fill:none; stroke:#78d9d2; stroke-width:1.4; }
 .mission-center circle { fill:#d49b59; stroke:#ffe0a3; stroke-width:1; }
+.mission-reference-bodies .mission-saturn .mission-saturn-disc { fill:#d9c985; stroke:none; }
+.mission-saturn-ring { fill:none; stroke:#eedcb3; stroke-width:1.15; vector-effect:non-scaling-stroke; }
 .mission-animation-plot .mission-didymos-outline { fill:#aaa8a0; stroke:#d8d5ca; stroke-width:1; }
 .mission-animation-plot .mission-didymos-shadow { fill:#77766f; }
 .mission-didymos-ridge { stroke:#ded9ca; stroke-width:1; stroke-linejoin:round; }
 .mission-didymos-facets { stroke:#d8d5ca; stroke-opacity:.45; stroke-width:.6; }
 .mission-probe circle,.mission-mio circle { fill:#ffd477; stroke:#fff3d3; stroke-width:1.5; }
+.mission-reference-bodies .mission-probe circle,.mission-flyby .mission-probe circle { stroke-width:1; }
 .mission-mio circle { fill:#9ce9e2; stroke:#dcfffa; }
 .mission-lander rect { fill:#ffd477; }
 .mission-animation-plot .mission-lander path { display:none; stroke:#f5e0ac; stroke-width:1.5; }
@@ -39,6 +131,28 @@
 .mission-play { grid-row:1 / 3; min-height:42px; margin:0; padding:6px 10px; border:1px solid var(--border); border-radius:8px; background:var(--card); color:var(--accent); }
 .mission-time-label,.mission-time-readout,.mission-distance,.mission-animation-source { color:var(--muted); font-size:var(--font-note); line-height:var(--line-note); }
 .mission-time-readout,.mission-distance { grid-column:1 / -1; font-variant-numeric:tabular-nums; }
+.mission-photo-countdown {
+  grid-column:1 / -1;
+  margin:0;
+  color:var(--accent);
+  font-size:var(--font-note);
+  font-variant-numeric:tabular-nums;
+}
+.mission-photo-jump {
+  grid-column:1 / -1;
+  justify-self:start;
+  min-height:44px;
+  margin:0;
+  padding:6px 10px;
+  border:1px solid var(--border);
+  border-radius:8px;
+  color:var(--accent);
+  background:var(--card);
+  font:inherit;
+  text-align:left;
+}
+.mission-photo-jump[hidden] { display:none; }
+.mission-photo-jump:active { transform:none; }
 .mission-dashboard-status { grid-column:1 / -1; margin:0; color:var(--muted); font-size:var(--font-note); line-height:var(--line-note); }
 .mission-animation-source { margin:0; text-align:left; }
 .mission-event-jump { margin:0; padding:0; border:0; background:none; color:var(--accent); text-align:left; font:inherit; text-decoration:underline; }

@@ -1,7 +1,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-/** Checks one release's metadata and all local JS/CSS references for consistency.
+/** Checks one release's metadata and versioned app assets for consistency.
  * @param {string} root Absolute project directory.
  * @returns {string[]} Version mismatch diagnostics; empty for a consistent release.
  */
@@ -14,7 +14,11 @@ function checkVersion(root){
     errors.push('version.json must contain a valid version string.');
   }
   if (!current || current[1] !== release) errors.push('HTML app version must match version.json.');
-  for (const match of html.matchAll(/\b(?:src|href)="([^"\s]+\.(?:js|css)(?:\?[^"\s]*)?)"/g)) {
+  const assets = [
+    ...html.matchAll(/\b(?:src|href)="([^"\s]+\.(?:js|css)(?:\?[^"\s]*)?)"/g),
+    ...html.matchAll(/\bdata-(?:template|scene)-url="([^"\s]+)"/g)
+  ];
+  for (const match of assets) {
     const url = new URL(match[1], 'https://planetenuhr.invalid/');
     if (url.origin !== 'https://planetenuhr.invalid') continue;
     if (url.searchParams.get('v') !== release) errors.push('Asset version mismatch: ' + match[1]);
