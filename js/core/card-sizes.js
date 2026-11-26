@@ -353,65 +353,7 @@ window.PLANETENUHR_CARD_SIZES = (() => {
       wireGlobalSizeControls();
       storedCardSizes = loadStoredCardSizes();
 
-      resizableDashboardCards().forEach(card => {
-        if (!resizableCardKey(card)) {
-          return;
-        }
-        if (card.querySelector('.card-size-control')) {
-          return;
-        }
-
-        const fragment = options.cloneTemplate('cardSizeControlTemplate');
-        if (!fragment) {
-          return;
-        }
-
-        const control = fragment.querySelector('.card-size-control');
-        control.addEventListener('click', event => {
-          event.stopPropagation();
-        });
-
-        card.addEventListener('pointerdown', event => {
-          if (!window.matchMedia('(hover: none), (pointer: coarse)').matches) {
-            return;
-          }
-
-          if (event.target.closest('button, a, input, select, textarea, summary, .card-help-popup')) {
-            return;
-          }
-
-          const isAlreadyOpen = card.classList.contains('is-card-tools-open');
-          document.querySelectorAll('.display-container.is-card-tools-open').forEach(openCard => {
-            if (openCard !== card) {
-              openCard.classList.remove('is-card-tools-open');
-            }
-          });
-
-          if (isAlreadyOpen) {
-            card.classList.remove('is-card-tools-open');
-          } else {
-            card.classList.add('is-card-tools-open');
-          }
-        });
-
-        control.querySelectorAll('[data-card-size-option]').forEach(button => {
-          button.addEventListener('pointerdown', event => {
-            event.preventDefault();
-          });
-          button.addEventListener('click', event => {
-            event.preventDefault();
-            event.stopPropagation();
-            button.blur();
-            const requestedSize = button.getAttribute('data-card-size-option');
-            setDashboardCardSize(card, requestedSize);
-            if (window.matchMedia('(hover: none), (pointer: coarse)').matches) {
-              card.classList.remove('is-card-tools-open');
-            }
-          });
-        });
-
-        card.appendChild(fragment);
-      });
+      resizableDashboardCards().forEach(mountCardSizeControl);
 
       if (!outsideWired) {
         document.addEventListener('pointerdown', event => {
@@ -437,6 +379,75 @@ window.PLANETENUHR_CARD_SIZES = (() => {
       applyStoredCardSizes();
     }
 
+    /** Attaches the shared size chooser to a single dashboard card.
+     * @param {HTMLElement} card Dashboard card. @returns {void}
+     */
+    function mountCardSizeControl(card){
+      if (!resizableCardKey(card) || card.querySelector('.card-size-control')) {
+        return;
+      }
+
+      const fragment = options.cloneTemplate('cardSizeControlTemplate');
+      if (!fragment) {
+        return;
+      }
+
+      const control = fragment.querySelector('.card-size-control');
+      control.addEventListener('click', event => {
+        event.stopPropagation();
+      });
+
+      card.addEventListener('pointerdown', event => {
+        if (!window.matchMedia('(hover: none), (pointer: coarse)').matches) {
+          return;
+        }
+
+        if (event.target.closest('button, a, input, select, textarea, summary, .card-help-popup')) {
+          return;
+        }
+
+        const isAlreadyOpen = card.classList.contains('is-card-tools-open');
+        document.querySelectorAll('.display-container.is-card-tools-open').forEach(openCard => {
+          if (openCard !== card) {
+            openCard.classList.remove('is-card-tools-open');
+          }
+        });
+
+        if (isAlreadyOpen) {
+          card.classList.remove('is-card-tools-open');
+        } else {
+          card.classList.add('is-card-tools-open');
+        }
+      });
+
+      control.querySelectorAll('[data-card-size-option]').forEach(button => {
+        button.addEventListener('pointerdown', event => {
+          event.preventDefault();
+        });
+        button.addEventListener('click', event => {
+          event.preventDefault();
+          event.stopPropagation();
+          button.blur();
+          const requestedSize = button.getAttribute('data-card-size-option');
+          setDashboardCardSize(card, requestedSize);
+          if (window.matchMedia('(hover: none), (pointer: coarse)').matches) {
+            card.classList.remove('is-card-tools-open');
+          }
+        });
+      });
+
+      card.appendChild(fragment);
+    }
+
+    /** Registers the chooser and restores the saved size for a dynamically mounted card.
+     * @param {HTMLElement} card Dashboard card. @returns {void}
+     */
+    function registerCard(card){
+      mountCardSizeControl(card);
+      applyCardSizeToElement(card, effectiveCardSize(card));
+      updateGlobalCardSizeControlState();
+    }
+
     /** Wires the global size selector once. No parameters. @returns {void} */
     function wireGlobalSizeControls(){
       if (globalWired) { return; }
@@ -459,7 +470,7 @@ window.PLANETENUHR_CARD_SIZES = (() => {
 
     }
 
-    return { sharedDashboardCardSize, updateGlobalCardSizeControlState, resizableCardKey, resizableDashboardCards, isSupportedCardSize, defaultCardSize, loadStoredCardSizes, saveStoredCardSizes, effectiveCardSize, updateCardSizeControlState, applyCardSizeToElement, applyStoredCardSizes, setDashboardCardSize, setAllDashboardCardSizes, initCardSizeControls };
+    return { sharedDashboardCardSize, updateGlobalCardSizeControlState, resizableCardKey, resizableDashboardCards, isSupportedCardSize, defaultCardSize, loadStoredCardSizes, saveStoredCardSizes, effectiveCardSize, updateCardSizeControlState, applyCardSizeToElement, applyStoredCardSizes, setDashboardCardSize, setAllDashboardCardSizes, initCardSizeControls, registerCard };
   }
   return {create};
 })();

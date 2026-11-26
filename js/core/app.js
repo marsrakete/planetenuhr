@@ -1099,6 +1099,7 @@
       if (!card) return;
       cardNavigation.applyCardAnchorIds();
       helpController.initCardHelp();
+      cardSizes.registerCard(card);
       dashboardLayout.observeCard(card);
       dashboardLayout.scheduleMasonryLayout();
     }

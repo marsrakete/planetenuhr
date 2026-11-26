@@ -87,7 +87,6 @@
 .fictional-mission-timeline [aria-current="step"] { color:#173653; font-weight:700; }
 .fictional-missions-card button:focus-visible,
 .fictional-missions-card input:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
-@media (min-width:1180px) { .fictional-missions-card { grid-column:span 2; } }
 @media (max-width:480px) {
   .fictional-mission-timeline li { grid-template-columns:minmax(0,1fr); gap:0; padding-block:5px; }
   .fictional-mission-figure figcaption { flex-direction:column; }

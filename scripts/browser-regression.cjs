@@ -1724,6 +1724,9 @@ async function checkFictionalMissions(browser, origin){
     const clocks = card.locator('[data-fictional-clocks]');
     const activeScene = card.locator('[data-fictional-scene]:not([hidden])');
     await moon.waitFor();
+    const sizeControl = card.locator('.card-size-control');
+    assert.equal(await sizeControl.count(),1);
+    assert.equal(await sizeControl.locator('[data-card-size-option="wide"]').getAttribute('aria-pressed'),'true');
     await page.waitForFunction(() => {
       const rect = document.getElementById('card-fictional_missions').getBoundingClientRect();
       return rect.top >= 0 && rect.top < innerHeight / 2;
@@ -1881,6 +1884,28 @@ async function checkFictionalMissions(browser, origin){
         return node.scrollWidth <= node.clientWidth + 1 && stage.clientWidth > 200 && slider.clientWidth > 100;
       }), 'Card fits ' + width + 'px');
     }
+    await page.setViewportSize({width:1600,height:900});
+    let previousWidth = 0;
+    for (const size of ['normal','wide','large']) {
+      const option = sizeControl.locator('[data-card-size-option="' + size + '"]');
+      await option.press('Enter');
+      assert.equal(await option.getAttribute('aria-pressed'),'true');
+      await page.waitForFunction(({size, previousWidth}) => {
+        const node = document.getElementById('card-fictional_missions');
+        return node.dataset.cardSize === size && node.getBoundingClientRect().width > previousWidth + 1;
+      },{size,previousWidth});
+      previousWidth = (await card.boundingBox()).width;
+      assert.ok(await card.evaluate(node => {
+        const stage = node.querySelector('[data-fictional-stage]');
+        const slider = node.querySelector('.mission-time');
+        return node.scrollWidth <= node.clientWidth + 1 && stage.clientWidth > 200 && slider.clientWidth > 100;
+      }), 'Scene and controls fit size ' + size);
+      assert.equal(await slider.inputValue(),paused);
+    }
+    await page.reload({waitUntil:'domcontentloaded'});
+    await sizeControl.waitFor({state:'attached'});
+    assert.equal(await card.getAttribute('data-card-size'),'large');
+    assert.equal(await sizeControl.locator('[data-card-size-option="large"]').getAttribute('aria-pressed'),'true');
     assert.deepEqual(errors,[]);
   } finally {
     await page.close();
