@@ -21,6 +21,8 @@ function getRequiredFiles() {
   return [
     "index.html",
     "js/data/voyager-trajectories.js",
+    "js/data/pioneer-trajectories.js",
+    "assets/images/pioneer-plaque.jpg",
     "js/cards/space-mission-flybys.js",
     "js/cards/space-mission-camera.js",
     "js/cards/space-mission-3d.js",

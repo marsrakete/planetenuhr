@@ -33,6 +33,19 @@ const voyagerProvenance = {
   '-31':{reconstructedBefore:'1981-01-01', trackingThrough:'1992-04-24'},
   '-32':{reconstructedBefore:'1989-08-29', trackingThrough:'1992-10-30'}
 };
+const pioneerRequests = [
+  {key:'pioneer10', id:-23, center:10, start:'1972-03-03T02:04Z', end:'1975-01-01', step:'2 d'},
+  {key:'pioneer10Interstellar', id:-23, center:10, start:'1974-01-01', end:'2050-01-01', step:'28 d'},
+  {key:'pioneer10Jupiter', id:-23, center:599, start:'1973-12-03', end:'1973-12-05', step:'5 m'},
+  {key:'pioneer11', id:-24, center:10, start:'1973-04-06T02:25Z', end:'1981-01-01', step:'3 d'},
+  {key:'pioneer11Interstellar', id:-24, center:10, start:'1980-01-01', end:'2050-01-01', step:'28 d'},
+  {key:'pioneer11Jupiter', id:-24, center:599, start:'1974-12-02', end:'1974-12-04', step:'5 m'},
+  {key:'pioneer11Saturn', id:-24, center:699, start:'1979-08-31', end:'1979-09-02', step:'5 m'}
+];
+const pioneerProvenance = {
+  '-23':{reconstructedBefore:'2003-01-24', forecastAfter:'2003-01-23'},
+  '-24':{reconstructedBefore:'1995-11-25', forecastAfter:'1995-11-24'}
+};
 
 /** Downloads geometric vectors and records the selected Horizons solution and its tracking cutoff.
  * @param {object} request Target, center, date range and sampling step.
@@ -89,19 +102,21 @@ async function download({id, target, command = String(id), center, start, end, s
   };
 }
 
-/** Writes the Voyager cache separately so the other missions need not be refreshed.
- * No parameters. @returns {Promise<void>} Resolves after all ten Voyager series validate.
+/** Updates a standalone trajectory cache after verifying all its Horizons series.
+ * @param {string} name Cache and command-line option name.
+ * @param {object[]} requests Series to download. @param {object} provenance Overrides by spacecraft ID.
+ * @returns {Promise<void>} Resolves once the complete cache is written.
  */
-async function downloadVoyager() {
+async function downloadOuterMissions(name, requests, provenance) {
   const data = {};
-  for (const request of voyagerRequests) {
+  for (const request of requests) {
     const series = await download(request);
-    Object.assign(series,voyagerProvenance[request.id]);
+    Object.assign(series,provenance[request.id]);
     data[request.key] = series;
     console.log(request.key, series.revised, series.rows.length);
   }
-  const output = path.join(__dirname, '../js/data/voyager-trajectories.js');
-  const header = '// NASA/JPL Horizons Ecliptic J2000. Generate with node scripts/update-space-mission-trajectories.js --voyager.\n';
+  const output = path.join(__dirname, '../js/data/' + name + '-trajectories.js');
+  const header = '// NASA/JPL Horizons Ecliptic J2000. Generate with node scripts/update-space-mission-trajectories.js --' + name + '.\n';
   const entries = Object.entries(data).map(([key, value]) => '  ' + key + ': ' + JSON.stringify(value));
   fs.writeFileSync(output, header + 'Object.assign(window.PLANETENUHR_SPACE_MISSION_TRAJECTORIES, {\n' +
     entries.join(',\n') + '\n});\n', 'utf8');
@@ -198,7 +213,9 @@ async function main() {
 if (require.main === module) {
   let update = main;
   if (process.argv.includes('--voyager')) {
-    update = downloadVoyager;
+    update = () => downloadOuterMissions('voyager',voyagerRequests,voyagerProvenance);
+  } else if (process.argv.includes('--pioneer')) {
+    update = () => downloadOuterMissions('pioneer',pioneerRequests,pioneerProvenance);
   }
   update().catch(error => {
     console.error(error.message);

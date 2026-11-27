@@ -143,7 +143,9 @@ window.PLANETENUHR_SPACE_MISSION_3D = (() => {
         node.setAttribute('transform','translate(' + x + ' ' + y + ')');
         const label = node.querySelector('text');
         if (label.textContent !== item.label) label.textContent = item.label;
-        visible.push({node,depth});
+        let radius = item.radius;
+        if (item.kind === 'saturn') radius *= 2;
+        visible.push({node,depth,x,y,radius});
       }
       visible.sort((first,second) => first.depth - second.depth);
       let next = layer.firstElementChild;
@@ -155,6 +157,9 @@ window.PLANETENUHR_SPACE_MISSION_3D = (() => {
         const obsolete = next;
         next = next.nextElementSibling;
         obsolete.remove();
+      }
+      if (scene.labelPlanets) {
+        window.PLANETENUHR_SOLAR_LABELS.layoutSvg(plot,visible);
       }
     }
 

@@ -82,5 +82,43 @@ window.PLANETENUHR_SOLAR_LABELS = (() => {
     });
   }
 
-  return {layout};
+  /** Places SVG marker names close to their objects while keeping them in the plot.
+   * @param {SVGSVGElement} plot Plot with an explicit viewBox.
+   * @param {object[]} markers Positioned groups and their x, y and radius in SVG units.
+   * @returns {void}
+   */
+  function layoutSvg(plot,markers){
+    if (!plot.clientWidth) return;
+    const bounds = plot.viewBox.baseVal;
+    const obstacles = markers.map(({x,y,radius}) =>
+      ({left:x - radius,right:x + radius,top:y - radius,bottom:y + radius}));
+    const labels = markers.map(({node,x,y,radius}) => {
+      const label = node.querySelector('text');
+      const box = label.getBBox();
+      return {label,x,y,radius,width:box.width,height:box.height,baseline:Number(label.getAttribute('y')) - box.y};
+    });
+    for (const {label,x,y,radius,width,height,baseline} of labels) {
+      if (!width || x < bounds.x || x > bounds.x + bounds.width || y < bounds.y || y > bounds.y + bounds.height) continue;
+      const candidates = [];
+      for (const extra of [0,height,2 * height]) {
+        const gap = radius + 5 + extra;
+        candidates.push([x + gap,y - height / 2],[x - gap - width,y - height / 2],
+          [x - width / 2,y - gap - height],[x - width / 2,y + gap],
+          [x + gap,y - gap - height],[x - gap - width,y - gap - height],
+          [x + gap,y + gap],[x - gap - width,y + gap]);
+      }
+      const boxes = candidates.map(([left,top]) => ({left,top,right:left + width,bottom:top + height}));
+      const position = boxes.find(box => box.left >= bounds.x + 3 && box.right <= bounds.x + bounds.width - 3
+        && box.top >= bounds.y + 3 && box.bottom <= bounds.y + bounds.height - 3
+        && !obstacles.some(other => overlaps(box,other)));
+      if (position) {
+        obstacles.push(position);
+        label.setAttribute('x',position.left - x);
+        label.setAttribute('y',position.top - y + baseline);
+        label.setAttribute('text-anchor','start');
+      }
+    }
+  }
+
+  return {layout,layoutSvg};
 })();

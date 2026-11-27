@@ -20,7 +20,7 @@ Hier sammeln wir mögliche neue Inhalte und Verbesserungen für die Planetenuhr.
 
 **Daten und Genauigkeit:** Sonnen- und zielzentrierte 3D-Vektoren wurden für alle fünf Sonden bei NASA/JPL Horizons abgefragt. Die frühen Voyager-Bahnen sind näherungsweise rekonstruiert. Bei Pioneer eignen sich die älteren Bahnlösungen für historische Darstellungen mit entsprechend begrenzter Genauigkeit. Bei New Horizons liegen rekonstruierte Ausschnitte für Pluto und Arrokoth vor. Rekonstruktionen und Vorausberechnungen sollen in der Anzeige mit Quelle und Datenstand gekennzeichnet werden. [JPL Horizons](https://ssd.jpl.nasa.gov/horizons/manual.html) · [New-Horizons-Bahnlösung](https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=-98&MAKE_EPHEM=NO&OBJ_DATA=YES)
 
-**Status:** Voyager 1 und 2 sind umgesetzt. Pioneer 10, Pioneer 11 und New Horizons bleiben offen.
+**Status:** Voyager 1 und 2 sowie Pioneer 10 und 11 sind umgesetzt. New Horizons bleibt offen.
 
 ## Gezeiten verstehen
 

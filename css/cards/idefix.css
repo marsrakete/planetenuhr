@@ -95,13 +95,16 @@
   border-radius:50%;
   background:var(--mission-planet-color);
 }
-.mission-reference-bodies .mission-planet[data-planet] circle { fill:var(--mission-planet-color); }
-.mission-flyby .mission-center[data-planet] > circle { fill:var(--mission-planet-color); }
-.mission-animation [data-planet="earth"] { --mission-planet-color:#83aaff; }
-.mission-animation [data-planet="jupiter"] { --mission-planet-color:#d9a779; }
-.mission-animation [data-planet="saturn"] { --mission-planet-color:#d9c985; }
-.mission-animation [data-planet="uranus"] { --mission-planet-color:#76d9d3; }
-.mission-animation [data-planet="neptune"] { --mission-planet-color:#b7aafa; }
+.mission-reference-bodies .mission-planet[data-planet] circle { fill:var(--mission-planet-color,#91b8f3); }
+.mission-flyby .mission-center[data-planet] > circle { fill:var(--mission-planet-color,#d49b59); }
+.mission-animation [data-planet="earth"],.mission-3d-plot [data-body="earth"] { --mission-planet-color:#83aaff; }
+.mission-animation [data-planet="mars"],.mission-3d-plot [data-body="mars"] { --mission-planet-color:#f08e70; }
+.mission-animation [data-planet="jupiter"],.mission-3d-plot [data-body="jupiter"] { --mission-planet-color:#d9a779; }
+.mission-animation [data-planet="saturn"],.mission-3d-plot [data-body="saturn"] { --mission-planet-color:#d9c985; }
+.mission-animation [data-planet="uranus"],.mission-3d-plot [data-body="uranus"] { --mission-planet-color:#76d9d3; }
+.mission-animation [data-planet="neptune"],.mission-3d-plot [data-body="neptune"] { --mission-planet-color:#b7aafa; }
+.mission-animation-plot .mission-planet[data-planet] text,
+.mission-3d-plot .mission-3d-markers text { fill:var(--mission-planet-color,#edf3ff); }
 .mission-reference-orbits { stroke:#6882a5; stroke-width:1; opacity:.42; }
 .mission-target-orbit { stroke:#78d9d2; stroke-width:1.2; stroke-dasharray:2 4; opacity:.8; }
 .mission-route-overview { stroke:#91b8f3; stroke-width:.8; opacity:.24; }

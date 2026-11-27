@@ -155,5 +155,44 @@ window.PLANETENUHR_OUTER_MISSION_DATA = [
       ['2018-11-05','heliopause',true]
     ],
     references:[['flybyTimes','https://nssdc.gsfc.nasa.gov/planetary/voyager-periapse.html']]
+  },
+  {
+    id:'pioneer10', name:'Pioneer 10', agency:'NASA',
+    source:'https://science.nasa.gov/mission/pioneer-10/',
+    views:[
+      {key:'pioneer10', label:'planetaryVoyage', planets:['earth','mars','jupiter'], oblique:true, viewNote:'pioneerSolution'},
+      {key:'pioneer10Interstellar', label:'interstellarVoyage', oblique:true, viewNote:'pioneerSolution'}
+    ],
+    flybys:[
+      {key:'pioneer10Jupiter', body:'planet_jupiter', radius:71492, milestone:'firstJupiterFlyby'}
+    ],
+    events:[
+      ['1972-03-03','launch',true,undefined,'1972-03-03T02:04Z'],
+      ['1972-07-15','asteroidBeltEntry',true],
+      ['1973-02','asteroidBeltExit',true],
+      ['1973-12-04','firstJupiterFlyby',true,undefined,'1973-12-04T02:26Z'],
+      ['2003-01-23','lastSignal',true]
+    ]
+  },
+  {
+    id:'pioneer11', name:'Pioneer 11', agency:'NASA',
+    source:'https://science.nasa.gov/mission/pioneer-11/',
+    views:[
+      {key:'pioneer11', label:'planetaryVoyage', planets:['earth','jupiter','saturn'], oblique:true, viewNote:'pioneerSolution'},
+      {key:'pioneer11Interstellar', label:'interstellarVoyage', oblique:true, viewNote:'pioneerSolution'}
+    ],
+    flybys:[
+      {key:'pioneer11Jupiter', body:'planet_jupiter', radius:71492, milestone:'polarJupiterFlyby'},
+      {key:'pioneer11Saturn', body:'planet_saturn', radius:60268, milestone:'firstSaturnFlyby'}
+    ],
+    events:[
+      ['1973-04-06','launch',true,undefined,'1973-04-06T02:25Z'],
+      ['1974-12-03','polarJupiterFlyby',true,undefined,'1974-12-03T05:22Z'],
+      ['1976-05-26','saturnCourseCorrection',true],
+      ['1979-09-01','firstSaturnFlyby',true,undefined,'1979-09-01T16:31Z'],
+      ['1995-09-30','endRoutineContact',true],
+      ['1995-11-24','lastEngineeringData',true]
+    ],
+    references:[['pioneer11JupiterSource','https://www.nasa.gov/history/45-years-ago-pioneer-11-explores-jupiter/']]
   }
 ];

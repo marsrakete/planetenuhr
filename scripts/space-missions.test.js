@@ -6,7 +6,8 @@ const {test} = require('node:test');
 
 const context = vm.createContext({window: {}});
 for (const file of [
-  'data/space-missions.js', 'data/space-mission-trajectories.js', 'data/voyager-trajectories.js', 'data/translations.js',
+  'data/space-missions.js', 'data/space-mission-trajectories.js', 'data/voyager-trajectories.js', 'data/pioneer-trajectories.js',
+  'data/translations.js',
   'cards/space-missions.js', 'cards/space-mission-camera.js', 'cards/space-mission-3d.js',
   'cards/space-mission-flybys.js', 'cards/space-mission-animation.js'
 ]) {
@@ -118,11 +119,11 @@ test('the sourced tracking cutoff includes the whole published UTC day', () => {
   assert.equal(dataStatus(Date.parse('1981-01-01'), '1992-04-24','1981-01-01'), 'trackingBased');
 });
 
-test('Voyager milestones are covered and the oblique view preserves opposite departures', () => {
+test('outer-system milestones are covered and the oblique view preserves opposite Voyager departures', () => {
   const {PLANETENUHR_OUTER_MISSION_DATA: missions, PLANETENUHR_SPACE_MISSION_TRAJECTORIES: trajectories,
     PLANETENUHR_SPACE_MISSION_ANIMATION: animation} = context.window;
-  assert.deepEqual(Array.from(missions,mission => mission.id),['voyager1','voyager2']);
-  assert.deepEqual(Array.from(missions,mission => mission.flybys.length),[2,4]);
+  assert.deepEqual(Array.from(missions,mission => mission.id),['voyager1','voyager2','pioneer10','pioneer11']);
+  assert.deepEqual(Array.from(missions,mission => mission.flybys.length),[2,4,1,2]);
   for (const mission of missions) {
     assert.ok(mission.views.every(view => view.oblique));
     for (const flyby of mission.flybys) {
@@ -142,6 +143,29 @@ test('Voyager milestones are covered and the oblique view preserves opposite dep
   const northOffset = animation.obliqueProjection(north[1],north[2],north[3])[1] - animation.obliqueProjection(north[1],north[2],0)[1];
   const southOffset = animation.obliqueProjection(south[1],south[2],south[3])[1] - animation.obliqueProjection(south[1],south[2],0)[1];
   assert.ok(northOffset > 0 && southOffset < 0);
+});
+
+test('Pioneer flyby milestones land near closest approach in the historical solution', () => {
+  const {PLANETENUHR_OUTER_MISSION_DATA: missions, PLANETENUHR_SPACE_MISSION_TRAJECTORIES: trajectories,
+    PLANETENUHR_SPACE_MISSION_ANIMATION: {dataStatus}} = context.window;
+  for (const mission of missions.filter(item => item.id.startsWith('pioneer'))) {
+    const outbound = trajectories[mission.id + 'Interstellar'];
+    const cutoff = Date.parse(outbound.forecastAfter);
+    assert.equal(outbound.trackingThrough,null);
+    assert.equal(dataStatus(cutoff,null,outbound.reconstructedBefore,outbound.forecastAfter),'reconstructed');
+    assert.equal(dataStatus(cutoff + 86400000,null,outbound.reconstructedBefore,outbound.forecastAfter),'predicted');
+    for (const flyby of mission.flybys) {
+      const [, , , , date] = mission.events.find(([,key]) => key === flyby.milestone);
+      const {rows,center} = trajectories[flyby.key];
+      assert.equal(center,flyby.body === 'planet_saturn' ? 699 : 599);
+      const nearest = rows.reduce((best,row) => {
+        if (Math.hypot(...row.slice(1)) < Math.hypot(...best.slice(1))) return row;
+        return best;
+      });
+      assert.ok(Math.abs(nearest[0] - Date.parse(date)) <= 300000,flyby.key);
+      assert.ok(Math.hypot(...nearest.slice(1)) > flyby.radius,flyby.key);
+    }
+  }
 });
 
 test('flyby playback holds each encounter window long enough to follow the close approach', () => {

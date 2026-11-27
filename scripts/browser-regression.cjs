@@ -1452,6 +1452,8 @@ async function checkSpaceMissions(browser, url){
     await voyager2.getByRole('button',{name:'Planetenreise',exact:true}).press('Enter');
     assert.deepEqual(await voyager2.locator('.mission-planet-legend li:visible').allTextContents(),
       ['Erde','Jupiter','Saturn','Uranus','Neptun']);
+    assert.deepEqual((await voyager2.locator('.mission-reference-bodies .mission-planet[data-planet] text').allTextContents()).sort(),
+      ['Erde','Jupiter','Neptun','Saturn','Uranus']);
     await checkDepthOrder(voyager2,'voyager2');
     await voyager2.getByRole('button',{name:'Saturnvorbeiflug',exact:true}).press('Enter');
     assert.equal(await voyageDetail.locator('h4').textContent(),'Nahansicht · Saturn');
@@ -1662,6 +1664,85 @@ async function checkMission3D(browser,origin) {
     await activateMobileControl(browser,close);
     await page.waitForFunction(() => !document.querySelector('html').classList.contains('mission-3d-open'));
     assert.equal(await voyager2.locator('#mission-time-voyager2').inputValue(),'0');
+    assert.deepEqual(errors,[]);
+  } finally {
+    await page.close();
+  }
+}
+
+/** Checks Pioneer navigation, flybys and the locally hosted plaque.
+ * @param {import('playwright').Browser} browser Browser engine.
+ * @param {string} origin Dashboard origin. @returns {Promise<void>} Browser check.
+ */
+async function checkPioneerMissions(browser,origin) {
+  const page = await browser.newPage({viewport:{width:390,height:820},isMobile:true,hasTouch:true,reducedMotion:'reduce'});
+  const errors = [];
+  page.on('pageerror',error => errors.push(error.message));
+  await page.route('**/*',route => serveDashboard(route,origin));
+  try {
+    await page.goto(origin + '/?lang=de&card=idefix',{waitUntil:'domcontentloaded'});
+    const card = page.locator('[data-help-key="idefix"]');
+    const helpButton = card.locator('.card-help-button');
+    await helpButton.press('Enter');
+    const plaque = card.locator('.card-help-figure img');
+    await plaque.scrollIntoViewIfNeeded();
+    assert.equal(await plaque.getAttribute('src'),'assets/images/pioneer-plaque.jpg');
+    await page.waitForFunction(() => document.querySelector('.card-help-figure img').naturalWidth > 0);
+    assert.match(await card.locator('.card-help-figure figcaption').textContent(),/14 Pulsare.*NASA Ames/);
+    await helpButton.press('Escape');
+    await card.getByRole('tab',{name:'Äußeres Sonnensystem',exact:true}).press('Enter');
+    const dialog = page.locator('#spaceMission3DDialog');
+    const mainPlot = dialog.locator('.mission-3d-plot');
+    const inset = dialog.locator('.mission-3d-flyby');
+    for (const [name,id,events,lastEvent] of [
+      ['Pioneer 10','pioneer10',[['Erster Jupitervorbeiflug','Jupiter','02:26']],'Letztes Signal auf der Erde empfangen'],
+      ['Pioneer 11','pioneer11',[['Jupitervorbeiflug über die Polarregion','Jupiter','05:22'],
+        ['Erster Saturnvorbeiflug','Saturn','16:31']],'Letzte technische Daten empfangen']
+    ]) {
+      await card.getByRole('tab',{name,exact:true}).press('Enter');
+      const mission = card.locator('#space-mission-' + id);
+      if (id === 'pioneer10') {
+        await mission.getByRole('button',{name:'Start',exact:true}).press('Enter');
+        const mars = mission.locator('.mission-planet[data-planet="mars"]');
+        assert.equal(await mars.locator('text').textContent(),'Mars');
+        assert.equal(await mars.locator('circle').evaluate(dot => getComputedStyle(dot).fill),'rgb(240, 142, 112)');
+        const labelBoxes = await mission.locator('.mission-reference-bodies text').evaluateAll(labels =>
+          labels.map(label => label.getBoundingClientRect().toJSON()));
+        assert.ok(labelBoxes.every((box,index) => labelBoxes.slice(0,index).every(other =>
+          box.right <= other.left || box.left >= other.right || box.bottom <= other.top || box.top >= other.bottom)),
+          'Closest markers have separate labels at the Pioneer 10 launch');
+        await mission.locator('.mission-journey-main .mission-3d-launch').press('Enter');
+        const spatialMars = mainPlot.locator('[data-body="mars"]');
+        await spatialMars.waitFor();
+        assert.equal(await spatialMars.locator('text').textContent(),'Mars');
+        assert.equal(await spatialMars.locator('circle').evaluate(dot => getComputedStyle(dot).fill),'rgb(240, 142, 112)');
+        await mainPlot.press('Escape');
+        await page.waitForFunction(() => !document.documentElement.classList.contains('mission-3d-open'));
+      }
+      for (const [event,planet,time] of events) {
+        await mission.getByRole('button',{name:event,exact:true}).press('Enter');
+        const detail = mission.locator('.mission-flyby');
+        assert.equal(await detail.locator('h4').textContent(),'Nahansicht · ' + planet);
+        assert.match(await mission.locator('.mission-time-readout').textContent(),new RegExp(time));
+        await mission.locator('.mission-journey-main .mission-3d-launch').press('Enter');
+        await inset.waitFor({state:'visible'});
+        assert.equal(await inset.locator('h4').textContent(),'Nahansicht · ' + planet);
+        const plotBounds = await mainPlot.boundingBox();
+        assert.ok((await inset.boundingBox()).y >= plotBounds.y + plotBounds.height);
+        if (planet === 'Saturn') assert.ok(await inset.locator('.mission-saturn-ring').first().isVisible());
+        await mainPlot.press('Escape');
+        await page.waitForFunction(() => !document.documentElement.classList.contains('mission-3d-open'));
+        await detail.locator('.mission-3d-launch').press('Enter');
+        await dialog.locator('[data-kind][data-body="planet"]').waitFor();
+        assert.match(await dialog.locator('h2').textContent(),new RegExp(planet));
+        await mainPlot.press('Escape');
+        await page.waitForFunction(() => !document.documentElement.classList.contains('mission-3d-open'));
+      }
+      await mission.getByRole('button',{name:lastEvent,exact:true}).press('Enter');
+      assert.equal(await mission.getByRole('button',{name:'Interstellarer Weiterflug',exact:true}).getAttribute('aria-pressed'),'true');
+      await mission.getByRole('slider').press('End');
+      assert.match(await mission.locator('.mission-time-readout').textContent(),/Vorausberechnete Bahn/);
+    }
     assert.deepEqual(errors,[]);
   } finally {
     await page.close();
@@ -1959,6 +2040,8 @@ async function main(){
       console.log(engine + ': space missions passed');
       await checkMission3D(browser,url);
       console.log(engine + ': space-mission 3D controls passed');
+      await checkPioneerMissions(browser,url);
+      console.log(engine + ': Pioneer missions, flybys and plaque passed');
       await checkMobileCardLinks(browser, url);
       console.log(engine + ': mobile card links passed');
       await checkExternalContentConsent(browser, url);

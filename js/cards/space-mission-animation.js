@@ -99,19 +99,23 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
    * @param {number} timestamp UTC milliseconds.
    * @param {string|null} trackingThrough Last tracking-based date.
    * @param {string} [reconstructedBefore] First date in the tracking-based section.
+   * @param {string} [forecastAfter] Explicit historical cutoff when tracking provenance is unavailable.
    * @returns {string} Translation key for the trajectory provenance.
    */
-  function dataStatus(timestamp, trackingThrough, reconstructedBefore) {
+  function dataStatus(timestamp, trackingThrough, reconstructedBefore, forecastAfter = trackingThrough) {
+    if (!Number.isFinite(timestamp)) {
+      return 'vectorData';
+    }
+    if (timestamp >= Date.parse(forecastAfter) + DAY_MS) {
+      return 'predicted';
+    }
     if (timestamp < Date.parse(reconstructedBefore)) {
       return 'reconstructed';
     }
-    if (!trackingThrough || !Number.isFinite(timestamp)) {
+    if (!trackingThrough) {
       return 'vectorData';
     }
-    if (timestamp < Date.parse(trackingThrough) + DAY_MS) {
-      return 'trackingBased';
-    }
-    return 'predicted';
+    return 'trackingBased';
   }
 
   /** Finds the face-on axes using the mean angular-momentum direction of the orbit.
@@ -215,6 +219,7 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
     let orbitPlane;
     let originY;
     let bodies = [];
+    let planetLabels = [];
     let probe;
     let secondaryProbe;
     let centerMarker;
@@ -403,18 +408,30 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
         drawElapsedRoute(selected);
         let depthMarkers;
         if (view.oblique) {
-          depthMarkers = [{node:centerMarker,depth:0},{node:probe,depth:obliqueDepth(position.x,position.z)}];
+          const [x,y] = probePosition;
+          depthMarkers = [
+            {node:centerMarker,x:300,y:originY,radius:5,depth:0},
+            {node:probe,x,y,radius:2.75,depth:obliqueDepth(position.x,position.z)}
+          ];
         }
         for (const {key, node} of bodies) {
           const body = getHeliocentricPosition(key, date);
           if (depthMarkers) {
-            move(node,body.x,body.y,body.z);
-            depthMarkers.push({node,depth:obliqueDepth(body.x,body.z)});
+            const [x,y] = move(node,body.x,body.y,body.z);
+            let radius = 4;
+            if (key === 'saturn') radius = 8;
+            depthMarkers.push({node,x,y,radius,depth:obliqueDepth(body.x,body.z)});
           } else {
             move(node,body.x,body.y);
           }
         }
-        if (depthMarkers) orderObliqueMarkers(depthMarkers);
+        if (depthMarkers) {
+          if (bodies.length) {
+            planetLabels = [...depthMarkers];
+            window.PLANETENUHR_SOLAR_LABELS.layoutSvg(plot,planetLabels);
+          }
+          orderObliqueMarkers(depthMarkers);
+        }
         if (targetMarker) {
           const target = positionAt(view.targetData.rows, date);
           targetMarker.style.display = target ? '' : 'none';
@@ -444,8 +461,8 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
         if ((view.oblique || view.planets) && !encounterVisible) {
           formatter = dateFormatter;
         }
-        caption = formatter.format(date) + ' · ' +
-          text(dataStatus(selected,view.data.trackingThrough,view.data.reconstructedBefore));
+        const {trackingThrough,reconstructedBefore,forecastAfter} = view.data;
+        caption = formatter.format(date) + ' · ' + text(dataStatus(selected,trackingThrough,reconstructedBefore,forecastAfter));
       }
       output.textContent = caption;
       if (!distance.hidden) {
@@ -526,10 +543,9 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
       });
       for (const {key, node, legend} of bodies) {
         const name = translations['planet_' + key];
+        node.querySelector('text').textContent = name;
         if (legend) {
           legend.textContent = name;
-        } else {
-          node.querySelector('text').textContent = name;
         }
       }
       referenceBodies.querySelector('.mission-center text').textContent =
@@ -547,12 +563,12 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
           (index === 0 ? 'M' : 'L') + project(x, y, z).map(value => value.toFixed(2)).join(' '))};
       }
 
-      const {rows, trackingThrough} = view.data;
-      const cutoff = Date.parse(trackingThrough) + DAY_MS;
+      const {rows,trackingThrough,forecastAfter = trackingThrough} = view.data;
+      const cutoff = Date.parse(forecastAfter) + DAY_MS;
       routeTracks = [];
-      if (trackingThrough && cutoff <= rows[0][0]) {
+      if (cutoff <= rows[0][0]) {
         routeTracks.push(track(rows, true));
-      } else if (trackingThrough && cutoff <= rows.at(-1)[0]) {
+      } else if (cutoff <= rows.at(-1)[0]) {
         const firstPrediction = rows.findIndex(row => row[0] >= cutoff);
         const boundary = positionAt(rows, new Date(cutoff));
         const boundaryRow = [cutoff, boundary.x, boundary.y, boundary.z];
@@ -602,6 +618,7 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
       spacecraft.replaceChildren();
       planetLegend.replaceChildren();
       bodies = [];
+      planetLabels = [];
       spatialOrbits = [];
       secondaryProbe = null;
       targetMarker = null;
@@ -926,6 +943,7 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
       const scene = {key:view,axes,timestamp,tracks,orbits:spatialOrbits,objects,
         scale:scale * 640 / plot.viewBox.baseVal.width};
       if (view.planets || view.oblique) scene.planeRadius = 145 / scale;
+      if (view.oblique && bodies.length) scene.labelPlanets = true;
       if (view.oblique) scene.guide = point;
       if (photo && !photo.hidden) scene.photo = photo;
       scene.flyby = flyby?.getDetail();
@@ -941,7 +959,11 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
     }
     language = getLanguage();
     select(views[0]);
-    const resizeLabels = () => fitPlotLabels(plot);
+    /** Updates SVG text size and placement after the plot changes width. @returns {void} */
+    function resizeLabels() {
+      fitPlotLabels(plot);
+      if (planetLabels.length) window.PLANETENUHR_SOLAR_LABELS.layoutSvg(plot,planetLabels);
+    }
     if ('ResizeObserver' in window) {
       new ResizeObserver(resizeLabels).observe(plot);
     } else {

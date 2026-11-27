@@ -181,7 +181,7 @@ window.PLANETENUHR_SPACE_MISSIONS = (() => {
         pause() {
           outerEntries.forEach(({animation}) => animation.pause());
         },
-        /** Updates both nested panels. @param {Date} date Dashboard date.
+        /** Updates the outer-system panels. @param {Date} date Dashboard date.
          * @param {boolean} resetLocal Whether to reset the local date. @returns {void}
          */
         render(date,resetLocal) {

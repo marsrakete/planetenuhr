@@ -319,6 +319,18 @@ window.PLANETENUHR_HELP = (() => {
           node.appendChild(paragraph);
         });
       }
+      if (entry.figure) {
+        const {title,src,width,height,alt,caption} = entry.figure;
+        const node = section(title);
+        const figure = cloneHelpNode('cardHelpFigureTemplate');
+        const image = figure.querySelector('img');
+        image.width = width;
+        image.height = height;
+        image.alt = alt;
+        image.src = src;
+        figure.querySelector('figcaption').textContent = caption;
+        node.appendChild(figure);
+      }
       if (entry.formulas && entry.formulas.length) {
         const node = section(sections.formulas || 'Formulas used');
         const formulas = cloneHelpNode('cardHelpFormulasTemplate');

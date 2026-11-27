@@ -3939,6 +3939,19 @@
     .card-help-section + .card-help-section{
       margin-top:12px;
     }
+    .card-help-figure {
+      margin:0;
+    }
+    .card-help-figure img {
+      display:block;
+      width:min(100%, 420px);
+      height:auto;
+      border-radius:6px;
+    }
+    .card-help-figure figcaption {
+      margin-top:6px;
+      font-size:var(--font-note);
+    }
     .card-help-section h4{
       margin:0 0 8px;
       font-size:var(--font-subheading);

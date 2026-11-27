@@ -1893,13 +1893,23 @@ const spaceMissionHelpSources = [
   { label: "ESA · BepiColombo", url: "https://www.esa.int/bepicolombo" },
   { label: "NASA / Johns Hopkins APL · Dragonfly", url: "https://science.nasa.gov/mission/dragonfly/multimedia/" },
   { label: "NASA · Voyager", url: "https://science.nasa.gov/mission/voyager/planetary-voyage/" },
-  { label: "NASA/JPL · Voyager 2 / Triton", url: "https://www.jpl.nasa.gov/news/nasa-contacts-voyager-2-using-upgraded-deep-space-network-dish/" }
+  { label: "NASA/JPL · Voyager 2 / Triton", url: "https://www.jpl.nasa.gov/news/nasa-contacts-voyager-2-using-upgraded-deep-space-network-dish/" },
+  { label: "NASA · Pioneer 10", url: "https://science.nasa.gov/mission/pioneer-10/" },
+  { label: "NASA · Pioneer 11", url: "https://science.nasa.gov/mission/pioneer-11/" },
+  { label: "NASA Ames · Pioneer", url: "https://science.nasa.gov/resource/pioneer-plaque/" }
 ];
+const pioneerPlaque = {src:"assets/images/pioneer-plaque.jpg", width:960, height:760};
 window.PLANETENUHR_CARD_HELP.de.cards.idefix = {
   "intro": [
-    "Die Kachel zeigt IDEFIX / MMX, BepiColombo, Hera, Europa Clipper, Juice, Psyche und Dragonfly. Im Reiter „Äußeres Sonnensystem“ stehen Voyager 1 und 2 zur Auswahl. Jede Mission hat einen eigenen Regler mit Wiedergabe und anklickbaren Meilensteinen.",
+    "Die Kachel zeigt IDEFIX / MMX, BepiColombo, Hera, Europa Clipper, Juice, Psyche und Dragonfly. Im Reiter „Äußeres Sonnensystem“ stehen Voyager 1 und 2 sowie Pioneer 10 und 11 zur Auswahl. Jede Mission hat einen eigenen Regler mit Wiedergabe und anklickbaren Meilensteinen.",
     "Ein Wechsel des globalen Datums und der globale Button „Heute“ setzen die datierten Ansichten auf die Dashboard-Zeit. Fehlen für dieses Datum Bahndaten, zeigt die Ansicht einen Hinweis. Dragonfly behält die gewählte Phase der geplanten Titan-Landung."
   ],
+  "figure": {
+    ...pioneerPlaque,
+    title:"Die Pioneer-Plakette",
+    alt:"Gravur mit Wasserstoffsymbol, Pulsarkarte, Sonnensystem und zwei Menschen vor dem Umriss der Sonde.",
+    caption:"Beide Pioneer-Sonden tragen dieselbe Botschaft. Die Wasserstofflinie liefert die Maßeinheit, 14 Pulsare markieren die Herkunft der Sonden und die Skizze des Sonnensystems zeigt ihren Start von der Erde. Bild: NASA Ames."
+  },
   "formulas": [
     {
       "expr": "r(t) = (1 − u) r₀ + u r₁",
@@ -1936,6 +1946,7 @@ window.PLANETENUHR_CARD_HELP.de.cards.idefix = {
     "Dragonfly zeigt den geplanten Landeablauf schematisch. Die Reglerstufen bezeichnen Phasen ohne Zeit- oder Entfernungsmaßstab.",
     "Die Voyager-Reiseansichten zeigen die Ekliptik schräg. Die türkise Linie verbindet die Sonde mit ihrem Lotpunkt in der Ebene. Die Angabe in AE gibt den Abstand oberhalb oder unterhalb der Ebene an. Frühe Bahndaten einschließlich der Vorbeiflüge sind näherungsweise rekonstruiert. Spätere Vorausberechnungen sind gestrichelt.",
     "Bei einer Planetenannäherung erscheint eine Nahansicht. Sie folgt demselben Zeitregler wie die Reiseübersicht. Beim Abspielen läuft die Zeit im Vorbeiflug langsamer. Die Meilensteine führen direkt zur größten Annäherung.",
+    "Pioneer 10 flog als erste Raumsonde an Jupiter vorbei. Pioneer 11 überflog Jupiters Polarregion und nutzte seine Schwerkraft auf dem Weg zu Saturn. Die historischen JPL-Bahnen und die schematischen Saturnringe dienen der Orientierung. Die Bahn nach dem letzten Signal oder den letzten technischen Daten ist eine Vorausberechnung.",
     "Der 3D-Knopf öffnet Bahnen mit räumlichen Daten in einer Großansicht. Dort lassen sich Blickrichtung, Zoom und Ausschnitt ändern. Das × schließt die Ansicht und übernimmt den zuletzt gewählten Zeitpunkt.",
     "Warum verließen die Voyager-Sonden die Ekliptik, also die Ebene der Erdbahn? Voyager 1 sollte Titan aus der Nähe und Saturns Ringe untersuchen. Saturns Schwerkraft lenkte die Sonde auf dieser Route nach Norden ab. Voyager 2 flog über Neptuns Nordpol, um anschließend nahe an Triton vorbeizukommen. Neptuns Schwerkraft lenkte sie dabei nach Süden ab."
   ],
@@ -1965,9 +1976,15 @@ window.PLANETENUHR_CARD_HELP.de.cards.idefix = {
 };
 window.PLANETENUHR_CARD_HELP.en.cards.idefix = {
   "intro": [
-    "The card covers IDEFIX / MMX, BepiColombo, Hera, Europa Clipper, Juice, Psyche and Dragonfly. Select Voyager 1 or 2 in the Outer Solar System tab. Each mission has its own slider, playback and milestone buttons.",
+    "The card covers IDEFIX / MMX, BepiColombo, Hera, Europa Clipper, Juice, Psyche and Dragonfly. Select Voyager 1 or 2 or Pioneer 10 or 11 in the Outer Solar System tab. Each mission has its own slider, playback and milestone buttons.",
     "Enlarged sketch: Phobos orbits Mars in about 7 h 39 min. Orientation and sizes are schematic."
   ],
+  "figure": {
+    ...pioneerPlaque,
+    title:"The Pioneer plaque",
+    alt:"Engraving showing a hydrogen symbol, a pulsar map, the solar system and two people in front of the spacecraft outline.",
+    caption:"Both Pioneer spacecraft carry the same message. The hydrogen line sets the unit of measurement, 14 pulsars indicate the probes’ origin and the solar system sketch shows their departure from Earth. Image: NASA Ames."
+  },
   "formulas": [
     {
       "expr": "r(t) = (1 − u) r₀ + u r₁",
@@ -2004,6 +2021,7 @@ window.PLANETENUHR_CARD_HELP.en.cards.idefix = {
     "The Mercury view looks down on MPO’s mean orbital plane and shows Mio’s separate ESA SPICE prediction from the planned separation. Other close-ups use target-centered vectors. Dragonfly’s planned landing uses schematic stages without a time or distance scale.",
     "The Voyager views show the ecliptic at an angle. The teal line connects the spacecraft to its perpendicular projection on the plane. The value in AU gives its distance above or below the plane. Early trajectory data, including the flybys, are approximate reconstructions. The later predictions are dashed.",
     "A close-up appears during each planetary encounter and follows the same slider as the journey overview. Playback slows during the flyby. Milestone buttons jump to closest approach.",
+    "Pioneer 10 was the first spacecraft to fly past Jupiter. Pioneer 11 passed over Jupiter’s polar region and used its gravity to reach Saturn. The historic JPL trajectories and schematic Saturn rings illustrate the encounters. The route after the final signal or engineering data is a prediction.",
     "The 3D button opens trajectories with spatial data in an enlarged view. You can rotate, zoom and pan. Close with × to return to the card at the selected time.",
     "Why did the Voyagers leave the ecliptic, the plane of Earth’s orbit? Voyager 1’s route was chosen to study Titan up close and observe Saturn’s rings. Saturn’s gravity sent the spacecraft northward. Voyager 2 passed over Neptune’s north pole to fly close to Triton afterward. Neptune’s gravity deflected it southward."
   ],
@@ -2033,9 +2051,15 @@ window.PLANETENUHR_CARD_HELP.en.cards.idefix = {
 };
 window.PLANETENUHR_CARD_HELP.fr.cards.idefix = {
   "intro": [
-    "La carte présente IDEFIX / MMX, BepiColombo, Hera, Europa Clipper, Juice, Psyche et Dragonfly. L’onglet « Système solaire externe » permet de choisir Voyager 1 ou 2. Chaque mission dispose d’un curseur, d’une commande de lecture et de boutons d’étape.",
+    "La carte présente IDEFIX / MMX, BepiColombo, Hera, Europa Clipper, Juice, Psyche et Dragonfly. L’onglet « Système solaire externe » permet de choisir Voyager 1 ou 2 ou Pioneer 10 ou 11. Chaque mission dispose d’un curseur, d’une commande de lecture et de boutons d’étape.",
     "Schéma agrandi : Phobos fait le tour de Mars en environ 7 h 39 min. Orientation et tailles schématiques."
   ],
+  "figure": {
+    ...pioneerPlaque,
+    title:"La plaque Pioneer",
+    alt:"Gravure montrant un symbole de l’hydrogène, une carte de pulsars, le Système solaire et deux personnes devant la silhouette de la sonde.",
+    caption:"Les deux sondes Pioneer portent le même message. La raie de l’hydrogène fournit l’unité de mesure, 14 pulsars indiquent leur origine et le schéma du Système solaire montre leur départ de la Terre. Image : NASA Ames."
+  },
   "formulas": [
     {
       "expr": "r(t) = (1 − u) r₀ + u r₁",
@@ -2072,6 +2096,7 @@ window.PLANETENUHR_CARD_HELP.fr.cards.idefix = {
     "La vue de Mercure est perpendiculaire au plan orbital moyen de MPO. Elle ajoute la prévision ESA SPICE de Mio à partir de la séparation prévue. Les autres vues rapprochées utilisent des vecteurs centrés sur la cible. L’atterrissage prévu de Dragonfly est un schéma par étapes sans échelle de temps ni de distance.",
     "Les vues Voyager montrent l’écliptique en oblique. La ligne turquoise relie la sonde à sa projection perpendiculaire sur le plan. La valeur en UA indique la distance au-dessus ou au-dessous du plan. Les premières trajectoires, dont les survols, sont des reconstitutions approximatives. Les prévisions ultérieures sont en pointillés.",
     "Une vue rapprochée apparaît lors de chaque rencontre planétaire. Elle suit le même curseur que la vue d’ensemble. La lecture ralentit pendant le survol. Les boutons d’étape mènent au point d’approche minimale.",
+    "Pioneer 10 a été la première sonde à survoler Jupiter. Pioneer 11 est passée au-dessus de la région polaire de Jupiter et a utilisé sa gravité pour atteindre Saturne. Les trajectoires historiques du JPL et les anneaux schématiques de Saturne illustrent ces survols. La trajectoire après le dernier signal ou les dernières données techniques est une prévision.",
     "Le bouton 3D agrandit les trajectoires disposant de données spatiales. Vous pouvez tourner, zoomer et déplacer la vue. Le bouton × ramène à la carte en conservant la date choisie.",
     "Pourquoi les sondes Voyager ont-elles quitté l’écliptique, le plan de l’orbite terrestre ? La trajectoire de Voyager 1 permettait d’étudier Titan de près et d’observer les anneaux de Saturne. La gravité de Saturne a dévié la sonde vers le nord. Voyager 2 a survolé le pôle nord de Neptune afin de passer ensuite près de Triton. La gravité de Neptune l’a déviée vers le sud."
   ],
