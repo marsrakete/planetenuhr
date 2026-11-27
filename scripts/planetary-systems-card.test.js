@@ -20,7 +20,7 @@ function createFixture(){
     appendChild(fragment){this.children.push(...fragment.children);}
   };
   const systemTemplate = {content:{cloneNode(){
-    const planet = {dataset:{},classList:{values:[],add(value){this.values.push(value);}}};
+    const planet = {};
     const planetName = {dataset:{},textContent:''};
     const system = {
       children:[planet,planetName],
@@ -59,9 +59,18 @@ test('four planetary systems preserve their configured moons, orbit sizes and pe
   assert.deepEqual(Array.from(systems, item => item.planet), ['mars','saturn','uranus','neptune']);
   assert.equal(systems.reduce((total,item) => total + item.moons.length,0),24);
   const fixture = createFixture();
-  const controller = realm.window.PLANETENUHR_PLANETARY_SYSTEMS_CARD.create({document:fixture.document,systems});
+  const controller = realm.window.PLANETENUHR_PLANETARY_SYSTEMS_CARD.create({
+    document:fixture.document, systems,
+    artwork:{
+      /** @param {object} host Test artwork host. @param {string} key Planet key. @param {number} radius Disc radius. @returns {void} */
+      mountScaled(host,key,radius){Object.assign(host,{key,radius});}
+    }
+  });
   controller.render();
   assert.equal(fixture.target.children.length,4);
+  assert.deepEqual(fixture.target.children.map(system => system.children[0]), [
+    {key:'mars',radius:13},{key:'saturn',radius:13},{key:'uranus',radius:13},{key:'neptune',radius:13}
+  ]);
   const mars = fixture.target.children[0];
   assert.equal(mars.children.filter(node => node.style).length,2);
   assert.equal(mars.children[1].style.values['--planet-orbit-size'],'70px');

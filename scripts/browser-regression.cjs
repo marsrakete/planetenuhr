@@ -1345,13 +1345,13 @@ async function checkSpaceMissions(browser, url){
     const jupiterSlider = voyager1.locator('.mission-time');
     const jupiterMinute = Number(await jupiterSlider.inputValue());
     const flybyProbe = jupiterDetail.locator('.mission-probe');
-    const flybyPlot = jupiterDetail.locator('svg');
+    const flybyPlot = jupiterDetail.locator('.mission-flyby-plot');
     const closest = await flybyProbe.getAttribute('transform');
     const closestWidth = await flybyPlot.evaluate(plot => plot.viewBox.baseVal.width);
     await jupiterSlider.fill(String(jupiterMinute - 1440));
     assert.notEqual(await flybyProbe.getAttribute('transform'),closest);
     assert.ok(await flybyPlot.evaluate(plot => plot.viewBox.baseVal.width) > closestWidth);
-    assert.match(await jupiterDetail.locator('.mission-flyby-distance').textContent(),/km vom Planetenzentrum/);
+    assert.match(await jupiterDetail.locator('.mission-flyby-distance').textContent(),/km vom Zentrum/);
     assert.equal(await jupiterDetail.getByRole('link').count(),1);
     await jupiterSlider.fill(String(jupiterMinute + 10080));
     assert.ok(!(await jupiterDetail.isVisible()));
@@ -1399,14 +1399,14 @@ async function checkSpaceMissions(browser, url){
       }
       assert.equal(earthOrders.size,2,'Earth passes both in front of and behind the Sun');
       assert.equal(jupiterOrders.size,2,'Voyager passes both in front of and behind Jupiter');
-      const probe = panel.locator('.mission-journey-main .mission-probe circle');
-      const planet = panel.locator('.mission-journey-main [data-planet="jupiter"] circle');
-      assert.ok(Number(await probe.getAttribute('r')) < Number(await planet.getAttribute('r')));
+      const probe = panel.locator('.mission-journey-main .mission-probe .spacecraft-artwork');
+      const planet = panel.locator('.mission-journey-main .mission-planet[data-planet="jupiter"] [data-body-disc]');
+      assert.ok((await probe.boundingBox()).width < (await planet.boundingBox()).width);
     }
 
     await voyager1.getByRole('button',{name:'Planetenreise',exact:true}).press('Enter');
     await checkDepthOrder(voyager1,'voyager1');
-    assert.ok(await voyager1.locator('.mission-planet[data-planet="saturn"] .mission-saturn-ring').first().isVisible());
+    assert.ok(await voyager1.locator('.mission-planet[data-planet="saturn"] .body-ring').first().isVisible());
     await voyager1.getByRole('button',{name:'Vorbeiflüge an Saturn und Titan',exact:true}).press('Enter');
     assert.equal(await jupiterDetail.locator('h4').textContent(),'Nahansicht · Saturn');
     await voyager1.getByRole('button',{name:'Aufnahme „Pale Blue Dot“',exact:true}).press('Enter');
@@ -1457,7 +1457,7 @@ async function checkSpaceMissions(browser, url){
     await checkDepthOrder(voyager2,'voyager2');
     await voyager2.getByRole('button',{name:'Saturnvorbeiflug',exact:true}).press('Enter');
     assert.equal(await voyageDetail.locator('h4').textContent(),'Nahansicht · Saturn');
-    assert.ok(await voyageDetail.locator('.mission-center .mission-saturn-ring').first().isVisible());
+    assert.ok(await voyageDetail.locator('.mission-center .body-ring').first().isVisible());
     await page.setViewportSize({width:320,height:812});
     await page.waitForFunction(() => {
       const panel = document.getElementById('space-mission-voyager2');
@@ -1510,9 +1510,16 @@ async function checkMission3D(browser,origin) {
     const close = dialog.getByRole('button',{name:'3D-Ansicht schließen',exact:true});
     const reset = dialog.getByRole('button',{name:'Standardansicht',exact:true});
     const mmx = page.locator('#spaceMissionIdefix .mission-3d-launch');
+    const mmxArtwork = await page.locator('#spaceMissionIdefix [data-mission-title-artwork] use').getAttribute('href');
+    assert.match(mmxArtwork,/assets\/images\/spacecraft\.svg\?v=[^#]+#mmx$/);
+    assert.equal(await page.locator('#idefixProbe use').getAttribute('href'),mmxArtwork);
+    const phobosMars = page.locator('#idefixPhobosMars [data-body-disc]');
+    assert.equal(await phobosMars.evaluate(disc => getComputedStyle(disc).fill),'rgb(215, 129, 97)');
     await mmx.press('Enter');
     await dialog.locator('#idefixTime').waitFor();
     await page.waitForFunction(() => document.querySelector('#spaceMission3DDialog .mission-3d-plane').getTotalLength() > 0);
+    assert.equal(await dialog.locator('[data-mission-title-artwork] use').getAttribute('href'),mmxArtwork);
+    assert.equal(await plot.locator('[data-kind="probe"] use').getAttribute('href'),mmxArtwork);
     const milestoneList = dialog.locator('.mission-3d-milestones');
     await milestoneList.locator('summary').press('Enter');
     const mmxTime = dialog.locator('#idefixTime');
@@ -1523,7 +1530,15 @@ async function checkMission3D(browser,origin) {
     await page.waitForFunction(() => !document.querySelector('html').classList.contains('mission-3d-open'));
     assert.equal(await page.locator('#spaceMissionIdefix #idefixJumps').count(),1);
     await page.getByRole('tab',{name:'Dragonfly',exact:true}).press('Enter');
-    assert.equal(await page.locator('#space-mission-dragonfly .mission-3d-launch').count(),0);
+    const dragonfly = page.locator('#space-mission-dragonfly');
+    const dragonflyArt = await dragonfly.locator('[data-mission-title-artwork] use').getAttribute('href');
+    assert.equal(await dragonfly.locator('.mission-lander use').getAttribute('href'),dragonflyArt);
+    await dragonfly.locator('.mission-3d-launch').press('Enter');
+    assert.equal(await plot.locator('[data-kind="probe"] use').getAttribute('href'),dragonflyArt);
+    await dialog.getByRole('slider').press('End');
+    await dialog.locator('.mission-3d-status').filter({hasText:/Aufsetzen.*Schematische Darstellung/}).waitFor();
+    await plot.press('Escape');
+    await page.waitForFunction(() => !document.documentElement.classList.contains('mission-3d-open'));
 
     await page.getByRole('tab',{name:'Äußeres Sonnensystem',exact:true}).press('Enter');
     const voyager = page.locator('#space-mission-voyager1');
@@ -1555,6 +1570,7 @@ async function checkMission3D(browser,origin) {
     await launch.press('Enter');
     const modalSlider = dialog.locator('#mission-time-voyager1');
     await modalSlider.waitFor();
+    await plot.locator('g[data-body="center"][data-kind="sun"]').waitFor();
     await page.waitForFunction(() => document.querySelector('#spaceMission3DDialog .mission-route-overview').getTotalLength() > 0);
     const standard = await route.getAttribute('d');
     await plot.press('ArrowRight');
@@ -1658,7 +1674,7 @@ async function checkMission3D(browser,origin) {
     await voyager2.locator('.mission-flyby .mission-3d-launch').press('Enter');
     assert.match(await dialog.getByRole('heading').textContent(),/Neptun/);
     await dialog.locator('#mission-time-voyager2').fill('0');
-    await page.waitForFunction(() => document.querySelector('#spaceMission3DTitle').textContent === 'Voyager 2');
+    await page.waitForFunction(() => document.querySelector('#spaceMission3DTitle [data-mission-title-text]').textContent === 'Voyager 2');
     const closeBox = await close.boundingBox();
     assert.ok(closeBox.width >= 44 && closeBox.height >= 44);
     await activateMobileControl(browser,close);
@@ -1684,11 +1700,12 @@ async function checkPioneerMissions(browser,origin) {
     const card = page.locator('[data-help-key="idefix"]');
     const helpButton = card.locator('.card-help-button');
     await helpButton.press('Enter');
-    const plaque = card.locator('.card-help-figure img');
-    await plaque.scrollIntoViewIfNeeded();
+    const plaqueFigure = card.locator('.card-help-figure').filter({has:page.locator('img[src="assets/images/pioneer-plaque.jpg"]')});
+    const plaque = plaqueFigure.locator('img');
+    await plaque.evaluate(image => image.scrollIntoView({block:'nearest',behavior:'instant'}));
     assert.equal(await plaque.getAttribute('src'),'assets/images/pioneer-plaque.jpg');
-    await page.waitForFunction(() => document.querySelector('.card-help-figure img').naturalWidth > 0);
-    assert.match(await card.locator('.card-help-figure figcaption').textContent(),/14 Pulsare.*NASA Ames/);
+    await page.waitForFunction(() => document.querySelector('img[src="assets/images/pioneer-plaque.jpg"]').naturalWidth > 0);
+    assert.match(await plaqueFigure.locator('figcaption').textContent(),/14 Pulsare.*NASA Ames/);
     await helpButton.press('Escape');
     await card.getByRole('tab',{name:'Äußeres Sonnensystem',exact:true}).press('Enter');
     const dialog = page.locator('#spaceMission3DDialog');
@@ -1701,39 +1718,60 @@ async function checkPioneerMissions(browser,origin) {
     ]) {
       await card.getByRole('tab',{name,exact:true}).press('Enter');
       const mission = card.locator('#space-mission-' + id);
+      const spacecraft = await mission.locator('[data-mission-title-artwork] use').getAttribute('href');
+      assert.match(spacecraft,/#pioneer$/);
       if (id === 'pioneer10') {
         await mission.getByRole('button',{name:'Start',exact:true}).press('Enter');
         const mars = mission.locator('.mission-planet[data-planet="mars"]');
         assert.equal(await mars.locator('text').textContent(),'Mars');
-        assert.equal(await mars.locator('circle').evaluate(dot => getComputedStyle(dot).fill),'rgb(240, 142, 112)');
+        const solarMars = page.locator('[data-solar-marker="mars"] [data-body-disc]');
+        const marsColor = await solarMars.evaluate(disc => getComputedStyle(disc).fill);
+        assert.equal(await mars.locator('[data-body-disc]').evaluate(disc => getComputedStyle(disc).fill),marsColor);
+        const continents = mission.locator('.mission-planet[data-planet="earth"] .earth-globe path').first();
+        assert.match(await continents.evaluate(path => getComputedStyle(path).fill),/#body-\d+-em-earth-land/);
+        const earth = mission.locator('.mission-planet[data-planet="earth"] .earth-globe');
+        assert.equal(await earth.locator('[data-earth-shadow]').evaluate(shadow => getComputedStyle(shadow).display),'none');
+        assert.match(await earth.locator('[data-body-disc]').evaluate(disc => getComputedStyle(disc).fill),/#body-\d+-em-earth-sea/);
+        const earthMoonShadow = page.locator('#earthMoonGlobe [data-earth-shadow]');
+        assert.notEqual(await earthMoonShadow.evaluate(shadow => getComputedStyle(shadow).display),'none');
         const labelBoxes = await mission.locator('.mission-reference-bodies text').evaluateAll(labels =>
           labels.map(label => label.getBoundingClientRect().toJSON()));
         assert.ok(labelBoxes.every((box,index) => labelBoxes.slice(0,index).every(other =>
           box.right <= other.left || box.left >= other.right || box.bottom <= other.top || box.top >= other.bottom)),
           'Closest markers have separate labels at the Pioneer 10 launch');
         await mission.locator('.mission-journey-main .mission-3d-launch').press('Enter');
-        const spatialMars = mainPlot.locator('[data-body="mars"]');
+        const spatialMars = mainPlot.locator('g[data-body="mars"]');
         await spatialMars.waitFor();
         assert.equal(await spatialMars.locator('text').textContent(),'Mars');
-        assert.equal(await spatialMars.locator('circle').evaluate(dot => getComputedStyle(dot).fill),'rgb(240, 142, 112)');
+        assert.equal(await spatialMars.locator('[data-body-disc]').evaluate(disc => getComputedStyle(disc).fill),marsColor);
+        const spatialEarth = mainPlot.locator('g[data-body="earth"] .earth-globe');
+        assert.equal(await spatialEarth.locator('[data-earth-shadow]').evaluate(shadow => getComputedStyle(shadow).display),'none');
+        assert.match(await spatialEarth.locator('path').first().evaluate(path => getComputedStyle(path).fill),/#body-\d+-em-earth-land/);
+        await checkMobileMissionDepthOrder(page,mainPlot,dialog.locator('.mission-time'));
         await mainPlot.press('Escape');
         await page.waitForFunction(() => !document.documentElement.classList.contains('mission-3d-open'));
       }
       for (const [event,planet,time] of events) {
         await mission.getByRole('button',{name:event,exact:true}).press('Enter');
         const detail = mission.locator('.mission-flyby');
+        const bodyKey = planet.toLowerCase();
         assert.equal(await detail.locator('h4').textContent(),'Nahansicht · ' + planet);
+        assert.equal(await detail.locator('.mission-probe use').getAttribute('href'),spacecraft);
+        await page.waitForFunction(id => document.querySelector('#space-mission-' + id + ' .mission-flyby use').getBBox().width > 0,id);
+        assert.ok(await detail.locator('svg.body-visual-scaled[data-body="' + bodyKey + '"]').isVisible());
         assert.match(await mission.locator('.mission-time-readout').textContent(),new RegExp(time));
         await mission.locator('.mission-journey-main .mission-3d-launch').press('Enter');
         await inset.waitFor({state:'visible'});
         assert.equal(await inset.locator('h4').textContent(),'Nahansicht · ' + planet);
+        assert.equal(await mainPlot.locator('[data-kind="probe"] use').getAttribute('href'),spacecraft);
         const plotBounds = await mainPlot.boundingBox();
         assert.ok((await inset.boundingBox()).y >= plotBounds.y + plotBounds.height);
-        if (planet === 'Saturn') assert.ok(await inset.locator('.mission-saturn-ring').first().isVisible());
+        if (planet === 'Saturn') assert.ok(await inset.locator('.body-ring').first().isVisible());
         await mainPlot.press('Escape');
         await page.waitForFunction(() => !document.documentElement.classList.contains('mission-3d-open'));
         await detail.locator('.mission-3d-launch').press('Enter');
         await dialog.locator('[data-kind][data-body="planet"]').waitFor();
+        assert.ok(await mainPlot.locator('svg.body-visual-scaled[data-body="' + bodyKey + '"]').isVisible());
         assert.match(await dialog.locator('h2').textContent(),new RegExp(planet));
         await mainPlot.press('Escape');
         await page.waitForFunction(() => !document.documentElement.classList.contains('mission-3d-open'));
@@ -1747,6 +1785,144 @@ async function checkPioneerMissions(browser,origin) {
   } finally {
     await page.close();
   }
+}
+
+/** Checks the New Horizons milestones, shared symbol, encounter graphics and licensed picture.
+ * @param {import('playwright').Browser} browser Browser engine.
+ * @param {string} origin Dashboard origin. @returns {Promise<void>} Browser check.
+ */
+async function checkNewHorizons(browser,origin) {
+  const page = await browser.newPage({viewport:{width:390,height:820},isMobile:true,hasTouch:true,reducedMotion:'reduce'});
+  const errors = [];
+  page.on('pageerror',error => errors.push(error.message));
+  await page.route('**/*',route => serveDashboard(route,origin));
+  try {
+    await page.goto(origin + '/?lang=de&card=idefix',{waitUntil:'domcontentloaded'});
+    const card = page.locator('[data-help-key="idefix"]');
+    const help = card.locator('.card-help-button');
+    await help.press('Enter');
+    const photo = card.locator('img[src="assets/images/arrokoth-iau.jpg"]');
+    await photo.evaluate(image => image.scrollIntoView({block:'nearest',behavior:'instant'}));
+    await page.waitForFunction(() => document.querySelector('img[src="assets/images/arrokoth-iau.jpg"]').naturalWidth === 1302);
+    const caption = card.locator('.card-help-figure').filter({has:page.locator('img[src="assets/images/arrokoth-iau.jpg"]')}).locator('figcaption');
+    assert.match(await caption.textContent(),/Roman Tkachenko/);
+    assert.equal(await caption.getByRole('link',{name:'CC BY 4.0'}).getAttribute('href'),'https://creativecommons.org/licenses/by/4.0/');
+    await help.press('Escape');
+    await card.getByRole('tab',{name:'Äußeres Sonnensystem',exact:true}).press('Enter');
+    await card.getByRole('tab',{name:'New Horizons',exact:true}).press('Enter');
+    const mission = card.locator('#space-mission-newhorizons');
+    const main = mission.locator('.mission-journey-main');
+    const symbol = await mission.locator('[data-mission-title-artwork] use').getAttribute('href');
+    assert.match(symbol,/#newhorizons$/);
+    assert.deepEqual(await mission.locator('.mission-event-jump').allTextContents(),
+      ['Start','Swing-by an Jupiter','Plutovorbeiflug','Arrokoth-Vorbeiflug']);
+    await mission.getByRole('button',{name:'Start',exact:true}).press('Enter');
+    assert.equal(await mission.getByRole('slider').inputValue(),'0');
+    assert.equal(await main.locator('.mission-probe use').getAttribute('href'),symbol);
+    const pluto = main.locator('g.mission-reference-target[data-planet="pluto"]');
+    await pluto.waitFor();
+    assert.equal(await pluto.locator('text').textContent(),'Pluto');
+    assert.ok(await pluto.locator('svg[data-body="pluto"]').isVisible());
+    assert.ok(await main.locator('.mission-target-orbit').evaluate(path => path.getTotalLength() > 200));
+    assert.equal(await main.locator('[data-planet="arrokoth"]').count(),0);
+    const startingPosition = await pluto.getAttribute('transform');
+    await mission.getByRole('button',{name:'Swing-by an Jupiter',exact:true}).press('Enter');
+    assert.match(await mission.locator('.mission-time-readout').textContent(),/28\.\s*(?:02\.|Feb\.)\s*2007/);
+    assert.notEqual(await pluto.getAttribute('transform'),startingPosition);
+    const detail = mission.locator('.mission-flyby');
+    await detail.waitFor({state:'hidden'});
+    const dialog = page.locator('#spaceMission3DDialog');
+    const plot = dialog.locator('.mission-3d-plot');
+    const orbit3D = plot.locator('.mission-target-orbit');
+    await main.locator('.mission-3d-launch').press('Enter');
+    const pluto3D = plot.locator('g[data-body="pluto"]');
+    await pluto3D.waitFor();
+    assert.equal(await pluto3D.locator('text').textContent(),'Pluto');
+    assert.ok(await pluto3D.locator('svg[data-body="pluto"]').isVisible());
+    assert.equal(await plot.locator('g[data-body="arrokoth"]').count(),0);
+    const orbitBeforeRotation = await orbit3D.getAttribute('d');
+    assert.ok(orbitBeforeRotation.startsWith('M'));
+    await plot.press('ArrowRight');
+    await page.waitForFunction(oldPath =>
+      document.querySelector('#spaceMission3DDialog .mission-target-orbit').getAttribute('d') !== oldPath,orbitBeforeRotation);
+    await plot.press('Escape');
+    await page.waitForFunction(() => !document.documentElement.classList.contains('mission-3d-open'));
+    for (const [event,target,key,time] of [
+      ['Plutovorbeiflug','Pluto','pluto','11:50'],['Arrokoth-Vorbeiflug','Arrokoth','arrokoth','05:33']
+    ]) {
+      await mission.getByRole('button',{name:event,exact:true}).press('Enter');
+      assert.equal(await detail.locator('h4').textContent(),'Nahansicht · ' + target);
+      assert.match(await mission.locator('.mission-time-readout').textContent(),new RegExp(time));
+      assert.equal(await detail.locator('.mission-probe use').getAttribute('href'),symbol);
+      const targetArtwork = detail.locator('svg.body-visual-scaled[data-body="' + key + '"]');
+      assert.ok(await targetArtwork.isVisible());
+      if (key === 'arrokoth') assert.ok((await targetArtwork.boundingBox()).width >= 24);
+      await main.locator('.mission-3d-launch').press('Enter');
+      await dialog.locator('.mission-3d-flyby .body-visual-scaled[data-body="' + key + '"]').waitFor();
+      assert.equal(await plot.locator('[data-kind="probe"] use').getAttribute('href'),symbol);
+      await plot.press('Escape');
+      await page.waitForFunction(() => !document.documentElement.classList.contains('mission-3d-open'));
+      await detail.locator('.mission-3d-launch').press('Enter');
+      await plot.locator('svg.body-visual-scaled[data-body="' + key + '"]').waitFor();
+      assert.equal(await plot.locator('[data-kind="probe"] use').getAttribute('href'),symbol);
+      if (key === 'arrokoth') assert.match(await dialog.locator('.mission-3d-status').textContent(),/vergrößert/);
+      await plot.press('Escape');
+      await page.waitForFunction(() => !document.documentElement.classList.contains('mission-3d-open'));
+    }
+    await mission.getByRole('button',{name:'Weiterflug',exact:true}).press('Enter');
+    await mission.getByRole('slider').press('End');
+    assert.match(await mission.locator('.mission-time-readout').textContent(),/2049.*Vorausberechnete Bahn/);
+    assert.ok(await pluto.isVisible());
+    assert.deepEqual(errors,[]);
+  } finally {
+    await page.close();
+  }
+}
+
+/** Verifies mobile 3D draw order on both sides of the Sun using independently selected conjunctions.
+ * @param {import('playwright').Page} page Dashboard page.
+ * @param {import('playwright').Locator} plot Active 3D trajectory.
+ * @param {import('playwright').Locator} slider Mission time control. @returns {Promise<void>} Drawing-order check.
+ */
+async function checkMobileMissionDepthOrder(page,plot,slider) {
+  const samples = await page.evaluate(() => {
+    const rows = window.PLANETENUHR_SPACE_MISSION_TRAJECTORIES.pioneer10.rows;
+    const inclination = 22 * Math.PI / 180;
+    const sin = Math.sin(inclination);
+    const cos = Math.cos(inclination);
+    const result = [];
+    for (const key of ['earth','mars']) {
+      const closest = new Map();
+      for (let day = 0; day < 730; day++) {
+        const minute = day * 1440;
+        const {x,y,z} = window.PLANETENUHR_PLANET_MODEL.heliocentricPosition(key,new Date(rows[0][0] + minute * 60000));
+        const distance = Math.hypot(y,x * sin + z * cos);
+        const front = -x * cos + z * sin > 0;
+        if (!closest.has(front) || distance < closest.get(front).distance) {
+          closest.set(front,{key,minute,front,distance});
+        }
+      }
+      result.push(...closest.values());
+    }
+    return result;
+  });
+  assert.equal(samples.length,4);
+  const earth = plot.locator('g[data-body="earth"] svg.body-visual-scaled');
+  const instance = await earth.elementHandle();
+  for (const {key,minute,front} of samples) {
+    const planet = plot.locator('g[data-body="' + key + '"]');
+    const before = await planet.getAttribute('transform');
+    await slider.fill(String(minute));
+    await page.waitForFunction(({key,before,front}) => {
+      const layer = document.querySelector('#spaceMission3DDialog .mission-3d-markers');
+      const body = layer.querySelector('g[data-body="' + key + '"]');
+      const sun = layer.querySelector('[data-kind="sun"]');
+      return body.getAttribute('transform') !== before
+        && Boolean(sun.compareDocumentPosition(body) & Node.DOCUMENT_POSITION_FOLLOWING) === front;
+    },{key,before,front});
+  }
+  assert.ok(await earth.evaluate((current,original) => current === original,instance));
+  await instance.dispose();
 }
 
 /** Checks the November 2026 full Moon in Köln using two browser time zones.
@@ -2020,6 +2196,125 @@ async function checkFictionalMissionAssetFailure(browser, origin){
   }
 }
 
+/** Verifies the shared moon-system planets and schematic exoplanets at phone width.
+ * @param {import('playwright').Browser} browser Browser engine.
+ * @param {string} origin Dashboard origin.
+ * @returns {Promise<void>} Resolves when all artwork checks pass.
+ */
+async function checkMoonSystemArtwork(browser, origin){
+  const page = await browser.newPage({viewport:{width:390,height:844},hasTouch:true});
+  const errors = [];
+  page.on('pageerror', error => errors.push(error.message));
+  await page.route('**/*', route => serveDashboard(route, origin));
+  try {
+    await page.goto(origin + '/?lang=de', {waitUntil:'domcontentloaded'});
+    await page.locator('#exoplanetComparison circle.exoplanet-planet').first().waitFor({state:'attached'});
+    const artwork = await page.locator('#planetSystems .body-visual, #jupiterSystem .body-visual').evaluateAll(planets =>
+      planets.map(planet => {
+        const key = planet.dataset.body;
+        const disc = planet.querySelector('[data-body-disc]');
+        const solarDisc = document.querySelector('#solarSystem [data-body="' + key + '"] [data-body-disc]');
+        const globe = disc.getBoundingClientRect();
+        const diagram = planet.closest('.planet-system, .jupiter-system').getBoundingClientRect();
+        return {
+          key, width:globe.width,
+          centered:Math.abs(globe.x + globe.width / 2 - diagram.x - diagram.width / 2) < .5
+            && Math.abs(globe.y + globe.height / 2 - diagram.y - diagram.height / 2) < .5,
+          matchingFill:getComputedStyle(disc).fill === getComputedStyle(solarDisc).fill
+        };
+      })
+    );
+    assert.equal(artwork.length,5);
+    assert.deepEqual(artwork.map(planet => planet.key).sort(), ['jupiter','mars','neptune','saturn','uranus']);
+    for (const planet of artwork) {
+      let width = 26;
+      if (planet.key === 'jupiter') width = 48;
+      assert.ok(Math.abs(planet.width - width) < .5, planet.key + ' keeps its globe diameter');
+      assert.ok(planet.centered, planet.key + ' stays centered in its moon orbits');
+      assert.ok(planet.matchingFill, planet.key + ' uses the same artwork as the Solar System');
+    }
+    assert.equal(await page.locator('#exoplanetComparison .body-visual').count(),0);
+    assert.deepEqual(errors,[]);
+  } finally {
+    await page.close();
+  }
+}
+
+/** Checks the shared planet artwork, lighting and plot layers on a phone-sized dashboard.
+ * @param {import('playwright').Browser} browser Browser engine.
+ * @param {string} origin Dashboard origin.
+ * @returns {Promise<void>} Resolves when the seasonal and phase diagrams pass.
+ */
+async function checkSharedGeometryArtwork(browser, origin){
+  const page = await browser.newPage({viewport:{width:390,height:844},hasTouch:true});
+  const errors = [];
+  page.on('pageerror', error => errors.push(error.message));
+  await page.route('**/*', route => serveDashboard(route, origin));
+  try {
+    for (const [date, expectedTilt] of [['20260621',-1],['20261221',1]]) {
+      await page.goto(origin + '/?lang=de&date=' + date + '&place=berlin', {waitUntil:'domcontentloaded'});
+      await page.locator('#innerPhasesPanel [data-phase-night]').last().waitFor({state:'attached'});
+      const result = await page.evaluate(() => {
+        const season = document.querySelector('#seasonMap > svg');
+        const seasonEarths = season.querySelectorAll('.body-visual[data-body="earth"]');
+        const satellite = document.querySelector('#satelliteMap > svg');
+        const lagrange = document.querySelector('#lagrangeMap > svg');
+        const lagrangeEarth = lagrange.querySelector('.body-visual[data-body="earth"]');
+        const [orbitalEarth, tiltedEarth] = seasonEarths;
+        const inset = season.querySelector('.season-axis');
+        const orbit = season.querySelector('.season-orbit');
+        const orbitalDisc = orbitalEarth.querySelector('[data-body-disc]');
+        const orbitalBounds = orbitalDisc.getBoundingClientRect();
+        const orbitBounds = orbit.getBoundingClientRect();
+        const orbitalTransform = orbitalEarth.querySelector('[data-earth-shadow]').getScreenCTM();
+        const orbitX = orbitalBounds.x + orbitalBounds.width / 2 - orbitBounds.x - orbitBounds.width / 2;
+        const orbitY = orbitalBounds.y + orbitalBounds.height / 2 - orbitBounds.y - orbitBounds.height / 2;
+        const tiltTransform = tiltedEarth.querySelector('[data-earth-shadow]').getScreenCTM();
+        const satelliteOrbits = satellite.querySelectorAll('ellipse');
+        const satelliteLabels = satellite.querySelectorAll('.spacecraft-label');
+        return {
+          seasonEarths:seasonEarths.length,
+          orbitNightAwayFromSun:orbitalTransform.a * orbitX + orbitalTransform.b * orbitY > 0,
+          insetNightToRight:tiltTransform.a > 0 && Math.abs(tiltTransform.b) < .001,
+          insetTilt:Math.sign(Number(inset.getAttribute('x2')) - 18),
+          insetClearOfOrbit:tiltedEarth.getBoundingClientRect().top > orbitBounds.bottom,
+          satelliteEarth:satellite.querySelectorAll('.body-visual[data-body="earth"]').length,
+          satelliteOrbits:satelliteOrbits.length,
+          satelliteLabels:satelliteLabels.length,
+          satelliteLabelsAboveOrbits:Boolean(satelliteOrbits[0].compareDocumentPosition(satelliteLabels[0]) & Node.DOCUMENT_POSITION_FOLLOWING),
+          satelliteShadowHidden:getComputedStyle(satellite.querySelector('[data-earth-shadow]')).display === 'none',
+          lagrangeEarth:Boolean(lagrangeEarth),
+          lagrangePoints:lagrange.querySelectorAll('.lagrange-point').length,
+          phasePlanets:Array.from(document.querySelectorAll('#innerPhasesPanel .body-visual'), node => node.dataset.body),
+          phaseErrors:Array.from(document.querySelectorAll('#innerPhasesPanel [data-phase-night]'), night => {
+            const shown = parseFloat(night.closest('.planet-phase-card').querySelector('[data-phase-illum-value]').textContent);
+            let nightSamples = 0;
+            for (let x = 10.25; x < 86; x += .5) {
+              if (night.isPointInFill(new DOMPoint(x, 48))) nightSamples++;
+            }
+            return Math.abs(shown - (1 - nightSamples / 152) * 100);
+          })
+        };
+      });
+      assert.equal(result.seasonEarths,2);
+      assert.ok(result.orbitNightAwayFromSun && result.insetNightToRight && result.insetClearOfOrbit);
+      assert.equal(result.insetTilt,expectedTilt);
+      assert.equal(result.satelliteEarth,1);
+      assert.ok(result.satelliteOrbits > 0);
+      assert.equal(result.satelliteLabels,result.satelliteOrbits);
+      assert.ok(result.satelliteLabelsAboveOrbits && result.satelliteShadowHidden);
+      assert.ok(result.lagrangeEarth);
+      assert.equal(result.lagrangePoints,5);
+      assert.deepEqual(result.phasePlanets,['mercury','venus']);
+      assert.equal(result.phaseErrors.length,2);
+      assert.ok(result.phaseErrors.every(error => error < 1));
+    }
+    assert.deepEqual(errors,[]);
+  } finally {
+    await page.close();
+  }
+}
+
 async function main(){
   const url = 'http://planetenuhr.test';
   const engines = (process.env.PLANETENUHR_TEST_BROWSERS || 'chromium').split(',');
@@ -2042,6 +2337,12 @@ async function main(){
       console.log(engine + ': space-mission 3D controls passed');
       await checkPioneerMissions(browser,url);
       console.log(engine + ': Pioneer missions, flybys and plaque passed');
+      await checkNewHorizons(browser,url);
+      console.log(engine + ': New Horizons, local image and 3D flybys passed');
+      await checkMoonSystemArtwork(browser,url);
+      console.log(engine + ': shared moon-system planet graphics passed');
+      await checkSharedGeometryArtwork(browser,url);
+      console.log(engine + ': shared planet graphics for seasons, satellites, Lagrange points and phases passed');
       await checkMobileCardLinks(browser, url);
       console.log(engine + ': mobile card links passed');
       await checkExternalContentConsent(browser, url);

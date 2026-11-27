@@ -48,24 +48,25 @@ window.PLANETENUHR_SPACE_MISSION_FLYBYS = (() => {
     return timeAt;
   }
 
-  /** Mounts the planet-centered detail displayed alongside a mission overview.
+  /** Mounts the target-centered detail displayed alongside a mission overview.
    * @param {HTMLElement} layout Parent containing the heliocentric overview.
    * @param {object[]} flybys Flyby definitions in chronological order.
-   * @param {object} dependencies Trajectories, projection, interpolation and Saturn rendering.
+   * @param {object} dependencies Trajectories, projection, interpolation and UI adapters.
    * @returns {{render:Function,timeline:Function}} Detail and playback clock adapters.
    */
-  function create(layout,flybys,{trajectories,positionAt,orbitalProjection,orbitalAxes,addSaturnRings,
-    controls,getTranslations,getOverviewScene,getStatus,milestones,missionName}) {
+  function create(layout,flybys,{trajectories,positionAt,orbitalProjection,orbitalAxes,
+    controls,getTranslations,getOverviewScene,getStatus,milestones,missionName,missionId}) {
     const template = layout.ownerDocument.getElementById('spaceMissionFlybyTemplate');
     const detail = template.content.firstElementChild.cloneNode(true);
     const title = detail.querySelector('h4');
     const plot = detail.querySelector('svg');
     const track = plot.querySelector('.mission-tracked-path');
     const center = plot.querySelector('.mission-center');
-    const originalDisc = center.firstElementChild;
     const probe = plot.querySelector('.mission-probe');
-    const probeDisc = probe.querySelector('circle');
+    const probeArt = probe.querySelector('[data-probe-artwork]');
+    const spacecraftArt = window.PLANETENUHR_SPACECRAFT_VISUALS;
     const distance = detail.querySelector('.mission-flyby-distance');
+    const scaleNote = detail.querySelector('.mission-flyby-scale-note');
     const source = detail.querySelector('a');
     const entries = flybys.map(flyby => {
       const data = trajectories[flyby.key];
@@ -79,6 +80,7 @@ window.PLANETENUHR_SPACE_MISSION_FLYBYS = (() => {
     let axes;
     let selectedTime;
     let selectedPoint;
+    let selectedRadius;
     let lastTranslations;
 
     /** Prepares a planet and its local trajectory only when the window changes.
@@ -103,14 +105,6 @@ window.PLANETENUHR_SPACE_MISSION_FLYBYS = (() => {
         if (index === 0) command = 'M';
         return command + project(x,y,z).map(value => value.toFixed(2)).join(' ');
       }).join(' '));
-      const disc = originalDisc.cloneNode(true);
-      const radius = entry.radius * scale;
-      disc.setAttribute('r',radius);
-      center.dataset.planet = entry.body.slice('planet_'.length);
-      center.replaceChildren(disc);
-      if (entry.body === 'planet_saturn') {
-        addSaturnRings(center,radius);
-      }
       source.href = entry.data.url;
     }
 
@@ -145,14 +139,20 @@ window.PLANETENUHR_SPACE_MISSION_FLYBYS = (() => {
       selectedTime = timestamp;
       selectedPoint = [x,y,z];
       const range = Math.hypot(x,y,z);
-      // Keep the planet to scale and both objects in frame as the probe approaches.
+      // Keep both objects in frame as the probe approaches.
       const zoom = Math.max(1,extent / Math.max(2.4 * entry.radius,1.2 * range));
       const halfWidth = 190 / zoom;
       const halfHeight = 126 / zoom;
       plot.setAttribute('viewBox',[190 - halfWidth,126 - halfHeight,2 * halfWidth,2 * halfHeight].join(' '));
-      probeDisc.setAttribute('r',3 / zoom);
+      const trueRadius = entry.radius * scale;
+      selectedRadius = Math.max(trueRadius,(entry.minDisplayRadius || 0) / zoom);
+      const bodyKey = entry.body.slice('planet_'.length);
+      window.PLANETENUHR_BODY_VISUALS.mountScaled(center.firstElementChild,bodyKey,selectedRadius);
+      scaleNote.hidden = selectedRadius <= trueRadius;
+      if (scaleNote.textContent !== translations.space_flybyBodyEnlarged) scaleNote.textContent = translations.space_flybyBodyEnlarged;
+      spacecraftArt.mount(probeArt,missionId,17 / zoom);
       probe.setAttribute('transform','translate(' + project(x,y,z).join(' ') + ')');
-      distance.textContent = translations.space_voyagerCenterDistance
+      distance.textContent = translations.space_flybyCenterDistance
         .replace('{distance}',formatter.format(range));
       spatial.update(localeChanged);
       return true;
@@ -164,18 +164,20 @@ window.PLANETENUHR_SPACE_MISSION_FLYBYS = (() => {
     function getSpatialScene() {
       if (!active) return getOverviewScene();
       const plotScale = scale * 640 / plot.viewBox.baseVal.width;
-      let kind = 'planet';
-      if (active.body === 'planet_saturn') kind = 'saturn';
       const objects = [
-        {key:'planet',kind,label:getTranslations()[active.body],radius:active.radius * plotScale,point:[0,0,0]},
-        {key:'probe',kind:'probe',label:missionName,radius:3,point:selectedPoint}
+        {key:'planet',kind:'planet',bodyKey:active.body.slice('planet_'.length),scaleWithCamera:true,
+          label:getTranslations()[active.body],radius:selectedRadius * 640 / plot.viewBox.baseVal.width,point:[0,0,0]},
+        {key:'probe',kind:'probe',artwork:missionId,label:missionName,radius:3,point:selectedPoint}
       ];
-      return {key:active,axes,scale:plotScale,orbits:[],timestamp:selectedTime,objects,
+      const scene = {key:active,axes,scale:plotScale,orbits:[],timestamp:selectedTime,objects,
         tracks:[{rows:active.data.rows,kind:'tracked'}]};
+      if (!scaleNote.hidden) scene.notice = scaleNote.textContent;
+      return scene;
     }
 
     const spatial = window.PLANETENUHR_SPACE_MISSION_3D.create({
       anchor:plot,controls,getScene:getSpatialScene,positionAt,getTranslations,getStatus,milestones,
+      artwork:missionId,
       getTitle:() => {
         if (active) return missionName + ' · ' + title.textContent;
         return missionName;

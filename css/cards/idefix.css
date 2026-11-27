@@ -2,7 +2,9 @@
 .idefix-card .group-title { margin:0; }
 .space-mission-panel { display:grid; gap:12px; width:100%; min-width:0; }
 .space-mission-panel[hidden] { display:none; }
-.space-mission-title { margin:0; text-align:center; }
+.space-mission-title { display:flex; align-items:center; justify-content:center; gap:7px; margin:0; text-align:center; }
+.space-mission-title [data-mission-title-artwork] { display:flex; flex:none; }
+.spacecraft-artwork { display:block; pointer-events:none; }
 .space-mission-title,.idefix-news h3 { font-size:var(--font-subheading); line-height:var(--line-heading); }
 #spaceMissionTabs [aria-selected="true"],.space-mission-tabs [aria-selected="true"] { border-color:var(--accent); font-weight:700; }
 .space-mission-timeline { display:grid; gap:1px; padding:0; margin:0; list-style:none; font-size:var(--font-body); line-height:var(--line-body); }
@@ -22,9 +24,9 @@
   padding:8px;
 }
 .mission-flyby[hidden],.mission-photo[hidden] { display:none; }
-.mission-flyby h4,.mission-flyby-distance,.mission-photo h4,.mission-photo-caption { margin:0; }
+.mission-flyby h4,.mission-flyby-distance,.mission-flyby-scale-note,.mission-photo h4,.mission-photo-caption { margin:0; }
 .mission-flyby h4,.mission-photo h4 { font-size:var(--font-control); }
-.mission-flyby-distance,.mission-photo-caption { color:var(--muted); font-size:var(--font-note); }
+.mission-flyby-distance,.mission-flyby-scale-note,.mission-photo-caption { color:var(--muted); font-size:var(--font-note); }
 .mission-photo-field {
   position:relative;
   aspect-ratio:1.45;
@@ -69,9 +71,10 @@
   .has-mission-photo > .mission-photo h4 { padding-inline-end:60px; }
   .has-mission-photo > .mission-photo .mission-photo-field { aspect-ratio:auto; }
 }
-.mission-flyby .mission-center circle,.mission-flyby .mission-probe circle { vector-effect:non-scaling-stroke; }
+.mission-flyby .mission-probe circle { vector-effect:non-scaling-stroke; }
 .mission-animation-plot { width:100%; height:auto; display:block; background:#0b1730; border-radius:12px; }
-.mission-animation-plot path { fill:none; vector-effect:non-scaling-stroke; }
+.mission-animation-plot path:not(:where(.body-visual path)) { fill:none; vector-effect:non-scaling-stroke; }
+[data-mission-body] [data-earth-shadow] { display:none; }
 .mission-ecliptic-plane { fill:#355775; fill-opacity:.35; stroke:#6586aa; stroke-width:1; vector-effect:non-scaling-stroke; }
 .mission-ecliptic-plane[hidden] { display:none; }
 .mission-ecliptic-offset { stroke:#99e0db; stroke-width:1.5; stroke-dasharray:4 3; }
@@ -95,8 +98,6 @@
   border-radius:50%;
   background:var(--mission-planet-color);
 }
-.mission-reference-bodies .mission-planet[data-planet] circle { fill:var(--mission-planet-color,#91b8f3); }
-.mission-flyby .mission-center[data-planet] > circle { fill:var(--mission-planet-color,#d49b59); }
 .mission-animation [data-planet="earth"],.mission-3d-plot [data-body="earth"] { --mission-planet-color:#83aaff; }
 .mission-animation [data-planet="mars"],.mission-3d-plot [data-body="mars"] { --mission-planet-color:#f08e70; }
 .mission-animation [data-planet="jupiter"],.mission-3d-plot [data-body="jupiter"] { --mission-planet-color:#d9a779; }
@@ -111,11 +112,8 @@
 .mission-tracked-path { stroke:#ffd477; stroke-width:1.6; }
 .mission-predicted-path { stroke:#91b8f3; stroke-width:1.5; stroke-dasharray:4 4; }
 .mission-mio-track { stroke:#9ce9e2; stroke-width:1.5; stroke-dasharray:4 4; }
-.mission-reference-bodies circle { fill:#91b8f3; }
-.mission-reference-bodies .mission-reference-target circle { fill:none; stroke:#78d9d2; stroke-width:1.4; }
-.mission-center circle { fill:#d49b59; stroke:#ffe0a3; stroke-width:1; }
-.mission-reference-bodies .mission-saturn .mission-saturn-disc { fill:#d9c985; stroke:none; }
-.mission-saturn-ring { fill:none; stroke:#eedcb3; stroke-width:1.15; vector-effect:non-scaling-stroke; }
+.mission-reference-bodies .mission-reference-target [data-mission-body] > circle { fill:none; stroke:#78d9d2; stroke-width:1.4; }
+.mission-center [data-mission-body] > circle { fill:#d49b59; stroke:#ffe0a3; stroke-width:1; }
 .mission-animation-plot .mission-didymos-outline { fill:#aaa8a0; stroke:#d8d5ca; stroke-width:1; }
 .mission-animation-plot .mission-didymos-shadow { fill:#77766f; }
 .mission-didymos-ridge { stroke:#ded9ca; stroke-width:1; stroke-linejoin:round; }
@@ -123,13 +121,10 @@
 .mission-probe circle,.mission-mio circle { fill:#ffd477; stroke:#fff3d3; stroke-width:1.5; }
 .mission-reference-bodies .mission-probe circle,.mission-flyby .mission-probe circle { stroke-width:1; }
 .mission-mio circle { fill:#9ce9e2; stroke:#dcfffa; }
-.mission-lander rect { fill:#ffd477; }
 .mission-animation-plot .mission-lander path { display:none; stroke:#f5e0ac; stroke-width:1.5; }
 .mission-lander[data-stage="entry"] .mission-entry-shield,
 .mission-lander[data-stage="parachute"] .mission-parachute,
-.mission-lander[data-stage="heatShield"] .mission-parachute,
-.mission-lander[data-stage="rotorFlight"] .mission-rotors,
-.mission-lander[data-stage="touchdown"] .mission-landing-legs { display:block; }
+.mission-lander[data-stage="heatShield"] .mission-parachute { display:block; }
 .mission-animation-controls { display:grid; grid-template-columns:auto minmax(0,1fr); align-items:center; gap:5px 12px; text-align:left; }
 .mission-play { grid-row:1 / 3; min-height:42px; margin:0; padding:6px 10px; border:1px solid var(--border); border-radius:8px; background:var(--card); color:var(--accent); }
 .mission-time-label,.mission-time-readout,.mission-distance,.mission-animation-source { color:var(--muted); font-size:var(--font-note); line-height:var(--line-note); }
@@ -173,17 +168,14 @@
 .idefix-prediction { fill:none; stroke:#b0bddd; stroke-width:1.2; stroke-dasharray:3 5; opacity:.55; }
 .idefix-trail-pixel { fill:#ffcf58; shape-rendering:crispEdges; }
 .idefix-sun circle { fill:#ffcf58; filter:drop-shadow(0 0 5px #e5a12088); }
-.idefix-earth circle { fill:#62d4ff; stroke:#0b1730; stroke-width:2px; }
-.idefix-mars circle { fill:#ed916c; stroke:#0b1730; stroke-width:2px; }
-.idefix-probe rect { fill:#ffe38d; stroke:#fff; stroke-width:1; shape-rendering:crispEdges; }
-.idefix-probe path { stroke:#ffe38d; stroke-width:2; fill:none; }
-.idefix-card[data-position-mode="planned"] .idefix-probe rect { fill:#0b1730; stroke:#ffcf58; stroke-dasharray:2 1; }
+.idefix-probe rect { display:none; }
+.idefix-card[data-position-mode="planned"] .idefix-probe rect { display:block; fill:#0b1730; stroke:#ffcf58; stroke-dasharray:2 1; }
+.idefix-card[data-position-mode="planned"] .idefix-probe .spacecraft-artwork { display:none; }
 .idefix-moon-view { min-width:0; text-align:center; }
-.idefix-moon-view svg { display:block; width:100%; height:auto; }
+.idefix-moon-view > svg { display:block; width:100%; height:auto; }
 .idefix-moon-view svg text { fill:#e8efff; font-size:15px; }
 .idefix-moon-orbit { fill:none; stroke:#8294b4; stroke-dasharray:3 4; }
 .idefix-phobos path { fill:#c2bbad; stroke:#edf3ff; stroke-width:1; }
-.idefix-rover-target rect { fill:#0b1730; stroke:#ffcf58; stroke-width:1.5; stroke-dasharray:2 1; }
 .idefix-legend { display:flex; flex-wrap:wrap; justify-content:center; gap:7px 16px; width:100%; color:var(--muted); font-size:var(--font-note); line-height:var(--line-note); }
 .idefix-legend > span { display:inline-flex; align-items:center; gap:5px; }
 .idefix-legend i { width:14px; height:8px; display:inline-block; flex-shrink:0; }

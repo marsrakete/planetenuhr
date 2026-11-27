@@ -96,5 +96,34 @@ window.PLANETENUHR_BODY_VISUALS = (() => {
     return svg;
   }
 
-  return {create, update, mount, illuminatedPath};
+  /** Centers shared artwork on an SVG group and scales it to a globe radius.
+   * @param {SVGGElement} host Group reserved for the artwork.
+   * @param {string} bodyKey Configured body with a marked disc in its template.
+   * @param {number} radius Globe radius in the enclosing plot's SVG units.
+   * @param {object} [options] Lighting options passed to the shared body renderer.
+   * @returns {SVGSVGElement} Retained body illustration.
+   */
+  function mountScaled(host, bodyKey, radius, options){
+    let svg = host.firstElementChild;
+    if (!svg || svg.dataset.body !== bodyKey) {
+      svg = mount(host, bodyKey, options);
+    } else if (options) {
+      update(svg, options);
+    }
+    if (!svg.classList.contains('body-visual-scaled')) {
+      const disc = svg.querySelector('[data-body-disc]');
+      const box = svg.viewBox.baseVal;
+      svg.classList.add('body-visual-scaled');
+      svg.dataset.discRadius = disc.getAttribute('r');
+      svg.setAttribute('x', box.x - Number(disc.getAttribute('cx')));
+      svg.setAttribute('y', box.y - Number(disc.getAttribute('cy')));
+      svg.setAttribute('width', box.width);
+      svg.setAttribute('height', box.height);
+    }
+    const transform = 'scale(' + radius / Number(svg.dataset.discRadius) + ')';
+    if (host.getAttribute('transform') !== transform) host.setAttribute('transform', transform);
+    return svg;
+  }
+
+  return {create, update, mount, mountScaled, illuminatedPath};
 })();

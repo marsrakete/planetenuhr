@@ -319,8 +319,7 @@ window.PLANETENUHR_HELP = (() => {
           node.appendChild(paragraph);
         });
       }
-      if (entry.figure) {
-        const {title,src,width,height,alt,caption} = entry.figure;
+      for (const {title,src,width,height,alt,caption,source,license} of entry.figures || []) {
         const node = section(title);
         const figure = cloneHelpNode('cardHelpFigureTemplate');
         const image = figure.querySelector('img');
@@ -328,7 +327,14 @@ window.PLANETENUHR_HELP = (() => {
         image.height = height;
         image.alt = alt;
         image.src = src;
-        figure.querySelector('figcaption').textContent = caption;
+        figure.querySelector('[data-caption]').textContent = caption;
+        for (const [name,link] of [['source',source],['license',license]]) {
+          if (!link) continue;
+          const anchor = figure.querySelector('[data-figure-' + name + ']');
+          anchor.href = link.url;
+          anchor.textContent = link.label;
+          anchor.hidden = false;
+        }
         node.appendChild(figure);
       }
       if (entry.formulas && entry.formulas.length) {

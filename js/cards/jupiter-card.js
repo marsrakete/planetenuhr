@@ -2,15 +2,15 @@ window.PLANETENUHR_JUPITER_CARD = (() => {
   'use strict';
 
   /** Creates the Jupiter-system illustration controller.
-   * @param {object} dependencies Document and static moon-orbit configuration.
+   * @param {object} dependencies Document, static moon-orbit configuration and shared artwork renderer.
    * @returns {{render:Function}} Idempotent renderer for the Jupiter card.
    */
   function create(dependencies){
     const document = dependencies.document;
     const moons = dependencies.moons;
 
-    /** Rebuilds the animated moon orbits from the HTML template and configuration.
-     * Existing orbit nodes are replaced while the planet and template stay in place.
+    /** Mounts Jupiter's shared SVG and rebuilds the animated moon orbits from their template.
+     * Existing orbit nodes are replaced while the planet artwork is retained.
      * @returns {void} No value.
      */
     function render(){
@@ -20,6 +20,10 @@ window.PLANETENUHR_JUPITER_CARD = (() => {
         return;
       }
 
+      const planet = system.querySelector('[data-jupiter-artwork]');
+      if (planet) {
+        dependencies.artwork.mountScaled(planet, 'jupiter', 24);
+      }
       system.querySelectorAll('[data-jupiter-orbit]').forEach(orbit => orbit.remove());
       for (const item of moons) {
         const fragment = template.content.cloneNode(true);

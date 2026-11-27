@@ -32,7 +32,7 @@ window.PLANETENUHR_INNER_PLANETS_MODEL = (() => {
       };
     }
 
-    /** Builds the existing two-arc terminator path for a schematic inner-planet phase.
+    /** Builds the illuminated region of an orthographically projected planet.
      * @param {number} illumination Illuminated percent. @param {boolean} evening Selects the lit side.
      * @returns {string} SVG path for the fixed 96-unit phase disc.
      */
@@ -41,15 +41,19 @@ window.PLANETENUHR_INNER_PLANETS_MODEL = (() => {
       const cx = 48;
       const cy = 48;
       const k = Math.max(0, Math.min(1, illumination / 100));
-      const terminatorRx = Math.max(1.5, Math.abs(2 * k - 1) * r);
+      if (k === 0) return '';
       let sweepOuter = 0;
-      let sweepInner = 1;
       if (evening) {
         sweepOuter = 1;
-        sweepInner = 0;
       }
-      const path = `M ${cx} ${cy - r} A ${r} ${r} 0 0 ${sweepOuter} ${cx} ${cy + r} A ${terminatorRx} ${r} 0 0 ${sweepInner} ${cx} ${cy - r} Z`;
-      return path;
+      const outer = `M ${cx} ${cy - r} A ${r} ${r} 0 0 ${sweepOuter} ${cx} ${cy + r}`;
+      if (k === 0.5) return outer + ' Z';
+      const terminatorRx = Math.abs(2 * k - 1) * r;
+      let sweepInner = sweepOuter;
+      if (k < 0.5) {
+        sweepInner = 1 - sweepOuter;
+      }
+      return `${outer} A ${terminatorRx} ${r} 0 0 ${sweepInner} ${cx} ${cy - r} Z`;
     }
 
     return {planetIlluminationData, phaseDiscPath};

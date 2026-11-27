@@ -12,7 +12,7 @@ Hier sammeln wir mögliche neue Inhalte und Verbesserungen für die Planetenuhr.
 | Voyager 2 | Jupiter, Saturn, Uranus, Neptun | August 1977 bis Ende 2099 |
 | Pioneer 10 | Jupiter | März 1972 bis Anfang 2050 |
 | Pioneer 11 | Jupiter, Saturn | April 1973 bis Anfang 2050 |
-| New Horizons | Jupiter, Pluto, Arrokoth | Januar 2006 bis Ende 2049 |
+| New Horizons | Pluto und Arrokoth, Jupiter-Swing-by als Meilenstein | Januar 2006 bis Ende 2049 |
 
 **Darstellung:** Die Reiseübersicht und die Nahansichten verwenden unterschiedliche Maßstäbe, damit die Vorbeiflüge auch bei großen Sonnenabständen lesbar bleiben. Arrokoth kann eine vergrößerte zweilappige Silhouette mit Abstandsanzeige zum Mittelpunkt erhalten, analog zur Didymos-Ansicht. Ein möglicher Einstieg ist Voyager 2 mit seinen vier Planetenbegegnungen.
 
@@ -20,7 +20,7 @@ Hier sammeln wir mögliche neue Inhalte und Verbesserungen für die Planetenuhr.
 
 **Daten und Genauigkeit:** Sonnen- und zielzentrierte 3D-Vektoren wurden für alle fünf Sonden bei NASA/JPL Horizons abgefragt. Die frühen Voyager-Bahnen sind näherungsweise rekonstruiert. Bei Pioneer eignen sich die älteren Bahnlösungen für historische Darstellungen mit entsprechend begrenzter Genauigkeit. Bei New Horizons liegen rekonstruierte Ausschnitte für Pluto und Arrokoth vor. Rekonstruktionen und Vorausberechnungen sollen in der Anzeige mit Quelle und Datenstand gekennzeichnet werden. [JPL Horizons](https://ssd.jpl.nasa.gov/horizons/manual.html) · [New-Horizons-Bahnlösung](https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=-98&MAKE_EPHEM=NO&OBJ_DATA=YES)
 
-**Status:** Voyager 1 und 2 sowie Pioneer 10 und 11 sind umgesetzt. New Horizons bleibt offen.
+**Status:** Voyager 1 und 2, Pioneer 10 und 11 sowie New Horizons sind umgesetzt.
 
 ## Gezeiten verstehen
 

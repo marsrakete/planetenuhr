@@ -159,11 +159,11 @@ window.PLANETENUHR_IDEFIX = (() => {
         const {x,y,z} = dependencies.getHeliocentricPosition(key,currentDate);
         const point = [x,y,z];
         if (key === 'mars') mars = point;
-        objects.push({key,kind:'planet',label:text('planet_' + key),radius:5,point});
+        objects.push({key,kind:'planet',bodyKey:key,label:text('planet_' + key),radius:5,point});
       }
       const vector = model.positionAt(ephemeris.rows,currentDate);
       if (vector) {
-        objects.push({key:'probe',kind:'probe',label:'MMX',radius:3,point:[vector.x,vector.y,vector.z]});
+        objects.push({key:'probe',kind:'probe',artwork:'mmx',label:'MMX',radius:3,point:[vector.x,vector.y,vector.z]});
       } else if (timestamp > ephemeris.rows.at(-1)[0]) {
         objects.push({key:'probe',kind:'probe',label:'MMX',radius:4,point:mars,planned:true});
       }
@@ -359,6 +359,13 @@ window.PLANETENUHR_IDEFIX = (() => {
       });
     }
 
+    window.PLANETENUHR_BODY_VISUALS.mountScaled(document.getElementById('idefixEarth').firstElementChild,'earth',6);
+    window.PLANETENUHR_BODY_VISUALS.mountScaled(document.getElementById('idefixMars').firstElementChild,'mars',5);
+    window.PLANETENUHR_BODY_VISUALS.mountScaled(document.getElementById('idefixPhobosMars'),'mars',17);
+    const spacecraftArt = window.PLANETENUHR_SPACECRAFT_VISUALS;
+    spacecraftArt.mount(card.querySelector('[data-mission-title-artwork]'),'mmx',42);
+    spacecraftArt.mount(document.querySelector('#idefixProbe [data-probe-artwork]'),'mmx',24);
+    spacecraftArt.mount(document.getElementById('idefixRoverOnPhobos'),'idefix',24);
     buildTrail();
     buildLinks();
     buildControls();
@@ -369,6 +376,7 @@ window.PLANETENUHR_IDEFIX = (() => {
     spatial = window.PLANETENUHR_SPACE_MISSION_3D.create({
       anchor:plot,controls:slider.closest('.mission-animation-controls'),getScene:getSpatialScene,
       positionAt:model.positionAt,getTranslations:dependencies.getTranslations,milestones:jumps,
+      artwork:'mmx',
       getTitle:() => text('idefix_title')
     });
     if ('ResizeObserver' in window) {

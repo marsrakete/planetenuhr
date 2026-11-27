@@ -10,7 +10,9 @@ window.PLANETENUHR_SPACE_MISSION_3D = (() => {
   function createDialog(document) {
     const window = document.defaultView;
     const dialog = document.getElementById('spaceMission3DDialog');
-    const title = dialog.querySelector('h2');
+    const title = dialog.querySelector('[data-mission-title-text]');
+    const titleArtwork = dialog.querySelector('[data-mission-title-artwork]');
+    const spacecraftArt = window.PLANETENUHR_SPACECRAFT_VISUALS;
     const close = dialog.querySelector('.mission-3d-close');
     const reset = dialog.querySelector('.mission-3d-reset');
     const mouseHint = dialog.querySelector('.mission-3d-mouse-hint');
@@ -25,13 +27,13 @@ window.PLANETENUHR_SPACE_MISSION_3D = (() => {
     const layer = plot.querySelector('.mission-3d-markers');
     const plane = plot.querySelector('.mission-3d-plane');
     const orbit = plot.querySelector('.mission-reference-orbits');
+    const targetOrbit = plot.querySelector('.mission-target-orbit');
     const overview = plot.querySelector('.mission-route-overview');
     const tracked = plot.querySelector('.mission-tracked-path');
     const predicted = plot.querySelector('.mission-predicted-path');
     const secondary = plot.querySelector('.mission-mio-track');
     const guide = plot.querySelector('.mission-ecliptic-offset');
     const markerTemplate = document.getElementById('spaceMissionMarkerTemplate');
-    const saturnTemplate = document.getElementById('spaceMissionSaturnTemplate');
     const markers = new Map();
     let owner;
     let placeholder;
@@ -67,6 +69,9 @@ window.PLANETENUHR_SPACE_MISSION_3D = (() => {
         plane.setAttribute('d','');
       }
       orbit.setAttribute('d',scene.orbits.map(points => 'M' + points.map(point => coordinates(project(point))).join(' L')).join(' '));
+      let targetPath = '';
+      if (scene.targetOrbit) targetPath = 'M' + scene.targetOrbit.map(point => coordinates(project(point))).join(' L');
+      targetOrbit.setAttribute('d',targetPath);
       const tracks = scene.tracks.map(track => ({
         ...track,
         commands:track.rows.map(([,x,y,z]) => coordinates(project([x,y,z])))
@@ -83,7 +88,11 @@ window.PLANETENUHR_SPACE_MISSION_3D = (() => {
       if (!owner || !dialog.open) return;
       const scene = owner.getScene();
       if (!scene) return;
-      const message = owner.getStatus?.() || '';
+      let message = owner.getStatus?.() || '';
+      if (scene.notice) {
+        if (message) message += ' · ';
+        message += scene.notice;
+      }
       if (status.textContent !== message) status.textContent = message;
       showPhoto(scene.photo);
       showFlyby(scene.flyby);
@@ -124,28 +133,33 @@ window.PLANETENUHR_SPACE_MISSION_3D = (() => {
         const [x,y,depth] = project(item.point);
         let node = markers.get(item.key);
         if (!node) {
-          node = markerTemplate.content.querySelector('g').cloneNode(true);
+          node = document.importNode(markerTemplate.content.querySelector('g'),true);
           node.dataset.kind = item.kind;
           node.dataset.body = item.key;
-          if (item.kind === 'saturn') {
-            const rings = saturnTemplate.content.querySelector('g').cloneNode(true);
-            node.querySelector('circle').replaceWith(rings);
-          }
           markers.set(item.key,node);
         }
-        const disc = node.querySelector('circle');
-        if (item.kind === 'saturn') {
-          disc.parentElement.setAttribute('transform','scale(' + item.radius / 8 + ')');
+        const body = node.firstElementChild;
+        let radius = item.radius;
+        if (item.scaleWithCamera) radius *= camera.zoom;
+        if (item.bodyKey) {
+          window.PLANETENUHR_BODY_VISUALS.mountScaled(body,item.bodyKey,radius);
+        } else if (item.artwork) {
+          spacecraftArt.mount(body,item.artwork,8 * radius);
         } else {
-          disc.setAttribute('r',item.radius);
+          if (body.firstElementChild.localName !== 'circle') {
+            body.replaceChildren(markerTemplate.content.querySelector('circle').cloneNode(true));
+          }
+          body.firstElementChild.setAttribute('r',radius);
         }
         node.classList.toggle('mission-3d-planned',Boolean(item.planned));
         node.setAttribute('transform','translate(' + x + ' ' + y + ')');
         const label = node.querySelector('text');
         if (label.textContent !== item.label) label.textContent = item.label;
-        let radius = item.radius;
-        if (item.kind === 'saturn') radius *= 2;
-        visible.push({node,depth,x,y,radius});
+        if (item.bodyKey === 'saturn' || item.bodyKey === 'uranus') radius *= 1.5;
+        if (item.scaleWithCamera) label.setAttribute('y',-Math.max(12,radius + 4));
+        let labelRadius = radius;
+        if (item.artwork) labelRadius *= 3;
+        visible.push({node,depth,x,y,radius:labelRadius});
       }
       visible.sort((first,second) => first.depth - second.depth);
       let next = layer.firstElementChild;
@@ -206,6 +220,7 @@ window.PLANETENUHR_SPACE_MISSION_3D = (() => {
     function localize() {
       const copy = owner.getTranslations();
       title.textContent = owner.getTitle();
+      spacecraftArt.mount(titleArtwork,owner.artwork,42);
       close.setAttribute('aria-label',copy.space_3dClose);
       reset.textContent = copy.space_3dReset;
       milestones.querySelector('summary').textContent = copy.space_3dMilestones;

@@ -2,7 +2,7 @@ window.PLANETENUHR_PLANETARY_SYSTEMS_CARD = (() => {
   'use strict';
 
   /** Creates the controller for the Mars, Saturn, Uranus and Neptune moon systems.
-   * @param {object} dependencies Document and configured planets with moon orbits.
+   * @param {object} dependencies Document, configured planets with moon orbits and shared artwork renderer.
    * @returns {{render:Function}} Renderer for the static orbital diagrams.
    */
   function create(dependencies){
@@ -31,7 +31,7 @@ window.PLANETENUHR_PLANETARY_SYSTEMS_CARD = (() => {
           continue;
         }
 
-        planet.classList.add(configuredSystem.planet);
+        dependencies.artwork.mountScaled(planet, configuredSystem.planet, 13);
         planetName.dataset.planet = configuredSystem.planet;
         planetName.textContent = configuredSystem.planet;
         for (const moonData of configuredSystem.moons) {

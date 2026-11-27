@@ -53,9 +53,10 @@ window.PLANETENUHR_SPACE_MISSIONS = (() => {
      * @returns {{panel:HTMLElement,animation:object}} Panel and its animation controller.
      */
     function createPanel(mission, container = card) {
-      const panel = panelTemplate.content.firstElementChild.cloneNode(true);
+      const panel = document.importNode(panelTemplate.content.firstElementChild,true);
       panel.id = 'space-mission-' + mission.id;
-      panel.querySelector('h3').textContent = mission.name + ' · ' + mission.agency;
+      panel.querySelector('[data-mission-title-text]').textContent = mission.name + ' · ' + mission.agency;
+      window.PLANETENUHR_SPACECRAFT_VISUALS.mount(panel.querySelector('[data-mission-title-artwork]'),mission.id,42);
       localizedNodes.push({node: panel.querySelector('p'), key: mission.id});
       container.append(panel);
       const animation = createAnimation(panel.querySelector('.mission-animation'), mission, {

@@ -1,7 +1,7 @@
 window.PLANETENUHR_SEASONS = (() => {
   'use strict';
   /** Creates the schematic seasons card using the existing date and geometry helpers.
-   * @param {object} options Document, template/SVG cloning, translations, local day/year geometry, summary writers and layout callback.
+   * @param {object} options Document, SVG factory, shared body artwork, translations, local day/year geometry, summary writers and layout callback.
    * @returns {object} Operations without timers, event listeners or global selection ownership.
    */
   function create(options){
@@ -39,13 +39,9 @@ window.PLANETENUHR_SEASONS = (() => {
 
       const svg = options.createSvgElement('svg');
       svg.removeAttribute('xmlns');
-      svg.setAttribute('viewBox', '0 0 ' + size + ' ' + size);
+      svg.setAttribute('viewBox', '0 0 ' + size + ' 532');
       svg.setAttribute('role', 'img');
       svg.setAttribute('aria-label', t.season_aria || 'Earth orbit and axial tilt');
-      const defs = options.cloneTemplate('seasonDefinitionsTemplate').querySelector('defs');
-
-      svg.appendChild(defs);
-
       const orbit = options.createSvgElement('circle');
       orbit.setAttribute('cx', center);
       orbit.setAttribute('cy', center);
@@ -81,11 +77,12 @@ window.PLANETENUHR_SEASONS = (() => {
       sun.setAttribute('r', 20);
       sun.setAttribute('fill', '#f8b43c');
       svg.appendChild(sun);
-      const marker = options.createSvgElement('circle');
-      marker.setAttribute('cx', earth.x);
-      marker.setAttribute('cy', earth.y);
-      marker.setAttribute('r', 17);
-      marker.setAttribute('class', 'season-earth');
+      const marker = options.createSvgElement('g');
+      marker.setAttribute('transform', 'translate(' + earth.x + ' ' + earth.y + ')');
+      const orbitalEarth = options.createSvgElement('g');
+      const shadowAngle = Math.atan2(earth.y - center, earth.x - center) * 180 / Math.PI;
+      options.artwork.mountScaled(orbitalEarth, 'earth', 17, {shadowAngle});
+      marker.appendChild(orbitalEarth);
       svg.appendChild(marker);
 
       const orbitLabel = options.createSvgElement('text');
@@ -96,7 +93,7 @@ window.PLANETENUHR_SEASONS = (() => {
       svg.appendChild(orbitLabel);
 
       const sideGroup = options.createSvgElement('g');
-      sideGroup.setAttribute('transform', 'translate(290 282)');
+      sideGroup.setAttribute('transform', 'translate(210 452)');
       const sidePanel = options.createSvgElement('circle');
       sidePanel.setAttribute('cx', 0);
       sidePanel.setAttribute('cy', 0);
@@ -116,18 +113,13 @@ window.PLANETENUHR_SEASONS = (() => {
         sideGroup.appendChild(ray);
       });
 
-      const sideEarth = options.createSvgElement('ellipse');
-      sideEarth.setAttribute('cx', 18);
-      sideEarth.setAttribute('cy', 0);
-      sideEarth.setAttribute('rx', 20);
-      sideEarth.setAttribute('ry', 24);
-      sideEarth.setAttribute('class', 'season-earth');
-      sideGroup.appendChild(sideEarth);
-
-      const sideNight = options.createSvgElement('path');
-      sideNight.setAttribute('d', 'M 18 -24 A 20 24 0 0 1 18 24 Z');
-      sideNight.setAttribute('class', 'season-night');
-      sideGroup.appendChild(sideNight);
+      const tiltedEarth = options.createSvgElement('g');
+      tiltedEarth.setAttribute('transform', 'translate(18 0) rotate(' + -declination + ')');
+      const sideEarth = options.createSvgElement('g');
+      // The globe tilts with its axis, while the night side keeps facing away from the rays.
+      options.artwork.mountScaled(sideEarth, 'earth', 24, {shadowAngle:declination});
+      tiltedEarth.appendChild(sideEarth);
+      sideGroup.appendChild(tiltedEarth);
 
       const axisAngle = -declination * Math.PI / 180;
       const axisLength = 62;

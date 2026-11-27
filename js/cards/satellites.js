@@ -1,7 +1,7 @@
 window.PLANETENUHR_SATELLITES_CARD = (() => {
   'use strict';
   /** Creates the schematic mean-orbit satellite card and its existing summary/fallback states.
-   * @param {object} options Document, satellite configuration provider, orbit model, templates, translations and summary writer.
+   * @param {object} options Document, satellite configuration provider, orbit model, templates, shared body artwork, translations and summary writer.
    * @returns {object} Model or render operations; starts no timers or listeners.
    */
   function create(options){
@@ -24,12 +24,15 @@ window.PLANETENUHR_SATELLITES_CARD = (() => {
       const svg = options.createSvgElement('svg');
       svg.removeAttribute('xmlns');
       svg.setAttribute('viewBox', `0 0 ${size} ${size}`);
-      const earth = options.createSvgElement('circle');
-      earth.setAttribute('cx', center);
-      earth.setAttribute('cy', center);
-      earth.setAttribute('r', earthRadius);
-      earth.setAttribute('fill', '#2586d7');
+      const earth = options.createSvgElement('g');
+      earth.setAttribute('transform', 'translate(' + center + ' ' + center + ')');
+      const globe = options.createSvgElement('g');
+      options.artwork.mountScaled(globe, 'earth', earthRadius);
+      earth.appendChild(globe);
       svg.appendChild(earth);
+      const orbits = options.createSvgElement('g');
+      const markers = options.createSvgElement('g');
+      svg.append(orbits, markers);
 
       (options.getSatellites() || []).forEach((sat, index) => {
         const {radius,ry,x,y} = options.model.orbitState(sat, index, date, {center,earthRadius,maxRadius});
@@ -42,7 +45,7 @@ window.PLANETENUHR_SATELLITES_CARD = (() => {
         orbit.setAttribute('stroke', '#cbd5e1');
         orbit.setAttribute('stroke-width', '1.4');
         orbit.setAttribute('transform', `rotate(${sat.raanDeg || 0} ${center} ${center})`);
-        svg.appendChild(orbit);
+        orbits.appendChild(orbit);
 
         const marker = options.createSvgElement('circle');
         marker.setAttribute('cx', x);
@@ -51,7 +54,7 @@ window.PLANETENUHR_SATELLITES_CARD = (() => {
         marker.setAttribute('fill', sat.color || '#2563eb');
         marker.setAttribute('stroke', '#fff');
         marker.setAttribute('stroke-width', '2');
-        svg.appendChild(marker);
+        markers.appendChild(marker);
 
         const label = options.createSvgElement('text');
         let labelXOffset = -10;
@@ -71,7 +74,7 @@ window.PLANETENUHR_SATELLITES_CARD = (() => {
         label.setAttribute('text-anchor', labelAnchor);
         label.setAttribute('class', 'spacecraft-label');
         label.textContent = sat.name;
-        svg.appendChild(label);
+        markers.appendChild(label);
       });
       target.appendChild(svg);
       if (summary) {

@@ -569,12 +569,12 @@ async function checkSolarGeometryCards(page){
       }
       if (document.querySelectorAll('#lagrangeMap .lagrange-point').length !== 5) throw new Error('Lagrange point count changed');
       if (document.querySelectorAll('#analemmaMap .analemma-month-dot').length !== 12) throw new Error('Analemma month markers changed');
-      const orbit = document.getElementById('lagrangeMap').innerHTML;
+      const orbit = document.getElementById('lagrangeMap').innerHTML.replace(/body-\d+-/g,'body-');
       const curve = document.querySelector('#analemmaMap .analemma-curve').getAttribute('d');
       const other = {...context,location:{name:'Southern reference',latitude:-33.86,longitude:151.2}};
       lagrangeController.render(other);
       analemmaController.render(other);
-      if (document.getElementById('lagrangeMap').innerHTML !== orbit) throw new Error('Lagrange schematic unexpectedly depends on location');
+      if (document.getElementById('lagrangeMap').innerHTML.replace(/body-\d+-/g,'body-') !== orbit) throw new Error('Lagrange schematic unexpectedly depends on location');
       if (document.querySelector('#analemmaMap .analemma-curve').getAttribute('d') === curve) throw new Error('Analemma ignored explicit location');
       analemmaController.render({...context,date:new Date(2028,1,29,12)});
       if (!document.getElementById('analemmaSummary').textContent.includes('2028')) throw new Error('Analemma ignored explicit year');
@@ -613,7 +613,7 @@ async function checkOrbitCards(page){
       satellitesController.render(later);
       if (document.getElementById('exoplanetComparison').innerHTML === exoplanetMap) throw new Error('Exoplanets ignored selected time');
       if (document.getElementById('satelliteMap').innerHTML === satelliteMap) throw new Error('Satellites ignored selected time');
-      const common = {document,cloneTemplate,createSvgElement:createChartSvgElement,getTranslations:() => t,appendSummaryText,appendSummaryLine,formatDate:formatDateStamp};
+      const common = {document,cloneTemplate,createSvgElement:createChartSvgElement,getTranslations:() => t,appendSummaryText,appendSummaryLine,formatDate:formatDateStamp,artwork:window.PLANETENUHR_BODY_VISUALS};
       window.PLANETENUHR_EXOPLANETS_CARD.create({...common,model:exoplanetsModel,getSystems:() => []}).render(context);
       if (document.querySelectorAll('#exoplanetComparison .exoplanet-system-panel').length) throw new Error('Empty exoplanet configuration retained panels');
       if (document.getElementById('exoplanetSummary').textContent.trim() !== t.exoplanets_none) throw new Error('Exoplanet empty state changed');

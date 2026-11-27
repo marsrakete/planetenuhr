@@ -1,22 +1,26 @@
 window.PLANETENUHR_INNER_PLANETS_CARD = (() => {
   'use strict';
+  let nextDisc = 0;
   /** Creates the inner-planet card with template-based phase discs.
-   * @param {object} options Document, template cloning, phase model, configured body provider, translations and display-name formatter.
+   * @param {object} options Document, template cloning, shared body artwork, phase model, configured body provider, translations and display-name formatter.
    * @returns {object} Model or controller operations with no timers or persistent storage.
    */
   function create(options){
     const document = options.document;
 
-    /** Clones the fixed phase-disc template and fills its terminator and color.
+    /** Places the calculated night side over the shared globe in the phase-disc template.
      * @param {number} illumination Illuminated percent. @param {boolean} evening Selects the lit side.
-     * @param {string} color Configured planet color. @returns {SVGElement} Independent phase disc.
+     * @param {string} key Planet artwork key. @returns {SVGElement} Independent phase disc.
      */
-    function renderDisc(illumination, evening, color){
+    function renderDisc(illumination, evening, key){
       const svg = options.cloneTemplate('planetPhaseDiscTemplate').querySelector('svg');
       svg.removeAttribute('xmlns');
-      const path = svg.querySelector('path');
-      path.setAttribute('d', options.model.phaseDiscPath(illumination, evening));
-      path.setAttribute('fill', color);
+      options.artwork.mountScaled(svg.querySelector('[data-phase-artwork]'), key, 38);
+      const gradient = svg.querySelector('[data-phase-night-gradient]');
+      gradient.id = 'planet-phase-night-' + (++nextDisc);
+      const night = svg.querySelector('[data-phase-night]');
+      night.setAttribute('fill', 'url(#' + gradient.id + ')');
+      night.setAttribute('d', options.model.phaseDiscPath(100 - illumination, !evening));
       return svg;
     }
 
@@ -35,16 +39,12 @@ window.PLANETENUHR_INNER_PLANETS_CARD = (() => {
         const info = options.model.planetIlluminationData(key, date);
         const fragment = cardTemplate.content.cloneNode(true);
         const card = fragment.querySelector('.planet-phase-card');
-        let color = '#fbbf24';
-        if (key === 'venus') {
-          color = '#fde68a';
-        }
         let skyText = t.phase_morning || 'Morning star';
         if (info.evening) {
           skyText = t.phase_evening || 'Evening star';
         }
         card.querySelector('[data-phase-name]').textContent = options.bodyDisplayName(key);
-        card.querySelector('[data-phase-visual]').appendChild(renderDisc(info.illumination, info.evening, color));
+        card.querySelector('[data-phase-visual]').appendChild(renderDisc(info.illumination, info.evening, key));
         card.querySelector('[data-phase-sky]').textContent = skyText;
         card.querySelector('[data-phase-illum-label]').textContent = (t.phase_illumination || 'Illumination') + ':';
         card.querySelector('[data-phase-illum-value]').textContent = info.illumination + '%';

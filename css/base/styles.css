@@ -439,16 +439,14 @@
       width:min(100%, 400px);
       aspect-ratio:1;
     }
-    .jupiter{
+    .jupiter-system-planet{
       position:absolute;
       left:50%;
       top:50%;
       width:48px;
       height:48px;
       margin:-24px 0 0 -24px;
-      border-radius:50%;
-      background: radial-gradient(circle at 35% 35%, #ffcf6e, #c47a27 60%, #8a4f1a);
-      box-shadow: 0 0 20px rgba(196,122,39,.6);
+      overflow:visible;
     }
     .orbit{
       position:absolute;
@@ -980,11 +978,6 @@
       stroke:#f59e0b;
       stroke-width:2;
     }
-    .lagrange-earth{
-      fill:#2563eb;
-      stroke:#ffffff;
-      stroke-width:2;
-    }
     .lagrange-point{
       fill:#8b5cf6;
       stroke:#ffffff;
@@ -1447,12 +1440,22 @@
         #ffffff;
       box-shadow:inset 0 0 26px rgba(148,163,184,.16), 0 8px 22px rgba(0,0,0,.1);
     }
-    .astro-disc svg{
+    .astro-disc > svg{
       display:block;
       width:100%;
       height:100%;
       overflow:hidden;
       border-radius:50%;
+    }
+    #satelliteMap [data-earth-shadow]{
+      display:none;
+    }
+    #seasonMap{
+      aspect-ratio:420 / 532;
+      border-radius:22px;
+    }
+    #seasonMap > svg{
+      border-radius:inherit;
     }
     .astro-summary{
       width:min(100%, 420px);
@@ -2371,13 +2374,6 @@
       fill:#2563eb;
       stroke:#fff;
       stroke-width:1.5;
-    }
-    .season-earth{
-      fill:url(#seasonEarthGradient);
-      filter:url(#seasonEarthShadow);
-    }
-    .season-night{
-      fill:rgba(15,23,42,.34);
     }
     .season-sunray{
       stroke:#f59e0b;
@@ -3668,27 +3664,14 @@
       width:210px;
       height:240px;
     }
-    .planet{
+    .planet-system-planet{
       position:absolute;
       left:50%;
       top:50%;
       width:26px;
       height:26px;
       margin:-13px 0 0 -13px;
-      border-radius:50%;
-      box-shadow:0 0 10px rgba(0,0,0,.4);
-    }
-    .planet.mars{
-      background: radial-gradient(circle at 30% 30%, #f4a460, #b7410e);
-    }
-    .planet.saturn{
-      background: radial-gradient(circle at 30% 30%, #f5deb3, #c2a27a);
-    }
-    .planet.uranus{
-      background: radial-gradient(circle at 30% 30%, #b0e0e6, #5f9ea0);
-    }
-    .planet.neptune{
-      background: radial-gradient(circle at 30% 30%, #6a5acd, #191970);
+      overflow:visible;
     }
     .planet-orbit{
       position:absolute;

@@ -96,9 +96,12 @@
       locations, getLocationOptionLabel:locationOptionLabel
     });
     const planetarySystemsController = window.PLANETENUHR_PLANETARY_SYSTEMS_CARD.create({
-      document, systems:window.PLANETENUHR_PLANETARY_SYSTEMS
-    });    const jupiterController = window.PLANETENUHR_JUPITER_CARD.create({
-      document, moons:window.PLANETENUHR_JUPITER_MOONS
+      document, systems:window.PLANETENUHR_PLANETARY_SYSTEMS,
+      artwork:window.PLANETENUHR_BODY_VISUALS
+    });
+    const jupiterController = window.PLANETENUHR_JUPITER_CARD.create({
+      document, moons:window.PLANETENUHR_JUPITER_MOONS,
+      artwork:window.PLANETENUHR_BODY_VISUALS
     });
     const solarSystemController = window.PLANETENUHR_SOLAR_SYSTEM.create({
       document, planets:window.PLANETENUHR_PLANET_ELEMENTS,
@@ -225,7 +228,7 @@
       updateCardLayout:dashboardLayout.updateSingleCardMasonryLayout
     });
     const seasonsController = window.PLANETENUHR_SEASONS.create({
-      document, cloneTemplate, createSvgElement:createChartSvgElement, getTranslations:() => t,
+      document, artwork:window.PLANETENUHR_BODY_VISUALS, createSvgElement:createChartSvgElement, getTranslations:() => t,
       dayOfYearLocal:window.PLANETENUHR_SOLAR_VISIBILITY.dayOfYearLocal, daysInYear:window.PLANETENUHR_SOLAR_VISIBILITY.daysInYear, polarPoint, appendSummaryText, appendSummaryLine,
       requestMasonryLayout:dashboardLayout.requestMasonryLayout
     });
@@ -233,7 +236,7 @@
       position:window.PLANETENUHR_PLANET_MODEL.heliocentricPosition, elongation:solarElongationForKey
     });
     const innerPlanetsController = window.PLANETENUHR_INNER_PLANETS_CARD.create({
-      document, cloneTemplate, model:innerPlanetsModel, getTranslations:() => t,
+      document, artwork:window.PLANETENUHR_BODY_VISUALS, cloneTemplate, model:innerPlanetsModel, getTranslations:() => t,
       getBodies:() => phenomenaConfig.planetPhaseBodies, bodyDisplayName
     });
     const barycenterModel = window.PLANETENUHR_BARYCENTER_MODEL.create({
@@ -250,7 +253,7 @@
       sunLongitude:window.PLANETENUHR_SOLAR_VISIBILITY.sunLongitude, polarPoint
     });
     const lagrangeController = window.PLANETENUHR_LAGRANGE_CARD.create({
-      document, model:lagrangeModel, createSvgElement:createChartSvgElement,
+      document, artwork:window.PLANETENUHR_BODY_VISUALS, model:lagrangeModel, createSvgElement:createChartSvgElement,
       getTranslations:() => t, appendSummaryLine, appendSummaryText
     });
     const analemmaModel = window.PLANETENUHR_ANALEMMA_MODEL.create({
@@ -272,7 +275,7 @@
     });
     const satellitesModel = window.PLANETENUHR_SATELLITES_MODEL.create({});
     const satellitesController = window.PLANETENUHR_SATELLITES_CARD.create({
-      document, model:satellitesModel, cloneTemplate, createSvgElement:createChartSvgElement,
+      document, artwork:window.PLANETENUHR_BODY_VISUALS, model:satellitesModel, cloneTemplate, createSvgElement:createChartSvgElement,
       getSatellites:() => phenomenaConfig.satellites, getTranslations:() => t, appendSummaryText
     });
     const smallBodiesModel = window.PLANETENUHR_SMALL_BODIES_MODEL.create({});

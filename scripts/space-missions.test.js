@@ -7,7 +7,7 @@ const {test} = require('node:test');
 const context = vm.createContext({window: {}});
 for (const file of [
   'data/space-missions.js', 'data/space-mission-trajectories.js', 'data/voyager-trajectories.js', 'data/pioneer-trajectories.js',
-  'data/translations.js',
+  'data/new-horizons-trajectories.js', 'data/translations.js',
   'cards/space-missions.js', 'cards/space-mission-camera.js', 'cards/space-mission-3d.js',
   'cards/space-mission-flybys.js', 'cards/space-mission-animation.js'
 ]) {
@@ -51,7 +51,7 @@ test('each additional mission has unique identity, official links and chronologi
 test('each mission and milestone has copy in every dashboard language', () => {
   const {PLANETENUHR_SPACE_MISSION_DATA: missions, PLANETENUHR_OUTER_MISSION_DATA: outer, PLANETENUHR_TRANSLATIONS: languages} = context.window;
   const keys = ['missions', 'source', 'tracker', 'confirmed', 'planned', 'outerSystem', 'obliqueFrame',
-    'nearEcliptic', 'northOfEcliptic', 'southOfEcliptic', 'reconstructed', 'flybyDetail', 'voyagerCenterDistance',
+    'nearEcliptic', 'northOfEcliptic', 'southOfEcliptic', 'reconstructed', 'flybyDetail', 'flybyCenterDistance', 'flybyBodyEnlarged',
     '3dOpen', '3dClose', '3dReset', '3dPlot', '3dHint', '3dTouchHint', '3dMilestones', '3dPlaybackSlow', '3dPlaybackEnd',
     'paleBlueDotCaption','paleBlueDotSource','photoCountdown'];
   for (const mission of [...missions,...outer]) {
@@ -90,7 +90,7 @@ test('each trajectory scene uses finite, chronological vectors and identifiable 
         assert.match(data.revised, /^\d{4}-\d{2}-\d{2}$/);
         assert.equal(new URL(data.url).protocol, 'https:');
         assert.ok(data.rows.length > 1);
-        let previous = 0;
+        let previous = -Infinity;
         for (const row of data.rows) {
           assert.equal(row.length, 4);
           assert.ok(row.every(Number.isFinite));
@@ -122,8 +122,8 @@ test('the sourced tracking cutoff includes the whole published UTC day', () => {
 test('outer-system milestones are covered and the oblique view preserves opposite Voyager departures', () => {
   const {PLANETENUHR_OUTER_MISSION_DATA: missions, PLANETENUHR_SPACE_MISSION_TRAJECTORIES: trajectories,
     PLANETENUHR_SPACE_MISSION_ANIMATION: animation} = context.window;
-  assert.deepEqual(Array.from(missions,mission => mission.id),['voyager1','voyager2','pioneer10','pioneer11']);
-  assert.deepEqual(Array.from(missions,mission => mission.flybys.length),[2,4,1,2]);
+  assert.deepEqual(Array.from(missions,mission => mission.id),['voyager1','voyager2','pioneer10','pioneer11','newhorizons']);
+  assert.deepEqual(Array.from(missions,mission => mission.flybys.length),[2,4,1,2,2]);
   for (const mission of missions) {
     assert.ok(mission.views.every(view => view.oblique));
     for (const flyby of mission.flybys) {
@@ -143,6 +143,42 @@ test('outer-system milestones are covered and the oblique view preserves opposit
   const northOffset = animation.obliqueProjection(north[1],north[2],north[3])[1] - animation.obliqueProjection(north[1],north[2],0)[1];
   const southOffset = animation.obliqueProjection(south[1],south[2],south[3])[1] - animation.obliqueProjection(south[1],south[2],0)[1];
   assert.ok(northOffset > 0 && southOffset < 0);
+});
+
+test('New Horizons covers both reconstructed approaches using the correct target centers', () => {
+  const {PLANETENUHR_OUTER_MISSION_DATA:missions,PLANETENUHR_SPACE_MISSION_TRAJECTORIES:trajectories,
+    PLANETENUHR_SPACE_MISSION_ANIMATION:{dataStatus}} = context.window;
+  const mission = missions.find(item => item.id === 'newhorizons');
+  for (const [key,center,lower,upper] of [
+    ['newHorizonsPluto',999,13000,14500],['newHorizonsArrokoth',2486958,3500,3700]
+  ]) {
+    const encounter = mission.flybys.find(flyby => flyby.key === key);
+    const [, , , , seekAt] = mission.events.find(([,event]) => event === encounter.milestone);
+    const data = trajectories[key];
+    assert.equal(data.center,center);
+    assert.equal(data.step,'1 m');
+    const minimum = data.rows.reduce((best,row) => {
+      if (Math.hypot(...row.slice(1)) < Math.hypot(...best.slice(1))) return row;
+      return best;
+    });
+    const distance = Math.hypot(...minimum.slice(1));
+    assert.ok(distance > lower && distance < upper);
+    assert.ok(Math.abs(minimum[0] - Date.parse(seekAt)) <= 120000);
+    assert.equal(dataStatus(minimum[0],null,data.reconstructedBefore,data.forecastAfter),'reconstructed');
+  }
+  const continuation = trajectories.newHorizonsKuiper;
+  assert.equal(dataStatus(continuation.rows.at(-1)[0],null,continuation.reconstructedBefore,continuation.forecastAfter),'predicted');
+  const orbit = trajectories.newHorizonsPlutoOrbit;
+  assert.equal(orbit.id,999);
+  assert.equal(orbit.center,10);
+  for (const view of mission.views) {
+    assert.equal(view.targetOrbit,'newHorizonsPlutoOrbit');
+    const {rows} = trajectories[view.key];
+    assert.ok(orbit.rows[0][0] <= rows[0][0]);
+    assert.ok(orbit.rows.at(-1)[0] >= rows.at(-1)[0]);
+  }
+  const heights = orbit.rows.map(row => row[3]);
+  assert.ok(Math.min(...heights) < -5 && Math.max(...heights) > 5,'Pluto passes above and below the ecliptic');
 });
 
 test('Pioneer flyby milestones land near closest approach in the historical solution', () => {

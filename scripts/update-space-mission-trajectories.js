@@ -46,6 +46,14 @@ const pioneerProvenance = {
   '-23':{reconstructedBefore:'2003-01-24', forecastAfter:'2003-01-23'},
   '-24':{reconstructedBefore:'1995-11-25', forecastAfter:'1995-11-24'}
 };
+const newHorizonsRequests = [
+  {key:'newHorizons', id:-98, center:10, start:'2006-01-19T19:51Z', end:'2021-01-01', step:'4 d'},
+  {key:'newHorizonsKuiper', id:-98, center:10, start:'2019-02-07', end:'2049-12-31', step:'28 d'},
+  {key:'newHorizonsPluto', id:-98, center:999, start:'2015-07-14', end:'2015-07-15', step:'1 m'},
+  {key:'newHorizonsArrokoth', id:-98, center:2486958, start:'2019-01-01', end:'2019-01-02', step:'1 m'},
+  {key:'newHorizonsPlutoOrbit', id:999, center:10, start:'1801-01-01', end:'2051-01-01', step:'90 d'}
+];
+const newHorizonsProvenance = {'-98':{reconstructedBefore:'2019-02-07'}};
 
 /** Downloads geometric vectors and records the selected Horizons solution and its tracking cutoff.
  * @param {object} request Target, center, date range and sampling step.
@@ -82,6 +90,7 @@ async function download({id, target, command = String(id), center, start, end, s
     result.match(/Soln\.date:\s*(\d{4}-[A-Za-z]{3}-\d{2})/);
   const tracking = result.match(/(?:data fit|tracking data|tracking-data based trajectory) through\s+(\d{4}-[A-Za-z]{3}-\d{2})/i);
   const shortTracking = result.match(/([A-Za-z]+ \d{1,2}), prediction (?:after that|thereafter)/i);
+  const dataCutoff = result.match(/data cut-off ([A-Za-z]+ \d{1,2}, \d{4})/i);
   if (!revision) {
     throw new Error('Missing Horizons solution revision');
   }
@@ -97,6 +106,7 @@ async function download({id, target, command = String(id), center, start, end, s
     id, center, url, step, revised:toDay(revision[1]),
     trackingThrough:tracking ? toDay(tracking[1]) :
       shortTracking ? toDay(shortTracking[1] + ', ' + revision[1].slice(-4)) : null,
+    ...(dataCutoff && {forecastAfter:toDay(dataCutoff[1])}),
     solution:targetLine.match(/\{source: ([^}]+)\}/)?.[1] || targetLine,
     rows
   };
@@ -216,6 +226,8 @@ if (require.main === module) {
     update = () => downloadOuterMissions('voyager',voyagerRequests,voyagerProvenance);
   } else if (process.argv.includes('--pioneer')) {
     update = () => downloadOuterMissions('pioneer',pioneerRequests,pioneerProvenance);
+  } else if (process.argv.includes('--new-horizons')) {
+    update = () => downloadOuterMissions('new-horizons',newHorizonsRequests,newHorizonsProvenance);
   }
   update().catch(error => {
     console.error(error.message);

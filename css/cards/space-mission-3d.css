@@ -49,11 +49,10 @@ html.mission-3d-open { overflow:hidden; }
 .mission-3d-plot:active { cursor:grabbing; }
 .mission-3d-plot:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
 .mission-3d-plot .mission-3d-plane { fill:#35577555; stroke:#6586aa; stroke-width:1; }
-.mission-3d-plot .mission-3d-markers circle { fill:var(--mission-planet-color,#a7c0e8); stroke:#e5efff; stroke-width:1; }
-.mission-3d-plot [data-kind="sun"] circle,.mission-3d-plot [data-kind="probe"] circle { fill:#ffd477; }
-.mission-3d-plot [data-kind="secondary"] circle { fill:#9ce9e2; }
-.mission-3d-plot [data-kind="saturn"] circle { fill:#d9c985; }
-.mission-3d-plot .mission-3d-planned circle { fill:none; stroke:#ffd477; }
+.mission-3d-plot .mission-3d-markers [data-mission-body] > circle { fill:#a7c0e8; stroke:#e5efff; stroke-width:1; }
+.mission-3d-plot [data-kind="sun"] [data-mission-body] > circle,.mission-3d-plot [data-kind="probe"] [data-mission-body] > circle { fill:#ffd477; }
+.mission-3d-plot [data-kind="secondary"] [data-mission-body] > circle { fill:#9ce9e2; }
+.mission-3d-plot .mission-3d-planned [data-mission-body] > circle { fill:none; stroke:#ffd477; }
 .mission-3d-plot text { font-size:15px; }
 .mission-3d-controls { margin-block:10px; }
 .mission-3d-status {

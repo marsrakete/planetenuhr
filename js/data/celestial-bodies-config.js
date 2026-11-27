@@ -26,5 +26,11 @@ window.PLANETENUHR_BODY_CONFIG = {
   },
   "moon": {
     "template": "moonGlobeTemplate"
+  },
+  "pluto": {
+    "template": "plutoGlobeTemplate"
+  },
+  "arrokoth": {
+    "template": "arrokothGlobeTemplate"
   }
 };

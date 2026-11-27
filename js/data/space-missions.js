@@ -194,5 +194,25 @@ window.PLANETENUHR_OUTER_MISSION_DATA = [
       ['1995-11-24','lastEngineeringData',true]
     ],
     references:[['pioneer11JupiterSource','https://www.nasa.gov/history/45-years-ago-pioneer-11-explores-jupiter/']]
+  },
+  {
+    id:'newhorizons', name:'New Horizons', agency:'NASA',
+    source:'https://science.nasa.gov/mission/new-horizons/',
+    views:[
+      {key:'newHorizons',label:'planetaryVoyage',planets:['earth','jupiter','saturn','uranus','neptune'],
+        oblique:true,targetOrbit:'newHorizonsPlutoOrbit',targetBody:'pluto',viewNote:'newHorizonsLaunchNote'},
+      {key:'newHorizonsKuiper',label:'kuiperVoyage',oblique:true,targetOrbit:'newHorizonsPlutoOrbit',targetBody:'pluto'}
+    ],
+    flybys:[
+      {key:'newHorizonsPluto',body:'planet_pluto',radius:1188.3,minDisplayRadius:14,milestone:'plutoFlyby'},
+      {key:'newHorizonsArrokoth',body:'planet_arrokoth',radius:18,minDisplayRadius:19,milestone:'arrokothFlyby'}
+    ],
+    events:[
+      ['2006-01-19','launch',true,undefined,'2006-01-19T19:51Z'],
+      ['2007-02-28','jupiterSwingby',true,undefined,'2007-02-28T05:43:40Z'],
+      ['2015-07-14','plutoFlyby',true,undefined,'2015-07-14T11:49:57Z'],
+      ['2019-01-01','arrokothFlyby',true,undefined,'2019-01-01T05:33Z']
+    ],
+    references:[['arrokothSource','https://science.nasa.gov/solar-system/kuiper-belt/arrokoth-2014-mu69/']]
   }
 ];

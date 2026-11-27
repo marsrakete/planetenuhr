@@ -9,9 +9,9 @@ for (const file of ['js/data/celestial-bodies-config.js','js/shared/celestial-bo
 }
 const visuals = realm.window.PLANETENUHR_BODY_VISUALS;
 
-test('shared body registry provides all eight planets and the Moon, rejecting unknown keys', () => {
-  assert.deepEqual(Object.keys(realm.window.PLANETENUHR_BODY_CONFIG), ['mercury','venus','earth','mars','jupiter','saturn','uranus','neptune','moon']);
-  assert.throws(() => visuals.create('pluto'), /Unknown body/);
+test('shared body registry provides all eight planets, the Moon, Pluto and Arrokoth, rejecting unknown keys', () => {
+  assert.deepEqual(Object.keys(realm.window.PLANETENUHR_BODY_CONFIG), ['mercury','venus','earth','mars','jupiter','saturn','uranus','neptune','moon','pluto','arrokoth']);
+  assert.throws(() => visuals.create('unknown-body'), /Unknown body/);
 });
 
 test('shared lunar geometry preserves full/new and opposing quarter phases', () => {

@@ -14,9 +14,14 @@ for (const file of ['js/data/jupiter-moons-config.js','js/cards/jupiter-card.js'
  * @returns {object} Document, Jupiter root and inspectable cloned orbit nodes.
  */
 function createFixture(){
-  const planet = {className:'jupiter'};
+  const planet = {};
   const system = {
     children:[planet],
+    /** @param {string} selector Artwork selector. @returns {object|null} Artwork host. */
+    querySelector(selector){
+      if (selector === '[data-jupiter-artwork]') return planet;
+      return null;
+    },
     querySelectorAll(){return this.children.filter(child => child.dataset && child.dataset.jupiterOrbit === 'true');},
     appendChild(fragment){
       const nodes = fragment.isFragment ? fragment.children : [fragment];
@@ -58,9 +63,14 @@ test('Jupiter orbit configuration renders ten localized, idempotent template row
   const fixture = createFixture();
   const controller = realm.window.PLANETENUHR_JUPITER_CARD.create({
     document:fixture.document,
-    moons:realm.window.PLANETENUHR_JUPITER_MOONS
+    moons:realm.window.PLANETENUHR_JUPITER_MOONS,
+    artwork:{
+      /** @param {object} host Test artwork host. @param {string} key Planet key. @param {number} radius Disc radius. @returns {void} */
+      mountScaled(host,key,radius){Object.assign(host,{key,radius});}
+    }
   });
   controller.render();
+  assert.deepEqual(fixture.planet,{key:'jupiter',radius:24});
   let orbits = fixture.system.querySelectorAll('[data-jupiter-orbit]');
   assert.equal(orbits.length,10);
   assert.equal(orbits[0].style.values['--jupiter-orbit-size'],'90px');

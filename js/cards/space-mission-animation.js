@@ -4,6 +4,7 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
   const DAY_MS = 86400000;
   const planetPeriods = {mercury:87.97, venus:224.7, earth:365.26, mars:686.98, jupiter:4332.59, saturn:10759.22, uranus:30688.5, neptune:60182};
   const planetRadii = {mercury:.47, venus:.73, earth:1.02, mars:1.67, jupiter:5.46, saturn:10.12, uranus:20.1, neptune:30.34};
+  const markerRadii = {mercury:4, venus:5, earth:5, mars:5, jupiter:8, saturn:7, uranus:6, neptune:6, pluto:7};
   const eclipticTilt = 22 * Math.PI / 180;
   const obliqueAxes = {right:[0,-1,0],up:[Math.sin(eclipticTilt),0,Math.cos(eclipticTilt)],
     front:[-Math.cos(eclipticTilt),0,Math.sin(eclipticTilt)]};
@@ -176,7 +177,6 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
     const document = root.ownerDocument;
     const template = document.getElementById('spaceMissionAnimationTemplate');
     const markerTemplate = document.getElementById('spaceMissionMarkerTemplate');
-    const saturnTemplate = document.getElementById('spaceMissionSaturnTemplate');
     const legendTemplate = document.getElementById('spaceMissionPlanetLegendTemplate');
     const buttonTemplate = document.getElementById('idefixControlTemplate');
     const linkTemplate = document.getElementById('idefixLinkTemplate');
@@ -211,8 +211,10 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
 
     const views = mission.views.map(view => ({
       ...view, data:trajectories[view.key], secondaryData:trajectories[view.secondary],
-      targetData:trajectories[view.targetOrbit]
+      targetData:trajectories[view.targetOrbit],
+      stageRows:view.stages?.map(([,x,y],index) => [index * 1000,x,y,0])
     }));
+    const spacecraftArt = window.PLANETENUHR_SPACECRAFT_VISUALS;
     const positions = new Map();
     let view;
     let scale;
@@ -221,11 +223,13 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
     let bodies = [];
     let planetLabels = [];
     let probe;
+    let stageTime = 0;
     let secondaryProbe;
     let centerMarker;
     let targetMarker;
     let routeTracks = [];
     let spatialOrbits = [];
+    let spatialTargetOrbit;
     let originalAxes;
     let spatial;
     let flyby;
@@ -255,7 +259,7 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
     }
     if (mission.flybys?.length) {
       flyby = window.PLANETENUHR_SPACE_MISSION_FLYBYS.create(journeyLayout,
-        mission.flybys,{trajectories,positionAt,orbitalProjection,orbitalAxes,addSaturnRings,missionName:mission.name,
+        mission.flybys,{trajectories,positionAt,orbitalProjection,orbitalAxes,missionName:mission.name,missionId:mission.id,
           getTranslations,getOverviewScene:getSpatialScene,getStatus:getSpatialStatus,milestones,
           controls:slider.closest('.mission-animation-controls')});
     }
@@ -335,17 +339,6 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
       return node;
     }
 
-    /** Replaces the marker disc with Saturn and its rings.
-     * @param {SVGGElement} node Marker containing a disc and label.
-     * @param {number} radius Saturn's disc radius in plot units.
-     * @returns {void}
-     */
-    function addSaturnRings(node,radius) {
-      const saturn = saturnTemplate.content.querySelector('g').cloneNode(true);
-      saturn.setAttribute('transform','scale(' + radius / 8 + ')');
-      node.querySelector('circle').replaceWith(saturn);
-    }
-
     function dateValue() {
       if (view.stages) {
         return Number(slider.value);
@@ -372,7 +365,9 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
       if (view.stages) {
         const stage = view.stages[selected];
         const next = view.stages[Math.min(selected + 1, view.stages.length - 1)];
-        const fraction = stageProgress === undefined ? 0 : stageProgress - selected;
+        let fraction = 0;
+        if (stageProgress !== undefined) fraction = stageProgress - selected;
+        stageTime = Math.round((selected + fraction) * 1000);
         move(probe, stage[1] + (next[1] - stage[1]) * fraction, stage[2] + (next[2] - stage[2]) * fraction);
         probe.dataset.stage = stage[0];
         caption = text(stage[0]);
@@ -411,39 +406,52 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
           const [x,y] = probePosition;
           depthMarkers = [
             {node:centerMarker,x:300,y:originY,radius:5,depth:0},
-            {node:probe,x,y,radius:2.75,depth:obliqueDepth(position.x,position.z)}
+            {node:probe,x,y,radius:7,depth:obliqueDepth(position.x,position.z)}
           ];
         }
-        for (const {key, node} of bodies) {
+        for (const {key, node, radius} of bodies) {
           const body = getHeliocentricPosition(key, date);
           if (depthMarkers) {
             const [x,y] = move(node,body.x,body.y,body.z);
-            let radius = 4;
-            if (key === 'saturn') radius = 8;
-            depthMarkers.push({node,x,y,radius,depth:obliqueDepth(body.x,body.z)});
+            let labelRadius = radius;
+            if (key === 'saturn' || key === 'uranus') labelRadius *= 1.5;
+            depthMarkers.push({node,x,y,radius:labelRadius,depth:obliqueDepth(body.x,body.z)});
           } else {
             move(node,body.x,body.y);
           }
         }
+        if (targetMarker) {
+          const target = positionAt(view.targetData.rows, date);
+          if (target) {
+            targetMarker.style.display = '';
+            const [x,y] = move(targetMarker,target.x,target.y,target.z);
+            if (depthMarkers) {
+              depthMarkers.push({node:targetMarker,x,y,radius:markerRadii[view.targetBody] || 8,
+                depth:obliqueDepth(target.x,target.z)});
+            }
+          } else {
+            targetMarker.style.display = 'none';
+          }
+        }
         if (depthMarkers) {
-          if (bodies.length) {
+          if (bodies.length || targetMarker) {
             planetLabels = [...depthMarkers];
             window.PLANETENUHR_SOLAR_LABELS.layoutSvg(plot,planetLabels);
           }
           orderObliqueMarkers(depthMarkers);
         }
-        if (targetMarker) {
-          const target = positionAt(view.targetData.rows, date);
-          targetMarker.style.display = target ? '' : 'none';
-          if (target) {
-            move(targetMarker, target.x, target.y, target.z);
-          }
-        }
         if (secondaryProbe) {
           const secondary = positionAt(view.secondaryData.rows, date);
           secondaryProbe.style.display = secondary ? '' : 'none';
           const beforeSeparation = selected < view.secondaryData.rows[0][0];
-          probe.querySelector('text').textContent = beforeSeparation ? 'MPO + Mio' : view.marker;
+          let artwork = mission.id;
+          let name = 'MPO + Mio';
+          if (!beforeSeparation) {
+            artwork = 'mpo';
+            name = view.marker;
+          }
+          spacecraftArt.mount(probe.firstElementChild,artwork,19);
+          probe.querySelector('text').textContent = name;
           if (secondary) {
             move(secondaryProbe, secondary.x, secondary.y, secondary.z);
           }
@@ -474,6 +482,12 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
       spatial?.update();
     }
 
+    /** Returns the localized name of the selected reference target. @returns {string} Target name. */
+    function targetName() {
+      if (view.targetBody) return getTranslations()['planet_' + view.targetBody];
+      return view.targetName;
+    }
+
     function describeSource() {
       sourceLink.href = view.source || view.data.url;
       sourceLink.textContent = view.stages ? text('nasaAnimation') : 'NASA/JPL Horizons';
@@ -483,7 +497,7 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
         secondaryLink.textContent = 'ESA SPICE · Mio';
       } else if (view.targetData) {
         secondaryLink.href = view.targetData.url;
-        secondaryLink.textContent = 'NASA/JPL Horizons · ' + view.targetName;
+        secondaryLink.textContent = 'NASA/JPL Horizons · ' + targetName();
       }
       if (view.stages) {
         source.textContent = text('landingSource');
@@ -548,6 +562,7 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
           legend.textContent = name;
         }
       }
+      if (targetMarker) targetMarker.querySelector('text').textContent = targetName();
       referenceBodies.querySelector('.mission-center text').textContent =
         view.bodyName || translations[view.body || 'eclipse_sun'];
       play.textContent = text(playback.isPlaying() ? 'pause' : 'play');
@@ -581,6 +596,7 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
       if (view.secondaryData) {
         routeTracks.push(track(view.secondaryData.rows, true, true));
         secondaryProbe = marker(spacecraft, 'Mio', 5, 'mission-mio');
+        spacecraftArt.mount(secondaryProbe.firstElementChild,'mio',17);
       }
       routeOverview.setAttribute('d', routeTracks.map(route => route.commands.join(' ')).join(' '));
     }
@@ -620,6 +636,7 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
       bodies = [];
       planetLabels = [];
       spatialOrbits = [];
+      spatialTargetOrbit = undefined;
       secondaryProbe = null;
       targetMarker = null;
       targetOrbit.setAttribute('d', '');
@@ -629,7 +646,7 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
       originalAxes = null;
       if (view.faceOn) originalAxes = orbitalAxes(view.data.rows);
       orbitPlane = projectionForAxes(originalAxes);
-      spatial?.setAvailable(Boolean(view.data));
+      spatial?.setAvailable(Boolean(view.data || view.stages));
       let viewBox = '0 0 600 380';
       if (view.oblique) {
         viewBox = '100 15 400 340';
@@ -685,26 +702,35 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
             return [position.x,position.y,position.z];
           });
           spatialOrbits.push(points);
-          const node = marker(referenceBodies,'',4,'mission-planet');
+          const radius = markerRadii[key];
+          const node = marker(referenceBodies,'',radius,'mission-planet');
+          node.dataset.planet = key;
+          window.PLANETENUHR_BODY_VISUALS.mountScaled(node.firstElementChild,key,radius);
           let legend;
           if (!planetLegend.hidden) {
-            node.dataset.planet = key;
-            if (key === 'saturn') {
-              addSaturnRings(node,4);
-            }
             legend = legendTemplate.content.firstElementChild.cloneNode(true);
             legend.dataset.planet = key;
             planetLegend.append(legend);
           }
-          bodies.push({key,node,legend});
+          bodies.push({key,node,legend,radius});
           if (view.oblique) return pathFor(points);
           return pathFor(points.map(([x,y]) => [x,y]));
         });
         referenceOrbits.setAttribute('d', orbitalPaths.join(' '));
         if (view.targetData) {
-          spatialOrbits.push(view.targetData.rows.map(row => row.slice(1)));
-          targetOrbit.setAttribute('d', pathFor(view.targetData.rows.map(([, x, y]) => [x, y])));
-          targetMarker = marker(referenceBodies, view.targetName, 8, 'mission-reference-target');
+          const points = view.targetData.rows.map(row => row.slice(1));
+          if (view.targetBody) {
+            spatialTargetOrbit = points;
+          } else {
+            spatialOrbits.push(points);
+          }
+          targetOrbit.setAttribute('d',pathFor(points));
+          const radius = markerRadii[view.targetBody] || 8;
+          targetMarker = marker(referenceBodies,'',radius,'mission-reference-target');
+          if (view.targetBody) {
+            targetMarker.dataset.planet = view.targetBody;
+            window.PLANETENUHR_BODY_VISUALS.mountScaled(targetMarker.firstElementChild,view.targetBody,radius);
+          }
           targetMarker.querySelector('text').setAttribute('y', 22);
         }
         prepareTrajectory();
@@ -723,6 +749,10 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
         }
       }
       distance.hidden = !(view.distanceLabel || view.oblique);
+      if (view.body?.startsWith('planet_')) {
+        window.PLANETENUHR_BODY_VISUALS.mountScaled(center.firstElementChild,view.body.slice('planet_'.length),centerRadius);
+        center.querySelector('text').setAttribute('y',-centerRadius - 8);
+      }
       if (view.bodyTemplate) {
         const template = document.getElementById(view.bodyTemplate);
         center.querySelector('circle').replaceWith(template.content.querySelector('g').cloneNode(true));
@@ -734,12 +764,15 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
       }
       if (stages) {
         const lander = document.getElementById('spaceMissionLanderTemplate');
-        probe = lander.content.querySelector('g').cloneNode(true);
+        probe = document.importNode(lander.content.querySelector('g'),true);
+        spacecraftArt.mount(probe.firstElementChild,mission.id,37);
         spacecraft.append(probe);
       } else if (view.oblique) {
         probe = marker(referenceBodies,view.marker || mission.name,2.75,'mission-probe');
+        spacecraftArt.mount(probe.firstElementChild,mission.id,14);
       } else {
         probe = marker(spacecraft, view.marker || mission.name, 5, 'mission-probe');
+        spacecraftArt.mount(probe.firstElementChild,mission.id,19);
       }
       let initial = positions.get(view.key);
       if (initial === undefined) {
@@ -885,6 +918,7 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
      * No parameters. @returns {string} Current milestone or end-of-range text.
      */
     function getSpatialStatus() {
+      if (view.stages) return text(view.stages[dateValue()][0]) + ' · ' + text('landingSource');
       let key = flyby?.getMilestone();
       let slowed = Boolean(key);
       if (photo && !photo.hidden) {
@@ -901,9 +935,15 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
     }
 
     /** Supplies the original axes and current 3D vectors without changing the timeline.
-     * No parameters. @returns {object|null} Current mission scene, if backed by vectors.
+     * No parameters. @returns {object|null} Current vector or schematic landing scene.
      */
     function getSpatialScene() {
+      if (view?.stageRows) {
+        const {x,y,z} = positionAt(view.stageRows,new Date(stageTime));
+        return {key:view,axes:window.PLANETENUHR_SPACE_MISSION_CAMERA.topDown,scale:65,orbits:[],
+          timestamp:stageTime, tracks:[{rows:view.stageRows,kind:'tracked'}],
+          objects:[{key:'probe',kind:'probe',artwork:mission.id,label:mission.name,radius:5,point:[x,y,z]}]};
+      }
       if (!view?.data) return null;
       const timestamp = dateValue();
       const date = new Date(timestamp);
@@ -914,22 +954,32 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
       const point = [position.x,position.y,position.z];
       const objects = [
         {key:'center',kind:'planet',label:view.bodyName || copy[view.body || 'eclipse_sun'],radius:7,point:[0,0,0]},
-        {key:'probe',kind:'probe',label:view.marker || mission.name,radius:3,point}
+        {key:'probe',kind:'probe',artwork:mission.id,label:view.marker || mission.name,radius:3,point}
       ];
-      if (!view.body && !view.bodyName) objects[0].kind = 'sun';
-      for (const {key} of bodies) {
+      const center = objects[0];
+      if (!view.body && !view.bodyName) center.kind = 'sun';
+      if (view.body?.startsWith('planet_')) {
+        center.bodyKey = view.body.slice('planet_'.length);
+        center.radius = Math.max(4, view.radius * scale) * 640 / plot.viewBox.baseVal.width;
+        center.scaleWithCamera = true;
+      }
+      for (const {key,radius} of bodies) {
         const {x,y,z} = getHeliocentricPosition(key,date);
-        let kind = 'planet';
-        if (key === 'saturn') kind = 'saturn';
-        objects.push({key,kind,label:copy['planet_' + key],radius:4,point:[x,y,z]});
+        objects.push({key,bodyKey:key,kind:'planet',label:copy['planet_' + key],radius,point:[x,y,z]});
       }
       if (view.targetData) {
         const target = positionAt(view.targetData.rows,date);
-        if (target) objects.push({key:'target',kind:'planet',label:view.targetName,radius:5,point:[target.x,target.y,target.z]});
+        if (target) objects.push({key:view.targetBody || 'target',bodyKey:view.targetBody,kind:'planet',
+          label:targetName(),radius:markerRadii[view.targetBody] || 5,point:[target.x,target.y,target.z]});
       }
       if (view.secondaryData) {
         const mio = positionAt(view.secondaryData.rows,date);
-        if (mio) objects.push({key:'mio',kind:'secondary',label:'Mio',radius:3,point:[mio.x,mio.y,mio.z]});
+        if (mio) {
+          objects[1].artwork = 'mpo';
+          objects.push({key:'mio',kind:'secondary',artwork:'mio',label:'Mio',radius:2.5,point:[mio.x,mio.y,mio.z]});
+        } else {
+          objects[1].label = 'MPO + Mio';
+        }
       }
       const tracks = routeTracks.map(track => {
         let kind = 'tracked';
@@ -941,19 +991,20 @@ window.PLANETENUHR_SPACE_MISSION_ANIMATION = (() => {
         return {rows:track.rows,kind};
       });
       const scene = {key:view,axes,timestamp,tracks,orbits:spatialOrbits,objects,
-        scale:scale * 640 / plot.viewBox.baseVal.width};
+        targetOrbit:spatialTargetOrbit,scale:scale * 640 / plot.viewBox.baseVal.width};
       if (view.planets || view.oblique) scene.planeRadius = 145 / scale;
-      if (view.oblique && bodies.length) scene.labelPlanets = true;
+      if (view.oblique && (bodies.length || targetMarker)) scene.labelPlanets = true;
       if (view.oblique) scene.guide = point;
       if (photo && !photo.hidden) scene.photo = photo;
       scene.flyby = flyby?.getDetail();
       return scene;
     }
 
-    if (views.some(config => config.data)) {
+    if (views.some(config => config.data || config.stages)) {
       spatial = window.PLANETENUHR_SPACE_MISSION_3D.create({
         anchor:plot,controls:slider.closest('.mission-animation-controls'),getScene:getSpatialScene,
         positionAt,getTranslations,milestones,getStatus:getSpatialStatus,
+        artwork:mission.id,
         getTitle:() => mission.name + ' · ' + text(view.label)
       });
     }

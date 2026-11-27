@@ -1,7 +1,7 @@
 window.PLANETENUHR_LAGRANGE_CARD = (() => {
   'use strict';
   /** Creates the Sun-Earth Lagrange-point renderer from the shared date and schematic model.
-   * @param {object} options Document, schematic model, SVG template factory, translations and summary writers.
+   * @param {object} options Document, schematic model, SVG template factory, shared body artwork, translations and summary writers.
    * @returns {object} Model or render operations; starts no timers or listeners.
    */
   function create(options){
@@ -24,6 +24,8 @@ window.PLANETENUHR_LAGRANGE_CARD = (() => {
       }
 
       const {size,center,orbitRadius,earthPoint,l1Point,l2Point,l3Point,l4Point,l5Point,directionX,directionY} = options.model.calculateScene(date);
+      const normalX = -directionY;
+      const normalY = directionX;
 
       target.textContent = '';
 
@@ -79,16 +81,17 @@ window.PLANETENUHR_LAGRANGE_CARD = (() => {
       sun.setAttribute('class', 'lagrange-sun');
       svg.appendChild(sun);
 
-      const earth = options.createSvgElement('circle');
-      earth.setAttribute('cx', earthPoint.x);
-      earth.setAttribute('cy', earthPoint.y);
-      earth.setAttribute('r', 10);
-      earth.setAttribute('class', 'lagrange-earth');
+      const earth = options.createSvgElement('g');
+      earth.setAttribute('transform', 'translate(' + earthPoint.x + ' ' + earthPoint.y + ')');
+      const globe = options.createSvgElement('g');
+      const shadowAngle = Math.atan2(directionY, directionX) * 180 / Math.PI;
+      options.artwork.mountScaled(globe, 'earth', 10, {shadowAngle});
+      earth.appendChild(globe);
       svg.appendChild(earth);
 
       const jwst = options.createSvgElement('circle');
-      jwst.setAttribute('cx', l2Point.x + directionX * 6);
-      jwst.setAttribute('cy', l2Point.y + directionY * 6);
+      jwst.setAttribute('cx', l2Point.x + directionX * 12);
+      jwst.setAttribute('cy', l2Point.y + directionY * 12);
       jwst.setAttribute('r', 4);
       jwst.setAttribute('class', 'lagrange-jwst');
       svg.appendChild(jwst);
@@ -110,8 +113,14 @@ window.PLANETENUHR_LAGRANGE_CARD = (() => {
         svg.appendChild(marker);
 
         const label = options.createSvgElement('text');
-        label.setAttribute('x', entry.point.x);
-        label.setAttribute('y', entry.point.y - 12);
+        if (entry.label === 'L1' || entry.label === 'L2') {
+          label.setAttribute('x', entry.point.x + normalX * 18);
+          label.setAttribute('y', entry.point.y + normalY * 18);
+          label.setAttribute('dominant-baseline', 'central');
+        } else {
+          label.setAttribute('x', entry.point.x);
+          label.setAttribute('y', entry.point.y - 12);
+        }
         label.setAttribute('class', 'lagrange-label');
         label.textContent = entry.label;
         svg.appendChild(label);
@@ -125,15 +134,17 @@ window.PLANETENUHR_LAGRANGE_CARD = (() => {
       svg.appendChild(sunLabel);
 
       const earthLabel = options.createSvgElement('text');
-      earthLabel.setAttribute('x', earthPoint.x);
-      earthLabel.setAttribute('y', earthPoint.y + 28);
+      earthLabel.setAttribute('x', earthPoint.x - normalX * 22);
+      earthLabel.setAttribute('y', earthPoint.y - normalY * 22);
+      earthLabel.setAttribute('dominant-baseline', 'central');
       earthLabel.setAttribute('class', 'lagrange-label');
       earthLabel.textContent = t.planet_earth || 'Earth';
       svg.appendChild(earthLabel);
 
       const jwstLabel = options.createSvgElement('text');
-      jwstLabel.setAttribute('x', l2Point.x + directionX * 18);
-      jwstLabel.setAttribute('y', l2Point.y + directionY * 18);
+      jwstLabel.setAttribute('x', l2Point.x + directionX * 22 - normalX * 18);
+      jwstLabel.setAttribute('y', l2Point.y + directionY * 22 - normalY * 18);
+      jwstLabel.setAttribute('dominant-baseline', 'central');
       jwstLabel.setAttribute('class', 'lagrange-small-label');
       jwstLabel.textContent = 'JWST';
       svg.appendChild(jwstLabel);

@@ -63,7 +63,11 @@ test('phase geometry clamps percentages and retains opposite morning and evening
   assert.equal(phases.phaseDiscPath(-20,true),phases.phaseDiscPath(0,true));
   assert.equal(phases.phaseDiscPath(120,false),phases.phaseDiscPath(100,false));
   assert.notEqual(phases.phaseDiscPath(50,true),phases.phaseDiscPath(50,false));
-  assert.ok(phases.phaseDiscPath(50,true).includes('A 1.5 38'));
+  assert.equal(phases.phaseDiscPath(0,true),'');
+  assert.equal(phases.phaseDiscPath(50,true),'M 48 10 A 38 38 0 0 1 48 86 Z');
+  assert.ok(phases.phaseDiscPath(25,true).endsWith('A 19 38 0 0 0 48 10 Z'));
+  assert.ok(phases.phaseDiscPath(75,true).endsWith('A 19 38 0 0 1 48 10 Z'));
+  assert.ok(phases.phaseDiscPath(100,false).endsWith('A 38 38 0 0 0 48 10 Z'));
   const missing = realm.window.PLANETENUHR_INNER_PLANETS_MODEL.create({position:() => null});
   assert.equal(missing.planetIlluminationData('unknown',new Date()).distanceAu,0);
 });
